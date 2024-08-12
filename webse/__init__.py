@@ -31,13 +31,11 @@ login_manager.blueprint_login_views = {
     'gd_course_statistics': 'forward_users.forward_users_login',
     'gd_course_app_calculator': 'forward_users.forward_users_login',
     'forward_users': 'forward_users.forward_users_login',
-    'se_platform_announcements': 'forward_users.forward_users_login',
     'se_course_announcements': 'forward_users.forward_users_login',
     'se_course_app_module': 'forward_users.forward_users_login',
     'se_course_se_module': 'forward_users.forward_users_login',
     'se_course_students_apps': 'forward_users.forward_users_login',
     'se_course_statistics': 'forward_users.forward_users_login',
-    'papers_spot_go': 'forward_users.forward_users_login',
     'gd_course_HVL_2023_group1': 'gd_course_HVL_2023_group1.login',
     'gd_course_HVL_2023_group2': 'gd_course_HVL_2023_group2.login',
     'gd_course_HVL_2023_group3': 'gd_course_HVL_2023_group3.login',
@@ -75,9 +73,6 @@ from webse.se_course_app_calculator.routes import se_course_app_calculator
 from webse.se_course_students_apps.routes import se_course_students_apps
 from webse.se_course_se_module.routes import se_course_se_module
 from webse.se_course_statistics.routes import se_course_statistics
-from webse.gender_platform_routes.routes import gender_platform
-from webse.gender_platform_chats.routes import gender_platform_chats
-from webse.gender_platform_questionnaires.routes import gender_platform_questionnaires
 from webse.gd_course_routes.routes import gd_course
 from webse.gd_course_chats.routes import gd_course_chats
 from webse.gd_course_announcements.routes import gd_course_announcements
@@ -107,13 +102,6 @@ from webse.gd_course_NHH_2024_group1.routes import gd_course_NHH_2024_group1
 from webse.gd_course_NHH_2024_group2.routes import gd_course_NHH_2024_group2
 from webse.gd_course_NHH_2024_group3.routes import gd_course_NHH_2024_group3
 from webse.gd_course_NHH_2024_group4.routes import gd_course_NHH_2024_group4
-from webse.se_platform_home.routes import se_platform_home
-from webse.se_platform_announcements.routes import se_platform_announcements
-from webse.dashboards.routes import dashboards
-from webse.papers.spot_go.routes import papers_spot_go
-from webse.dashboards.spot_go import create_dash_spot_go
-from webse.dashboards.dash_application2 import create_dash_application2
-from webse.dashboards.redispatch import create_dash_redispatch
 from webse.sbm_course_home.routes import sbm_course
 from webse.sbm_course_announcements.routes import sbm_course_announcements
 from webse.sbm_course_chats.routes import sbm_course_chats
@@ -134,11 +122,6 @@ from webse.es_course_chats.routes import es_course_chats
 from webse.es_course_announcements.routes import es_course_announcements
 from webse.es_course_light_talk_app.routes import es_course_light_talk_app
 
-create_dash_spot_go(application)
-create_dash_application2(application)
-create_dash_redispatch(application)
-
-
 application.register_blueprint(forward_home)
 application.register_blueprint(forward_users)
 application.register_blueprint(se_course)
@@ -149,9 +132,6 @@ application.register_blueprint(se_course_app_calculator)
 application.register_blueprint(se_course_students_apps)
 application.register_blueprint(se_course_se_module)
 application.register_blueprint(se_course_statistics)
-application.register_blueprint(gender_platform)
-application.register_blueprint(gender_platform_chats)
-application.register_blueprint(gender_platform_questionnaires)
 application.register_blueprint(gd_course)
 application.register_blueprint(gd_course_chats)
 application.register_blueprint(gd_course_announcements)
@@ -181,10 +161,6 @@ application.register_blueprint(gd_course_NHH_2024_group1)
 application.register_blueprint(gd_course_NHH_2024_group2)
 application.register_blueprint(gd_course_NHH_2024_group3)
 application.register_blueprint(gd_course_NHH_2024_group4)
-application.register_blueprint(dashboards)
-application.register_blueprint(papers_spot_go)
-application.register_blueprint(se_platform_home)
-application.register_blueprint(se_platform_announcements)
 application.register_blueprint(sbm_course)
 application.register_blueprint(sbm_course_announcements)
 application.register_blueprint(sbm_course_chats)
