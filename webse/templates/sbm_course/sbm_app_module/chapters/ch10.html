@@ -1,0 +1,37 @@
+{% extends "sbm_course/sbm_course_layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section>
+  <header class="header_css">
+      <div class="container">
+          <div>
+            <h1> <span class="text-warning"> Ch10. Charts</span></h1>
+            <p class="mb-1">
+                In this chapter we learn how to pass the carbon emissions information from the server to the browser. By using Chart.js, we disclose the information from our server in one <strong>chart</strong>.
+            </p>
+            <br>
+
+            <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="https://youtu.be/Z8XdTvccTwQ"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Charts)</a>
+            </div>
+            <div class="btn">
+                <a href="https://github.com/mariobp-NHH/SustainableBusinessModels/tree/main/Ch10.%20Charts" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+            </div>
+            </div>  
+
+          </div>
+          <img
+          src="{{url_for('static', filename='figures/sustainable_business_models/app_development_module/ch10.svg')}}"
+                  alt=""/>
+      </div>
+  </header>
+</section>
+
+
+
+
+
+
+{% endblock content %}

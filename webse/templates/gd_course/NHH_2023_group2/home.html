@@ -1,0 +1,121 @@
+{% extends "gd_course/NHH_2023_group2/layout.html" %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gd_course_NHH_2023_group2_home.css') }}">
+
+{% endblock %}
+
+{% block header %}
+<section class="logo_header">
+    <div class="container">
+    <div class="logo_div">
+        <div class="logo_h1_title">
+            <span class="logo_1"><i class="fa-solid fa-earth-europe"></i></span>
+        </div>
+        <h1 class="logo_h1">
+            <span class="logo_1"> CARBON</span>  
+            <span class="logo_2">App</span>
+        </h1>
+    </div>
+    <div class="mission_div">
+        <div class="btn-group">
+            {% if current_user.is_authenticated %}
+            <a type="button" class="btn btn-success" href="{{url_for('gd_course_NHH_2023_group2.new_entry')}}">New Entry</a>
+            <a type="button" class="btn btn-success" href="{{url_for('gd_course_NHH_2023_group2.carbon_calculator_func')}}">Your Data</a>
+            {% else %}
+            <a type="button" class="btn btn-success" href="{{url_for('gd_course_NHH_2023_group2.login')}}">Login</a>
+            <a type="button" class="btn btn-success" href="{{url_for('gd_course_NHH_2023_group2.register')}}">Register</a>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+</section>
+{% endblock%}
+
+{% block content %}
+<section class="developers">
+    <div class="container">
+        <div class="header">
+            <h2>Developers</h2>
+            <p>Here is a display of the developers from NHH working on the app.</p>
+        </div>
+        <div class="div_developers">
+            <div class="developer">
+                <div>
+                <img class="img_developer" src="/static/gd_course_NHH_2023_group2/images/IMG_2537.jpeg" style="width:200px;" alt="Bilde av Aksel Bjorhovde">                
+                <h3>Aksel Bjørhovde</h3>
+                <p>  
+                    I am from Oslo and am a third-year student at NHH. I am interested in creating digital solutions that leverage technology to address diverse challenges, ranging from optimizing business processes to tackling environmental issues and beyond. In addition, I am an active long-distance runner.  <br>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <a type="button" class="btn btn-success" href="https://github.com/akselbjorhovde">GitHub</a>
+                    </div>
+                </p>
+                </div>
+            </div>
+            <div class="developer">
+                <div>
+                <img class="img_developer" src="/static/gd_course_NHH_2023_group2/images/IMG_2530.jpeg" style="width:200px;" alt="Bilde av Andrè Hansen Skarholm">
+                <h3>Andrè Hansen Skarholm</h3>
+                <p>  
+                    I am from Asker and am a first-year student at the Norwegian School of Economics (NHH),i have an great interest in sustainability and environmental issues. I believe that technology can play a crucial role in mitigating the effects of climate change. <br>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <a type="button" class="btn btn-success" href="https://github.com/s222207">GitHub</a>
+                    </div>
+                </p>
+                </div>
+            </div>
+            <div class="developer">
+                <div>
+                <img class="img_developer" src="/static/gd_course_NHH_2023_group2/images/Elise.jpg" style="width:200px; height:266.66px;" alt="Bilde av Elise Isolde Stenevik">        
+                <h3>Elise Isolde Stenevik</h3>
+                <p>  
+                   I grew up in Florø, am a third year student at NHH, and also I currently work in Liverpool with sports. My greatest interest is how we can shape the economy to ensure the highest level of happiness in the population. <br>
+                   <div style="display: flex; justify-content: center; align-items: center;">
+                    <a type="button" class="btn btn-success" href="https://github.com/elisestenevik">GitHub</a>
+                </div>
+                </p>
+                </div>
+            </div>
+            
+            <div class="developer">
+                <div>
+                <img class="img_developer" src="/static/gd_course_NHH_2023_group2/images/IMG_2526.jpeg" style="width:200px;" alt="Bilde av Franziska Roszinski">                
+                <h3>Franziska Roszinski</h3>
+                <p>  
+                    I am from Kristiansand and am a third year student at NHH. I am interested in developing innovative solutions for issues regarding sustainability in order to create an equitable and livable future for everyone, and my motivation is rooted in the pressing challenges our earth is currently facing. <br>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <a type="button" class="btn btn-success" href="https://github.com/franziskaroszinski">GitHub</a>
+                    </div>
+                </p>
+                </div>
+                
+            </div>
+            <div class="developer">
+                <div>
+                <img class="img_developer" src="/static/gd_course_NHH_2023_group2/images/IMG_2540.jpeg" style="width:200px;" alt="Bilde av Mathias Haughom">                
+                <h3>Mathias Haughom</h3>
+                <p>  
+                    Im a second-year student at NHH, hailing from the breathtaking region of Vesterålen. I'm deeply passionate about creating innovative solutions to tackle sustainability issues, and believe that a more equitable and livable future for all is not only achievable, but absolutely essential. I'm constantly inspired by the pressing challenges our planet is facing, and am dedicated to making a positive impact through my work and actions. From exploring new ideas to collaborating with others, I'm excited to be a part of the movement towards a more sustainable future. Let's make a difference together!
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <a type="button" class="btn btn-success" href="https://github.com/mhaughom">GitHub</a>
+                    </div>
+                </p>
+                </div>
+             </div>           
+            <div class="developer">
+                <div>
+                <img class="img_developer" src="/static/gd_course_NHH_2023_group2/images/IMG_2533.jpeg" style="width:200px;" alt="Bilde av Serenne Vikebø">                
+                <h3>Serenne Vikebø</h3>
+                <p>  
+                    Serenne er 21 år, kommer fra Bergen i Norge og går 3.kull på NHH. <br>
+                    <div style="display: flex; justify-content: center; align-items: center;">
+                        <a type="button" class="btn btn-success" href="https://github.com/SerenneVikebo">GitHub</a>
+                    </div>
+                </p>
+                </div>
+             </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+

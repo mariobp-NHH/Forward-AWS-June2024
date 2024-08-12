@@ -1,0 +1,162 @@
+/* Rainy theme 5 -Green Digitalization Course-:
+ rt5-1: #c5c8d9
+ rt5-2: #9fa7bf
+ rt5-3: #A6C2A3
+ rt5-4: #49736f
+ rt5-5: #568c63 
+ rt4-3: #6da6a6 For the main chat  
+ RT1-2: #789091 For the chat creation */
+/* App Calculator Entry */
+      /*Container section select entry*/
+      .section_calculator_students_entry_css {
+        background: ##C9C9C9;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    .section_calculator_students_entry_css .box {
+        flex: 1;
+        background: #568c63 ;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+    }
+    .section_calculator_students_entry_css .box:nth-of-type(1) {
+        flex-grow:1;
+        background: #568c63 ;
+        color: #fff;
+        border-radius: 10px;
+        margin: 0px 0px;
+        padding: 0px 0px;
+        text-align:left;
+    }
+    .section_calculator_students_entry_css .box:nth-of-type(2) {
+        flex-grow:5;
+        background: #568c63 ;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+    }
+    .section_calculator_students_entry_css .box:nth-of-type(3) {
+        flex-grow:1;
+        background: #A6C2A3;
+        color: #fff;
+        border-radius: 10px;
+        margin: 0px 0px;
+        padding: 0px 0px;
+        text-align:left;
+    }
+
+    /* App Calculator Output */
+    /*Container display output*/
+    .section_calculator_students_output_css {
+        background: #A6C2A3;
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    .section_calculator_students_output_css .box {
+        flex: 1;
+        background: #568c63 ;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+    }
+    .section_calculator_students_output_css .box:nth-of-type(1) {
+        flex-grow:6;
+        background: #568c63;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+    }
+    .section_calculator_students_output_css .box:nth-of-type(2) {
+        flex-grow:4;
+        background: #568c63 ;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+    }
+
+    /* App Kilometers and fuel type */
+    .section_km_fuel_css {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+    }
+    .section_km_fuel_css .box {
+        flex: 1;
+        background: #9fa7bf ;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 10px 10px;
+        padding: 10px 10px;
+        text-align:center;
+    }
+    .section_km_fuel_css .box:nth-of-type(1) {
+        flex-grow:1;
+        background: #9AC7A9 ;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 10px 10px;
+        padding: 10px 10px;
+        text-align:center;
+    }
+    .section_km_fuel_css .box:nth-of-type(2) {
+        flex-grow:1;
+        background: #9AC7A9;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 10px 10px;
+        padding: 10px 10px;
+        text-align:center;
+    }
+    .section_km_fuel_css .box:nth-of-type(3) {
+        flex-grow:1;
+        background: #9AC7A9 ;
+        color: #343a40;
+        border-radius: 10px;
+        margin: 10px 10px;
+        padding: 10px 10px;
+        text-align:center;
+    }
+
+
+
+@media(max-width:768px){
+  .main_menu .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .entry_menu .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .two_emissions_graphs .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .table_main .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }  
+  .two_emissions_graphs .container  .box:nth-of-type(1) {
+    max-width: 400px;
+  }  
+  .two_emissions_graphs .container  .box:nth-of-type(2) {
+    max-width: 400px;
+  } 
+}

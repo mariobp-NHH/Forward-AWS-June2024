@@ -1,0 +1,59 @@
+{% extends "sbm_course/sbm_NMBU_2023_group4/layout.html" %}
+{% block content %}
+  
+<!-- Header -->
+<section class="section_header_methodology">
+    <div class="container">
+  
+      <div class="header">
+        <div class="box"> 
+          <h1 style="font-size:55px;"><span class="text-logo"> Methodology</span></h1>
+          <p style="text-align:left;">
+            This app calculates the total carbon emission emitted from traveling by: 
+            car, bus, train, airplane, el-scooter, el-bike or walking. 
+            These are made to help you choose the route with the least impact. To calculate this we use a carbon footprint analysis, which includes direct and indirect emissions connected to you as a commuter.
+            <br>
+            <br>
+            The methodological has been adopted from that framework by Mario Blázquez. Comprehensive information can be found in our associated academic paper.
+          </p>
+          <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="#"  data-toggle="modal" data-target="#paper_Modal" class="btn btn-primary btn-lg mr-2", style="background-color:#35573D;"><i class="fa-regular fa-newspaper"></i> Our Paper</a>
+            </div>
+            <div class="btn">
+                <a href="{{url_for('sbm_course_NMBU_2023_group4.carbon_app')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#35573D;">Try our Carbon App</a>
+            </div>
+          </div>  
+          <!-- Modal Paper -->
+        <div class="modal fade" id="paper_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg " style="height: 80%;" >
+              <div class="modal-content" style="height:100%">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <iframe id="paper_frame" src="/static/sbm_course_NMBU_2023_group4/paper/paper.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+            </div>
+          </div> 
+          <!-- End modal Paper -->
+        </div>
+        <div class="box">
+          <img 
+            src="{{url_for('static', filename='sbm_course_NMBU_2023_group4/icons/methodology1.svg')}}"
+            width="325" 
+            height="325"
+            alt=""/>
+        </div>
+      </div>
+      
+    </div>
+</section> 
+
+
+{% endblock content %}

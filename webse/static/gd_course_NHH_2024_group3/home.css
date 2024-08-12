@@ -1,0 +1,184 @@
+/* Colors 
+Home, section 1 (head, background): #9fa7bf
+Home, section 1 (head, boxes): #568c63
+Home, section 2 (developers, background): #c5c8d9 
+Home, section 2 (developers, boxes): #49736f
+ */
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+/* Section header_home */
+.section_header_home {
+  background-color: #ffffff;
+}
+.header_home {
+  display: flex;
+  align-items: start;
+  background: #ffffff;
+}
+.header_home .box {
+  flex: 1;
+  background: #05430b;
+  color: #9ae1a5;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.header_home .box:nth-of-type(1) {
+  flex-grow: 2;
+}
+.header_home .box:nth-of-type(2) {
+  flex-grow: 1;
+}
+.container_buttons_links_header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container_buttons_links_header_home a:hover {
+  color: #e5d3d7;
+}
+.container_buttons_links_header_home btn {
+  width: 100px;
+  height: 100px;
+  background: #9fa7bf;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-banner {
+  background-image: url('/static/gd_course_NHH_2024_group3/hero_img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh; /* Full height */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+}
+
+.hero-banner h1 {
+  z-index: 1; /* Make sure the text appears above the ::after pseudo-element */
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.btn {
+  z-index: 1; /* Make sure the buttons appear above the ::after pseudo-element */
+  background-color: #36903f;
+  color: white;
+  padding: 20px 30px;
+  margin: 10px;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #36903f;
+}
+/* Section developers */
+.section_developers {
+  background-color: rgb(70, 88, 96);
+}
+.developers {
+  display: flex;
+  align-items: stretch;
+}
+.developers .box {
+  flex: 1;
+  background: linear-gradient(to right, #1c4220, #24602a);
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.developers .box p {
+  color: #fff;
+  text-align: justify;
+  font-weight: lighter;
+}
+
+.developers .box h3 {
+  margin-top: 25px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.developers h1 {
+  font-weight: bolder;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.section_container_buttons_developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_developers {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  border: 2px solid #c5c8d9;
+}
+.btn_developers:hover {
+  color: #fff;
+  background-color: #c5c8d9;
+  border: 2px solid #c5c8d9;
+  text-decoration: none;
+}
+.img_profile {
+  object-fit: cover; /* Make sure the image covers the whole width and height */
+  width: 250px; /* Set the width of the image */
+  height: 250px; /* Set the height of the image */
+  border-radius: 50%; /* Round the corners to make the image circular */
+}
+
+@media (max-width: 768px) {
+  .header_home {
+    flex-direction: column;
+  }
+  .developers {
+    flex-direction: column;
+  }
+  .section_container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.box {
+  flex: 1;
+  background: #9fa7bf;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}

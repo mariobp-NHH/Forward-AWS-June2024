@@ -1,0 +1,280 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <!-- Showcase -->
+    <section class="home_section_css">
+
+
+      <div class="container">
+          <div class="header">
+                <div class="box">
+                    <h1 class="text-center"><span class="text-warning"> Sustainable Energy </span> and <span class="text-warning"> App Development </span></h1>
+                    <p class="lead my-4">
+                    This course focuses on the study of <strong>sustainable energy</strong> and its relation with the <strong>Sustainable Development Goals</strong>.
+                    </p>
+                    <p class="lead my-4">
+                      By using Flask, Python, JavaScript, CSS, and HTML code, we develop a <strong>carbon emissions calculator app for Elkjøp</strong>. By using that app, the customers at Elkjøp will be able to <strong>work out the carbon emissions necessary to bring to Norway the devices that they buy</strong>. By using the same app, the customers will be allowed <strong>to buy trees in the location that they decide to compensate for their carbon emissions</strong>.
+                    </p>
+                </div>
+                <div class="box">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-bell"></i>
+                        </div>
+                        <h3 class="text-center"><span class="text-warning"> Announcements: </span>
+                        </h3>
+                        {% for announcement in announcements.items %}
+                            <article class="media content-section">
+                              <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
+                              <div class="media-body">
+                                <div class="article-metadata">
+                                  <a class="mr-2" href="{{ url_for('se_course_users.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
+                                  <small class="text-muted">{{ announcement.date_posted.strftime('%Y-%m-%d') }}</small>
+                                </div>
+                                <h4><a class="article-title" href="{{ url_for('se_course_announcements.announcement', announcement_id=announcement.id) }}">{{ announcement.title }}</a></h4>
+                                <p class="text-muted">{{ announcement.content }}</p>
+                              </div>
+                            </article>
+                        {% endfor %}
+                        {% for page_num in announcements.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                          {% if page_num %}
+                            {% if announcements.page == page_num %}
+                              <a class="btn btn-info mb-4" href="{{ url_for('se_course.se_course_home', page=page_num) }}">{{ page_num }}</a>
+                            {% else %}
+                              <a class="btn btn-outline-info mb-4" href="{{ url_for('se_course.se_course_home', page=page_num) }}">{{ page_num }}</a>
+                            {% endif %}
+                          {% else %}
+                            ...
+                          {% endif %}
+                        {% endfor %}
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Boxes -->
+    <section class="p-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card text-light", style="background-color:#343a40;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-laptop"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                App Development Module
+                            </h3>
+                            <p class="card-text">
+                              In this part of the course, we develop a carbon emission calculator app for Elkjøp by using Flask, Python, JavaScript, HTML and CSS
+                            </p>
+                            <div class="container_buttons_links_header">
+                              <div class="btn">
+                                <a href="{{url_for('se_course_app_module.app_web')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">App Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="card text-light", style="background-color:#6c757d;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-brightness-alt-high"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Sustainable Energy Module
+                            </h3>
+                            <p class="card-text">
+                                In this part of the course we cover the most salient topics in sustainable energy, and we connect those topics
+                                with the Sustainable Development Goals
+                            </p>
+                            <div class="container_buttons_links_newsletter">
+                              <div class="btn">
+                                <a href="{{url_for('se_course_se_module.sustainable_energy_web')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Sustainable Energy Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Question Accordion -->
+    <section id="questions" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        </div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <!-- Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+              >
+                Assignment and final grades.
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>The assignment of the course consists on two parts.
+              <br>
+              <br>
+              First, the students have to write an essay of <strong>5 pages</strong> with the methodology
+              used to work out the transport carbon emissions. This part of the course counts for the 30% of the final grade.
+              <br>
+              <br>
+              The objective of this part of the course is that you know the basic methodology to work out transport carbon
+              emissions for cars, buses, boats, planes, motorbikes. I would like that the students provide some basic
+              information about the carbon emissions of those means of conveyance. The students can fine-tune their
+              methodology by differentiating among fuel types: diesel, electric. 
+              An introduction to frame the discussion, and an example to give some numerical analysis could be also useful.
+              For example, a comparison of the carbon emissions between Bergen and Oslo depending on the means of
+              conveyance can be useful and illustrative.
+              <br>
+              <br>
+              The methodology could be fine-tuned in different respects. For example, by differentiating between
+              types of hydrogen used in transport: brown, grey, blue or green. By differentiating the types of bioenergy,
+              or the source of electricity to charge electric batteries. The methodology could also be fine-tuned by considering
+              life cycle of batteries, and the means of conveyance. However, I do not want the students go in that direction.
+              The students will have the opportunity to go deeper and further in their analysis in their 20 pages project, since
+              that is the topic that the students consider interesting for them.
+              <br>
+              <br>
+              Second, the students have to write an essay of <strong>20 pages</strong> on a topic that they choose related to the content of
+              the course. The students also have to present this research in the conference organized at the end of the course.
+              This part of the course counts for the 70% of the final grade. This part of the course will be evaluated by me, and
+              Elisa Trujillo from University of Lleida.
+              <br>
+              <br>
+              The objective of this part of the course is that you choose a topic that interest you, and that you write 20
+              pages about it. The way in which you address that topic depends on you. You can write a survey, a
+              theoretical, an empirical, or an operation research paper. That depends on your preferences. It is
+              important that the style of the paper suits the methodology that you choose. It is also important that
+              the style fits the 20 pages objective. Most of the students tend to use the structure of a 100 pages
+              master thesis even when I ask them to write 20 pages. The objective of this part of the course is
+              that you learn to write different types of documents, with different length and different styles.
+              <br>
+              <br>
+              The app developed by the students does not account for the final grade.
+              <br>
+              <br>
+              The students have to write a one page summary of their final essay to be published in the newsletter of the course, but
+              that part does not account for the final grade.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+              >
+                Groups.
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>The development of the app is conducted in random groups of six persons. In the future the students will need to
+              work with persons from different background, and this part of the course helps them to make that transition smoothly.
+              <br>
+              <br>
+              The essay in the topic chosen by the students is conducted in groups of six persons. These groups can be formed
+              by the students as they want. I suggest the students to form balanced groups by gender, nationality.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+              >
+                Key dates and final exam.
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>The 5 pages essay with the methodology used to work out carbon emissions have to be delivered by March 21.
+              <br>
+              <br>
+              On April 04, we organize the midway conference where the students present their 20 pages essay. This helps the students to train for the final conference, and to
+              know the points that have to be fine-tuned in their research.
+              <br>
+              <br>
+              The 20 pages essay has to be delivered by April 15, and the final conference will take place on April 22.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFour"
+              >
+                Lectures.
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>The first hour of the lectures on Monday will be allocated to build students' app. During the first fifteen minutes, we conduct the
+              Mondays Challenge Breakfast, where one of the groups will present the development of the app the previous week plus some small change on their app. During the
+              second part of the lecture, we add some more lines of code ot our app. We conclude each lecture by pushing our app to the server, and the students
+              can see from the first day the progress in their work.
+              <br>
+              <br>
+              The code for each lecture will be available in a Github account, so the students can have access to that code and they will be sure that their app run
+              at the end of each lecture. By doing that, the students will focus on the process, and will not be stressed if they miss some part of the code.
+              <br>
+              <br>
+              The second part of the lecture on Monday, and the lectures on Wednesdays will be allocated to study the sustainable energy module of the course.
+              That part of the course consists on debates, videos, presentations, and exercises. We complement those lectures with keynote speakers lectures.
+              <br>
+              <br>
+              All the lectures will be streamed, recorded and posted on Canvas.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFive"
+              >
+                Tutorials.
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>The tutorials will take place on Fridays from 10:00 to 12:00. We can meet in my office (C318) located in the third floor of the tall building.
+                  With your card, you do not have access to the corridor, so make me a phone call (0047 93461979), and I will open the door.
+                  <br>
+                  <br>
+                  We can set an appointment on Fridays from 10:00 to 12:00 by using Zoom (https://nhh.zoom.us/j/6343089435).
+                  <br>
+                  <br>
+                  If you cannot meet on Fridays at that time, please drop me a line, and we set an appointment at a different time.
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock content %}

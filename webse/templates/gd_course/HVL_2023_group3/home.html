@@ -1,0 +1,119 @@
+{% extends "gd_course/HVL_2023_group3/layout.html" %}
+ {% block content %}
+
+ <!-- Header -->
+ <section class="section_header_home">
+
+   <div class="container">
+     <div class="header_home">
+       <div class="box">
+         <!-- Flash message, user created -->
+         {% with messages = get_flashed_messages(with_categories=true) %}
+         {% if messages %}
+         {% for category, message in messages %}
+         <div class="alert alert-{{ category }}">
+           {{ message }}
+         </div>
+         {% endfor %}
+         {% endif %}
+         {% endwith %}
+         <h1 class="text-logo2"> Home</span></h1>
+         <br> <br>
+         <p class="maintext">
+           Carbon emissions, also known as greenhouse gas emissions, refer to the release of carbon dioxide and other
+           gases into the atmosphere, primarily as a result of human activities such as burning fossil fuels for energy,
+           deforestation, and industrial processes. These emissions are a significant contributor to
+           global climate change, which has far-reaching impacts on our planet, including rising sea levels, more
+           frequent and severe weather events, and changes in ecosystems and agriculture. As the world becomes more
+           industrialized and populations continue to grow, the need to address carbon emissions and mitigate their
+           impact becomes increasingly urgent. Governments, businesses, and individuals around the world
+           must be working to reduce emissions through a variety of strategies, including increasing the use of
+           renewable energy, improving energy efficiency, and adopting low-carbon lifestyles.
+         </p>
+       </div>
+       <div class="box">
+        <br> <br>
+         <img class="iconimg" src="{{url_for('static', filename='gd_course_HVL_2023_group3/icons/home.gif')}}" />
+       </div>
+     </div>
+
+   </div>
+   <div class="boottm" onclick="godwn()" >
+    <h2 class="NameTItle">Developers <i class="fa-solid fa-circle-down" style="color: white" ></i></h2>
+   </div>
+ </section>
+
+ <!-- Developers -->
+ <div class="dev" >
+
+   <div class="person">
+     <h2 class="NameTItle">Rune</h2>
+     <img class="pfp" src="/static/gd_course_HVL_2023_group3/devs/cookie.jpg" alt="Picture of Rune">
+     <p class="Ptext">
+       Head of Coding
+     </p>
+
+   </div>
+
+   <div class="person">
+     <h2 class="NameTItle">Nathan</h2>
+     <img class="pfp" src="/static/gd_course_HVL_2023_group3/devs/nathan.png" alt="Picture of Nathan">
+     <p class="Ptext">
+       Head of Business Strategy
+     </p>
+
+   </div>
+
+   <div class="person">
+     <h2 class="NameTItle">Eilie</h2>
+     <img class="pfp" src="/static/gd_course_HVL_2023_group3/devs/Eilie.png" alt="Picture of Eilie">
+     <p class="Ptext">
+       Chief Executive Officer
+     </p>
+
+   </div>
+
+   <div class="person">
+     <h2 class="NameTItle">Sondre</h2>
+     <img class="pfp" src="/static/gd_course_HVL_2023_group3/devs/aa02.jpg" alt="Picture of Sondre">
+     <p class="Ptext">
+       Head of marketing
+     </p>
+   </div>
+
+   <div class="person">
+     <h2 class="NameTItle">Sandra</h2>
+     <div id="res"></div>
+     <img class="pfp" src="/static/gd_course_HVL_2023_group3/devs/sandra.jpg" alt="Picture of Sandra">
+     <p class="Ptext">
+       Chief Operating Officer
+     </p>
+
+   </div>
+
+   <div class="person">
+     <h2 class="NameTItle">Sander</h2>
+     <img class="pfp" src="/static/gd_course_HVL_2023_group3/devs/IMG_0468.jpg" alt="Picture of Sander">
+     <p class="Ptext">
+      Chief Technology Officer
+     </p>
+
+   </div>
+
+ </div>
+ <script src="{{ url_for('static', filename='meth.js')}}"></script>
+ {% block javascript %}
+ <script>
+  var goingDown = document.getElementById('downbtn')
+goingDown.addEventListener('click', (e) => {
+    godwn()
+})
+function godwn(){
+    window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });
+     
+     }
+
+
+ </script>
+ {% endblock %}
+ {% endblock content %}

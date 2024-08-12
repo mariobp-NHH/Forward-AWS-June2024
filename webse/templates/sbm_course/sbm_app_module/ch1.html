@@ -1,0 +1,347 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch1. Installation and first Flask App </span></h1>
+                    <p class="mb-1">
+                        We install Python and Visual Studio Code. We learn to create virtual enviroments, and we create our first Flask app.
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/HXl14jVRvvw" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch1%20Installation%20and%20First%20App/Ch1%20Installation%20and%20First%20App%20Initial" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Installation</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we install Python and Visual Studio Code. We also explore other code editors as PyCharm or Sublime Text.
+                        </p>
+
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Our First Flask App</h5>
+                        </div>
+                        <p class="mb-1">
+                            We develop our first Flask app. First, we create a virtual environment, and we learn how to activate it. Second, we install Flask in the virtual environment. Third, we write the Flask code. Finally, we run our first app and open it in the browser. 
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            By using Flask, we extend the extend our app creating a new named “methodology”, and we add a header and a paragraph. 
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch1/ch1_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Installation</h1>
+            <h2>What is Python? Executive Summary</h2>
+            <p>
+                Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. Python's simple, easy to learn syntax emphasizes readability and therefore reduces the cost of program maintenance. Python supports <strong>modules and packages</strong>, which encourages program modularity and code reuse. The Python interpreter and the extensive standard library are available in source or binary form without charge for all major platforms, and can be freely distributed.
+                <br>
+                <br>
+                More info about Python:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.python.org/doc/essays/blurb/" target="_blank">Python</a>
+                </div> 
+            </p>
+            
+            <h4>Install Python:</h4> <p>Watch the YouTube video provided in the header.</p>
+        </div>        
+        <div class="container" style="display:block;">
+            <h2>Code Editors</h2>
+            <p>
+                To develop our app, we need to type code. There are many code editors. We will use one of the most popular code editors: Visual Studio Code. Other editors that I have used in my lectures are PyCharm and Sublime Text.
+            </p>
+            <h4>What is Visual Studio Code?</h4>
+            <p>
+                Visual Studio Code, also commonly referred to as VS Code, is a source-code editor made by Microsoft with the Electron Framework, for Windows, Linux and macOS.Features include support for debugging, syntax highlighting, intelligent code completion, snippets, code refactoring, and embedded Git. Users can change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.
+                <br>
+                <br>                
+                More info about Visual Studio Code: 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
+                </div>
+                More info about PyCharm: 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.jetbrains.com/pycharm/" target="_blank">PyCharm</a>
+                </div>
+                More info about Sublime Text:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.sublimetext.com/" target="_blank">Sublime Text</a>
+                </div>
+            </p>
+            <h4>Install Visual Studio Code:</h4><p>Watch the YouTube video provided in the header.</p>
+        </div> 
+
+        <div class="container">
+            <div class="box_questions_one">
+                      
+            </div>
+            <div class="box_questions_one">
+                <form method="POST" action="">
+                    {{ form_gdc_ch1_q1.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 1</legend>
+                        <p class="card-text">In Windows: If you want to run Python in the comand line, during the installation,  <strong>you should select the option:</strong>
+                            <strong>(chose one of the next options):</strong>
+
+
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch1_q1.type.errors %}
+                                {{ form_gdc_ch1_q1.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch1_q1.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch1_q1.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch1_q1.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>     
+            </div>
+            <div class="box_questions_one">
+                      
+            </div>
+        </div>
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Our first Flask App</h1>
+            <h2>What is Flask?</h2>
+                <p>
+                    Flask is a micro <strong>web framework</strong> written in Python. It is classified as a microframework because it does not require particular tools or libraries.It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. However, Flask supports extensions that can add application features as if they were implemented in Flask itself. <strong>Extensions</strong> exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools.
+                </p>
+            <h2>What is a Web Framework?</h2>
+                <p>
+                    A Web Application Framework or a simply a Web Framework represents a collection of libraries and modules that enable web application developers to <strong>write applications without worrying about low-level details such as protocol, thread management, and so on.</strong>
+                    <br>
+                    <br>
+                    More info about Flask:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://pythonbasics.org/what-is-flask-python/" target="_blank">Flask (link 1)</a> <a class="btn-section2" href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank">Flask (link 2)</a>
+                    </div> 
+                </p>
+        </div>
+        <div class="container">
+            <div class="box" style="text-align: left; margin:0px; padding:0px;">
+                <h2>Our first Flask App:</h2>
+                <p style="text-align: left;">A video with the summary of all the steps is in the YouTube channel of the course. The code of the app is in the GitHub repository of the course.
+                </p>
+                <div class="container_buttons_links_section_2b">
+                    <div class="btn">
+                        <a href="https://youtu.be/HXl14jVRvvw" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch1%20Installation%20and%20First%20App/Ch1%20Installation%20and%20First%20App%20Initial" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                </div>
+                <p>
+                    <ol>
+                        <li>
+                            <strong>Create</strong> a virtual environment. A virtual environment operates as a toolbox where you can store all the tools that you need to run your app. When we add more structure and functionalities to our app, we will need more tools that we will store in our virtual environment. When we deploy our app into the server, we will give the server the list of tools stored in our virtual environment, so that it can run our application.
+                            <br>
+                            <br>
+                            A formal definition of a Python virtual environment:
+                            <div class="section_container_buttons_chapters">
+                                <a class="btn-section2" href="https://docs.python.org/3/tutorial/venv.html" target="_blank">Python Virtual Environment</a>
+                            </div>  
+                            To create a virtual enviroment, open a terminal in VS Code and type.
+                            <ul>In Windows: <strong>(python -m venv venv)</strong>or <strong>(python3 -m venv venv)</strong> depending on the Python version installed in your computer.</ul>
+                            <ul>In Mac it is necessary to follow two steps: First, it is necessary to install a package named virtualenv by typing in the VS Code comand line <strong>(pip install virtualenv)</strong>. Second, it is necessary create the virtual environment by typing in the VS Code comand line <strong>(virtualenv venv)</strong>.</ul>
+                            
+                        </li>
+                        </br>
+                        <li>
+                            In VS Code, open the terminal and <strong>activate the virtual environment</strong>.
+                            <ul>In Windows: <strong>(venv\Scripts\activate)</strong>.</ul>
+                            <ul>In Mac: <strong>(source venv/bin/activate)</strong>.</ul>
+                        </li>
+                        </br>
+                        <li>
+                            By using the terminal in VS Code, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                        </li>
+                        </br>
+                        <li>
+                            By using the terminal in VS Code, <strong>write the code of your app</strong>, and <strong>save</strong> that file as application.py.
+                        </li>
+                        </br>
+                        <li>
+                            By using the terminal in VS Code, <strong>run your App</strong>: (python application.py) (or phyton3 application.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                        </li>
+                        </br>
+                        <li>
+                            <strong>Open the app in your browser</strong>: Open the blue link that appears in VS Code after running your application.py file to open your app in the browser.
+                        </li>
+                    </ol>               
+                </p>       
+            </div>
+            <div class="box" style="height:635px; align-self:center;">
+                <p style="text-align: center;"><strong>The code for our first flask app (extended version):</strong> </p>
+                    
+<pre><code class="python">
+from flask import Flask
+application = Flask(__name__)
+
+@application.route('/')
+@application.route('/home')
+def home():
+    return "&lt;h1&gt;Home page&lt;/h1&gt;" \
+        "&lt;p&gt;In this project we develop 
+        and app...&lt;/p&gt;"
+
+@application.route('/developers')
+def developers():
+    return "&lt;h1&gt;Developers&lt;/h1&gt;" \
+        "&lt;p&gt;In this webpage, we introduce 
+        the developers of the app...&lt;/p&gt;"
+
+@application.route('/app_calculator')
+def app_calculator():
+    return "&lt;h1&gt;App Calculator&lt;/h1&gt;" \
+        "&lt;p&gt;In this webpage, we develop an 
+        app to work out transport carbon e
+        missions...&lt;/p&gt;"
+
+if __name__ == '__main__':
+    application.run(debug=True)
+</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_questions_two">
+                      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch1_q2.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 2</legend>
+                        <p class="card-text">When you activate the virtual environment in the folder where you have your app and run the comand <strong>pip install flask</strong>, you are...
+                            <strong>(chose one of the next options):</strong>
+
+
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch1_q2.type.errors %}
+                                {{ form_gdc_ch1_q2.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch1_q2.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch1_q2.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch1_q2.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>     
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch1_q3.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 3</legend>
+                        <p class="card-text">If you want to create a route for the methodology in your flask app, <strong>you should write the next code:</strong>
+                            <strong>(chose one of the next options):</strong>
+
+
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch1_q3.type.errors %}
+                                {{ form_gdc_ch1_q3.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch1_q3.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch1_q3.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch1_q3.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>        
+            </div>
+            <div class="box_questions_two">
+                      
+            </div>
+        </div>
+    </section> 
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+        <!-- <div class="container">
+            <h1>Weekly Challenge</h1>
+        </div> -->
+        <div class="container">            
+
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;">
+                In the weekly challenge of this week, you must create a <strong>new route</strong> in your flask application named <strong>methodology</strong> and introduce some basic text in the route. 
+                <br>
+                <br>
+                You should follow the same steps described in the chapter. In case that you want to introduce some further elements in the route, please feel free to go in exploration and share your results with the rest of the groups. 
+                <br>
+                <br>    
+                We will discuss the weekly challenge on <strong>Thursday 19th December at NHH</strong>, and on <strong>Friday 20th December at HVL</strong>. We will use the main chat to help each other in the weekly challenge. Within Wednesday 18th evening, please share your <strong>methodology route code</strong> with the rest of the groups by using the main chat, so that we can learn from each other. 
+                <br>
+                <br>
+                I will share my <strong>personal solution</strong> for the weekly challenge in the GitHub link below after the lecture on <strong>Friday 20th January</strong>.
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                </div>                    
+
+            </div>   
+            <div class="onebox">                  
+            </div> 
+            
+        </div>
+    </section> 
+
+{% endblock content %}

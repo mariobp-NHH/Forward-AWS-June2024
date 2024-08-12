@@ -1,0 +1,2065 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch6. Sustainable Energy. Solar Energy </span></h1>
+                    <p class="mb-1">
+                        In the last decade the cost of solar has dropped substantially, and solar energy production is growing
+                        substantially. In this chapter, we study the history of solar energy, and the different solar energy production
+                        technologies. We continue studying the solar panels, solar cells efficiency and solar panels at home. We conclude
+                        the chapter by studying the main trends in solar energy production.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch6/materialch6.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch6/presentationch6.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the introduction, we discuss some important aspects of wind energy.
+                        </p>
+
+                      </a>
+                      <a href="#solar_energy" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Solar Energy</h5>
+                        </div>
+                        <p class="mb-1">
+                            We review the history, evolution and types of solar energy.
+                        </p>
+                      </a>
+                      <a href="#electricity" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">How does electricity work?</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main features of electricity, the units and the main equations that relate those units.
+                        </p>
+                      </a>
+                       <a href="#solar_panels" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Solar panels</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study solar panels technology, solar cell efficiency and the architecture of solar panels at home.
+                        </p>
+                      </a>
+                      <a href="#future" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Future of solar photovoltaic</h5>
+                        </div>
+                        <p class="mb-1">
+                            We analyze the key trends in solar energy: Materials and modules; applications; operation and maintenance; end-of-life management.
+                        </p>
+                      </a>
+                      <a href="#technology" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Technological development in solar energy</h5>
+                        </div>
+                        <p class="mb-1">
+                            We analyze the main technological innovations in materials, modules and applications.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch6/ch6_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+   <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Introduction</h2>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    To motivate the chapter, we start by watching the video
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=od5yWB5aE0c&t=37s" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">The Rise of Solar Power</a>
+                   </div>
+                </div>
+                <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q1.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 1</legend>
+                            <p class="card-text">The cost of <strong>large-scale solar panels</strong> has dropped substantially in the last decade,
+                                    according to the video in the introduction, which is the range of the drop in costs?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q1.type.errors %}
+                                        {{ form_m2_ch6_q1.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q1.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q1.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q1.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q2.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 2</legend>
+                            <p class="card-text">The cost of <strong>lithium batteries</strong> has dropped substantially in the last decade,
+                                    according to the video in the introduction, which is the range of the drop in costs?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q2.type.errors %}
+                                        {{ form_m2_ch6_q2.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q2.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q2.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q2.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Introduction</h3>
+                <p>
+                    Which is the role of solar energy decarbonizing the economy? which has been the drop in costs? Which are
+                    the main technological and market design challenges that solar energy introduce?
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch6_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 1</a>
+                   </div>
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch6_ex2') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 2</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+<!--Section 1-->
+    <section id="solar_energy" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Solar energy</h2>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based in the information from three main sources:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.seia.org/initiatives/about-solar-energy" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Solar Energy Industries Association</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.nrel.gov/solar/index.html" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">National Renewable Energy Laboratory (NREL)</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://en.wikipedia.org/wiki/Solar_energy" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Solar Energy (wikipedia)</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>Introduction</h3>
+
+            <p>
+                Solar energy is radiant light and heat from the sun that is harnessed using a range of ever-evolving
+                technologies such as <strong>solar heating</strong>, <strong>photovoltaics</strong>, <strong>solar thermal energy</strong>,
+                <strong>solar architecture</strong>, <strong>molten salt power plants</strong> and <strong>artificial photosynthesis</strong>.
+                </br>
+                </br>
+                It is an essential source of renewable energy, and its technologies are broadly characterized as either
+                <strong>passive solar</strong> or <strong>active solar</strong> depending on how they capture and distribute solar energy
+                or convert it into solar power.
+
+                <ul>
+                    <li>
+                        <strong>Active solar</strong> techniques include the use of photovoltaic systems, concentrated solar power, and solar water heating to harness the energy.
+                    </li>
+                    <li>
+                        <strong>Passive solar</strong> techniques include orienting a building to the Sun, selecting materials with
+                        favorable thermal mass or light-dispersing properties, and designing spaces that naturally circulate air.
+                    </li>
+                </ul>            
+            </p>
+
+            <h3>History</h3>      
+            
+            <p>
+                In 1878, at the Universal Exposition in Paris, Augustin Mouchot successfully demonstrated a 
+                <strong>solar steam engine</strong>, but couldn't continue development because of cheap coal and other factors.
+                </br>
+                </br>
+                In 1897, Frank Shuman, a US inventor, engineer and solar energy pioneer built a small demonstration 
+                solar engine that worked by reflecting solar energy onto square boxes filled with <strong>ether</strong>,
+                which has a lower boiling point than water and were fitted internally with black pipes which in turn 
+                powered a steam engine. In 1908 Shuman formed the Sun Power Company with the intent of building larger 
+                solar power plants. He, along with his technical advisor A.S.E. Ackermann and British physicist Sir Charles 
+                Vernon Boys, developed an improved system using mirrors to reflect solar energy upon collector boxes, 
+                increasing heating capacity to the extent that water could now be used instead of ether. Shuman then 
+                constructed a full-scale steam engine powered by <strong>low-pressure water</strong>, enabling him to patent
+                the entire solar engine system by 1912.
+                </br>
+                </br>
+                Shuman built the world's first solar thermal power station in Maadi, Egypt, between 1912 and 1913. 
+                His plant used parabolic troughs to power a 45–52 kilowatts engine that pumped more than 22,000 litres
+                of water per minute from the Nile River to adjacent cotton fields. Although the outbreak of World War I
+                and the discovery of cheap oil in the 1930s discouraged the advancement of solar energy, Shuman's vision, 
+                and basic design were resurrected in the 1970s with a new wave of interest in solar thermal energy.
+            </p>
+
+            <h3>Potential. Global Solar Atlas</h3>
+            
+            <p>
+                The Earth receives 174 petawatts (PW) of incoming solar radiation (insolation) at the upper atmosphere.
+                Approximately  30%  is reflected back to space while the rest is absorbed by clouds, oceans and land masses. 
+                The spectrum of solar light at the Earth's surface is mostly spread across the visible and near-infrared ranges 
+                with a small part in the near-ultraviolet. Most of the world's population live in areas with <strong>insolation levels</strong>
+                of 150–300 watts/m2, or 3.5–7.0 kWh/m2 per day.
+                </br>
+                </br>
+                The total solar energy absorbed by Earth's atmosphere, oceans and land masses is approximately 3,850,000 exajoules (EJ) 
+                per year. This is more energy in <strong>one hour</strong> than the world used in one year.
+                </br>
+                </br>
+                Photosynthesis captures approximately 3,000 EJ per year in biomass. The amount of solar energy reaching 
+                the surface of the planet is so vast that in <strong>one year</strong> it is about twice as much as will ever be
+                obtained from all of the Earth's non-renewable resources of coal, oil, natural gas, and mined uranium combined.
+                </br>
+                </br>
+                The potential solar energy that could be used by humans differs from the amount of solar energy present near 
+                the surface of the planet because factors such as geography, time variation, cloud cover, and the land available 
+                to humans limit the amount of solar energy that we can acquire.
+            </p>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    The World Bank and the International Finance Corporation, collectively The World Bank Group,
+                    have provided the <strong>Global Solar Atlas</strong> in addition to a series of global, regional and
+                    country data layers and poster maps, to support the scale-up of solar power in their client countries.
+                    This work is funded by the Energy Sector Management Assistance Program (ESMAP), a multi-donor trust fund
+                    administered by The World Bank and supported by 13 official bilateral donors. It is part of a global ESMAP
+                    initiative on Renewable Energy Resource Mapping that includes <strong>biomass</strong>, <strong>small hydro</strong>,
+                    <strong>solar</strong> and <strong>wind</strong>.
+
+                    More information about Global Solar Atlas in their official webpage:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://globalsolaratlas.info/map" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Global Solar Atlas</a>
+                   </div>
+                </div>
+                <p>
+                    In World Bank (2020) can be found complete report about solar energy at a country level.
+                </p>
+            </div>
+
+            <h3>Solar energy production technologies</h3>
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch6/solar_thermal_collectors.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch6/solar_thermo_solar.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Solar thermal collector</div>
+                  <p class="text-right">
+                      A solar thermal collector collects heat by absorbing sunlight. The term "solar collector" commonly
+                      refers to a device for solar <strong>hot water heating</strong>, but may refer to large power generating
+                      installations such as solar parabolic troughs and solar towers or non water heating devices such as
+                      solar air heaters.
+                      </br>
+                      </br>
+                      Solar thermal collectors are either <strong>non-concentrating</strong> or <strong>concentrating</strong>.
+
+                      <!--Unumerated list-->
+                      <ul>
+                        <li>
+                            In <strong>non-concentrating collectors</strong>, the aperture area (i.e., the area that receives the solar radiation)
+                            is roughly the same as the absorber area (i.e., the area absorbing the radiation). A common example of such
+                            a system is a metal plate that is painted a dark color to maximize the absorption of sunlight. The energy is
+                            then collected by cooling the plate with a working fluid, often water or glycol running in pipes
+                            attached to the plate (right-hand side, figure: Solar thermal collectors).
+                        </li>
+                        <li>
+                            <strong>Concentrating collectors</strong> have a much larger aperture than the absorber area. The aperture
+                            is typically in the form of a mirror that is focussed on the absorber, which in most cases are
+                            the pipes carrying the working fluid. Due to the movement of the sun during the day, concentrating
+                            collectors often require some form of solar tracking system, and are sometimes referred to "active"
+                            collectors for this reason (left-hand side, figure: Solar thermal collectors).
+                        </li>
+                      </ul>
+                      </br>
+                      <strong>Non-concentrating collectors</strong> are typically used in residential and commercial buildings for space heating,
+                      while <strong>concentrating collectors</strong> in concentrated solar power plants generate electricity by heating a
+                      heat-transfer fluid to drive a turbine connected to an electrical generator.                    
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Photovoltaics</div>
+                  <p class="text-right">
+                      Photovoltaics (PV) is the conversion of light into electricity using semiconducting materials that
+                      exhibit the photovoltaic effect, a phenomenon studied in physics, photochemistry, and electrochemistry.
+                      The photovoltaic effect is commercially utilized for electricity generation and as photosensors.
+                      </br>
+                      </br>
+                      A photovoltaic system employs solar modules, each comprising a number of solar cells, which generate
+                      electrical power. PV installations may be ground-mounted, rooftop mounted, wall mounted or floating.
+                      The mount may be fixed or use a solar tracker to follow the sun across the sky.
+                      </br>
+                      </br>
+                      PV has become the cheapest source of electrical power in regions with a high solar potential,
+                      with price bids as low as 0.01567 US/kWh in 2020. Panel prices have dropped by the factor of 10
+                      within a decade.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Solar thermal energy</div>
+                  <p class="text-right">
+                     Solar thermal energy (STE) is a form of energy and a technology for harnessing solar energy to generate
+                      thermal energy for use in industry, and in the residential and commercial sectors.
+                      </br>
+                      </br>
+                      Solar thermal collectors are classified by the United States Energy Information Administration
+                      as low-, medium-, or high-temperature collectors. Low-temperature collectors are generally
+                      unglazed and used to heat swimming pools or to heat ventilation air. Medium-temperature
+                      collectors are also usually flat plates but are used for heating water or air for residential
+                      and commercial use.
+                      </br>
+                      </br>
+                      High-temperature collectors concentrate sunlight using mirrors or lenses and are generally used for
+                      fulfilling heat requirements up to 300 deg C / 20 bar pressure in industries, and for electric power
+                      production. Two categories include Concentrated Solar Thermal (CST) for fulfilling heat requirements
+                      in industries, and Concentrated Solar Power (CSP) when the heat collected is used for power generation
+                      (figure: Concentrated Solar Power).
+
+                      <!--External link-->
+                        <div class="external_links_css">
+                            <p>
+                                More information about solar thermal energy in:
+                            </p>
+                            <div class="container_buttons_links_external_links_css">
+                               <div class="btn">
+                                   <a href="https://en.wikipedia.org/wiki/Solar_thermal_collector" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">The National Renewable Energy Laboratory (NREL)</a>
+                               </div>
+                            </div>
+                        </div>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Solar architecture</div>
+                  <p class="text-right">
+                      Solar architecture is an architectural approach that takes in account the Sun to harness clean and
+                      renewable solar power. It is related to the fields of optics, thermics, electronics and materials science.
+                      Both active and passive solar housing skills are involved in solar architecture.
+                      </br>
+                      </br>
+                      The use of flexible thin-film photovoltaic modules provides fluid integration with steel roofing profiles,
+                      enhancing the building's design. Orienting a building to the Sun, selecting materials with favorable thermal
+                      mass or light dispersing properties, and designing spaces that naturally circulate air also constitute solar
+                      architecture.
+                      </br>
+                      </br>
+                      Initial development of solar architecture has been limited by the rigidity and weight of standard solar power panels.
+                      The continued development of photovoltaic (PV) thin film solar has provided a lightweight yet robust
+                      vehicle to harness solar energy to reduce a building's impact on the environment.
+
+                      <!--External link-->
+                        <div class="external_links_css">
+                            <p>
+                                More information about solar thermal energy in:
+                            </p>
+                            <div class="container_buttons_links_external_links_css">
+                               <div class="btn">
+                                   <a href="https://en.wikipedia.org/wiki/Solar_architecture" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Solar Architecture (wikipedia)</a>
+                               </div>
+                            </div>
+                        </div>
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q3.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 3</legend>
+                            <p class="card-text">There are two main types of <strong>solar thermal collector</strong>, can you explain
+                                which are the main uses of each of them?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q3.type.errors %}
+                                        {{ form_m2_ch6_q3.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q3.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q3.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q3.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q4.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 4</legend>
+                            <p class="card-text">Thre are two main types of <strong>solar thermal energy</strong>, Concentrated Solar Thermal (CST), and
+                                Concentrated Solar Power (CSP). Which are the main uses of those two types of solar thermal energy?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q4.type.errors %}
+                                        {{ form_m2_ch6_q4.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q4.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q4.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q4.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+<!--Section 2-->
+    <section id="electricity" class="p-5 p-lg-5 pt-lg-5 text-black text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>How does electricity work?</h2>
+            <p>
+                Before to explain how solar panel works, we explain the main characteristics of an electric system,
+                since that will help us to understand solar panels and other technical aspects of electricity
+                that will be covered in the next chapters.
+            </p>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://science.howstuffworks.com/environmental/energy/question501.htm" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">What Are Amps, Watts, Volts and Ohms?</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.youtube.com/watch?v=1ADLjq1aEOA" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Transmission losses 1</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://prodatakey.zendesk.com/hc/en-us/articles/360048267913-How-is-line-loss-calculated-" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Transmission losses 2</a>
+                   </div>
+                </div>
+                <p>
+                    The link to the Python code used in the examples and the questions in this section is in the link:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#instructionsModalInstructions1">How does electricity work? (Instructions, Video, Github)</a>
+                    </div>
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="instructionsModalInstructions1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                          <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">How does electricity work? (Instructions)</h5>
+                          </div>
+
+                          <div class="modal-body", style="color:black">
+                            <p>
+                                <ol>
+                                    <li>
+                                        In the folder of the course in YOUR COMPUTER, <strong>create a folder</strong>, and name it (Calculators).
+                                        If you have already created that folder, go to step 3.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        In PyCharm, open that folder. By default, that folder has a file named (main.py).
+                                        Rename that file by using: (refactor>rename). <strong>Rename the file</strong> as (capacity_factor.py).
+                                    </li>
+                                    </br>
+                                    <li>
+                                        In PyCharm, open that folder. If that folder has already other python files that you have created during the course,
+                                        create a new file by using: (file>new>file). <strong>Name the file</strong> as (solar.py).
+                                    </li>
+                                    </br>
+                                    <li>
+                                        Copy the code from the <a href="https://github.com/mariobp-NHH/ENE425-Code/blob/main/Solar%20Apps/solar.py">Github account</a>,
+                                        and paste it in the (solar.py) file.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        By using the terminal in Pycharm, <strong>run your App</strong>: (python solar.py) (or phyton3 solar.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        <strong>The result</strong> will appear in your terminal.
+                                    </li>
+                                </ol>
+                            </p>
+                          </div>
+
+                          <div class="modal-footer">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How does electricity work? (Video)</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Voltage (volts), current (amps), resistance (ohms).</h3>
+            <p>
+                The <strong>three most basic units in electricity</strong> are <strong>voltage</strong> (V), <strong>current</strong> (I) and
+                <strong>resistance</strong> (R). Voltage is measured in volts, current is measured in amps and resistance is measured in ohms.
+                </br>
+                </br>
+                A neat analogy to help understand these terms is a system of <strong>plumbing pipes</strong>.
+                
+                <ul>
+                    <li>
+                        The <strong>voltage</strong> is equivalent to the <strong>water pressure</strong>.
+                    </li>
+                    <li>
+                        The <strong>current</strong> is equivalent to the <strong>flow rate</strong>.
+                    </li>
+                    <li>
+                        The <strong>resistance</strong> is like the <strong>pipe size</strong>.
+                    </li>
+                </ul>
+
+                There is a basic <strong>equation</strong> in electrical engineering that states how the three terms relate.
+                It says that the current is equal to the voltage divided by the resistance or I = V/R. This is known as Ohm's law.
+                </br>
+                </br>
+                Let's see how this relation applies to the plumbing system. Let's say you have a tank of pressurized water connected 
+                to a hose that you are using to water the garden.
+                </br>
+                </br>
+                <u>Analogy 1:</u> What happens if you increase the pressure in the tank? You probably can guess that this makes
+                more water come out of the hose. The same is true of an electrical system: <strong>Increasing the voltage will make more current flow</strong>.
+                </br>
+                </br>
+                <u>Analogy 2:</u> Let's say you increase the diameter of the hose and all of the fittings to the tank.
+                You probably guessed that this also makes more water come out of the hose. This is like decreasing the 
+                resistance in an electrical system, which increases the current flow.
+            </p>
+            <h3>Power (watts).</h3>
+            <p>
+                <strong>Electrical power</strong> is measured in <strong>watts</strong>. In an electrical system power (P) is equal
+                to the voltage multiplied by the current (P=V*I).
+                </br>
+                </br>
+                The water analogy still applies. Take a hose and point it at a waterwheel like the ones that were used to
+                turn grinding stones in watermills. You can increase the power generated by the waterwheel in two ways.
+                If you increase the pressure of the water coming out of the hose, it hits the waterwheel with a lot more
+                force and the wheel turns faster, generating more power. If you increase the flow rate, the waterwheel turns
+                faster because of the weight of the extra water hitting it.
+            </p>
+            <h3>Transmission losses.</h3>
+            <br>
+                It is very useful to know the losses of a transmission line or any other appliance.
+                Those losses depend on the amount of power that circulate through, the voltage, the current
+                and the resistance.
+                </br>
+                </br>
+                The relation between the power that circulate through the grid (P), the current (I) and the
+                voltage (V) is determined by I=P/V.
+                </br>
+                </br>
+                The relation between the power transmission losses is defined by:
+                <math display='block'>
+                 <semantics>
+                  <mrow>
+                   <msub>
+                    <mi>P</mi>
+                    <mrow>
+                     <mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mi>e</mi><mi>s</mi></mrow>
+                   </msub>
+                   <mo>=</mo><msup>
+                    <mi>I</mi>
+                    <mn>2</mn>
+                   </msup>
+                   <mi>R</mi></mrow>
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiuamaaBa
+                  aaleaacaWGSbGaam4BaiaadohacaWGZbGaamyzaiaadohaaeqaaOGa
+                  eyypa0JaamysamaaCaaaleqabaGaaGOmaaaakiaadkfaaaa@4053@
+                  </annotation>
+                 </semantics>
+                </math>
+
+                It is very interesting to analyze the relation between voltage and power transmission losses.
+                By taken working out the partial derivative of the power transmission losses respect the voltage,
+                we obtain:
+
+                <math display='block'>
+                 <semantics>
+                  <mrow>
+                   <mfrac>
+                    <mrow>
+                     <mo>&#x2202;</mo><msub>
+                      <mi>P</mi>
+                      <mrow>
+                       <mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mi>e</mi><mi>s</mi></mrow>
+                     </msub>
+                     </mrow>
+                    <mrow>
+                     <mo>&#x2202;</mo><mi>V</mi></mrow>
+                   </mfrac>
+                   <mo>=</mo><mn>2</mn><mfrac>
+                    <mrow>
+                     <mo>&#x2202;</mo><mi>I</mi></mrow>
+                    <mrow>
+                     <mo>&#x2202;</mo><mi>V</mi></mrow>
+                   </mfrac>
+                   <mi>R</mi><mo>=</mo><mo>&#x2212;</mo><mn>2</mn><mfrac>
+                    <mrow>
+                     <msup>
+                      <mi>P</mi>
+                      <mn>2</mn>
+                     </msup>
+                     </mrow>
+                    <mrow>
+                     <msup>
+                      <mi>V</mi>
+                      <mn>3</mn>
+                     </msup>
+                     </mrow>
+                   </mfrac>
+                   <mi>R</mi></mrow>
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaacq
+                  GHciITcaWGqbWaaSbaaSqaaiaadYgacaWGVbGaam4CaiaadohacaWG
+                  LbGaam4CaaqabaaakeaacqGHciITcaWGwbaaaiabg2da9iaaikdada
+                  WcaaqaaiabgkGi2kaadMeaaeaacqGHciITcaWGwbaaaiaadkfacqGH
+                  9aqpcqGHsislcaaIYaWaaSaaaeaacaWGqbaabaGaamOvamaaCaaale
+                  qabaGaaGOmaaaaaaGccaWGsbaaaa@4DC3@
+                  </annotation>
+                 </semantics>
+                </math>
+
+                The previous equations determines that when the voltage increases,
+                the transmission power losses decreases substantially. The same basic equation determine power
+                losses in other electronic appliances. To illustrate the analysis, we solve the next two examples.
+                </br>
+                </br>
+                <u>Example 1:</u> A power station generates power at 100 KW. It sends this power to a town several
+                kilometres away through transmission lines that have a total resistance of 0.40 Ohms.
+                If the power is transmitted at <strong>300 Volts</strong>, calculate:
+
+                <ol>
+                    <li>
+                        The current in the transmission lines.
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>I</mi><mo>=</mo><mfrac>
+                            <mi>P</mi>
+                            <mi>V</mi>
+                           </mfrac>
+                           <mo>=</mo><mfrac>
+                            <mrow>
+                             <mn>100000</mn></mrow>
+                            <mrow>
+                             <mn>300</mn></mrow>
+                           </mfrac>
+                           <mo>=</mo><mn>333.33</mn></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiabg2
+                          da9maalaaabaGaamiuaaqaaiaadAfaaaGaeyypa0ZaaSaaaeaacaaI
+                          XaGaaGimaiaaicdacaaIWaGaaGimaiaaicdaaeaacaaIZaGaaGimai
+                          aaicdaaaGaeyypa0JaaG4maiaaiodacaaIZaGaaiOlaiaaiodacaaI
+                          Zaaaaa@4694@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                    <li>
+                        The losses in the transmission lines.
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <msub>
+                            <mi>P</mi>
+                            <mrow>
+                             <mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mi>e</mi><mi>s</mi></mrow>
+                           </msub>
+                           <mo>=</mo><msup>
+                            <mi>I</mi>
+                            <mn>2</mn>
+                           </msup>
+                           <mi>R</mi><mo>=</mo><msup>
+                            <mrow>
+                             <mn>333.33</mn></mrow>
+                            <mn>2</mn>
+                           </msup>
+                           <mo>&#x22C5;</mo><mn>0.4</mn><mo>=</mo><mn>44444.44</mn></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiuamaaBa
+                          aaleaacaWGSbGaam4BaiaadohacaWGZbGaamyzaiaadohaaeqaaOGa
+                          eyypa0JaamysamaaCaaaleqabaGaaGOmaaaakiaadkfacqGH9aqpca
+                          aIZaGaaG4maiaaiodacaGGUaGaaG4maiaaiodadaahaaWcbeqaaiaa
+                          ikdaaaGccqGHflY1caaIWaGaaiOlaiaaisdacqGH9aqpcaaI0aGaaG
+                          inaiaaisdacaaI0aGaaGinaiaac6cacaaI0aGaaGinaaaa@520D@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                    <li>
+                        The proportion of the losses in the transmission lines respect the power transmitted.
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>p</mi><mi>r</mi><mi>o</mi><mi>p</mi><mi>o</mi><mi>r</mi><mi>t</mi><mi>i</mi><mi>o</mi><msub>
+                            <mi>n</mi>
+                            <mrow>
+                             <mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mi>e</mi><mi>s</mi></mrow>
+                           </msub>
+                           <mo>=</mo><mfrac>
+                            <mrow>
+                             <mn>44444.44</mn></mrow>
+                            <mrow>
+                             <mn>100000</mn></mrow>
+                           </mfrac>
+                           <mo>=</mo><mn>0.44</mn></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiCaiaadw
+                          gacaWGYbGaam4yaiaadwgacaWGUbGaamiDaiaadggacaWGNbGaamyz
+                          amaaBaaaleaacaWGSbGaam4BaiaadohacaWGZbGaamyzaiaadohaae
+                          qaaOGaeyypa0ZaaSaaaeaacaaI0aGaaGinaiaaisdacaaI0aGaaGin
+                          aiaac6cacaaI0aGaaGinaaqaaiaaigdacaaIWaGaaGimaiaaicdaca
+                          aIWaaaaiabg2da9iaaicdacaGGUaGaaGinaiaaisdaaaa@53BB@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                </ol>
+
+                <u>Example 2:</u>  With the same data that in example 1, assume that now, the power is
+                transmitted at the double voltage: <strong>600 Volts</strong>, calculate:
+
+                <ol>
+                    <li>
+                        The current in the transmission lines.
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>I</mi><mo>=</mo><mfrac>
+                            <mi>P</mi>
+                            <mi>V</mi>
+                           </mfrac>
+                           <mo>=</mo><mfrac>
+                            <mrow>
+                             <mn>100000</mn></mrow>
+                            <mrow>
+                             <mn>600</mn></mrow>
+                           </mfrac>
+                           <mo>=</mo><mn>166.7</mn></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamysaiabg2
+                          da9maalaaabaGaamiuaaqaaiaadAfaaaGaeyypa0ZaaSaaaeaacaaI
+                          XaGaaGimaiaaicdacaaIWaGaaGimaiaaicdaaeaacaaI2aGaaGimai
+                          aaicdaaaGaeyypa0JaaGymaiaaiAdacaaI2aGaaiOlaiaaiEdaaaa@45E2@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                    <li>
+                        The losses in the transmission lines.
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <msub>
+                            <mi>P</mi>
+                            <mrow>
+                             <mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mi>e</mi><mi>s</mi></mrow>
+                           </msub>
+                           <mo>=</mo><msup>
+                            <mi>I</mi>
+                            <mn>2</mn>
+                           </msup>
+                           <mi>R</mi><mo>=</mo><msup>
+                            <mrow>
+                             <mn>166,7</mn></mrow>
+                            <mn>2</mn>
+                           </msup>
+                           <mo>&#x22C5;</mo><mn>0.4</mn><mo>=</mo><mn>11111.11</mn></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiuamaaBa
+                          aaleaacaWGSbGaam4BaiaadohacaWGZbGaamyzaiaadohaaeqaaOGa
+                          eyypa0JaamysamaaCaaaleqabaGaaGOmaaaakiaadkfacqGH9aqpca
+                          aIXaGaaGOnaiaaiAdacaGGSaGaaG4namaaCaaaleqabaGaaGOmaaaa
+                          kiabgwSixlaaicdacaGGUaGaaGinaiabg2da9iaaigdacaaIXaGaaG
+                          ymaiaaigdacaaIXaGaaiOlaiaaigdacaaIXaaaaa@5141@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                    <li>
+                        The proportion of the losses in the transmission lines respect the power transmitted.
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>p</mi><mi>r</mi><mi>o</mi><mi>p</mi><mi>o</mi><mi>r</mi><mi>t</mi><mi>i</mi><mi>o</mi><msub>
+                            <mi>n</mi>
+                            <mrow>
+                             <mi>l</mi><mi>o</mi><mi>s</mi><mi>s</mi><mi>e</mi><mi>s</mi></mrow>
+                           </msub>
+                           <mo>=</mo><mfrac>
+                            <mrow>
+                             <mn>11111.11</mn></mrow>
+                            <mrow>
+                             <mn>100000</mn></mrow>
+                           </mfrac>
+                           <mo>=</mo><mn>0.11</mn></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiCaiaadw
+                          gacaWGYbGaam4yaiaadwgacaWGUbGaamiDaiaadggacaWGNbGaamyz
+                          amaaBaaaleaacaWGSbGaam4BaiaadohacaWGZbGaamyzaiaadohaae
+                          qaaOGaeyypa0ZaaSaaaeaacaaIXaGaaGymaiaaigdacaaIXaGaaGym
+                          aiaac6cacaaIXaGaaGymaaqaaiaaigdacaaIWaGaaGimaiaaicdaca
+                          aIWaGaaGimaaaacqGH9aqpcaaIWaGaaiOlaiaaigdacaaIXaaaaa@545A@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                </ol>
+                It is important to notice that by doubling the voltage, the proportion of losses has decreases more than
+                double passing from 0.44 to 0.11. This the reason because voltage is so important, since by increasing the
+                voltage, the transmission losses can decrease substantially.
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    1. <strong>What is electricity?</strong> For more information about electricity, watch the video:
+                    <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=ru032Mfsfig" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">What is electricity? - Electricity Explained - (1)</a>
+                   </div>
+			        </br>
+                    </br>
+			        Based on the video, answer the next questions:
+                    </br>
+                    <ol>
+                        <li>
+                            Can you explain which particles are in the <strong>nucleus</strong> of an element? An in the <strong>orbit</strong>?
+                        </li>
+                        <li>
+                            Can the same element have a different number of <strong>neutrons</strong>? And <strong>electrons</strong>?
+                        </li>
+                        <li>
+                            What does mean that an atom is <strong>positively charged</strong>? and <strong>negatively charged</strong>? How this is related to <strong>electricity</strong>?
+                        </li>
+                    </ol>
+                    2. To complete our understanding about how does electricity work, it is important to be familiar with the concepts of
+                    <strong>volts, amperes and watts</strong>. The next three videos provide intuitive explanations of those concepts:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=cX4s-bxn4fs" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Electricity Explained: Volts, Amps, Watts, Fuse Sizing, Wire Gauge, AC/DC, Solar Power and more!</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.youtube.com/watch?v=zYS9kdS56l8" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">What are VOLTs, OHMs and AMPs?</a>
+                   </div>
+                    <div class="btn">
+                        <a href="https://www.youtube.com/watch?v=xr68GxkiWFM&list=PLxPUNwEbydRN2yldvTWprBRxxpC3TRT7I&index=2" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">What is an amp? - Electricity Explained - (2)</a>
+                   </div>
+                </div>
+                <p>
+                    Based on the videos, answer the next questions:
+                    </br>
+                    <ol>
+                        <li>
+                            Can you define the concept of <strong>volt</strong>? This is related with the concept of <strong>pressure.</strong>
+                        </li>
+                        <li>
+                            Can you define the concept of <strong>ampere</strong>? This is related with the concept of <strong>wideness</strong> of the wire.
+                        </li>
+                        <li>
+                            Can you define the concept of <strong>watt</strong>? This is related with the concept of <strong>volume</strong> of electricity.
+                        </li>
+                        <li>
+                            Can you define the concept of <strong>ohm</strong>? This is related with the concept of <strong>resistance</strong> of an electricity system.
+                        </li>
+                        <li>
+                            Why these concepts are <strong>important</strong>? these concepts are related to the <strong>transport</strong> of electricity (DC/AC);
+                            the <strong>compatibility</strong> of different systems; the <strong>structure</strong> of solar plants, wind farms...
+                        </li>
+                    </ol>
+                </p>
+                <p>
+                    3. How is electricity <strong>transported</strong>? Difference between Direct Current and Alternate Current (<strong>DC/AC</strong>).
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=ZInLPe_bezQ" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Edison vs. Tesla</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q5.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 5</legend>
+                            <p class="card-text">A power station generates power at 160 KW. It sends this power to a town several
+                kilometres away through transmission lines that have a total resistance of 0.40 Ohms.
+                If the power is transmitted at <strong>500 Volts</strong>, which is the proportion of the losses in
+                                the transmission lines respect the power transmitted?
+                                    <strong>(chose one of the next options) (Use your Python code to answer the question):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q5.type.errors %}
+                                        {{ form_m2_ch6_q5.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q5.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q5.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q5.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q6.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 6</legend>
+                            <p class="card-text">With the same data that in question 5, assume that now, the power is transmitted at the double voltage: <strong>1500 Volts</strong>
+                                , which is the proportion of the losses in
+                                the transmission lines respect the power transmitted?
+                                    <strong>(chose one of the next options) (Use your Python code to answer the question):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q6.type.errors %}
+                                        {{ form_m2_ch6_q6.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q6.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q6.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q6.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+
+<!--Section 3-->
+    <section id="solar_panels" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+
+        <div class="container">
+            <h2>Solar Panels</h2>
+            <h3>History solar cells</h3>
+            <p>
+                In <strong>1839</strong>, the ability of some materials to create an electrical charge from light exposure was
+                first observed by Alexandre-Edmond Becquerel. Though the premiere solar panels were too inefficient for 
+                even simple electric devices they were used as an instrument to measure light. The observation by 
+                Becquerel was not replicated again until <strong>1873</strong>, when Willoughby Smith discovered that the
+                charge could be caused by light hitting selenium. After this discovery, William Grylls Adams and 
+                Richard Evans Day published "The action of light on selenium" in <strong>1876</strong>, describing the
+                experiment they used to replicate Smith's results.
+                </br>
+                </br>
+                In <strong>1881</strong>, Charles Fritts created the first commercial solar panel, which was reported by
+                Fritts as "continuous, constant and of considerable force not only by exposure to sunlight but also 
+                to dim, diffused daylight." However, these solar panels were very inefficient, especially compared to 
+                coal-fired power plants. In <strong>1939</strong>, Russell Ohl created the solar cell design that is used in
+                many modern solar panels. He patented his design in 1941. In <strong>1954</strong>, this design was first
+                used by Bell Labs to create the first commercially viable silicon solar cell. In <strong>1957</strong>,
+                Mohamed M. Atalla developed the process of silicon surface passivation by thermal oxidation at 
+                Bell Labs. The surface passivation process has since been critical to solar cell efficiency.
+            </p>
+            <h3>How does solar energy work?</h3>
+
+            <p>
+                Photovoltaic modules use light energy (photons) from the Sun to generate electricity through the
+                photovoltaic effect. Most modules use wafer-based crystalline silicon cells or thin-film cells.
+                The structural (load carrying) member of a module can be either the top layer or the back layer.
+                Cells must be protected from mechanical damage and moisture. Most modules are rigid, but semi-flexible
+                ones based on thin-film cells are also available. The cells are connected electrically in series, one to
+                another to the desired voltage, and then in parallel to increase amperage. The wattage of the module is
+                the mathematical product of the voltage and the amperage of the module. The manufacture specifications
+                on solar panels are obtained under standard condition which is not the real operating condition the
+                solar panels are exposed to on the installation site.
+                </br>
+                </br>
+                A PV junction box is attached to the back of the solar panel and functions as its output interface.
+                External connections for most photovoltaic modules use MC4 connectors to facilitate easy weatherproof
+                connections to the rest of the system. A USB power interface can also be used.
+                </br>
+                </br>
+                Module electrical connections are made in series to achieve a desired output voltage or in parallel to
+                provide a desired current capability (amperes) of the solar panel or the PV system. The conducting wires
+                that take the current off the modules are sized according to the ampacity and may contain silver,
+                copper or other non-magnetic conductive transition metals.
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    Based in the information from the previous section (how does electricity work?), we can explain how do
+                    <strong>solar cells</strong> and <strong>solar panels</strong> work. To understand how <strong>solar cells</strong> and
+                    <strong>solar panels</strong> works, we use the next two videos:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=L_q6LRgKpTw" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How do Solar cells work?</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.youtube.com/watch?v=xKxrkht7CpY" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How do solar panels work? - Richard Komp</a>
+                   </div>
+                </div>
+            </div>
+            
+            Based on the previous videos and boxes, we explain the <strong>photovoltaic process</strong>:
+            </br>
+            </br>
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Initially, the silicon atoms are in balance.</div>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Electrons are injected in one layer of the silicon cell (N-type doping). some electrons are free to move (randomly).</div>
+                </div>
+              </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Boron with three balance electrons are injected in the opposite layer of the silicon cell (P-type doping).
+                      There will be a free hole for each atom.</div>
+                </div>
+              </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">By placing together the N-type and the P-type layers is generated a depletion region
+                      with no free electrons.</div>
+                </div>
+              </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Photons enter in the depletion region making that electrons move to the N-type layer and
+                      holes move to the P-type region. An electric field is created.</div>
+                </div>
+              </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">By connecting the extremes of the two layers by using a wire,
+                      an electric current is formed.</div>
+                </div>
+              </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">The performance of the electric cell can be increased by:</div>
+                  <p class="text-right">
+                      <ul>
+                            <li>
+                                Making the N-layer thin and heavily doped.
+                            </li>
+                            <li>
+                                Making the P-layer thick and poorly doped.
+                            </li>
+                            <li>
+                                The depletion region becomes thicker and that increase the electron-hole pairs increasing the electric field.
+                            </li>
+                      </ul>
+                  </p>
+                </div>
+              </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Solar panels can be connected by suing parallel or series circuits.
+                      This is related to the concepts of volts, amps, and watts and have important implications in the design of solar farms.</div>
+                </div>
+              </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">There are two types of solar cells depending on the alignment of silicon atoms:
+                      Polycrystalline and monocrystalline. Monocrystalline silicon cells perform better, but are more expensive.</div>
+                </div>
+              </li>
+            </ol>
+            
+            <h3>Solar cell efficiency</h3>
+            
+            <p>
+                <strong>Solar cell efficiency</strong> refers to the portion of energy in the form of sunlight that can be
+                converted via photovoltaics into electricity by the solar cell.
+                </br>
+                </br>
+                The efficiency of the solar cells used in a photovoltaic system, in combination with latitude and 
+                climate, determines the annual energy output of the system. For example, a solar panel with 20%
+                efficiency and an area of 1 m2 will produce 200 kWh/yr at Standard Test Conditions if exposed to the 
+                Standard Test Condition solar irradiance value of 1000 W/m2 for 2.74 hours a day. Usually solar panels 
+                are exposed to sunlight for longer than this in a given day, but the solar irradiance is less than 
+                1000 W/m2 for most of the day. A solar panel can produce more when the sun is high in the sky and 
+                will produce less in cloudy conditions or when the sun is low in the sky. The sun is lower in the sky 
+                in the winter. 
+                </br>
+                </br>
+                In a high yield solar area like central Colorado, which receives annual insolation of 2000 kWh/m2/year, 
+                such a panel can be expected to produce 400 kWh of energy per year. However, in Michigan, which receives 
+                only 1400 kWh/m2/year, annual energy yield will drop to 280 kWh for the same panel. 
+                </br>
+                </br>
+                Several factors affect a cell's conversion efficiency value, including its reflectance, 
+                thermodynamic efficiency, charge carrier separation efficiency, charge carrier collection efficiency 
+                and conduction efficiency values. Because these parameters can be difficult to measure directly, other 
+                parameters are measured instead, including <strong>quantum efficiency</strong>,
+                <strong>open-circuit voltage (VOC) ratio</strong>, and <strong>fill factor</strong>.
+                Reflectance losses are accounted for by the quantum efficiency value, as they affect 
+                "external quantum efficiency." Recombination losses are accounted for by the quantum efficiency, 
+                VOC ratio, and fill factor values. Resistive losses are predominantly accounted for by the
+                fill factor value, but also contribute to the quantum efficiency and VOC ratio values.
+                In 2019, the world record for solar cell efficiency at 47.1%  was achieved by using multi-junction
+                concentrator solar cells, developed at National Renewable Energy Laboratory, Golden, Colorado, USA. 
+                This is above the standard rating of 37.0% for polycrystalline photovoltaic or thin-film solar cells.
+            </p>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    For more information about <strong>solar cell efficiency</strong> visit:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Solar_cell_efficiency" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Solar cell efficiency (wikipedia)</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.nrel.gov/pv/cell-efficiency.html" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">NREL cell efficiency</a>
+                   </div>
+                </div>
+                <p>
+                    For more information about <strong>panel efficiency</strong> visit:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.nrel.gov/pv/module-efficiency.html" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">NREL panel efficiency</a>
+                   </div>
+                </div>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Quantum efficiency:</u>
+                    </br>
+                    </br>
+                    The term quantum efficiency (QE) may apply to incident photon to converted electron (IPCE)
+                    ratio of a photosensitive device.
+                    </br>
+                    </br>
+                    For more information about quantum efficiency visit:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Quantum_efficiency" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Quantum efficiency (wikipedia)</a>
+                   </div>
+                </div>
+                <p>
+                    <u>Open-circuit voltage (VOC):</u>
+                    </br>
+                    </br>
+                    Open-circuit voltage (VOC) is the difference of electrical potential between two terminals of a device
+                    when disconnected from any circuit. There is no external load connected. No external
+                    electric current flows between the terminals. Alternatively, the open-circuit voltage may be thought
+                    of as the voltage that must be applied to a solar cell or a battery to stop the current. It is sometimes
+                    given the symbol VOC. In network analysis this voltage is also known as the Thévenin voltage.
+                    </br>
+                    </br>
+                    For more information about open-circuit voltage (VOC) visit:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Open-circuit_voltage" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Open-circuit voltage (wikipedia)</a>
+                   </div>
+                </div>
+                <p>
+                    <u>Fill factor (FF):</u>
+                    </br>
+                    </br>
+                    The fill factor is the available power at the <strong>maximum power point</strong> (PM) divided by the
+                    <strong>open circuit voltage</strong> (VOC) and the <strong>short circuit current</strong> (ISC).
+                    </br>
+                    </br>
+                    For more information about fill factor (FF) visit:
+                    <div class="container_buttons_links_box_information_css">
+                       <div class="btn">
+                           <a href="https://en.wikipedia.org/wiki/Solar_cell_efficiency" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Solar cell efficiency (wikipedia)</a>
+                       </div>
+                    </div>
+                </p>
+            </div>
+            <h3>Solar panels at home (hybrid solar system)</h3>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        In hybrid solar systems, rooftop solar panels are connected to both a solar battery and the electric
+                        grid. This reduces your reliance on the utility while also providing backup power when needed. The
+                        architecture of an hybrid solar system is represented in figure: Hybrid solar system architecture.
+                        In the previous sections we have studied the main features of solar panels. In this section, we study
+                        the role of inverters, since they play an important role in hybrid solar systems.
+                        </br>
+                        </br>
+                        Solar inverters are an integral part of every solar power system. They perform two key functions:
+
+                        <ol>
+                            <li>
+                                <strong>DC to AC conversion:</strong> All solar panels generate Direct Current (DC); a solar
+                                inverter is required to convert this into Alternating Current (AC), the form of
+                                electricity usable by your home.
+                            </li>
+                            <li>
+                                <strong>MPP tracking:</strong> The operating conditions of solar panels - sunlight intensity and panel
+                                temperature - fluctuate throughout the day. This means that the possible solar panel voltage
+                                and current are always changing as well. In a process called Maximum Power Point (MPP)
+                                tracking, the solar inverter dynamically selects the exact combination of the two that
+                                will produce the most power (figure: Maximum Power Point curve).
+                            </li>
+                        </ol>
+                    </p>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch6/solar_hybrid_system.svg')}}"
+                        alt=""/>
+            </div>
+
+            <p>
+                <u>Types of solar inverter.</u>
+                </br>
+                </br>
+                There are two categories to consider when deciding on the right solar inverter type:
+                <strong>the solar inverter technology</strong>, and <strong>the type of solar power system the inverter is for</strong>.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch6/solar_MPP_curve.svg')}}"
+                        alt=""/>
+                <div>
+                    <p>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                              <h6 class="mb-1">Solar inverter technology</h6>
+                              <p class="mb-1">
+                                <ul>
+                                    <li>
+                                        <strong>String inverter:</strong> A string inverter is a single, standalone unit that
+                                        converts power from a whole string (or strings) of solar panels. 
+                                        String inverters are cheap and convenient, but tend to be the least efficient.
+		                            </li>
+                                    <li>
+                                        <strong>String inverter + power optimizer:</strong> Power optimizers are
+                                        attached to each individual panel. They perform MPP tracking at the module level; 
+                                        the optimized DC power is then sent to the string inverter for conversion into 
+                                        AC power. Combining string inverters with power optimizers will increase your 
+                                        cost but allow your system to handle issues like shading better.
+                                    </li>
+                                    <li>
+                                        <strong>Microinverter:</strong> Microinverters are also attached to individual panels.
+                                        They perform both MPP tracking and power conversion at the module level, allowing 
+                                        each panel to output usable AC power. They’re good at dealing with shade 
+                                        (like power optimizers), and have the additional advantage of making your 
+                                        solar system easy to expand. They are, however, the most expensive type of inverter.
+                                    </li>
+                                </ul>
+                              </p>
+                          </li>
+                          <li class="list-group-item">
+                              <h6 class="mb-1">The type of solar power system the inverter is for. The solar inverter  will need to be compatible with the solar system:</h6>
+                              <p class="mb-1">
+                                <ul>
+                                    <li>
+                                        <strong>Grid-tied inverters</strong> are meant for grid-tied solar systems, the most common system type.
+                                        They manage a two-way relationship with the grid, exporting solar power to it,
+                                        and importing utility power from it as required.
+		                            </li>
+                                    <li>
+                                        <strong>Hybrid inverters</strong> are designed to work with hybrid solar systems
+                                            (aka solar-plus-storage systems). They have the same functionality as a
+                                            grid-tie inverter, but can also charge and draw power from a battery setup.
+                                    </li>
+                                    <li>
+                                        <strong>Off-grid inverters</strong> are used in off-grid solar systems, i.e. fully
+                                            independent solar power systems, giving you back up power when the grid is
+                                            down. An off-grid inverter requires a battery backup to function, and cannot
+                                            be connected to the grid.
+                                    </li>
+                                </ul>
+                              </p>
+                          </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+             <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    For a complete video that illustrates how <strong>solar hybrid systems</strong>> work, and more
+                    information about <strong>solar inverters</strong> visit:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=9vM2JwrIWOU&feature=emb_logo" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Hybrid solar systems</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://en.wikipedia.org/wiki/Power_inverter" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Power inverter (wikipedia)</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.solarreviews.com/solar-inverter-reviews?cam=seia" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Solar Reviews</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q7.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 7</legend>
+                            <p class="card-text">The efficiency of a solar panel can be increased by
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q7.type.errors %}
+                                        {{ form_m2_ch6_q7.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q7.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q7.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q7.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q8.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 8</legend>
+                            <p class="card-text">The Maximum Power Point (MPP) curve measures
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q8.type.errors %}
+                                        {{ form_m2_ch6_q8.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q8.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q8.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q8.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+<!--Section 2-->
+    <section id="future" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Future of solar photovoltaic</h2>
+            <!--No numerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">1. Carbon emissions</h5>
+                  <p class="mb-1">
+                      Accelerated deployment of renewables, combined with deep electrification and increased energy
+                      efficiency, can achieve over 90% of the energy-related <strong>carbon dioxide (CO2) emission
+                      reductions</strong> needed by 2050 to set the world on an energy pathway towards meeting the Paris climate
+                      targets. Among all low-carbon technology options, accelerated deployment of solar PV alone can lead
+                      to significant emission reductions of 4.9 gigatonnes of carbon dioxide (Gt CO2) in 2050, representing
+                      21% of the total emission mitigation potential in the energy sector.
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">2. Installed capacity</h5>
+                  <p class="mb-1">
+                       Solar installed capacity must scale up solar PV capacity in next three decades. This entails
+                      increasing total solar PV capacity almost sixfold over the next ten years, from a global total of
+                      480 GW in 2018 to 2 840 GW by 2030, and to 8 519 GW by 2050 – an increase of almost eighteen times
+                      2018 levels (figure: Solar capacity).
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">3. Capacity additions</h5>
+                  <p class="mb-1">
+                      The solar PV industry would need to be prepared for such a significant growth in the market over
+                      the next three decades. In annual growth terms, an almost threefold rise in yearly solar PV
+                      <strong>capacity additions</strong> is needed by 2030 (to 270 GW per year) and a fourfold rise by 2050
+                      (to 372 GW per year), compared to current levels (94 GW added in 2018) (figure: Solar deployment).
+                  </p>
+              </li>
+            </ul>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch6/solar_capacity.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch6/solar_deployment.svg')}}" alt=""/>
+            </div>
+
+            <!--No numerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">4. Regional installed capacity</h5>
+                  <p class="mb-1">
+                      At a regional level, Asia is expected to drive the wave of solar PV capacity installations, being
+                      the world leaders in solar PV energy. Asia (mostly China) would continue to dominate solar PV
+                      power in terms of total installed capacity, with a share of more than 50% by 2050, followed
+                      by North America (20%) and Europe (10%) (figure: Solar regional).
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">5. Investment</h5>
+                  <p class="mb-1">
+                      Scaling up solar PV energy investment is critical to accelerating the growth of installations
+                      over the coming decades. Globally this would imply a 68% increase in
+                      <strong>average annual solar PV investment</strong> from now until 2050 (to USD 192 billion/yr). Solar
+                      PV investment stood at USD 114 billion/yr in 2018 (figure: Solar investment).
+                  </p>
+              </li>
+            </ul>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch6/solar_regional.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch6/solar_investment.svg')}}" alt=""/>
+            </div>
+
+            <!--No numerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">6. Installation costs</h5>
+                  <p class="mb-1">
+                      Increasing economies of scale and further technological improvements will continue to reduce the
+                      costs of solar PV. Globally, the <strong>total installation cost of solar PV projects</strong>> would
+                      continue to decline in the next three decades. This would make solar PV highly competitive in
+                      many markets, with the average falling in the range of USD 340 to 834 per kilowatt (kW) by
+                      2030 and USD 165 to 481/kW by 2050, compared to the average of USD 1 210/kW in 2018
+                      (figure: Solar cost).
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">7. Levelised cost of electricity (LCOE)</h5>
+                  <p class="mb-1">
+                      The <strong>levelised cost of electricity (LCOE) for solar PV</strong> is already competitive compared to
+                      all fossil fuel generation sources and is set to decline further as installed costs and performance
+                      continue to improve. Globally, the LCOE for solar PV will continue to fall from an average of
+                      USD 0.085 per kilowatt-hour (kWh) in 2018 to between USD 0.02 to 0.08/kWh by 2030 and between
+                      USD 0.014 to 0.05/kWh by 2050 (figure: Solar LCOE).
+                  </p>
+              </li>
+            </ul>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch6/solar_cost.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch6/solar_LCOE.svg')}}" alt=""/>
+            </div>
+
+            <!--Text-Image-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">8. Employment</h5>
+                  <p class="mb-1">
+                      If accompanied by sound policies, the transformation can bring <strong>socio-economic benefits</strong>.
+                      The solar PV industry would employ more than 18 million people by 2050, five times more than the
+                      2018 jobs total of 3.6 million (figure: Solar employment).
+                  </p>
+              </li>
+            </ul>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q9.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 9</legend>
+                            <p class="card-text">Which will be the estimated solar production installed capacity in 2050?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q9.type.errors %}
+                                        {{ form_m2_ch6_q9.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q9.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q9.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q9.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch6_q10.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 10</legend>
+                            <p class="card-text">Which will be the estimated solar production installed capacity by region in 2050?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch6_q10.type.errors %}
+                                        {{ form_m2_ch6_q10.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch6_q10.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch6_q10.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch6_q10.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="questions_css">
+                        <div class="question">
+                            <form method="POST" action="">
+                                {{ form_m2_ch6_q11.csrf_token }}
+                                    <legend class="border-bottom mb-4">Question 11</legend>
+                                <p class="card-text">Which is the estimated drop in solar installation costs from 2010 to 2050?
+                                        <strong>(chose one of the next options):</strong>
+                                    </p>
+                                    <div class="form-group">
+                                        {% if form_m2_ch6_q11.type.errors %}
+                                            {{ form_m2_ch6_q11.type(class="form-control form-control is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form_m2_ch6_q11.type.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form_m2_ch6_q11.type(class="form-control form-control") }}
+                                        {% endif %}
+                                    </div>
+                                    </br>
+                                    <div class="form-group border-bottom pb-3">
+                                        {{ form_m2_ch6_q11.submit(class="btn btn-outline-info")}}
+                                    </div>
+                            </form>
+                        </div>
+
+                        <div class="question">
+                            <form method="POST" action="">
+                                {{ form_m2_ch6_q12.csrf_token }}
+                                    <legend class="border-bottom mb-4">Question 12</legend>
+                                <p class="card-text">The entry cost of a solar farm is 2000 Euros, the installation costs are 100 Euros per year, and increase
+                                    2% per year. The solar energy produced per year is 31000 KW. The solar farm will be in use for 10 years, and the discount rate
+                                    is 1.08. Which is the LCOE of the solar farm?
+                                        <strong>(chose one of the next options) (use the LCOE calculator that your programmed in chapter 5):</strong>
+                                    </p>
+                                    <div class="form-group">
+                                        {% if form_m2_ch6_q12.type.errors %}
+                                            {{ form_m2_ch6_q12.type(class="form-control form-control is-invalid") }}
+                                            <div class="invalid-feedback">
+                                                {% for error in form_m2_ch6_q12.type.errors %}
+                                                    <span>{{ error }}</span>
+                                                {% endfor %}
+                                            </div>
+                                        {% else %}
+                                            {{ form_m2_ch6_q12.type(class="form-control form-control") }}
+                                        {% endif %}
+                                    </div>
+                                    </br>
+                                    <div class="form-group border-bottom pb-3">
+                                        {{ form_m2_ch6_q12.submit(class="btn btn-outline-info")}}
+                                    </div>
+                            </form>
+                        </div>
+                    </div>
+
+        </div>
+    </section>
+
+
+<!--Section 4 (Grey)-->
+    <section id="technology" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Technological development in solar energy</h2>
+            <h3>Materials</h3>
+
+            <p>
+                <strong>First-generation technologies</strong>, which have been evolving along the whole PV value chain,
+                still account for the majority of global annual production.
+                <strong>Tandem and perovskite technologies</strong> also offer interesting perspectives, but in the longer
+                term due to barriers that still need to be addressed and overcome (durability, price).
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch6/solar_technology.svg')}}"
+                        alt=""/>
+                <div>
+                    <p>
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item">
+                              <h5 class="mb-1">1. Silicon – conventional solar architecture</h5>
+                              <br class="mb-1">
+                                Crystalline silicon (c-Si) panels belong to the first generation solar PV panels and
+                                  they hold 95% share of worldwide PV production. The
+                                  economies of scale of its main material, silicon, make c-Si more affordable and
+                                  highly efficient compared to other materials.
+                                  </br>
+                                  </br>
+                                  The average module efficiency in 2006 was 13.2% for multi crystalline PV panels
+                                  and 14.7% for mono crystalline PV panels and since then has increased steadily,
+                                  reaching 17% and 18% respectively.
+                                  </br>
+                                  </br>
+                                  However, despite the high-efficiency level of this first-generation PV technology,
+                                  there remains a lot of <strong>scope for improvement</strong>, including:
+                                <ul>
+                                    <li>
+                                        Lowering the cost of c-Si modules for better profit margins.
+		                            </li>
+                                    <li>
+                                        Reducing metallic impurities, grain boundaries, and dislocations.
+                                    </li>
+                                    <li>
+                                        Mitigating environmental effects by reducing waste.
+                                    </li>
+                                    <li>
+                                        Yielding thinner wafers through improved material properties.
+                                    </li>
+                                </ul>
+                              </p>
+                          </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">2. Silicon - advanced solar architecture</h5>
+                  <br class="mb-1">
+                  <p><strong>a. PERC.</strong> A PERC cell uses advanced silicon cell architecture.
+                        </br>
+                        </br>
+                        PERC cells are not much different in construction from a typical monocrystalline PV cell;
+                        however, the <strong>key improvement is the integration of a back-surface passivation layer</strong>,
+                        which is a layer of material on the back of the cells that is able to improve the cell’s
+                        efficiency. In fact, the passivation layer <strong>increases the overall cell
+                        efficiency</strong> in three key ways:
+                        <ul>
+                            <li>
+                                It reduces electron recombination.
+                            </li>
+                            <li>
+                                It increases absorption of light.
+                            </li>
+                            <li>
+                                It enables higher internal reflectivity.
+                            </li>
+                        </ul>
+                        </br>
+                        The efficiency gain of implementing PERC architecture for monocrystalline cells is about
+                        0.8% to 1% absolute, while the boost for multicrystalline cells is a
+                        little lower, at 0.4% to 0.8%.
+                        </br>
+                        </br>
+                        <strong>b. Tandem solar cells are stacks of individual cells, one on top of the other</strong>,
+                      that each selectively convert a specific band of light into electrical energy, leaving the
+                      remaining light to be absorbed and converted to electricity in the cell below.
+                      Emerging PV technologies comprise several types of tandem cells that can be grouped mainly
+                      depending on materials used (e.g. organic, inorganic, hybrid) as well as on the kind of connection
+                      used. The tandem cell approach has been used to fabricate the world’s most efficient solar
+                      cells that can convert 46% of sunlight into electricity.
+                    </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">3. Thin-film.</h5>
+                  <br class="mb-1">
+                  <p>
+                      Thin film technologies are often referred to as second-generation solar PV. The semiconducting
+                      materials used to produce thin-film cells are only a few micrometres thick (IRENA, 2016).
+                      </br>
+                      </br>
+                      These technologies generally include <strong>two main families</strong>:
+
+                      <ul>
+                            <li>
+                                <strong>Silicon-based thin film</strong> (amorphous [a-Si] and micromorph silicon [a-Si/c-Si].
+                            </li>
+                            <li>
+                                <strong>Non-silicon based</strong> (perovskites, cadmium telluride [CdTe] and copper-indium-gallium diselenide [CIGS]).
+                            </li>
+                        </ul>
+	                  </br>
+                      These technologies can be cheaper to produce, as such they are being deployed on a commercial scale, but they have historically had lower efficiency levels.
+
+                  </p>
+              </li>
+            </ul>
+
+        <h3>Advanced module technologies</h3>
+        <p>
+            <h5>1. Bifacial solar cells</h5>
+
+            Bifacial solar cells have been under development for decades and their manufacturing process can be
+            considered one of the most advanced for solar modules today. Bifacial cells are capable of generating electricity not only from
+		    sunlight received on their front, but also from reflected sunlight received on the reverse side of the cell.
+            </br>
+            </br>
+            Bifacial operation, facilitated by the uptake of PERC (which is driving the bifacial boom), offers a near
+	        term effective efficiency increase of 5-20% relative by increasing the energy output from a given module area.
+            </br>
+            </br>
+            <h5>2. Multi-busbars</h5>
+
+            Silicon solar cells are metallised with thin strips printed on the front and rear of a solar cell; these are called
+	        busbars and have the purpose of conducting the electric direct current (DC) power generated by the cell. Older
+            solar cells typically had two busbars; however, the industry has moved towards<strong>higher efficiencies</strong> and
+	        busbars have increased to three (or more) in most solar cells.
+            </br>
+            </br>
+            The increased number of busbars has several <strong>advantages</strong>:
+            </br>
+            </br>
+            <ul>
+                <li>
+                    First is the high potential for cost saving due to a reduction in metal consumption for front
+                    facing metallisation.
+                </li>
+                <li>
+                    Second, series resistance losses are reduced by employing thin wires instead of regular ribbon.
+                </li>
+                <li>
+                    Third, optimising the width of the busbars leads to an additional rise in efficiency.
+                </li>
+                <li>
+                    Finally, multi-busbar design is highly beneficial for bifacial technology, especially for improving the
+                    bifaciality for PERC cells of 90%.
+                </li>
+            </ul>
+
+            <h5>3. Solar shingles</h5>
+
+            Solar shingles are a type of solar energy solution where solar panels are designed to look like conventional
+	        roofing materials, while also producing electricity.
+	        </br>
+            </br>
+            Solar shingles have several <strong>advantages</strong>.
+            </br>
+            </br>
+            <ul>
+                <li>
+                    First, a key advantage is that they eliminate the need for ribbon, connecting cells like roof tiles.
+                </li>
+                <li>
+                    Second and related to the removal of the ribbon, module aesthetics are improved, as the panels are homogeneously coloured.
+                </li>
+                <li>
+                    Third, unlike a standard cell, cells for shingle modules have busbars at opposite ends and cells are sliced
+                    into several strips, which reduces the current and consequently the load on fingers (metallic super-thin
+                    grid fingers, perpendicular to the busbar, collecting the generated DC current and delivering it to the busbars).
+                </li>
+            </ul>
+        </p>
+
+            <h3>Applications: Beyond fields and rooftops</h3>
+            <p>
+                Taking advantage of the rapidly growing solar PV capacity across the globe, several research projects or
+                prototypes are underway to stimulate future market growth, exploring innovating solar technologies at the
+                application level. The major developments are as follows.
+            </p>
+
+            <!--No numerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">1. Floating PV</h5>
+                  <p class="mb-1">
+                      Floating PV is an exciting emerging market, with the potential for rapid growth. According to a World Bank
+                      report, as of the end of September 2018 the global
+                      cumulative installed capacity of floating PV plants was
+                      1.1 GW (World Bank, 2018).
+                      </br>
+                      </br>
+
+                      Demand for floating PV is expanding, especially
+                      on islands (and other land-constrained countries),
+                      because the cost of water surface is generally lower
+                      than the cost of land. Floating solar
+                      is particularly well suited to Asia, where land is scarce
+                      but there are many hydroelectric dams with existing
+                      transmission infrastructure.
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">2. Building-integrated PV panels</h5>
+                  <p class="mb-1">
+                      Building-integrated PV (BIPV) solar panels are an application also known as solar shingles (see above).
+	                    BIPV solutions have several <strong>advantages</strong>.
+
+                    <ul>
+                        <li>First, they are 	<strong>multifunctional</strong> as they can be adapted to a variety of surfaces (e.g. roofs, windows, walls) as an integrated
+                            solution, providing both<strong> passive</strong> and<strong> active </strong>functions. A
+                            key passive function is thermal and acoustic insulation,
+                            as with any other construction material, which is
+                            complemented by a unique active function – the PV
+                            component – which generates renewable electricity
+                            that can be directly used in the building.
+                        </li>
+                        <li>
+                            Other functions, also unique to BIPV systems, include the
+		                    possibility of <strong>real-time thermal or lighting regulation</strong>.
+                        </li>
+                        </br>
+                        An EU-funded project, <strong>PVSITES</strong>, is currently developing
+                        a new generation of solar panels that can be part of
+                        traditional house elements like roofs, windows and
+                        glass façades. The project is creating BIPV solar panels
+                        alongside building energy management systems and
+                        architectural design tools. The aim is to demonstrate
+                        the integration of effective energy production with
+                        good design to create cost-effective buildings. The
+                        project is also developing design software tools for
+                        architects to help them better integrate these novel
+                        PV products in their designs.
+                    </ul>
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">3. Solar trees</h5>
+                  <p class="mb-1">
+                      olar trees work very much like real ones, as they have leaf-like solar panels connected through
+                      metal branches using sunlight to make energy. Solar trees can be seen as complementary to rooftop solar
+                      systems.
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">4. Solar carports</h5>
+                  <p class="mb-1">
+                        Solar carports are ground-mounted solar panels that are installed so that parking lots and home driveways
+                        can be laid underneath to form a carport. They have
+                        been a very popular alternative or supplement to the
+                        classic rooftop systems.
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">5. Solar PV-Thermal systems</h5>
+                  <p class="mb-1">
+                        Solar PV-T systems combine the production of both
+                        kinds of solar energy in one collector. It consists of
+                        a solar PV panel combined with a cooling system
+                        where cooling agent (water or air) is circulated around
+                        the PV panels to cool the solar cells, such that the
+                        warm water or air leaving the panels may be used
+                        for domestic applications such as domestic heating.
+                        </br>
+                        </br>
+                        This cooling system for PV
+                      panels has a <strong>twofold benefit</strong>:
+
+                    <ul>
+                        <li>It significantly increases
+		                    the efficiency of PV systems in the electricity sector.
+                        </li>
+                        <li>
+                            It also allows for the capture of the heat from the
+                            PV system for use in space, water and process heating
+                            in a range of industries and applications.
+                        </li>
+                    </ul>
+                    </br>
+                    In fact, PV modules normally use 15–20% of the incoming solar
+                    energy, while the rest is lost in the form of heat. The
+                    PV-T technology aims to increase the overall efficiency
+                    by using this “lost” energy to heat air or water and at
+                    the same time cool the PV cells by taking away the
+                    heat from the panel.
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">6. Agrophotovoltaic (APV)</h5>
+                  <p class="mb-1">
+                      Agrophotovoltaic (APV) combines solar PV and agriculture on the same land and consists of growing
+                      crops beneath ground-mounted solar panels. Although the concept was proposed long ago, it has received little attention until recently, when several
+                      researchers have confirmed the benefits of growing crops beneath the shade provided by the solar panels.
+                      </br>
+                        </br>
+                      <strong>Cultivating crops underneath reduces the temperature of the
+                      panels</strong>, as they are cooled down by the fact that the crops below are emitting water through their natural process of transpiration.
+                  </p>
+              </li>
+            </ul>
+
+
+
+        </div>
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,276 @@
+{% extends "gd_course/HVL_2024_group5/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section class="section_header_carbon_app">
+  <div class="container">
+    <div class="header_carbon_app">
+      <div class="box_header">
+        <h1 style="font-size: 55px">
+          <span class="text-logo"> Methodology </span>
+        </h1>
+        <p>
+          Welcome to the Methodology page, where we dive into the details of the
+          calculations powering our carbon emissions analysis. In a world
+          increasingly focused on environmental sustainability, understanding
+          and mitigating our carbon footprint is essential. Here, we outline the
+          methodologies behind our calculations, providing transparency and
+          insight into how we measure carbon emissions. For a comprehensive
+          understanding, we offer a detailed paper outlining our complete
+          methodology, accessible through the link below.
+        </p>
+        <div class="container_buttons_links_header_carbon_app">
+          <div class="btn">
+            <a
+              href="https://drive.google.com/file/d/1L5SVpZPl2aTIOvYA4H6lqNqaQWIqPk68/view"
+              class="cta_form"
+              target="_blank"
+              >Full paper</a
+            >
+          </div>
+          <div class="btn">
+            <a
+              href="{{url_for('gd_course_HVL_2024_group5.carbon_app_home')}}"
+              class="cta"
+              >Carbon App</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+  <div class="methodology" style="display: block">
+    <h1 style="text-align: center">Our numbers and formulas</h1>
+  </div>
+  <br />
+
+  <div style="text-align: center">
+    <i class="fa-solid fa-chevron-down fa-2xl"></i>
+  </div>
+
+  <div class="container">
+    <!--Enumerated list (table with one column)-->
+    <div class="methodology">
+      <div class="methodology" style="display: block">
+        <h1 style="text-align: center">Land transport</h1>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <h3>Bus</h3>
+        <p>
+          In Norway, bus transportation is administered through a collaboration
+          between different companies: Vygruppen AS, Ruter (Oslo and
+          surroundings), NOR-WAY Buseekpress (Southern Norway), Kolumbus
+          (Rogaland region) and Skyss (public transportation operator in
+          Horaland). All of them follow Euro 6 (EU regulation that sets stricter
+          limits on emissions) and the SDG. However, due to the absence of
+          environmental impact that from most of the companies regarding their
+          transportations services, it will be incorporated data furnished by Vy
+          and in this case, the electric bus factor emission is directly
+          extracted: $$ CO2 = d \cdot fe $$
+        </p>
+        <br />
+        <ol>
+          <li>Non-renewable energy</li>
+          <ul>
+            <li>Diesel: 27 g CO2/km</li>
+            <li>Biodiesel: 14 g CO2/km</li>
+          </ul>
+          <li>Renewable energy</li>
+          <ul>
+            <li>Electric: 13 g CO2/ km</li>
+          </ul>
+        </ol>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-car"></i>
+        </div>
+        <h3>Car</h3>
+        <p>
+          Nowadays, there are many factors that influence the quantity of CO2
+          emitted by this vehicle such as: fuel, vehicle weight and load, engine
+          efficiency (depends on model), vehicle maintenance, driving style and
+          traffic and route conditions. Therefore, the factor emission chosen
+          will be the most suitable according to all the factors mentioned
+          before. According to Statistsk sentralbyrå (SBB), [ Appendix 2] this
+          constant is standardized by each type of fuel and by the weight of the
+          load. For general use, the factor chose it’s for touring cars. Thus,
+          it will be considered the number of passengers for this calculation
+          (p). $$ CO2 = \frac{d \cdot fe}{p} $$
+        </p>
+        <br />
+        <ol>
+          <li>Non-renewable energy</li>
+          <ul>
+            <li>Gas: 156,47 g CO2/km</li>
+            <li>Diesel: 130,09 gCO2/km</li>
+          </ul>
+          <li>Renewable energy</li>
+          <ul>
+            <li>Energy consumption → CO2 emissions</li>
+          </ul>
+        </ol>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-motorcycle"></i>
+        </div>
+        <h3>Motorcycle</h3>
+        <p>
+          Despite the fact that motorcycles can use diesel, most motorcycles in
+          Norway are powered by gas. Therefore, it will be considered
+          exclusively gas and electricity. On one hand, the data will be
+          extracted from SBB [Appendix 2] and on the other hand, the energy
+          consumption will be excerpted from it. As it happens with the car,
+          this vehicle will be affected by many factors like the ones mentioned
+          in the paragraph before. Therefore, the factors chosen are generalized
+          and standardized. Moreover, in this case, the number of passengers
+          will be considered between 1 and 2 passengers so the client will have
+          to choose between both. $$ CO2 = \frac{d \cdot fe}{p} $$
+        </p>
+        <br />
+        <ol>
+          <li>Non-renewable energy</li>
+          <ul>
+            <li>Gas: 85,2 kg/km</li>
+          </ul>
+          <li>Renewable energy</li>
+          <ul>
+            <li>Energy consumption → CO2 emissions</li>
+          </ul>
+        </ol>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-train"></i>
+        </div>
+        <h3>Train</h3>
+        <p>
+          As with buses, in Norway there are various companies that manage the
+          train network: Vy, SJ Norge, Go-Ahead Nordic and Skyss. Likewise, the
+          data source used will be furnished by Vy giving a direct factor
+          emission for the trains: $$ CO2 = I \cdot Ec $$
+        </p>
+        <br />
+        <ol>
+          <li>Renewable energy</li>
+          <ul>
+            <li>Electric: 10 g CO2/km</li>
+          </ul>
+        </ol>
+      </div>
+
+      <div class="methodology" style="display: block">
+        <h1 style="text-align: center">Maritime transport</h1>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-ferry"></i>
+        </div>
+        <h3>Ferry</h3>
+        <p>
+          In light of our setting in Norway, where ferries are an integral
+          component of the public transport system, it is of interest for the
+          Norwegian population to understand the CO2 emission of this means of
+          transport even the fact that in the rest of Europe it doesn’t have the
+          same impact. Norway has a strict regulation about greenhouse gas
+          emitted by ferries normally
+        </p>
+        <br />
+        <ol>
+          <li>Non-renewable energy</li>
+          <ul>
+            <li>Heavy Fuel Oil: 226 g CO2/km</li>
+            <li>E-ferry: 0.196 kWh/pkm</li>
+          </ul>
+        </ol>
+      </div>
+
+      <div class="methodology" style="display: block">
+        <h1 style="text-align: center">Aviation</h1>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-plane"></i>
+        </div>
+        <h3>Airplane</h3>
+        <p>
+          Norway's unique geography, characterized by extensive mountains,
+          fjords, and scattered islands, renders air travel a vital component of
+          its system. It provides connectivity between distant and remote
+          regions that lacks other means of transport. Regarding CO2 emissions
+          the analysis is critical for a main reason: it significantly impacts
+          the environment as it’s still the major source of greenhouse gas
+          emissions, even though Norway is betting on better alternatives such
+          as electric aircraft and cleaner aviation fuels. Thus, evaluating CO2
+          emissions from air travel is essential for Norway's progression
+          towards a more sustainable and environmentally responsible future. All
+          airplanes are powered by kerosine, however, it can be treated
+          separately according to the distance traveled:
+        </p>
+        <br />
+        <ul>
+          <li>Domestic flights (less than 600 km): 244 gCO2/km</li>
+          <li>Short hauls (600-3700 km): 156 gCO2/km</li>
+          <li>Long hauls (>3700 km): 190 gCO2/km</li>
+        </ul>
+      </div>
+
+      <div class="methodology" style="display: block">
+        <h1 style="text-align: center">Non-CO2 producers</h1>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-bolt"></i>
+        </div>
+        <h3>Electric scooter</h3>
+        <p>
+          Electric scooters are getting importance due to their potential to
+          address urban mobility challenges. While cities worldwide grapple with
+          issues such as congestion, pollution, and last-mile connectivity,
+          electric scooters offer a sustainable and convenient solution. Despite
+          not emitting CO2 directly during operation, it's crucial to consider
+          their environmental impact, especially in terms of the source of
+          electricity used to charge their batteries. Their compact size, ease
+          of use, and emission-free operation make them attractive alternatives
+          to traditional modes of transportation. Moreover, the rise of shared
+          electric scooter services has democratized access to this mode of
+          transport, further amplifying its impact. With increasing emphasis on
+          sustainable urban mobility, electric scooters are poised to play a
+          significant role in shaping the future of transportation. $$ CO2 = I
+          \cdot Ec $$
+          <br />
+        </p>
+      </div>
+
+      <div class="box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="fa-solid fa-bicycle"></i>
+        </div>
+        <h3>Walking & cycling</h3>
+        <p>
+          Although walking and cycling don’t emit any greenhouse gas emissions,
+          this option will be also included in the development of the App as it
+          can be used to contrast the distance traveled and the emissions with
+          the other means of transport.
+          <br />
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

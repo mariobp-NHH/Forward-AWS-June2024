@@ -1,0 +1,142 @@
+{% extends "gd_course/HVL_2024_group4/layout.html" %}{% block content %}
+
+<!-- Header -->
+<section id="capp" data-aos="fade-up" data-aos-duration="1000">
+  <img
+    class="bg-img"
+    src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/carbon_logo.svg') }}"
+    alt="carbon bg logo"
+  />
+  <div class="container flex-container">
+    <div class="box box-r">
+      <h1>Carbon App Calculator</h1>
+
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+        dolores quos asperiores repellendus facilis cum illo aperiam odit
+        doloremque nostrum.
+      </p>
+      <div class="container_buttons_links_header_carbon_app">
+        <div class="btn">
+          <a
+            href="{{url_for('gd_course_HVL_2024_group4.methodology_home')}}"
+            class="btn btn-img-light"
+          >
+            <img
+              src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/arrow-small-right.svg') }}"
+              alt="arrow icon"
+            /><span>Methodology</span></a
+          >
+          <a
+            href="{{url_for('gd_course_HVL_2024_group4.your_data')}}"
+            class="btn btn-img"
+          >
+            <img
+              src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/analyse-alt.svg') }}"
+              alt="data icon"
+            /><span>Your Data</span></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="box box-l capp-container">
+      <span class="title">Add an entry :</span>
+      <div class="carbon_app_new_entry_main">
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/bus-alt.svg') }}"
+            alt="bus icon"
+          />
+          <h3>Bus</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a
+              class="btn_carbon_app_new_entry_main"
+              href="{{url_for('gd_course_HVL_2024_group4.new_entry_bus')}}"
+            ></a>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/car-alt.svg') }}"
+            alt="car icon"
+          />
+          <h3>Car</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a
+              class="btn_carbon_app_new_entry_main"
+              href="{{url_for('gd_course_HVL_2024_group4.new_entry_car')}}"
+            ></a>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/plane-alt.svg') }}"
+            alt="plane icon"
+          />
+          <h3>Plane</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a
+              class="btn_carbon_app_new_entry_main"
+              href="{{url_for('gd_course_HVL_2024_group4.new_entry_plane')}}"
+            ></a>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/ship.svg') }}"
+            alt="ferry icon"
+          />
+          <h3>Ferry</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a
+              class="btn_carbon_app_new_entry_main"
+              href="{{url_for('gd_course_HVL_2024_group4.new_entry_ferry')}}"
+            ></a>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/motorcycle.svg') }}"
+            alt="motorbike icon"
+          />
+          <h3>Motorbike</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a
+              class="btn_carbon_app_new_entry_main"
+              href="{{url_for('gd_course_HVL_2024_group4.new_entry_motorbike')}}"
+            ></a>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/biking.svg') }}"
+            alt="bicycle icon"
+          />
+          <h3>Bicycle</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a
+              class="btn_carbon_app_new_entry_main"
+              href="{{url_for('gd_course_HVL_2024_group4.new_entry_bicycle')}}"
+            ></a>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/walking.svg') }}"
+            alt="walk icon"
+          />
+          <h3>Walk</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a
+              class="btn_carbon_app_new_entry_main"
+              href="{{url_for('gd_course_HVL_2024_group4.new_entry_walk')}}"
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,322 @@
+{% extends "sbm_course/sbm_NMBU_2023_group3/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section class="section_header_carbon_app" style="background-color: #fffbe6; color: #333;">
+        <div class="container">
+    
+        <div class="header_carbon_app">
+            <div class="box" style="text-align: center;"> 
+                <h1 style="font-size:60px; color: #f9a825;">Carbon App Calculator</h1>
+                <p style="text-align:justify; padding: 0 15px;">
+                    Curious about how your travel choices affect the environment? Our Carbon Calculator is here to help! This user-friendly tool is specifically designed to calculate the carbon emissions from your daily transportation methods. Whether you travel by car, bus, bike, or train, our calculator provides a clear picture of your environmental impact.
+                </p>
+                <style>
+                    .btn {
+                      transition: transform 0.3s, box-shadow 0.3s;
+                    }
+                  
+                    .btn:hover {
+                      transform: translateY(-2px);
+                      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                    }
+                  </style>
+                <div class="container_buttons_links_header_carbon_app" style="display: flex; justify-content: center; gap: 10px; margin-top: 20px;">
+                    <a href="{{url_for('sbm_course_NMBU_2023_group3.methodology')}}" class="btn btn-lg" style="background-color:#f9a825; color: white;">Methodology</a>
+                    <a href="#" class="btn btn-lg" style="background-color:#f9a825; color: white;" data-toggle="modal" data-target="#carbon_app_instructions">Instructions</a>
+                </div>  
+                
+                <!-- Modal Instructions -->
+                <div class="modal fade" id="carbon_app_instructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+              
+                        <div class="modal-header">
+                            <h5 class="modal-title" style="color:black; text-align: center;">Carbon App Instructions</h5>
+                        </div>
+              
+                        <div class="modal-body" style="color:black">
+                            <p style="text-align: left;">
+                                This is how you use the app:
+                            </p>
+                            <ol style="text-align:left;">
+                                <li>Choose your pransportation method and what fuel it uses.</li>
+                                <li>Add how far you travelled in chosen pransportation method.</li>
+                            </ol>
+                        </div>
+              
+                        <div class="modal-footer">
+                            <button class="btn btn-secondary btn-lg" style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                        </div>
+              
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box">
+                <img 
+                    src="{{url_for('static', filename='sbm_course_NMBU_2023_group3/icons/calculator.svg')}}"
+                    width="325" 
+                    height="325"
+                    alt=""/>
+            </div>
+        </div>
+        
+        </div>
+    </section> 
+
+
+        <!-- carbon_app_new_entry_main -->
+        <section class="section_calculator_students_entry_css">
+            <div class="container">
+                <div class="box">
+        
+                </div>
+                <div class="box"> 
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+                        <form method="POST" action="">
+                            {{ form.csrf_token }}
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.bus_type.label(class="form-control-label") }}
+                                    {% if form.bus_type.errors %}
+                                        {{ form.bus_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.bus_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.bus_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.bus_kms.label(class="form-control-label") }}
+                                    {% if form.bus_kms.errors %}
+                                        {{ form.bus_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.bus_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.bus_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+        
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.car_type.label(class="form-control-label") }}
+                                    {% if form.car_type.errors %}
+                                        {{ form.car_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.car_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.car_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.car_kms.label(class="form-control-label") }}
+                                    {% if form.car_kms.errors %}
+                                        {{ form.car_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.car_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.car_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+        
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.plane_type.label(class="form-control-label") }}
+                                    {% if form.plane_type.errors %}
+                                        {{ form.plane_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.plane_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.plane_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.plane_kms.label(class="form-control-label") }}
+                                    {% if form.plane_kms.errors %}
+                                        {{ form.plane_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.plane_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.plane_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+        
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.ferry_type.label(class="form-control-label") }}
+                                    {% if form.ferry_type.errors %}
+                                        {{ form.ferry_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.ferry_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.ferry_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.ferry_kms.label(class="form-control-label") }}
+                                    {% if form.ferry_kms.errors %}
+                                        {{ form.ferry_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.ferry_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.ferry_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+        
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.motorbike_type.label(class="form-control-label") }}
+                                    {% if form.motorbike_type.errors %}
+                                        {{ form.motorbike_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.motorbike_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.motorbike_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.motorbike_kms.label(class="form-control-label") }}
+                                    {% if form.motorbike_kms.errors %}
+                                        {{ form.motorbike_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.motorbike_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.motorbike_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+        
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.scooter_type.label(class="form-control-label") }}
+                                    {% if form.scooter_type.errors %}
+                                        {{ form.scooter_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.scooter_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.scooter_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.scooter_kms.label(class="form-control-label") }}
+                                    {% if form.scooter_kms.errors %}
+                                        {{ form.scooter_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.scooter_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.scooter_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+        
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.bicycle_type.label(class="form-control-label") }}
+                                    {% if form.bicycle_type.errors %}
+                                        {{ form.bicycle_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.bicycle_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.bicycle_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.bicycle_kms.label(class="form-control-label") }}
+                                    {% if form.bicycle_kms.errors %}
+                                        {{ form.bicycle_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.bicycle_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.bicycle_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+        
+                            <div class="section_km_fuel_css">
+                                <div class="box">
+                                    {{ form.walk_type.label(class="form-control-label") }}
+                                    {% if form.walk_type.errors %}
+                                        {{ form.walk_type(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.walk_type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.walk_type(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                                <div class="box">
+                                    {{ form.walk_kms.label(class="form-control-label") }}
+                                    {% if form.walk_kms.errors %}
+                                        {{ form.walk_kms(class="form-control form-control-lg is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form.walk_kms.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form.walk_kms(class="form-control form-control-lg") }}
+                                    {% endif %}
+                                </div>
+                            </div>
+                            </br>
+                            <div class="form-group">
+                                {{ form.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#ffa500;") }}
+                            </div>
+                        </form> 
+                </div>
+                <div class="box">
+        
+                </div>
+            </div>
+        </section> 
+
+{% endblock content %}

@@ -1,0 +1,146 @@
+{% extends "gd_course/HVL_2023_group1/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_methodology">
+    <div class="container">
+  
+      <div class="header">
+        <div class="box"> 
+          <h1 style= "font-size:55px;"><span class=text-logo> Methodology</span></h1>
+          <p style="text-align:center;">
+                  
+            Our group developed an app that calculates carbon emissions from transport to help individuals make informed decisions about their travel choices. 
+            To find the nessesary data and statistics to calculate the emission, we used a carbon footprint analysis. This methodology involves calculating the total greenhouse gas emission associated with different transport alternatives. By using a carbon footprint analysis we can provide a comprehensive view of an individual's environmental impact, including indirect and direct emission. 
+          </p>
+            <button class="btn">
+                <a href="https://docs.google.com/document/d/1LB7sJ2ddfoHPvye0LtYxO5xrmzEQeNHj2j6Ac6Gt_8c/edit?fbclid=IwAR3QH5EGtb0Qicoog0iJNQiYWfmuadTB3eiiieQOIfvOQS1CTFyBkUBR96I" class="button" target="_blank">Paper</a>
+                <a href="{{url_for('gd_course_HVL_2023_group1.carbon_app_home')}}" class="button">Carbon App</a>
+            </button>
+        </div>
+        <div class="box">
+          <img 
+            src="{{url_for('static', filename='gd_course_HVL_2023_group1/icons/methodology_photo.png')}}"/>
+        </div>
+      </div>
+      
+    </div>
+</section> 
+
+<!-- Transports -->
+<section class="section_transports">
+    <div class="container">
+   
+      <div class="transports">
+        <br>
+        <div class="box">
+          <h1 style="text-align:center;"> Our methodology</h1>
+          <p style="text-align: center;">
+            Here is the methodology used for gathering data for the Carbon App. 
+            The methodology is based on collecting real data on carbon emissions. 
+            The students involved in this project have been thorough and have searched for scientifically-based data. 
+            The development of the formulas used in the app was done by the students and is explained in detail. 
+            Our aim with the Carbon App is to increase people's awareness of their daily carbon emissions and encourage them to take steps to reduce it.
+
+          </p>      
+        </div>
+      </div>
+   
+      <div class="transports">
+          <div class="container">
+            <div class="box">
+   
+              <h3>Cars</h3>
+              <p>
+                Gasoline:
+                <br>According to SSB.no, an avarage gasoline driven car emits <br>157,47g CO\(_2\) per km.
+                <br><br>\[{0,157kg \times km} \over Passengers \]
+                
+                Diesel:
+                <br>According to SSB.no, an avarage diesel driven car emits <br>130,09g CO\(_2\) per km.
+                <br><br>\[{0,130kg \times km} \over Passengers \]
+                Hybrid:
+                <br>From transportsenvironment.org there has been estimated that an avarage hybrid plug in car emits 152g CO\(_2\) per km.
+                <br><br>\[{0,152kg \times km} \over Passengers \]
+                Electric:
+                <br>According to SSB.no, an avarage electrical driven car consumes 
+                <br>0,2 kWh per km. Generating 1 kWh with fossil fuels emits 0,388 kg of CO\(_2\)
+                <br><br>\[{0,2 kWh \times km \times 0,388 kg CO_2} \over Passengers \]
+              </p>
+            </div>
+            <div class="box">
+              <h3>Busses</h3>
+              <p>
+                Diesel:
+                <br>According to SSB.no, an avarage diesel driven bus emits <br>855,4g CO\(_2\) per km.
+                <br><br>\[{0,855kg \times km} \over Passengers \]
+                Biodiesel:
+                <br>According to framtiden.no an avarge biodiesel driven bus emits 14g of CO\(_2\) per person km. 
+                <br><br>\[{0,014kg \times km}\]
+                Electric:
+                <br>According to Sustainable-bus.com, an avarage electrical driven bus consumes 
+                1,745 kWh per km. Generating 1 kWh with fossil fuels emits 0,388 kg of CO\(_2\)
+                <br><br>\[{1,745 kWh \times km \times 0,388 kg CO_2} \over Passengers \]
+            </div>
+
+              
+
+   
+   
+          </div>
+          <div class="container" style="margin: 0;">
+            <div class="box2">
+              <h3>Other electrical transports:</h3>
+              <p>
+                A grown man that weighs 80kg and is 180cm tall, bicycling in the city
+                <br>will use energy worth of 0,037 kWh. (here we could convert to juuls and tell how much he would need to eat??)
+                <br><br>
+                El-kick-scooter:
+                <br>Electrical Two Wheels states in their product catalog that their El-kick-scooter on an avarage 
+                consumes 0,006kWh. Generating 1 kWh with fossil fuels emits 0,388 kg of CO\(_2\).
+                <br><br>\[0,006 kWh \times km \times 0,388 kg CO_2\]
+                El-bycycle:
+                <br>According to tredz.co.uk, an electrical bike with maximum capacity of 400 Wh will be last for 80km
+                on an open road, with good road surfaces and a steady pace. \({400 Wh \over 80km} = 5 Wh = 0,005 kWh \)
+                per km. Generating 1 kWh with fossil fuels emits 0,388 kg of CO\(_2\)
+                <br><br>\[0,005 kWh \times km \times 0,388 kg CO_2\]
+
+              </p>
+            </div>
+            <div class="box2">
+              <h3>Airplain</h3>
+              <p>
+                Business class:
+                According to framtiden.no, each person sitting in business class is responsible for 298g of CO\(_2\) per km.
+                <br><br>\[{0,298kg \times km}\]
+                Economy class:
+                According to framtiden.no, each person sitting in economy class is responsible for 133g of CO\(_2\) per km.
+                <br><br>\[{0,133kg \times km}\]
+              </p>
+            </div>           
+            <div class="box2">
+              <h3>Walk</h3>
+    
+              <p>
+                A grown man that weighs 80kg and is 180cm tall, walking in a pace of 4 km/h
+                will use energy worth of 0,065 kWh. (here we could convert to juuls and tell how much he would need to eat??)
+    
+              </p>
+            </div>         
+            <div class="box">
+              <h3>Trains</h3>
+              <p>
+                According to framtiden.no an avarage train emits 45g of CO\(_2\) per person km.
+                <br><br>\[{0,045kg \times km}\]
+              </p>
+                
+            </div> 
+          </div>
+      
+        </div>
+      </div>
+    </div>          
+  </section>
+   
+  {% endblock content %}
+

@@ -1,0 +1,155 @@
+/* Chapter 3. HTML: Head and body */
+/* Box sizing */
+.ch3_box_sizing_a_div1 {
+  box-sizing: content-box;
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+}
+.ch3_box_sizing_a_div2 {
+  box-sizing: content-box;
+  width: 300px;
+  height: 100px;  
+  padding: 50px;
+  border: 1px solid red;
+}
+.ch3_box_sizing_b_div1 {
+  box-sizing: border-box;
+  width: 300px;
+  height: 100px;
+  border: 1px solid blue;
+}
+.ch3_box_sizing_b_div2 {
+  box-sizing: border-box;
+  width: 300px;
+  height: 100px;  
+  padding: 50px;
+  border: 1px solid red;
+}
+/* Display */
+.ch3_span_a {
+  display: inline; /* the default for span */
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;  
+  background-color: yellow; 
+}
+.ch3_span_b {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;    
+  background-color: yellow; 
+}
+.ch3_span_c {
+  display: block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  border: 1px solid blue;    
+  background-color: yellow; 
+}
+/* CSS Flex Container  */
+.ch3_flex_container {
+  display: flex;
+  flex-direction: row;
+  background-color: DodgerBlue;
+  width: 800px;
+  height: 800px;
+  align-items: start;
+  justify-content: end;
+}
+.ch3_flex_container .item1 {
+  background-color: red;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 150px;
+  height: 150px;
+}
+.ch3_flex_container .item2 {
+  background-color: red;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 150px;
+  height: 150px;
+}
+.ch3_flex_container .item3 {
+  background-color: red;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 150px;
+  height: 150px;
+}
+/* CSS Flex Items  */
+.ch3_flex_container .item1_flex_items {
+  background-color: red;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 150px;
+  height: 150px;
+  flex-grow: 1;
+}
+.ch3_flex_container .item2_flex_items {
+  background-color: red;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 150px;
+  height: 150px;
+  flex-grow: 2;
+}
+.ch3_flex_container .item3_flex_items {
+  background-color: red;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+  width: 150px;
+  height: 150px;
+}
+/* Weekly Challenge 1 */
+.ch3_div_week1 {
+  width: 500px;
+  height: 400px;
+  border: 1px solid blue;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+/* Weekly Challenge 2 */
+.ch3_flex_container_week2 {
+  display: flex;
+  justify-content: center;
+  width: 540px;
+  height: 400px;
+  border: 1px solid blue;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+.ch3_flex_list_week2 {
+  display:flex;
+  padding:40px;
+  list-style-type: none;
+  height:140px;
+  border: 1px solid red;
+}
+
+@media (max-width:768px) { 
+  .ch3_flex_container {
+      flex-direction: column;
+    } 
+  .ch3_flex_container_week2 {
+    width: 340px;
+    }
+  .ch3_flex_list_week2 {
+      flex-direction: column;
+      height:340px;
+    }   
+}
+

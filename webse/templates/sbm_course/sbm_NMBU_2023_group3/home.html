@@ -1,0 +1,110 @@
+{% extends "sbm_course/sbm_NMBU_2023_group3/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+        <h1 style="font-size:55px; color: #ffa500;"><span class="text-logo"> Welcome to the carbon app</span></h1>
+        <p style="text-align:center;">
+         
+        </p>
+      </div>
+    </div>
+      
+    </div>
+
+    <div class="video-container" style="text-align: center;">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/fStmxIfwXeI" frameborder="2px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+  </div>
+</section>
+
+<section class="section_developers">
+  <div class="container">
+
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center;"> Our Team</h1>
+      <p>
+        Meet the team behind Carbon App! We are a team of four student from NMBU, ready to help you on your way to understand your carbon footprint better!
+      </p>      
+    </div>
+
+    <div class="developers">
+        <div class="box">
+          <img src="{{url_for('static', filename='icons/KarolineH.jpeg')}}"
+          alt="" style="border-radius: 50%; width:200px;">
+          <h3>Karoline</h3>
+          <p>  
+            As a student at the Norwegian University of Life Sciences (NMBU), she is currently in her final year of a Master's program in Entrepreneurship and Innovation. She holds a Bachelor's degree in Education.
+            <br>
+            <br>
+            <br>
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://no.linkedin.com/in/karoline-hannisdahl-haaland-a1b68115b" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="{{url_for('static', filename='icons/1644877952238.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h3>Viktoria</h3>
+          <p>  
+            Originally from Gjøvik, she earned her Bachelor's degree from BI Norwegian Business School. She is currently pursuing a Master's in Economics and Business Administration, specializing in Entrepreneurship and Business Development.
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://no.linkedin.com/in/viktoria-henriksveen-713638215" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>           
+        <div class="box">
+          <img src="{{url_for('static', filename='icons/AdriannaBerg.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h3>Adrianna</h3>
+          <p>  
+            Based in Oslo, she holds a Bachelor's degree in Economics and Business Administration from OsloMet and is currently pursuing a Master's in the same field, specializing in Entrepreneurship and Business Development.
+            <br>
+            <br>
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://no.linkedin.com/in/adrianna-berg-961a6a266" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>     
+    </div>
+
+    <div class="developers">
+      <div class="box2">
+        <img src="{{url_for('static', filename='icons/SimenBallangrud.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Simen</h3>
+        <p> 
+          A farmer from Toten, he completed his Bachelor's in Economics and Business Administration at the Norwegian University of Life Sciences (NMBU). He is currently studying for his Master's in Economics and Business Administration, specializing in Entrepreneurship and Business Development.
+        </p>
+        <style>
+          .bi-linkedin {
+            color: blue;
+          }
+        </style>
+        <div class="section_container_buttons_developers">
+    <a class="btn_developers" href="https://www.linkedin.com/in/simen-ballangrud" target="_blank">
+        <i class="bi bi-linkedin"></i>
+    </a>
+</div>
+        </div>
+      </div>
+   
+
+
+      </div>     
+  </div>
+
+
+  </div>          
+</section>
+        
+{% endblock content %}

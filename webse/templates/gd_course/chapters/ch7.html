@@ -1,0 +1,422 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section>
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch7. Deployment: GitHub + Amazon Web Services (AWS)</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we are going to deploy our app. To do that we proceed in two steps. First, we create a repository in <strong>GitHub</strong> where we will place all the files that define our project. Second, we are going to create an account in <strong>Amazon Web Services</strong>, we are going to use <strong>Elastic Beanstalk</strong> to deploy our app, and we are going to connect our GitHub account with our AWS account by using <strong>CodePipeline</strong>. 
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/mg8ZcL2bnoE"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (GitHub)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/k0xlCOi2YRE"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (AWS Account)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/HTVT_KQxMQk"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (AWS Deployment)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch7%20Deploy/Carbon%20App%202023" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_use_it_week">Use it Yourself</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">GitHub</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study what is GitHub, we <strong>create a GitHub account</strong>; we learn how to edit the <strong>readme.md file</strong>; we <strong>create a repository</strong> and add folders and files to it; we edit files and folders and <strong>commit the changes</strong>; we create <strong>branches</strong>, and merge branches; we learn how to <strong>undo a commit</strong>.
+                        </p>
+
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Amazon Web Services (AWS)</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study what is Amazon Web Services, which services are offered by AWS. We create our account, we learn how to create users, and groups by using <strong>IAM</strong>. We create our environment (server) by using <strong>Elastic Beanstalk</strong> and connect that environment with our GitHub account to deploy our app by using <strong>CodePipeline</strong>.
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            By creating a new branch in GitHub, we modify the routes in the package users and the login.html file to disclose your name when you login. 
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch7/ch7.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>GitHub</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/mg8ZcL2bnoE" target="_blank">YouTube (GitHub)</a>
+            </div>
+            <h4>What is GitHub?</h4>
+            <p>
+                GitHub is an online software development platform. It's used for storing, tracking, and collaborating on software projects. It makes it easy for developers to share code files and collaborate with fellow developers on open-source projects. Some useful information to know more about GitHub can be found in the next links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://blog.hubspot.com/website/what-is-github-used-for" target="_blank">HubSpot</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=w3jLJU7DT5E" target="_blank">GitHub</a>
+            </div>
+            <h4>Create an account and use GitHub</h4>
+            <p>
+                In this section, we create a GitHub account; we learn how to edit the readme.md file; we create a repository and add folders and files to it; we edit files and folders and commit the changes; we create branches, and merge branches; we learn how to undo a commit. 
+                <br>
+                <br>
+                I will explain the basis of these points in this section, but the best way to go through them is by watching the YouTube video for this section, follow the steps and do them yourselves.
+                <br>
+                <br>                
+                All the things that we will do in this section can be done by using the command line (git command). That is an efficient way of working between Visual Studio Code, GitHub, and the server. However, I have decided to do all the steps in this section by using the Graphical user interface in GitHub and by using <strong>GitHub Desktop</strong>. Please download and install GitHub Desktop in your computer (the process is very similar for Windows and Mac). 
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://desktop.github.com/" target="_blank">GitHub Desktop</a>
+            </div>
+            <p> 
+                The objective of this curse is to focus on learning to program an app by using different programming languages. I do not want that you also must learn to use the <strong>command git</strong> to interact with GitHub. That is outside the scope of this course. In the future, I will develop some videos and specific content to explain that. Three good starting points to learn how to use the git command can be found here:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=RGOj5yH7evk&t=14s" target="_blank">Faraday</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" target="_blank">Traversy</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=HVsySz-h9r4&t=39s" target="_blank">Corey</a>
+            </div>
+        </div>  
+
+        <div class="container" style="display:block;">
+            <p>
+                <ol>
+                    <li>
+                        <strong>Create an account</strong>. Go to the link below and create an account. That process is straight forward.
+                    </li>
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section1" href="https://github.com/" target="_blank">GitHub</a>
+                    </div>
+                    <li>
+                        <strong>Create a repository</strong> and add folders and files to it. We are going to create our first repository, and we are going to upload all the files in our project (follow the instructions in the video).
+                    </li>
+                    <br>
+                    <li>
+                        The <strong>readme.md file</strong>. Basic writing and formatting syntax.
+                        <br>
+                        <br>
+                        The readme.md file will be <strong>our diary</strong>. In that file we will explain the changes that we have made in our file, and it will be useful to disclose valuable information to other developers about our app.
+                        <br>
+                        <br>
+                        The <strong>syntax</strong> to edit the readme.md file is simple and in some respects is like html. Below, I provide some basic examples. More information about editing the readme.md file can be found in the link: 
+                    </li>
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section1" href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax" target="_blank">GitHub</a>
+                    </div>
+                </ol>    
+            </p>
+        </div> 
+        
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Example 1 - Heading -</h5>
+                <p>
+                    &#35; The largest heading
+                    <br>
+                    &#35;&#35; The second largest heading
+                    <br>
+                    &#35;&#35;&#35;&#35;&#35;&#35; The smallest heading
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Example 2 - Styling text -</h5>
+                <p class="text-left">
+                    &#42;&#42;This is bold text&#42;&#42;
+                    <br>
+                    &#42;This text is italicized&#42;
+                    <br>
+                    &#126;&#126;This was mistaken text&#126;&#126;
+                    <br>
+                    &#60;sub&#62;This is a subscript text&#60;/sub&#62;
+                </p> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Example 3 - Unordered list -</h5>
+                <p>
+                    - George Washington
+                    <br>
+                    * John Adams
+                    <br>
+                    + Thomas Jefferson
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Example 4 - Oredered list -</h5>
+                <p class="text-left">
+                    1. James Madison
+                    <br>
+                    2. James Monroe
+                    <br>
+                    3. John Quincy Adams	
+                </p> 
+            </div>               
+        </div>
+
+        <div class="container" style="display:block;">
+            <p>
+                <ol start="4">
+                    <li>
+                        Editing files and folders and <strong>commit the changes</strong>. We usually edit the files and folders in our Visual Studio editor and commit them the changes to GitHub. We can also download the repository to work on it in our computer. The process of download and upload a repository in GitHub must be coordinated by the members of the team to avoid overwrite the code and mesh the code. 
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Creating branches</strong> and <strong>merging branches</strong>.
+                        <br>
+                        <br>
+                        In the previous chapter, we create blueprints to make the cooperation in the development easier. By using blueprints, a group of developers can focus on the package home and the templates associated to that package; another group can focus in the development of the package methodology and the templates associated to that root, and so on. 
+                        <br>
+                        <br>
+                        The branches in GitHub make that cooperation even easier, since a group of developers can create a branch in the GitHub repository to change only the package home and the templates associated with that package; and another group of developers can create a branch in the GitHub repository to change only the package methodology and the templates associated with that package. After working on those two branches independently, the two groups can merge their work in a coordinated way by using GitHub.
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Undoing a commit</strong>. If we made a mistake in our code and we want to come back to a previous version of our repository that can be easily done from the command line by using git, and by using GitHub Desktop (watch the YouTube video).
+                    </li>
+                </ol>    
+            </p>
+        </div> 
+
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+
+        <div class="container" style="display:block;">
+            <h1>Amazon Web Services</h1>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/k0xlCOi2YRE" target="_blank">YouTube (AWS Account)</a>
+                <a class="btn-section2" href="https://youtu.be/HTVT_KQxMQk" target="_blank">YouTube (AWS Deployment)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch7%20Deploy/Carbon%20App%202023" target="_blank">GitHub</a>
+            </div>
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5 style="text-align:center;">What is AWS?</h5>
+                <p>
+                    AWS (Amazon Web Services) is a comprehensive, evolving <strong>cloud computing platform</strong> provided by Amazon that includes a mixture of <strong>infrastructure-as-a-service (IaaS)</strong>, <strong>platform-as-a-service (PaaS)</strong> and <strong>packaged-software-as-a-service (SaaS)</strong> offerings. AWS services can offer an organization tools such as compute power, database storage and content delivery services.
+                    <br>
+                    <br>
+                    AWS offers more than over 200 fully <strong>featured services</strong> from data centers globally. Those services includes storage, databases, artificial intelligence, load balancing, scalability, etcetera. The versability and flexibility of AWS help to customize and scale up your project easily and economically. In the video in which I explain how to create users and groups, I explain some of the features used by AWS that we are going to use during the course. Some useful information about AWS can be found in the next two links:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://www.adobhttps://aws.amazon.com/what-is-aws/" target="_blank">AWS - I -</a>
+                    <a class="btn-section2_box" href=" https://www.youtube.com/watch?v=a9__D53WsUs" target="_blank">AWS - II -</a>
+                </div> 
+                <h5 style="text-align:center;">Create an account</h5>
+                <p>
+                    Create an account in AWS is straightforward following the link below. It is necessary to introduce a credit card even do we are going to use the Free Tier version of AWS most of the course. When we finish the course, you can delete your account, since your app will be running on Forward and you will not need to pay for the server and its services.
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://aws.amazon.com/" target="_blank">Create a AWS account</a>
+                </div>
+            </div> 
+            <div class="boxa">
+                <h5 style="text-align:center;">Create a user, a group and IAM</h5>
+                <p>
+                    AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. With IAM, we can centrally manage permissions that control which AWS resources users can access. We use IAM to control who is authenticated (signed in) and authorized (has permissions) to use resources.
+                    <br>
+                    <br>
+                    When we <strong>create an AWS account</strong>, you begin with one sign-in identity that has complete access to all AWS services and resources in the account. This identity is called the <strong>AWS account root user</strong> and is accessed by signing in with the email address and password that we used to create the account. AWS <strong>strongly recommend that you don't use the root user for your everyday tasks</strong>. Safeguard your root user credentials and use them to perform the tasks that only the root user can perform. That is the reason because create users and groups by using IAM is extremely useful.
+                    <br>
+                    <br>
+                    In the YouTube video for this section, I explain how to create <strong>groups</strong>, <strong>users</strong>, and how to <strong>add users to a group</strong>. This will be very useful for our project, since each single member of the group can use AWS without compromising the security of the root account.
+                    <br>
+                    <br>
+                    Some useful links for that section can be found in the next links:                    
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://youtu.be/k0xlCOi2YRE" target="_blank">YouTube (AWS Account)</a>
+                    <a class="btn-section2_box" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html" target="_blank">AWS - I -</a>
+                    <a class="btn-section2_box" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html#intro-video" target="_blank">AWS - II -</a>
+                </div> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5 style="text-align:center;">Deploying our app 1: AWS Elastic Beanstalk.</h5>
+                <p>
+                    Elastic Beanstalk is a <strong>service</strong> for <strong>deploying and scaling web applications and services</strong>. Upload your code and Elastic Beanstalk automatically handles the deployment—from capacity provisioning, load balancing, and auto scaling to application health monitoring.
+                    <br>
+                    <br>
+                    When we use Elastic Beanstalk, we create an environment in which we have access to <strong>many AWS services</strong> as EC2, S3, Simple Notification Service (SNS), CloudWatch, autoscaling, and Elastic Load Balancers. That feature of Elastic Beanstalk facilitates the deployment of our app and helps us to scale up our project easily and economically. 
+                    <br>
+                    <br>
+                    Some useful links for that section can be found in the next links:                    
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://youtu.be/HTVT_KQxMQk" target="_blank">YouTube (AWS Deployment)</a>
+                    <a class="btn-section2_box" href="https://aws.amazon.com/elasticbeanstalk/" target="_blank">AWS - I -</a>
+                    <a class="btn-section2_box" href="https://www.youtube.com/watch?v=uiM1xzOX8Qg&t=1s" target="_blank">AWS - II -</a>
+                </div> 
+            </div> 
+            <div class="boxa">
+                <h5 style="text-align:center;">Deploying our app 2: AWS CodePipeline.</h5>
+                <p>
+                    AWS CodePipeline is a fully managed continuous delivery service that helps you automate your release pipelines for fast and reliable application and infrastructure updates.
+                    <br>
+                    <br>
+                    <strong>AWS CodePipeline</strong> helps us to connect our <strong>GitHub repository</strong> with our <strong>Elastic Beanstalk</strong> in a very efficient way. So, when we introduce some changes in our code and commit those changes in GitHub, we can deploy those changes easily in the server by using CodePipeline.
+                    <br>
+                    <br>
+                    Some useful links for that section can be found in the next links:                
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://youtu.be/HTVT_KQxMQk" target="_blank">YouTube (AWS Deployment)</a>
+                    <a class="btn-section2_box" href="https://aws.amazon.com/codepipeline/ " target="_blank">AWS</a>
+                </div> 
+            </div>               
+        </div>
+
+
+    </section> 
+
+   <!-- Section 3 -->
+   <section class="section_3" id="section3">
+
+    <div class="container">            
+
+        <div class="onebox">                    
+        </div>
+        <div class="onebox">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="bi bi-calendar"></i>
+            </div>
+            <h1>Weekly challenge</h1>
+            <p style="text-align: left;">
+                In this weekly challenge we focus on the use of <strong>branches</strong> since that will be a useful to cooperate developing the app in the next chapters. After introducing some changes in GitHub, we release those changes by using <strong>CodePipeline</strong> to upload our webpage in AWS.
+                <br>
+                <br>
+                You have to modify the login function in the package users to pass your name to the template login.html. When you click in the login link in the navigation bar or in the home page, you can see the next message: “Hello &#123;&#123;your name&#125;&#125;, you can start to use the carbon app.”
+                <br>
+                <br>
+                The objective of this weekly challenge is to help you to start to work with branches. In the weekly challenge, you have to explain to the rest of the class <strong>how you have created a branch</strong>,  <strong>how you modify the code in your computer</strong>, and <strong>how you merge the branch that you created with the main branch</strong>. After that, you must use CodePipeline to release the changes introduced in GitHub. So, that you can upload your app in AWS.
+            </p>  
+            <div class="container_buttons_links_section_3a">
+                <div class="btn">
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Hints</a>
+                </div> 
+                <div class="btn">
+                    <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch7%20Deploy/Carbon%20App%202023" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub (Final)</a>
+                </div>
+                <div class="btn">
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_use_it_week">Use it Yourself</a>
+                  </div> 
+                  <!-- Modal Use it Yourself (Weekly challenge) -->
+                  <div class="modal fade" id="weekly_challenge_use_it_week" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                
+                          <div class="modal-header">
+                          <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 7</h5>
+                          </div>
+                
+                          <div class="modal-body", style="color:black">
+                          <p style="text-align:left;">
+                              The weekly challenge of this week is similar to the final app that we developed in chapter 6. You can have access to the final app in chapter 6 in the link below.
+                          </p>
+                          </div>                
+                          <div class="modal-footer">
+                          <a href="{{url_for('gd_course_app_carbon_app_2023_ch6.home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself (chapter 6)</a>
+                          <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                          </div>
+                
+                      </div>
+                      </div>
+                  </div>
+                <!-- Modal Instructions1 -->
+                <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                        <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 7</h5>
+                        </div>
+
+                        <div class="modal-body", style="color:black">
+                        <p style="text-align:left;">
+                            There are many ways to go through the weekly challenge. Each group must find the way that works for it. I propose you an idea, but you can (and should) follow your own way.
+                            <ol style="text-align: left;">
+                                <li>
+                                    In GitHub, create a new branch named group_users.                                 
+                                </li>
+                                </br>
+                                <li>
+                                    Download that branch to your computer.
+                                </li>
+                                <br>
+                                <li>
+                                    In Visual Studio Code:
+                                </li>
+                                <ol style="text-align: left;" type="a">
+                                    <li>
+                                        Modify the login function in the package users to pass your name to the template login.html.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Modify the login.html to take your name from the login function in the package users to disclose the message: “Hello &#123;&#123;your name&#125;&#125;, you can start to use the carbon app.”
+                                    </li>
+                                </ol>
+                                <br>
+                                <li>
+                                    Enter in AWS with your IAM credentials, and in the CodePipeline, click in the button “Release change.” After some seconds, you can open your AWS domain and see the changes.
+                                </li>
+                            </ol>
+                        </p>
+                        </div>
+
+                        <div class="modal-footer">
+                        <a href="{{ url_for('gd_course_chats.gd_course_chats_new_main_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                        <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>                    
+
+        </div>   
+        <div class="onebox">                  
+        </div> 
+        
+    </div>
+   </section>   
+
+
+{% endblock content %}

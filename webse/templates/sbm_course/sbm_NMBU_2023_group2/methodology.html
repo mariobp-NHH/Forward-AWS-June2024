@@ -1,0 +1,245 @@
+{% extends "sbm_course/sbm_NMBU_2023_group2/layout.html" %}
+{% block content %}
+  
+<!-- Header -->
+<section class="section_header_methodology">
+    <div class="container">
+  
+      <div class="header">
+        <div class="box" style="border: 10px solid #6ba840;"> 
+          <h1 style="font-size:55px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"><span class="text-logo" > Methodology</span></h1>
+          <p style="text-align:left;">
+            Our Carbon Tracker app is a specially designed platform that enables users to accurately monitor their CO2 emissions, particularly focusing on transportation. Utilizing a structured methodology, the app estimates emissions based on various transportation modes.
+            To get precise calculations, users input specific details. For example, to assess emissions from a car journey, you'll need to enter the journey's length, the vehicle's type (electric, diesel, or gasoline), and passenger count. The app then applies these inputs to its algorithms to provide an estimated carbon emission figure.
+          </p>
+          <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="{{url_for('sbm_course_NMBU_2023_group2.carbon_app')}}" class="btn btn-primary btn-lg mr-2", style="background-color: #067d42;">Carbon App</a>
+            </div>
+          </div>  
+        </div>
+        <div class="box" style="border: 10px solid #6ba840; height: 400px;">
+          <img 
+            src="https://cdn-icons-png.flaticon.com/512/1104/1104865.png" alt="Icon"
+            width="325" 
+            height="325"/>
+        </div>
+      </div>
+      
+    </div>
+</section> 
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+    <div class="container"></div>
+    <div class="methodology" style="display:block;">
+    </div>
+        <div class="methodology" style="display:block; color: #333; text-align:center; border: 10px solid #6ba840; width: 1280px; margin: 0 auto 50px auto; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+            <h1>Methodology:</h1>
+            <p style="padding-top: 5px; color: #333; text-align:center;">
+                This methodology was copied from the group Carbon Compass
+            </p> 
+        </div>
+        
+
+        <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:650px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 90px;">
+                <ol start="1">
+                    <li>
+                        <h4>General formula </h4>
+                        <p class="text-left">
+                            To ensure precise carbon emission calculations for our users, the application utilizes a universal formula. 
+                            This formula integrates emission factors, particularly focusing on transportation involving fossil fuels, to deliver accurate results.
+                            <br>
+                            \[\text{CO}_{2}=d*\frac{ef}{p}\]
+                            <br>
+                            In which:
+                               \[\text{CO}_2 \text{ = carbon emissions in grams} \]
+                               \[\text{d} \text{ = distance traveled in km} \]
+                               \[\text{ef} \text{ = emission factor in CO}_2 \text{/km} \]
+                               \[\text{d} \text{ = distance traveled in km} \]
+
+                        </p>
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:650px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-right: 90px;">
+                <ol start="2">
+                    <li>
+                        <h4>Formula for electrical transportation modes</h4>
+                        <p class="text-left">
+                            The application uses a carbon intensity of 31 gCO2/kWh; this is based on data from the past year
+                            (Electricity Maps, n.d.). But what is carbon intensity? Carbon intensity is used to evaluate the cleaness of the
+                            electricity produced and is thus expressed in grams of CO2 per kWh (National Grid Group, n.d.).
+                            Due to the different ways of producing electricity;
+                            think about nuclear, coal, wind, gas, etc. Together with the energy consumption, a variable based on the
+                            transportation mode, this is essentially the replacement of the emission factor which is used in the fossil fuel
+                            formula. Thus you could inherently say that:                            
+                            <br>
+                            \[ \text{ef = 31 * ec} \]
+                            <br>
+                            In which:
+                               \[\text{ef} \text{ = emission factor in CO}_2 \text{/km} \]
+                               \[\text{31} \text{ = dcarbon intensity in gCO}_2 \text{/kwh} \]
+                               \[\text{ec} \text{ = energy consumption in kWh} \text{/km} \]
+
+                        </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+
+        <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:400px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 90px;">
+                <ol start="3">
+                    <li>
+                        <h4>Car</h4>
+                        <p class="text-left">
+                            Based on information provided by the Statistic Central Bureau of
+                            Norway (SSB, 2016) and Electric Vehicle Database (EV Database, n.d.), we will use the following data: 
+                        <br>
+                            \[ \to \text{Petrol}: \text{156,47g} \text{CO}_{2}/\text{km} \]
+                            \[\to \text{Diesel}: \text{130g} \text{CO}_{2}/\text{km} \]
+                            \[\to \text{Energy consumption}: \text{0,199kwh/km} \]
+                            \[\circ  \text{ 6.17g CO}_2 \text{/km}\]
+
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:400px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-right: 90px;">
+                <ol start="4">
+                    <li>
+                        <h4>Ferry</h4>
+                        <p class="text-left">
+                            We found information on the carbon emissions of fuel oil ferries in which the number of
+                            passengers is already taken into account (Helle, 2022). For the E-ferry it took some more effort since the
+                            energy consumption needed to be calculated based on the information of E-ferry Ellen (E-ferry project,
+                            n.d.).                            
+                            <br>
+                            \[ \to \text{Heavy Fuel Oil}: \text{170g} \text{CO}_{2}/\text{pkm} \]
+                            \[ \to \text{E-ferry}: \text{0.196 kWh} \text{/pkm} \]
+                            \[\circ  \text{ 6.08g CO}_2 \text{/pkm}\]
+                        </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+
+                <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:400px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 90px;">
+                <ol start="5">
+                    <li>
+                        <h4>Train</h4>
+                        <p class="text-left">
+                            When looking up the carbon emissions for the train, they differed a bit per country. However, since the
+                            application is focussed on use in Bergen, it will use information from the 2022 annual report of Vy (“When
+                            Every Journey Counts,” 2022). It states that all of the trains Vy uses are electrical so the application will
+                            only provide this option.                           
+                            <br>
+                            \[ \to \text{Electrical}: \text{10g} \text{CO}_{2}/\text{pkm} \]
+                            <br>
+                        </p>
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:400px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-right: 90px;">
+                <ol start="6">
+                    <li>
+                        <h4>Airplane</h4>
+                        <p class="text-left">
+                            Since the grams of CO2/km match those provided by Future in our hands for an economy
+                            class flight (Helle, 2022) the application will calculate the carbon emissions based on the following:                             <br>
+                            \[ \to \text{Kerosine}: \text{133g} \text{CO}_{2}/\text{pkm} \]
+                        </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+
+         <!--Enumerated list (table with two columns)-->
+         <div class="methodology"> 
+            <div class="box_table2" style="height:400px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-left: 90px;">
+                <ol start="7">
+                    <li>
+                        <h4>Bus</h4>
+                        <p class="text-left">
+                            Bus transportation in Bergen is organized by both Skyss and Vy. Since Skyss does not provide any
+                            information about the climate footprint of their transportation, the application will use data provided by Vy
+                            (“When Every Journey Counts,” 2022). Their buses run on 3 different types of fuel; diesel, biodiesel and
+                            electrical.                         
+                            <br>
+                            \[ \to \text{Diesel}: \text{27g} \text{CO}_{2}/\text{pkm} \]
+                            \[\to \text{Biodisel}: \text{14g} \text{CO}_{2}/\text{pkm} \]
+                            \[\to \text{Electrical}: \text{13g} \text{CO}_{2}/\text{pkm} \]
+                
+                            <br>
+                        </p>
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:400px; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; margin-right: 90px;">
+                <ol start="8">
+                    <li>
+                        <h4>Motorcycle</h4>
+                        <p class="text-left">
+                            Most motorcycles run on petrol, however there are some electrical motorcycle alternatives. For the carbon
+                            emissions produced by a petrol fueled motorcycle, the data will be based on information gathered by the
+                            SSB (SSB, 2016). For the electric motorcycle, calculations will be based on information and data gathered
+                            from a comparative study (Koossalapeerom et al., 2016).                         
+                            <br>
+                            \[ \to \text{Petrol}: \text{85,2g} \text{CO}_{2}/\text{km} \]
+                            \[\to \text{Energy consumption}: \text{0,28 kwh/km} \]
+                            \[\circ  \text{ 0.87g CO}_2 \text{/km}\]
+                        </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+
+        <!--Enumerated list (table with one column)-->
+        <div class="methodology">              
+    
+            <div class="box_table1" style=" font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; max-width: 1740px; padding-bottom: 20px; margin: 0 auto;">
+                <ol start="9">
+                    <li>
+                        <h4>Walking and cycling</h4>
+                        <p class="text-left">
+                            Besides the transportation modes mentioned above, the application will also provide the option of
+                            registering walking and cycling. Both of these transportation modes do not produce any carbon emissions so
+                            no calculations are needed. Nevertheless, the app will consider the kilometers traveled by walking and
+                            cycling. This will be shown in the charts and tables.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        
+                      
+            </div>  
+        </div>
+
+        
+      
+    </div>
+</section>
+
+
+        <!-- Bootstrap -->
+        <!-- Question Accordion -->
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+          crossorigin="anonymous"
+        ></script>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        
+    </body>
+
+{% endblock content %}

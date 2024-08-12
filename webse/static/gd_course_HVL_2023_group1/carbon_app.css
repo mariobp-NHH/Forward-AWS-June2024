@@ -1,0 +1,267 @@
+/* Colors 
+Home, section 1 (header, background): #698269
+Home, section 1 (header, boxes): #B99B6B
+Home, section 2 (developers, background): #F1DBBF 
+Home, section 2 (developers, boxes): #AA5656 
+
+/* Utilities  */
+p {
+    margin: 10px 0;
+    font-size: 18px;
+    text-align: left;
+  }
+  h4 {
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+  }
+  /* Section header */
+  .section_header_carbon_app {
+    background-color:#BACEC1;
+  }
+  .header_carbon_app {
+    display: flex;  
+    align-items: start;
+    background: #BACEC1;
+  }
+  .header_carbon_app .box {
+    flex: 1;
+    background: #BACEC1;
+    color: #000;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+  }
+  .header_carbon_app .box:nth-of-type(1) {
+    flex-grow:2;
+  }
+  .header_carbon_app .box:nth-of-type(2) {
+    flex-grow:1;
+  }
+  .container_buttons_links_header_carbon_app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+  }
+  .container_buttons_links_header_carbon_app a:hover {
+    color: #698269;
+  }
+  .container_buttons_links_header_carbon_app btn {
+    width: 100px;
+    height: 100px;
+    background: #F1DBBF;
+    color: #000;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+.section_carbon_app_new_entry_main {
+    background-color:#F6F4E8;
+  }
+
+.carbon_app_new_entry_main {
+    display: flex;  
+    align-items: start;
+    background: #F6F4E8;
+  }
+
+.carbon_app_new_entry_main .box {
+    flex: 1;
+    background: #BACEC1;
+    color: black;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carbon_app_new_entry_main .box:nth-of-type(1) {
+    flex-grow:3;
+  }
+  .carbon_app_new_entry_main .box:nth-of-type(2) {
+    flex-grow:3;
+  }
+  .carbon_app_new_entry_main .box:nth-of-type(3) {
+    flex-grow:3;
+  }
+  .carbon_app_new_entry_main .box:nth-of-type(4) {
+    flex-grow:3;
+  }
+.section_container_buttons_carbon_app_new_entry_main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    padding: 0px 0px;
+    margin: 0px 0px;
+  }
+
+
+.btn_carbon_app_new_entry_main {
+    padding: 10px 10px;
+    margin: 10px 10px 10px 10px;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #FF7F00;
+    border: 2px solid  #FF7F00;
+  }
+
+.new_entry {
+    display: flex;
+    background: #BACEC1;
+    }
+.new_entry .container {
+      display: flex;
+      background: #BACEC1;
+    }
+.new_entry .container {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+    }
+.new_entry .container .box {
+      flex: 1;
+      background: #BACEC1;
+      border-radius: 2px;
+      margin: 20px 10px;
+      padding: 15px 20px;
+      text-align:center;
+    }
+.new_entry .container  .box:nth-of-type(1) {
+      flex-grow:1;
+      background: #fff;
+      border-radius: 10px;
+      margin: 0px 0px;
+      padding: 0px 0px;
+      text-align:left;
+    }  
+.new_entry .container  .box:nth-of-type(2) {
+      flex-grow:6;
+      max-width: 450px;
+      background: #BACEC1;
+      border-radius: 10px;
+      margin: 20px 10px;
+      padding: 15px 20px;
+      text-align:center;
+    }  
+.new_entry .container  .box:nth-of-type(3) {
+      flex-grow:1;
+      background: #fff;
+      border-radius: 10px;
+      margin: 0px 0px;
+      padding: 0px 0px;
+      text-align:left;
+    }
+.table_main {
+      display: flex;
+      background: #BACEC1;
+      }
+      
+.table_main .container {
+        display: flex;
+        background: #BACEC1;
+      }
+.table_main .container {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+      }
+
+.table_main .container .box {
+        flex: 1;
+        background: #BACEC1;
+        border-radius: 2px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+      }
+
+.table_main .container  .box:nth-of-type(1) {
+        flex-grow:1;
+        background: #fff;
+        border-radius: 10px;
+        margin: 0px 0px;
+        padding: 0px 0px;
+        text-align:left;
+      }  
+.table_main .container  .box:nth-of-type(2) {
+        flex-grow:6;
+        background: #BACEC1;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+      }  
+.table_main .container  .box:nth-of-type(3) {
+        flex-grow:1;
+        background: #fff;
+        border-radius: 10px;
+        margin: 0px 0px;
+        padding: 0px 0px;
+        text-align:left;
+      }
+.two_emissions_graphs {
+        display: flex;
+        background: #F6F4E8;
+        }  
+.two_emissions_graphs .container {
+        display: flex;
+        background: #F6F4E8;
+      }
+.two_emissions_graphs .container {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+      }
+.two_emissions_graphs .container .box {
+        flex: 1;
+        background: #F6F4E8;
+        border-radius: 2px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+      }  
+.two_emissions_graphs .container  .box:nth-of-type(1) {
+        flex-grow:1;
+        background: #BACEC1;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+      }  
+.two_emissions_graphs .container  .box:nth-of-type(2) {
+        flex-grow:1;
+        background: #BACEC1;
+        border-radius: 10px;
+        margin: 20px 10px;
+        padding: 15px 20px;
+        text-align:center;
+      }  
+
+  @media (max-width:768px) { 
+    .header_carbon_app {
+      flex-direction: column;
+    } 
+    .carbon_app_new_entry_main {
+      flex-direction: column;
+    } 
+    .new_entry .container {
+      flex-direction: column;
+      padding: 10px;
+      text-align: center;
+    }
+    .table_main .container {
+      flex-direction: column;
+      padding: 10px;
+      text-align: center;
+    }
+  }

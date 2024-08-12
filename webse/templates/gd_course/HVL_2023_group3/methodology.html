@@ -1,0 +1,250 @@
+{% extends "gd_course/HVL_2023_group3/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_methodology">
+  <div class="container">
+    <div class="header">
+      <div class="box">
+        <h1 style="font-size:55px;"><span class="text-logo"> Methodology</span></h1>
+        <p>
+          Our carbon calculator uses mathematical formulas from different sources. To calculate your carbon emission,
+          you have to know the distance you travel per day, week, month or year. This calculator is using the target
+          units kilometers and liters, and european standards of carbon emission. If you require a more detailed 
+          methodology and/or sources, please read our scientific paper through the button below. 
+        </p>
+        <div class="container_buttons_links_header">
+          <div class="btn">
+            <a href="static/gd_course_HVL_2023_group3/Green_Digitalization_and_App_Development_essay.pdf  " target="_blank" class="btn_carbon_app_new_entry_main">Paper</a>
+          </div>
+          <div class="btn">
+            <a href="{{url_for('gd_course_HVL_2023_group3.carbon_app_home')}}" class="btn_carbon_app_new_entry_main">Carbon App</a>
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img src="{{url_for('static', filename='gd_course_HVL_2023_group3/icons/metho.jpg')}}" class="iconimg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+  <div class="encomp_allencomp">
+
+    <div class="allencomp" id="asdas">
+      <div class="drop" id="one">
+        <p class="paratext"><span><i class="fa-solid fa-train-tram"></i></i></span>&nbsp;&nbsp; TRAM</p>
+        <!-- add icons for when if's showing vs not -->
+      </div>
+      <div class="inside" id="kek" style="display: none;">
+        <p>Data for electric trams is sometimes hard to acquire due to the amount of variables in the calculations, trams get most of their passengers in highly urban areas, as well as the distance commuted varies highly depending on the person. Our data is borrowed from the UK, where we averaged the carbon emissions of two different teams; the Manchester Metrolink and the Croydon Tramlink. This gives us:<br>
+          \[ kgco^2 = km*0,042 \]
+        </p>
+        <br>
+      </div>
+
+      <div class="drop" id="two">
+        <p class="paratext"><span><i class="fa-solid fa-plane-departure"></i></span>&nbsp;&nbsp; PLANE</p>
+      </div>
+      <div class="inside" id="kektwo" style="display: none;">
+        Flying is a highly controversial topic in climate debates all over the world. This type of carbon emission dominates a frequent traveler's individual contribution to climate change, even though it only contributes approximately around 3,8% of the total CO2 emissions in Europe.
+       
+        <p>We have therefore chosen to use three different constants based on your flight distance:</p>
+        <br>
+        Domestic flights from 0-785 KM
+        \[ kgco^2 = km*0,157 \]
+        Short hauls from 785-3699 KM
+        \[ kgco^2 = km*0,130 \]
+        Long hauls greater than 3699 KM
+        \[ kgco^2 = km*0,105 \]
+        <br>
+      </div>
+      <div class="drop" id="three">
+        <p class="paratext"><span><i class="fa-solid fa-ferry"></i></span>&nbsp;&nbsp; FERRY</p>
+      </div>
+      <div class="inside" id="kekthree" style="display: none;">
+      On foot:
+     <p> Foot passenger ferries emit approximately 0.018 kg of CO2 per passenger kilometer. This shows us the relatively lower environmental impact of foot passenger ferries compared to other modes of transportation.</p>
+     <p> \[ kgco^2 = km*0,01874 \] </p><br>
+      By car: <br>
+    <p> Ferry transportation for cars is a significantly more CO2-intensive endeavor as compared to foot passenger ferries. The source highlights the carbon emissions produced by ferries transporting cars, further emphasizing the importance of considering the environmental impact when choosing the car. </p>
+    <p> \[ kgco^2 = km*0,12952 \] </p><br>
+
+
+      </div>
+
+      <div class="drop" id="four">
+        <p class="paratext"><span><i class="fa-solid fa-bus"></i></span>&nbsp;&nbsp; BUS</p>
+      </div>
+      <div class="inside" id="kekfour" style="display: none;">
+        The average bus in Europe is a CNG powered bus - 0.11 kg per passenger per km. On average, a diesel-powered bus in the UK emits around 0.09 kilograms of CO2 per passenger kilometer, while a compressed natural gas (CNG) bus emits around 0.11 kilograms of CO2 per passenger kilometer.
+        <br> <br>
+        A passenger that travels with a diesel powered bus emits an estimate of 0,09 kg per km:
+        \[ kgco^2 = km*0,09 \]
+        <br>
+        A passenger that travels with a CNG powered bus emits an estimate of 0,11 kg per km:
+        \[ kgco^2 = km*0,11 \]
+      </div>
+
+
+    </div>
+    <div class="allencomp2">
+
+      <div class="drop" id="five">
+        <p class="paratext"><span><i class="fa-solid fa-motorcycle"></i></span>&nbsp;&nbsp; MOTORCYCLE</p>
+      </div>
+      <div class="inside" id="kekfive" style="display: none;">
+        Motorbikes use two types of fuel, gasoline and diesel, but in the last few years almost all diesel motorcycles have disappeared. At the same time the electric motorbikes came to the world, but not on a large scale. We have decided to only include gasoline driven motorcycles:
+        <br>
+        \[ kgco^2 = km*0,11 \]
+      </div>
+
+      <div class="drop" id="six">
+        <p class="paratext"><span><i class="fa-solid fa-train"></i></span>&nbsp;&nbsp; TRAIN</p>
+      </div>
+      <div class="inside" id="keksix" style="display: none;">
+        In 2019, there were approximately 31.5 billion passenger journeys by rail worldwide.The formula to calculate carbon emissions per person by train involves several variables, including the distance traveled, the type of train, and the energy source used to power the train. However, we have decided to use our standardized formula as an approximate amount of emission, which gives us:
+        <br>
+        \[ kgco^2 = km*0,11 \]
+        <br>
+      </div>
+
+      <div class="drop" id="seven">
+        <p class="paratext"><span><i class="fa-solid fa-person-hiking"></i></span>&nbsp;&nbsp;<span><i
+              class="fa-solid fa-bicycle"></i></span>&nbsp;&nbsp; BIKING AND WALKING</p>
+      </div>
+      <div class="inside" id="kekseven" style="display: none;">
+       <p> As the carbon emissions produced by biking vary greatly depending on the frequency of use (with less usage resulting in a lower carbon footprint), we have made the decision to establish a standardized value of 0.0kg CO2 per kilometer for all biking activities.</p>
+        <br>
+     <p>Walking meanwhile emits zero emissions</p>
+     <br>
+      </div>
+
+      <div class="drop" id="eight">
+        <p class="paratext"><span><i class="fa-solid fa-car-side"></i></span>&nbsp;&nbsp; CAR</p>
+      </div>
+      <div class="inside" id="kekeight" style="display: none;">
+        <p> One liter of diesel emissions 2,731 Co2. One liter of gasoline emits 2,401 Co2. 
+          Hybrid electric vehicles (PHEV) will emit only water vapor. 
+          Electric vehicles (EV) do not generate any tailpipe emissions (EPA, 2022) 
+          Here is a breakdown of the approximate CO2 emissions per kilometer per person for different types of cars: </p>
+          Gasoline cars: <br>
+        <p> \[ kgco^2 = km*0,18 \] </p>
+        <br>
+        Diesel cars: <br>
+        <p>\[ kgco^2 = km*0,16 \]</p>
+      </div>
+    </div>
+  </div>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</section>
+{% block javascript %}
+<script>
+  var voksen = document.getElementById("kek");
+const drop1 = document.getElementById('one');
+drop1.addEventListener('click', (e) => {
+    dropin1()
+})
+function dropin1() {
+    if (voksen.style.display === "none") {
+        voksen.style.display = "block";
+    } else {
+        voksen.style.display = "none"
+    }
+}
+
+var barn = document.getElementById("kektwo");
+const drop2 = document.getElementById('two');
+drop2.addEventListener('click', (e) => {
+    dropin2()
+})
+function dropin2() {
+    if (barn.style.display === "none") {
+        barn.style.display = "block";
+    } else {
+        barn.style.display = "none"
+    }
+}
+
+var kusine = document.getElementById("kekthree");
+const drop3 = document.getElementById('three');
+drop3.addEventListener('click', (e) => {
+    dropin3()
+})
+function dropin3() {
+    if (kusine.style.display === "none") {
+        kusine.style.display = "block";
+    } else {
+        kusine.style.display = "none"
+    }
+}
+
+var fetter = document.getElementById("kekfour");
+const drop4 = document.getElementById('four');
+drop4.addEventListener('click', (e) => {
+    dropin4()
+})
+function dropin4() {
+    if (fetter.style.display === "none") {
+        fetter.style.display = "block";
+    } else {
+        fetter.style.display = "none"
+    }
+}
+
+var baby = document.getElementById("kekfive");
+const drop5 = document.getElementById('five');
+drop5.addEventListener('click', (e) => {
+    dropin5()
+})
+function dropin5() {
+    if (baby.style.display === "none") {
+        baby.style.display = "block";
+    } else {
+        baby.style.display = "none"
+    }
+}
+
+var tante = document.getElementById("keksix");
+const drop6 = document.getElementById('six');
+drop6.addEventListener('click', (e) => {
+    dropin6()
+})
+function dropin6() {
+    if (tante.style.display === "none") {
+        tante.style.display = "block";
+    } else {
+        tante.style.display = "none"
+    }
+}
+
+var onkel = document.getElementById("kekseven");
+const drop7 = document.getElementById('seven');
+drop7.addEventListener('click', (e) => {
+    dropin7()
+})
+function dropin7() {
+    if (onkel.style.display === "none") {
+        onkel.style.display = "block";
+    } else {
+        onkel.style.display = "none"
+    }
+}
+
+var oldebestefar = document.getElementById("kekeight");
+const drop8 = document.getElementById('eight');
+drop8.addEventListener('click', (e) => {
+    dropin8()
+})
+function dropin8() {
+    if (oldebestefar.style.display === "none") {
+        oldebestefar.style.display = "block";
+    } else {
+        oldebestefar.style.display = "none"
+    }
+}
+</script>
+{% endblock %}
+{% endblock content %}

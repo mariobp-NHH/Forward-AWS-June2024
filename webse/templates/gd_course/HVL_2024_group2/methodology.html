@@ -1,0 +1,134 @@
+{% extends "gd_course/HVL_2024_group2/layout.html" %}
+{% block content %}
+
+<section>
+    <div class="overlay_text">
+      <div class="container" style="width: 100%; ">
+        <div class="top_home" style="margin-bottom: 0;">
+          <div class="home_heading">
+            Our Methodology
+          </div>
+          <div class="home_heading_info" style="width: 80%;">
+            <p style="text-align:left;">
+                Welcome to the inner workings of our carbon footprint calculator! We're excited to show you how we've put everything together.
+
+At the core of our calculator are trusted sources like Fremtiden i våre hender (The Future in Our Hands) and Statistics Norway (SSB). We've tapped into their data to fuel our calculator, ensuring reliability and accuracy in every calculation.
+<br><br>
+
+While we've gone into more detail in our paper, we've simplified things here to make it easy for you to follow along. Basically, we've gathered a bunch of numbers and formulas to estimate your carbon footprint.
+
+Our aim? To empower you to make greener choices and do your part for the planet. <br><br> <strong>You can read our paper by clicking the button below! </strong> So, let's take a peek behind the curtain and see how it all comes together!
+            </p>
+
+            <div class="demo_box">
+                <div class="btn_nav_demo">
+                    <a href="https://methodology24carbonapphvl.tiiny.site">Paper</a>
+                </div>
+            </div> 
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+<!-- Methodology -->
+<section class="section_body_methodology">
+    <div class="container">
+  
+        <div class="methodology">
+            <h1 style="text-align:center; align-items: center; ">Our Formulas</h1>
+        </div>
+  
+        <!-- First row with two boxes -->
+    <div class="methodology">
+        <div class="row">
+          <div class="box">
+            <h4>The General Formula:</h4>
+            \[\text{CO}_{2}=d*\frac{ef}{p}\]
+            <br>
+            In which:
+            \[\text{CO}_2 \text{ = carbon emissions in grams} \]
+            \[\text{d} \text{ = distance traveled in km} \]
+            \[\text{ef} \text{ = emission factor in CO}_2 \text{/km} \]
+            \[\text{p} \text{ = amount of passengers} \]</p>
+          </div>
+          <div class="box">
+            <h4>General Formula for Electric Vehicles:</h4>
+             \[ \text{Ef = x * Ec} \]
+                <br>
+                <br>
+
+                In which:
+                \[\text{ef} \text{ = emission factor in gCO}_2 \text{/km} \]
+                \[\text{x} \text{ = the distance traveled in kilometers} \text{} \]
+                \[\text{ec} \text{ = emission factor in grams of gCO}_2 \text{/km} \]</p>
+          </div>
+        </div>
+      </div>
+  
+      <div class="methodology" style="display:block;">
+        <h1 style="text-align:start;"> Our Numbers</h1>
+        <p>
+            Now that we have presented our general formula to our calculations, we now present the numbers we have
+            gathered through our research on the matter:
+        </p>
+    </div>
+
+    <div class="methodology">
+        <div class="row">
+          <div class="box_table1">
+            <h3>FERRY</h3>
+            <p> Ferris contributes significantly to emissions. Norway has initiated a project named "to zero," aiming to implement fully electric ferries. However, presently, the ferries continue to operate on diesel. According to Fremtiden I Våre Hender, their emissions amount to <strong>226 grams of CO2 per passenger-kilometer.</strong></p>
+            <!-- Content for Ferry -->
+          </div>
+          <div class="box_table1">
+            <h3>CAR</h3>
+            <p>The Norwegian government's incentives have propelled electric vehicle sales, resulting in Norway leading globally in electric cars per capita. Emissions vary by car size, with <strong> electric cars averaging 4,943 g CO2/km </strong>. Despite electric car adoption, many gasoline and diesel cars remain in use, where <strong> emits 57.11 g CO2/km, and diesel emits 46.89 g CO2/km.</strong></p>
+            <!-- Content for Car -->
+          </div>
+        </div>
+      </div>
+      
+      <div class="methodology">
+        <div class="row">
+          <div class="box_table1">
+            <h3>MOTORCYCLE</h3>
+            <p>Motorcycles, running on gasoline, are often seen as environmentally friendly due to their size and fuel efficiency. According to Fedoryshyn (2016),<strong> motorcycles emit 85.2g of CO2 per kilometer driven.</strong></p>
+            <!-- Content for Motorcycle -->
+          </div>
+          <div class="box_table1">
+            <h3>TRAIN</h3>
+            <p>As per VY's sustainability report for 2023, <strong> electric trains emit 10 grams of CO2 per person, whereas diesel-powered trains emit 91 grams of CO2 per kilometer.</strong> Our calculations are based on emissions data specific to Norway.</p>
+            <!-- Content for Train -->
+          </div>
+        </div>
+      </div>
+      
+      <div class="methodology">
+        <div class="row">
+          <div class="box_table1">
+            <h3>BUS</h3>
+            <p>Our calculations for buses are derived from the same report used for trains, namely VY's sustainability report for 2023. According to this data, buses emit <strong>27 grams of CO2 per kilometer when powered by diesel</strong>, <strong>14 grams of CO2 per kilometer with biodiesel</strong>, and <strong>13 grams of CO2 per kilometer when electrically powered</strong>.</p>
+            <!-- Content for Bus -->
+          </div>
+          <div class="box_table1">
+            <h3>AIRPLANE</h3>
+            <p>When considering air travel, we classify flights by class: economy, economy premium, and business. Our main data source for CO2 emissions from airplanes is the "Klimasmart Semester" report. From this report, we derived an average emission rate for different classes, which we use in our calculations: <strong>197,667 g CO2 per kilometer</strong>.</p>
+            <!-- Content for Airplane -->
+          </div>
+        </div>
+      </div>
+      
+
+
+</div>
+</section>
+  
+  
+
+</body>
+</html>
+
+{% endblock content %}

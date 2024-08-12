@@ -1,0 +1,35 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+<section class="gd_course_chat">
+  <div class="container">
+      <div class="box">
+
+      </div>
+      <div class="box"> 
+        <article class="media content-section">
+          <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ announcement.author.username }}</a>
+              <small class="text-muted">{{ announcement.date_posted.strftime('%Y-%m-%d') }}</small>
+              {% if announcement.author == current_user %}
+                  <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('gd_course_announcements.update_announcement', announcement_id=announcement.id)}}">Update</a>
+                    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{{ url_for('gd_course_announcements.delete_announcement', announcement_id=announcement.id)}}">Delete</a>
+                  </div>
+              {% endif %}
+            </div>
+            <h2><a class="article-title" href="#">{{ announcement.title }}</a></h2>
+            <p class="article-content" style="color: black">{{ announcement.content }}</p>
+          </div>
+        </article>
+      </div>
+      <div class="box">
+
+      </div>
+  </div>
+</section> 
+
+
+{% endblock content %}

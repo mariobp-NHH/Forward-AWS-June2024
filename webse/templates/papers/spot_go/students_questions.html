@@ -1,0 +1,369 @@
+{% extends "papers/spot_go/spot_go_layout.html" %}
+{% block content %}
+
+<section class="spot_go_question">
+  <div class="container">
+      <div class="box">
+
+      </div>
+      <div class="box"> 
+          <div class="h1 mb-3">
+            <i class="bi bi-question-circle"></i>
+          </div>
+          <h3 class="text-center"><span class="text-warning"> Questions: </span></h3>
+          <p>
+            The questions aim to help the readers to understand the main results in the paper. After answering the questions, you can <strong>check</strong> if your answers are correct. You can also <strong>chat</strong> with the authors in case that you have any doubt. <strong>To do that, please click in the next link</strong>:
+          </p>   
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="{{ url_for('papers_spot_go.students_answers') }}" >Students-Answers</a>
+          </div>   
+      </div>
+      <div class="box">
+
+      </div>
+  </div>
+ </section> 
+
+
+   <!-- Refresh -->
+   <section class="section_1">
+
+    <div class="container">
+      
+      <div class="box_questions_two">
+                
+      </div>
+      <div class="box_questions_two">
+          <form method="POST" action="">
+              {{ spot_go_q1.csrf_token }}
+                  <legend class="border-bottom mb-4">Question 1</legend>
+                  <p class="card-text">With the <strong>current GO market design</strong>, which is the impact on the 
+                    <strong>competition in the spot market</strong> of an <strong>increase in the demand for GOs</strong>?
+                      (chose one of the next options): 
+                      <br>
+                      <br>     
+                  </p>
+                  <div class="form-group">
+                      {% if spot_go_q1.type.errors %}
+                          {{ spot_go_q1.type(class="form-control form-control is-invalid") }}
+                          <div class="invalid-feedback">
+                              {% for error in spot_go_q1.type.errors %}
+                                  <span>{{ error }}</span>
+                              {% endfor %}
+                          </div>
+                      {% else %}
+                          {{ spot_go_q1.type(class="form-control form-control") }}
+                      {% endif %}
+                  </div>
+                  </br>
+                  <div class="container_buttons_developers">
+                    {{ spot_go_q1.submit(class="btn_developers")}}
+                    <a class="btn_developers" data-toggle="modal" data-target="#hint_q1">Hint</a>
+                  </div> 
+          </form>         
+      </div>
+      <div class="box_questions_two">
+          <form method="POST" action="">
+              {{ spot_go_q2.csrf_token }}
+                  <legend class="border-bottom mb-4">Question 2</legend>
+                  <p class="card-text">With the <strong>current GO market design</strong>, 
+                    which is the impact on the <strong>competition in the spot market</strong> of a 
+                    <strong>decrease in the green production capacity</strong> that can be sold in the GO market?
+                      (chose one of the next options):
+                  </p>
+                  <div class="form-group">
+                      {% if spot_go_q2.type.errors %}
+                          {{ spot_go_q2.type(class="form-control form-control is-invalid") }}
+                          <div class="invalid-feedback">
+                              {% for error in spot_go_q2.type.errors %}
+                                  <span>{{ error }}</span>
+                              {% endfor %}
+                          </div>
+                      {% else %}
+                          {{ spot_go_q2.type(class="form-control form-control") }}
+                      {% endif %}
+                  </div>
+                  </br>
+                  <div class="container_buttons_developers">
+                    {{ spot_go_q2.submit(class="btn_developers")}}
+                    <a class="btn_developers" data-toggle="modal" data-target="#hint_q2">Hint</a>
+                  </div> 
+          </form>
+      </div>
+      <div class="box_questions_two">
+                
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="box_questions_two">
+                  
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ spot_go_q3.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 3</legend>
+                    <p class="card-text">With the <strong>current GO market design</strong>, if a government wants to 
+                        <strong>foster competition in the spot market</strong>, which is the right policy to implement?
+                        (chose one of the next options):     
+                    </p>
+                    <br>
+                    <br>
+                    <div class="form-group">
+                        {% if spot_go_q3.type.errors %}
+                            {{ spot_go_q3.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in spot_go_q3.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ spot_go_q3.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="container_buttons_developers">
+                      {{ spot_go_q3.submit(class="btn_developers")}}
+                      <a class="btn_developers" data-toggle="modal" data-target="#hint_q3">Hint</a>
+                    </div> 
+            </form>         
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ spot_go_q4.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 4</legend>
+                    <p class="card-text">The European Commission wants to change the <strong>GOs market design </strong>
+                        by considering the transmission congestion to work out the equilibrium prices in that market. 
+                        Which is the impact of that policy on <strong>competition</strong>?
+                        (chose one of the next options):
+                    </p>
+                    <div class="form-group">
+                        {% if spot_go_q4.type.errors %}
+                            {{ spot_go_q4.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in spot_go_q4.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ spot_go_q4.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="container_buttons_developers">
+                      {{ spot_go_q4.submit(class="btn_developers")}}
+                      <a class="btn_developers" data-toggle="modal" data-target="#hint_q4">Hint</a>
+                    </div> 
+            </form>
+        </div>
+        <div class="box_questions_two">
+                  
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box_questions_two">
+                  
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ spot_go_q5.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 5</legend>
+                    <p class="card-text">If for the parameters in <strong>proposition 4</strong>, 
+                        we <strong>reduce the demand both nodes</strong> in the GO market to <strong>three</strong>, 
+                        which will be the expected <strong>equilibrium price in the spot market?</strong>
+                        (chose one of the next options):     
+                    </p>
+                    <div class="form-group">
+                        {% if spot_go_q5.type.errors %}
+                            {{ spot_go_q5.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in spot_go_q5.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ spot_go_q5.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="container_buttons_developers">
+                      {{ spot_go_q5.submit(class="btn_developers")}}
+                      <a class="btn_developers" data-toggle="modal" data-target="#hint_q5">Hint</a>
+                    </div> 
+            </form>         
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ spot_go_q6.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 6</legend>
+                    <p class="card-text">If for the parameters in <strong>proposition 5</strong>, 
+                        we <strong>increase the demand both nodes</strong> in the GO market to <strong>three</strong>, 
+                        which will be the expected <strong>equilibrium price in the spot market?</strong>
+                        (chose one of the next options):
+                    </p>
+                    <div class="form-group">
+                        {% if spot_go_q6.type.errors %}
+                            {{ spot_go_q6.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in spot_go_q6.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ spot_go_q6.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="container_buttons_developers">
+                      {{ spot_go_q6.submit(class="btn_developers")}}
+                      <a class="btn_developers" data-toggle="modal" data-target="#hint_q6">Hint</a>
+                    </div> 
+            </form>
+        </div>
+        <div class="box_questions_two">
+                  
+        </div>
+    </div>
+
+    <!-- Modal Hint Q1 -->
+    <div class="modal fade" id="hint_q1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header", style="background-color: #49736f;">
+            <h5 class="modal-title", style="color:black">Hint, question 1</h5>
+            </div>
+
+            <div class="modal-body", style="color:black">
+            <p style="text-align: left;">
+                You have some useful information to answer this question in proposition 5. You also have an example in table 1.
+            </p>
+            </div>
+
+            <div class="modal-footer", style="background-color: #49736f;">
+            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;", data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        </div>
+      </div>
+
+      <!-- Modal Hint Q2 -->
+      <div class="modal fade" id="hint_q2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header", style="background-color: #49736f;">
+            <h5 class="modal-title", style="color:black">Hint, question 2</h5>
+            </div>
+
+            <div class="modal-body", style="color:black">
+            <p style="text-align: left;">
+              You have some useful information to answer this question in proposition 6. You also have an example in table 1. 
+            </p>
+            </div>
+
+            <div class="modal-footer", style="background-color: #49736f;">
+            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;", data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        </div>
+      </div>
+
+      <!-- Modal Hint Q3 -->
+      <div class="modal fade" id="hint_q3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header", style="background-color: #49736f;">
+            <h5 class="modal-title", style="color:black">Hint, question 3</h5>
+            </div>
+
+            <div class="modal-body", style="color:black">
+            <p style="text-align: left;">
+              You have some useful information to answer this question in proposition 6. You also have an example in table 1. 
+            </p>
+            </div>
+
+            <div class="modal-footer", style="background-color: #49736f;">
+            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;", data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        </div>
+      </div>
+
+      <!-- Modal Hint Q4 -->
+      <div class="modal fade" id="hint_q4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header", style="background-color: #49736f;">
+            <h5 class="modal-title", style="color:black">Hint, question 4</h5>
+            </div>
+
+            <div class="modal-body", style="color:black">
+            <p style="text-align: left;">
+              You have some useful information to answer this question in proposition 7. 
+            </p>
+            </div>
+
+            <div class="modal-footer", style="background-color: #49736f;">
+            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;", data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        </div>
+      </div>
+
+      <!-- Modal Hint Q5 -->
+      <div class="modal fade" id="hint_q5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header", style="background-color: #49736f;">
+            <h5 class="modal-title", style="color:black">Hint, question 5</h5>
+            </div>
+
+            <div class="modal-body", style="color:black">
+            <p style="text-align: left;">
+              To answer this question you can use the paper's app.
+            </p>
+            <a href="/spot_go/" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Paper's app</a>
+            </div>
+
+            <div class="modal-footer", style="background-color: #49736f;">
+            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;", data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        </div>
+      </div>
+
+      <!-- Modal Hint Q6 -->
+      <div class="modal fade" id="hint_q6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header", style="background-color: #49736f;">
+            <h5 class="modal-title", style="color:black">Hint, question 6</h5>
+            </div>
+
+            <div class="modal-body", style="color:black">
+            <p style="text-align: left;">
+                To answer this question you can use the paper's app.
+            </p>
+            <a href="/spot_go/" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Paper's app</a>
+            </div>
+
+            <div class="modal-footer", style="background-color: #49736f;">
+            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;", data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+        </div>
+      </div>
+   </section> 
+{% endblock content %}

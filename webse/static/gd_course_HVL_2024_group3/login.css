@@ -1,0 +1,55 @@
+/*Container register header*/
+/*color=dark*/
+.login_section_css {
+    display: flex;
+    padding-bottom: 100px;
+    }
+    
+    .login_section_css .container {
+    display: flex;
+    }
+    
+    .login_section_css .container {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+    }
+        /*color=dark*/
+    .login_section_css .container .box {
+      flex: 1;
+      background: #fff;
+      color: #fff;
+      border-radius: 2px;
+      margin: 20px 10px;
+      padding: 15px 20px;
+      text-align:center;
+    }
+    
+    .login_section_css .container  .box:nth-of-type(1) {
+      flex-grow:1;
+      color: #fff;
+      border-radius: 10px;
+      margin: 0px 0px;
+      padding: 0px 0px;
+      text-align:left;
+    }
+    
+    .login_section_css .container  .box:nth-of-type(2) {
+      flex-grow:3;
+    background: #568c63;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+    }
+    
+    .login_section_css .container  .box:nth-of-type(3) {
+      flex-grow:1;
+    background: #9fa7bf;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align:left;
+    }

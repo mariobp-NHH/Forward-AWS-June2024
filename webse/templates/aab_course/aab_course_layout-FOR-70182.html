@@ -1,0 +1,173 @@
+<html>
+    <head>
+
+        <!--Import Google Roboto style:-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+        <!--Import the Bootstrap CSS file:-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+        />
+
+        <!--For the plots-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+        <!--Import the FullCalendar js and CSS file:-->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+
+        <!-- Import Font Awesome CDN. It does not work-->
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+        <!-- Import Font Awesome. My own KIT-->
+        <script src="https://kit.fontawesome.com/b6331c8bf2.js" crossorigin="anonymous"></script>
+
+        <!--Import the CSS file with the style:-->
+        <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"> -->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_layout.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_home.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_register.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_account.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_chat.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_app_calculator.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_app_calculator_v1.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_questionnaire.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_chapters.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_statistics.css') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/aab_course/aab_course_chapters_ch3.css') }}">
+
+        <!-- To activate media queries -->
+        <meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1">
+
+        <!-- To use  highlightjs.org and type code inside HTML -->
+        <link rel="stylesheet" href="/path/to/styles/default.min.css">
+
+        <!-- Matjax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    {% if title %}
+        <title>Auditing Accounting and Business- {{ title }}</title>
+    {% else %}
+        <title>Auditing Accounting and Business</title>
+    {% endif %}
+
+    </head>
+    <body>        
+      <nav class="navbar">
+          <div class="container"> <!--class="container_layout"-->
+              <div class="menu_left">
+                  <div class="logo">
+                      <a href="{{ url_for('forward_home.home') }}"><img
+                          src="{{url_for('static', filename='figures/forward/forward_icon.svg')}}"
+                          width="50" 
+                          height="50"
+                      alt=""/></a>
+                      <a href="{{ url_for('aab_course.aab_course_home') }}"><img
+                          src="{{url_for('static', filename='figures/auditing_accounting_business/auditing_accounting_business.svg')}}"
+                          width="50" 
+                          height="50"
+                      alt=""/></a>
+                  </div>
+                  <div class="menu">
+                      {% if current_user.is_authenticated %}
+                          {% if (current_user.email=='mario_aab@demo.com')%}
+                              <ul class="nav">
+                                  <li class="nav-item">
+                                      <a href="{{ url_for('aab_course_announcements.aab_course_announcements_new_announcement') }}">Announcement</a> 
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="{{ url_for('aab_course_statistics.statistics_main') }}">Statistics</a> 
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="{{ url_for('forward_users.forward_users_logout') }}">Logout</a>
+                                  </li>
+                              </ul>
+                          {% else %}
+                              <ul class="nav">
+                                  <li class="nav-item">
+                                      <a href="{{ url_for('aab_course_statistics.statistics_main') }}">Statistics</a> 
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="{{ url_for('forward_users.forward_users_logout') }}">Logout</a>
+                                  </li>
+                              </ul>
+                          {% endif %} 
+                      {% else %}
+                      <ul class="nav">
+                          <li class="nav-item">
+                              <a href="{{ url_for('aab_course_statistics.statistics_main') }}">Statistics</a> 
+                          </li>
+                          <li class="nav-item">
+                              <a href="{{url_for('forward_users.forward_users_login')}}">Login</a> 
+                          </li>
+                      </ul>
+                      {% endif %}    
+                  </div>                    
+              </div>
+              <div class="hamburger">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+              </div>
+          </div>
+      </nav>
+
+
+  {% block content %}{% endblock %}
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">  
+            <div class="item">
+                <p class="lead">
+                    Auditing, Accounting and Business
+                </p> 
+            </div>              
+            <div class="item">
+                <a href="#">
+                    <i class="bi bi-arrow-up-circle h1"></i>
+                </a>
+            </div> 
+        </div>
+    </footer>
+
+
+    <!--Menu JavaScript-->
+    <script src="static/forward_home_main.js"></script>
+
+    <!-- To use  highlightjs.org and type code inside HTML -->
+    <script src="/path/to/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+     
+
+    <!-- Question Accordion -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
+
+

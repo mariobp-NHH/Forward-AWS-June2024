@@ -1,0 +1,2277 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch7. Sustainable Energy. Hydrogen </span></h1>
+                    <p class="mb-1">
+                        As more countries pursue deep decarbonisation strategies, hydrogen will have a critical role to play.
+                        This will be particularly so where direct electrification is challenging and in harder-to-abate sectors,
+                        such as steel, chemicals, long-haul transport, shipping and aviation. In this context,
+                        hydrogen needs to be low carbon from the outset and ultimately green (produced by electrolysis
+                        of water using renewable electricity).
+                        </br>
+                        </br>
+                        In this chapter, we study the electrolysis process, the type of electrolysers used to produce hydrogen,
+                        we study hydrogen production costs, and the connection between hydrogen and renewables.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch7/ch7_material.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch7/ch7_presentation.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            Which are the main challenges to scale up hydrogen production? Which will be the role of hydrogen
+                    in the future energy system?
+                        </p>
+
+                      </a>
+                      <a href="#electrolysis" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Electrolysis</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the process in which, by using electricity, the water is transformed into hydrogen.
+                        </p>
+                      </a>
+                      <a href="#electrolyser" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Electrolyser: Technology characterisation</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the components of an electrolyser, the type of cells to produce hydrogen, and the
+                            trade-offs between efficiency, durability and cost for electrolysers
+                        </p>
+                      </a>
+                      <a href="#cost" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Production costs</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main costs to produce hydrogen, and the main ways to abate those cost and make
+                            green hydrogen competitive.
+                        </p>
+                      </a>
+                       <a href="#renewables" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Hydrogen and renewables</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the connection between hydrogen and renewables, and the role that combination could have
+                            decarbonizing the energy sector.
+                        </p>
+                      </a>
+                      <a href="#flexibility" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Flexibility of green hydrogen production facilities</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main factors that determine the role of hydrogen providing short-term and long-term
+                            flexibility in the energy sector.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/ch7_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+   <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Introduction</h2>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    To motivate the chapter, we start by watching the video
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=aYBGSfzaa4c" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">What Is Green Hydrogen And Will It Power The Future?</a>
+                   </div>
+                </div>
+                <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q1.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 1</legend>
+                            <p class="card-text"><strong>Green hydrogen</strong> is produced by using electricity from
+                                renewable sources, <strong>blue hydrogen</strong> is produced by using fossil fuels and
+                                using carbon capture storage, and <strong>brown and grey hydrogen</strong> is produced by
+                                using fossil fuels without carbon capture storage generating 843 GT of carbon emissions.
+                                That ammount of carbon emission is equivalent to the annual carbon emissions of
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q1.type.errors %}
+                                        {{ form_m2_ch7_q1.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q1.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q1.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q1.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q2.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 2</legend>
+                            <p class="card-text">Hydrogen could play a crucial role decarbonizing the <strong>transport sector</strong>.
+                                The main advantage of hydrogen over other energy carriers in the transport sector are
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q2.type.errors %}
+                                        {{ form_m2_ch7_q2.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q2.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q2.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q2.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Introduction</h3>
+                <p>
+                    Which are the main challenges to scale up hydrogen production? Which will be the role of hydrogen
+                    in the future energy system?
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch7_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 1</a>
+                   </div>
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch7_ex2') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 2</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1-->
+    <section id="electrolysis" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+            <h2>Electrolysis</h2>
+
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <!--External link-->
+                    <div class="external_links_css">
+                        <p>
+                            This section is based on the video:
+                        </p>
+                        <div class="container_buttons_links_external_links_css">
+                           <div class="btn">
+                               <a href="https://www.youtube.com/watch?v=dRtSjJCKkIo" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Electrolysis</a>
+                           </div>
+                        </div>
+                        <p>
+                            Other useful videos to understand the electrolysis process:
+                        </p>
+                        <div class="container_buttons_links_external_links_css">
+                           <div class="btn">
+                               <a href="https://www.youtube.com/watch?v=7uIIq_Ofzgw" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">What Is Electrolysis | Reactions | Chemistry | FuseSchool</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://www.youtube.com/watch?v=WmtaMq36jaE" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Electrolysis of Water and Hydrochloric Acid | Reactions | Chemistry | FuseSchool</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/hydrogen_electrolyser.svg')}}"
+                        alt=""/>
+            </div>
+
+
+            <p>
+                The electrolysis is a process where <strong>electricity</strong> is used to make a <strong>chemical change</strong> happen that <strong>wouldn't</strong> happen otherwise.
+            
+                <ol>
+                    <li>
+                        <strong>Electrolysis of water</strong> (H2O). The <strong>balance equation</strong> can be written as:
+
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mn>2</mn><msub>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <mi>O</mi><mo>&#x2192;</mo><mn>2</mn><msub>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <mo>+</mo><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGOmaiaadI
+                          eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaeyOKH4QaaGOmaiaadIea
+                          daWgaaWcbaGaaGOmaaqabaGccqGHRaWkcaWGpbWaaSbaaSqaaiaaik
+                          daaeqaaaaa@4048@
+                          </annotation>
+                         </semantics>
+                        </math>
+
+
+                        H2O and O2 are <strong>diatomic elements</strong>: always form groups of two. You will never find just one alone.
+                        Other diatomic elements: B2, I2, N2, Cl2, H2, O2, F2.
+                        </br>
+                        </br>
+                        The balance equation represents an <strong>oxidation reduction process</strong>: Electrons are transferred to form new elements.
+                    </li>
+                    </br>
+                    <li>
+                        How do the <strong>electrons move</strong> during the reduction process? To understand that process,
+                        it is useful to write the <strong>oxidation numbers</strong>:
+
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mn>2</mn><msubsup>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                            <mrow>
+                             <mo>+</mo><mn>1</mn></mrow>
+                           </msubsup>
+                           <msup>
+                            <mi>O</mi>
+                            <mrow>
+                             <mo>&#x2212;</mo><mn>2</mn></mrow>
+                           </msup>
+                           <mo>&#x2192;</mo><mn>2</mn><msubsup>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                            <mn>0</mn>
+                           </msubsup>
+                           <mo>+</mo><msubsup>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                            <mn>0</mn>
+                           </msubsup>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGOmaiaadI
+                          eadaqhaaWcbaGaaGOmaaqaaiabgUcaRiaaigdaaaGccaWGpbWaaWba
+                          aSqabeaacqGHsislcaaIYaaaaOGaeyOKH4QaaGOmaiaadIeadaqhaa
+                          WcbaGaaGOmaaqaaiaaicdaaaGccqGHRaWkcaWGpbWaa0baaSqaaiaa
+                          ikdaaeaacaaIWaaaaaaa@453C@
+                          </annotation>
+                         </semantics>
+                        </math>
+                        
+                        To satisfy the balance equation:
+                        
+                        <ul>
+                            <li>
+                                The <strong>hydrogen</strong> need to be <strong>reduced</strong> (<strong>gains electrons</strong>).
+                            </li>
+                            <li>
+                                The <strong>oxygen</strong> need to be <strong>oxidized</strong> (<strong>loses electrons</strong>).
+                            </li>
+                        </ul>  
+                    </li>
+                    </br>
+                    <li>
+                        This process does not happen on its own. An <strong>electrical current</strong> can force this to happen.
+                        The <strong>device</strong> used to facilitate that process is called <strong>electrolyser</strong> (figure: Electrolyser).
+                        </br>
+                        </br>
+                        An electrolyser consists on a <strong>battery</strong> and <strong>two electrodes</strong>: A cathode, and an anode:
+                        
+                        <ul>
+                            <li>
+                                <strong>Cathode</strong>: Electrons go <strong>into</strong> the water. It will be the place of reduction: H2 is produced.
+                            </li>
+                            <li>
+                                <strong>Anode</strong>: Electrons go <strong>out</strong> the water. It will be the place of oxidation: O2 is produced.
+                            </li>
+                        </ul>
+                        </br>
+                        It will produced twice as much hydrogen gas as oxygen gas (balance equation):
+
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mn>2</mn><msub>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <mi>O</mi><mo>&#x2192;</mo><mn>2</mn><msub>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <mo>+</mo><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGOmaiaadI
+                          eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaeyOKH4QaaGOmaiaadIea
+                          daWgaaWcbaGaaGOmaaqabaGccqGHRaWkcaWGpbWaaSbaaSqaaiaaik
+                          daaeqaaaaa@4048@
+                          </annotation>
+                         </semantics>
+                        </math>
+
+                    </li>
+                    <li>
+                        To fully understand the process, it is necessary to take a look of the <strong>half reactions</strong>:
+                        <ol type="a">
+                            <li>
+                                Reduction of hydrogen:
+                            </li>
+                            </br>
+                                <ul>
+                                    <li>
+                                        In the balance equation, the hydrogen has a positive charge. Therefore, to become neutral, it needs to <strong>gain one electron</strong>.
+                                    </li>
+                                    <li>
+                                        In the electrolysis, that electron comes from the <strong>cathode</strong>. Therefore, the <strong>hydrogen </strong>is formed in the cathode.
+                                    </li>
+                                    <li>
+                                        In equations:
+                                        <math display='block'>
+                                         <semantics>
+                                          <mrow>
+                                           <mn>2</mn><msub>
+                                            <mi>H</mi>
+                                            <mn>2</mn>
+                                           </msub>
+                                           <mi>O</mi><mo>+</mo><mn>2</mn><msup>
+                                            <mi>e</mi>
+                                            <mo>&#x2212;</mo>
+                                           </msup>
+                                           <mo>&#x2192;</mo><msubsup>
+                                            <mi>H</mi>
+                                            <mn>2</mn>
+                                            <mn>0</mn>
+                                           </msubsup>
+                                           <mo>+</mo><mn>2</mn><msup>
+                                            <mrow>
+                                             <mo stretchy='false'>(</mo><mi>O</mi><mi>H</mi><mo stretchy='false'>)</mo></mrow>
+                                            <mo>&#x2212;</mo>
+                                           </msup>
+                                           </mrow>
+                                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGOmaiaadI
+                                          eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaey4kaSIaaGOmaiaadwga
+                                          daahaaWcbeqaaiabgkHiTaaakiabgkziUkaadIeadaqhaaWcbaGaaG
+                                          OmaaqaaiaaicdaaaGccqGHRaWkcaaIYaGaaiikaiaad+eacaWGibGa
+                                          aiykamaaCaaaleqabaGaeyOeI0caaaaa@4707@
+                                          </annotation>
+                                         </semantics>
+                                        </math>
+
+                                    </li>
+                                </ul>
+
+                            <li>
+                                Oxidation of oxygen:
+                            </li>
+                            </br>
+                                <ul>
+                                    <li>
+                                        In the balance equation, the oxygen has a negative charge. Therefore, to become neutral, it needs to <strong>lose two electrons</strong>.
+                                    </li>
+                                    <li>
+                                        In the electrolysis, that electron goes away at the <strong>anode</strong>. Therefore, the <strong>oxygen</strong> is formed in the anode.
+                                    </li>
+                                    <li>
+                                        In equations:
+
+                                        <math display='block'>
+                                         <semantics>
+                                          <mtable columnalign='left'>
+                                           <mtr>
+                                            <mtd>
+                                             <mn>2</mn><msub>
+                                              <mi>H</mi>
+                                              <mn>2</mn>
+                                             </msub>
+                                             <mi>O</mi><mo>&#x2212;</mo><mn>4</mn><msup>
+                                              <mi>e</mi>
+                                              <mo>&#x2212;</mo>
+                                             </msup>
+                                             <mo>&#x2192;</mo><msubsup>
+                                              <mi>O</mi>
+                                              <mn>2</mn>
+                                              <mn>0</mn>
+                                             </msubsup>
+                                             <mo>+</mo><mn>4</mn><msup>
+                                              <mi>H</mi>
+                                              <mo>+</mo>
+                                             </msup>
+
+                                            </mtd>
+                                           </mtr>
+                                           <mtr>
+                                            <mtd>
+                                             <mn>2</mn><msub>
+                                              <mi>H</mi>
+                                              <mn>2</mn>
+                                             </msub>
+                                             <mi>O</mi><mo>&#x2192;</mo><msubsup>
+                                              <mi>O</mi>
+                                              <mn>2</mn>
+                                              <mn>0</mn>
+                                             </msubsup>
+                                             <mo>+</mo><mn>4</mn><msup>
+                                              <mi>H</mi>
+                                              <mo>+</mo>
+                                             </msup>
+                                             <mo>+</mo><mn>4</mn><msup>
+                                              <mi>e</mi>
+                                              <mo>&#x2212;</mo>
+                                             </msup>
+
+                                            </mtd>
+                                           </mtr>
+                                          </mtable>
+
+                                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaacaaIYa
+                                          GaamisamaaBaaaleaacaaIYaaabeaakiaad+eacqGHsislcaaI0aGa
+                                          amyzamaaCaaaleqabaGaeyOeI0caaOGaeyOKH4Qaam4tamaaDaaale
+                                          aacaaIYaaabaGaaGimaaaakiabgUcaRiaaisdacaWGibWaaWbaaSqa
+                                          beaacqGHRaWkaaaakeaacaaIYaGaamisamaaBaaaleaacaaIYaaabe
+                                          aakiaad+eacqGHsgIRcaWGpbWaa0baaSqaaiaaikdaaeaacaaIWaaa
+                                          aOGaey4kaSIaaGinaiaadIeadaahaaWcbeqaaiabgUcaRaaakiabgU
+                                          caRiaaisdacaWGLbWaaWbaaSqabeaacqGHsislaaaaaaa@53DD@
+                                          </annotation>
+                                         </semantics>
+                                        </math>
+                                    </li>
+                                </ul>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Combining the two half equations</strong> and making some <strong>algebra</strong>:
+
+                        <ol type="a">
+                            <li>
+                                Multiplying the reduction equation by 2.
+                                <math display='block'>
+                                 <semantics>
+                                  <mrow>
+                                   <mn>4</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>+</mo><mn>4</mn><msup>
+                                    <mi>e</mi>
+                                    <mo>&#x2212;</mo>
+                                   </msup>
+                                   <mo>&#x2192;</mo><mn>2</mn><msubsup>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   <mo>+</mo><mn>4</mn><msup>
+                                    <mrow>
+                                     <mo stretchy='false'>(</mo><mi>O</mi><mi>H</mi><mo stretchy='false'>)</mo></mrow>
+                                    <mo>&#x2212;</mo>
+                                   </msup>
+                                   </mrow>
+                                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGinaiaadI
+                                  eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaey4kaSIaaGinaiaadwga
+                                  daahaaWcbeqaaiabgkHiTaaakiabgkziUkaaikdacaWGibWaa0baaS
+                                  qaaiaaikdaaeaacaaIWaaaaOGaey4kaSIaaGinaiaacIcacaWGpbGa
+                                  amisaiaacMcadaahaaWcbeqaaiabgkHiTaaaaaa@47C9@
+                                  </annotation>
+                                 </semantics>
+                                </math>
+                            </li>
+                            <li>
+                                Summing the reduction and the oxidation equations.
+                                <math display='block'>
+                                 <semantics>
+                                  <mrow>
+                                   <mn>4</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>+</mo><mn>4</mn><msup>
+                                    <mi>e</mi>
+                                    <mo>&#x2212;</mo>
+                                   </msup>
+                                   <mo>+</mo><mn>2</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>&#x2192;</mo><mn>2</mn><msubsup>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   <mo>+</mo><mn>4</mn><msup>
+                                    <mrow>
+                                     <mo stretchy='false'>(</mo><mi>O</mi><mi>H</mi><mo stretchy='false'>)</mo></mrow>
+                                    <mo>&#x2212;</mo>
+                                   </msup>
+                                   <mo>+</mo><msubsup>
+                                    <mi>O</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   <mo>+</mo><mn>4</mn><msup>
+                                    <mi>H</mi>
+                                    <mo>+</mo>
+                                   </msup>
+                                   <mo>+</mo><mn>4</mn><msup>
+                                    <mi>e</mi>
+                                    <mo>&#x2212;</mo>
+                                   </msup>
+                                   </mrow>
+                                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGinaiaadI
+                                  eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaey4kaSIaaGinaiaadwga
+                                  daahaaWcbeqaaiabgkHiTaaakiabgUcaRiaaikdacaWGibWaaSbaaS
+                                  qaaiaaikdaaeqaaOGaam4taiabgkziUkaaikdacaWGibWaa0baaSqa
+                                  aiaaikdaaeaacaaIWaaaaOGaey4kaSIaaGinaiaacIcacaWGpbGaam
+                                  isaiaacMcadaahaaWcbeqaaiabgkHiTaaakiabgUcaRiaad+eadaqh
+                                  aaWcbaGaaGOmaaqaaiaaicdaaaGccqGHRaWkcaaI0aGaamisamaaCa
+                                  aaleqabaGaey4kaScaaOGaey4kaSIaaGinaiaadwgadaahaaWcbeqa
+                                  aiabgkHiTaaaaaa@5691@
+                                  </annotation>
+                                 </semantics>
+                                </math>
+                            </li>
+                            <li>
+                                The electrons can be cancelled out.
+                                <math display='block'>
+                                 <semantics>
+                                  <mrow>
+                                   <mn>4</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>+</mo><mn>2</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>&#x2192;</mo><mn>2</mn><msubsup>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   <mo>+</mo><mn>4</mn><msup>
+                                    <mrow>
+                                     <mo stretchy='false'>(</mo><mi>O</mi><mi>H</mi><mo stretchy='false'>)</mo></mrow>
+                                    <mo>&#x2212;</mo>
+                                   </msup>
+                                   <mo>+</mo><msubsup>
+                                    <mi>O</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   <mo>+</mo><mn>4</mn><msup>
+                                    <mi>H</mi>
+                                    <mo>+</mo>
+                                   </msup>
+                                   </mrow>
+                                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGinaiaadI
+                                  eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaey4kaSIaaGOmaiaadIea
+                                  daWgaaWcbaGaaGOmaaqabaGccaWGpbGaeyOKH4QaaGOmaiaadIeada
+                                  qhaaWcbaGaaGOmaaqaaiaaicdaaaGccqGHRaWkcaaI0aGaaiikaiaa
+                                  d+eacaWGibGaaiykamaaCaaaleqabaGaeyOeI0caaOGaey4kaSIaam
+                                  4tamaaDaaaleaacaaIYaaabaGaaGimaaaakiabgUcaRiaaisdacaWG
+                                  ibWaaWbaaSqabeaacqGHRaWkaaaaaa@4F35@
+                                  </annotation>
+                                 </semantics>
+                                </math>
+                            </li>
+                            <li>
+                                By arranging terms.
+                                <math display='block'>
+                                 <semantics>
+                                  <mrow>
+                                   <mn>6</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>&#x2192;</mo><mn>2</mn><msubsup>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   <mo>+</mo><mn>4</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>+</mo><msubsup>
+                                    <mi>O</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   </mrow>
+                                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGOnaiaadI
+                                  eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaeyOKH4QaaGOmaiaadIea
+                                  daqhaaWcbaGaaGOmaaqaaiaaicdaaaGccqGHRaWkcaaI0aGaamisam
+                                  aaBaaaleaacaaIYaaabeaakiaad+eacqGHRaWkcaWGpbWaa0baaSqa
+                                  aiaaikdaaeaacaaIWaaaaaaa@45F5@
+                                  </annotation>
+                                 </semantics>
+                                </math>
+                            </li>
+                            <li>
+                                By cancelling terms.
+                                <math display='block'>
+                                 <semantics>
+                                  <mrow>
+                                   <mn>2</mn><msub>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                   </msub>
+                                   <mi>O</mi><mo>&#x2192;</mo><mn>2</mn><msubsup>
+                                    <mi>H</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   <mo>+</mo><msubsup>
+                                    <mi>O</mi>
+                                    <mn>2</mn>
+                                    <mn>0</mn>
+                                   </msubsup>
+                                   </mrow>
+                                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGOmaiaadI
+                                  eadaWgaaWcbaGaaGOmaaqabaGccaWGpbGaeyOKH4QaaGOmaiaadIea
+                                  daqhaaWcbaGaaGOmaaqaaiaaicdaaaGccqGHRaWkcaWGpbWaa0baaS
+                                  qaaiaaikdaaeaacaaIWaaaaaaa@41BE@
+                                  </annotation>
+                                 </semantics>
+                                </math>
+                                The last equation is the <strong>balance equation</strong>, where for each atom of oxygen two atoms of hydrogen are produced.
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </p>
+            
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q3.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 3</legend>
+                            <p class="card-text">The electrolyser is the device where the hydrogen is produced,
+                                which is the role of the <strong>cathode</strong> in the electrolyser?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q3.type.errors %}
+                                        {{ form_m2_ch7_q3.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q3.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q3.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q3.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q4.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 4</legend>
+                            <p class="card-text"> In the balance equation that determines the formation of hydrogen,
+                                the oxygen has a negative charge. In the <strong>half reaction equation</strong> that define
+                                the oxidation of the oxygen, the oxygen becomes neutral by
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q4.type.errors %}
+                                        {{ form_m2_ch7_q4.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q4.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q4.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q4.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            
+        </div>
+    </section>
+
+<!--Section 2 (blue)-->
+    <section id="electrolyser" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Electrolyser: Technology characterisation</h2>
+            <br>
+                Water electrolysers are electrochemical devices
+                used to split water molecules into hydrogen and
+                oxygen by passage of an electrical current. They
+                can be fragmented in <strong>three levels</strong> (figure: Electrolyser components)</strong>:
+                </br>
+                </br>
+                <ul>
+                    <li>
+                        The<strong> cell</strong> is the core of the electrolyser and it
+                        is where the electrochemical process takes
+                        place. It is composed of the two electrodes
+                        (anode and cathode) immersed in a liquid
+                        electrolyte or adjacent to a solid electrolyte
+                        membrane, two porous transport layers
+                        (which facilitate the transport of reactants
+                        and removal of products), and the bipolar
+                        plates that provide mechanical support and
+                        distribute the flow.
+                    </li>
+                    <li>
+                        The <strong>stack</strong> has a broader scope, which includes
+                        multiple cells connected in series, spacers
+                        (insulating material between two opposite
+                        electrodes), seals, frames (mechanical
+                        support) and end plates (to avoid leaks and
+                        collect fluids).
+                    </li>
+                    <li>
+                        The <strong>system level</strong> (or balance of plant) goes
+                        beyond the stack to include equipment
+                        for cooling, processing the hydrogen (e.g.
+                        for purity and compression), converting
+                        the electricity input (e.g. transformer and
+                        rectifier), treating the water supply (e.g.
+                        deionization) and gas output (e.g. of
+                        oxygen).
+                    </li>
+                </ul>
+                </br>
+                Purified water is fed into the system using
+                circulating pumps, or also by gravity. The water
+                then reaches the electrodes by flowing through the
+                bipolar plates and through the porous transport
+                layers. At the electrode, the water is split into
+                oxygen and hydrogen, with ions (typically H+ or
+                OH-) crossing though a liquid or solid membrane
+                electrolyte. The membrane or diaphragm between
+                both electrodes is also responsible for keeping the
+                produced gases (hydrogen and oxygen) separated
+                and avoiding their mixture. This general principle
+                has remained the same for centuries, but the
+                technology has evolved since William Nicholson
+                and Anthony Carlisle first developed it in 1800.
+                </br>
+                </br>
+                The principle of water electrolysis is simple, yet it
+                allows the construction of different technological
+                variations based on various physicalchemical
+                and electrochemical aspects. <strong>Electrolysers are
+                    typically divided into four main technologies</strong> (figure: Electrolyser types).
+                These are distinguished based on the <strong>electrolyte</strong>
+                and <strong>temperature of operation</strong>, which in turn will
+                guide the selection of different materials and
+                components.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/hydrogen_electrolyser_system.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/hydrogen_electrolyser_types.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Cell level for each type of electrolyser</h3>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Alkaline electrolysers.</div>
+                  <p class="text-right">
+                        These have a simple stack
+                        and system design and are relatively easy to
+                        manufacture. Currently, they have electrode areas
+                        as high as 3 square metres (m²). They operate
+                        with high concentrate KOH (typically 57 moles of
+                        solute per litre of solution [mol*L-1]) as electrolyte,
+                        robust ZrO2 based diaphragms and nickel (Ni)
+                        coated stainless-steel for the electrodes. The
+                        ionic charge carrier is the hydroxyl ion OH-, with
+                        KOH and water permeating through the porous
+                        structure of the diaphragm to provide functionality
+                        for the electrochemical reaction. This allows the
+                        intermixing of the produced gases (hydrogen
+                        and oxygen – H2 and O2) that are dissolved in the
+                        electrolyte, limiting lower power-operating range
+                        and the ability to operate at higher pressure levels.
+                        </br>
+                        </br>
+                        <u>Some important considerations:</u>
+                        <ul>
+                            <li>
+                                To prevent this, thicker (0.252 millimetre [mm])
+                                diaphragms are used, but this creates a higher
+                                resistance and lower efficiencies.
+                            </li>
+                            <li>
+                                Spacers are
+                                sometimes
+                                included
+                                by
+                                some
+                                manufacturers
+                                between electrodes and diaphragms to further
+                                avoid the intermixing of gases.
+                            </li>
+                            <li>
+                                These thick
+                                diaphragms and added spacers result into high
+                                ohmic resistances across the two electrodes,
+                                drastically reducing current density at a given
+                                voltage.
+                            </li>
+                            <li>
+                                Today´s advanced designs, using zero
+                                gap
+                                electrodes, thinner diaphragms and different
+                                electrocatalyst
+                                concepts
+                                to
+                                increase
+                                current
+                                density, have already reduced their performance
+                                gap in comparison to PEM technology.
+                            </li>
+                            <li>
+                                On the
+                                other hand, classic and sturdy alkaline designs are
+                                known to behave very reliably, <strong>reaching lifetimes
+                                    above 30 years</strong>.
+                            </li>
+
+                        </ul>
+
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Polymer Electrolyte Membrane (PEM) electrolysers.</div>
+                  <p class="text-right">
+                        These use <strong>a thin (0.2 mm) PFSA membrane</strong> and
+                        electrodes with advanced architecture that allows
+                        achieving higher efficiencies (i.e. less resistance).
+                        The perfluorosulfonic acid (PFSA) membrane is
+                        also chemically and mechanically robust, which
+                        allows for high pressure differentials. Thus, the
+                        PEM cells can operate at up to 70 bar with the
+                        oxygen side at atmospheric pressure.
+                        </br>
+                        </br>
+                        <u>Some important considerations:</u>
+                        </br>
+                        <ul>
+                            <li>
+                                The acidic environment provided by the PFSA
+                                membrane, high voltages, and oxygen evolution in
+                                the anode creates a harsh oxidative environment,
+                                demanding the use of materials that can withstand these conditions.
+                            </li>
+                            <li>
+                                <strong>Titanium-based materials</strong>,
+                                noble metal catalysts and protective coatings are
+                                necessary, not only to provide long-term stability
+                                to cell components, but also to provide optimal
+                                electron conductivity and cell efficiency.
+                            </li>
+                            <li>
+                                These
+                                requirements have caused PEM stacks to be more
+                                expensive than alkaline electrolysers. PEMs have
+                                one of the most compact and simplest system
+                                designs, yet they are sensitive to water impurities
+                                such as iron, copper, chromium and sodium and
+                                can suffer from calcination.
+                            </li>
+                            <li>
+                                Today, electrode areas
+                                are quickly approaching 2 000 square centimetres
+                                (cm²), yet this is still far from future concepts of
+                                large MW stack units using single stack concepts.
+                            </li>
+                            <li>
+                                Last but not least, the reliability and <strong>lifetime
+                                characteristics of large-scale</strong>, MW PEM stacks still
+                                have to be validated.
+                            </li>
+                        </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Solid oxide electrolysers (SOEC).</div>
+                  <p class="text-right">
+                      <u>Some important considerations:</u>
+                      </br>
+                        <ul>
+                            <li>
+                                These operate at
+                                high (700-850°C) temperatures. This enables: the
+                                favourable kinetics that allow the use of relatively
+                                cheap nickel electrodes; electricity demand
+                                decreases and part of the energy for separation
+                                is provided through heat (waste heat can be used
+                                and apparent efficiencies based on electricity can
+                                be higher than 100%); the potential for reversibility
+                                (operating as fuel cell and electrolyser); coelectrolysis
+                                of CO2 and water to produce syngas
+                                (which is the basic building block for the chemical
+                                industry).
+                            </li>
+                            <li>
+                                On the downside, thermo-chemical
+                                cycling, especially under shutdown/ramping
+                                periods, leads to faster degradation and shorter
+                                lifetimes. Other issues related to stack degradation
+                                include: challenges related to sealing at higher
+                                differential pressure; electrode contamination
+                                by silica used as sealants; and other additional
+                                contaminant sources from piping, interconnects
+                                and sealing. SOECs are today only deployed at the
+                                kW-scale, although some current demonstration
+                                projects have already reached 1 MW.
+                            </li>
+                        </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Anion Exchange Membranes (AEM).</div>
+                  <p class="text-right">
+                      <u>Some important considerations:</u>
+                        </br>
+                        <ul>
+                            <li>
+                                This is the
+                                latest technology with only a few companies
+                                commercialising it, with limited deployment.
+                            </li>
+                            <li>
+                                AEM’s
+                                potential lies in the combination of a less harsh
+                                environment from alkaline electrolysers with the
+                                simplicity and efficiency of a PEM electrolyser.
+                            </li>
+                            <li>
+                                It
+                                allows the use of non-noble catalysts, titanium-free
+                                components, and, as with PEM, operation under
+                                differential pressure.
+                            </li>
+                            <li>
+                                The reality, however, is that
+                                the AEM membrane has chemical and mechanical
+                                stability problems, leading to unstable lifetime
+                                profiles.
+                            </li>
+                            <li>
+                                Moreover, performance is not yet as good as expected, mostly due to low AEM conductivity,
+                                poor electrode architectures and slow catalyst
+                                kinetics.
+                            </li>
+                            <li>
+                                Performance enhancement is typically
+                                achieved by tuning membrane conductivity
+                                properties, or by adding a supporting electrolyte
+                                (e.g. KOH, or sodium bicarbonate [NaHCO3]).
+                            </li>
+                            <li>
+                                Such
+                                tuning could lead to decreased durability, however.
+                                The OH- ion is intrinsically three-fold slower (lower
+                                conductivity) than H+ protons within PEM, which
+                                forces AEM developers to either make thinner
+                                membranes, or ones with higher charge density.
+                            </li>
+                        </ul>
+                  </p>
+                </div>
+              </li>
+            </ol>
+            <h3>System level for each type of electrolyser</h3>
+            The components of an electrolyser are represented in figure: Electrolyser components.
+            <p>
+                <ol>
+                    <li>
+                        Hydrogen processing unit: Compression.
+                        </br>
+                        </br>
+                        Hydrogen from the electrolyser is in gaseous
+                        form, conventionally from atmospheric pressure
+                        to 30 bar, while higher pressures are possible. To
+                        facilitate hydrogen transport, a lower volume is
+                        needed. This means either increasing the pressure,
+                        liquefying the gas, or converting it for liquid organic
+                        hydrogen carriers. Compression can make a large difference. Going from atmospheric to 70 bar (a
+                        typical pressure for transmission pipelines) can
+                        already reduce the gas volume by a factor of 65.
+                        Compressing it to 1 000 bar (a typical pressure for
+                        storage in tanks) can reduce the volume by a factor
+                        of 625 compared to atmospheric, and liquefaction
+                        by a factor of 870.
+                        </br>
+                        </br>
+                        Compression can be done in mainly<strong> three ways</strong>:
+                        </br>
+                        </br>
+                        <ul>
+                            <li>
+                                Using a standard separate compressor.
+                            </li>
+                            <li>
+                                By changing the operating pressure of the electrolyser.
+                            </li>
+                            <li>
+                                Using a separate electrochemical device.
+                            </li>
+                        </ul>
+                    </li>
+                    </br>
+                    <li>
+                        Power supply system.
+                        </br>
+                        </br>
+                        Power supply system cost can
+                        decline through economies of scale,
+                        standardised designs and participation
+                        of specialised electrical equipment
+                        suppliers instead of electrolyser
+                        manufacturers.
+                    </li>
+                    </br>
+                    <li>
+                        Water and land use for green hydrogen production
+                        </br>
+                        </br>
+                        <strong>Water use</strong> is not barrier to scaling up
+                        electrolysis. Even in places with water
+                        stress, sea water desalination can be
+                        used with limited penalties on cost or
+                        efficiency.
+                        </br>
+                        </br>
+                        For the <strong>land area</strong>, there are no real projects of more
+                        than 100 MW in water electrolysis (the largest one,
+                        as of November 2020, is 20 MW, in Becancour,
+                        Canada). Thus, so far, land area estimates rely
+                        on engineering estimates, rather than plot
+                        optimisation based on real experience. Yet, there
+                        are a couple of estimates available:
+                        </br>
+                        </br>
+                        <ul>
+                            <li>
+                                A study funded by the German government
+                                in 2014 estimated that a 100 MW electrolyser
+                                plant would occupy about 6 300 m2.
+                            </li>
+                            <li>
+                                Siemens estimated back in 2017 that a
+                                300 MW electrolyser plant would occupy
+                                about 180 metres (m) x 80 m (15 000 m2).
+                            </li>
+                            <li>
+                                ITM estimated in 2017 that one 100 MW
+                                electrolyser would occupy about
+                                40 m x 87 m (3 500 m2), with the possibility
+                                of using multiple layout options to fit different
+                                applications and of replicating this easily by
+                                having a standardised design.
+                            </li>
+                            <li>
+                                In 2018, McPhy proposed a 100 MW facility
+                                (composed of five modules of 20 MW each)
+                                with a plot size of 4 500 m2.
+                            </li>
+                        </ul>
+                        </br>
+                        </br>
+                        To put these numbers in perspective, a global
+                        capacity of 1 000 GW of electrolysers, which would
+                        be enough to replace the entire current pure and
+                        mixed hydrogen fossil-based production, would
+                        occupy a land area of the size of Manhattan, New
+                        York, using the most conservative estimate (i.e.
+                        0.17 km2).
+                        </br>
+                        </br>
+                        Another reference is that this energy
+                        density of almost 7 500 MW/km2 is almost 1 500
+                        times larger than a relatively good onshore wind
+                        density of 5 MW/km2,
+                        which means the electrolyser would only be a
+                        fraction of the space occupied by the renewable
+                        electricity input, highlighting the need to use
+                        hydrogen only for applications that are hard to
+                        electrify and reduce the upstream renewable
+                        capacity needed to satisfy the same demand.
+                    </li>
+                </ol>
+            </p>
+            <h3>Trade-offs to consider in the design of the electrolyser</h3>
+            <p>
+                On the supply side, the prospects for green hydrogen
+                depend on the <strong>performance of the electrolyser</strong>.
+                The key dimensions that $R\&D$ strategies need to
+                address are:
+                </br>
+                </br>
+                <ul>
+                    <li>
+                        The<strong> efficiency</strong> increase at the cell, stack, and
+	                    system level (this reduces operational cost).
+                    </li>
+                    <li>
+                        The <strong>current to the stack</strong> is directly related
+                        to cell and stack capacity and therefore to
+                        hydrogen production.
+                    </li>
+                    <li>
+                        A <strong>durability</strong> increase to more than 100 000
+                        hours for any developed system concept.
+                    </li>
+                    <li>
+                        An <strong>investment cost</strong> reduction (both stack
+	                    and system).
+                    </li>
+                </ul>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        These four dimensions are related to each other,
+                        however, and improvement in one of them usually
+                        leads to a poorer performance in another.
+                        </br>
+                        </br>
+                        <u>For example</u>, a thicker membrane is mechanically
+                        stronger and leads to longer lifetime profiles, but it also increases the resistance to the transport of
+                        charges, which in turn decreases the efficiency.
+                        While the longer lifetime results in a lower cost
+                        contribution of the investment component, the
+                        lower efficiency results in a higher operating cost
+                        given the higher electricity consumption. Figure: Trade-offs: Efficiency, durability and costs shows the positive or negative effect (arrows +
+                        colour) some of the independent choices during
+                        manufacturing and research (green boxes) can
+                        have on each dimension.
+                        </br>
+                        </br>
+                        Another <strong>two important
+                        aspects </strong>are the use of <strong>more active catalysts</strong> and the <strong>specific business case for the electrolyser</strong>.
+                        </br>
+                        </br>
+                        The use of more <strong>active catalysts</strong> that
+                        are able to improve efficiency levels, but could
+                        have negative impact on durability. One example
+                        is ruthenium catalysts, which are more active
+                        than iridium, but suffer from long-term stability.
+                        Moreover, any catalyst free of critical raw materials
+                        needs to be aimed at higher efficiencies, but this
+                        typically result in catalysts that are less robust and
+                        more prone to dissolution.
+                    </p>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/hydrogen_electrolyser_tradeoffs.svg')}}"
+                        alt=""/>
+            </div>
+
+            <p>
+                The <strong>specific business case for the electrolyser</strong> will
+                also affect the optimisation of these parameters.
+                For example, an electrolyser that is coupled with
+                PV could only operate typically less than 2 000
+                hours in a year, making the capital cost a critical
+                parameter to tackle. With such limited operating
+                hours, durability might be less of an issue, since a
+                short operating lifetime still translates into a longer
+                actual lifetime. This could lead to using materials
+                that are cheaper, but degrade faster. This case is
+                different to one where the electrolyser is coupled
+                with a concentrated solar power that has higher
+                operating hours in a year, but that delivers a higher
+                electricity price, making efficiency more important
+                to reduce the operational cost.
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <strong>Capital expenditures (CAPEX)</strong> are major purchases a company makes that are designed to be used
+                    over the long term. <strong>Operating expenses (OPEX)</strong> are the day-to-day expenses a company incurs to keep
+                    its business operational.
+                    </br>
+                    </br>
+                    More information about CAPEX and OPEX:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://www.investopedia.com/ask/answers/112814/whats-difference-between-capital-expenditures-capex-and-operational-expenditures-opex.asp"
+                          class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">CAPEX vs. OPEX: What's the Difference?</a>
+                   </div>
+                </div>
+            </div>
+            
+            <h3>Lifetime aspects related to materials and components</h3>
+            
+            <p>
+                The lifetime of electrolyser technologies is a function of the cumulative current
+                passing through the stack, which can be represented
+                by the <strong>number of full load hours</strong> as well as the
+                <strong>number of operating hours</strong> – the number of hours
+                during which the facility is on, regardless of load
+                operating levels.
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Alkaline electrolysers.</div>
+                  <p class="text-right">
+                      Alkaline electrolysers are the most robust, with
+	proven lifetimes of over 30 years.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">PEM electrolysers.</div>
+                  <p class="text-right">
+                      PEM electrolysers have reported lifetimes of more
+	than 50 000 hours.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">SOEC electrolysers</div>
+                  <p class="text-right">
+                        SOEC electrolysers can achieve lifetimes of 20 000
+                        hours, but under constant power and well-defined
+                        operating conditions (i.e. not coupled to variable
+                        renewable energy [VRE]).
+                        </br>
+                        </br>
+                        The main degradation
+                        mechanism is the thermal cycling, due to the high
+                        operating temperatures and need to cool down in
+                        case of dynamic operation.
+                        </br>
+                        </br>
+                        Reversible operation
+                        of solid oxide cells (electrolysis + fuel cell) could
+                        help increase the hours of operation and thus keep
+                        the system at operating temperature.
+                        </br>
+                        </br>
+                        Deploying
+                        SOEC at large scale would require larger cells
+                        than currently used (up from 300 cm2 to more
+                        than 1 000 cm2), which renders them more prone
+                        to failure.
+                        </br>
+                        </br>
+                        Another important aspect is silica
+                        contamination and the instabilities of sealing
+                        concepts.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">AEM electrolysers.</div>
+                  <p class="text-right">
+                      AEM electrolysers suffer from a short lifetime,
+                        while limited information about their long-term
+                        operation, reliability and robustness is available.
+                        </br>
+                        </br>
+                        The stability of the AEM polymer used to fabricate
+                        membrane and catalyst layers is well recognised
+                        as a major issue, especially when operated with
+                        KOH as the supporting electrolyte.
+                        </br>
+                        </br>
+                        The main
+                        degradation mechanism is hydroxide (OH-)
+                        attack on the polymer backbone, which leads to
+                        membrane collapse and catalyst layer dissolution
+                        within a few days.
+                        </br>
+                        </br>
+                        One solution is cross-linking
+                        chemical methods, but this comes at a cost of cell
+                        efficiency. Another approach is by operating the
+                        stack without a supporting electrolyte (i.e. using
+                        only pure water), which can lead to a durability
+                        beyond 5 000 hours, but this results in much lower
+                        efficiencies, or current densities.
+                  </p>
+                </div>
+              </li>
+            </ol>
+            </br>
+            <h3>Efficiency of a hydrogen production facility</h3>
+
+            <p>
+                The system efficiency of a green hydrogen
+                production facility, measured in units of kilowatt
+                hours consumed per kilograms of hydrogen
+                produced (kWh/kgH2), is a result of the individual
+                efficiencies of the <strong>cell</strong>, <strong>stack</strong> and <strong>balance of plant</strong>,
+                as follows.
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Cell.</div>
+                  <p class="text-right">
+                        The efficiency profile decreases linearly
+                        from lower to higher load levels, so the
+                        higher the current input, the lower the stack
+                        efficiency.
+                        </br>
+                        </br>
+                        Naturally, the higher the hours of
+                        operation, the lower will be the efficiency due
+                        to degradation, though the aforementioned
+                        dynamic remains.
+                        </br>
+                        </br>
+                        At the operational level, the
+                        cell voltage is the element actually measured
+                        to infer the system performance, in such a
+                        way that, the higher the cell voltage, the
+                        lower the stack efficiency.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Balance of plant.</div>
+                  <p class="text-right">
+                        A range of system
+                        elements such as cooling, purifiers, thermal
+                        management, water treatment and others,
+                        consume power in order to operate, which
+                        also needs to be considered in the facility’s
+                        overall efficiency.
+                        </br>
+                        </br>
+                        <strong>Efficiency losses can be
+                            minimised</strong> by:
+                        </br>
+                        <ul>
+                            <li>
+                                Designing the electrolyser
+                                facility while taking a whole-of-system
+                                perspective.
+                            </li>
+                            <li>
+                                Using commercially-available
+                                components rather than custom made ones.
+                            </li>
+                            <li>
+                                Maximising system efficiency including
+                                balance of plant, tailored for the specific
+                                application.
+                            </li>
+                        </ul>
+                  </p>
+                </div>
+              </li>
+            </ol>
+            
+             <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q5.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 5</legend>
+                            <p class="card-text">The main <strong>components of an electrolyser</strong> are
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q5.type.errors %}
+                                        {{ form_m2_ch7_q5.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q5.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q5.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q5.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q6.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 6</legend>
+                            <p class="card-text">The <strong>trade-offs</strong> in the design an electrolyser are
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q6.type.errors %}
+                                        {{ form_m2_ch7_q6.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q6.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q6.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q6.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            
+        </div>
+    </section>
+
+<!--Section 3 (white)-->
+    <section id="cost" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>Production costs</h2>
+
+            <h3>Cost abatement as key enabler for hydrogen development</h3>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        In addition to regulations and market design, the cost of production is a major barrier to the uptake of green hydrogen.
+                        Costs are falling – largely due to falling renewable power costs – but green hydrogen is still 2-3 
+                        times more expensive than blue hydrogen (produced from fossil fuels with carbon capture and storage) 
+                        and further cost reductions are needed.
+                        </br>
+                        </br>
+                        <strong>The largest single cost component for on-site production of green hydrogen is the cost of the renewable electricity</strong>
+                        needed to power the electrolyser unit. This renders production of green hydrogen more expensive 
+                        than blue hydrogen, regardless of the cost of the electrolyser. 
+                        <strong>A low cost of electricity is therefore a necessary condition for producing competitive green hydrogen</strong>.
+                        This creates an opportunity to produce hydrogen at locations around the world that have optimal renewable 
+                        resources, in order to achieve competitiveness.
+                        </br>
+                        </br>
+                        Low electricity cost is not enough by itself for competitive green hydrogen production, however, 
+                        and<strong> reductions in the cost of electrolysis facilities are also needed</strong>. This is the
+                        second largest cost component of green hydrogen production and is the focus of this report, 
+                        which identifies key strategies to <strong>reduce investment costs for electrolysis plants from 40%
+                        in the short term to 80% in the long term</strong>. These strategies range from the fundamental design
+                        of the electrolyser stack to broader system-wide elements, including:
+                    </p>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/hydrogen_cost_reduction.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Electrolyser design and construction.</div>
+                  <p class="text-right">
+                      Increased module size and innovation with increased stack manufacturing have significant impacts on
+                      cost. Increasing the plant from 1 MW (typical today) to 20 MW could reduce costs by over a third.
+                      Cost, however, is not the only factor influencing plant size, as each technology has its own
+                      stack design, which also varies between manufacturers. The optimal system design also depends
+                      on the application that drives system performance in aspects such as efficiency and flexibility.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Economies of scale.</div>
+                  <p class="text-right">
+                      Increasing stack production to automated production in GW- scale manufacturing facilities can achieve
+                      a step-change cost reduction. At lower manufacture rates, the stack is about 45% of the total cost,
+                      yet at higher production rates, it can go down to 30%. For Polymer Electrolyte Membrane (PEM)
+                      electrolysers, the tipping point seems to be around 1 000 units (of 1 MW) per year, where this scale-up
+                      allows an almost 50% cost reduction in stack manufacturing. The cost of the surrounding plant is as
+                      important as the electrolyser stack and savings can be achieved through standardisation of system
+                      components and plant design.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Procurement of materials.</div>
+                  <p class="text-right">
+                      Scarce materials can represent a barrier to electrolyser cost and scale-up. Current production of
+                      iridium and platinum for PEM electrolysers will only support an estimated 3 GW-7.5 GW annual
+                      manufacturing capacity, compared to an estimated annual manufacturing requirement of around 100
+                      GW by 2030. Solutions that avoid the use of such materials are already being implemented by leading
+                      alkaline electrolyser manufacturers, and technologies exist to significantly reduce the requirements
+                      for such materials in PEM electrolysers. Anion Exchange Membrane (AEM) electrolysers do not need
+                      scarce materials in the first place.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Efficiency and flexibility in operations.</div>
+                  <p class="text-right">
+                      Power supply represents large efficiency losses at low load, limiting system flexibility from an
+                      economic perspective. A modular plant design with multiple stacks and power supply units can address
+                      this problem. Compression could also represent a bottleneck for flexibility, since it might not be
+                      able to change its production rate as quickly as the stack.
+                      </br>
+                      </br>
+                      One alternative to deal with this is an integrated plant design with enough capacity to deal with
+                      variability of production through optimised and integrated electricity and hydrogen storage. Green
+                      hydrogen production can provide significant flexibility for the power system, if the value of such
+                      services is recognised and remunerated adequately. Where hydrogen will play a key role in terms of
+                      flexibility, as it does not have any significant alternative sources to compete with, will be in the
+                      <strong> seasonal storage of renewables</strong>. Although this comes at significant efficiency losses, it
+                      is a necessary cornerstone for achieving 100% renewable generation in power systems with heavy
+                      reliance on variable resources, such as solar and wind.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Industrial applications.</div>
+                  <p class="text-right">
+                      Electrolysis system design and operation can be optimised for specific applications. These can range from:
+                      </br>
+                      <ul>
+                            <li>
+                                Large industry users requiring a stable supply and with low logistics costs.
+                            </li>
+                            <li>
+                                Large scale, off-grid facilities with access to low-cost renewables, but that incur in significant costs
+                                to deliver hydrogen to the end-user.
+                            </li>
+                            <li>
+                                Decentralised production that requires small modules for flexibility, which compensate for
+                                higher investment per unit of electrolyser capacity with reduced (or near zero on site)
+                                logistic costs.
+                            </li>
+                      </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Learning rates.</div>
+                  <p class="text-right">
+                      Several studies show that potential learning rates for fuel cells and electrolysers are similar to
+                      solar PV and can reach values between 16% and 21%. This is significantly lower than the 36%
+                      learning rates experienced over the last 10 years for PV (IRENA, 2020b). With such learning rates
+                      and a deployment pathway in line with a 1.5°C climate target, a reduction in the cost of electrolysers
+                      of over 40% may be achievable by 2030.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <p>
+                Figure: Hydrogen cost reduction shows how up to 85% of green hydrogen production costs can be reduced in the long term by:
+                <ul>
+                    <li>
+                        Access to cheaper electricity.
+                    </li>
+                    <li>
+                        Electrolyser capex investment.
+                    </li>
+                    <li>
+                        Increasing efficiency.
+                    </li>
+                    <li>
+                        Optimising operation of the electrolyser.
+                    </li>
+                </ul>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/hydrogen_cost_reduction_trends.svg')}}"
+                        alt=""/>
+                <div>
+                    <p>
+                        Figure: Hydrogen cost reduction trends illustrates the potential green hydrogen production cost reduction between
+                        2020 and 2050 for a range of electrolysers cost and deployment levels. In the best-case scenario,
+                        green hydrogen can already be produced at costs competitive with blue hydrogen today, using <strong>low cost
+                        renewable electricity</strong>, i.e. around USD 20 per megawatt-hour (MWh).
+                        </br>
+                        </br>
+                        A low electricity price is essential for the production of competitive green hydrogen, and, as illustrated in
+                        figure: Hydrogen cost reduction trends, cost reductions in electrolysers cannot compensate for high electricity prices.
+                        Combined with low electricity cost, an aggressive electrolyser deployment pathway can make green hydrogen
+                        cheaper than any low-carbon alternative (i.e. < USD 1/kg), before 2040. If rapid scale-up takes place
+                        in the next decade, green hydrogen is expected to start becoming competitive with blue hydrogen by
+                        2030 in a wide range of countries – e.g. those with electricity prices of USD 30/MWh – and in applications.
+                        </br>
+                        </br>
+                        Today’s cost and performance are not the same for all electrolyser technologies.
+                        Alkaline and PEM electrolysers are the most advanced and already commercial, while each technology has its own competitive
+                        advantage. Alkaline electrolysers have the lowest installed cost, while PEM electrolysers have a much smaller
+                        footprint, combined with higher current density and output pressure. Meanwhile, solid oxide has the highest
+                        electrical efficiency.
+                    </p>
+                </div>
+            </div>
+
+            <p>
+                As the cell stack is only part of the electrolyser facility footprint, a reduced stack footprint of
+                around 60% for PEM compared to alkaline translates into a 20%-24% reduction in the facility footprint, with an estimated
+                footprint of 8 hectares (ha)-13 ha for a 1 GW facility
+                using PEM, compared to 10 ha-17 ha using alkaline. <strong>Gaps in cost and performance are expected to narrow over time as innovation
+                and mass deployment of different electrolysis
+                technologies drive convergence towards similar
+                costs</strong>.
+                </br>
+                </br>
+                The wide range in system costs is expected
+                to remain, however, as this is very much dependent
+                on the scale, application and scope of delivery. For
+                instance, a containerised system inside an existing
+                facility with existing power supply is significantly
+                lower cost than a new building in a plot of land to
+                be purchased, with complete water and electricity
+                supply system to be included, high purity hydrogen for fuel cell applications and high output
+                pressure. Normally, numbers for system costs
+                include not only cell stack, but also balance of
+                stacks, power rectifiers, the hydrogen purification
+                system, water supply and purification, cooling and
+                commissioning – yet exclude shipping, civil works
+                and site preparations.
+            </p>
+
+            <h3>Innovation</h3>
+
+            <p>
+                Innovation is crucial to reduce cost and improve
+                the performance of the electrolyser. The ultimate
+                goals are to:
+                <ol>
+                    <li>
+                        Reduce cost by standardising and
+                        simplifying manufacturing and design to allow
+                        for industrialisation and scale-up.
+                    </li>
+                    <li>
+                        Improve
+                        efficiency to reduce the amount of electricity
+                        required to produce one unit of hydrogen.
+                    </li>
+                    <li>
+                        Increase durability to extend the equipment
+                        lifetime and spread the cost of the electrolyser
+                        facility over a larger hydrogen production volume.
+                    </li>
+                </ol>
+            </p>
+
+            <h3>Government support</h3>
+
+            <p>
+                Governments can support innovation in electrolysers by issuing clear long-term signals that support policy on:
+                <ol>
+                    <li>
+                        Facilitating investment in production, logistics and utilisation of green hydrogen, including all areas
+                        that will help this low-carbon energy carrier to become competitive; technology cost and performance improvements,
+                        material supply, business models and trading using common standards and certifications.
+                    </li>
+                    <li>
+                        Establishing regulations and design markets that support investments in innovation and scale-up the production of
+                        green hydrogen. This includes approaches such as setting manufacturing or deployment targets, tax incentives,
+                        mandatory quotas in hard to decarbonise sectors and other de-risking mechanisms, while enabling new business
+                        models that can guarantee predictable revenues for the private sector to invest at scale.
+                    </li>
+                    <li>
+                        Supporting research, development and demonstration (RD\D) to: reduce the use of iridium and platinum in the manufacture of
+                        PEM electrolysers; transition all alkaline units to be platinum- and cobalt-free; and, in
+                        general, mandate reduced scarce materials utilisation as a condition for manufacturing scale-up.
+                    </li>
+                    <li>
+                        Fostering coordination and common goals along the hydrogen value chain, across borders, across relevant sectors and between stakeholders.
+                    </li>
+                </ol>
+            </p>
+            
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q7.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 7</legend>
+                            <p class="card-text">Green hydrogen is still 2-3 times more expensive that blue hydrogen. To
+                                make green hydrogen competitive, it is necessary to abate eletrolyser cost and electricity cost
+                                in the range
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q7.type.errors %}
+                                        {{ form_m2_ch7_q7.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q7.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q7.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q7.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q8.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 8</legend>
+                            <p class="card-text">The estimated electricity price threshold that could make green hydrogen
+                                competitive is
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q8.type.errors %}
+                                        {{ form_m2_ch7_q8.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q8.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q8.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q8.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+
+<!--Section 4 (Grey)-->
+    <section id="renewables" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Hydrogen and renewables</h2>
+            <p>
+                Hydrogen is only one option in <strong>decarbonising
+                hard-to-abate sectors</strong>. Energy efficiency is key
+                to reducing the energy supply and renewable
+                capacity upstream, while <strong>bioenergy</strong> might be
+                suitable, not only in the form of biofuels for those
+                transport sectors that have limited fuel alternatives
+                (especially aviation), but also as a source of carbon
+                for synthetic fuels. Direct electrification is more
+                efficient from a systems perspective, leading
+                to lower cost, with this already commercially
+                deployed in many areas (e.g. heating or passenger
+                vehicles). <strong>Carbon capture and storage (CCS)</strong> might
+                be attractive for existing assets that are still in
+                early stages of their lifetime (the case for many
+                assets in Asia) and process emissions (e.g. from
+                cement production). Even for the most ambitious
+                scenarios, these technological choices might not
+                be enough, however, and behavioural changes
+                might be needed to push energy demand even
+                lower. Thus, for energy transition, hydrogen is one
+                solution amongst others and should be tackled in
+                parallel. Hydrogen is part of a wider technology
+                portfolio to be adapted to domestic conditions in
+                each country, with this report further exploring this
+                pathway.
+                </br>
+                </br>
+                Hydrogen can be used in different directions, and could play a crucial role decarbonizing different sectors:
+                <ul>
+                    <li>
+                        Once produced at scale and competitive cost,
+                        green hydrogen can also be further <strong>converted
+                        into other energy carriers</strong>, such as ammonia,
+                        methanol, methane and liquid hydrocarbons. As
+                        a fuel, hydrogen can be used in fuel cells (i.e. an
+                        electrochemical device that combines hydrogen
+                        with oxygen from the air and produces electricity),
+                        but also combusted in engines and turbines.
+                    </li>
+                    <li>
+                        <strong>Fuel cells</strong> can be used for stationary applications in
+                        large-scale power plants, microgrid or backup
+                        generation (e.g. in data centres), or for a wide range
+                        of transport applications – as is already done in
+                        fuel cell electric vehicles (FCEV), trucks, light-duty
+                        vehicles, forklifts, buses, ferries and ships.
+                    </li>
+                    <li>
+                        As a <strong>chemical</strong>, green hydrogen can reduce greenhouse
+                        gas (GHG) emissions from sectors where hydrogen
+                        from fossil fuel is widely used today, including oil
+                        refining, methanol and ammonia production.
+                    </li>
+                </ul>
+
+                <strong>Green hydrogen</strong> is only one of the production
+                pathways. Hydrogen can also be produced from
+                <strong>bioenergy, methane, coal or even directly from
+                solar energy</strong>. Most of the production today is
+                based on methane and coal (about 95%) (IRENA,
+                2019) and could be made low carbon with the
+                use of CCS. CCS might be suitable for regions with
+                low-cost natural gas and suitable underground
+                reservoirs. In the short term, CCS might also be
+                a good fit for large-scale applications in industry,
+                given the relatively small scale of deployment for
+                electrolysis.
+            </p>
+            
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q9.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 9</legend>
+                            <p class="card-text">Hydrogen could be the unique option in <strong>decarbonising
+                hard-to-abate sectors</strong>. To abate carbon emissions in those sectors, hydrogen should be combined with
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q9.type.errors %}
+                                        {{ form_m2_ch7_q9.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q9.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q9.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q9.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch7_q10.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 10</legend>
+                            <p class="card-text">Hydrogen could play a crucial role decarbonizing different sectors.
+                                Which of the next uses/sectors could be decarbonized by using hydrogen
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch7_q10.type.errors %}
+                                        {{ form_m2_ch7_q10.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch7_q10.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch7_q10.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch7_q10.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </section>
+
+<!--Section 2 (blue)-->
+    <section id="flexibility" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Flexibility of green hydrogen production facilities</h2>
+            <h3>Factors that determine hydrogen flexibility</h3>
+            <p>
+                To ensure that green hydrogen supply cost is as
+                low as possible, a holistic approach needs to be
+                applied to system design and operations. System
+                design can be optimised to <strong>minimise cost</strong> and
+                <strong>increase flexibility</strong> as necessary, depending on a
+                variety of factors. These can include:
+                <ol>
+                    <li>
+                        The variability
+                        of electricity supply (i.e. constant consumption of
+                        grid electricity, or direct feed from variable solar
+                        or wind farms).
+                    </li>
+                    <li>
+                        The technology used for the stack
+                        (e.g. alkaline, PEM and AEM being more flexible
+                        than solid oxide).
+                    </li>
+                    <li>
+                        The flexibility of hydrogen
+                        demand (e.g. constant demand for chemical
+                        processes, general annual demand for export
+                        without hourly or daily constraints).
+                    </li>
+                    <li>
+                        Storage can
+                        significantly help to decouple variable supply from
+                        hydrogen demand. This can come in the form of electrochemical storage for short-term fluctuations
+                        (before the electrolyser stack), or in the form
+                        of hydrogen storage for long-term fluctuations
+                        (after the stack, before the downstream off-taker).
+                        Similarly, hydrogen storage in tanks, caverns and
+                        pipelines can help decouple variable hydrogen
+                        production from inflexible hydrogen demand
+                        (e.g. to produce ammonia).
+                    </li>
+                </ol>
+            </p>
+
+            <!--Text-Image-->
+            <h3>Long duration storage</h3>
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        Where hydrogen has a significant role to play in
+                        terms of <strong>flexibility provision</strong> in future decarbonised
+                        power systems is in <strong>long duration storage and
+                        system adequacy</strong>. The seasonality of solar, wind
+                        and hydropower resources can provide challenges
+                        in terms of adequacy – if not every year, at least in
+                        unusual weather years (e.g. dry years, or years with
+                        extended periods of low wind). Hydrogen from
+                        renewable power can be stored cost effectively
+                        – for example, in salt caverns – and can be used
+                        for power generation in these particular periods.
+                        </br>
+                        </br>
+                        Due to the near zero short run marginal cost
+                        of solar and wind, when they are reach significant
+                        generation share in a market interval (e.g. in a
+                        one hour period), they drive down electricity prices.
+                        Figure: Hydrogen seasonality shows how hydrogen production follows
+                        renewable
+                        electricity
+                        availability,
+                        highlighting
+                        an important seasonality in the production of
+                        hydrogen.
+                        </br>
+                        </br>
+                        The key message is that hydrogen production from
+                        electrolysers can be uniquely positioned to provide
+                        seasonal flexibility to the power system – something that no other resource can effectively provide.
+                        This can play a significant role in balancing a
+                        power system with high shares of solar and
+                        wind, not only instantaneously and intra-day,
+                        but also across seasons. To be able to provide
+                        such services, electrolysers must be designed
+                        not to operate at full capacity the entire year,
+                        but rather to purchase electricity when green
+                        and affordable. This is only possible if they are
+                        sufficiently oversized to avoid purchasing non
+                        renewable
+                        electricity, or prohibitively expensive
+                        electricity, just to be able to meet hydrogen
+                        demand.
+                    </p>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch7/hydrogen_seasonality.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Flexibility services</h3>
+            <p>
+                Hydrogen can be <strong>stored</strong> and <strong>transported</strong> in multiple
+                ways. In terms of <strong>flexibility services</strong>, electrolysers
+                have been evaluated in terms of:
+
+                <ol>
+                    <li>
+                        The time they take to respond to a change in power set-point.
+                    </li>
+                    <li>
+                        The time they take to settle after a power set-point change.
+                    </li>
+                    <li>
+                        The rate at which they can change power consumption.
+                    </li>
+                    <li>
+                        The lower operation limit, or the minimum turn down level.
+                    </li>
+                    <li>
+                        The time they take to start up and shut down.
+                    </li>
+                </ol>
+
+                A <strong>report</strong> (Eichman, Harrison and Peters, 2014) has found that:
+
+                <ol>
+                    <li>
+                        Small electrolyser systems (around 40 kW
+                        units) begin changing their electricity
+                        demand within milliseconds of a set-point
+                        change.
+                    </li>
+                    <li>
+                        The settling time after a set-point change is in the order of seconds.
+                    </li>
+                    <li>
+                        Electrolysers can reduce their electrical consumption to zero for an unlimited amount of time.
+                    </li>
+                    <li>
+                        Electrolysers exhibit low part load operation capabilities.
+                    </li>
+                    <li>
+                        Electrolysers can start up and shut down in several minutes.
+                    </li>
+                </ol>
+            </p>
+
+            <h3>Short-term flexibility</h3>
+            <p>
+                From the point of view of <strong>short-term flexibility</strong>
+                alkaline and PEM water electrolysers still present the
+                most interesting technical capability, as they have proven to provide very fast dynamics among all
+                available electrolysis process.
+            </p>
+
+            <h3>Hydrogen and congestion management</h3>
+            <p>
+                For
+                <strong>congestion
+                    management</strong>,
+                large
+                scale
+                electrolysers can contribute to the reduction of
+                critical peak loads by reducing their electricity
+                demand, or even by completely interrupting
+                operation. This service should be remunerated
+                adequately, however, to compensate for the
+                economic incentive to operate the electrolyser as
+                many hours as possible to reduce the contribution
+                of the investment cost to the total cost. Moreover,
+                such an application can also have its limitations,
+                since several industrial processes cannot be
+                stopped when integrated with the electrolyser
+                facility, therefore limiting flexibility of operations
+                based on the size of the hydrogen storage.
+            </p>
+            
+            <h3>Questions</h3>
+            
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch7_q11.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 11</legend>
+                        <p class="card-text">The main factors that determine the flexibility of hydrogen production are
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch7_q11.type.errors %}
+                                    {{ form_m2_ch7_q11.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch7_q11.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch7_q11.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch7_q11.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch7_q12.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 12</legend>
+                        <p class="card-text">The long-term storage of hydrogen is determined by
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch7_q12.type.errors %}
+                                    {{ form_m2_ch7_q12.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch7_q12.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch7_q12.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch7_q12.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+{% endblock content %}

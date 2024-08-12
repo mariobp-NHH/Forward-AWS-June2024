@@ -1,0 +1,94 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Midway Conference</span></h1>
+                    <p class="mb-1">
+                        In the midway conference, the students present their apps. We focus on four different points. <strong>First</strong>, we explain the design and the functionalities of our apps (user experience), we also explain the software architecture, and how that architecture is related to the design and the functionalities of our app. <strong>Second</strong>, we explain the methodology used to work out transport carbon emissions. <strong>Third</strong>, we explain the business model for our app. Which is our target group? How are we going to sell our app? Why our app is different, unique, and useful? <strong>Fourth</strong>, we explain the teamwork. Which is the role of each member of the team? Do those roles change within the project? Which is the strategy of the group to achieve the objectives? How to make the group more balanced and inclusive (gender, race, religion, sexual orientation)? How to make the group more diverse and use all the potential of the members? How to create an ecosystem that could help all the members to flourish and contribute to the group?
+                        <br>
+                        <br>
+                        In the midway conference, we also discuss about how we can improve the course focusing on four blocks. First, <strong>teaching</strong>; second, <strong>entrepreneurship</strong>; third, <strong>cooperation</strong>; fourth, <strong>gender</strong>.
+                    </p>
+
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/conference/conference.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="fa-solid fa-users"></i>
+                  </div>
+                <h4 style="text-align: center;">Conference</h4>
+                <p>
+                    Each group has <strong>fifteen minutes</strong> to present their work plus <strong>five minutes</strong> for questions. The presentation must contain four blocks (see the presentation in the link below for more information):
+                    <ol>
+                        <li>
+                            <strong>App</strong>: Design and functionalities (user experience), and software architecture.
+                        </li>
+                        <li>
+                            <strong>Methodology</strong>: Which methodology do you use to work out transport carbon emissions.
+                        </li>
+                        <li>
+                            <strong>Business model</strong>: Which is the business model to sell your app?
+                        </li>
+                        <li>
+                            <strong>Teamwork</strong>: How do you organize your team to achieve your goals?
+                        </li>
+                    </ol>
+                </p>
+                <br>
+                <div class="container_buttons_links_section_3a">
+                    <a class="btn-section2_box" href="https://xd.adobe.com/view/62b23adc-2d07-4d34-a060-d31be6c24782-37e1/" target="_blank">Presentation</a>
+                </div> 
+            </div> 
+            <div class="boxa">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="fa-brands fa-stack-exchange"></i>
+                  </div>
+                <h4 style="text-align: center;">Debate</h4>
+                <p>
+                    At the end of the conference, we have a <strong>twenty minutes</strong> debate to provide ideas to improve the course. We focus on four blocks:
+                    <ol>
+                        <li>
+                            <strong>Teaching</strong>: Which changes could be introduced to improve the teaching?
+                        </li>
+                        <li>
+                            <strong>Entrepreneurship</strong>: Which changes could be introduced to help the students to found their own startups/cooperatives/companies?
+                        </li>
+                        <li>
+                            <strong>Cooperation</strong>: Which changes could be introduced to promote student collaboration among different institutions?
+                        </li>
+                        <li>
+                            <strong>Gender</strong>: Which changes could be introduced to promote gender balanced course?
+                        </li>
+                    </ol>
+                </p>
+                <div class="container_buttons_links_section_3a">
+                    <a class="btn-section1_box" href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_mc_q1') }}" target="_blank">Questionnaire</a>
+                </div>   
+            </div> 
+        </div> 
+
+
+
+              
+    </section>  
+
+
+
+  
+
+
+{% endblock content %}

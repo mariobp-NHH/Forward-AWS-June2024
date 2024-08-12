@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    {% extends "gd_course/NHH_2023_group1/template.html" %}
+    {% set active_page = "home" %}
+    {% block content %}
+    
+<!-- Header -->
+<section class="section_header">
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            {% for message in messages %}
+             <div class="alert alert-success">
+                  {{ message }}
+              </div>
+            {% endfor %}
+              <script>
+                  setTimeout(function() {
+                      var flashes = document.querySelectorAll('.alert');
+                      flashes.forEach(flash => flash.remove())
+                  }, 5000);
+              </script>
+          {% endif %}
+      {% endwith %}
+      <div class="home">
+        <div class="header_home">
+            <div class="box box-left">
+                <p> 
+                  Welcome to our Carbon App! Our app is designed to be a tool that can help individuals and organizations identify their main sources of carbon emissions 
+                  and take action in order to effectively reduce their environmental footprint. 
+                  The features of our application are currently limited to calculating how much a person's travel habits emits of carbon dioxide equivalents (\(CO_{2}e\)). 
+                </p>
+                  
+                  <h5 style="text-align: left;">Our team</h5>
+                  <p>
+                  In the section below, you can get to know our talented team of developers! Learn about their unique backgrounds, explore their curricula, and check out their LinkedIn and Github profiles to get a deeper understanding of their skills and expertise.
+                  </p>
+                  
+                  <h5 style="text-align: left;">Methodology</h5>
+                  <p>
+                  If you are interested in delving deeper into the technical aspects of our application, you can learn more about the methodology and data sources we have used on the 'Methodology' page. 
+                  </p>
+                  
+                  <h5 style="text-align: left;">Carbon App Calculator</h5>
+                  <p>
+                  If you want to learn more about the environmental impact of your travel habits, you can check out our Carbon App Calculator. Here you will find information about the carbon footprint of different modes of transportation, and you can calculate your own carbon footprint based on your travel habits.
+                
+                  <br><br>
+                  We hope you enjoy our app and that it will inspire you to make more sustainable choices in your daily life!
+                </p>
+                <div class="container-buttons" id="home_login_field">
+                  <div class="button-container">
+                    <div class="container_buttons_header_home">
+                      <a class="btn_header_home" href="{{url_for('gd_course_NHH_2023_group1.register')}}" style="color: black; text-decoration: none;">Register</a>
+                    </div>
+                  </div>
+                  <div class="button-container">
+                    <div class="container_buttons_header_home">
+                      <a class="btn_header_home" href="{{url_for('gd_course_NHH_2023_group1.login')}}" style="color: black; text-decoration: none;"> Login </a>
+                    </div>
+                  </div>
+              </div>
+            </div>                        
+            <div class="box box-right">
+                <div class="box-image-container">
+                    <img src="/static/gd_course_NHH_2023_group1/images/main_logo.png" width="300" alt="logo">
+                </div>
+            </div>
+        </div>
+    </div>
+  </section> 
+  <!-- Developers-->
+  <section class="section_developers">
+    <div class="container">
+      <div class="developers d_team">
+        <h1 style="text-align: center;"> Meet our exceptional team!</h1>
+        <p>
+          Our team consists of 5 developers, who are all students at NHH - Norwegian School of Economics. 
+          Our shared passion for economics and IT has fueled our excitement about combining 
+          these two fields to create this Carbon App that we believe can make a significant impact on the environment. 
+          We are driven by a strong desire to make a positive difference in the world, and we recognize that technology 
+          can be a powerful tool in achieving this goal. <br><br>
+          Our team is deeply committed to developing a solution that will promote sustainable practices and encourage 
+          both individuals and businesses to make environmentally friendly choices in their daily lives. We recognize the pressing need for 
+          action to address the challenges facing our planet, and we believe that our application can be a catalyst for positive change.
+        </p>
+      </div>
+      <div class="developers">  <!-- Creats a list with name, and filename off photo-->
+        {% set dev_team = [
+          ("Christian Eriksen", 'Christian.jpg', 'https://github.com/Eriksen1110/FOR19', 'https://www.linkedin.com/in/christian-boe-eriksen/'), 
+          ('Sara Birkeland', 'Sara.jpg', 'https://github.com/s203645/FOR19-final', 'https://www.linkedin.com/in/sara-birkeland/'), 
+          ('Richard Myrdal', 'Richard.jpg', 'https://github.com/jonkringeland', 'https://www.linkedin.com/in/richard-myrdal-44a180230/'),
+          ('Per Ole Lande', 'Per.jpg', 'https://github.com/perolelande/for19', 'https://www.linkedin.com/in/per-ole-lande-229311112/'),
+          ('Jon Kringeland', 'Jon.jpg','https://github.com/jonkringeland', '/404')]
+          -%}
+
+          {% for name, path, url, linkedin in dev_team %}
+          <div class="box">
+            <img class="box-image" src="/static/gd_course_NHH_2023_group1/images/{{path}}" alt="" style="border-radius: 50%; width:200px;">
+            <h3> {{ name }}</h3>
+            <p>
+              <il>
+                {% if name == 'Christian Eriksen' %}
+                  <li> 
+                    22 years old from Asker
+                  </li>
+                  <li>
+                    3rd year student at NHH
+                  </li>
+                {% elif name == 'Sara Birkeland' %}
+                  <li> 
+                    22 years old from Bergen
+                  </li>
+                  <li>
+                    3rd year student at NHH
+                  </li>
+                {% elif name == 'Richard Myrdal' %}
+                  <li> 
+                    22 years old from Bergen
+                  </li>
+                  <li>
+                    3rd year student at NHH
+                  </li>
+                {% elif name == 'Per Ole Lande' %}
+                  <li> 
+                    23 years old from Karmøy
+                  </li>
+                  <li>
+                    3rd year student at NHH
+                  </li>
+                {% else %}
+                  <li> 
+                    22 years old from Haugesund
+                  </li>
+                  <li>
+                    3rd year student at NHH
+                  </li>
+                {% endif %}
+              </il>
+            </p>
+        
+          <div class="container_buttons_developers">
+            <a class="btn_developers" data-bs-toggle="modal" data-bs-target="#cv_Modal" data-bs-whatever="CV_{{name}}.pdf"> Curriculum </a>
+          </div>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="{{linkedin}}" target="_blank"> <!-- Using _blank to open a new tab-->
+              LinkedIn
+            </a>
+          </div>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="{{url}}" target="_blank"> <!-- Using _blank to open a new tab-->
+              GitHub
+            </a>
+          </div>
+        </div>   
+        {% endfor %}       
+
+
+        
+        
+
+     <div class="modal fade" id="cv_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg " style="height: 80%;" >
+      <div class="modal-content" style="height:100%">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Curriculum</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <iframe id="cv_frame" src="/" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->  
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+      </div>
+      </div>
+    </div>  
+
+  </section>
+
+  <script>
+   $(document).ready(function () {
+    let logged_in = "{{ session['logged_in'] }}"
+    if (logged_in == "True") {
+      $("#home_login_field").hide();
+      };
+    });
+  </script>
+
+  <script>
+    var cvModal = document.getElementById('cv_Modal')
+    cvModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget
+      var path = button.getAttribute('data-bs-whatever')
+      var frame = document.getElementById('cv_frame')
+      frame.src = "/static/gd_course_NHH_2023_group1/" +path
+    })
+  </script>
+    {% endblock %}
+    
+</body>
+</html>

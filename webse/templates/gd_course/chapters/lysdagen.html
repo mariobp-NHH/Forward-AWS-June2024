@@ -1,0 +1,35 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Lysdagen Conference</span></h1>
+                    <p class="mb-1">
+                        In the Lysdagen conference, the students present their economic models, their business models, and their apps. The students have built very advanced <strong>economic models</strong> to work out transport carbon emissions. They have designed innovative <strong>business models</strong> to abate those emissions. Those business models vary from the promotion of sustainable cities, the reduction of carbon emissions among youth population, specific target groups and companies, and business models that aim to foster the adoption of a carbon offset market. Finally, they have combined different programming languages to develop <strong>innovative apps</strong> with a solid software architecture foundation. 
+                        <br>
+                        <br>
+                        The Lysdagen foster the collaboration between the university and the society. To connect the work developed by the students with the society, the <strong>Startup Lab </strong>and <strong>Bergen municipality</strong> will share with the students their projects in digitalization and sustainability. 
+                    </p>
+                    <div class="container_buttons_links_header">
+                        <div class="btn">
+                            <a href="https://indd.adobe.com/view/bf330879-4daf-4621-a47a-55f8543d0050"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Flyer</a>
+                        </div>
+                        <div class="btn">
+                            <a href="https://xd.adobe.com/view/43d7e011-fbb6-47f8-8d36-09794ec4eb53-1684/" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Presentation</a>
+                        </div>
+                    </div> 
+
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/lysdagen/lysdagen.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+ 
+
+
+{% endblock content %}

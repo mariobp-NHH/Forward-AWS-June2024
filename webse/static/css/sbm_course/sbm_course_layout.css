@@ -1,0 +1,236 @@
+/*
+ bg-primary: #007bff
+ bg-secondary: #6c757d
+ bg-success: #28a745
+ bg-danger: #dc3545
+ bg-warning: #ffc107
+ bg-info: #17a2b8
+ bg-light: #f8f9fa
+ bg-dark: #343a40
+ bg-white: #ffffff   */
+
+ /* Morning theme 3 -Sustainable Business Models Course-:
+ mt3-1: #827862 
+ mt3-2: #FEE6A7
+ mt3-3: #CED1A4
+ mt3-4: #9AC7A9
+ mt3-5: #5BBBAF
+Raining theme 5 -Sustainable Business Models Course-:
+ rt5-1: #C5C8D9
+ rt5-2: #9FA7BF
+ rt5-3: #2B4359
+ rt5-4: #4A736F
+ rt5-5: #578C64
+ */
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+ }
+
+.navbar .container {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.container .menu_left .menu ul {
+    display: flex;
+}
+
+.container .menu_left .menu  ul li{
+    margin-right: 20px;
+}
+
+.container .menu_right ul {
+    display: flex;
+}
+
+.container .menu_right ul li{
+    margin-left: 20px;
+}
+
+.navbar {
+    background: #9FA7BF;
+    color: #fff;
+    height: 70px;
+ }
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+     /* font-weight: bold; */
+ }
+
+.navbar a:hover {
+    color: #FEE6A7;
+}
+
+.menu_left{
+    height: 50px;
+    background: #9FA7BF;
+    color: #fff;
+    margin: 0px 0px;
+    display: flex;
+ }
+
+.logo{
+    height: 50px;
+    background: #9FA7BF;
+    color: #fff;
+    margin: 0px 0px;
+    padding: 2px 2px;
+ }
+
+ .navbar .logo a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    /*font-weight: bold;*/
+ }
+
+.navbar .logo a:hover{
+    color: #FEE6A7;
+ }
+
+.menu{
+    height: 50px;
+    background: #9FA7BF;
+    color: #fff;
+    margin: 0px 0px;
+    padding: 10px;
+ }
+
+.menu_right{
+    height: 50px;
+    background: #9FA7BF;
+    color: #fff;
+    margin: 0px 10px;
+    padding: 10px;
+ }
+
+ /*footer;*/
+ .footer {
+    background: #9FA7BF;
+    color: #fff;
+    height: 100px;
+ }
+
+ .footer .container {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+}
+
+.footer .container .item{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+
+/*Hamburger*/
+ .hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+
+.bar{
+    display: mone;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white
+}
+
+/*Questionnaires questions*/
+/*Container exercises*/
+.exercises_css {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+      /*color=mt-2*/
+.exercises_css .exercise {
+    flex: 1;
+    background: #9FA7BF;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+}
+
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+    }
+    .bar{
+        display:block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity:0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu .nav{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #9FA7BF;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .menu .nav-item{
+        margin: 16px 0;
+    }
+    .menu .nav.active{
+        left: 0;
+    }
+    .menu_right .nav{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #9FA7BF;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .menu_right .nav-item{
+        margin: 16px 0;
+    }
+    .menu_right .nav.active{
+        left: 0;
+    }
+
+    .header {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+          }
+
+}
+

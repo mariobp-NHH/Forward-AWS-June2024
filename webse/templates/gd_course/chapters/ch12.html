@@ -1,0 +1,491 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch12. AWS Database</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we learn how to <strong>create a database and tables in Amazon Web Services</strong>. We learn how to <strong>connect</strong> to the database by pgAdmin. By using pgAdmin, we also write some <strong>queries</strong> to access to relevant information in our database.
+                    </p>
+                    <br>
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/2QqCZ2oQQcw"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 2)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/hVPI5I7Tr9I" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch12%20Databases%20AWS" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Introduction to Postgres</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we study what is <strong>Postgres</strong> and what is <strong>SQL</strong>.
+                        </p>
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Create a Postgres database in AWS</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we learn to create a database connected to AWS. We introduce some changes in our code to <strong>create the database</strong>, we also change some code in GitHub to protect sensitive information, and we introduce changes in the AWS dataset to allow the access to the database from pgAdmin.
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Queries to extract information from our database</h5>
+                            </div>
+                            <p class="mb-1">
+                                In this section, we learn <strong>basic queries in Postgres</strong> to access relevant information in our database.
+                            </p>
+                            </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this weekly challenge, we develop some queries that can be relevant to extract information from our database.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch12/ch12.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Introduction to Postgres</h1>
+            <p>
+                In this section, we study what is <strong>Postgres</strong> and what is <strong>SQL</strong>.
+            </p>
+        </div>  
+
+        <div class="container">
+            <div class="boxa" style="background-color: #568c63;">
+                <h4>What is Postgres?</h4>
+                <p>
+                    <u>What is PostgreSQL?</u>
+                    <br>
+                    <br>
+                    PostgreSQL is an advanced, enterprise-class, and open-source relational database system. PostgreSQL supports both SQL (relational) and JSON (non-relational) querying.
+                    <br>
+                    <br>
+                    PostgreSQL is a highly stable database backed by more than 20 years of development by the open-source community.
+                    <br>
+                    <br>
+                    PostgreSQL is used as a primary database for many web applications as well as mobile and analytics applications.
+                    <br>
+                    <br>
+                    <u>Why use PostgreSQL?</u>
+                    <br>
+                    <br>
+                    PostgreSQL comes with many features aimed to help developers build applications, administrators to protect data integrity and build fault-tolerant environments, and help you manage your data no matter how big or small the dataset. In addition to being free and open source, PostgreSQL is highly extensible. For example, you can define your own data types, build out custom functions, even write code from different programming languages without recompiling your database!
+                    <br>
+                    <br>
+                    <u>Installing Procedural Languages</u>
+                    <br>
+                    <br>
+                    PostgreSQL allows user-defined functions to be written in other languages besides SQL and C. These other languages are generically called procedural languages (PLs). For a function written in a procedural language, the database server has no built-in knowledge about how to interpret the function's source text. Instead, the task is passed to a special handler that knows the details of the language. The handler could either do all the work of parsing, syntax analysis, execution, etc. itself, or it could serve as “glue” between PostgreSQL and an existing implementation of a programming language. The handler itself is a C language function compiled into a shared object and loaded on demand, just like any other C function.
+                    <br>
+                    <br>
+                    There are currently four procedural languages available in the standard PostgreSQL distribution: PL/pgSQL, PL/Tcl, PL/Perl, and PL/Python.
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1_box" href="https://www.postgresql.org/docs/current/plpython.html" target="_blank">Procedural languages</a>
+                </div>
+            </div> 
+            <div class="boxa" style="height:360px;">
+                <h5>What is SQL?</h5>
+                <p>
+                    Structured query language (SQL) is a programming language for storing and processing information in a relational database. A relational database stores information in tabular form, with rows and columns representing different data attributes and the various relationships between the data values. You can use SQL statements to store, update, remove, search, and retrieve information from the database. You can also use SQL to maintain and optimize database performance.
+                    <br>
+                    <br>
+                    More information about SQL in the next link:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1_box" href="https://aws.amazon.com/what-is/sql/" target="_blank">SQL-AWS</a>
+                </div>
+            </div> 
+        </div> 
+              
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Creating a Postgres database in AWS linked to our project</h1>
+            <p>
+                So far, we have used a sqlite database to develop our app. Now, it is time to deploy our app in AWS while we connect our data to a Postgres database, i.e., we must create a <strong>production database</strong>. The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/2QqCZ2oQQcw" target="_blank">YouTube (Section 2)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch12%20Databases%20AWS/Databases_AWS_Final" target="_blank">GitHub</a>
+            </div> 
+            <h4>Procedure to connect our data to a Postgres database</h4>
+            <p>
+                The procedure to connect our data to a Postgres database consists of <strong>three steps</strong>:
+                <ol>
+                    <li>
+                        <strong>In Amazon Web Service</strong>. In the environment where we have hosted our app, we must move to configuration and in the database, we must <strong>create a database</strong> and <strong>modify the inbound rules</strong> to allow the access to the database.. Follow the instructions in the video.
+                        
+                    </li>
+                    <br>
+                    <li>
+                        <strong>In our local computer</strong>. Once that we have created a database in AWS, we must create <strong>all the databases and the tables</strong>. We must do that from our local computer following the next steps:
+                        <ol type="a">
+                            <br>
+                            <li>
+                                In the <strong>__init__.py file</strong>, we must type the next code:
+                                <pre><code class="html"></code>
+DBVAR = 'postgresql://username:password@endpoint:5432/ebdb'
+application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
+application.config['SQLALCHEMY_BINDS'] = {'transport': DBVAR}                                    
+                                </code></pre> 
+                                Where in DBVAR, you must introduce the next five blocks of information:
+                                <br>
+                                <br>
+                                <ul>
+                                    <li>
+                                        <strong>Username</strong>: This is the username that you chose when you created the database. I suggest you choose the username <strong>postgres</strong>, since when we program the database by using the command line and pgAdmin, that is the standard name. However, choose the name that you decide, but be sure that you remember it.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Password</strong>: This is the password that you choose when you create the database. Remember that password, since we will need it later on to connect to the database.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Endpoint</strong>: This is the endpoint to the database that you get from the RDS page in AWS.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Port</strong>: The port for postgres databases is <strong>5432</strong>.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Database name</strong>: The database name when you create a database inside Elastic Beanstalk is ebdb by ElasticBeanstalkDataBase.
+                                    </li>
+                                </ul>
+                            </li>
+                            <br>
+                            <li>
+                                <strong>In the terminal</strong>, we must type: <strong>python</strong>. Once that we are in the python terminal, we must type: <strong>from capp import db</strong>, and then: <strong>db.create_all()</strong>.
+                            </li>
+                        </ol>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>In GitHub</strong>. As with the SECRET_KEY, we want to protect sensitive information in our GitHub account, since we do not want to disclose our username, password, and the endpoint for our database. To protect that information, we need to introduce the next lines of code and place that code in GitHub:
+                        
+                                <pre><code class="html"></code>
+DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}
+@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
+                               </code></pre> 
+
+                    </li>
+                    <li>
+                        <strong>In AWS</strong>, got to <strong>CodePipeline </strong>and release the changes. One that we have release the changes, we should verify that <strong>our app works properly</strong> by populating the database (register a new user and adding some entries in the carbon app). We also must verify that the login functionality works properly.
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+    </section> 
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+
+        <div class="container" style="display:block;">
+            <h1>Connection and queries to our Postgres database</h1>
+            <h4>Connection to our Postgres database by using pgAdmin</h4>
+            <p>
+                Once that we have created our databases with tables, it is the time to access to those databases and to make some queries to use the information in those databases. We use pgAdmin to access to our databases. We proceed in three different steps.
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3" href="https://youtu.be/hVPI5I7Tr9I" target="_blank">YouTube (Section 3)</a>
+                    <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch12%20Databases%20AWS/ch12_queries.txt" target="_blank">GitHub</a>
+                </div> 
+                <ol>
+                    <li>
+                        <strong>Download pgAdmin</strong> for Mac or Windows: 
+                        <div class="section_container_buttons_chapters">
+                            <a class="btn-section3" href="https://www.pgadmin.org/download/" target="_blank">pgAdmin</a>
+                        </div>                         
+                    </li>
+                    <br>
+                    <li>
+                        <strong>In AWS</strong>, we must allow our database to be accessed from different IPs (university, home, etcetera). To do that you have to follow the next steps (follow the video instructions).
+                        <ol type="a">
+                            <br>
+                            <li>
+                                In AWS RDS, access to your database.
+                            </li>
+                            <br>
+                            <li>
+                                Select the VPC security groups.
+                            </li>
+                            <br>
+                            <li>
+                                Select the Inbound rules.
+                            </li>
+                            <br>
+                            <li>
+                                Edit the inbound rules by creating a new inbound rule, where you allow all the traffic from your current IP. Be aware that HVL, the IP changes regularly, therefore, you will probably need to edit the inbound rules several times.
+                            </li>
+                        </ol>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>In pgAdmin</strong>, we must connect to the database hosted in AWS server by following the next steps:
+                        <ol type="a">
+                            <br>
+                            <li>
+                                Create a new server connection, and name it as you prefer.
+                            </li>
+                            <br>
+                            <li>
+                                In the connection introduce the EndPoint from your RDS Amazon database.
+                            </li>
+                            <br>
+                            <li>
+                                In the connection, you need to also introduce the user and the password that you created in AWS.
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </p>
+            <h4>Queries in our database by using pgAdmin</h4>
+            <p>
+                All the queries in this section are an adaptation to our databases of the queries in the next video:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3" href="https://www.youtube.com/watch?v=qw--VYLpxG4" target="_blank">FreeCodeCamp</a>
+            </div> 
+            <p>
+                We are going to introduce some useful queries.
+            </p>
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background-color: #789091;" style="height:200px;">
+                <h5>SELECT command:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.user_table;
+SELECT username, email FROM public.user_table;
+SELECT password FROM public.user_table;
+SELECT kms, tansport FROM public.transport_table;
+                </code></pre> 
+            </div> 
+            <div class="boxa" style="height:200px;">
+                <h5>ORDER BY command:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.user_table ORDER BY username;
+SELECT * FROM public.user_table ORDER BY username ASC;
+SELECT * FROM public.user_table ORDER BY username DESC;
+SELECT * FROM public.transport_table ORDER BY kms DESC;
+SELECT * FROM public.transport_table ORDER BY fuel ASC;
+                </code></pre> 
+            </div> 
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background-color: #789091;" style="height:240px;">
+                <h5>WHERE, AND clauses:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel';
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel' 
+AND transport= 'Car';
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel' 
+AND (transport= 'Car' or transport= 'Motorbike');
+SELECT * FROM public.transport_table WHERE fuel= 'Diesel' 
+AND (transport= 'Car' or transport= 'Motorbike') ORDER BY transport DESC; 
+                </code></pre> 
+            </div> 
+            <div class="boxa" style="height:300px;">
+                <h5>LIMIT, and OFFSET:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.user_table LIMIT 10;
+SELECT * FROM public.transport_table OFFSET 5 LIMIT 5; 
+                </code></pre> 
+                <h5>IN:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.transport_table WHERE transport 
+IN ('Car', 'Ferry');
+SELECT * FROM public.transport_table WHERE transport 
+IN ('Car', 'Ferry') ORDER BY fuel;
+                </code></pre> 
+            </div> 
+        </div>
+
+
+
+        <div class="container">
+            <div class="boxa" style="background-color: #789091;" style="height:300px;">
+                <h5>Calculating MIN, MAX and AVG:</h5>
+                <pre><code class="html"></code>
+SELECT MAX(kms) FROM public.transport_table;
+SELECT MIN(kms) FROM public.transport_table;
+SELECT AVG(kms) FROM public.transport_table;
+SELECT ROUND(AVG(kms)) FROM public.transport_table;
+SELECT transport, MIN(co2) FROM public.transport_table 
+GROUP BY transport;
+SELECT fuel, ROUND(AVG(co2)) FROM public.transport_table 
+GROUP BY fuel;
+                </code></pre> 
+            </div> 
+            <div class="boxa" style="height:400px;">
+                <h5>SUM:</h5>
+                <pre><code class="html"></code>
+SELECT SUM(kms) FROM public.transport_table;
+SELECT transport, SUM(co2) FROM public.transport_table 
+GROUP BY transport;
+                </code></pre> 
+                <h5>Timestamps and Dates:</h5>
+                <pre><code class="html"></code>
+SELECT NOW();
+SELECT NOW()::DATE;
+SELECT NOW()::TIME;
+                </code></pre> 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3_box" href="https://www.postgresql.org/docs/current/datatype-datetime.html" target="_blank">Date/time types</a>
+                </div> 
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background-color: #789091;">
+                <h5>Timestamps and Dates:</h5>
+                <pre><code class="html"></code>
+SELECT NOW();
+SELECT NOW()::DATE;
+SELECT NOW()::TIME;
+                </code></pre> 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3_box" href="https://www.postgresql.org/docs/current/datatype-datetime.html" target="_blank">Date/time types</a>
+                </div> 
+            </div> 
+            <div class="boxa" style="height:360px;">
+                <h5>Adding and Subtracting with Dates:</h5>
+                <pre><code class="html"></code>
+SELECT NOW() - INTERVAL '1 YEAR';
+SELECT NOW()::DATE - INTERVAL '1 YEAR';
+SELECT NOW()::DATE - INTERVAL '5 DAYS';
+SELECT (NOW() + INTERVAL '5 DAYS')::DATE;
+                </code></pre>
+                <h5>Extracting Fields:</h5>
+                <pre><code class="html"></code>
+SELECT EXTRACT(YEAR FROM NOW());
+SELECT EXTRACT(MONTH FROM NOW());
+SELECT EXTRACT(DAY FROM NOW());
+SELECT EXTRACT(DOW FROM NOW());
+SELECT EXTRACT(CENTURY FROM NOW());
+                </code></pre> 
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background-color: #789091;" style="height:200px;">
+                <h5>DELETE records:</h5>
+                <pre><code class="html"></code>
+DELETE FROM  public.user_table WHERE id=1;
+DELETE FROM  public.transport_table WHERE id=1;
+                </code></pre> 
+            </div> 
+            <div class="boxa" style="height:200px;">
+                <h5>UPDATE records:</h5>
+                <pre><code class="html"></code>
+UPDATE public.user_table  SET email='hello@demo.com' 
+WHERE id=1;
+SELECT * FROM public.user_table  WHERE id=1;
+UPDATE public.user_table  SET email='hello1@demo.com',
+username='name1' WHERE id=1;
+SELECT * FROM person WHERE id=1;
+                </code></pre> 
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background-color: #789091;">
+                <h5>ON CONFLICT, DO NOTHING:</h5>
+                <pre><code class="html"></code>
+INSERT INTO public.user_table 
+(id, username, email, password)
+VALUES (1, 'name2', 'email2@demo.com', 'regn')
+ON CONFLICT (id) DO NOTHING;
+SELECT * FROM public.user_table;
+                </code></pre> 
+            </div> 
+            <div class="boxa" style="height:225px;">
+                <h5>UPSERT:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.user_table  WHERE id=1;
+INSERT INTO public.user_table 
+(id, username, email, password) 
+VALUES (1, 'name2', 'email4@demo.com', 'regn')
+ON CONFLICT (id) DO UPDATE SET email=EXCLUDED.email;
+                </code></pre> 
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background-color: #789091;" style="height:180px;">
+                <h5>INNER JOINS:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.user_table
+JOIN public.transport_table ON 
+public.transport_table.user_id = public.user_table.id;
+                </code></pre> 
+            </div> 
+            <div class="boxa" style="height:180px;">
+                <h5>LEFT JOINS:</h5>
+                <pre><code class="html"></code>
+SELECT * FROM public.user_table
+LEFT JOIN public.transport_table ON 
+public.transport_table.user_id = public.user_table.id;
+                </code></pre> 
+            </div> 
+        </div> 
+
+
+
+    </section> 
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+
+        <div class="container">
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;"> 
+                    In this weekly challenge, we develop some queries that can be relevant to extract information from our database. Based on the example queries in the previous section, please create your own queries to extract information from your databases. 
+                </p>                     
+      
+            </div>   
+            <div class="onebox">                  
+            </div> 
+        </div>
+      
+      </section>  
+
+
+  
+
+
+{% endblock content %}

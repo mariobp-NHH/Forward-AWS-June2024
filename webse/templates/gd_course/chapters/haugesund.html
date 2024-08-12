@@ -1,0 +1,83 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Haugesundsmøte: Digitalisering for å fremme internasjonalisering</span></h1>
+                    <p class="mb-1">
+                        I avdelingsmøtet i Haugesund skal vi diskutere internasjonalisering. I min presentasjon vil jeg dele mine erfaringer og strategier for å introdusere digitalisering i mine kurs, og hvordan det kan bidra til å fremme internasjonalisering i vår institutt.
+                        <br>
+                        <br>
+                        Jeg skal fokusere på fire ulike strategier som jeg prøver å bruke i mine kurs. Først vil jeg dele med dere de <strong>digitale verktøyene</strong> jeg bruker i kursene mine, og prosjektet mitt om å lansere en <strong>europeisk master i grønn økonomi og digitalisering</strong>. For det andre vil jeg dele prosjektet mitt med å lansere en <strong>europeisk utdanningsplattform</strong>. For det tredje vil jeg forklare min strategi for å skape en <strong>digital klynge ved HVL</strong>. Til slutt vil jeg dele med dere <strong>Lysdagen Conference-prosjektet</strong> der studentene mine presenterer appene som er utviklet på kursene mine for startups inkubatorer og bedrifter innen digital og bærekraftig sektor. 
+                        <br>
+                        <br>
+                        Alle disse initiativene tar sikte på å gjennomføres i samarbeid med professorer ved vårt institutt og i samarbeid med andre institutter ved HVL.
+                        <br>
+                        <br>
+                        På slutten av presentasjonen min vil jeg gjennomføre en liten <strong>spørreundersøkelse</strong> og en <strong>prat</strong> for å samle inn litt verdifull informasjon, og for å vise dere hvordan utdanningsplattformen Forward kan være nyttig på ulike nivåer innen HVL.
+                    </p>
+                    <div class="container_buttons_links_header">
+                        <div class="btn">
+                            <a href="https://xd.adobe.com/view/1c6c1597-b107-40e9-b95a-9c148f169f97-493f/"  data-toggle="modal" data-target="#weekly_challenge_ch2" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-list-ol"></i> Bruksanvisning</a>
+                        </div>
+                        <div class="btn">
+                            <a href="https://xd.adobe.com/view/1c6c1597-b107-40e9-b95a-9c148f169f97-493f/"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-person-chalkboard"></i> Presentasjon</a>
+                        </div>
+                        <div class="btn">
+                            <a href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_ha_q1') }}"  class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-brands fa-stack-exchange"></i> Spørreskjema</a>
+                        </div>
+                        <div class="btn">
+                            <a href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_ha_summary') }}"  class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-rectangle-list"></i> Sammendrag</a>
+                        </div>
+                    </div> 
+
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">Bruksanvisning</h5>
+                            </div>
+
+                            <div class="modal-body", style="color:black">
+                            <p style="text-align:left;">
+                                Etter presentasjonen har jeg lyst til å gjennomføre en spørreundersøkelse og en chat. Svarene på spørsmålene i undersøkelsen og chatten lagres i en database. Det er grunnen til at du må opprette en konto.
+                                <ol style="text-align: left;">
+                                    <li>
+                                        Du må registrere deg i Forward (<a href="https://forwardedu.org/forward/register" target="_blank" >lenke</a>).                                   
+                                    </li>
+                                    </br>
+                                    <li>
+                                        Du må logge inn (<a href="https://forwardedu.org/forward/login" target="_blank">lenke</a>). 
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Hvis du vil laste opp bildet ditt, kan du gjøre det ved å gå til kontoen din (<a href="https://forwardedu.org/forward/account" target="_blank" >lenke</a>). 
+                                    </li>
+                                </ol>
+                            </p>
+                            </div>
+
+                            <div class="modal-footer">
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Lukk</button>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/haugesund/haugesund.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+ 
+
+
+{% endblock content %}

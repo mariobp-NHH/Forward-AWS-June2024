@@ -1,0 +1,118 @@
+{% extends "people_researchers/mario_blazquez/layout.html" %} {% block content
+%}
+<section class="account_section_css" , style="background-color: white">
+  <div class="container" , style="background-color: white">
+    <div class="box"></div>
+    <div class="box">
+      <div class="card-body text-center">
+        <h3 class="card-title mb-3">Mario Blázquez</h3>
+
+        <!-- <script src="/static/javascript/people_researchers/mario_blazquez/script1.js"></script> -->
+        <!-- <script>
+          let d;
+          d = new Date(2024, 2, 24);
+          console.log(d);
+        </script> -->
+      </div>
+    </div>
+    <div class="box"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <header>
+      <img
+        src="/static/figures/people_researchers/mario_blazquez/images1/note.png"
+        alt=""
+      />
+      <h1 id="app-title">Shopping List</h1>
+    </header>
+    <form id="item-form">
+      <div class="form-control">
+        <input
+          type="text"
+          class="form-input"
+          id="item-input"
+          name="item"
+          placeholder="Enter Item"
+        />
+      </div>
+      <div class="form-control">
+        <button type="submit" class="btn">
+          <i class="fa-solid fa-plus"></i> Add Item
+        </button>
+      </div>
+    </form>
+
+    <div class="filter">
+      <input
+        type="text"
+        class="form-input-filter"
+        id="filter"
+        placeholder="Filter Items"
+      />
+    </div>
+
+    <ul id="item-list" class="items">
+      <!-- <li>
+        Apples
+        <button class="remove-item btn-link text-red">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+      <li>
+        Orange Juice
+        <button class="remove-item btn-link text-red">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+      <li>
+        Oreos
+        <button class="remove-item btn-link text-red">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li>
+      <li>
+        Milk
+        <button class="remove-item btn-link text-red">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </li> -->
+    </ul>
+
+    <button id="clear" class="btn-clear">Clear All</button>
+  </div>
+
+  <!-- Udemy example 2 -->
+  <!-- <div class="container">
+    <h1>Traversing The DOM</h1>
+    <div class="parent">
+      <div class="child">Child 1</div>
+      <div class="child">Child 2</div>
+      <div class="child">Child 3</div>
+    </div>
+  </div> -->
+
+  <!-- Udemy example 3 -->
+  <!-- <h1>Adding & Removing Styles & Classes</h1>
+
+  <p class="card">
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos quasi
+    odio dicta nisi voluptate tempora corporis reprehenderit optio qui eos
+    officiis nostrum cupiditate delectus, accusamus adipisci non, amet quis
+    provident.
+  </p>
+
+  <ul class="item-list items">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+  </ul>
+
+  <button>Run</button> -->
+</section>
+
+{% endblock %}

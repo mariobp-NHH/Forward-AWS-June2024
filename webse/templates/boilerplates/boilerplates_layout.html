@@ -1,0 +1,133 @@
+<html>
+    <head>
+
+        <!--Import Google Roboto style:-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+        <!--Import the Bootstrap CSS file:-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+          crossorigin="anonymous"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+        />
+
+        <!--Import the FullCalendar js and CSS file:-->
+        <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css">
+
+        <!-- Import Font Awesome CDN. It does not work-->
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+        <!--Import the CSS file with the style:-->
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gd_course_layout.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='boilerplates_utils.css') }}">
+
+
+        {% if title %}
+            <title>Forward - {{ title }}</title>
+        {% else %}
+            <title>Forward</title>
+        {% endif %}
+
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="container"> <!--class="container_layout"-->
+                <div class="menu_left">
+                    <div class="logo">
+                        <a href="{{ url_for('forward_home.home') }}"><img
+                            src="{{url_for('static', filename='figures/forward/forward_icon.svg')}}"
+                            width="50" 
+                            height="50"
+                        alt=""/></a>
+                        <a href="{{ url_for('gd_course.gd_course_home') }}"><img
+                            src="{{url_for('static', filename='figures/forward/gd_course_icon.svg')}}"
+                            width="50" 
+                            height="50"
+                        alt=""/></a>
+                    </div>
+                    <div class="menu">
+                        {% if current_user.is_authenticated %}
+                            <ul class="nav">
+                                <li class="nav-item">
+                                    <a href="{{ url_for('gd_course_chats.gd_course_chats_new_chat') }}">New-Chat</a> 
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{ url_for('forward_users.forward_users_logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        {% else %}
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a href="{{ url_for('gd_course_chats.gd_course_chats_new_chat') }}">New-Chat</a> 
+                            </li>
+                        </ul>
+                        {% endif %}    
+                    </div>                    
+                </div>
+                <div class="menu_right">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="#">Students-apps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Students-thesis</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Research</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Collaborators</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+
+    {% block content %}{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">  
+            <div class="item">
+                <p class="lead">
+                Gender Studies Platform
+                </p> 
+            </div>              
+            <div class="item">
+                <a href="#">
+                    <i class="bi bi-arrow-up-circle h1"></i>
+                </a>
+            </div> 
+        </div>
+    </footer>
+
+
+    <!--Menu JavaScript-->
+    <script src="static/forward_home_main.js"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+
+
+    </body>
+</html>
+
+

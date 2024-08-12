@@ -1,0 +1,260 @@
+{% extends "gd_course/HVL_2023_group1/layout.html" %}
+{% block content %}
+
+
+<!-- Header -->
+
+<section class="section_header_home">
+  <br>
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+        <h1 style="font-size:55px;"><span class="text-logo"> Welcome to the Carbon App!</span></h1>
+        <p style="text-align:center;">
+          We developed this app to help you reduce your carbon footprint by providing you with an easy way to calculate your carbon emissions. Our app is user-friendly, and it gives you an overview of your carbon footprint based on the data you input. By using our app, you can gain a better understanding of what affects your carbon footprint and what you can do to reduce it!
+                    We hope that our app can help you make the right choices to reduce your carbon footprint and contribute to combating climate change. 
+                    Thank you for using our app!        </p>
+        <div class="container_buttons_header_home">
+          {% if current_user.is_authenticated %}
+
+          {%else%}
+          <div class="btn">
+            <a href="{{url_for('gd_course_HVL_2023_group1.register')}}"> <button class="button" style="vertical-align:middle"><span>Register</span></button></a> 
+          </div>
+          <div class="btn">
+            <a href="{{url_for('gd_course_HVL_2023_group1.login')}}">  <button class="button" style="vertical-align:middle"><span>Login </span></button></a> 
+          </div>
+          {%endif%}
+        </div>  
+      </div>
+      <div class="box3"> 
+
+        <br>
+
+        <img class="picture_home"
+          src="{{url_for('static', filename='gd_course_HVL_2023_group1/icons/Carbon_app_10.svg')}}"    
+          height="250px"
+          width="350px"
+          alt=""/>
+      </div>
+    </div>
+
+  </div>
+</section> 
+
+
+<!-- Section upcomeing events -->
+<div>
+  <div class="section_events">
+    <div class="container" style="display:block;">
+      <br>
+      <h1 style="text-align: center; color:#000;"> Events </h1> 
+      <p style="text-align: center;">
+        Do you want to know more about this app? Meet us at upcoming events! 
+      </p>
+    </div>
+    <br>
+    <div class="container"> 
+      <div class="box4">
+        <i class="fa-regular fa-calendar-days" style="font-size: 64px;"></i>
+        <h3> Lysdagen - 26th of May 2023 </h3>
+        <p style="text-align: center;"> Lysdagen at Western Norway University of Applied Sciences Bergen
+        </p>
+      </div>
+        <div class="box4">
+          <i class="fa-regular fa-calendar-days" style="font-size: 64px;"></i>
+          <h3> AWS - 11.05.23 </h3>
+          <p style="text-align: center;"> Amazone Web Service - Stockholm
+            <br><br>
+            <a class="btn_developers" href="https://aws.amazon.com/events/summits/stockholm/"  target="_blank">AWS Stockholm</a>
+
+          </p>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Developers -->
+
+<section class="section_developers">
+  <br>
+  <div class="container">
+    <div class="developers" style="display:block;">
+     <h1 style="text-align:center; color: #000;"> Developers</h1>
+    <p style="text-align: center;">
+      Our team of students of economics has this semester taken the class of Green Digitalization and App Development. The teacher Mario Blázquez de Paz has been teaching the students to develop and deploy their own app in groups. 
+      The programming languages the students have used is HTML, CSS, Flask, Latex, Python and JavaScript. The students have learned how to deploy their app on Amazon web Service and Heroku. The students have worked together with this app in Github. 
+      If you have any questions about the app or the developers, you are welcome to ask questions to the group or contact the members on their LinkedIn profiles.
+
+    </p>
+  </div>
+
+  <br>
+
+  <div class="developers">
+    <ol>
+    <div class="container_developers">
+        <div class="box">
+        <img src="/static/gd_course_HVL_2023_group1/Pictures/Oda.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+        <h3> Oda </h3>
+        <button id="toggle-button-1" class="btn_developers" onclick="togglePersonInfo1()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+        <div id="person-info-1" style="display: none;">
+          <p>
+          Oda Kalve Strand, 30 years, from Larvik (Norway). She has a bachelor in nursing and is now takeing a Bachelor in Buisness and Administration. 
+          This semester she is exicted to take the subject of green digitalisation and app development to try to learn some new skills witch can be helpfull for future stuides and work.</p>
+        </div>
+        <br><br>
+        <a class="btn_developers" href="https://no.linkedin.com/in/oda-kalve-strand-40470a216"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+        <br><br>
+        </div>
+
+        <div class="box">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Alex.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Alexander </h3>
+          <button id="toggle-button-2" class="btn_developers" onclick="togglePersonInfo2()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-2" style="display: none;">
+            <p>Alexander Strøno is a 23-year-old from Oslo who is currently pursuing a Bachelor's degree in Business and Administration at the Western University of Applied Science. 
+              Prior to commencing his degree, he possessed experience in coding logical scripts using Python and VBA.
+              The purpose of enrolling in this course was to acquire comprehensive skills and knowledge that would equip him with the ability to further enhance his aptitude on his own.
+            </p>
+          </div>
+          <br><br>
+          <a class="btn_developers" href="https://www.linkedin.com/in/alexander-str%C3%B8no-722681268/" target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          <br><br>
+        </div>
+
+        <div class="box">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Andrei.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Andrei </h3>  
+
+          <button id="readMoreBtn" onclick="toggleReadMore()" 
+          style="
+          background-color: #FF7F00;
+          border: 2px solid  #FF7F00;   
+          padding: 10px 10px;
+          margin: 10px 10px 10px 10px;
+          color: #FFF;
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: 18px;"> 
+          Read more <i class="fa-solid fa-caret-down"></i> </button>
+      
+          <p id="demo_2" style="display:none;">Andrei, 24 years old e-business student from Belgium. He came to Norway for a semester in order to learn more about sustanabilty. He is comfortable in Python, Javascript and C++ and has already developped a couple of apps prior to taking this course. He enrolled for this course to learn new ways of developping modern application.</p>
+          
+          <script>
+            function toggleReadMore() {
+              var readMoreBtn = document.getElementById("readMoreBtn");
+              var demo_2 = document.getElementById("demo_2");
+              if (demo_2.style.display === "none") {
+                demo_2.style.display = "block";
+                readMoreBtn.innerHTML = "Read less <i class='fa-solid fa-caret-up'></i>";
+              } else {
+                demo_2.style.display = "none";
+                readMoreBtn.innerHTML = "Read more <i class='fa-solid fa-caret-down'></i>";
+              }
+            }
+          </script>
+          
+          <br><br>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/andrei-mihai-cosmin/" target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          </div> 
+      </div>
+      
+
+
+        <div class="box">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Andy.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Andy </h3>
+          <button id="toggle-button-4" class="btn_developers" onclick="togglePersonInfo4()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-4" style="display: none;">
+            <p>Andy Etsiako Ntiamoah, 24 years old from Bergen (Norway). He is currently studying a Bachelor’s degree in Business and Administration at Western Norway University of Applied Sciences on his second year. Previously Andy has taken an IT class in high school and wanted to broaden his knowledge and developing skills. His goal for this class is to acquired new skills and gain an advantage in coding for the future.</p>
+          </div>
+          <br><br>
+            <a class="btn_developers" href="https://www.linkedin.com/in/andy-ntiamoah-9a6358237/"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+            <br><br>
+        </div>   
+
+        <div class="box">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Augus.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Augus </h3>
+          <button id="toggle-button-5" class="btn_developers" onclick="togglePersonInfo5()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-5" style="display: none;">
+            <p>Augustina Vornehm is a 24-year-old from Munich, Germany who has graduated from a B.Sc. of Business Administration with a major in marketing from LMU Munich. She was previously working as a Marketing Consultant, focusing on layouts and SEO of websites.She is currently attending this course to further her education, focusing on coding and preparing for her future educational career by developing a bridge between business economics and computer science.</p>
+          </div>
+          <br><br>
+            <a class="btn_developers" href="https://www.linkedin.com/in/augustina-vornehm-3305481ab/"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          <br><br>
+        </div> 
+    </div>
+    <div class="container_developers">
+        <div class="box3">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Haeun.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Haeun </h3>
+          <button id="toggle-button-6" class="btn_developers" onclick="togglePersonInfo6()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-6" style="display: none;">
+            <p>Haeun Jang is 24 years old from Suwon (Republic of Korea). She is bachelor of Buisiness Administration at the Myongji University.This semester is the first time to studying App Development.The purpose of taking this lecture was to learn some skills of coding and Carbon emission.</p>
+          </div>
+          <br><br>
+            <a class="btn_developers" href="#"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          <br><br>
+        </div> 
+
+        <div class="box3">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Line.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Line </h3>
+          <button id="toggle-button-7" class="btn_developers" onclick="togglePersonInfo7()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-7" style="display: none;">
+            <p>Line Birkelid, 23 years old from Osterøy, Norway. She is currently in her 3rd year of a Bachelor degree in Business and Administration at the Western University of Applied Sciences. Before starting this course, she had no coding experience.</p>
+          </div>
+          <br><br>
+            <a class="btn_developers" href="https://www.linkedin.com/in/line-birkelid-a56210267/"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          <br><br>
+        </div> 
+
+        <div class="box3">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Mona.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Mona </h3>
+          <button id="toggle-button-8" class="btn_developers" onclick="togglePersonInfo8()"> Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-8" style="display: none;">
+            <p>Mona Amundsen, 23, from Bergen. She is currently studying Business and Administration at Western Norway University of Applied Sciences- HVL. Before starting this project, she had experience from courses about sustainability and ethics, but no experience in coding and making apps. Her goal with taking this subject is to learn some useful knowledge about coding and how to use sites as AWS and GitHub.</p>
+          </div>
+          <br><br>
+            <a class="btn_developers" href="https://www.linkedin.com/in/mona-amundsen-b3496a215/"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          <br><br>
+        </div> 
+
+        <div class="box3">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Signy.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Signy </h3>
+          <button id="toggle-button-9" class="btn_developers" onclick="togglePersonInfo9()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-9" style="display: none;">
+            <p>Signy Rut Astvaldsdottir, 24 years from Iceland and Norway. She has a nursing degree from before and is currently studying economics. She has no experience from before, but is excited to learn some basic knowledge in Python, javascript, Github and AWS this semester.</p>
+          </div>
+          <br><br>
+            <a class="btn_developers" href="https://www.linkedin.com/in/signy-rut-astvaldsdottir-68451824b/"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          <br><br>
+        </div> 
+
+        <div class="box3">
+          <img src="/static/gd_course_HVL_2023_group1/Pictures/Tonje.jpg" alt="" style="border-radius: 50%; width:200px; height: 200px;">
+          <h3> Tonje </h3>
+          <button id="toggle-button-10" class="btn_developers" onclick="togglePersonInfo10()">Read more <i class="fa-solid fa-caret-down"></i> </button>
+          <div id="person-info-10" style="display: none;">
+            <p>Tonje Andersen is 23 years old from Kristiansand who is currently studying Business and Administration at Western Norway University of Applied sciences . Before starting this project she has done some courses in sustainability but not coding. From this course her goal is to learn how to code and use useful sites such as AWS.</p>
+          </div>
+          <br><br>
+            <a class="btn_developers" href="https://www.linkedin.com/in/tonje-andersen-0907a7254/"  target="_blank">LinkedIn <i class="fa-brands fa-linkedin"></i></a>
+          <br><br>
+        </div>      
+    </div>
+    </ol>     
+  </div>  
+</section>
+
+
+        
+{% endblock content %}
+

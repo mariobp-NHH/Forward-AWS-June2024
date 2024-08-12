@@ -1,0 +1,243 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color:#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Chapter 7. Calculator</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we take the information provided by the user about the type
+                        of fuel in a particular mean of conveyance, and the number of kilometers travelled by using that mean of
+                        conveyance, and we work out her carbon emissions.
+                        </br>
+                        </br>
+                        We proceed in three steps. First, in the forms.py file, we create a new element to disclose the CO2 emissions.
+                        Second, in the app.py file, we use the information provided by the user to work out her carbon emissions,
+                        and we prepare the information to disclose it in the third step. Third, we disclose the type of fuel,
+                        the kilomenters and the carbon emissions by using the app_calculator2.html file.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo">Video</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 7
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/mCHW7WFcxZg" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                       <div class="btn">
+                            <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch7.%20Calculator" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Github</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EtqYqQPi_3hFrpDy2TK--7cBxpj6RqYuEJPybu_tFvuP9Q?e=SnociQ" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#monday" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Monday challenge breakfast</h5>
+                        </div>
+                        <p class="mb-1">
+                            The students can add more forms to their code by introducing other means of conveyance, and they
+                            can work out the carbon emissions associated to those means of conveyance.
+                        </p>
+
+                      </a>
+                      <a href="#forms" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Forms</h5>
+                        </div>
+                        <p class="mb-1">
+                            We modify the forms.py file to disclose the carbon emissions.
+                        </p>
+                      </a>
+                      <a href="#calculator" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Calculator</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the app.py file, we use the information provided by the user to work out her carbon emissions.
+                            After the calculations, we prepare the information to be disclosed.
+                        </p>
+                      </a>
+                      <a href="#disclose" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Disclose</h5>
+                        </div>
+                        <p class="mb-1">
+                            We disclose the type of fuel used by the means of conveyance, the kilometers and the CO2 emissions
+                            in the app_calculator2.html file.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                    <img src="{{url_for('static', filename='figures/app/ch7/ch7_icon.svg')}}" alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="monday" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h2 style="justify-content:center;">Monday challenge breakfast</h2>
+                <p>
+                    The students can add more forms to their code by introducing other means of conveyance. By adding more
+                    structure to their code, they introduce more means of conveyance and type of fuels. The students modify
+                    the app.py file to work out the carbon emissions of those means of conveyance, and prepare the information
+                    to be disclosed in the app_calculator2.html file. The students modify the app_calculator2.html file to
+                    disclose the means of conveyance introduced in the previous steps.
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1. Form-->
+    <section id="forms" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Forms</h2>
+
+            <p>
+                In the forms.py file, we have to allow to disclose the carbon emissions by introducing the next line of code:
+                <code3>bus_co2 = FloatField("Bus (CO2)")</code3>
+            </p>
+        </div>
+    </section>
+
+<!--Section Calculator-->
+    <section id="calculator" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Calculator</h2>
+
+            <p>
+                In the app.py file, we take the data provided by the user, we use it to work out the carbon emissions, and we prepare
+                the information to disclose it. We proceed in five steps.
+
+                <ol>
+                    <li>
+                        We allow the app.py file, the forms.py and the app_calulator.html files interact by using:
+                        <code1>if form.validate_on_submit():</code1>
+                    </li>
+                    <li> We get the information provided by the user:
+
+                        <div class="container" style="text-align: center;">
+                            <pre> <code4 style="background-color:#6c757d;">
+bus_kms = form.bus_kms.data
+
+bus_type = form.bus_type.data
+                            </code4> </pre>
+                        </div>
+                    </li>
+                    <li> We use that information to work out the carbon emissions:
+
+                        <div class="container" style="text-align: center;">
+                            <pre> <code4 style="background-color:#6c757d;">
+if bus_type == 'Bus Diesel':
+    co2_bus = float(bus_kms) * 0.10231
+elif bus_type == 'Bus CNG':
+    co2_bus = float(bus_kms) * 0.08
+elif bus_type == 'Bus Petrol':
+    co2_bus = float(bus_kms) * 0.10231
+else:
+    co2_bus = float(bus_kms) * 0
+                            </code4> </pre>
+                        </div>
+                    </li>
+                    <li> We prepare the information to be disclosed:
+
+                        <div class="container" style="text-align: center;">
+                            <pre> <code4 style="background-color:#6c757d;">
+co2_bus = float("{:.2f}".format(co2_bus))
+
+form.bus_co2.data = co2_bus
+                            </code4> </pre>
+                        </div>
+                    </li>
+                    <li> We send the information to be disclosed in the app_calculator2.html file:
+
+                        <div class="container" style="text-align: center;">
+                            <pre> <code4 style="background-color:#6c757d;">
+return render_template('app_calculator2.html', title='App Calculator', legend='App Calculator',
+       paragraph='(Based on the code developed by Gabriel Fuentes for the course ENE425)',
+       co2_bus=co2_bus, bus_kms=bus_kms, bus_type=bus_type, form=form)
+                            </code4> </pre>
+                        </div>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--introduction-->
+    <section id="disclose" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+        <div class="container">
+
+            <h2>Disclose</h2>
+
+            <p>
+                In the app_calulator2.html, we disclose the information. We use three different ways to disclose information.
+
+                <ol>
+                    <li> We can disclose the information by using a very basic approach:
+
+                        <div class="container" style="text-align: center;">
+                            <pre> <code4 style="background-color:#6c757d;">
+bus_type
+bus_kms
+co2_bus
+                            </code4> </pre>
+                        </div>
+                    </li>
+                    <li> We use that information to work out the carbon emissions:
+
+                        <div class="container" style="text-align: center;">
+                            <pre> <code4 style="background-color:#6c757d;">
+form.bus_type
+form.bus_kms
+form.bus_co2
+                            </code4> </pre>
+                        </div>
+                    </li>
+                    <li> We can disclose the information by using some more elaborated HTML code and CSS classes.
+                    </li>
+                </ol>
+            </p>
+
+        </div>
+    </section>
+
+{% endblock content %}

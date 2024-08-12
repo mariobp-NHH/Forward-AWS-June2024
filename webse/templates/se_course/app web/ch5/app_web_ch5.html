@@ -1,0 +1,235 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color:#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Chapter 5. Deploy </span></h1>
+                    <p class="mb-1">
+                        In this chapter, we deploy our app. First, we prepare a folder in our computer where we place the
+                        information required to deploy our app. Second, we create a repository in GitHub where we will
+                        move the folder in our computer where we have developed our app. Third, we connect our GitHub repository
+                        with our Heroku account to deploy our app in the server.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo">Video</a>
+                        </div>
+                        <!-- Modal Video -->
+                        <div class="modal fade" id="instructionsModalVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video: Folder, GitHub and Heroku.</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 5
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/SAU5-IuYdHM" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video (Folder, GitHub and Heroku)</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                       <div class="btn">
+                            <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch5.%20Deploy%20App" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Github</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Eti9BBLsuhREvSdU44j7LS0B78FLJWV4vtBN7u08Yc1-1A?e=9EOGMT" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#monday" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Monday challenge breakfast</h5>
+                        </div>
+                        <p class="mb-1">
+                            The students can explore different ways to upload information to GitHub, and also different ways
+                            to deploy their apps in Heroku.
+                        </p>
+
+                      </a>
+                      <a href="#folder" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Folder in the computer</h5>
+                        </div>
+                        <p class="mb-1">
+                            We prepare all the files required to deploy our app.
+                        </p>
+                      </a>
+                      <a href="#github" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">GitHub</h5>
+                        </div>
+                        <p class="mb-1">
+                            We move the files of our project from our computer to our GitHub repository.
+                        </p>
+                      </a>
+                       <a href="#heroku" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Heroku</h5>
+                        </div>
+                        <p class="mb-1">
+                            We connect our GitHub repository with our Heroku account to deploy our app.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                    <img src="{{url_for('static', filename='figures/app/ch5/ch5_icon.svg')}}" alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="monday" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h2 style="justify-content:center;">Monday challenge breakfast</h2>
+                <p>
+                    The students can explore different ways to upload their information to GitHub by using PyCharm, or
+                    by using the command line. The students also can connect GitHub with Heroku by using the command line.
+                    </br>
+                    </br>
+                    The students can also explore other alternative to deploy their apps rather than use Heroku.
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1-->
+    <section id="folder" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Folder in the computer</h2>
+
+            <p>
+                We follow the next steps to have all the files required to deploy our app.
+
+                <ol>
+                    <li>
+                        <strong>From OneDrive, download</strong> the <u>entire folder (Ch5. Deploy).</u>
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Eti9BBLsuhREvSdU44j7LS0B78FLJWV4vtBN7u08Yc1-1A?e=9EOGMT" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch5. Deploy</a>
+                       </div>
+                    </li>
+                    <li>
+                        That folder contains the next information:
+                        <ul>
+                            <li>
+                                The recipe of the cake: static folder, templates folder and app.py file
+                            </li>
+                            <li>
+                                The instructions to create the tools in the server to bake the cake: Procfile and requirements files.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--Section GitHub-->
+    <section id="github" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>GitHub</h2>
+
+            <p>
+                We create a repository in GitHub where we locate all the files required to deploy our app. We proceed in
+            three steps.
+
+                <ol>
+                    <li>
+                        We create an account in GitHub.
+                    </li>
+                    <li>
+                        We create a <strong>new repository</strong>.
+                        <ol type="a">
+                            <li>
+                                <strong>Name of the repository</strong>: ENE425-2022-app-yourname
+                            </li>
+                            <li>
+                                Add a readme file
+                            </li>
+                            <li>
+                                Choose a <strong>license</strong>. I propose you to use the MIT license, but you can use the one that you prefer.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Add files</strong> to the repository
+                        <ol type="a">
+                            <li>
+                                <strong>Drag</strong> all the files from the folder in your computer.
+                            </li>
+                            <li>
+                                <strong>Commit</strong> the changes
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--Section 3 Heroku-->
+    <section id="heroku" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+           <h2>Heroku</h2>
+
+            <p>
+                Deploy the app in Heroku by following three steps.
+
+                <ol>
+                    <li>
+                        Create a new app, and <strong>name</strong> it: ENE425-2022-app-yourname
+                    </li>
+                    <li>
+                        Deploy the app:
+                        <ol type="a">
+                            <li>
+                                Connect to GitHub by using the repo-name that you used in GitHub: ENE425-2022-app-yourname
+                            </li>
+                            <li>
+                                Chick the button <strong>search</strong>, and once that Heroku finds your repository, click the button <strong>connect</strong>.
+                            </li>
+                            <li>
+                                Click the button <strong>enable automatic deploys</strong> to upload instantaneously the files that you upload in
+                                your GitHub repository.
+                            </li>
+                            <li>
+                                Click the button <strong>deploy branch</strong>.
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        Click the button <strong>open the app</strong> to open your app in the browser.
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+{% endblock content %}

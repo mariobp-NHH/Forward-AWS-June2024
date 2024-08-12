@@ -1,0 +1,1669 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch8. Sustainable Energy. Bioenergy </span></h1>
+                    <p class="mb-1">
+                        In this chapter, we study the role that bioenergy will play in energy mix in a context of decarbonization.
+                        We will focus mainly in the role of bioenergy in the industry sector, the transport sector, the building
+                        sector and the power sector. First, we motivate the chapter by watching a video and discussing the main
+                        points that we will address in the chapter. Then, we study the current status of bioenergy in the energy
+                        mix. We conclude by studying the technology outlook and the future trends of bioenergy. We complement
+                        the chapter by studying important topics as types of bioenergy, biogas or bioethanol.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch8/ch8_material.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch8/ch8_presentation.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            Bioenergy can be produced by using two different process: Gasification and anaerobic digestion. We discuss briefly those process.
+                    We also study the role of bioenergy decarbonizing the industry, the transport, the building and the power sector.
+                        </p>
+
+                      </a>
+                      <a href="#process" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Production processes</h5>
+                        </div>
+                        <p class="mb-1">
+                            To avoid methane and nitrous oxide emissions, the residuals from agriculture and waste can be
+                            transformed into bioenergy. There are two production processes to produce bioenergy:
+                            Gasification, and anaerobic fermentation. We explain the fundamentals of
+                            each of those two processes.
+                        </p>
+                      </a>
+                      <a href="#current" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Current status</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the current use of bioenergy in different sectors.
+                        </p>
+                      </a>
+                      <a href="#future" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Future projections</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the role of bioenergy in the future.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/ch8_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+   <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Introduction</h2>
+
+
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    To motivate the chapter, we start by watching the video
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=zm0jslIE1kk" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How Gasification Turns Waste Into Energy</a>
+                   </div>
+                </div>
+                <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q1.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 1</legend>
+                            <p class="card-text">The video claims that bioenergy could have several <strong>advantages for the environment</strong>.
+                                Could you enumerate the main of those advantages?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q1.type.errors %}
+                                        {{ form_m2_ch8_q1.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q1.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q1.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q1.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q2.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 2</legend>
+                            <p class="card-text">The video proposes different ways to obtain <strong>energy from organic residuals</strong>. Could you enumerate them?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q2.type.errors %}
+                                        {{ form_m2_ch8_q2.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q2.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q2.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q2.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                    
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q3.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 3</legend>
+                            <p class="card-text">Which is the<strong> business model</strong> used during the gasification process?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q3.type.errors %}
+                                        {{ form_m2_ch8_q3.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q3.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q3.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q3.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                                <legend class="border-bottom mb-4">Extra Q1</legend>
+                            <p class="card-text">Can you explain briefly the <strong>gasification process</strong>?
+                            </p>
+                            <div class="btn">
+                                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#extra1Modal">Extra Q1</a>
+                            </div>
+                            <!-- Modal Extra1 -->
+                            <div class="modal fade" id="extra1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                  <div class="modal-header">
+                                    <h5 class="modal-title", style="color:black">Extra Q1. Gasification</h5>
+                                  </div>
+
+                                  <div class="modal-body", style="color:black">
+                                    <p>
+                                        Steam and oxygen is mixed with the waste to produce gas that will be transformed in biodiesel, hydrogen, ethanol, methanol, ammonia, fertilizers.
+                                    </p>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                                <legend class="border-bottom mb-4">Extra Q2</legend>
+                            <p class="card-text">Do you know <strong>other ways</strong> to generate biodiesel, biogas or methanol?
+                            </p>
+                            <div class="btn">
+                                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#extra2Modal">Extra Q2</a>
+                            </div>
+                            <!-- Modal Extra2 -->
+                            <div class="modal fade" id="extra2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                  <div class="modal-header">
+                                    <h5 class="modal-title", style="color:black">Extra Q2. Fermentation</h5>
+                                  </div>
+
+                                  <div class="modal-body", style="color:black">
+                                    <p>
+                                        Those products could be also obtained through a fermentation process from organic
+                                        residuals from forest or farms (see next box for some videos with extra information).
+                                    </p>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                                <legend class="border-bottom mb-4">Extra Q3</legend>
+                            <p class="card-text">Can you enumerate some of the <strong>main challenges</strong> that could face the
+                                implementation of gasification by using waste?
+                            </p>
+                            <div class="btn">
+                                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#extra3Modal">Extra Q3</a>
+                            </div>
+                            <!-- Modal Extra3 -->
+                            <div class="modal fade" id="extra3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+
+                                  <div class="modal-header">
+                                    <h5 class="modal-title", style="color:black">Extra Q3. Implementation</h5>
+                                  </div>
+
+                                  <div class="modal-body", style="color:black">
+                                    <p>
+                                        Scaling the business could be difficult; uncertainty on regulation could limit investments; the risk of being a first mover in the business.
+                                    </p>
+                                  </div>
+
+                                  <div class="modal-footer">
+                                    <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <p>
+                    Other videos that are very useful to know more bout bioenergy:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                    <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=5RswjCWaR6I" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How does a biogas plant work?</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=uUwKEkYbsx0" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Bio-Energy with Carbon Capture and Storage (BECCS)</a>
+                   </div>
+                </div>
+
+                </div>
+            </div>
+
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Introduction</h3>
+                <p>
+                    Bioenergy can be produced by using two different process: Gasification and anaerobic digestion. We discuss briefly those process.
+                    We also study the role of bioenergy decarbonizing the industry, the transport, the building and the power sector.
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch8_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+<!--Section 1 (grey)-->
+    <section id="process" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Production process</h2>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        The <strong>green house gas emissions</strong> derived from agriculture, forestry, land use and waste
+                        suppose the 21.6% of the total green house gas emissions (figure: Green House Gas emissions).
+                        Moreover, The agricultural sector is responsible for more than <strong>40% of anthropogenic
+                        methane (CH4) emissions</strong> and more than <strong>50% of nitrous oxide (N2O) emissions</strong>.
+                        The waste sector also contributes to methane and nitrous oxide emissions. Both methane and
+                        nitrous oxide are potent greenhouse gases with global warming potentials (for a 100-year time
+                        horizon) that are, respectively, <strong>21 and 310 times greater than that of CO2</strong>.
+                        Significant reductions in green house gas emissions are therefore possible if methane and nitrous
+                        oxide emissions can be reduced via improved management practices.
+                        </br>
+                        </br>
+                        To avoid methane and nitrous oxide emissions, the residuals from agriculture and waste can be 
+                        transformed into <strong>bioenergy</strong>. There are two production processes to produce bioenergy:
+                        <strong>Gasification</strong>, and <strong>anaerobic fermentation</strong>. We explain the
+                        fundamentals of each of those two processes.
+                    </p>
+                    <h3>Gasification</h3>
+                    <!--External link-->
+                    <div class="external_links_css">
+                        <p>
+                            This section is based on the National Energy Lab webpage:
+                        </p>
+                        <div class="container_buttons_links_external_links_css">
+                           <div class="btn">
+                               <a href="https://netl.doe.gov/research/Coal/energy-systems/gasification/gasifipedia/intro-to-gasification" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">National Energy Lab</a>
+                           </div>
+                        </div>
+                        <p>
+                            An useful video that summarize the chemical reactions within the gasification process:
+                        </p>
+                        <div class="container_buttons_links_external_links_css">
+                           <div class="btn">
+                               <a href="https://www.youtube.com/watch?v=f7gzdFGc3y4" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Gasification Animation</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/bioenergy_GHG.svg')}}"
+                        alt=""/>
+            </div>
+            
+            <h4>Introduction</h4>
+            
+            <p>
+                Gasification is a technological process that can convert any carbonaceous (carbon-based) raw material 
+                such as coal into fuel gas, also known as synthesis gas (syngas for short).
+                </br>
+                </br>
+                Gasification occurs in a gasifier, generally a high temperature/pressure vessel where oxygen (or air) 
+                and steam are directly contacted with the coal or other feed material causing a series of chemical reactions 
+                to occur that convert the <strong>feed</strong> to <strong>syngas</strong> and <strong>ash/slag (mineral residues)</strong>.
+                </br>
+                </br>
+                Syngas is so called because of its history as an intermediate in the production of synthetic natural gas. 
+                Composed primarily of the colorless, odorless, highly flammable gases <strong>carbon monoxide</strong> (CO) and
+                <strong>hydrogen</strong> (H2), syngas has a variety of uses. The syngas can be further converted (or shifted)
+                to nothing but <strong>hydrogen</strong> and <strong>carbon dioxide</strong> (CO2) by adding <strong>steam</strong> and reacting
+                over a <strong>catalyst</strong> in a <strong>water-gas-shift</strong> reactor.
+                </br>
+                </br>
+                When hydrogen is burned, it creates nothing but <strong>heat and water</strong>, resulting in the ability to create
+                electricity with no carbon dioxide in the exhaust gases. Furthermore, hydrogen made from coal or other solid 
+                fuels can be used to <strong>refine oil</strong>, or to make products such as <strong>ammonia</strong> and <strong>fertilizer</strong>.
+                More importantly, hydrogen enriched syngas can be used to make <strong>gasoline</strong> and <strong>diesel fuel</strong>.
+                Polygeneration plants that produce multiple products are uniquely possible with gasification technologies. 
+                Carbon dioxide can be efficiently captured from syngas, preventing its greenhouse gas emission to the atmosphere 
+                and enabling its utilization (such as for Enhanced Oil Recovery) or safe storage.
+                </br>
+                </br>
+                Figure: Gasifier plant is a representation of a gasification process for coal,
+                depicting both the feedstock flexibility inherent in gasification, as well as the wide range of products 
+                and usefulness of gasification technology.
+            </p>
+
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/gasification_components.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/bioenergy_gasifier.svg')}}"
+                        alt=""/>
+            </div>
+            
+            <h4>Fundamentals</h4>
+            
+            <p>
+                Gasification is a <strong>partial oxidation process</strong>. The term partial oxidation is a relative term which
+                simply means that less oxygen is used in gasification than would be required for combustion (i.e., burning 
+                or complete oxidation) of the same amount of fuel. Gasification typically uses only 25 to 40 percent 
+                of the theoretical oxidant (either pure oxygen or air) to generate enough heat to gasify the remaining 
+                unoxidized fuel, producing syngas.
+                </br>
+                </br>
+                The major combustible products of gasification are <strong>carbon monoxide (CO) (30-60%)</strong> and
+                <strong>hydrogen (H2) (25-30%)</strong>, with only a minor amount of the carbon completely oxidized
+                to <strong>carbon dioxide (CO2) (5-15%)</strong> and <strong>water (H2O) (2-30%)</strong>.
+                </br>
+                </br>
+                The heat released by partial oxidation provides most of the energy needed to break up the chemical bonds 
+                in the feedstock, to drive the other endothermic gasification reactions, and to increase the temperature 
+                of the final gasification products.
+            </p>
+
+            <h4>Detailed gasification chemistry</h4>
+            <p>
+                Within a gasification process, the major chemical reactions are those involving carbon, CO, CO2,
+                hydrogen (H2), water (steam) and methane (CH4), as follows:
+                </br>
+                </br>
+                The <strong>combustion reactions</strong>:
+
+                <math display='block'>
+                 <semantics>
+                  <mtable columnalign='left'>
+                   <mtr>
+                    <mtd>
+                     <mi>C</mi><mo>+</mo><mfrac>
+                      <mn>1</mn>
+                      <mn>2</mn>
+                     </mfrac>
+                     <msub>
+                      <mi>O</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mo>&#x2192;</mo><mi>C</mi><mi>O</mi>
+                    </mtd>
+                   </mtr>
+                   <mtr>
+                    <mtd>
+                     <mi>C</mi><mi>O</mi><mo>+</mo><mfrac>
+                      <mn>1</mn>
+                      <mn>2</mn>
+                     </mfrac>
+                     <msub>
+                      <mi>O</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mo>&#x2192;</mo><mi>C</mi><msub>
+                      <mi>O</mi>
+                      <mn>2</mn>
+                     </msub>
+
+                    </mtd>
+                   </mtr>
+                   <mtr>
+                    <mtd>
+                     <msub>
+                      <mi>H</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mo>+</mo><mfrac>
+                      <mn>1</mn>
+                      <mn>2</mn>
+                     </mfrac>
+                     <msub>
+                      <mi>O</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mo>&#x2192;</mo><msub>
+                      <mi>H</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mi>O</mi>
+                    </mtd>
+                   </mtr>
+                  </mtable>
+
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaacaWGdb
+                  Gaey4kaSYaaSaaaeaacaaIXaaabaGaaGOmaaaacaWGpbWaaSbaaSqa
+                  aiaaikdaaeqaaOGaeyOKH4Qaam4qaiaad+eaaeaacaWGdbGaam4tai
+                  abgUcaRmaalaaabaGaaGymaaqaaiaaikdaaaGaam4tamaaBaaaleaa
+                  caaIYaaabeaakiabgkziUkaadoeacaWGpbWaaSbaaSqaaiaaikdaae
+                  qaaaGcbaGaamisamaaBaaaleaacaaIYaaabeaakiabgUcaRmaalaaa
+                  baGaaGymaaqaaiaaikdaaaGaam4tamaaBaaaleaacaaIYaaabeaaki
+                  abgkziUkaadIeadaWgaaWcbaGaaGOmaaqabaGccaWGpbaaaaa@532F@
+                  </annotation>
+                 </semantics>
+                </math>
+
+                Other important <strong>gasification reactions</strong> include:
+
+                <math display='block'>
+                 <semantics>
+                  <mtable columnalign='left'>
+                   <mtr>
+                    <mtd>
+                     <mi>C</mi><mo>+</mo><msub>
+                      <mi>H</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mi>O</mi><mo>&#x2194;</mo><mi>C</mi><mi>O</mi><mo>+</mo><msub>
+                      <mi>H</mi>
+                      <mn>2</mn>
+                     </msub>
+
+                    </mtd>
+                   </mtr>
+                   <mtr>
+                    <mtd>
+                     <mi>C</mi><mo>+</mo><mi>C</mi><msub>
+                      <mi>O</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mo>&#x2194;</mo><mn>2</mn><mi>C</mi><mi>O</mi>
+                    </mtd>
+                   </mtr>
+                   <mtr>
+                    <mtd>
+                     <mi>C</mi><mo>+</mo><mn>2</mn><msub>
+                      <mi>H</mi>
+                      <mn>2</mn>
+                     </msub>
+                     <mo>&#x2194;</mo><mi>C</mi><msub>
+                      <mi>H</mi>
+                      <mn>4</mn>
+                     </msub>
+
+                    </mtd>
+                   </mtr>
+                  </mtable>
+
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaacaWGdb
+                  Gaey4kaSIaamisamaaBaaaleaacaaIYaaabeaakiaad+eacqGHugYQ
+                  caWGdbGaam4taiabgUcaRiaadIeadaWgaaWcbaGaaGOmaaqabaaake
+                  aacaWGdbGaey4kaSIaam4qaiaad+eadaWgaaWcbaGaaGOmaaqabaGc
+                  cqGHugYQcaaIYaGaam4qaiaad+eaaeaacaWGdbGaey4kaSIaaGOmai
+                  aadIeadaWgaaWcbaGaaGOmaaqabaGccqGHugYQcaWGdbGaamisamaa
+                  BaaaleaacaaI0aaabeaaaaaa@516D@
+                  </annotation>
+                 </semantics>
+                </math>
+                
+                The combustion reactions are essentially carried out to completion under normal gasification operating 
+                conditions. And, under the condition of high carbon conversion, the three gasification reactions can be 
+                reduced to two homogeneous gas phase reactions of <strong>water-gas-shift</strong> and<strong> steam methane-reforming</strong>,
+                which collectively play a key role in determining the final equilibrium synthesis gas (syngas) composition.
+
+                <!--Enumerated list (table)-->
+                <ol class="list-group list-group-numbered">
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Water-gas-shift</div>
+                      <p class="text-right">
+                          The <strong>water-gas-shift</strong> process transform the elements from the combustion and the
+                          gasification reactions into hydrogen (H2) and carbon dioxide (CO2) through the next
+                          equation (Figure: Gasifier. Chemical reactions):
+                          <math display='block'>
+                             <semantics>
+                              <mrow>
+                               <mi>C</mi><mi>O</mi><mo>+</mo><msub>
+                                <mi>H</mi>
+                                <mn>2</mn>
+                               </msub>
+                               <mi>O</mi><mo>&#x2194;</mo><mi>C</mi><msub>
+                                <mi>O</mi>
+                                <mn>2</mn>
+                               </msub>
+                               <mo>+</mo><msub>
+                                <mi>H</mi>
+                                <mn>2</mn>
+                               </msub>
+                               </mrow>
+                              <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                              feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4qaiaad+
+                              eacqGHRaWkcaWGibWaaSbaaSqaaiaaikdaaeqaaOGaam4taiabgszi
+                              RkaadoeacaWGpbWaaSbaaSqaaiaaikdaaeqaaOGaey4kaSIaamisam
+                              aaBaaaleaacaaIYaaabeaaaaa@4215@
+                              </annotation>
+                             </semantics>
+                          </math>
+
+
+                      </p>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Methane-reforming</div>
+                      <p class="text-right">
+                          The <strong>methane-reforming</strong> process transform the elements from the combustion and the
+                          gasification reactions into methane (CH4) and water (H2O) through the next equation
+                          (Figure: Gasifier. Chemical reactions):
+
+                          <math display='block'>
+                             <semantics>
+                              <mrow>
+                               <mi>C</mi><msub>
+                                <mi>O</mi>
+                                <mn>2</mn>
+                               </msub>
+                               <mo>+</mo><mn>3</mn><msub>
+                                <mi>H</mi>
+                                <mn>2</mn>
+                               </msub>
+                               <mo>&#x2194;</mo><mi>C</mi><msub>
+                                <mi>H</mi>
+                                <mn>4</mn>
+                               </msub>
+                               <mo>+</mo><msub>
+                                <mi>H</mi>
+                                <mn>2</mn>
+                               </msub>
+                               <mi>O</mi></mrow>
+                              <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                              feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                              hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                              4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                              vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                              fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4qaiaad+
+                              eadaWgaaWcbaGaaGOmaaqabaGccqGHRaWkcaaIZaGaamisamaaBaaa
+                              leaacaaIYaaabeaakiabgsziRkaadoeacaWGibWaaSbaaSqaaiaais
+                              daaeqaaOGaey4kaSIaamisamaaBaaaleaacaaIYaaabeaakiaad+ea
+                              aaa@43C9@
+                              </annotation>
+                             </semantics>
+                          </math>
+                      </p>
+                    </div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                      <div class="fw-bold">Other elements</div>
+                      <p class="text-right">
+                          On top of the products from obtained from the combustion and the gasification reactions and
+                          the subsequence water-gas-shift or methane-reforming processes, some <strong>other elements</strong>
+                          as gaseous nitrogen (N2) and ammonia (NH3)are produced (Figure: Gasifier. Chemical reactions).
+                      </p>
+                    </div>
+                  </li>
+                </ol>
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <div class="text_image_css">
+                    <div>
+                        <p>
+                            To accelerate the <strong>water-gas-shift</strong> and <strong>methane-reforming</strong> processes,
+                            <strong>catalysts</strong> can be employed.
+                            </br>
+                            </br>
+                            <strong>Catalysis </strong>is the process of increasing the rate of a chemical reaction by adding a
+                            substance known as a <strong>catalyst</strong>. Catalysts are not consumed in the catalyzed reaction
+                            but can act repeatedly. Often only very small amounts of catalyst are required.
+                            </br>
+                            </br>
+                            Catalysts work by providing an (alternative) mechanism involving a different transition state 
+                            and lower <strong>activation energy</strong>. Consequently, more molecular collisions have the energy
+                            needed to reach the transition state. Hence, catalysts can enable reactions that would 
+                            otherwise be blocked or slowed by a kinetic barrier. The catalyst may increase reaction 
+                            rate or selectivity, or enable the reaction at lower temperatures. This effect can be 
+                            illustrated in the energy profile diagram in Figure: Catalysis: Energy profile diagram.
+                        </p>
+                        <div class="container_buttons_links_box_information_css">
+                           <div class="btn">
+                               <a href="https://www.youtube.com/watch?v=m_9bpZep1QM" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">What Are Catalysts? | Reactions | Chemistry | FuseSchool</a>
+                           </div>
+                           <div class="btn">
+                                <a href="https://www.youtube.com/watch?v=fEXq_RvnYgI" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Energy Diagrams, Catalysts, and Reaction Mechanisms</a>
+                           </div>
+                        </div>
+                    </div>
+                    <img
+                    src="{{url_for('static', filename='figures/se/ch8/bionergy_catalysis.svg')}}"
+                            alt=""/>
+                </div>
+            </div>
+
+            <h3>Anaerobic digestion</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the next two links:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Anaerobic_digestion" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Anaerobic digestion (Wikipedia)</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.eubia.org/cms/wiki-biomass/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">WikiBiomass</a>
+                   </div>
+                </div>
+                <p>
+                    An useful video to understand the anaerobic digestion process is in this link:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=5RswjCWaR6I" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How does a biogas plant work?</a>
+                   </div>
+                </div>
+            </div>
+            
+            <h4>Introduction</h4>
+            
+            <p>
+                Anaerobic digestion is a sequence of processes by which <strong>microorganisms break down biodegradable 
+                material in the absence of oxygen</strong>. The process is used for industrial or domestic purposes to manage
+                waste or to produce fuels.
+                </br>
+                </br>
+                Anaerobic digestion is used as part of the process to treat <strong>biodegradable waste</strong>. As part of an
+                integrated waste management system, anaerobic digestion <strong>reduces the emission of landfill gas</strong>
+                into the atmosphere. Anaerobic digesters can also be fed with purpose-grown energy crops, such as maize.
+                </br>
+                </br>
+                Anaerobic digestion is widely used as a source of <strong>renewable energy</strong>. The process produces a
+                biogas, consisting of methane, carbon dioxide, and traces of other 'contaminant' gases. This biogas 
+                can be used directly as <strong>fuel</strong>, in combined heat and power gas engines or upgraded to natural
+                gas-quality <strong>biomethane</strong>. The nutrient-rich digestate also produced can be used as
+                <strong>fertilizer</strong>.
+            </p>
+
+            <h4>The process</h4>
+
+            <p>
+                <ol>
+                    <li>
+                        The photosynthesis process (Figure: Anaerobic digestion process) uses light transform carbon dioxide
+                        (CO2) and water (H2O)  into sugar (C6H2O6) and oxygen (O2) according with
+                        the equation:
+
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mn>6</mn><mi>C</mi><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <mo>+</mo><mn>6</mn><msub>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <mi>O</mi><mo>+</mo><mi>l</mi><mi>i</mi><mi>g</mi><mi>h</mi><mi>t</mi><mo>&#x2192;</mo><msub>
+                            <mi>C</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <msub>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <msub>
+                            <mi>O</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <mo>+</mo><mn>6</mn><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGOnaiaado
+                          eacaWGpbWaaSbaaSqaaiaaikdaaeqaaOGaey4kaSIaaGOnaiaadIea
+                          daWgaaWcbaGaaGOmaaqabaGccaWGpbGaey4kaSIaamiBaiaadMgaca
+                          WGNbGaamiAaiaadshacqGHsgIRcaWGdbWaaSbaaSqaaiaaiAdaaeqa
+                          aOGaamisamaaBaaaleaacaaIYaaabeaakiaad+eadaWgaaWcbaGaaG
+                          OnaaqabaGccqGHRaWkcaaI2aGaam4tamaaBaaaleaacaaIYaaabeaa
+                          aaa@4D9B@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                    <li>
+                        By following <strong>four different steps</strong> (Figure: Anaerobic digestion process), the anaerobic
+                        digestion transforms the sugar (C6H2O6) into methane (CH4) and carbon dioxide (CO2).
+                        </br>
+                        </br>
+                    <ol type="a">
+                        <li>
+                            <strong>Hydrolysis</strong>: Through hydrolysis the complex organic molecules are <strong>broken down</strong>
+                            into simple sugars, amino acids, and fatty acids.
+                        </li>
+                        <li>
+                            <strong>Acidogenesis</strong>: The biological process of acidogenesis results in <strong>further breakdown of
+                            the remaining components</strong> by acidogenic (fermentative) bacteria. Here, volatile fatty acids (VFAs)
+                            are created, along with ammonia, carbon dioxide, and hydrogen sulfide, as well as other byproducts.
+                        </li>
+                        <li>
+                            <strong>Acetogenesis</strong>: The third stage of anaerobic digestion is acetogenesis. Here, simple
+                            molecules created through the acidogenesis phase are <strong>further digested</strong> by
+                            acetogens to produce largely acetic acid, as well as carbon dioxide and hydrogen.
+                        </li>
+                        <li>
+                            <strong>Methanogenesis</strong>: Methanogens use the intermediate products of the preceding stages
+                            and <strong>convert them</strong> into methane, carbon dioxide, and water.
+                        </li>
+                    </ol>
+                    </br>
+                        The <strong>formula</strong> that summarizes the process is defined by:
+
+                        <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <msub>
+                            <mi>C</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <msub>
+                            <mi>H</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <msub>
+                            <mi>O</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <mo>&#x2192;</mo><mn>3</mn><mi>C</mi><msub>
+                            <mi>H</mi>
+                            <mn>4</mn>
+                           </msub>
+                           <mo>+</mo><mn>3</mn><mi>C</mi><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4qamaaBa
+                          aaleaacaaI2aaabeaakiaadIeadaWgaaWcbaGaaGOmaaqabaGccaWG
+                          pbWaaSbaaSqaaiaaiAdaaeqaaOGaeyOKH4QaaG4maiaadoeacaWGib
+                          WaaSbaaSqaaiaaisdaaeqaaOGaey4kaSIaaG4maiaadoeacaWGpbWa
+                          aSbaaSqaaiaaikdaaeqaaaaa@4490@
+                          </annotation>
+                         </semantics>
+                        </math>
+                    </li>
+                    <li>
+                        <strong>Clean and upgrade process</strong> (Figure: Anaerobic digestion process): Usually, the produced biogas
+                        must be <strong>dried</strong> and drained for condense water and biological or chemical <strong>cleaned</strong>
+                        for  hydrogen sulphur H2S, NH3 and trace elements. <strong>Further upgrading steps</strong> to increase
+                        the CH4 content, membrane separation of CO2 and pressurising the biogas can be taken depending 
+                        on the utilisation purpose.
+                        </br>
+                        </br>
+                        The upgrade to bioethanol implies the removal of contaminants such as hydrogen sulphide or siloxanes, as
+                        well as the carbon dioxide. Bioethanol contains at least 90% of methanol CH4.
+                        </br>
+                        </br>
+                        Depending on the <strong>temperature</strong>, the anaerobic digestion can be classified as:
+                        </br>
+                        </br>
+                        <ul>
+                            <li>
+                                <strong>Mesophilic</strong> temperature from 25-35 degrees Celsius.
+                            </li>
+                            <li>
+                                <strong>Thermophilic</strong> temperature from 49-60 degrees Celsius.
+                            </li>
+                        </ul>
+                        </br>
+                        The majority of the agricultural biogas plants are operated at <strong>mesophilic temperatures</strong>.
+                        Thermophilic temperatures are applied mainly in large-scale centralised biogas plants with
+                        co-digestion, where more stringent sanitation requirements are required.
+                    </li>
+                </ol>
+            </p>
+
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/bioenergy_AD.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/bioenergy_plant.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q4.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 4</legend>
+                            <p class="card-text">The green gas emissions derived from agriculture, forestry, land use,
+                                and waste suppose
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q4.type.errors %}
+                                        {{ form_m2_ch8_q4.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q4.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q4.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q4.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q5.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 5</legend>
+                            <p class="card-text">In the gasification process, the <strong>hydrogen</strong> is produced
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q5.type.errors %}
+                                        {{ form_m2_ch8_q5.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q5.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q5.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q5.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q6.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 6</legend>
+                            <p class="card-text">In the anaerobic digestion process, the <strong> biomethane </strong> is obtained
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q6.type.errors %}
+                                        {{ form_m2_ch8_q6.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q6.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q6.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q6.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+<!--Section 2 (blue)-->
+    <section id="current" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Current status</h2>
+            <p>
+                Bioenergy makes up a large share of renewable energy use today and plays a key role as a source of
+                energy and as a fuel in the end-use sectors (<strong>industry</strong>, <strong>transport</strong> and <strong>buildings</strong>),
+                as well as in the power sector.
+                </br>
+                </br>
+                Bioenergy today accounts for 70% of the global renewable energy supply and 10% of the total
+                primary energy supply.
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Traditional vs. Modern biomass.</u>
+                    </br>
+                    </br>
+                    Biomass is any organic material derived from plants or animals. It includes wood, agricultural
+                    crops, herbaceous and woody energy crops, algae, animal fats, livestock manure and municipal
+                    organic wastes.
+                    </br>
+                    <ol>
+                        <li>
+                            <strong>Traditional use</strong> refers to the use of wood, charcoal, agricultural residues and animal dung
+                            locally collected or from unsustainably produced sources with basic techniques for cooking
+                            and heating at very low conversion efficiency (10% to 20%) in open stoves or fires with no
+                            chimney or hood. These uses often release flue gases indoors or cause high concentrations of
+                            air pollutants.
+                        </li>
+                        <li>
+                            <strong>Modern use</strong> refers to the direct combustion of commercially produced primary
+                            biomass and the indirect use of pre-treated solid biomass with heightened energy
+                            density for electricity and/or heat generation. It includes liquid forms of biomass produced
+                            via conventional or advanced conversion routes for transport fuels, cooking and industrial
+                            applications; biogas produced through anaerobic digestion of residues and waste; and
+                            syngas produced through biomass gasification. Biomass use in improved cookstoves can be
+                            categorised as modern use if sustainably sourced.
+                        </li>
+                    </ol>
+                </p>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Primary energy (PE).</u>
+                    </br>
+                    </br>
+                    <strong>Primary energy (PE) </strong>is an energy form found in nature that has not been subjected to any
+                    human engineered conversion process. It is energy contained in raw fuels, and other forms of energy
+                    received as input to a system. Primary energy can be non-renewable or renewable.
+                    </br>
+                    </br>
+                    Where primary energy is used to describe fossil fuels, the embodied energy of the fuel is available
+                    as thermal energy and around 70% is typically lost in conversion to electrical or mechanical energy.
+                    There is a similar 60-80% conversion loss when solar and wind energy is converted to electricity,
+                    but today's UN conventions on energy statistics counts the electricity made from wind and solar as the
+                    primary energy itself for these sources. One consequence of this counting method is that the contribution
+                    of wind and solar energy is under reported compared to fossil energy sources, and there is hence an
+                    international debate on how to count primary energy from wind and solar.
+                    </br>
+                    </br>
+                    <u>Total primary energy supply (TPES).</u>
+                    </br>
+                    </br>
+                    <strong>Total primary energy supply (TPES)</strong> is the sum of production and imports subtracting exports
+                    and storage changes.
+                    </br>
+                    </br>
+                    The concept of primary energy is used in energy statistics in the compilation of energy balances,
+                    as well as in the field of energetics. In energetics, a primary energy source (PES) refers to the
+                    energy forms required by the energy sector to generate the supply of energy carriers used by human
+                    society.
+                    </br>
+                    </br>
+                    <u>Secondary energy.</u>
+                    </br>
+                    </br>
+                    Secondary energy is a carrier of energy, such as electricity. These are produced by conversion from a primary energy source.
+                </p>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Industry sector</div>
+                  <p class="text-right">
+                    <ul>
+                        <li>
+                            The industry sector uses energy for a <strong>wide range of purposes</strong>, such as for processing and
+                            assembly, steam generation, cogeneration, process heating and cooling, lighting, heating, and air
+                            conditioning.
+                        </li>
+                        <li>
+                            <strong>Most of the energy consumed in industry</strong> is in the form of heat, especially in
+                            the most energy-intensive industrial sectors – iron and steel, chemical and petrochemical, nonmetallic
+                            minerals, pulp and paper, and the food industry.
+                        </li>
+                        <li>
+                            Current direct renewable energy use in
+                            industry is predominantly in the form of <strong>biofuels</strong> and <strong>energy from waste</strong>.
+                        </li>
+                    </ul>
+                    </br>
+                    <strong>At a regional level</strong>, the largest share of biomass in industry’s final energy
+                    consumption in 2017 was in Latin America and the Caribbean at 32%, followed by Asia and Sub-
+                    Saharan Africa, both at 29%.
+                    </br>
+                    </br>
+                    Biomass is also used for carbon emissions reductions in the industry sector through the production
+                    of <strong>natural synthetic fibres</strong> based on cellulose, and <strong>biomaterials to produce bioplastic</strong>. Biomass used
+                    for<strong> bioplastic production</strong> mainly comes from corn, sugarcane or cellulose (European Bioplastic,
+                    2020).
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Transport sector</div>
+                  <p class="text-right">
+                      <ul>
+                        <li>
+                            Globally, the share of renewable energy in this sector is very small at just 3% in 2017.
+                        </li>
+                        <li>
+                            In <strong>road</strong>
+                            transport, the use of renewables is dominated by liquid biofuels, mostly <strong>bioethanol</strong> and <strong>biodiesel</strong>,
+                            which offer an alternative fuel for all types of internal combustion engines in both passenger
+                            vehicles and trucks.
+                        </li>
+                        <li>
+                            <strong>North America</strong> had the largest production of liquid biofuels in 2017, with 64
+                            billion litres, followed by Latin America and the Caribbean with 31 billion litres and the European
+                            Union with 25 billion litres.
+                        </li>
+                        <li>
+                            Liquid biofuels could also help decarbonise the<strong> shipping</strong> and <strong>aviation</strong> sectors, which currently are
+                            entirely fueled by fossil sources.
+                        </li>
+                        <li>
+                            Advanced biofuels offer significant <strong>emissions reductions</strong> compared
+                            to petrol and diesel.
+                        </li>
+                        <li>
+                            They can be made from <strong>non-food</strong> and <strong>non-feed biomass</strong>, including waste
+                            materials (such as vegetable oils or animal fats) and energy-specific crops grown on marginal
+                            or degraded land.
+                        </li>
+                    </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Buildings sector</div>
+                  <p class="text-right">
+                      There are two different ways of using biomass in the buildings sector: <strong>space heating</strong> and <strong>cooking</strong>.
+                      </br>
+                      <ol>
+                        <li>
+                            <strong>Buildings </strong>can currently be heated using biomass through town-scale district heating systems
+                            or building-scale furnaces, both of which use feedstocks such as wood chips and pellets very
+                            efficiently.
+                        </li>
+                        <li>
+                            <strong>Cooking</strong> with biomass is typically one of the traditional uses of biomass in developing countries.
+                            <ul>
+                                <li>
+                                    Inefficient traditional cookstoves paired with solid fuels and kerosene emit indoor smoke that imperils
+		                            the <strong>health of mainly women and children</strong> and causes nearly 4 million premature deaths every year.
+                                </li>
+                                <li>
+                                    Unsurprisingly, the largest share of biomass consumption in the buildings sector in 2017 was in<strong> Sub-
+			                        Saharan Africa</strong> at 91% (entirely in the form of traditional uses).
+                                </li>
+                            </ul>
+                        </li>
+                      </ol>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Power sector</div>
+                  <p class="text-right">
+                      <ul>
+                        <li>
+                            Biomass and waste fuels in solid, liquid and gaseous forms are currently used to <strong>generate
+                            electricity</strong>.
+                        </li>
+                        <li>
+                            The feedstocks and technologies range from mature, <strong>low-cost options</strong>, like the
+                            combustion of agricultural and forestry residues, to less mature and/or<strong> expensive options</strong>, like
+                            biomass gasification or municipal solid waste generators with stringent emissions controls (IRENA,
+                            2019).
+                        </li>
+                        <li>
+                            Electricity generation from biomass is most often provided through <strong>combined
+                            heat and power (CHP) systems</strong>.
+                        </li>
+                    </ul>
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q7.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 7</legend>
+                            <p class="card-text">In the industry sector, bionergy have a prominent role
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q7.type.errors %}
+                                        {{ form_m2_ch8_q7.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q7.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q7.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q7.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q8.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 8</legend>
+                            <p class="card-text">In the transport sector, bioenergy could play a role decarbonizing two
+                                means of conveyance that nowadays are entirely fuelled by fossil fuels. Which are those means
+                                of conveyance?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q8.type.errors %}
+                                        {{ form_m2_ch8_q8.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q8.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q8.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q8.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q9.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 9</legend>
+                            <p class="card-text">The cheapest way to use biomass in the power sector is
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q9.type.errors %}
+                                        {{ form_m2_ch8_q9.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q9.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q9.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q9.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+        </div>
+    </section>
+
+<!--Section 3 (white)-->
+    <section id="future" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>Future projections</h2>
+
+            <h4>Industry sector</h4>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                        Biomass, due to its versatility, could play significant roles in the industry sector. Biomass can be
+                        used as a feedstock to replace fossil fuels, it can be used to produce low-, medium- and high temperature
+                        heat, and it can be used as a fuel for localised electricity production.
+                        </br>
+                        </br>
+                        The versatility
+                        of biomass and its finite supply, however, also result in competition for its use within and between
+                        industry sectors, and other sectors of the economy.
+                        </br>
+                        </br>
+                        Renewable energy
+                        (including renewable electricity and district heating) could contribute 63% of industry’s total
+                        final energy consumption by 2050 (89 EJ in absolute terms). Of that total energy, 24% would be
+                        sourced from biomass (direct, bioelectricity and biomass in district heating) and the remaining
+                        39% from other renewable sources (Figure: Renewables in industry).
+                        </br>
+                        </br>
+                        <strong>Other potential industrial applications</strong> include the use of biomass residues generated in biomass based
+                        industries such as pulp and paper, lumber and timber, food and biofuels.
+                        </br>
+                        </br>
+                        In addition,
+                        biorefinery systems offer attractive routes for energy generation, in the form of <strong>combined heat
+                            and power (CHP)</strong> and biofuels, alongside chemical production, with great promise for reduced
+                        environmental impacts.
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/bioenergy_industry.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Application of bioenergy in some industrial sectors that are hard to decarbonise.</u>
+
+                    <ol>
+                        <li>
+                            <strong>Iron and Steel</strong>. A significant share (about 78%) of the <strong>total energy
+                                consumed for iron and steel production</strong> comes from the
+                            use of coal and coke as chemical reducing agents for iron
+                            production. The substitution of biomass products for coal
+                            and coke can provide carbon and at the same time could
+                            be upgraded to have similar characteristics to fossil fuels.
+                            Using biomass instead of coal and coke more widely could
+                            <strong>cut emissions</strong> by almost 50%, but it remains costly and its
+                            use on a larger scale is only at the research stage.
+                        </li>
+                        </br>
+                        <li>
+                            <strong>Cement</strong>. The manufacture of clinker is responsible for the bulk of
+                            the CO2 emissions associated with cement production.
+                            <strong>Biomass could be considered as a clinker substitute</strong>
+                            (however, its role and potential are still quite limited). In
+                            addition to this role, biomass can also be used as an
+                            alternative material to cement in the construction industry,
+                            where wood materials contribute to reaching zero carbon
+                            if produced sustainably.
+                        </li>
+                        </br>
+                        <li>
+                            <strong>Aluminium</strong>. Most energy consumed in the aluminium industry is in the
+                            form of electricity used for smelting. The use of <strong>biofuels
+                                and solar heat</strong> are among several new technologies
+                            emerging in this industry to reduce the electricity needed
+                            for smelting, as they can readily replace fossil fuels and
+                            low- and medium-temperature alumina production.
+                        </li>
+                        </br>
+                        <li>
+                            <strong>Chemicals and
+                                Petrochemicals</strong>. Biomass is one of the prime alternatives to fossil fuel use
+                            in the sector, either through <strong>biomaterials</strong>  or using biomass building blocks. Key <strong>bio-based
+                                feedstocks</strong>, which can be used to produce conventional
+                            products such as plastics, are bio-ethylene and biomethanol;
+                            others include also biogas or bio-naphtha.
+                        </li>
+                    </ol>
+                </p>
+            </div>
+
+            <h4>Transport sector</h4>
+
+            <p>
+                Biofuels and <strong>biogas consumption would grow</strong> to nearly five times
+                2017 levels by 2050 and provide 20% of total transport final energy demand.
+                </br>
+                </br>
+                Biofuels would play a particularly important role for the <strong>decarbonisation of long-haul
+                    transport</strong> (aviation, marine and long-haul road freight).
+                </br>
+                </br>
+                Transport will become much more electrified, <strong>but not everywhere</strong>, <strong>not
+                    in all sectors</strong> and <strong>not all at once</strong>. While EVs powered by renewable electricity will dominate light
+                vehicle fleets, they can only enter markets with well-developed power grids. Long-haul transport is
+                unlikely to be fully electrified due to the higher energy density it requires. Hence, a mix of oil-based,
+                and carbohydrate-based biofuels has to be developed and used.
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Applications of bioenergy in some transport sectors that are hard to decarbonise</u>
+
+                    <ol>
+                        <li>
+                            <strong>Aviation</strong>.  Aviation, and in particular jet fuel use, is one of the fastest-growing sources of greenhouse gas
+                            emissions. Biofuel for jet aircraft, known as bio-jet, is the <strong>only currently available option</strong> for achieving
+                            significant reductions in aviation emissions. Despite the large potential, the <strong>current market for bio-jet
+                                is quite limited</strong>, due to high costs and lack of supportive regulatory framework and/or carbon pricing.
+                        </li>
+                        </br>
+                        <li>
+                            <strong>Shipping</strong>. Liquid biofuels are an option for decarbonising the shipping sector. From a <strong>technological
+                                perspective</strong>, liquid biofuels are mature, require few adjustments to existing ship engines or port
+                            infrastructure, and can significantly reduce emissions. However, there are <strong>three
+                                main barriers</strong> to wider use: economics, availability and sustainability concerns.
+                        </li>
+                        </br>
+                        <li>
+                            <strong>Heavy-duty trucks</strong>. Biomethane, biodiesel and renewable diesel can be used in <strong>heavy-duty natural-gas-powered or
+                                diesel-powered vehicles</strong> (as well as in light-duty vehicles) without any specific adaptation. Some
+                            truck manufacturers are trying to develop biogas-fueled trucks for heavy and long-haul transport,
+                            while biodiesels are already being blended with conventional diesel and used in existing vehicles
+                            without any modification.
+                        </li>
+                    </ol>
+                </p>
+            </div>
+
+            <h4>Buildings Sector</h4>
+
+            <p>
+                <u>Heating and cooking in open fireplaces or stoves.</u>
+
+                <ul>
+                    <li>Traditionally, biomass has been used for heating and cooking in open fireplaces or stoves, and
+                        today modern biomass is being used in <strong>efficient boilers</strong> and furnaces and improved cookstoves.</li>
+                    <li>However, more than 3 billion people still rely on <strong>inefficient traditional use of biomass</strong>, such as
+	                fuelwood and charcoal, for cooking.</li>
+                    <li>The hazardous emissions released during inefficient cooking
+                    cause <strong>one of the world’s major public health challenges</strong>, leading to over 4 million deaths per year
+                    (World Bioenergy Association, 2016).</li>
+                    <li>The problem is most severe in developing countries, where access to modern forms
+                    of energy is limited, and where cooking is typically done with solid fuel like wood logs and twigs,
+                    or with agricultural residues such as straw, especially in rural areas.</li>
+                    <li>The solution is a systems
+                    approach that uses <strong>innovative cookstove designs</strong> to vastly improve the efficiency of solid biomass
+                    combustion, while also replacing traditional charcoal or wood with modern biomass use like
+                    pellets, biogas and ethanol.</li>
+                </ul>
+
+                <u>Bioenergy in the district heating.</u>
+
+                <ul>
+                    <li>Modern bioenergy use also is expected to play an increasing role in the decarbonisation of the
+	                buildings sector, particularly in areas with high demand for space heating.</li>
+                    <li>Buildings can be heated
+                    through<strong> town-scale district heating systems</strong> or building-scale furnaces, both of which use
+                    feedstocks like wood chips and pellets very efficiently.</li>
+                    <li> It is important, therefore, to <strong>replace existing
+                        low-efficiency heating systems</strong> by high efficiency district heating and cooling (DHC) or buildingscale
+                    furnaces fueled by renewable sources as much as possible.</li>
+                </ul>
+
+                <u>Combined-heat and power (CHP) plants.</u>
+
+                <ul>
+                    <li>Using <strong>biomass solely for electricity
+                    generation</strong> is not seen as a good choice because of its low efficiency, at about 30%.</li>
+                    <li>The <strong>overall efficiency of biomass-based CHP plants</strong> for industry
+                    or district heating can be 70%-90%.</li>
+                    <li>As a result, sustainable
+                    bioenergy used to provide heat and power can <strong>reduce emissions considerably</strong> compared to coal,
+                    oil and natural gas-generated heat and power.</li>
+                </ul>
+            </p>
+
+            <h4>Power sector</h4>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch8/bionergy_mix.svg')}}"
+                        alt=""/>
+                <div>
+                    <p>
+                        The <strong>share of electricity in total final energy</strong> use would increase from just 20% today
+                        to 49% by 2050, and 86% of that electricity would be generated by renewable sources, mostly wind
+                        (35% of renewable electricity), solar PV (25%) and some hydro (14%). Biomass would be
+                        the fourth largest renewable power source, generating 7% of electricity (Figure: Energy mix 2017-2050).
+                        </br>
+                        </br>
+                        To produce that much power,
+                        bioenergy <strong>installed capacity</strong> would increase six-fold from 108 GW in 2017 to 685 GW in 2050.
+                        </br>
+                        </br>
+                        <strong>Asia</strong>
+                        would lead in bioenergy installed capacity, with 318 GW, followed by the <strong>European Union</strong> with 107 GW
+                        and <strong>Latin America</strong> and the <strong>Caribbean</strong> with 94 GW. In addition, biomass can be used for co-firing coal
+                        power plants as an intermediate measure to reduce CO2 emissions.
+                        </br>
+                        </br>
+                        <u>Bioenergy-based electricity can play a particularly important role when:</u>
+                        <ul>
+                            <li>
+                                Its<strong> generation costs</strong> are
+                                lower than other sources (i.e. where biomass feedstock costs are low or where heat can be used in
+                                co-generation systems).
+                            </li>
+                            <li>
+                                It helps to <strong>balance output</strong> over time on electricity grids with high shares
+                                of variable wind and solar power.
+                            </li>
+                            <li>
+                                It is possible to use <strong>Bioenergy with carbon Capture and Storage</strong> (BECCS).
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                <u>Biogas applications.</u>
+                <ul>
+                    <li>
+                        Biogas can be burned directly for <strong>cooking and lighting</strong> or indirectly in <strong>combustion engines</strong>
+                        to generate electricity or motive power.
+                    </li>
+                    <li>
+                        Biogas for cooking is particularly relevant for many
+                        developing countries, where it can reduce traditional use of solid biomass, offering a sustainable
+                        way to meet community energy needs, especially in areas without good grid access or where
+                        heat requirements cannot be met only by electricity.
+                    </li>
+                </ul>
+                <u>Biomethane applications.</u>
+                <ul>
+                    <li>
+                        Biomethane is a <strong>versatile energy carrier</strong>
+				        produced from biomass via gasification or upgraded from biogas.
+                    </li>
+                    <li>
+                        It is sometimes also known as
+				        <strong>renewable natural gas</strong>, as it possesses compatible properties to natural gas.
+                    </li>
+                    <li>
+                        In the <strong>transport sector</strong>, biomethane can be used as a drop-in substitute for natural gas in
+                        existing light- and heavy-duty natural-gas-powered vehicles, such as commercial vehicles, city
+                        buses and urban service fleets for delivery and refuse collection.
+                    </li>
+                    <li>
+                        Biogas and biomethane can also be used for <strong>greening the gas system</strong>.
+                    </li>
+                    <li>
+                        Biomethane production via anaerobic digestion (AD, biogas), thermal gasification of
+                        biomass, or power-to-gas from hydrogen and carbon dioxide represents a clean and feasible
+                        solution for <strong>cleaning the gas system</strong>.
+                    </li>
+                </ul>
+                </p>
+            </div>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q10.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 10</legend>
+                            <p class="card-text">In the industry sector, in 2050, bioenergy will account for a share of
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q10.type.errors %}
+                                        {{ form_m2_ch8_q10.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q10.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q10.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q10.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q11.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 11</legend>
+                            <p class="card-text">In the transport sector, bioenery will play a crucial role decarbonizing
+                                long-haul transport. in that sector, in 2050, the share of bioenergy will be
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q11.type.errors %}
+                                        {{ form_m2_ch8_q11.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q11.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q11.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q11.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch8_q12.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 12</legend>
+                            <p class="card-text">In the power sector, in 2050, the expected share of renewable energy in the energy mix is 86%. Which will
+                                be the expected share of bioenergy in the energy mix?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch8_q12.type.errors %}
+                                        {{ form_m2_ch8_q12.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch8_q12.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch8_q12.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch8_q12.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+
+    
+{% endblock content %}

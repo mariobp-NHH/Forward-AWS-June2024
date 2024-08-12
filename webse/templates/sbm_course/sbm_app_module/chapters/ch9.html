@@ -1,0 +1,40 @@
+{% extends "sbm_course/sbm_course_layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section>
+  <header class="header_css">
+      <div class="container">
+          <div>
+            <h1> <span class="text-warning"> Ch9. Carbon App Calculator</span></h1>
+            <p class="mb-1">
+                In this chapter, we create forms to allow the user to select the transport, and to introduce the kilometers and the type of fuel. By using Python, we <strong>program our mathematical model</strong> to work out transport carbon emissions. To clean our routes.py file, we create a <strong>Python file where we place all the mathematical formulas</strong>  to work out the carbon emissions.
+            </p>
+            <br>
+
+            <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="https://youtu.be/25AiE_NV1Gs"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube1 (Calculator)</a>
+            </div>
+            <div class="btn">
+                <a href="https://youtu.be/TyTK9phOM-Y"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube2 (Formulas)</a>
+            </div>
+            <div class="btn">
+                <a href="https://github.com/mariobp-NHH/SustainableBusinessModels/tree/main/Ch9%20Carbon%20App" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+            </div>
+            </div>  
+
+          </div>
+          <img
+          src="{{url_for('static', filename='figures/sustainable_business_models/app_development_module/ch9.svg')}}"
+                  alt=""/>
+      </div>
+  </header>
+</section>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,94 @@
+{% extends "aab_course/aab_course_layout.html" %}
+{% block content %}
+
+  <!-- Introduction -->
+  <section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1> <span class="text-warning"> Business and Accounting Module </span></h1>
+                <p class="mb-1">
+                  In the business module, we study relevant business models in the green economy sector that combine digitalization and the most advanced economic models to achieve sustainability. First, we study the main characteristics of the <strong>market</strong> in which the company operates. Second, we study the <strong>company business model</strong> and the role of digitalization in that model. Third, an <strong>expert</strong> in the sector gives a talk about the business model that we study in each chapter.
+                  <br>
+                  <br>
+                  The business and accounting module is organized in two blocks. First, we study the role that <strong>digitalization</strong> plays on sustainability. In particular, we study how digitalization could foster sustinability in cities and in the energy sector. In the second block, we cover some salient topics in <strong>accountability</strong>. 
+                </p>
+                </br> 
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">The <strong>first two chapters</strong> study the role of digitalization to achieve sustainability in cities and in the energy sector.</li>
+                  <li class="list-group-item">The <strong>last chapter of the course</strong> focuses on some salient topics in accountability.</li>
+                </ul>
+                <br>
+            </div>
+            <img
+            src="{{url_for('static', filename='figures/auditing_accounting_business/business_module/business_module.svg')}}"
+                    alt=""/>
+        </div>
+    </header>
+</section>
+
+    <!-- Section chapters   -->
+    <section class="section_chapter2" style="background-color: #6DA6A6;">
+      <div class="container">
+
+        <div class="column column1">          
+          <div class="column column1 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-bar-chart-fill"></i>
+            </div>
+            <p><strong>Ch1: Cities.</strong> We study the role that digitalization will play to achieve sustainability and circularity in cities </p> 
+            <br>
+            
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('aab_course_business_module.ch1') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 1</a>
+              </div>
+            </div>              
+          </div>
+                   
+        </div>
+        
+
+        <div class="column column2">
+
+          <div class="column column2 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-bar-chart-fill"></i>
+            </div>
+            <p><strong>Ch2: Energy.</strong> We study the role that digitalization transforming the design of electricity markets. We focus on the distribution sector.</p>
+            
+
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('aab_course_business_module.ch2') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 2</a>
+              </div>
+            </div> 
+          </div> 
+          
+        </div>
+
+        <div class="column column3">
+
+          <div class="column column3 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-bar-chart-fill"></i>
+            </div>
+            <p><strong>Ch3: Accounting.</strong> We study the role of digitalization transforming the accounting techniques available nowadays.</p>
+            <br>
+
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('aab_course_business_module.ch3') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 3</a>
+              </div>
+            </div>  
+
+          </div>      
+        </div>
+
+      </div>
+    </section>
+
+
+
+{% endblock content %}

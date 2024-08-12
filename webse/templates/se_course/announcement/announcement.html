@@ -1,0 +1,33 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <section id="introduction" class="bg p-5 p-lg-5 pt-lg-5 text-center text-sm-start", style="background-color: #f2b84b;">
+        <div class="container">
+            <div class="announcement_se_course_css">
+                <div class="box">
+                
+                </div>
+                <div class="box">
+                    <article class="media content-section">
+                    <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
+                    <div class="media-body">
+                      <div class="article-metadata">
+                        <a class="mr-2" href="{{ url_for('se_course_users.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
+                        <small class="text-muted">{{ announcement.date_posted.strftime('%Y-%m-%d') }}</small>
+                        {% if announcement.author == current_user %}
+                          <div>
+                            <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('se_course_announcements.update_announcement', announcement_id=announcement.id) }}">Update</a>
+                            <a class="btn btn-danger btn-sm mt-1 mb-1" href="{{ url_for('se_course_announcements.delete_announcement', announcement_id=announcement.id) }}">Delete</a>
+                          </div>
+                        {% endif %}
+                      </div>
+                      <h2 class="article-title">{{ announcement.title }}</h2>
+                      <p class="article-content">{{ announcement.content }}</p>
+                    </div>
+                </div>
+                <div class="box">
+                
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

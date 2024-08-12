@@ -1,0 +1,58 @@
+{% extends "gd_course/HVL_2024_group4/layout.html" %} {% block content %}
+
+<section class="new_entry">
+  <div class="container">
+    <a
+      href="{{url_for('gd_course_HVL_2024_group4.carbon_app_home')}}"
+      class="back-btn"
+      ><img
+        src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/arrow-small-right.svg') }}"
+        alt="arrow icon"
+      /><span>Back to the transports options</span></a
+    >
+    <div class="box">
+      <div class="header-container">
+        <img
+          src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/biking.svg') }}"
+          alt="bus icon"
+        />
+        <h3>Bicycle</h3>
+      </div>
+
+      <form method="POST" action="">
+        {{ form.csrf_token }}
+
+        <div class="form-group">
+          {{ form.kms.label(class="form-control-label") }} {% if form.kms.errors
+          %} {{ form.kms(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.kms.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.kms(class="form-control form-control-lg") }} {%
+          endif %}
+        </div>
+
+        <div class="form-group">
+          {{ form.fuel_type.label(class="form-control-label") }} {% if
+          form.fuel_type.errors %} {{ form.fuel_type(class="form-control
+          form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.fuel_type.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.fuel_type(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          {{ form.submit(class="btn_carbon_app_new_entry_main") }}
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

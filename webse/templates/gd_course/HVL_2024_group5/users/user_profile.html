@@ -1,0 +1,22 @@
+{% extends "gd_course/HVL_2024_group5/layout.html" %} {% block content %} {% if
+current_user.is_authenticated %}
+<div class="profile">
+  <h1>Hi {{ current_user.username }}, here are your profile details:</h1>
+  <br />
+  {{ current_user.email }}
+  <br />
+  <br />
+  <p>
+    Do you need to logout? Then click here:
+    <a href="{{url_for('gd_course_HVL_2024_group5.logout')}}">logout</a>.
+  </p>
+</div>
+
+{% else %}
+
+<h1>
+  You don't have a profile yet. Create one here:
+  <a href="{{url_for('gd_course_HVL_2024_group5.register')}}">Register</a>
+</h1>
+
+{% endif %} {% endblock content %}

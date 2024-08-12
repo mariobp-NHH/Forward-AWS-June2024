@@ -1,0 +1,171 @@
+
+:root {
+  --box-bg-color: #217fa7; 
+  --box-hover-color: #466fa6; /* Blue for hover effects */
+  --developer-box-bg-color: #f5f5f5;
+  --section-background: #f5f5f5; /* Light grey for section backgrounds */
+}
+
+/* Utilities */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Section header_home - Updated Styles */
+.section_header_home {
+  background-color: var(--section-background);
+  padding: 20px 0; /* Added padding for better spacing */
+}
+
+.header_home {
+  display: flex;
+  align-items: center; /* Align items to the center */
+  justify-content: space-between; /* Distribute space evenly */
+  padding: 0 20px; /* Add horizontal padding */
+}
+
+.header_home .box {
+  background: var(--box-bg-color);
+  color: #fff;
+  border-radius: 10px;
+  margin: 0 10px; /* Adjusted margin for better spacing */
+  padding: 20px; /* Increased padding for a better visual */
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Smooth transition for interactions */
+}
+
+/* Hover effect for boxes */
+.header_home .box:hover {
+  transform: translateY(-5px); /* Slight raise effect on hover */
+  background-color: var(--box-hover-color); /* Change color on hover */
+}
+
+/* Responsive size adjustments for box flex-grow */
+.header_home .box:nth-of-type(1) {
+  flex-grow: 3; /* Increased flex-grow for the first box */
+}
+.header_home .box:nth-of-type(2) {
+  flex-grow: 1;
+}
+
+.container_buttons_links_header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px; /* Added gap for spacing between buttons */
+}
+
+.container_buttons_links_header_home a:hover {
+  color: var(--box-hover-color);
+}
+
+.container_buttons_links_header_home btn {
+  width: 100px;
+  height: 100px;
+  background: var(--developer-box-bg-color); /* Match the developer section boxes */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Rounded buttons for a modern look */
+  transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.container_buttons_links_header_home btn:hover {
+  background-color: var(--box-hover-color); /* Change background color on hover */
+}
+
+/* Section developers */
+.section_developers {
+  background-color:#c5c8d9;
+}
+.developers {
+  display: flex;  
+  align-items: start;
+  background: #c5c8d9;
+}
+.developers .box {
+  flex: 1;
+  background: #ffffff;
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.developers .box:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(3) {
+  flex-grow:4;
+}
+.developers .box2 {
+  flex: 1;
+  background: #f5f5f5;
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.developers .box2:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(3) {
+  flex-grow:4;
+  background: #c5c8d9;
+}
+.section_container_buttons_developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_developers {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #f5f5f5;
+  border: 2px solid  #c5c8d9;
+}
+.btn_developers:hover {
+  color: #fff;
+  background-color: #c5c8d9;
+  border: 2px solid #c5c8d9;
+  text-decoration: none;
+}
+
+
+@media (max-width:768px) { 
+  .header_home {
+    flex-direction: column;
+  } 
+  .developers {
+    flex-direction: column;
+  } 
+  .section_container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

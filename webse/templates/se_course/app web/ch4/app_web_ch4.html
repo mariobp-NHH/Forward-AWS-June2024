@@ -1,0 +1,569 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color:#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Chapter 4. Header </span></h1>
+                    <p class="mb-1">
+                        This chapter consists on three parts. First, in the home.html file, we define the HTML code for the
+                        header of our home page. Second, in the layout.html file, we define the CSS classes that determine
+                        final view of our home page. Third, we complement our own CSS classes with the classes defined in
+                        Bootstrap, and we learn how to combine our own HTML code, with our own CSS classes and the CSS classes
+                        defined in Bootstrap.
+                        </br>
+                        </br>
+                        We conclude the chapter completing the home.html introducing the HTML code that define the developer and the footer sections.
+                        We also define our own CSS classes and the Bootstrap CSS classes to make those sections more appealing and
+                        functional.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo1">Video 1</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalVideo1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video 1: Header, HTML.</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 4, section (Header, HTML),
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/XSNgJGwmmv8" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 1</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo2">Video 2</a>
+                        </div>
+                        <!-- Modal Video2 -->
+                        <div class="modal fade" id="instructionsModalVideo2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video 2: Header, CSS style.</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 4, section (Header, CSS style),
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/Dk-IdaabP-U" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 2</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo3">Video 3</a>
+                        </div>
+                        <!-- Modal Video3 -->
+                        <div class="modal fade" id="instructionsModalVideo3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video 3: Header, Bootstrap.</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 4, section (Header, Bootstrap),
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/kTjGevrI-_o" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 3</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                       <div class="btn">
+                            <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch4.%20Header" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Github</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Es_XfaUqe-BOm2_-dPYI9kABEmN342H5puq0Wr4EwHDdJw?e=0bHX8r" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#monday" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Monday challenge breakfast</h5>
+                        </div>
+                        <p class="mb-1">
+                            The students have to change some basic CSS class styles in the layout.html file to change some
+                            basic properties of the header.
+                        </p>
+
+                      </a>
+                      <a href="#header_html" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Header, HTML</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the home.html file, we introduce the basic HTML code that determines the structure of the header.
+                        </p>
+                      </a>
+                      <a href="#header_css" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Header, CSS style</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the head of the layout.html file, we introduce some CSS style classes to make the
+                              header more appealing and functional.
+                        </p>
+                      </a>
+                       <a href="#header_bootstrap" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Header, Bootstrap</h5>
+                        </div>
+                        <p class="mb-1">
+                            We combine our own HTML code, our own CSS classes with the CSS classes defined in Bootstrap.
+                        </p>
+                      </a>
+                      <a href="#header_developer_footer" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Header, Developers and Footer</h5>
+                        </div>
+                        <p class="mb-1">
+                            We complete the home.html developing the HTML code that define the developer and the footer sections.
+                            We also define our own CSS classes and the Bootstrap CSS classes to make those sections more appealing and
+                            functional.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                    <img src="{{url_for('static', filename='figures/app/ch4/ch4_icon.svg')}}" alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="monday" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h2 style="justify-content:center;">Monday challenge breakfast</h2>
+                <p>
+                    The students have to change some basic CSS class styles in the layout.html file. For
+                    example the header background color, the font color, the hod effect.
+                    </br>
+                    </br>
+                    The students have to do the same with the CSS class styles in the layout.html file that define
+                    the properties of the developers part of the webpage.
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1-->
+    <section id="header_html" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Header, HTML</h2>
+
+            <p>
+                In the home.html file, we design the structure of our header  by using HTML code.
+
+                <ol>
+                    <li>
+                        <strong>From OneDrive, download</strong> the <u>entire folder (Ch4.a. Header HTML Initial).</u>
+                        That folder contains all the files and sub-folders of our project. That folder contains the <strong>recipe</strong> to make the cake.
+                        Be sure that you download the <u>INITIAL</u> folder.
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EjRI2kjNTzNOpmpU-EsMQtQBE4mV1pe7IbTmdZZhtta4zA?e=FVEjgI" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch4.a. Header HTML Initial</a>
+                       </div>
+                    </li>
+                    <li>
+                        Copy the folder that you have downloaded and place it in the folder in your computer where you have the rest of information of the course.
+                    </li>
+                    <li>
+                        The folder that you have downloaded contain the <strong>recipe</strong> of the cake, but you need to add to that folder the
+                        <strong>tools</strong> to make that cake. Therefore, you need to add the VIRTUAL ENVIRONMENT that correspond to your operative system.
+                        </br>
+                        </br>
+                        You have two options. The easier way is to <u>copy</u> the virtual environment from one of the folders in your own computer from one of the
+                        previous chapters and <u>paste</u> it in the folder that you have created that contain the recipe of the cake. The second option, is to
+                        <u>download it</u> and <u>copy it</u> from the OneDrive link:
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EtVGRGilMTJDuYVkmaUrr3wBJ020mt_3wV3ub9jfB6RHVA?e=4VnwhU" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive. Virtual Environment</a>
+                       </div>
+                    </li>
+                    <li>
+                        In PyCharm, <strong>open</strong> the folder that contain the recipe and the tools (<strong>files and sub-folders of the project</strong> + <strong>virtual environment</strong>)
+                        (File>Open>(Select the folder in which you have the files and sub-folders of the project + the vitual environment)).
+                    </li>
+                    <li>
+                        Follow the instructions in the link to video 1. In that video, I explain how to add code step by step until you
+                        define a basic header for your project
+                        <div class="btn">
+                            <a href="https://youtu.be/XSNgJGwmmv8" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 1: Header HTML</a>
+                       </div>
+                    </li>
+                    </br>
+                    <li>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalRun">Run the app</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Run the app</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <ol>
+                                        <li>
+                                            In Pycharm, open the terminal and <u>be sure</u> that you are in the <strong>folder of your project</strong>.
+                                            </br>
+                                            </br>
+                                            If you are not in the folder of your project, close the terminal, and open it again. By doing that,
+                                            PyCharm will open the terminal in the folder where you have your project.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            In the terminal, <strong>activate the virtual environment</strong>.
+                                            <ul>In Windows: (venv\Scripts\activate)</ul>
+                                            <ul>In Mac: (source venv/bin/activate)</ul>
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                                        </li>
+                                    </ol>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        The final version of the code can be downloaded from
+                        the Github account and from the OneDrive folder. Do not forget to add the virtual environment to the
+                        folder where you have all the files and sub-folders of your project. To run the final version, follow the steps described in the previous step.
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--Section Header CSS style-->
+    <section id="header_css" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Header, CSS classes</h2>
+
+            <p>
+                In the layout.html file, we define the CSS classes to make our header more appealing and functional.
+
+                <ol>
+                    <li>
+                        <strong>From OneDrive, download</strong> the <u>entire folder (Ch4.b. Header CSS Initial).</u>
+                        That folder contains all the files and sub-folders of our project. That folder contains the <strong>recipe</strong> to make the cake.
+                        Be sure that you download the <u>INITIAL</u> folder.
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EvqPeVBfIqpKkkQAVaRqM1cBfEXWzc04PErsJgzm0EqO-w?e=y2gc5g" class="btn btn-secondary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch4.b. Header CSS Initial</a>
+                       </div>
+                    </li>
+                    <li>
+                        As in the previous section.
+                    </li>
+                    <li>
+                        As in the previous section.
+                    </li>
+                    <li>
+                        As in the previous section.
+                    </li>
+                    <li>
+                        Follow the instructions in the link to video 2. In that video, I explain how to add code to the layout.html file to define the classes
+                        that determine the final aspect of the header of our project.
+                        <div class="btn">
+                            <a href="https://youtu.be/Dk-IdaabP-U" class="btn btn-secondary btn-lg mr-2", style="background-color:#007bff;">Video 2: Header CSS</a>
+                       </div>
+                    </li>
+                    </br>
+                    <li>
+                        <div class="btn">
+                            <a href="#" class="btn btn-secondary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalRun">Run the app</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Run the app</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <ol>
+                                        <li>
+                                            In Pycharm, open the terminal and <u>be sure</u> that you are in the <strong>folder of your project</strong>.
+                                            </br>
+                                            </br>
+                                            If you are not in the folder of your project, close the terminal, and open it again. By doing that,
+                                            PyCharm will open the terminal in the folder where you have your project.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            In the terminal, <strong>activate the virtual environment</strong>.
+                                            <ul>In Windows: (venv\Scripts\activate)</ul>
+                                            <ul>In Mac: (source venv/bin/activate)</ul>
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                                        </li>
+                                    </ol>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        The final version of the code can be downloaded from
+                        the Github account and from the OneDrive folder. Do not forget to add the virtual environment to the
+                        folder where you have all the files and sub-folders of your project. To run the final version, follow the steps described in the previous step.
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--Section 3 Navbar CSS file-->
+    <section id="header_bootstrap" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+           <h2>Header, Bootstrap</h2>
+
+            <p>
+                In the layout.html file, we introduce the code necessary to introduce Bootstrap CSS classes in our project.
+
+                <ol>
+                    <li>
+                        <strong>From OneDrive, download</strong> the <u>entire folder (Ch4.c. Header Bootstrap Initial).</u>
+                        That folder contains all the files and sub-folders of our project. That folder contains the <strong>recipe</strong> to make the cake.
+                        Be sure that you download the <u>INITIAL</u> folder.
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Et_UVrAq679GqMZMfex6cdcBxjR4UYdGHRkaSflWXXm1dA?e=I2rvyP" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch4.c. Header CSS Bootstrap</a>
+                       </div>
+                    </li>
+                    <li>
+                        As in the previous section.
+                    </li>
+                    <li>
+                        As in the previous section.
+                    </li>
+                    <li>
+                        As in the previous section.
+                    </li>
+                    <li>
+                        Follow the instructions in the link to video 3. In that video, I explain how to add code to the layout.html file to use CSS Bootstrap classes in our project.
+                        <div class="btn">
+                            <a href="https://youtu.be/kTjGevrI-_o" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 3: Header Bootstrap</a>
+                       </div>
+                    </li>
+                    </br>
+                    <li>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalRun">Run the app</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Run the app</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <ol>
+                                        <li>
+                                            In Pycharm, open the terminal and <u>be sure</u> that you are in the <strong>folder of your project</strong>.
+                                            </br>
+                                            </br>
+                                            If you are not in the folder of your project, close the terminal, and open it again. By doing that,
+                                            PyCharm will open the terminal in the folder where you have your project.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            In the terminal, <strong>activate the virtual environment</strong>.
+                                            <ul>In Windows: (venv\Scripts\activate)</ul>
+                                            <ul>In Mac: (source venv/bin/activate)</ul>
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                                        </li>
+                                    </ol>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        The final version of the code can be downloaded from
+                        the Github account and from the OneDrive folder. Do not forget to add the virtual environment to the
+                        folder where you have all the files and sub-folders of your project. To run the final version, follow the steps described in the previous step.
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!-- Section Navbar, Header, Developer, Footer -->
+ <section id="header_developer_footer" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Navbar, Header, Developer, Footer</h2>
+
+            <p>
+
+                <ol>
+                    <li>
+                        <strong>From OneDrive, download</strong> the <u>entire folder (Ch4.d. Header Developer Footer Initial).</u>
+                        That folder contains all the files and sub-folders of our project. That folder contains the <strong>recipe</strong> to make the cake.
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Ej9u6uSBv0RHnTvsVmV4zZ8BejGor4TBBJedWvSFrkDYrg?e=ecZ0Qk" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch4.d. Header Header Developer Footer</a>
+                       </div>
+                    </li>
+                    </br>
+                    <li>
+                        Follow the same steps than in the previous sections, and run the app:
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalRun">Run the app</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Run the app</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <ol>
+                                        <li>
+                                            In Pycharm, open the terminal and <u>be sure</u> that you are in the <strong>folder of your project</strong>.
+                                            </br>
+                                            </br>
+                                            If you are not in the folder of your project, close the terminal, and open it again. By doing that,
+                                            PyCharm will open the terminal in the folder where you have your project.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            In the terminal, <strong>activate the virtual environment</strong>.
+                                            <ul>In Windows: (venv\Scripts\activate)</ul>
+                                            <ul>In Mac: (source venv/bin/activate)</ul>
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                                        </li>
+                                    </ol>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                </ol>
+
+            </p>
+        </div>
+    </section>
+{% endblock content %}

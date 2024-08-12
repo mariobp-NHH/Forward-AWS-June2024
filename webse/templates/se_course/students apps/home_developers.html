@@ -1,0 +1,207 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <!-- Header -->
+    <section>
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                  <div class="col-lg-7 col-md-7 col-sm-6 col-12">
+                    <h1><span class="text-warning"> Transport Carbon Emissions Calculator App</span></h1>
+                    <strong>Carbon emissions</strong> constitute the 60% of the ecological footprint, and are one of the
+                    main contributors to climate change.
+                    </br>
+                    </br>
+                    <strong>Transport carbon emissions</strong> are an important share of carbon emissions. During the course ENE425 Sustainable Energy
+                    and App Development at the Norwegian School of Economics, the students design a <strong>methodology</strong> to
+                    compute transport carbon emissions, and they develop an <strong>App</strong> to track those emissions.
+                    </br>
+                    </br>
+                      In this web page, there is a link to the <strong>general methodology</strong> used in the App (the methodology employed by
+                      the students is in the links in their personal Heroku accounts). There are also links to the <strong>GitHub</strong> and the
+                      <strong>OneDrive</strong> accounts with the App code. Finally, below is the link to the students' Apps.
+                    </br>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="http://efdb.apps.eea.europa.eu/?source=%7B%22query%22%3A%7B%22match_all%22%3A%7B%7D%7D%2C%22display_type%22%3A%22tabular%22%7D" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Methodolgy</a>
+                       </div>
+                       <div class="btn">
+                           <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch9.%20Final%20App" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Code (GitHub)</a>
+                       </div>
+                       <div class="btn">
+                           <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EnccCA3v_SVCpkCvfbN9qXIBz0WOuJ_cr7-u8I-0Gv9aaA?e=iu9MoY" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Code (OneDrive)</a>
+                       </div>
+                       <div class="btn">
+                           <a href="{{ url_for('se_course_students_apps.students_apps_app_calculator') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">App-Calculator</a>
+                       </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-5 col-12">
+                      <img src="{{url_for('static', filename='figures/se_course_students_apps/icon_app.svg')}}" alt=""/>
+                  </div>
+                </div>
+            </div>
+        </header>
+    </section>
+
+
+<!--Developer-->
+  <section id="developer">
+        <div class="container">
+
+            <div class="section_developers3_css">
+                <div class="box">
+                    <h5 class="card-title mb-3">Abazaj, Fabian</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/fabionabazaj/ene425-2022-app-fabioab" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-fabioab.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h5 class="card-title mb-3">Héron, Tiphaine</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/Tiphaine613/ENE425-2022-app-Tiphaine" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-tiphaine.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h5 class="card-title mb-3">Franke, Katharina</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/KatharinaFranke/ene425-app-2022-katharinaf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-katharinaf.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_developers3_css">
+                <div class="box">
+                    <h5 class="card-title mb-3">Hjartåker, Marthine</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/MarthineInge/ene425-2022-app-marthinehi.git" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-marthinehi.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h5 class="card-title mb-3">Priakhina, Veronika</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/VeronikaPriakhina/ENE425-2022-app-Veronika" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-veronika.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h5 class="card-title mb-3">Reinisch, Leopold</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/leoreinisch/ene425-2022-app-leor" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-leor.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_developers3_css">
+                <div class="box">
+                    <h5 class="card-title mb-3">Rossi, Paolo</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/paolorossii" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-paolorossi.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h5 class="card-title mb-3">Rossland, Kristian</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/Krossland97/ene425-2022-app-kristiansr" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-kristiansr.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h5 class="card-title mb-3">Schwärtzel, Monica</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/monimomo/ENE425-2022-app-moni" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-2022-app-moni.herokuapp.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section_developers1_css">
+                <div class="box">
+                    <h5 class="card-title mb-3">Zurek, Rebecca</h5>
+                    <div class="card-body text-center">
+                        <div class="container_buttons_developers">
+                           <div class="btn">
+                               <a href="https://github.com/rebeccazurek/ene425-2022-app-rebecca" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">GitHub</a>
+                           </div>
+                           <div class="btn">
+                               <a href="https://ene425-app-rebecca.herokuapp.com" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Web (Heroku)</a>
+                           </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+
+        </div>
+  </section>
+
+
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+{% extends "gd_course/gd_course_layout.html" %}
+
+{% block content %}
+    <!-- Header -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+                
+                <h1>Block elements</h1>
+
+                <p style="border: 1px solid blue">Hello World</p>
+                <div style="border: 1px solid red">Hello World</div>
+
+                <p>The P and the DIV elements are both block elements, and they will always start on a new line and take up the full width available (stretches out to the left and right as far as it can).</p>
+
+        </div>
+    </section>
+
+    <section class="section_3" id="section2">
+        <div class="container" style="display:block;">
+                
+                <h1>Inline elements</h1>
+
+                <p>This is an inline span <span style="border: 1px solid red">Hello World</span> element inside a paragraph.</p>
+
+                <p>The SPAN element is an inline element, and will not start on a new line and only takes up as much width as necessary.</p>
+
+        </div>
+    </section>
+{% endblock content %}

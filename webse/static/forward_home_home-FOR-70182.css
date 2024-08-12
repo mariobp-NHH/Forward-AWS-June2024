@@ -1,0 +1,205 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.home_header_css {
+  display: flex;
+  background: #343a40 ;
+  }
+.home_header_css .container {
+  display: flex;
+  background:  #343a40;
+  }
+.home_header_css .container .box {
+  flex: 1;
+  background: #343a40;
+  color: #fff;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.home_header_css .container .box:nth-of-type(1) {
+  background: #343a40;
+  flex-grow: 2;
+}  
+.home_header_css .container .box:nth-of-type(2) {
+  background: #343a40;
+  flex-grow: 1;
+  padding: 15px 20px;
+} 
+/* End header */
+
+
+
+
+/*Container buttons section header*/
+.container_buttons_links_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_header a:hover {
+  color: #343a40;
+}
+.container_buttons_links_header btn {
+  width: 100px;
+  height: 100px;
+  background: #343a40;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+/*End container buttons section header*/
+
+/*Container home header*/
+        /*color=dark*/
+  .home_section_css {
+    display: flex;
+    background: #6c757d;
+  }
+
+  .home_section_css .container {
+    display: flex;
+    background: #6c757d;
+  }
+
+  .home_section_css .container .header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+  }
+        /*color=dark*/
+  .home_section_css .container .header .box {
+      flex: 1;
+      background: #6c757d;
+      color: #fff;
+      border-radius: 2px;
+      margin: 20px 10px;
+      padding: 15px 20px;
+      text-align:center;
+  }
+
+  .home_section_css .container .header .box:nth-of-type(1) {
+      flex-grow:1;
+      background: #6c757d;
+      color: #fff;
+      border-radius: 2px;
+      margin: 20px 10px;
+      padding: 15px 20px;
+      text-align:left;
+  }
+
+  .home_section_css .container .header .box:nth-of-type(2) {
+      flex-grow:1;
+      background: #6c757d;
+      color: #fff;
+      border-radius: 2px;
+      margin: 20px 10px;
+      padding: 15px 20px;
+      text-align:center;
+  }
+
+  /* .home_section_css .container .header .box:nth-of-type(3) {
+      flex-grow:1;
+      background: #6c757d;
+      color: #fff;
+      border-radius: 2px;
+      margin: 20px 10px;
+      padding: 15px 20px;
+      text-align:center;
+  } */
+
+  /*Container buttons section header*/
+  .container_buttons_links_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+  }
+
+  .container_buttons_links_header a:hover {
+    color: #343a40;
+  }
+
+ /*Container buttons section courses*/
+ .container_buttons_links_course_green {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+ }
+
+ .container_buttons_links_course_green a:hover {
+  color: #8bbbd9;
+ }
+
+ .container_buttons_links_course_se {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+ }
+
+ .container_buttons_links_course_se a:hover {
+  color: #f2c299;
+ }
+
+ /*Container buttons section platform*/
+ .container_buttons_links_platform_se {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+ }
+
+ .container_buttons_links_platform_se a:hover {
+  color: #9ac2be;
+ }
+
+ .container_buttons_links_platform_gender {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+ }
+
+ .container_buttons_links_platform_gender a:hover {
+  color: #977abf;
+ }
+
+                /*color=dark*/
+  .container_buttons_links_header btn {
+    width: 100px;
+    height: 100px;
+    background: #343a40;
+    color: #fff;
+
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+
+  @media (max-width:768px) {
+  .home_chapter_css .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .section_chapter2 .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .home_header_css .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }    
+}

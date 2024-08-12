@@ -1,0 +1,273 @@
+{% extends "sbm_course/sbm_course_layout.html" %}
+{% block content %}
+    <!-- Showcase -->
+    <section class="home_section_css">
+      <div class="container">
+          <div class="header">
+                <div class="box">
+                      {% with messages = get_flashed_messages(with_categories=true) %}
+                          {% if messages %}
+                              {% for category, message in messages %}
+                                  <div class="alert alert-{{ category }}">
+                                      {{ message }}
+                                  </div> 
+                              {% endfor %}
+                          {% endif %}
+                      {% endwith %}               
+                      <h1 class="text-center"><span class="text-warning"> Sustainable Business Models </span> Course</h1>
+                      <p class="mb-1">
+                          The Sustainable Business Model course aims to [Matthew description of the course …].    
+                          </br>
+                          </br>
+                          To achieve that objective, we organize the course in two modules. In the first module, [Matthew description of the course …]. In the second module, the students the students design an economic and business model to work out transport carbon emissions, and they develop an app to work out those carbon emissions.
+
+                      </p>
+                </div>
+                <div class="box">
+                  <div class="h1 mb-3">
+                    <i class="bi bi-bell"></i>
+                  </div>
+                  <h3 class="text-center"><span class="text-warning"> Announcements: </span>
+                  </h3>
+                  {% for announcement in announcements.items %}
+                      <article class="media content-section">
+                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
+                        <div class="media-body">
+                          <div class="article-metadata">
+                            <a class="mr-2" href="{{ url_for('sbm_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
+                            <small class="text-muted">{{ announcement.date_posted.strftime('%Y-%m-%d') }}</small>
+                          </div>
+                          <h4><a class="article-title" href="{{ url_for('sbm_course_announcements.announcement', announcement_id=announcement.id) }}">{{ announcement.title }}</a></h4>
+                          <p class="article-content">{{ announcement.content }}</p>
+                        </div>
+                      </article>
+                  {% endfor %}
+                  {% for page_num in announcements.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                    {% if page_num %}
+                      {% if announcements.page == page_num %}
+                        <a class="btn btn-info mb-4" href="{{ url_for('sbm_course.sbm_course_home', page=page_num) }}">{{ page_num }}</a>
+                      {% else %}
+                        <a class="btn btn-outline-info mb-4" href="{{ url_for('sbm_course.sbm_course_home', page=page_num) }}">{{ page_num }}</a>
+                      {% endif %}
+                    {% else %}
+                      ...
+                    {% endif %}
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+      </div>
+    </section> 
+
+
+    <!-- Boxes -->
+    <section class="p-5", style="background-color:#9AC7A9;">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card text-light", style="background-color:#6c757d;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                              <i class="bi bi-terminal-fill"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                App Development Module
+                            </h3>
+                            <p class="card-text">
+                              The app development module is organized in three blocks that complement each other. First, the students design the <strong>layout of the app</strong> by using HTML, CSS, JavaScript and Flask. Second, they program the <strong>economic simulations</strong> by using Python. Finally, they <strong>deploy their apps</strong> in the server, by using GitGub, Heroku, and Amazon Web Services.
+                            </p>
+                            <div class="container_buttons_links_header">
+                              <div class="btn">
+                                <a href="{{ url_for('sbm_course.sbm_course_app_module') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">App Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="col-md">
+                    <div class="card text-light", style="background-color:#6c757d;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                              <i class="bi bi-bar-chart-fill"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Sustainable Business Module
+                            </h3>
+                            <p class="card-text">
+                              [Matthew description of the course …]
+                            </p>
+                            <div class="container_buttons_links_newsletter">
+                              <div class="btn">
+                                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Sustainable Business Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Question Accordion -->
+    <section id="questions" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        </div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <!-- Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+              >
+                Assignment and final grades.
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                The assignment of the course consists of two parts. The first module of the course where the students write a 10-12 pages (no more) essay to work out transport carbon emissions. The second module of the course where the students develop an app to work out transport carbon emissions. 
+                <br>
+                <br>
+                All the groups will present their theoretical model and their app at the final conference. All the groups must attend that conference. The presentation during the "weekly challenge" and the presentation in the final conference will be considered to set the final grade.
+                <br>
+                <br>
+                The two modules, the "weekly challenge" and the final conference presentations will be conducted in groups of 5-6 people, and the final grade will be allocated to each group.
+                <br>
+                <br>
+                The essay, the app and the presentation in the final conference will be evaluated by Mario and Matthew, and they will consider the overall performance of the group during the course. The teachers will consider not only the outcome, but especially the learning process, the teamwork, and the engagement during the course.
+                <br>
+                <br>
+                The economic and business models and the app developed during the course are part of a project named Circular Bergen where we aim to achieve a sustainable and circular city in the next decade. At the end of the academic year (May 2024), we organize the Lysdagen conference where the students will present their app in front of the Bergen municipality, and many other businesses in the digital and the sustainable sector. We also will organize a train trip to Stockholm to attend the Amazon Web Service Summit (https://aws.amazon.com/events/summits/stockholm/). We have applied for funding to help the students to attend that conference. If we get the funds, the students that want to attend that conference will have financial support. The requirement to get that financial support is to attend at least the 90% of the lectures.                 
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 6 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingSix">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseSix"
+              >
+                Essay and app.
+              </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                The students write a 10-12 pages (no more) essay. To write the essay, the students must search in scientific papers and official documents to develop a solid methodology to work out transport carbon emissions. The students will also develop a sustainable business model where they can apply the economic model to work out transport carbon emissions. In the essay, the students also must reflect their teamwork, and the team organization to achieve the objectives during the course.
+                <br>
+                <br>
+                Based on the methodology and the business models presented in the essay, the students develop an app. The app will be developed step by step during the course. The students will customize the layout of their apps if they want. The students have a lot of freedom to develop their own app, and as you can see in the apps developed by the students during the previous year, the students have developed totally different apps (https://forwardedu.org/green_digitalization_course/gd_students_apps). To have a good grade, the students must guarantee that the app has all the functionalities learned during the course and has a nice and intuitive layout. Following the spirit of the course, we will evaluate the apps following a holistic approach. 
+                <br>
+                <br>
+                During the course, Mario will teach the students to create their own GitHub repository, and their own accounts in Heroku and Amazon Web Service. After each lecture, the students will update the GitHub account based on the content covered in that lecture. Deploying an app in Heroku and Amazon Web Services costs money. To avoid that cost for the students, at the end of the course, Mario will create a domain for each group of students in Forward. This will help the students to have a portfolio of apps publicly available at no cost, since the students' apps will use the databases and the resources of Forward.
+
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+              >
+                Groups.
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>The <strong>essay</strong> and the <strong>development of the app</strong> is conducted in <strong>random groups of 5-6 persons</strong>. In the future the students will need to
+                work with persons from different background, and write and essay and develop in that environment helps them to make that transition smoothly.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+              >
+                Key dates and final exam.
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>The <strong>key dates </strong>for the course are the next ones:
+                <ul>
+                  <li><strong>14th November</strong> midway conference to present the economic and the business model and the app.</li>
+                  <li><strong>... November</strong> is the deadline to submit the final version of the paper with your methodology.</li>
+                  <li><strong>5th December</strong> is the final conference (exam). You will have 30 minutes for your presentation + 15 minutes for the questions. We will start the conference around 09:00. We will talk more about this point in November. The final conference is compulsory, and all the students must attend all the sessions.</li>
+                  <li><strong>May</strong>, AWS Summit in Stockholm. A group of us will go the summit.</li>
+                  <li><strong>May</strong>, Lysdagen conference at HVL. I will give you more information about the Lysdagen conference in April.</li>
+                  </li>
+                </ul> 
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFour"
+              >
+                Lectures.
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                For the schedule of all the lectures, see the <strong>information prepared by Matthew</strong>, and that is announced on Canvas.
+                <br>
+                <br>
+                In the app development module, each chapter has its own <strong>webpage</strong>. To make the course more effective, and to facilitate the learning process, each chapter has its own <strong>YouTube video(s)</strong>, and its own <strong>GitHub repository(ies)</strong>. The students must watch the videos and follow the directions in the videos before each lecture.
+                <br>
+                <br>
+                In each lecture, we go through the material covered in the videos, and we will type all the code. So, at the end of the lecture we are sure that all the students understand the material covered in each chapter. In the lectures, we will work in groups. So, the students can help each other. 
+                <br>
+                <br>
+                Each week, I will propose a “weekly challenge” to the students. The students will work on that challenge together, and in the subsequent week we will propose the solutions to the challenge in the lecture. To facilitate the cooperation to solve the weekly challenge, we will use a <strong>chat</strong> where all the students will participate. Mario will participate also in that chat proposing ideas to solve the weekly challenge. 
+                <br>
+                <br>
+                In the app module, the lectures in the first two weeks will be physical, and the rest will be <strong>streamed by using Zoom (https://nhh.zoom.us/j/6343089435)</strong>.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFive"
+              >
+                Tutorials.
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                In the app module, Mario <strong>will be always available after each lecture</strong> to be sure that all the students have been able to run the code developed during the lecture. Apart from that, Mario <strong>will always be available to set a digital tutorial</strong>. You only need to contact me in advance. The digital tutorial will be done on Zoom (https://nhh.zoom.us/j/6343089435).
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock content %}

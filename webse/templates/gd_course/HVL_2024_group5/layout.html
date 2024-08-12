@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Font Awesome code -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Import the Bootstrap CSS file -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- CSS code -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/gd_course_HVL_2024_group5/layout.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/gd_course_HVL_2024_group5/home.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/gd_course_HVL_2024_group5/cursor.css') }}"
+    />
+
+    <!-- To activate media queries in devices -->
+    <meta
+      name="viewport"
+      content="user-scalable=yes, width=device-width, initial-scale=1"
+    />
+
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- ChartsJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>home</title>
+    {% endif %}
+  </head>
+  <body>
+    <div class="animated-dot"></div>
+    <section class="navbar">
+      <div class="container">
+        <a href="{{url_for('gd_course_HVL_2024_group5.home_home')}}">
+          <img
+            src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/ecopaths_logo.svg')}}"
+            class="logo"
+            alt="Logo EcoPaths"
+          />
+        </a>
+        {% if current_user.is_authenticated %}
+        <nav>
+          <ul>
+            <li>
+              <a href="{{ url_for('gd_course_HVL_2024_group5.home_home') }}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{url_for('gd_course_HVL_2024_group5.methodology_home')}}"
+                >Methodology</a
+              >
+            </li>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group5.carbon_app_home')}}"
+                >Carbon App</a
+              >
+            </li>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group5.user_profile')}}"
+                >My account</a
+              >
+            </li>
+          </ul>
+        </nav>
+        {% else %}
+        <nav>
+          <ul>
+            <li>
+              <a href="{{ url_for('gd_course_HVL_2024_group5.home_home') }}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{url_for('gd_course_HVL_2024_group5.methodology_home')}}"
+                >Methodology</a
+              >
+            </li>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group5.carbon_app_home')}}"
+                >Carbon App</a
+              >
+            </li>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group5.register')}}"
+                >Create account</a
+              >
+            </li>
+          </ul>
+        </nav>
+        {% endif %}
+      </div>
+    </section>
+
+    {% block content %} {% endblock %}
+
+    <section class="footer">
+      <div class="footer_back">
+        <div class="footer_cta">
+          <h2>Create your account now</h2>
+          <a
+            href="{{url_for('gd_course_HVL_2024_group5.register')}}"
+            class="cta"
+            >Register</a
+          >
+        </div>
+
+        <div class="footer-content">
+          <div class="footer-menu">
+            <nav>
+              <ul>
+                <li>
+                  <a href="{{ url_for('gd_course_HVL_2024_group5.home_home') }}"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{{url_for('gd_course_HVL_2024_group5.methodology_home')}}"
+                    >Methodology</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="{{url_for('gd_course_HVL_2024_group5.carbon_app_home')}}"
+                    >Carbon App</a
+                  >
+                </li>
+                <li>
+                  <a href="{{url_for('gd_course_HVL_2024_group5.register')}}"
+                    >Account</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="footer-disclaimer">
+            <p>
+              Please note that the Carbon App is a student project developed as
+              part of an educational aim.
+            </p>
+          </div>
+
+          <div class="footer-logos">
+            <a href="https://www.instagram.com/eco_paths/" target="_blank">
+              <i class="fa-brands fa-square-instagram fa-3x"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61556825853040"
+              target="_blank"
+            >
+              <i class="fa-brands fa-square-facebook fa-3x"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Javascript -->
+    <script src="{{ url_for('static', filename='/gd_course_HVL_2024_group5/myscripts.js') }}"></script>
+  </body>
+</html>

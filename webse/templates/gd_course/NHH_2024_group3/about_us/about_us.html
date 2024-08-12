@@ -1,0 +1,64 @@
+{% extends "gd_course/NHH_2024_group3/layout.html" %}
+{% block content %}
+  
+<!-- Header -->
+<section class="section_header_methodology">
+    <section class="green-transportation-image-banner">
+        <div> 
+          <h1 style="font-size:55px;"><span class="text-logo">About Us</span></h1>
+          <p style="text-align:center;">
+            EcoVision Partners is a diverse team of programmers, economists, and sustainability consultants. Our commitment to the UN's sustainability goals and addressing climate change unifies us. We are dedicated to including everyone in the journey to reduce carbon emissions.
+          </p>
+          <div class="container_buttons_links_header">
+            <div class="hero-btns">
+                <a href="{{ url_for('static', filename='gd_course_NHH_2024_group3/Essay.pdf') }}" class="btn">Paper</a>
+            </div>
+          </div>  
+        </div>
+      </div> 
+    </section>
+</section> 
+
+<section class="methodology-section">
+    <div class="container">
+        <div class="methodology-intro">
+            <h1>What We Do</h1>
+            <p>
+                We license our innovative application to companies, giving their employees "free access" to use it in their daily lives. This approach is part of our mission to make sustainability a collective effort.
+                But why should businesses invest in our services? The answer lies in the comprehensive suite of benefits that our application and services offer.
+            </p>
+            <h1>Our Unique Incentive System</h1>
+            <p>
+                Our unique incentive system revolves around the "Eco-Vision" label. This is awarded to companies and their employees who make significant strides in reducing CO2 emissions. The benefits of achieving the Eco-Vision label include:
+            </p>
+            <ol>
+                <li>
+                    Increased Corporate Social Responsibility
+                </li>
+                <li>
+                    Qualification for Green Funds
+                </li>
+                <li>
+                    Increased attention from investors
+                </li>
+                <li>
+                    Potential for increased loans from banks, which often require businesses to meet certain sustainability criteria
+                </li>
+                <li>
+                    Opportunities to increase efficiency and decrease costs through energy efficiency, waste management, and resource depletion.
+                </li>
+            </ol>
+            <h1>The Eco-Vision Report</h1>
+            <p>
+                The Eco-Vision label is presented to companies in a comprehensive report, showcasing the company's collective sustainability efforts. This report serves as valid proof for investors, banks, and other interested parties, helping them make informed decisions about your business's sustainability.
+            </p>
+            <h1>Why Choose EcoVision Partners</h1>
+            <p>
+                Our services are unique and relevant. Our app fosters inclusivity by recognizing that everyone's involvement is crucial to achieving the UN's climate goals. We inspire companies to adopt sustainable practices and emphasize the importance of businesses encouraging their employees to embrace green initiatives in their daily lives. By partnering with us, you not only bolster your Corporate Social Responsibility image but also improve your Environmental, Social, and Governance scores.
+            </p>
+        </div>
+        <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/businessModel.png') }}" alt="Description of image">
+    </div>
+</section>
+
+{% endblock content %}

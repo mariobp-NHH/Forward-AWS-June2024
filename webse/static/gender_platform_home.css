@@ -1,0 +1,843 @@
+/* Morning theme 5 -Gender Platform-:
+ mt5-1: #977abf
+ mt5-2: #3854a6
+ mt5-3: #8badd9
+ mt5-4: #a0e3f2
+ mt5-5: #f5f1bf
+ 
+ mt6-2: #466fa6
+ mt6-3: #83a8be
+ mt6-4: #f1c1ae*/
+
+/*Container home header*/
+/*color=dark*/
+.home_section_css {
+display: flex;
+background: #343a40;
+}
+.home_section_css .container {
+display: flex;
+background: #343a40;
+}
+
+.home_section_css .container .header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.home_section_css .container .header .box {
+  flex: 1;
+  background: #343a40;
+  color: #fff;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+
+.home_section_css .container .header .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #343a40;
+  color: #fff;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:left;
+}
+.home_section_css .container .header .box:nth-of-type(2) {
+  flex-grow:1;
+  background: #343a40;
+  color: #fff;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+
+
+/*Container buttons section header*/
+.container_buttons_links_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap:wrap;
+}
+
+.container_buttons_links_header a:hover {
+  color: #343a40;
+}
+/*color=dark*/
+.container_buttons_links_header btn {
+  width: 100px;
+  height: 100px;
+  background: #343a40;
+  color: #fff;
+
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/*Chat layout*/
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+  color: black;
+  text-align: left;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+/* International Womens' Day */
+.women .container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.women .container h2 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.women .container {
+  padding: 20px 20px 40px;
+}
+
+.women .container .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.women .container .box {
+  background: #fff;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  width: 400px;
+}
+
+.women .container .box:nth-of-type(1) {
+  background: #8badd9;
+}
+
+.women .container .box:nth-of-type(2) {
+  background: #977abf;
+}
+
+/* Buttons debate */
+.container_buttons_links_debate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+
+.container_buttons_links_debate a:hover {
+  color: #977abf;
+}
+
+/* Buttons movie */
+.container_buttons_links_movie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+
+.container_buttons_links_movie a:hover {
+  color: #8badd9;
+}
+
+/* Questionnaire */
+.questionnaire .container {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: #6c757d;
+}
+
+.questionnaire .container h2 {
+  font-size: 40px;
+  margin: 20px 0;
+}
+
+.questionnaire .container {
+  padding: 20px 20px 40px;
+}
+
+/* Buttons questionnaire */
+.container_buttons_links_questionnaire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+
+.container_buttons_links_questionnaire a:hover {
+  color: #6c757d;
+}
+
+/* Analysis */
+.row-container1 {
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.column1 {
+  background: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  border: #ccc solid 2px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;      
+  flex:1;
+}
+.column1-1 {
+  flex-shrink: 0;
+}
+.column1-2 {
+}
+.column1-3 {
+}
+
+/*Container IWD_summary */
+.IWD_summary {
+  display: flex;
+  background: #9fa7bf;
+  }  
+.IWD_summary .container {
+  display: flex;
+  background: #9fa7bf;
+}
+.IWD_summary .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.IWD_summary .container .box {
+  flex: 1;
+  background: #9fa7bf;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.IWD_summary .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #9fa7bf;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.IWD_summary .container  .box:nth-of-type(2) {
+  flex-grow:1;
+  background: #6da6a6;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+.IWD_2023_img {
+  width: (325*297/210)px; 
+  height: (325)px;
+}  
+/*End container IWD_summary*/
+/*Container buttons section IWD_summary*/
+.container_buttons_links_IWD_summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_IWD_summary a:hover {
+  color: #9fa7bf;
+}
+/*End container buttons section IWD_summary*/
+
+/*Container IWD_movie_debate */
+.IWD_movie_debate {
+  display: flex;
+  background: #466fa6;
+  }  
+.IWD_movie_debate .container {
+  display: flex;
+  background: #466fa6;
+}
+.IWD_movie_debate .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.IWD_movie_debate .container .box {
+  flex: 1;
+  background: #466fa6;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.IWD_movie_debate .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #83a8be;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.IWD_movie_debate .container  .box:nth-of-type(2) {
+  flex-grow:1;
+  background: #a0e3f2;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+/*End container IWD_movie_debate*/
+/*Container buttons section IWD_movie_debate*/
+.container_buttons_links_IWD_movie_debate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_IWD_movie_debate a:hover {
+  color: #466fa6;
+}
+/*End container buttons section IWD_movie_debate*/
+
+/*Container IWD_questionnaire */
+.IWD_questionnaire {
+  display: flex;
+  background: #466fa6;
+  }  
+.IWD_questionnaire .container {
+  display: flex;
+  background: #466fa6;
+}
+.IWD_questionnaire .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.IWD_questionnaire .container .box {
+  flex: 1;
+  background: #466fa6;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.IWD_questionnaire .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #83a8be;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.IWD_questionnaire .container  .box:nth-of-type(2) {
+  flex-grow:1;
+  background: #a0e3f2;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+.IWD_questionnaire .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #6da6a6;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.IWD_questionnaire .container  .box:nth-of-type(4) {
+  flex-grow:1;
+  background: #8badd9;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+/*End container IWD_questionnaire*/
+/*Container buttons section IWD_questionnaire*/
+.container_buttons_links_IWD_questionnaire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_IWD_questionnaire a:hover {
+  color: #466fa6;
+}
+/*End container buttons section IWD_questionnaire*/
+
+/*Container gender_platform_chat */
+.gender_platform_chat {
+  display: flex;
+  background: #466fa6;
+  }  
+.gender_platform_chat .container {
+  display: flex;
+  background: #466fa6;
+}
+.gender_platform_chat .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.gender_platform_chat .container .box {
+  flex: 1;
+  background: #466fa6;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.gender_platform_chat .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.gender_platform_chat .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #977abf;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.gender_platform_chat .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*End container gender_platform_chat*/
+/*Container buttons section gender_platform_chat */
+.container_buttons_links_gender_platform_chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_gender_platform_chat a:hover {
+  color: #977abf;
+}
+/*End container buttons section gender_platform_chat*/
+
+
+/*Container questionnaire 1 */
+.questionnaire1 {
+  display: flex;
+  background: #466fa6;
+  }  
+.questionnaire1 .container {
+  display: flex;
+  background: #466fa6;
+}
+.questionnaire1 .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.questionnaire1 .container .box {
+  flex: 1;
+  background: #466fa6;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire1 .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.questionnaire1 .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #83a8be;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire1 .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*End container questionnaire 1*/
+/*Container buttons section questionnaire1 */
+.container_buttons_links_questionnaire1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_questionnaire1 a:hover {
+  color: #83a8be;
+}
+/*End container buttons section questionnaire1*/
+
+/*Container questionnaire 2 */
+.questionnaire2 {
+  display: flex;
+  background: #466fa6;
+  }  
+.questionnaire2 .container {
+  display: flex;
+  background: #466fa6;
+}
+.questionnaire2 .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.questionnaire2 .container .box {
+  flex: 1;
+  background: #466fa6;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire2 .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.questionnaire2 .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #a0e3f2;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire2 .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*End container questionnaire 2*/
+/*Container buttons section questionnaire2 */
+.container_buttons_links_questionnaire2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_questionnaire2 a:hover {
+  color: #a0e3f2;
+}
+/*End container buttons section questionnaire2*/
+
+/*Container questionnaire 3 */
+.questionnaire3 {
+  display: flex;
+  background: #466fa6;
+  }  
+.questionnaire3 .container {
+  display: flex;
+  background: #466fa6;
+}
+.questionnaire3 .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.questionnaire3 .container .box {
+  flex: 1;
+  background: #466fa6;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire3 .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.questionnaire3 .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #6da6a6;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire3 .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*End container questionnaire 3*/
+/*Container buttons section questionnaire3 */
+.container_buttons_links_questionnaire3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_questionnaire3 a:hover {
+  color: #6da6a6;
+}
+/*End container buttons section questionnaire3*/
+
+/*Container questionnaire 4 */
+.questionnaire4 {
+  display: flex;
+  background: #466fa6;
+  }  
+.questionnaire4 .container {
+  display: flex;
+  background: #466fa6;
+}
+.questionnaire4 .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.questionnaire4 .container .box {
+  flex: 1;
+  background: #466fa6;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire4 .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.questionnaire4 .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #8badd9;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.questionnaire4 .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*End container questionnaire 4*/
+/*Container buttons section questionnaire4 */
+.container_buttons_links_questionnaire4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_questionnaire4 a:hover {
+  color: #8badd9;
+}
+/*End container buttons section questionnaire4*/
+
+
+/* Morning theme 5 -Gender Platform-:
+ mt5-1: #977abf
+ mt5-2: #3854a6
+ mt5-3: #8badd9
+ mt5-4: #a0e3f2
+ mt5-5: #f5f1bf
+ 
+ mt6-2: #466fa6
+ mt6-3: #83a8be
+ mt6-4: #f1c1ae*/
+
+@media(max-width:768px){
+  .home_section_css .container {
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+  }
+  .home_section_css .container .header .box:nth-of-type(2) {
+    flex-grow:1;
+    background: #343a40;
+    color: #fff;
+    border-radius: 2px;
+    margin: 0px 10px;
+    padding: 15px 20px;
+    text-align:center;
+    max-width: 325px;
+  }
+  .women .container .box {
+    flex-direction: column;
+  }
+  .row-container1 {
+    flex-direction: column;
+    flex: 100%;
+    max-width: 100%;
+  }
+  .IWD_summary .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  } 
+  .IWD_summary .container  .box:nth-of-type(1) {
+    max-width: 400px;
+  }  
+  .IWD_summary .container  .box:nth-of-type(2) {
+    max-width: 400px;
+  }  
+  .IWD_2023_img {
+    width: 300px;
+    /* width: (100*297/210)px; 
+    height: (100)px; */
+  }  
+  .IWD_movie_debate .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  } 
+  .IWD_movie_debate .container  .box:nth-of-type(1) {
+    max-width: 400px;
+  }  
+  .IWD_movie_debate .container  .box:nth-of-type(2) {
+    max-width: 400px;
+  } 
+  .IWD_questionnaire .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  } 
+  .IWD_questionnaire .container  .box:nth-of-type(1) {
+    max-width: 400px;
+  }  
+  .IWD_questionnaire .container  .box:nth-of-type(2) {
+    max-width: 400px;
+  } 
+  .IWD_questionnaire .container  .box:nth-of-type(3) {
+    max-width: 400px;
+  }  
+  .IWD_questionnaire .container  .box:nth-of-type(4) {
+    max-width: 400px;
+  } 
+  .questionnaire1 .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .questionnaire2 .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .questionnaire3 .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .questionnaire4 .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .gender_platform_chat .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .gender_platform_chat .container  .box:nth-of-type(2) {
+    max-width: 325px;
+    margin: 0px 10px;
+  }  
+  #instructionsModalInstructions1 {
+    max-width:325px;
+  }
+}
+

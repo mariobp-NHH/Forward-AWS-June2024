@@ -1,0 +1,125 @@
+{% extends "sbm_course/sbm_NMBU_2023_group1/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+
+<section class="section_header_home">
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+          {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">
+                      {{ message }}
+                  </div> 
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+        <h1 style="font-size:px; color:rgb(80, 94, 41)">Welcome to the Carbon App!</span>
+        </h1>
+        <p style="text-align:center;">
+          Thank you for using our app! 
+          We developed this app to assist you reducing your carbon footprint. 
+          By providing an easy way to calculate your carbon emmisions, you can contribute to the climate change in a positive way. 
+          You will gain a better understanding of the factors influencing your carbon footprint and learn actionable steps to decrease it. 
+          It is important that governments, businesses and individuals all around the world have a higher focus in decreasing emissions for the greater good. 
+          This means gaining a better understanding of  which emissions are a significant contributor to global climate change. In addition, increase the use of renewable energy and adopt low-carbon lifestyles. 
+          We hope that our app empowers you to make informed choices, ultimately contributing to the battle against climate change. 
+        </p>
+        <div class="icons">
+          <img 
+          src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/gretat.png')}}"
+          style="width: 400px; height: auto;"
+          alt=""/>
+        </div>
+    </div>
+
+      <div class="box logo">
+        <img 
+          src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/bilde_logo.png')}}"
+          width="400" 
+          height="350"
+          alt=""/>
+      </div>
+    </div>
+
+  </div>
+</section>   
+
+<!-- Developers -->
+<section class="section_developers">
+  <div class="container">
+
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center; color: rgb(80, 94, 41) ">Our Team</h1>
+      <p style=" text-align: center; color: rgb(80, 94, 41)">
+        Our team consist of a diverse group with different backgrounds - we see this as our super power! 
+        We are all enrolled in the Master's Program in Entrepreneurship and Innovation at NMBU. 
+        Our common ground is that we all share the interest for innovation and sustainability.  
+        Meet our team, in the descriptions below. 
+        Check out our team below! Each of us brings our own unique experiences and ideas, which helps us solve problems in creative ways. 
+        Got any questions? Feel free to hit us up on LinkedIn!
+      </p>      
+    </div>
+
+   <div class="developers">
+        <div class="box">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/IDA.jpeg')}}" alt="" style="border-radius: 50%; width:200px; margin-bottom: 20px;">
+          <h3 style=" color:rgb(43, 41, 28)">Ida Hansen Maltun</h3>
+          <p style=" text-align: center; font-size: smaller;"> Ida's former education is a Bachelor's degree in media and communication. 
+            She is 28 years old, and lives in Oslo.
+            She has a strong interest in being more sustainable in terms of buying more used and second hand textiles. 
+          </p>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/ida-maltun/"  target="_blank">LinkedIn</a>
+          </div>
+        </div>
+        <div class="box">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/Marie_ok.png')}}" alt="" style="border-radius: 50%; width:200px; margin-bottom: 20px;">
+          <h3 style=" color:rgb(43, 41, 28)">Marie Andersson Haug</h3>
+          <p style=" text-align: center; font-size: smaller;"> Marie has a bachelor degree in business administration. 
+            She is 26 years old, and lives in Oslo. Marie is of the adventure seeking type, always on the look for new and sustainable travel destinations.  
+          </p>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/marie-andersson-haug-038649160/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>           
+        <div class="box">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/SOFIE.jpeg')}}" alt="" style="border-radius: 50%; width:200px; margin-bottom: 20px;">
+          <h3 style=" color:rgb(43, 41, 28)">Sofie Skuland</h3>
+          <p style=" text-align: center; font-size: smaller;">  Sofie's former education is a Bachelor degree in nursing. 
+            She is 27 years old, and lives in Oslo. With Sofie's background we always feel safe and well taken care of. 
+            She takes care of the environment the same way she takes care of us - with love and care. 
+          </p>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/sofieskuland/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>   
+        <div class="box2">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/Hannah_ok.png')}}" alt="" style="border-radius: 50%; width:200px; margin-bottom: 20px;">
+          <h3 style=" color:rgb(43, 41, 28)">Hannah Bernstein</h3>
+          <p style=" text-align: center; font-size: smaller;">  Hannah's former education is a Bachelor degree in marketing and brand management. 
+            She is 25 years old, and lives in Ski. Hannah is a strong believer in recycling, and waste management. 
+            Maybe someday she will change the way we look at what we today call “waste”. 
+          </p>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/hannah-bernstein-542900170/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>  
+        <div class="box2">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/Eirin_ok.png')}}" alt="" style="border-radius: 50%; width:200px; margin-bottom: 20px;">
+          <h3 style=" color:rgb(43, 41, 28)">Eirin Losvik</h3>
+          <p style=" text-align: center; font-size: smaller;">  Eirin's former education is a Bachelor degree in criminology. She is 25 years old, born in Finland, but lives in Oslo.
+            Eirin is always on the look for new ways of thinking sustainability, improving the world piece by piece. 
+          </p>
+          <div class="container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/eirin-losvik-43407514a/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>      
+  </div>
+  
+  </div>          
+</section>     
+{% endblock content %}

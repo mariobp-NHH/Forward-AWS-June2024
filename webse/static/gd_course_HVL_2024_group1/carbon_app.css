@@ -1,0 +1,383 @@
+/* Colors 
+Carbon App, section 1 (header, background): #2a4359
+Carbon App, section 1 (header, boxes): #6da6a6
+Carbon App, section 2 (header, background): #466fa6
+Carbon App, section 2 (header, boxes): #8badd9
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+  text-align: left;
+}
+h4 {
+  font-size: 18px;
+  text-align: left;
+}
+/* Section header */
+.section_header_carbon_app {
+  background-color:#2a4359;
+}
+.header_carbon_app {
+  display: flex;  
+  align-items: start;
+  flex-direction: row;
+  justify-content: center;
+  background: #2a4359;
+}
+.header_carbon_app .box {
+  flex: 1;
+  background: #2a4359;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.header_carbon_app .box:nth-of-type(1) {
+  flex-grow:2;
+}
+.header_carbon_app .box:nth-of-type(2) {
+  flex-grow:1;
+}
+.container_buttons_links_header_carbon_app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_header_carbon_app a:hover {
+  color: #2a4359;
+}
+.container_buttons_links_header_carbon_app btn {
+  width: 100px;
+  height: 100px;
+  background: #2a4359;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+/* Section carbon_app_new_entry_main */
+.section_carbon_app_new_entry_main {
+  background: #2a4359;
+  margin: 20px 20px;
+  padding: 10px;
+  color: #fff;
+  margin-bottom: 0%;
+  font-family: 'Roboto', sans-serif;
+}
+.carbon_app_new_entry_main {
+  display: flex;  
+  background-color: #2a4359;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.carbon_app_new_entry_main .box {
+  flex: 1;
+  background:rgba(76, 127, 182, 0.923) ;
+  color: white;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.carbon_app_new_entry_main .box:nth-of-type(1) {
+  flex-grow:3;
+}
+.carbon_app_new_entry_main .box:nth-of-type(2) {
+  flex-grow:3;
+}
+.carbon_app_new_entry_main .box:nth-of-type(3) {
+  flex-grow:3;
+}
+.carbon_app_new_entry_main .box:nth-of-type(4) {
+  flex-grow:3;
+}
+.section_container_buttons_carbon_app_new_entry_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_carbon_app_new_entry_main {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #2a4359;
+  transition: background-color 0,3s;
+}
+.btn_carbon_app_new_entry_main:hover {
+  background-color: #fff !important;
+}
+/*Container new_entry */
+.new_entry {
+  display: flex;
+  background: #2a4359;
+  height: 720px;
+  }  
+.new_entry .container {
+  display: flex;
+  background: #2a4359;
+}
+.new_entry .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.new_entry .container .box {
+  flex: 1;
+  background: rgba(76, 127, 182, 0.923) !important;
+  color: #fff;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.new_entry .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.new_entry .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+}  
+.new_entry .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*Container table_main */
+.table_main {
+  display: flex;
+  background: #2a4359;
+  margin: 20px 20px;
+  margin-bottom: 0%;
+  }  
+.table_main .container {
+  display: flex;
+  background: #2a4359;
+}
+.table_main .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.table_main .container .box {
+  flex: 1;
+  background: rgba(76, 127, 182, 0.923) !important;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.table_main .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.table_main .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  background: rgba(76, 127, 182, 0.923) !important;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.table_main .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+.table_main .container tr {
+  color: #fff;
+}
+
+
+/*End container table_main*/
+
+/*Container two_emissions_graphs */
+.two_emissions_graphs {
+  display: flex;
+  background: #2a4359;
+  }  
+.two_emissions_graphs .container {
+  display: flex;
+  background: #2a4359;
+}
+.two_emissions_graphs .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.two_emissions_graphs .container .box {
+  flex: 1;
+  background: rgba(76, 127, 182, 0.923) !important;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.two_emissions_graphs .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: rgba(76, 127, 182, 0.923) !important;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.two_emissions_graphs .container  .box:nth-of-type(2) {
+  flex-grow:1;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.chart {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/*End container two_emissions_graphs*/
+
+/*Container main menu */
+.main_menu {
+  display: flex;
+  background: #2a4359 !important;
+  }  
+.main_menu .container {
+  display: flex;
+  background: #2a4359 !important;
+}
+.main_menu .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+ 
+.main_menu .container  .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}  
+.main_menu .container  .box:nth-of-type(2) {
+  flex-grow:6;
+  max-width: 450px;
+  background: #2a4359;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.main_menu .container  .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+}
+/*End container main menu*/
+/*Container buttons section main menu */
+.container_buttons_links_main_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_main_menu a:hover {
+  color: #2a4359;
+}
+/*End container buttons section main menu*/
+
+@media (max-width:768px) { 
+  .header_carbon_app {
+    flex-direction: column;
+    width: auto;
+  } 
+  .carbon_app_new_entry_main {
+    flex-direction: column;
+    width: auto;
+  } 
+  .new_entry .container {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    width: auto;
+  }
+  .table_main {
+    margin: 2px 2px;
+  }
+  .table_main .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    width: auto;
+    padding: 0px 0px;
+  }
+  .table_main .container .table a {
+    font-size: 6px;
+    width: auto;
+  }
+  .table_main .container .box {
+    width: auto;
+    margin: 0px 0px;
+    margin-bottom: 0%;
+  }
+  .table_main .container .box:nth-of-type(2) {
+    padding: 0%;
+  }
+
+  .new_entry .container .box {
+    width: auto;
+    margin: 20px 10px;
+  }
+  .section_carbon_app_new_entry_main {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+  .two_emissions_graphs .container {
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+  }
+  .two_emissions_graphs .container .box {
+    width: auto;
+    margin: 10px 0px;
+  }
+}

@@ -1,0 +1,227 @@
+{% extends "gd_course/HVL_2024_group1/layout.html" %} 
+{% block content %}
+  
+<!-- Header -->
+<section class="section_header_methodology">
+    <div class="container">
+  
+      <div class="header">
+        <div class="box"> 
+          <h1 style="font-size:55px;"><span class="text-logo"> Methodology</span></h1>
+          <p style="text-align:left;">
+            Methodology is the philosophical evaluation of how knowledge and inquiry are framed within an academic discipline or school of thought (Oxford Reference, n.d). The methodology set the standard of what we want to achieve through our app: raising awareness about the carbon emissions that vehicles inflict on the environment. Therefore our app will provide a calculator that tracks the carbon emissions produced by different vehicles. If you need a more comprehensive methodology, please read our paper through the button below.
+          </p>
+          <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="https://acrobat.adobe.com/id/urn:aaid:sc:eu:d059225e-4be1-4283-b3d1-faafdc34e58f" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#35628f;">Paper</a>
+            </div>
+          </div>  
+        </div>
+        <div class="box">
+          <img 
+            src="{{url_for('static', filename='/gd_course_HVL_2024_group1/icons/methodology1.svg')}}"
+            width="325" 
+            height="325"
+            alt=""/>
+        </div>
+      </div>
+      
+    </div>
+</section> 
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+    <div class="container">
+
+        <div class="methodology" style="display:block;">
+            <h1 style="text-align:center;"> Our numbers and formulas:</h1>
+        </div>
+
+        <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:425px;">
+                <ol start="1">
+                    <li>
+                        <h4> General Formula</h4>
+                        <p class="text-left">
+                            Air emissions from traffic vary depending on factors such as the vehicle type and fuel used. In the following, we will provide an overview of emission factors for various vehicles and traffic situations (Fedoryshyn, 2017). Our application will be based on one general formula. 
+                            <br><br>
+                        \( 𝐶𝑂2 = 𝑑 · 𝑒𝑓/𝑝 \)
+                        </p>
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:425px;">
+                <ol start="2">
+                    <li>
+                        <h4>Formula for electrical vechicle </h4>
+                        <p class="text-left">
+                            The carbon intensity referred to in grams CO2/kwh in this formula (26 grams) is based on the carbon intensity in the western part of Norway (Electricity maps, 2023). We use data from the western part of Norway since this is where our target audience is based. For the energy consumption in kWh/km we use data from the average electric cars energy consumption, 0,194 kWh/km ( Ev-database, 2023)
+                            <br></br>
+                            \(CO2: 𝑑 ∗ 26 ∗ 𝑒𝑐/p \) 
+                        </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+
+        <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:425px;">
+                <ol start="3">
+                    <li>
+                        <h4>Car</h4>
+                        <p class="text-left">
+                        Old:
+                        <Ul>
+                            <li>Petrol car: 156,47g/km</li>
+                            <li>Diesel car: 130,09g/km</li>
+                        </Ul>
+                        </p>
+                        <p class="text-left">
+                        New:
+                        <Ul>
+                            <li>Petrol car: 139g/km</li>
+                            <li>Diesel car: 122,39g/km</li>
+                        </Ul>
+                        </p>
+                    </li>
+                    <li>
+                        <h4>EL-car</h4>
+                        <p class="text-left">
+                            <Ul>
+                                <li>Small car: 12g/km</li>
+                                <li>Medium car: 16g/km</li>
+                                <li>Large car: 20g/km</li>
+                            </Ul>
+                        </p>
+                    </li>
+                   
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:425px;">
+                <ol start="5">
+                    <li>
+                        <h4>Plane</h4>
+                        <p class="text-left">
+                            
+                            Long-haul flights:
+                        	<ul>
+                            <li>Economy class: 102 g/km</li>
+                            <li>Business class: 306 g/km</li>
+                            <li>First class: 408 g/km</li>
+                            </ul>
+                        </p>
+                        <p class="text-left">
+                        Domestic and other short-haul flights:
+                            <ul>
+                            <li>Economy class: 133 g/km</li>
+                            <li>Business class: 399 g/km</li>
+                            <li>First class: 532 g/km</li>
+                        </ul>
+                        </p>
+                    </li>
+                
+                </ol>
+            </div>  
+        </div>
+
+        
+
+        <!--Enumerated list (table with two column)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:425px;">
+                <ol start="6">
+                    <li>
+                        <h4>Ferry</h4>
+                        <p class="text-left">
+                            <ul>
+                           <li> A fuel-driven ferry: 226 g/pkm </li>
+                            </ul>
+                        </p>
+                    </li>
+                    <br><br/>
+                    <li>
+                        <h4>Electric Ferry</h4>
+                        <p class="text-left">
+                         <ul>
+                         <li>E-ferry: 5,25 grams CO2/pkm </li>
+                        </ul>
+                        </p>
+                    </li>
+                </ol>                        
+            </div>
+          <div class="box_table2" style="height:425px;">
+                <ol start="8">
+                    <li>
+                        <h4>Train</h4>
+                        <p class="text-left">
+                            In 2021, traveling by train emitted 12.2 grams of CO2 per passenger kilometer, making it the most environmentally friendly option in Norway.
+                        </p>
+                        CO2 emissions per passenger kilometer generated when travelling by train in 2023:
+                        <ul>
+                           <li> Diesel Train European average: 91g CO2/pkm </li>
+                           <li> Electric Train European average: 24g CO2/pkm</li>
+                           <li> Electric Train in the Nordic Countries: 7g CO2/pkm </li>
+                    </li>
+            
+                   
+                </ol>
+            </div>  
+        </div>
+
+        <!--Enumerated list (table with two column)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:425px;">
+                <ol start="9">
+                    <li>
+                        <h4>Bus</h4>
+                        <p class="text-left">
+                        The following numbers are estimated gas emissions in 2023:
+                        <ul>
+                            <li>European average diesel: 25 gram CO2/pkm</li>
+                            <li>Average biodiesel: 7 gram C02/pkm</li>
+                        </ul>  
+                        </p>
+                    </li>
+                    <br><br/>
+                    <li>
+                        <h4>Electric Bus</h4>
+                        <p class="text-left">
+                            Electric: 13 gram C02/pkm
+                        </p>
+                    </li>
+                    
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:425px;">
+                <ol start="11">
+                
+                    <li>
+                        <h4>Motorcycle</h4>
+                        <p class="text-left">
+                            Petrol motorcycle UK average: 114g CO2/pkm
+                        </p>
+                    </li>
+                   
+                </ol>
+            </div>  
+        </div>
+      
+    </div>
+</section>
+
+<section class="section_footer">
+    <div class="container">
+      <div class="footer">
+        <h1> 
+          <a href="#">
+            <i class="fa-solid fa-circle-up" style="color:#2a4359"> Back to top</i>
+          </a>
+        </h1>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}

@@ -1,0 +1,184 @@
+/* Colors */
+/* Darkgreen = 13. Climate Action = #3F7E44*/
+/* Lime green = 15. Life on Land = #56C02B */
+/* UN Logo Blue =  #009EDB */
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+/* Section header_home */
+.section_header_home {
+  background-color: #fff;
+}
+
+.header_home {
+  display: flex;
+  align-items: start;
+  background: #fff;
+}
+
+.header_home .box {
+  flex: 1;
+  background: #fff;
+  color: #000;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.container_buttons_header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container_buttons_header_home .btn {
+  margin: 5px;
+}
+
+
+.header_home {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap; 
+  background: #fff;
+  justify-content: center;
+}
+
+.header_home .box {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
+  text-align: center; 
+}
+
+@media (max-width: 768px) {
+  .header_home {
+    flex-direction: column; 
+  }
+}
+
+.container_buttons_header_home .btn .btn-link {
+  background-color: #56C02B;
+  color: #fff;
+  display: block; 
+  text-decoration: none; 
+  padding: 10px 20px; 
+  border-radius: 10px; 
+  text-align: center; 
+  width: 100%; 
+}
+
+.container_buttons_header_home .btn .btn-link:hover {
+  background-color: #009EDB;
+  color: #fff;
+}
+
+/* Section Middel */
+.section-mid {
+  background-color: #009EDB; 
+  color: #fff;
+  padding: 20px 0; 
+}
+
+.box-section-mid {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: left; 
+  width: 100%; 
+  max-width: 600px;
+  margin: 0 auto; 
+}
+.counter{
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.btn-impact{
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px 30px;
+  background-color: #00689D;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+}
+.btn-impact:hover{
+  background-color: #19486A;
+  color: white;
+}
+.wave{
+  margin: -1px;
+}
+
+/* Contact and Map Section */
+.section-contact-map {
+background-color: #fff;
+color: #000;
+}
+
+.title-contact{
+  color: #3F7E44;
+}
+
+.contact-map-container {
+display: flex;
+align-items: stretch;
+margin: 0;
+padding: 20px;
+}
+
+.contact-info {
+flex: 1;
+padding: 40px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+.contact-info h2 {
+font-size: 1.5em;
+margin-bottom: 20px;
+}
+
+.contact-info p {
+margin-bottom: 10px;
+line-height: 1.6;
+}
+
+.contact-info a.contact-button {
+display: inline-block;
+margin-top: 30px;
+padding: 15px 30px;
+background-color: #56C02B;
+color: white;
+text-decoration: none;
+border-radius: 10px;
+font-weight: bold;
+text-transform: uppercase;
+}
+
+.contact-info .contact-button:hover{
+  background-color: #009EDB;
+}
+
+.map {
+flex: 3;
+}
+
+.map iframe {
+width: 100%;
+height: 100%;
+border: none;
+}

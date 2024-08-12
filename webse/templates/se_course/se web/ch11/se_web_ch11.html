@@ -1,0 +1,1419 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch11. Sustainable Development. SDG7: Affordable and Clean Energy</span></h1>
+                    <p class="mb-1">
+                        In this chapter we will focus on the analysis of the Sustainable Development Goal 7: Energy.
+                        In particular, we focus on four points: Access to electricity; access to clean fuels and technologies
+                        for cooking; renewable energy; and energy efficiency. We will establish bridges between SDG7 and other Sustainable Development Goals.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch11/ch11_material.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch11/ch11_presentation.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            We debate about the implications of access to clean energy and fuels and gender inequalities, and infancy.
+                            We also discuss the main trends in renewables and energy efficiency.
+                        </p>
+
+                      </a>
+                      <a href="#energy" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Access to electricity</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the access to electricity globally, and we pay special attention to the access to electricity
+                            by women, refugees, and the access to electricity in schools and health centers.
+                        </p>
+                      </a>
+                      <a href="#fuels" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Access to clean fuels and technologies for cooking</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the status of the access to clean energy, the main trends, regional highlights, and the access
+                            to clean fuels and cooking technologies by gender and its implications on health.
+                        </p>
+                      </a>
+                      <a href="#renewables" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Renewable energy</h5>
+                        </div>
+                        <p class="mb-1">
+                            We analyze the main trends in renewable energy, we also cover the regional distribution of renewable energy production.
+                            We conclude the section by studying the role of renewable energy in the production of electricity, in heating and
+                            transport.
+                        </p>
+                      </a>
+                      <a href="#efficiency" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Energy efficiency</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the global, regional and end-use trends, and the target for 2030.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/ch11_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+   <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Introduction</h3>
+                <p>
+                    What do you know about the access to electricity globally and by regions? How the access to electricity affect
+                            gender inequalities and infancy? What do you know about the access to clean energy and its relation
+                            with gender and health? What are the predictions of the evolution of renewable energy? Which are
+                            the main trends in energy efficiency?
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+<!--Section 1 (grey)-->
+    <section id="energy" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Access to electricity</h2>
+
+            <h3>Main trends</h3>
+            <p>
+                <strong>The global trend</strong>: The world has made striking progress over the past decade far more than in previous
+                decades in increasing access to electricity. The share of the world’s population having access to electricity grew
+                <strong>from 83 percent in 2010 to 90 percent in 2018</strong>. An increase of more than a billion people. During this period,
+                the number of people without access to electricity fell from about 1.2 billion to 789 million, outpacing the overall
+                increase in population. Trends from 2016 to 2018 show accelerated electrification (with the average annual rate of
+                electrification increasing to 0.82 percentage points) compared with 2010–16 (0.77 points) (Figure: Percentage of population with access to electricity).
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <strong>Target for 2030</strong>:
+                    Despite accelerated progress in recent years, the world <strong>will fall short of SDG indicator 7, which aims for 100 percent access to electricity by 2030</strong>, if the current rate is maintained. Due to the many challenges
+                    facing access-deficit countries,<strong> the latest projection shows that about 620 million people would still lack access
+                        to electricity in 2030</strong> (IEA 2019a). To close the gap, the annual rate of electrification would have to rise from the
+                    current 0.82 percentage points to 0.87 percentage points for the years 2019 to 2030. Moreover, this projection
+                    does not account for the disruptions of covid-19. These have not yet been quantified, but they will likely affect
+                    electrification, slowing and in some cases even reversing advances (e.g., as utilities and off-grid service providers
+                    face financial difficulties). Governments, hand in hand with the international community, should be prepared to
+                    mitigate these adverse effects to safeguard the gains in access.
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_access.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Target for 2030</div>
+                  <p class="text-right">
+                        Despite accelerated progress in recent years, the world <strong>will fall short of SDG indicator 7, which aims for 100 percent access to electricity by 2030</strong>, if the current rate is maintained. Due to the many challenges
+                        facing access-deficit countries,<strong> the latest projection shows that about 620 million people would still lack access
+                            to electricity in 2030</strong> (IEA 2019a). To close the gap, the annual rate of electrification would have to rise from the
+                        current 0.82 percentage points to 0.87 percentage points for the years 2019 to 2030. Moreover, this projection
+                        does not account for the disruptions of covid-19. These have not yet been quantified, but they will likely affect
+                        electrification, slowing and in some cases even reversing advances (e.g., as utilities and off-grid service providers
+                        face financial difficulties). Governments, hand in hand with the international community, should be prepared to
+                        mitigate these adverse effects to safeguard the gains in access.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Regional highlights</div>
+                  <p class="text-right">
+                        The global advance in access to electricity since 2010 masks unequal progress across
+                        regions, with attention now focusing on Sub-Saharan Africa. Latin America and the Caribbean and Eastern Asia
+                        and South-eastern Asia approached universal access, exceeding 98 percent access to electricity by 2018. In
+                        Central Asia and Southern Asia, more than 92 percent of the population had access by 2018. The world’s access
+                        deficit is increasingly concentrated in Sub-Saharan Africa, which, in 2018, was home to about 548 million people
+                        who lacked access more than half of the region’s population and nearly 70 percent of the global population
+                        without access. After 2010, access advances in Sub-Saharan Africa outpaced population growth, but the trend has
+                        reversed recently. Between 2016 and 2018, the number of people in the region lacking access remained almost
+                        stable (Figure: Annual increase in access to electricity rate in access-deficit countries, 2010-18).
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Urban-rural distribution in access</div>
+                  <p class="text-right">
+                        Rural populations made up about 85 percent (668 million people) of the
+                        global access deficit in 2018. But, since 2010, they have seen more progress than the urban deficit populations.
+                        Globally, the access rate in rural areas grew from about 70 percent in 2010 to 80 percent in 2018. During the
+                        same period, the rate of urban electrification grew from 95 to 97 percent. While approaching universal access,
+                        urban electrification nevertheless faces policy and technical challenges. The obstacles to supplying electricity to
+                        surging urban populations have slowed gains since 2010. Unstable distribution networks have made it difficult to
+                        connect pockets of people in urban cores and in sprawling settlements that ring large cities. In the coming years,
+                        the access rate is more likely to advance in rural areas than in cities (Figure: Gains in electricity access in urban and rural areas, 2000, 2010, and 2018).
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_map.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_urban_rural.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Providing electricity to record numbers of forcibly displaced people</h3>
+
+            <p>
+                Today, forcible displacement affects a record number of <strong>75 million people around the world</strong>, including almost
+                24 million refugees and asylum seekers. Of the 75 million forcibly displaced people at the end of 2018, about 20
+                million were refugees and over 3.5 million were asylum seekers (UNHCR, 2019).
+                </br>
+                </br>
+                Historically, humanitarian and development actors do not provide access to electricity among refugee
+                households. They lack the expertise and funding to do so, for a start. Some host governments are reluctant to
+                authorize long-term infrastructure for refugee settlements that are optimistically considered temporary.
+                Electricity access for displaced populations is now receiving growing attention, though reliable information and
+                monitoring are scarce.
+            </p>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    The best globally comparable data presently available come from the Integrated Refugee
+                and Forcibly Displaced Energy Information System of the United Nations High Commissioner for Refugees
+                (UNHCR). The system is a global monitoring toolkit accessible at:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://eis.unhcr.org/about" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">UN Refugee Agency (Energy)</a>
+                   </div>
+                </div>
+            </div>
+
+            <p>
+                Existing data shows that refugees have disproportionately lower access to grid electricity than their surrounding
+                host communities. According to the UNHCR findings, the most striking cases were in Rwanda
+                (Gihembe, Kigeme, Mugombwa, Nyabiheke) and Tanzania (Nyarugusu), where just <strong>10 percent of refugees had
+                    access to the electricity grid in 2018, compared with 25–37 percent in the host communities</strong>. In Cameroon
+                (Douala, Gbiti, Kette, Meiganga, Minawao), only <strong>5 percent of the refugees had access to the grid in 2018,
+                    compared with 25 percent in the host communities</strong>. In Bangladesh, the gap between the refugees in 10 camps
+                in Cox’s Bazar and the host community was particularly stark: <strong>no refugees had access to grid power, whereas
+                    up to 80 percent of the host community had access</strong>. In other countries, including Burkina Faso (Gandafabou,
+                Goudebo, Mentao), Chad (Aradib, Djabal, Goz Amer), and South Sudan (Doro, Ezo, Gendrassa, Kaya, Lasu, Yusuf
+                Batil), neither refugees nor the host communities had access, underlining the poverty of areas hosting refugees
+                in many countries.
+            </p>
+            
+            <h3>Energizing women</h3>
+            
+            <p>
+                Access to electricity plays a critical role in<strong> poverty reduction for women and girls</strong>. Women’s employment and leisure will
+                improve with increased access to electricity. Poor electricity supply was pinpointed as the biggest obstacle to growth
+                by 25 percent of female-headed enterprises surveyed in Tanzania and 19 percent in Ghana. Statistical data from these
+                countries show a positive relationship between the productive use of electricity and women’s economic empowerment.
+                Use of electrical appliances allowed for diversification in products for sale and helped female entrepreneurs attract
+                more customers. The provision of electric light amplifies time savings by increasing efficiency and
+                adding flexibility in the scheduling of household tasks. Freeing up women’s time is a prerequisite for investments in
+                their education and life choices, encouraging them to seize economic opportunities and participate in economic,
+                political, and social life (World Bank 2012).
+                </br>
+                </br>
+                Electrification projects can promote gender equality in several ways. For example, ensuring that the upfront cost of
+                electricity provision and electric appliances is affordable to women and women-led businesses who are less likely
+                to have access to finance would facilitate grid and off-grid connections and the use of energy services. Also, gender
+                disparities can be ameliorated with approaches that ensure women have the same opportunity as men to benefit from
+                improved income-generating activities. With a focus on closing gender gaps in employment and skills development,
+                projects can also address <strong>women’s underrepresentation in the energy sector workforce</strong>. IRENA’s online gender survey
+                from 2018 highlighted access to training and skills development programs. In fact, these were seen as a key measure
+                to improve women’s engagement in deploying renewables for energy access (IRENA, 2019).To ensure that gender is
+                factored into energy projects, specific actions throughout the project cycle are required: a gender-gap assessment, a
+                plan of action for interventions, and a focus on monitoring and evaluation that tracks the narrowing of gender gaps.
+                An in-country example from Ethiopia where the government has launched a reform of its energy sector to reach
+                universal electrification by 2025 aims to create more equitable institutions and equal benefits for women. A first-of
+                its-
+                kind approach, the NEP and NEP 2.0 initiatives established new ways of looking at gender, focusing on constraints
+                in employment, child care, sexual harassment, female entrepreneurship, and consumer-level affordability (World Bank,
+                2020b).
+            </p>
+
+            <h3>Supporting other SDGs by supplying power to education facilities and health centers</h3>
+            
+            <p>
+                Providing electricity to schools and health centers offers broad benefits that will assist in reaching objectives
+                codified in a range of SDGs, most directly <strong>SDG 3 (health)</strong> and <strong>4 (education)</strong> but also <strong>SDG 5 (gender)</strong> and<strong> SDG 8
+                    (work and economic growth)</strong>. The Multi-Tier Framework (MTF) team collected information from public institutions including health and
+                education facilities as a part of the household survey.
+                </br>
+                </br>
+                <u>Education facilities.</u>
+                </br>
+                </br>
+                In 2018, the Multi-Tier Framework (MTF) survey compiled data in public institutions in Cambodia, Ethiopia, Kenya,
+                Myanmar, Nepal, and Niger. The data were collected at the facility level by interviewing officers best positioned to
+                respond at the institutions.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    In the surveyed countries, 31 percent of educational facilities are electrified through an on-grid source of electricity
+                    and 9 percent through off-grid systems; 60 percent have no access to electricity.
+                    </br>
+                    </br>
+                    The national public grid is the primary source of electricity for educational facilities with access to power. More
+                    specifically, 49 percent of schools in Nepal are electrified through the public grid, 72 percent in Kenya, and only 22
+                    percent in Ethiopia. An exception to this trend is Niger, where solar energy sources, including solar home/lighting
+                    systems, mini grids, and batteries, are primary providers of electricity for 3 percent of schools. Education facilities
+                    also rely on solar as backup power to cover urgent energy demand. This is the case for 86 percent of facilities in
+                    Cambodia and 15 percent of schools in Kenya (Figure: Electrification of schools, by source).
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_school.svg')}}"
+                        alt=""/>
+            </div>
+
+            <p>
+                <u>Health centers.</u>
+                </br>
+                </br>
+                The covid-19 pandemic highlights the need for reliable and affordable electricity to health centers. MTF collected
+                data across 730 health centers, including clinics and hospitals in Cambodia, Ethiopia, Kenya, Myanmar, Nepal,
+                and Niger.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_hospital.svg')}}"
+                        alt=""/>
+                <div>
+                    Across the surveyed countries, around 75 percent of health facilities have access to a primary source of electricity
+                    (42 percent through grid access, 33 percent through off-grid solutions), while 25 percent remain unelectrified.
+                    These aggregate results mask large discrepancies at the country level, as well as quality and reliability of supply.
+                    </br>
+                    </br>
+                    In Kenya, 77 percent of health centers rely on the public national grid to cover their primary electricity needs. At
+                    the same time, 66 percent of health centers in Cambodia use off-grid solutions to cover their primary electricity
+                    demand, and 83 percent of them use solar systems as a backup power source (Figure: Electrification of health centers, by source).
+                </div>
+            </div>
+
+            <p>
+                The health centers use electricity mainly for lighting (57 percent), refrigerators for vaccines (40 percent), and
+                fans or evaporative air-cooling systems (28 percent). They also reported, however, that the use of electric powered
+                medical appliances is limited owing to no availability, high cost, and insufficient energy.
+                </br>
+                </br>
+                In every country analyzed, the power supply is compromised by unscheduled interruptions and voltage
+                fluctuations. Twenty-five percent of health facilities reported that unscheduled outages affect the capacity
+                to deliver essential health services. Damage to equipment caused by poor-quality connections and frequent
+                voltage fluctuations are also constraints for 28 percent of health centers.
+            </p>
+
+            <h3>Questions</h3>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 1</legend>
+                        <p class="card-text">Which population percentage does not have access to electricity in 2018? How many million people is that percentage?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q1Modal">Question 1</a>
+                        </div>
+                        <!-- Modal Q1 -->
+                        <div class="modal fade" id="Q1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 1</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    The population percentage without access to electricity is  10 percent in 2018. The number of people <strong>without access to electricity </strong> is 789 million.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 2</legend>
+                        <p class="card-text">Which is the access to electricity  <strong>objective of the SDG7 by 2030</strong>? How many million people will not have access to electricity in 2030?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q2Modal">Question 2</a>
+                        </div>
+                        <!-- Modal Q2 -->
+                        <div class="modal fade" id="Q2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 2</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    The SDG 7 aims for 100 percent access to electricity by 2030. However,  <strong> the latest projection shows that about 620 million people would still lack access
+                                    to electricity in 2030</strong>.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 3</legend>
+                        <p class="card-text">At a regional level, which regions has achieve <strong>universal access</strong> and which ones are struggling to achieve that objective?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q3Modal">Question 3</a>
+                        </div>
+                        <!-- Modal Q3 -->
+                        <div class="modal fade" id="Q3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 3</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <strong>Latin America and the Caribbean and Eastern Asia
+                                        and South-eastern Asia</strong> approached universal access, exceeding 98 percent access to electricity by 2018.
+                                    </br>
+                                    </br>
+                                    In <strong>Central Asia and Southern Asia</strong>, more than 92 percent of the population had access by 2018.
+                                    </br>
+                                    </br>
+                                    The world’s access
+                                    deficit is increasingly concentrated in <strong>Sub-Saharan Africa</strong>, which, in 2018, was home to about 548 million people
+                                    who lacked access more than half of the region’s population and nearly 70 percent of the global population
+                                    without access.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 4</legend>
+                        <p class="card-text"> Which is the percentage of population living in <strong>rural areas</strong> with universal access to electricity and in <strong>urban areas</strong>?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q4Modal">Question 4</a>
+                        </div>
+                        <!-- Modal Q1 -->
+                        <div class="modal fade" id="Q4Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 4</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    In <strong>rural areas</strong> only the 80% of the population has access to electricity. In <strong>urban areas </strong>the access is universal 97%.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 5</legend>
+                        <p class="card-text">Women suffer particularly the lack of access to electricity.
+                            Can you enumerate some of the positive effects of guaranteeing <strong>women universal access to electricity</strong>?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q5Modal">Question 5</a>
+                        </div>
+                        <!-- Modal Q5 -->
+                        <div class="modal fade" id="Q5Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 5</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    Access to electricity plays a critical role in<strong> poverty reduction for women and girls</strong>.
+                                    </br>
+                                    </br>
+                                    Women’s <strong>employment </strong>and <strong>leisure</strong> will
+                                    improve with increased access to electricity.
+                                    </br>
+                                    </br>
+                                    Poor electricity supply was pinpointed as the biggest obstacle to growth
+                                    by 25 percent of <strong>female-headed enterprises</strong> surveyed in Tanzania and 19 percent in Ghana.
+                                    </br>
+                                    </br>
+                                    Statistical data from these
+                                    countries show a positive relationship between the<strong> productive use of electricity and women’s economic empowerment</strong>.
+                                    </br>
+                                    </br>
+                                    Use of electrical appliances allowed for <strong>diversification in products</strong> for sale and helped female entrepreneurs attract
+                                    more customers.
+                                    </br>
+                                    </br>
+                                    The provision of electric light <strong>amplifies time savings</strong> by increasing efficiency and
+                                    adding flexibility in the scheduling of household tasks.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 6</legend>
+                        <p class="card-text">
+                             Which is the relation between SDG7 and <strong>other SDGs</strong>? In particular, can you
+                            explain briefly how SDG7 affects to <strong>education</strong> and <strong>health facilities</strong>?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q6Modal">Question 6</a>
+                        </div>
+                        <!-- Modal Q6 -->
+                        <div class="modal fade" id="Q6Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 6</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    Providing electricity to schools and health centers offers broad benefits that will assist in reaching objectives
+                                    codified in a range of SDGs, most directly <strong>SDG 3 (health)</strong> and <strong>4 (education)</strong>
+                                    but also <strong>SDG 5 (gender)</strong> and<strong> SDG 8
+                                        (work and economic growth)</strong>.
+                                    </br>
+                                    </br>
+                                    Information about the access to electricity and education facilities and health facilities
+                                    are in Figures: Electrification of schools, by source and Electrification of health centers, by source.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!--Section 2 (blue)-->
+    <section id="fuels" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Access to clean fuels and technologies for cooking</h2>
+
+            <h3>Main trends</h3>
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Status of access.</div>
+                  <p class="text-right">
+                        In 2018, 63 percent of the global population had access to clean cooking
+                        fuels and technologies; the global population without access was 2.8 billion people. Without prompt
+                        action, universal access will fall short of SDG goals by almost 30 percent. Meanwhile, exposure to household
+                        air pollution will continue to contribute to millions of deaths from noncommunicable diseases (including heart
+                        disease, stroke, and cancer) and pneumonia. Household air pollution will continue to worsen climate change (Figure: The global population with access to clean cooking (in percentages)).
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Access and the 2030 target.</div>
+                  <p class="text-right">
+                        The annual rate of access to clean cooking fuels and technologies from 2010 to
+                        2018 increased by less than one percentage point (pp) as population growth outpaced the number of those with
+                        access. In the decade leading up to 2030, increases in excess of 3pp per year are required to achieve the goal of
+                        universal access to clean fuels and technologies by 2030.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Regional highlights.</div>
+                  <p class="text-right">
+                        Greater access to clean cooking was achieved largely in two regions of Asia. From 2010 to 2018, Eastern
+                        Asia and South-eastern Asia saw annualized increases in access of 1.6pp while the numbers of
+                        people lacking access fell from 1.0 billion  to 0.8 billion. Central Asia and Southern Asia also saw
+                        improved access to clean cooking, with annualized increases of 1.5pp. The 1.11 billion people without
+                        access dropped to 1.0 billion. In Sub-Saharan Africa, meanwhile, a stagnant access rate (annualized
+                        increase of 0.4pp) combined with rapid population growth have meant that the numbers of people without access
+                        have risen from 750 million people to 890 million people (Figure: Regional populations, by rate of access to clean cooking fuels, 2018).
+                        </br>
+                        </br>
+                        Over the period 2014-2018, population growth in Sub-Saharan Africa outstripped growth in the number of people with access to
+                        clean cooking by around 18 million people each year. Thus, in this region 894 million (874–911) people, or around 85
+                        percent of the population, lack access to clean fuels and technologies for cooking.
+                        </br>
+                        </br>
+                        As a result, in 2018, around 3 billion people lacked access to clean fuels and technologies for cooking. Furthermore, if
+                        trends continue without changes in policy, the access deficit will shrink from 2.8 to 2.7 billion people (2.0–3.5) by 2030,
+                        about half of them in Sub-Saharan Africa and a quarter of them in Central Asia and Southern Asia. Using IEA’s Stated
+                        Policies Scenario, 2.3 billion people will still lack access in 2030 under current and planned policies (IEA 2019). Action
+                        is urgently needed.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Urban-rural divide.</div>
+                  <p class="text-right">
+                        There are urban-rural discrepancies worldwide in access to clean cooking fuels and
+                        technologies: 83 percent of the people living in urban areas have access to clean fuels and technologies, compared with 37 percent
+                        of those living in the countryside. These discrepancies have been shrinking since 2010 owing, first, to increased
+                        access in rural areas, and, second, to population growth in the cities that is beginning to outpace access.
+                        </br>
+                        </br>
+                        Between 2000 and 2010 the disparity between urban areas and rural areas in access to clean cooking was fairly
+                        constant at just over 50 percentage points (52pp [45–57] in 2010), but this has steadily fallen over the past decade,
+                        to 46pp (36–55) in 2018. This is explained by trend changes in the annual increase in
+                        access to clean fuels and technologies for urban and rural areas. In rural areas, the annual increase
+                        has risen consistently, from only 0.2pp between 2000 and 2001 to 1.2pp between 2017 and 2018. In contrast, the
+                        annual increase in urban areas has fallen consistently over the past decade, from a high of 0.6pp between 2007 and
+                        2008 to only 0.2pp between 2017 and 2018. This means that while access has accelerated in the countryside, it has
+                        been decelerating in urban areas. In fact, if observed trends continue and population growth outpaces access to clean
+                        fuels, the proportion with access to clean cooking is projected to decline in urban areas as the new decade begins.
+                        Meanwhile, some countries with rapid access growth will reach near-universal access, from which point increased
+                        access is no longer possible.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">The top 20 countries with access deficits.</div>
+                  <p class="text-right">
+                        From 2014 to 2018, 20 countries accounted for more than 80 percent of the global population without access to clean cooking fuel.17 In terms of the percentage of the national
+                        population lacking access, 19 of the 20 countries with the lowest percentage of the population having access were
+                        least-developed countries in Africa. Of these, 15 had annualized increases in access over the same period of less
+                        than 0.1pp, with some of these displaying potential decreases in access.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Fuel trends.</div>
+                  <p class="text-right">
+                        In low- and middle-income countries of Central Asia and Southern Asia, Eastern and South-eastern Asia, Latin America and the Caribbean, Oceania, Sub-Saharan Africa, and Western Asia and Northern Africa, the
+                        use of <strong>gaseous fuels </strong>(liquefied petroleum gas [LPG], natural gas, and biogas) continues to increase. Since 2010,
+                        gas has overtaken unprocessed biomass fuels as the dominant fuel worldwide. (Unprocessed biomass, charcoal,
+                        coal, and kerosene are considered polluting fuels.) In <strong>urban areas</strong>, the use of <strong>electricity</strong> for cooking has risen, but
+                        gas remains the most common fuel. In <strong>rural areas</strong>, meanwhile, a decline in the use of polluting fuel, particularly
+                        raw coal, has been accompanied by increased use of <strong>gas</strong>, though <strong>unprocessed biomass fuels </strong>remain dominant.
+                        Finally, the global proportion using charcoal is low, but charcoal has overtaken unprocessed biomass in Sub-Saharan cities.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Outlook.</div>
+                  <p class="text-right">
+                        Since 2010, only small improvements in access to clean fuels and technologies for cooking have been realized. Although Asia has made notable gains, stagnant growth in access, combined with rapid population
+                        growth, have brought progress in Sub-Saharan Africa to a standstill. If this trend continues, any hope of achieving
+                        universal access rates by 2030 will be quashed, leaving a third of the global population vulnerable not only to
+                        adverse health effects but also to social and economic disadvantages. The latter is especially true for women and
+                        children, who shoulder time-consuming household tasks of gathering fuel and tending smoky stoves. These tasks
+                        take them away from remunerative work on the one hand while on the other subject them to adverse environmental
+                        conditions. That said, universal access remains achievable if serious efforts were made toward accelerating the
+                        transition to clean cooking worldwide, and particularly in Sub-Saharan Africa.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_cook_access.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_cook_map.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Youth, gender, and health implications</h3>
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    During 2018, 2.8 billion people were exposed to household air pollution. This exposure has been previously linked
+                    to high blood pressure and respiratory and cardiovascular disease. The use of polluting fuels increases the risk of burns, injuries, poisoning, chronic headaches, and many other
+                    ills. The most vulnerable group thus exposed are<strong> women and children</strong>, as they are traditionally the procurers and users
+                    of polluting household fuels.
+                    </br>
+                    </br>
+                    In access-deficit countries in Sub-Saharan Africa, a sizable percentage of children spend time gathering fuels. In
+                    addition, based on WHO statistics, the<strong> procurement of fuels is predominantly done by girls over boys</strong> (Figure: Percentages of girls and boys who gather wood and water).
+                    This imbalance creates a bias from an early age as girls spend more time procuring fuels instead of other activities, for
+                    example, receiving education.
+                    </br>
+                    </br>
+                    The degradation of household air quality because of polluting cooking fuels affects all household members. Some
+                    studies show, however, that the concentration of particles in the air increases drastically during meal preparation. This
+                    has an outsized effect on women and children because they are traditionally tasked with cooking.
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_cook_youth.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Clean cooking and gender</h3>
+            <p>
+                In developing countries around the world, millions of women and girls live in energy poverty, risking their lives
+                every day by working long, arduous hours to secure the energy needed by their households to cook their family’s
+                meals. The time spent cooking over inefficient stoves and procuring fuel restricts women’s ability to partake in
+                paid, as well as educational, political, and social activities, thereby perpetuating gender inequality, economic
+                poverty, and a persistent drudgery trap. In addition to cooking, women also endure incredible hardships for fuel
+                acquisition walking long distances searching for fuel and carrying heavy loads of firewood and water. Displaced
+                women have even worse burdens, in many cases having to walk for hours to find firewood, sometimes spending
+                the night outside of camps set up for displaced people, and thus increasing their vulnerability to physical and
+                sexual attack, dehydration, and other injuries. As the primary cooks in most developing-country households,
+                women are more susceptible than men to household air pollution, as they are more likely to inhale toxic smoke
+                from inefficient cooking fires.
+                </br>
+                </br>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_cook_gender.svg')}}"
+                        alt=""/>
+                <div>
+                    An in-depth analysis using data from Uganda shows that although female- and male-headed households
+                    show similar rates of access to clean cooking (at the country level, as well as in urban and rural areas), female
+                    headed
+                    households tend to have better access to clean cooking than male-headed households as household
+                    expenditure level increases. Among the richest 40 percent of households, women have greater access to
+                    improved cookstoves and clean-fuel stoves  than men. In terms of
+                    <strong>household time spent on cooking</strong>, women and girls spend much more time than men and boys. In Uganda,
+                    women (15 years and older) spend on average 3.8 hours per day cooking, and girls spend close to 30 minutes.
+                    In contrast, men and boys are virtually not involved in cooking. Similarly, female household members will often
+                    spend much more time<strong> acquiring and preparing fuel</strong> than men and boys. In Uganda, women spend 3.4 hours per
+                    week in cooking fuel acquisition and preparation over 7.5 times more time than men (Figure: Time spent acquiring fuel and preparing food, by gender).
+                </div>
+
+            </div>
+
+            <p>
+                The introduction of clean cooking fuels can drastically reduce the time women spend on unpaid household meal
+                preparation; clean cooking also promotes more cost-efficient fuels and thus financial savings in the long term.
+                The time and income recovered from these household activities free up space and opportunities for women and
+                girls, helping to lift them out of energy poverty. Time spent collecting fuelwood can be intensive: in India, time
+                spent collecting firewood ranges from three to ten hours per week. Nigerian households
+                spend an average of 1.7 hours per day gathering firewood (WHO 2019). In Kenya, households working with
+                improved cookstoves saw the time spent collecting fuel drop from an average of 12 hours per week to 5 hours 
+                and most participants reported using the time saved for economically productive tasks (WLPGA 2014).
+                </br>
+                </br>
+                Case studies have shown that when women receive <strong>empowerment training to sell stoves</strong>, they can dramatically
+                increase sales. For example, in Nepal and Kenya women doubled sales after training. In a pilot project supported
+                by the Clean Cooking Alliance with the Girl Guides in Ghana, 200 girls received training in empowerment,
+                entrepreneurship, and cooking technologies and fuels. Afterwards, each household purchased efficient
+                cookstoves. As a result, the girls reported a 50 percent reduction in cooking time, as well as two hours saved
+                per firewood collection trip. In 2014, a research study commissioned by the Clean Cooking Alliance in Kenya
+                found that women cookstove entrepreneurs sold three times as many cookstoves as their male peers when
+                given the same training and support. Additionally, women’s networks provide access to consumers in hard-to
+                reach
+                markets, and women distributors better understand the needs of women and more easily approach their
+                clients.
+                </br>
+                </br>
+                When women are positioned as the critical stakeholders they are both as users who will benefit from cleaner,
+                more efficient stoves and fuels, and as entrepreneurs and employees in the value chain, their efforts clearly
+                spur widespread adoption. Women have a role to play in every segment of the cooking value chain, and their
+                involvement can scale adoption of cooking products and services, while boosting their livelihoods. Women’s
+                involvement in the clean cooking sector can spur widespread distribution and delivery of cooking fuels and
+                technologies that will contribute to a thriving global industry.
+            </p>
+
+            <h3>Questions</h3>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 7</legend>
+                        <p class="card-text">Which population percentage does not have access to clean fuels in 2018? How many million people is that percentage?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q7Modal">Question 7</a>
+                        </div>
+                        <!-- Modal Q7 -->
+                        <div class="modal fade" id="Q7Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 7</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    The population percentage without access to clean fuels is  37 percent in 2018. The number of people<strong> without access to electricity</strong> is 2.8 billion.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 8</legend>
+                        <p class="card-text">Which is the access to clean fuels <strong>objective of the SDG7 by 2030</strong>? For which percentage that objective will be short in 2030?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q8Modal">Question 8</a>
+                        </div>
+                        <!-- Modal Q8 -->
+                        <div class="modal fade" id="Q8Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 8</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    The objective of the SDG7 is to guarantee universal access to clean fuels. However, that objective will be shor by at least 30% in 2030.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 9</legend>
+                        <p class="card-text">
+                            At the regional level, could you explain the access to clean fuels in <strong>Asia</strong> and <strong>Africa</strong>?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q9Modal">Question 9</a>
+                        </div>
+                        <!-- Modal Q9 -->
+                        <div class="modal fade" id="Q9Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 9</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    Greater access to clean cooking was achieved largely in <strong>two regions of Asia</strong>:
+                                    <ul>
+                                        <li>From 2010 to 2018, <strong>Eastern Asia and South-eastern Asia</strong> saw annualized increases in access of 1.6pp while the numbers of
+                                            people lacking access fell from 1.0 billion  to 0.8 billion</li>
+                                        </br>
+                                        <li><strong>Central Asia and Southern Asia</strong> also saw
+                                            improved access to clean cooking, with annualized increases of 1.5pp. The 1.11 billion people without
+                                            access dropped to 1.0 billion</li>
+                                    </ul>
+                                    </br>
+
+                                    In <strong>Sub-Saharan Africa</strong>, meanwhile, a stagnant access rate (annualized
+                                    increase of 0.4pp) combined with rapid population growth have meant that the numbers of people without access
+                                    have risen from 750 million people to 890 million people.
+                                    
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 10</legend>
+                        <p class="card-text"> Which percentage of the people living in <strong>urban areas</strong> and in <strong>rural areas</strong> have access to clean fuels and technologies?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q10Modal">Question 10</a>
+                        </div>
+                        <!-- Modal Q10 -->
+                        <div class="modal fade" id="Q10Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 10</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    There are urban-rural discrepancies worldwide in access to clean cooking fuels and
+                                    technologies:<strong> 83 percent of the people living in urban areas</strong> have access to clean fuels and technologies, compared with<strong> 37 percent
+                                        of those living in the countryside</strong>.
+                                    </br>
+                                    </br>
+                                    These <strong>discrepancies have been shrinking since 2010 owing</strong>:
+                                    <ul>
+                                        <li>First, to <strong>increased
+                                            access in rural areas</strong></li>
+                                        </br>
+                                        <li>Second, to<strong> population growth in the cities</strong> that is beginning to <strong>outpace access</strong></li>
+                                    </ul>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 11</legend>
+                        <p class="card-text">The percentage of girls allocating time to procurement of fuels and
+                            cooking is larger than the percentage of boys. Could you <strong>quantify that difference</strong>?
+                            In which countries that difference is larger? In the case of <strong>Uganda</strong>, could you
+                            determine the number of hours a week that girls spend gathering fuels and cooking?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q11Modal">Question 11</a>
+                        </div>
+                        <!-- Modal Q11 -->
+                        <div class="modal fade" id="Q11Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 11</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    In access-deficit countries in <strong>Sub-Saharan Africa</strong>, a sizable percentage of <strong>children</strong> spend time gathering fuels. In
+                                    addition, based on WHO statistics, the<strong> procurement of fuels is predominantly done by girls over boys</strong> (Figure: Percentages of girls and boys who gather wood and water).
+                                    </br>
+                                    </br>
+                                    In Uganda,
+                                    women (15 years and older) spend on average 3.8 hours per day <strong>cooking</strong>, and girls spend close to 30 minutes. In contrast, men and boys are virtually not involved in cooking.
+                                    </br>
+                                    </br>
+                                    Female household members will often
+                                    spend much more time<strong> acquiring and preparing fuel</strong> than men and boys. In Uganda, women spend 3.4 hours per
+                                    week in cooking fuel acquisition and preparation over 7.5 times more time than men (Figure: Time spent acquiring fuel and preparing food, by gender).
+                                    </br>
+                                    </br>
+                                    In Kenya, households working with
+                                    improved cookstoves saw <strong>the time spent collecting fuel drop from an average of 12 hours per week to 5 hours</strong>
+                                    and most participants reported using the time saved for economically productive tasks.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!--Section 3 (white)-->
+    <section id="renewables" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>Renewable energy</h2>
+
+            <p>
+                We have studied this topic in detail in the previous chapters. In this section, I only present the main
+                results in World Bank (2020a), since those results are based on the simulations done by the International
+                Energy Agency, and they complement the analysis done in the previous chapters.
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">The global trend.</div>
+                  <p class="text-right">
+                        Sustainable Development Goal (SDG) 7 posits a substantial increase in the share of renewable
+                        energy in total final energy consumption (TFEC). Meeting this target will require the penetration of renewable
+                        energy to accelerate in all three  <strong>end uses electricity </strong>,  <strong>heat </strong>, and  <strong>transport </strong>. In 2017, the share of renewable energy in
+                        TFEC increased to 17.3 percent, up from 17.2 percent in 2016. This rise reflects a more rapid growth in renewables
+                        (2.5 percent) compared with the overall growth of TFEC (+1.8 percent). Renewable energy consumption  <strong>has grown
+                            fastest in the power sector </strong>; growth of renewables consumption in the  <strong>heat and transport sectors has been much
+                            slower </strong>. Excluding the traditional uses of biomass, the share of renewables in TFEC rose to
+                        10.5 percent in 2017, up from 10.3 percent in 2016
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">The target for 2030.</div>
+                  <p class="text-right">
+                        Although there is no quantitative target for SDG 7.2, countries have agreed that the share of renewable energy would need to accelerate substantially to ensure access to affordable, reliable, sustainable,
+                        and modern energy for all. Despite impressive growth in renewable energy over the past decade, the world is not
+                        on track to meet the SDG 7 target.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Regional highlights.</div>
+                  <p class="text-right">
+                        At 69 percent of TFEC, Sub-Saharan Africa continues to show, by far, the highest share of renewable energy. The traditional uses of biomass, however, still account for almost 85 percent of renewable
+                        energy consumption in the region, while modern renewable energy is below the world average. Latin America
+                        and the Caribbean, on the other hand, had the largest share of modern renewables (29 percent) thanks to the
+                        extensive use of modern bioenergy and hydropower. In Asia, modern renewable energy shares remained below
+                        the global average at around 8 percent of the regional TFEC.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">The top 20 energy-consuming countries.</div>
+                  <p class="text-right">
+                        The share of renewable consumption varies by country. Between 2010 to 2017, 13 out of the top 20 energy-consuming countries increased their share of renewables. The United
+                        Kingdom in particular saw the largest relative increase, led by wind energy. Yet in Brazil, India, Indonesia, Nigeria,
+                        Pakistan, and Turkey, renewables have grown more slowly than total energy consumption.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Electricity.</div>
+                  <p class="text-right">
+                        Renewable electricity consumption increased by almost 6 percent year-on-year in 2017. In relative terms, this meant that the share of renewables in global electricity consumption reached 24.7 percent, the highest
+                        of all end-use sectors. With this growth, the renewables share in electricity surpassed its share in heat for the
+                        first time in history. In terms of growth rate, however, this represents a deceleration compared with the record
+                        year-on-year growth recorded in 2016. Lower hydropower output was the main reason behind the slower increase
+                        in renewables.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Heat.</div>
+                  <p class="text-right">
+                        Renewables used for heating increased by 1.1 percent, reaching 23.5 percent of total final heat consumption in 2017, including traditional uses of biomass. The growth was led by modern renewable energy uses, which
+                        grew by 2.3 percent year-on-year in 2017. Overall, the share of modern renewables reached 9.2 percent of heat
+                        consumed globally, up from 9.1 percent in 2016. Consumption of biomass for its traditional uses remained almost
+                        unchanged (+0.3 percent year-on-year) in 2017 compared with 2016, still accounting for more than 14 percent of
+                        global heat consumption.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Transport.</div>
+                  <p class="text-right">
+                        The share of renewable energy in transport flattened in 2017, remaining at 3.3 percent in 2017. Most of the renewable energy consumed came in the form of liquid biofuels, mainly crop-based ethanol and biodiesel,
+                        thanks to policy support (among other factors) in Brazil, the European Union, and the United States. In 2017,
+                        consumption of electricity in the transport sector was 1.3 exajoules (EJ), of which 24 percent was renewable
+                        (0.3 EJ), representing 0.3 percent of global energy consumption in the transport sector.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+        </div>
+    </section>
+
+<!--Section 4 (Grey)-->
+    <section id="efficiency" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Energy efficiency</h2>
+
+            <div class="text_image_css">
+                <div>
+                    <u>Global trend.</u>
+                    </br>
+                    </br>
+                    After a period of relative stability, the rate of global primary energy intensity defined as the
+                    percentage decrease in the ratio of global total primary energy supply per unit of gross domestic product (GDP)
+                    has slowed in recent years. Global primary energy intensity was 5.01 megajoules (MJ) per U.S. dollar (2011 PPP
+                    [purchasing power parity]) in 2017, a 1.7 percent improvement from 2016. This was the lowest rate of improvement
+                    since 2010 (Figure: Global primary energy intensity and its annual change, 1990–2017).
+                    </br>
+                    </br>
+                    <u>2030 target.</u>
+                    </br>
+                    </br>
+                    Energy intensity improvements are moving further away from the target set under the United Nations’ Sustainable Development Goal (SDG) for 2030. Between 2010 and 2017 the average annual rate of
+                    improvement in global primary energy intensity was 2.2 percent. Although better than the rate of 1.3 percent
+                    between 1990 and 2010, it is well below the SDG 7 target of 2.6 percent which would have doubled the historic
+                    trend.
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch11/energy_efficiency_trend.svg')}}"
+                        alt=""/>
+            </div>
+            </br>
+            <p>
+                Annual improvement until 2030 will now need to average over 3 percent to meet the target set in SDG 7.
+                Even a positive rebound, as indicated by a preliminary estimate of 2 percent for 2019, remains well below the
+                3 percent annual increases needed to reach SDG target 7 or even the 2.2 percent seen between 2010 and 2017.
+                </br>
+                </br>
+                <u>Regional highlights.</u>
+                </br>
+                </br>
+                Asia is where more robust, continuous improvements are seen in energy intensity than in any other world region. Between 2010 and 2017, primary energy intensity in Eastern Asia and South-eastern
+                Asia improved by an annual average rate of 3.3 percent. Similarly, in Central Asia and Southern Asia and Oceania,
+                the average annual improvement rate of 2.5 percent between 2010 and 2017 was above the global average
+                (2.2 percent) and an improvement on historic trends. Rates of improvement were just below the global average
+                in Northern America and Europe (2.1 percent), with the lowest rates of improvement in Sub-Saharan Africa
+                (1.3 percent), Western Asia and Northern Africa (1 percent), and Latin America (0.9 percent) (Figure: Growth rate of GDP, primary energy demand, and regional energy intensity, 2010–17). Data on absolute
+                energy intensity reveal wide regional differences: the most energy-intensive region is Sub-Saharan Africa, and
+                Latin America and the Caribbean the least. These variations likely mirror not energy efficiency so much as
+                economic structure, energy supply, and access.
+                </br>
+                </br>
+                <u>End-use trends</u>
+                </br>
+                </br>
+                Although global energy intensity improved across all sectors during the period 2010–17, the rate differs by sector. Using different intensity metrics, the rate of improvement declined compared with the period
+                1990–2010 in all sectors except transport, where fuel-efficiency standards drove improvements. The decline in
+                the rate of improvement from one period to the other is most noticeable in services, agriculture, and, to a lesser
+                extent, industry. All three of these sectors were strongly influenced by emerging economies, which experienced
+                rapid improvements in energy intensity during the period 1990–2010 as they mechanized production and shifted
+                to higher-value goods and services (Figure: Growth rate of energy intensity by sector, 1990–2010 and 2010–17).
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                     <strong>Energy intensity </strong> is a measure of the energy inefficiency of an economy. It is calculated as units of  <strong>energy per unit of GDP </strong>.
+
+                    <ul>
+                        <li> <strong>High energy intensities </strong> indicate a high price or cost of converting energy into GDP.</li>
+                        </br>
+                        <li> <strong>Low energy intensity </strong> indicates a lower price or cost of converting energy into GDP.</li>
+                    </ul>
+                
+                    High energy intensity means high industrial output as portion of GDP. Countries with low energy intensity signifies labor intensive economy. 
+			        </br>
+                    </br>
+                    For more information about energy intensity, visit:
+
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Energy_intensity" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Wikipedia</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.energy.gov/eere/analysis/energy-efficiency-vs-energy-intensity" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">American Energy Department</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>Questions</h3>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 12</legend>
+                        <p class="card-text"> Can you define the <strong>concept of the energy intensity</strong>?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q12Modal">Question 12</a>
+                        </div>
+                        <!-- Modal Q12 -->
+                        <div class="modal fade" id="Q12Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 12</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <strong>Energy intensity</strong> is a measure of the energy inefficiency of an economy.
+                                    It is calculated as units of <strong>energy per unit of GDP</strong>.
+                                    
+                                    <ul>
+                                        <li><strong>High energy intensities</strong> indicate a high price or cost of converting energy into GDP.</li>
+                                        </br>
+                                        <li><strong>Low energy intensity</strong> indicates a lower price or cost of converting energy into GDP.</li>
+                                    </ul>
+                                    </br>
+                                    High energy intensity means high industrial output as portion of GDP. Countries with low energy intensity 
+                                    signifies labor intensive economy.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 13</legend>
+                        <p class="card-text">Can you explain the <strong>evolution of the energy intensity</strong> from 1990 to 2018?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q13Modal">Question 13</a>
+                        </div>
+                        <!-- Modal Q13 -->
+                        <div class="modal fade" id="Q13Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 13</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    In 1990, the energy intensity was close to 8 MJ/USD. In 2018, it was 5 MJ/USD.
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 14</legend>
+                        <p class="card-text">Can you explain the <strong>evolution of the energy intensity</strong> at a regional level?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q14Modal">Question 14</a>
+                        </div>
+                        <!-- Modal Q14 -->
+                        <div class="modal fade" id="Q14Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 14</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <strong>Asia </strong>is where more robust, continuous improvements are seen in energy intensity than in any other world region.
+                                    </br>
+                                    </br>
+                                    Between 2010 and 2017, primary energy intensity in <strong>Eastern Asia and South-eastern
+                                        Asia </strong>improved by an annual average rate of 3.3 percent.
+                                    </br>
+                                    </br>
+                                    Similarly, in <strong>Central Asia and Southern Asia and Oceania</strong>,
+                                    the average annual improvement rate of 2.5 percent between 2010 and 2017 was above the global average
+                                    (2.2 percent) and an improvement on historic trends.
+                                    </br>
+                                    </br>
+                                    Rates of improvement were just below the global average
+                                    in <strong>Northern America and Europe</strong> (2.1 percent), with the lowest rates of improvement in <strong>Sub-Saharan Africa</strong>
+                                    (1.3 percent),<strong> Western Asia and Northern Africa</strong> (1 percent),
+                                    and <strong>Latin America</strong> (0.9 percent) (Figure: Growth rate of GDP, primary energy demand, and regional energy intensity, 2010–17).
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                            <legend class="border-bottom mb-4">Question 15</legend>
+                        <p class="card-text">Can you explain the <strong>evolution of the energy intensity</strong> by sectors?
+                        </p>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#Q15Modal">Question 15</a>
+                        </div>
+                        <!-- Modal Q15 -->
+                        <div class="modal fade" id="Q15Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Question 15</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    Although <strong>global energy intensity improved across all sectors</strong> during the period 2010–17, the rate differs by sector.
+                                    </br>
+                                    </br>
+                                    Using different intensity metrics, <strong>the rate of improvement declined</strong> compared with the period
+                                    1990–2010 in all sectors except transport, where fuel-efficiency standards drove improvements.
+                                    </br>
+                                    </br>
+                                    The decline in
+                                    the rate of improvement from one period to the other is<strong> most noticeable</strong> in services, agriculture, and, to a lesser
+                                    extent, industry.
+                                    </br>
+                                    </br>
+                                    All three of these sectors were strongly influenced by <strong>emerging economies</strong>, which experienced
+                                    rapid improvements in energy intensity during the period 1990–2010 as they mechanized production and shifted
+                                    to higher-value goods and services (Figure: Growth rate of energy intensity by sector, 1990–2010 and 2010–17).
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    
+{% endblock content %}

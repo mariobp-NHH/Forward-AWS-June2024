@@ -1,0 +1,277 @@
+{% extends "aab_course/aab_course_layout.html" %}
+{% block content %}
+    <!-- Showcase -->
+    <section class="home_section_css">
+      <div class="container">
+          <div class="header">
+                <div class="box">
+                      {% with messages = get_flashed_messages(with_categories=true) %}
+                          {% if messages %}
+                              {% for category, message in messages %}
+                                  <div class="alert alert-{{ category }}">
+                                      {{ message }}
+                                  </div> 
+                              {% endfor %}
+                          {% endif %}
+                      {% endwith %}               
+                      <h1 class="text-center"><span class="text-warning"> Auditing, Accounting and Business </span> Course</h1>
+                      <p class="mb-1">
+                        This course studies auditing, accounting, and the role of digitalization in the most advanced business models in the green economy sector. 
+                        <br>
+                        <br>
+                        We study the main features of different companies that aim to increase sustainability, and we study their business models that connect digitalization and green economy.
+                      </p>
+                </div>
+                <div class="box">
+                  <div class="h1 mb-3">
+                    <i class="bi bi-bell"></i>
+                  </div>
+                  <h3 class="text-center"><span class="text-warning"> Announcements: </span>
+                  </h3>
+                  {% for announcement in announcements.items %}
+                      <article class="media content-section">
+                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
+                        <div class="media-body">
+                          <div class="article-metadata">
+                            <a class="mr-2" href="{{ url_for('aab_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
+                            <small class="text-muted">{{ announcement.date_posted.strftime('%Y-%m-%d') }}</small>
+                          </div>
+                          <h4><a class="article-title" href="{{ url_for('aab_course_announcements.announcement', announcement_id=announcement.id) }}">{{ announcement.title }}</a></h4>
+                          <p class="article-content">{{ announcement.content }}</p>
+                        </div>
+                      </article>
+                  {% endfor %}
+                  {% for page_num in announcements.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                    {% if page_num %}
+                      {% if announcements.page == page_num %}
+                        <a class="btn btn-info mb-4" href="{{ url_for('aab_course.aab_course_home', page=page_num) }}">{{ page_num }}</a>
+                      {% else %}
+                        <a class="btn btn-outline-info mb-4" href="{{ url_for('aab_course.aab_course_home', page=page_num) }}">{{ page_num }}</a>
+                      {% endif %}
+                    {% else %}
+                      ...
+                    {% endif %}
+                  {% endfor %}
+                </div>
+            </div>
+        </div>
+      </div>
+    </section> 
+
+
+    <!-- Boxes -->
+    <section class="p-5", style="background-color:#6DA6A6;">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card text-light", style="background-color:#6c757d;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                              <i class="bi bi-terminal-fill"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                App Development Module
+                            </h3>
+                            <p class="card-text">
+                              The app development module is organized in three blocks that complement each other. First, the students design the <strong>layout of the app</strong> by using HTML, CSS, JavaScript and Flask. Second, they program the <strong>economic simulations</strong> by using Python. Finally, they <strong>deploy their apps</strong> in the server, by using GitGub, Heroku, and Amazon Web Services.
+                              <br>
+                              <br>
+                            </p>
+                            <div class="container_buttons_links_header">
+                              <div class="btn">
+                                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">App Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="card text-light", style="background-color:#6c757d;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                              <i class="bi bi-bar-chart-fill"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Business Module
+                            </h3>
+                            <p class="card-text">
+                              In the business module, we study relevant business models in the green economy sector that combine digitalization and the most advanced economic models to achieve sustainability. First, we study the main characteristics of the <strong>market</strong> in which the company operates. Second, we study the <strong>company business model</strong> and the role of digitalization in that model. Third, an <strong>expert</strong> in the sector gives a talk about the business model that we study in each chapter.
+                            </p>
+                            <div class="container_buttons_links_newsletter">
+                              <div class="btn">
+                                <a href="{{ url_for('aab_course_business_module.aab_course_business_module_home') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Business Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Question Accordion -->
+    <section id="questions" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        </div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <!-- Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+              >
+                Assignment (Semesteroppgave 2023).
+              </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                <strong>Bergen municipality and Skyss</strong> are concerned about the <strong>air quality</strong> in the city produced by <strong>transport</strong>, and they want to introduce <strong>new functionalities </strong>
+                in the Skyss App to <strong>abate transport carbon emissions</strong> and to <strong>increase air quality</strong>. Write an essay, <strong>no longer than six pages</strong>, in which you give advice 
+                to Bergen municipality and Skyss to help them to introduce those functionalities considering the next points. Those points are only illustrative, 
+                you can customize your essay based on the solutions that you propose. You have freedom to choose the point that you consider relevant.                
+              </p>
+              <ol>
+                <li>
+                    Which are the <strong>functionalities</strong> that could be implemented in the app to abate transport carbon emissions?
+                </li>
+                <li>
+                    Which is the <strong>target group</strong> for those functionalities?
+                </li>
+                <li>
+                    How will you <strong>incentivize</strong> the use of those functionalities?
+                </li>
+                <li>
+                    Which could be the <strong>main challenges</strong> from a social, economic, and technical perspective?
+                </li>
+                <li>
+                    Could you provide some <strong>cost estimation</strong> to introduce those functionalities?
+                </li>
+                <li>
+                    If you consider it relevant, design a <strong>Canvas Business Model</strong> to address these points.
+                </li>
+              </ol>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+              >
+                Eksamen 2023.
+              </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                In the part of the exam connected to <strong>Mario’s teaching</strong>, he will ask something about <strong>chapter 2</strong> in which we have 
+                studied the relationship between electricity and digitalization.
+                <br>
+                <br> 
+                The question in the exam aims to link the main <strong>haracteristics of electricity markets</strong>c, and how <strong>digitalization</strong> could 
+                be useful to define new <strong>business models and business opportunities</strong> in the electricity sector.
+          
+              </p>
+              <ol>
+                <li>
+                  <strong>Example one</strong>. An electricity company that is selling electricity in Bergen aims to help <strong>households</strong> to 
+                  reduce their electricity bill by using an app developed by the company. This company considers that there 
+                  are some business opportunities in the household sector in Bergen. However, they still lack some information 
+                  about the electricity market, and how digitalization could help the company to make profit providing useful services 
+                  to the <strong>households</strong> to reduce their electricity bill. 
+                  <br>
+                  <ul>
+                    <li>Could you explain to the company that wants to enter that market the <strong>main characteristics of electricity markets</strong>? </li>
+                    <li>How those characteristics are important to define the <strong>business model</strong> of the company? </li>
+                    <li>How will those characteristics define the <strong>functionalities</strong> implemented in the app?</li>
+                  </ul>                 
+                </li>
+                <li>
+                  <strong>Example two</strong>. The same as in example one, but the electricity company aims to help <strong>factories</strong> to reduce their electricity bill. 
+                </li>
+                <li>
+                  <strong>Example three</strong>. The same as in example one, but the electricity company aims to help <strong>hospitals</strong> to reduce their electricity bill. 
+                </li>
+              </ol>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+              >
+                Key dates.
+              </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                The essay must be submitted by using WiseFlow within <strong>December 19</strong>.
+              </p>
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFour"
+              >
+                Lectures.
+              </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+              <p>
+                The <strong>calendar</strong> for the lectures is as follows: 
+              </p>
+              <ul>
+                <li>Wednesday 08/11/2023. Auditorium D111. From 10:15 to 14:00. Lecturer Ragnar. Auditing</li>
+                <li>Monday 13/11/2023. Auditorium D111. From 10:15 to 14:00. Lecturer Mario. Chapter 1: Cities and Digitalization.</li>
+                <li>Wednesday 15/11/2023. Auditorium D111. From 10:15 to 14:00. Lecturer Torje.</li>
+                <li>Monday 20/11/2023. Auditorium D111. From 10:15 to 14:00. Lecturers: David Larose (10:15 to 11:00) (Chapter 1: Cities and Digitalization); Mario (11:15 to 14:00) (Chapter 2: Energy and Digitalization).</li>
+                <li>Wednesday 22/11/2023. Auditorium D111. From 10:15 to 14:00. Lecturers: Guro Grøtterud (10:15 to 11:00) (Chapter 2: Energy and Digitalization); Mario (11:15 to 14:00) (Chapter 3: Auditing).</li>
+                <li>Monday 27/11/2023. Auditorium D111. From 10:15 to 14:00. Lecturer: Hussnain Bashir</li>
+                <li>Wednesday 29/11/2023. Auditorium D111. From 10:15 to 14:00. Lecturer: Hussnain Bashir</li>
+              </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+              <button class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseFive"
+              >
+                Tutorials.
+              </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+              <div class="accordion-body">
+                <p>The tutorials will take place whenever you want. You only need to drop me a line one or two days in advance and we will set an appointment. I work in the third floor in builing K2. In that floor, there is a common area where we can meet and work.
+                  <br>
+                  <br>
+                  If you cannot meet physically, please drop me a line, and we set an appointment by using Zoom (https://nhh.zoom.us/j/6343089435)
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+{% endblock content %}

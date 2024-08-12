@@ -1,0 +1,135 @@
+/* Colors 
+Farge rosa: 205, 180, 158
+Farge beige: 243, 232, 204
+Farge lys grønn: 193, 211, 151
+Farge mørk grønn: 80, 94, 41
+Farge brun: 43, 41, 28
+Bakgrunnsfarge - lys beige: 248, 244, 236
+Farge i boksene: 
+
+*/
+
+/* Utilities  */
+p {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 18px;
+    text-align: left;
+    font-weight: bold;
+  }
+  ol {
+    font-size: 18px;
+  }
+  /* Section header */
+  .section_header_methodology {
+    background-color:rgb(80, 94, 41);
+  }
+  .header {
+    display: flex;  
+    align-items: start;
+    background: rgb(80, 94, 41);
+  }
+  .header .box {
+    flex: 1;
+    background: rgb(248, 244, 236);
+    color: rgb(43, 41, 28);
+    border-radius: 10px;
+    margin: 30px 10px;
+    padding: 5px 5px;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+  .header .box:nth-of-type(1) {
+    flex-grow:2;
+  }
+  .header .box:nth-of-type(2) {
+    flex-grow:1;
+  }
+  .container_buttons_links_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    transition: transform 0.3s ease;
+  }
+  .container_buttons_links_header a:hover {
+    color: rgb(43, 41, 28);
+    transform: scale(1.1);
+  }
+  .container_buttons_links_header btn {
+    width: 100px;
+    height: 100px;
+    background: #2a4359;
+    color: #fff;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+  }
+  /* Section methodology */
+  .section_body_methodology {
+    background-color:rgb(248, 244, 236);
+  }
+  .methodology {
+    display: flex;  
+    align-items: start;
+    background-color:rgb(248, 244, 236);
+  }
+
+  .methodology .box_table1 {
+    flex: 1;
+    background: rgb(193, 211, 151);
+    color: black;
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    padding: 15px 15px;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+  }
+  /* liten uten innhold */ 
+  .methodology .box_table1:nth-of-type(1) {
+    flex-grow:1;
+    background: rgb(248, 244, 236);
+  }
+  /* liten uten innhold */ 
+  .methodology .box_table1:nth-of-type(2) {
+    flex-grow:4;
+  }
+  .methodology .box_table1:nth-of-type(3) {
+    flex-grow:1;
+    background: rgb(248, 244, 236);
+  }
+  /* Table with two columns */
+  .methodology .box_table2 {
+    flex: 1;
+    background: rgb(193, 211, 151);
+    color: black;
+    border-radius: 10px;
+    margin: 10px 10px 10px 10px;
+    padding: 15px 15px;
+    text-align:center;
+    align-items: center;
+    justify-content: center;
+  }
+  .methodology .box_table2:nth-of-type(1) {
+    flex-grow:1;
+    background: rgb(193, 211, 151);
+  }
+  .methodology .box_table2:nth-of-type(2) {
+    flex-grow:1;
+    background: rgb(193, 211, 151);
+  }
+  
+  
+  @media (max-width:768px) { 
+    .header {
+      flex-direction: column;
+    } 
+    .methodology {
+      flex-direction: column;
+    } 
+  }

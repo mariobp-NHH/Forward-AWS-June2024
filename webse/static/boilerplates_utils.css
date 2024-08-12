@@ -1,0 +1,158 @@
+/* Header */
+.home_header_css {
+  display: flex;
+  background: #343a40 ;
+  }
+.home_header_css .container {
+  display: flex;
+  background:  #343a40;
+  }
+.home_header_css .container .box {
+  flex: 1;
+  background: #343a40;
+  color: #fff;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.home_header_css .container .box:nth-of-type(1) {
+  background: #343a40;
+  flex-grow: 2;
+}  
+.home_header_css .container .box:nth-of-type(2) {
+  background: #343a40;
+  flex-grow: 1;
+  padding: 15px 20px;
+} 
+/* End header */
+
+/*Container buttons section header*/
+.container_buttons_links_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_header a:hover {
+  color: #343a40;
+}
+.container_buttons_links_header btn {
+  width: 100px;
+  height: 100px;
+  background: #343a40;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+/*End container buttons section header*/
+
+
+/* Container home chapters */
+.home_chapter_css {
+  display: flex;
+  background: #17a2b8 ;
+  }
+.home_chapter_css .container {
+  display: flex;
+  background:  #ffffff;
+  }
+.home_chapter_css .container .box {
+  flex: 1;
+  background: #343a40;
+  color: #fff;
+  height: 300px;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+.home_chapter_css .container .box:nth-of-type(1) {
+  background: #ffffff;
+  flex-grow: 0.1;
+}  
+.home_chapter_css .container .box:nth-of-type(2) {
+  background: #343a40;
+  flex-grow: 3;
+}  
+.home_chapter_css .container .box:nth-of-type(3) {
+  background: #343a40;
+  flex-grow: 3;
+}  
+.home_chapter_css .container .box:nth-of-type(4) {
+  background: #343a40;
+  flex-grow: 3;
+}  
+.home_chapter_css .container .box:nth-of-type(5) {
+  background: #343a40;
+  flex-grow: 3;
+}  
+.home_chapter_css .container .box:nth-of-type(6) {
+  background: #ffffff;
+  flex-grow: 0.1;
+}  
+/* End container home chapters */
+
+/* Container chapter 2 */
+.section_chapter2 .container {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.column {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border: #ccc solid 0px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;      
+  flex:1;
+}
+.column1 .box {
+  flex: 1;
+  background: #9ac2be;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  height: 300px;
+}
+.column2 .box {
+  flex: 1;
+  background: #9ac2be;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+.column3 .box {
+  flex: 1;
+  background: #9ac2be;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+/* End container chapter 2 */
+
+
+
+@media(max-width:768px){
+  .home_chapter_css .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .section_chapter2 .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .home_header_css .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+}

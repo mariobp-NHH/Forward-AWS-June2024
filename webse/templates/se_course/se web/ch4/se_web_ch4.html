@@ -1,0 +1,904 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch4. Global Energy Transformation. A road map to 2050 </span></h1>
+                    <p class="mb-1">
+                        This chapter studies the transformation in the energy sector to abate carbon emissions. We study from the transformations
+                        in the energy mix, gains in efficiency or energy intensity to investments in energy carriers, or employment in the energy sector.
+                        </br>
+                        </br>
+                        The objective is to have holistic visions of the main transformations in this sector. We extend the analysis by studying different energy carriers in the
+                        next chapter.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch4/materialch4.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch4/presentationch4.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main models used by the International Renewable Energy Agency to predict the energy mix to satisfy
+                            the Paris abate carbon emissions. We provide an overview of the energy mix, the investments, the gains in
+                            energy efficiency by sectors and the energy intensity in the roadmap to 2050.
+                        </p>
+
+                      </a>
+                      <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">A pathway for the transformation of the global energy landscape</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main transformations that need to take place in the energy sector to
+                            achieve the Paris agreement.
+                        </p>
+                      </a>
+                       <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Action needed now</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main transformation that need to take place in the Power sector, the Transport sector, the Industry sector, and
+                            the Building sector to achieve the Paris agreement.
+                        </p>
+                      </a>
+                      <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Measuring the socio-economic footprint of the energy transition</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the economic and environmental impact of the energy transition.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/ch4_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2 style="justify-content:center;">Introduction</h2>
+
+            <p>
+                This chapter is based on the report entitled "Global Energy Transformation. A road map to 2050" (IREMA, 2019b).
+                The report focuses its analysis on <strong>two pathways</strong> for the global energy system:
+            </p>
+            </br>
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Reference Case.</div>
+                  <p class="text-right">
+                      This scenario considers current and planned policies of countries. It includes commitments made in
+                      Nationally Determined Contributions and other planned targets. It presents a perspective based on governments’ current
+                      projections and energy plans.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">REmap Case</div>
+                  <p class="text-right">
+                      REmap Case is a cleaner climate-resilient pathway based largely on more ambitious, yet achievable, uptake of renewable
+                      energy and energy efficiency measures, which limits the rise in global temperature to well below 2 degrees and closer to 1.5
+                      degrees above pre-industrial levels and is aligned within the envelope of scenarios presented in the Intergovernmental Panel on Climate
+                      Change (IPCC) Special Report on Global Warming of 1.5 °C.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    For more information about the REmap case and the data used in that case visit
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.irena.org/Statistics/View-Data-by-Topic/Energy-Transition/REmap-Energy-Demand-and-Supply-by-Sector" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">IRENA (Energy Transition)</a>
+                   </div>
+                </div>
+                <p>
+                    The analysis presented in this chapter (IREMA, 2019b) is based in the <strong>E3ME model</strong>. E3ME is a
+                    macro-econometric model designed to assess global policy challenges. It is the most advanced econometric model in
+                    the world and is widely used for policy assessment, forecasting and research purposes. The model is owned and
+                    maintained by Cambridge Econometrics. For more information about E3ME <strong>model</strong> and the <strong>manual</strong>, visit:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.e3me.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">E3ME model</a>
+                   </div>
+                    <div class="btn">
+                        <a href="https://www.e3me.com/what/e3me/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">E3ME manual</a>
+                   </div>
+                </div>
+            </div>
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Exercises</h3>
+                <p>
+                    Carbon emissions must be reduced to 10 GT per year in 2050. Do you know which
+                    are the <strong>three main ways to reduce carbon emissions</strong>?
+                    </br>
+                    </br>
+                    Do you know which are the<strong> main sectors</strong> where carbon emissions reductions could be more effective?
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch4_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 1</a>
+                   </div>
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch4_ex2') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 2</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+<!--Section 1-->
+    <section id="section1" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>A pathway for the transformation of the global energy landscape</h2>
+
+            <h3>Energy-related CO2 emissions</h3>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        Based on a carbon budget from the latest Intergovernmental Panel on Climate Change (IPCC) special report on the
+                        impacts of global warming of 1.5°C (IPCC, 2018), the Reference Case in this report shows that the global energy-related CO2
+                        budget will run out at the latest by 2030 (based on the IPCC assessment of a  50%  confidence level for 1.5°C).
+                        To set the world on a path way towards meeting the aims of the Paris Agreement, energy-related CO2 emissions would need
+                        to be scaled back by at least an additional 400 gigatonnes (Gt) by 2050 compared to the Reference Case; in other words,
+                        <strong>annual emissions would need to be reduced by around  3.5%  per year from now until 2050 and continue afterwards</strong>.
+                        </br>
+                        </br>
+                        Annual energy-related CO2 emissions under current and planned policies – the Reference Case – are expected to remain flat, at 33 Gt
+                        CO2 per year in 2050, but must be reduced by $ 70\%  $ to bring temperature rise to the well-below 2°C climate goal – as in the
+                        REmap Case.<strong> Electrification</strong>, <strong>renewable energy</strong> and <strong>energy efficiency</strong> measures provide over $ 90\% $ of
+                        the reductions required by 2050. Renewable power and electrification of heat and transport alone reduce emissions by $ 75\% $
+                        (figure: Annual energy-related carbon emissions).
+                    </p>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/energy_related_emissions.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    For more information about the Intergovernmental Panel on Climate Change (IPCC), visit:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.ipcc.ch/about/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Intergovernmental Panel on Climate Change (IPCC)</a>
+                   </div>
+                </div>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    In 2010 about 9 Giga-tons of Carbon (GtC) were emitted from burning fossil fuels as 33 Giga-tons of CO2 gas.
+			        </br>
+                    </br>
+			        <strong>How much is 9 Giga-ton?</strong> 9 billion tons or 9.000.000.000.000.000 grams. 9 Giga-tons is the weight of about 132 billion people.
+                    The amount of carbon we are putting into the atmosphere each year is equal to 20 times the weight of the current world population.
+			        </br>
+                    </br>
+			        For more information about <strong>annual CO2 emissions</strong> data visit:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://www.iea.org/articles/global-co2-emissions-in-2019" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">International Energy Agency</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.esrl.noaa.gov/gmd/outreach/behind_the_scenes/gases.html" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Global Monitoring Laboratory</a>
+                   </div>
+                </div>
+                <p>
+                    For more information about the <strong>carbon cycle</strong> and the<strong> greenhouse effect</strong> visit:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://www.esrl.noaa.gov/gmd/education/carbon_toolkit/basics.html" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Global Monitoring Laboratory</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>Energy intensity</h3>
+
+            <p>
+                The <strong>energy intensity</strong> improvement rate would need to increase to  3.2%  per year. This is higher than the
+                improvements in recent years (2.3%) or projected in the Reference Case (2.4%)  (figure: Energy intensity).
+                The gap between the rate in the Reference Case and what is needed in REmap can be filled through several key means:
+
+                <ul>
+                    <li>Scaling up solar, wind and other renewables.</li>
+                    <li>Improving energy efficiency.</li>
+                    <li>Electrifying transport and heat.</li>
+                    <li>Structural change in transport
+                    and industry.</li>
+                </ul>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/energy_intensity.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/energy_consumption_energy_carrier.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <strong>Energy intensity</strong> is a measure of the energy inefficiency of an economy. It is calculated as units of <strong>energy per unit of GDP</strong>.
+
+                    <ul>
+                        <li><strong>High energy intensities</strong> indicate a high price or cost of converting energy into GDP.</li>
+                        <li><strong>Low energy intensity</strong> indicates a lower price or cost of converting energy into GDP.</li>
+                    </ul>
+
+                    High energy intensity means high industrial output as portion of GDP. Countries with low energy intensity signifies labor intensive economy.
+                    </br>
+                    </br>
+                    For more information about energy intensity, visit:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Energy_intensity" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Wikipedia</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.energy.gov/eere/analysis/energy-efficiency-vs-energy-intensity" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">American Energy Department</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>An electrified future</h3>
+
+            <p>
+                The increasingly electric energy system would transform how the power sector and demand interact.
+                By 2050,  86%  of electricity generation would be renewable,
+                and  60%  would come from solar and wind. Wind and solar PV would dominate expansion, with installed
+                capacities of over 6000 GW and 8500 GW, respectively, in 2050 (figure: Energy consumption by energy carrier).
+                </br>
+                </br>
+                The share of electricity in final energy would increase from just 20% today to almost 50% by 2050
+                (figure: Energy consumption by energy carrier). The share of electricity consumed in industry and buildings would double.
+                In transport it would need to increase from just 1% today to over 40% by 2050.
+            </p>
+
+            <h3>The weight of renewables in electrification</h3>
+
+            <p>
+                By 2050, solar power, with 8500 GW installed capacity, and wind, with 6000 GW, would account for three-fifths
+                of global electricity generation. Electricity consumption in end-use sectors will more than double from today's
+                level (figure: Wind and solar renewable-based generation).
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/end_use_renewables.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/renewable_introduction_Investment.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Investments</h3>
+
+            <p>
+                Cumulative investments in the energy system to 2050, including infrastructure and efficiency, will total
+                almost USD 95 trillion in the Reference Case, and would increase to USD 110 trillion in the REmap Case
+                (figure: Investment).
+                </br>
+                </br>
+                Renewable power technologies are increasingly the least-cost electricity supply options available.
+                The renewable energy market would grow quickly as
+                costs continue to decline, as technologies improve and as innovation brings additional applications.
+                </br>
+                </br>
+                The REmap Case increases investments in the global energy system by USD 15 trillion, and shifts investment
+                into electrification, renewable energy
+                and energy efficiency technologies, which together, would make up four-fifths of the cumulative energy
+                sector investments over the period to 2050.
+                </br>
+                </br>
+                However, an energy system based heavily on renewables would be different than
+                past systems and would require significant investments in <strong>power grids</strong>, complementary infrastructure
+                and energy flexibility. In the Reference
+                Case, investments for these would amount to USD 9 trillion. In the REmap Case, an additional USD 4 trillion
+                would be required, for a total of USD 13 trillion.
+            </p>
+
+
+            </br>
+
+            <h3>Questions:</h3>
+
+            <p>
+                All the questions are referred to the REmap Case in 2050.
+            </p>
+            
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q1.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 1</legend>
+                            <p class="card-text">Carbon emissions must be reduced to 10 GT per year in 2050.
+                                Which are the <strong>three main ways to reduce carbon emissions</strong>?
+                                <strong>(chose one of the next options):</strong>
+
+
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q1.type.errors %}
+                                    {{ form_m2_ch4_q1.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q1.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q1.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q1.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q2.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 2</legend>
+                        <p class="card-text">Which are the<strong> main sectors</strong> where carbon emissions need to be more effective?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q2.type.errors %}
+                                    {{ form_m2_ch4_q2.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q2.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q2.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q2.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q3.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 3</legend>
+                            <p class="card-text">The share of electricity in the energy production will pass from 20% to 80%.
+                                Which <strong>share of electric production will be renewable</strong>?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q3.type.errors %}
+                                    {{ form_m2_ch4_q3.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q3.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q3.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q3.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q4.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 4</legend>
+                            <p class="card-text">
+                                Which will be the <strong>share of electricity use by sector</strong?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q4.type.errors %}
+                                    {{ form_m2_ch4_q4.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q4.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q4.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q4.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+<!--Section 2-->
+    <section id="section2" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Action needed now</h2>
+            <p>
+                This chapter makes clear that an energy transition is urgently required, and that <strong>renewable energy</strong>,
+                <strong>energy efficiency</strong> and <strong>electrification</strong> are the three cornerstones of that transition.
+                </br>
+                </br>
+                In this section, we present some of the key actions that are needed now to achieve the Paris agreement.
+                </br>
+                <ol>
+                    <li>The <strong>power sector</strong> needs to be transformed to accommodate growing shares of variable renewables.</li>
+                    </br>
+                        <ul>
+                            <li>Develop power systems that provide a high level of technical 	<strong>flexibility</strong>.</li>
+                            <li>Better <strong>market signals</strong> are needed to enable flexibility resources to come into play to cope with
+                                the uncertainty and variability of variable renewable energy (VRE) generation. Examples include real-time variable pricing and shorter
+                                trading intervals.</li>
+                            <li>Power markets will need to be redesigned to enable the optimal investments for systems with high levels of VRE and enable
+                                sector coupling.</li>
+                        </ul>
+                    </br>
+                    <li><strong>Digitalisation</strong> is a key enabler to amplify the energy transformation.</li>
+                    </br>
+                    <li>Accelerating the<strong> electrification </strong>of the transport and heating
+                    sectors is crucial for the next stage of energy transformation.</li>
+                    </br>
+                    <li><strong>Hydrogen</strong> produced from renewable electricity could help to reduce fossil-fuel reliance.</li>
+                    </br>
+                    <li><strong>Supply chains</strong> are key to meet growing demand for sustainable <strong>bioenergy</strong>.</li>
+                    </br>
+                        <ul>
+                            <li><strong>Bioenergy </strong>must be produced in ways that are environmentally, socially and economically sustainable.
+                                There is a very large potential to produce bioenergy cost-effectively on existing farmland and grassland, without 
+                                encroaching upon rainforests, and in addition to growing food requirements.</li>
+                            <li><strong>Biomass-based industries</strong> that generate ready-to-use biomass residues – such as pulp and paper,
+                                lumber and timber, and food – are fundamental in the transition.</li>
+                            <li>In sectors such as aviation, shipping and long-haul road transport,
+                                <strong>biofuels</strong> might be the main or only option for decarbonisation for years to come.</li>
+                        </ul>
+                </ol>
+                Actions in the power, industry, buildings and
+                transport sectors are essential to realise the global
+                energy transformation by 2050. Below, we present an overview of major
+                actions at the sector level:
+            </p>
+
+             <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Power sector (left-hand side panel, figure: Sector level actions. Power and Transport sectors):</div>
+                  <p class="text-right">
+                      <ul>
+                        <li>Accelerate renewables capacity additions. In particular, identify and map renewable energy resources and develop
+                            a portfolio of financeable projects.</li>
+                        <li>Plan for the power sector to accommodate increasing shares of variable renewable energy.</li>
+                        <li>Support the deployment of distributed energy resources. In particular, incentivise energy consumers to become prosumers.</li>
+                    </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Transport sector (right-hand side panel, figure: Sector level actions. Power and Transport sectors):</div>
+                  <p class="text-right">
+                      <ul>
+                        <li>Reduce the energy need for transport. First, by deploying advanced digital communication technologies to reduce the transport
+                            needs (eg. teleconferencing over travelling) and to improve efficiency of transport by better utilizing the assets
+                            (eg. re-routing due to traffic). Second, by promoting mobility services, e.g., promote vehicle sharing and
+		                    autonomous driving.</li>
+                    </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Industry sector (left-hand side panel, figure: Sector level actions. Industry and Buildings sectors):</div>
+                  <p class="text-right">
+                      <ul>
+                        <li>Reduce energy consumption in industries. First, by promoting actions towards circular economy
+                            (material recycling, waste management, improvements in materials efficiency and structural changes such as reusing and recycling).
+                            Second, by incentivising and adopting best available technologies (BAT) and efficiency standards. </li>
+                        <li>Enable corporate sourcing of renewables by supporting a credible and transparent system for certification and
+                            tracking of renewable energy attributes.</li>
+                        <li>Accelerate the deployment of low-carbon technologies in industrial process heating.</li>
+                    </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Building sector (right-hand side panel, figure: Sector level actions. Industry and Buildings sectors):</div>
+                  <p class="text-right">
+                      <ul>
+                        <li>Reduce energy consumption in buildings. First, by establishing and improve energy efficiency building codes and
+                            standards (incl. appliances (eg. air conditioners), lighting (eg. LED lights) and equipment (eg. efficient boilers)).
+                            Second, by adopting programmes for retrofitting/renovation including financing schemes.</li>
+                        <li>Support and foster the deployment of distributed energy resources by removing regulatory barriers for
+                            prosumers that restrict them from taking an active role in the energy system transformation.</li>
+                        <li>Scale up renewable share uptake in the building sector by promoting low-carbon heating technologies: heat pumps, solar heating,
+                            modern bioenergy for heating ). Apply these renewable technologies for district heating.</li>
+                      </ul>
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/renewable_introduction_Power_transport.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/renewable_introduction_Industry_buildings.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Questions:</h3>
+
+            <p>
+                All the questions are referred to the REmap Case in 2050.
+            </p>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q5.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 5</legend>
+                        <p class="card-text">In the <strong>power sector</strong>, the renewable share will pass from 24% to 86%.
+                            Can you enumerate the main <strong>sources of renewable production</strong>?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q5.type.errors %}
+                                    {{ form_m2_ch4_q5.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q5.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q5.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q5.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q6.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 6</legend>
+                            <p class="card-text">
+                                In the <strong>transport sector</strong>, the renewable share will pass from 3% to 57%.
+                                Can you enumerate the <strong>main changes in that sector</strong>?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q6.type.errors %}
+                                    {{ form_m2_ch4_q6.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q6.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q6.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q6.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q7.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 7</legend>
+                        <p class="card-text">In the <strong>industry sector</strong>, the renewable share will pass from 14% to 63%.
+                            Can you enumerate the <strong>main changes in that sector</strong>?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q7.type.errors %}
+                                    {{ form_m2_ch4_q7.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q7.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q7.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q7.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q8.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 8</legend>
+                            <p class="card-text">
+                                In the <strong>building sector</strong>, the renewable share will pass from 36% to 81%.
+                                Can you enumerate the <strong>main changes in that sector</strong>?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q8.type.errors %}
+                                    {{ form_m2_ch4_q8.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q8.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q8.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q8.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+<!--Section 3-->
+    <section id="section3" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Measuring the socio-economic footprint of the energy transition</h2>
+            <p>
+                The power and energy systems are embedded into the wider socio economic
+                system, which in turn is embedded into the earth and its climate. In order to avoid dysfunctional outcomes,
+                a holistic policy framework is needed to frame and support the transition.
+
+                Both the energy and socio-economic systems will evolve during the transition, with multiple feedback loops between them.
+                IRENA uses an integrated Energy-Economy-Environment model to evaluate the socio-economic footprint that
+                results from the interactions among different combinations of the energy transition roadmap and the socio-economic outlook.
+            </p>
+
+            <h3>Measuring the socio-economic footprint of the energy transition</h3>
+
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/renewable_introduction_GDP.svg')}}"
+                        alt=""/>
+                <div>
+                    <p>
+                        The analysis presented in this section builds on IRENA’s body of work, which has focused on measuring the
+                        economics and benefits of the energy transition and on assessing renewable energy employment
+                        (IRENA, 2019a, 2018, 2017, 2016; IEA and IRENA, 2017).
+                        The analysis delves into macroeconomic variables to present the socio-economic footprint of the REmap
+                        roadmap, both at global and regional levels, as deployed within the current socio economic
+                        system.
+                        </br>
+                        </br>
+                        In order to gain insights into the structural elements underpinning the socio-economic footprint, IRENA’s macroeconomic
+                        analysis decomposes the outcomes in different drivers. The main macroeconomic drivers used to analyse the GDP and employment
+                        footprints include (figure: Gains in GDP. Components):
+                    </p>
+                </div>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Investment</div>
+                  <p class="text-right">
+                      In the short term, the net positive impact on global GDP is due mainly to a
+                      front-loaded <strong>investment</strong> stimulus in renewable energy generation capacity,
+                      energy efficiency, and energy system flexibility to support the transition. The overall impact
+                      of this driver gradually fades in importance as time progresses.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Consumer expenditure</div>
+                  <p class="text-right">
+                      Gains in <strong>consumer expenditure</strong> due to tax rate changes become the dominant factor in the
+                      evolution of GDP between 2022 and 2050. This driver captures the impact of the changes in government
+                      income due to carbon taxes, fossil fuel phase-out, changes in fossil fuel royalties and other taxes.
+                  </p>
+                </div>
+              </li>
+            </ol>
+            </br>
+            <p>
+                  The <strong>employment</strong> gains are expected to be less significant than for GDP because
+                  additional demand in the global economy also pushes up real wages. The additional wage volume
+                  available can be translated either as wage increases for all workers, or as an increase in the number
+                  of jobs, or a mix of both. Historical trends show that wage effects tend to dominate, leading to smaller
+                  increases in employment than GDP.
+            </p>
+
+            <h3>Climate damages and its impact on GDP</h3>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        The literature suggests that very important impacts from climate change can be
+                        expected on the performance of the socio economic
+                        system both in terms of reducing global GDP and increasing inequality:
+
+                        <ul>
+                            <li>For the end of the century (year 2100) global GDP reductions are estimated at around 20%
+                                for a 2°C global warming and  35%  for a 5°C global warming are reported (Burke et al, 2018).</li>
+                            <li>Climate damages will lead to increased inequality because much higher impacts can be expected in warmer
+                                regions, which often correspond to poorer countries (Burke et al, 2015).</li>
+                        </ul>
+
+                        The upper graph in (figure: Impact of climate damages on GDP) presents per capita
+                        GDPs with and without climate damages. Clear green bars represent the per capita GDP without taking into
+                        account climate damages, while dark green bars represent the per capita GDP once climate damages are factored in.
+                        As it can be seen both REmap and Reference cases experience a significant reduction in GDP when climate damages are
+                        included in the macroeconomic modelling. To better understand these reductions, the lower graph in (figure: Impact of climate damages on GDP)
+                        presents the percentage reduction in GDP when climate damages are included,
+                        showing how important are the GDP reductions attributable to climate change.
+                    </p>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch4/renewable_introduction_GDP_climate.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <br>
+                    <strong>What does the applied climate damage methodology does not include?</strong> The results obtained can be considered conservative,
+                    because there are several ways through which climate change can negatively impact the economy that are not captured by it:
+                    </br>
+                    <ul>
+                        <li>Sea level rise and increased incidence of extreme weather events (flooding, draughts, tropical cyclones, wildfires...).</li>
+                        <li>Disrupted trade and modified trade dynamics based on modified power positions, where regions with higher damages on GDP (Global South)
+                            experience losses in trade balance, and winners (Global North) use the advantageous situation to impose trade agreements.</li>
+                        <li>Social conflict effects associated to disruption and increasing inequality.</li>
+                        <li>Cross-country spillovers associated to climate change that would produce higher economic impacts
+                            (for example, supply chain interruptions/alterations, trade effects...)</li>
+                    </ul>
+                </p>
+            </div>
+
+            <h3>Questions:</h3>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q9.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 9</legend>
+                        <p class="card-text">
+                            According with the REmap Case, the main contributors to the increase in the GDP in the energy transition roadmap to 2050 are
+                                <strong>(chose one of the next options):</strong>
+                        </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q9.type.errors %}
+                                    {{ form_m2_ch4_q9.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q9.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q9.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q9.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch4_q10.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 10</legend>
+                            <p class="card-text">
+                                According with the REmap Case, for the end of the century (year 2100) global GDP reductions are estimated at
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch4_q10.type.errors %}
+                                    {{ form_m2_ch4_q10.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch4_q10.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch4_q10.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch4_q10.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+{% endblock content %}

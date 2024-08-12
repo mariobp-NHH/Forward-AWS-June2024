@@ -1,0 +1,117 @@
+{% extends "gd_course/NHH_2024_group3/layout.html" %}
+{% block content %}
+
+  
+<!-- Header -->
+<section class="section_header_carbon_app">
+  <section class="image-banner-carbon-app">
+      <div> 
+        <h1 style="font-size:55px;"><span class="text-logo">Carbon App Calculator</span></h1>
+        <p style="text-align:center;">
+          Use the app to calculate your carbon emissions. To begin, choose a transport method below.
+        </p>
+        <div class="container_buttons_links_header_carbon_app">
+          <div class="hero-btns">
+              <a href="{{url_for('gd_course_NHH_2024_group3.methodology_home')}}" class="btn btn-primary btn-lg mr-2">Methodology</a>
+          </div>
+          <div class="hero-btns">
+              <a href="{{url_for('gd_course_NHH_2024_group3.your_data')}}" class="btn btn-primary btn-lg mr-2">Your data</a>
+          </div>
+      </div>   
+      </div>
+    </div> 
+  </section>
+</section> 
+
+    <!-- carbon_app_new_entry_main -->
+    <section class="section_carbon_app_new_entry_main">
+    <div class="container">
+  
+      <div class="carbon_app_new_entry_main" style="display:block;">
+        <br>
+        <p style="text-align:center; color: #ffffff">Select your transporation method in the boxes below</p>     
+      </div>
+  
+      <div class="carbon_app_new_entry_main">
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-bus"></i>
+            </div>
+            <h3>Bus</h3>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_bus')}}">New Entry</a>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-car"></i>
+            </div>
+            <h3>Car</h3>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_car')}}">New Entry</a>
+            </div> 
+          </div>           
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+            <h3>Plane</h3>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_plane')}}">New Entry</a>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-ship"></i>
+            </div>
+            <h3>Ferry</h3>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_ferry')}}">New Entry</a>
+            </div> 
+          </div>      
+      </div>
+
+      <div class="carbon_app_new_entry_main">
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-truck-moving"></i>
+          </div>
+          <h3>Truck</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_truck')}}">New Entry</a>
+          </div> 
+        </div>  
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-motorcycle"></i>
+          </div>
+          <h3>Motorbike</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_motorbike')}}">New Entry</a>
+          </div> 
+        </div>    
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-bicycle"></i>
+          </div>
+          <h3>Bicycle</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_bicycle')}}">New Entry</a>
+          </div> 
+        </div>
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-person-walking"></i>
+          </div>
+          <h3>Walk</h3>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_NHH_2024_group3.new_entry_walk')}}">New Entry</a>
+          </div> 
+        </div>     
+    </div>
+  
+    </div>          
+    </section>
+       
+
+{% endblock content %}

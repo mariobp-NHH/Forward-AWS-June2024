@@ -1,0 +1,90 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+}
+
+.section_gd_course_questionnaire .container {
+  background-color: #9fa7bf;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
+.column {
+  background: #6DA6A6;;
+  display: flex;
+  flex-direction: column;
+  border: #ccc solid 0px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;      
+  flex:1;
+}
+.column1 .box {
+  flex: 1;
+  background: #96C6D9;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+.column2 .box {
+  flex: 1;
+  background: #96C6D9;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+.column3 .box {
+  flex: 1;
+  background: #96C6D9;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+
+
+/*Container statistics summary 3 boxes*/
+.statistics_summary3_css {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}     /*color=mt-2*/
+.statistics_summary3_css .box {
+  flex: 1;
+  background: #9ac2be;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+
+ /*Mobile*/
+ @media(max-width: 768px) {
+  .section_gd_course_questionnaire .container {
+    flex-direction: column;
+    padding: 0px;
+  }
+  .column {
+    margin: 0px;
+    padding: 0px;
+  }
+  .column1 .box {
+    padding: 5px;
+  }
+  .column2 .box {
+    padding: 5px;
+  }
+  .column3 .box {
+    padding: 5px;
+  }
+} 

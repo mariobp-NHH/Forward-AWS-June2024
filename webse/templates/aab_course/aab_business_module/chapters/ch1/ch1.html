@@ -1,0 +1,720 @@
+{% extends "aab_course/aab_course_layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+      <header class="header_css">
+          <div class="container">
+              <div>
+                  <h1> <span class="text-warning"> Ch1. Cities and Digitalization </span></h1>
+                  <p class="mb-1">
+                    The 21st century has been called the “urban century” by UN-Habitat (the United Nations agency responsible for sustainable
+                    human settlements) and by many others. In fact, over 50% of the global population now lives in urban areas,
+                    and this trend will continue. This chapter studies the key role that cities can play mitigating climate change by
+                    introducing innovative transport, recycling and building policies.
+                  </p>
+                  </br>
+
+                  <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="#"  data-toggle="modal" data-target="#paper_Modal" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-regular fa-newspaper"></i> Material</a>
+                        <a href="#"  data-toggle="modal" data-target="#presentation_Modal" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-person-chalkboard"></i> Presentation</a>
+                        <a href="#"  data-toggle="modal" data-target="#carbon_app_instructions", class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-list"></i> Instructions</a>
+              </div>
+            </div>  
+
+            <!-- Modal Instructions -->
+            <div class="modal fade" id="carbon_app_instructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+          
+                    <div class="modal-header">
+                    <h5 class="modal-title", style="color:black; text-align: center;">Ch1, instructions</h5>
+                    </div>
+          
+                    <div class="modal-body", style="color:black">
+                    <p style="text-align: left;">
+                        In this chapter we study how digitalization can foster sustainability and circularity in <strong>cities</strong>. 
+                        To prepare the lecture, please follow the next <strong>instructions</strong>.
+                    </p>
+                    <ol style="text-align:left;">
+                        <li>
+                            Read the <strong>material</strong> for this chapter.                             
+                        </li>
+                        <li>
+                            During the lecture, we will use different <strong>questions</strong> that I place in the chapter to foster the discussion and the 
+                            debate on relevant topics. We will discuss the smart case of <strong>Heidelberg</strong>. The link to the video is in the presentation.  
+                        </li>
+                        <li>
+                            During the last part of the lecture on Monday 13th November, you will work in groups to analyze different functionalities that 
+                            could be introduced in <strong>Skyss</strong> to reduce transport carbon emissions. You will prepare a short presentation for the rest of the class. 
+                        </li>
+                        <li>
+                            On Monday 20th November <strong>David Larose</strong> will give a talk about the smart city project in Drancy (France).
+                        </li>
+                    </ol>
+                    </div>
+          
+                    <div class="modal-footer">
+                    <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                    </div>
+          
+                </div>
+                </div>
+            </div>
+
+                  <!-- Modal Paper -->
+                  <div class="modal fade" id="paper_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg " style="height: 80%;" >
+                    <div class="modal-content" style="height:100%">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="paper_frame" src="/static/material/aab_course/ch1/ch1_material.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                    </div> 
+
+                    <!-- Modal Presentation -->
+                  <div class="modal fade" id="presentation_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg " style="height: 80%;" >
+                    <div class="modal-content" style="height:100%">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Presentation</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="presentation_frame" src="/static/material/aab_course/ch1/ch1_presentation.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                    </div> 
+
+                  <div class="list-group", style="padding: 15px 0px;">
+                    <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Introduction</h5>
+                      </div>
+                      <p class="mb-1">
+                          We explore the role that cities will play in sustainability, the key indicators that define a sustainable
+                          city and a sustainable neighbourhood. We also explore the main changes in urban infrastructure
+                          and planning in sustainable urban areas.
+                      </p>
+
+                    </a>
+                    <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Processes of sustainable urban transformation</h5>
+                      </div>
+                      <p class="mb-1">
+                          We discuss three key areas that help to define sustainable urban transformation.
+                      </p>
+                    </a>
+                    <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Climate governance and urban experiments</h5>
+                      </div>
+                      <p class="mb-1">
+                          Experiments in urban areas contribute to introduce new ideas to promote improvements in environment
+                          and citizens well-being. We study some experiments that have taken place in prominent cities.
+                      </p>
+                    </a>
+                    <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Urban infrastructure and planning</h5>
+                      </div>
+                      <p class="mb-1">
+                          We study the role of infrastructure and planning in urban development. We pay special attention to
+                          urban mobility.
+                      </p>
+                    </a>
+                    <a href="#section5" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Sustainable neighbourhoods</h5>
+                      </div>
+                      <p class="mb-1">
+                          Neighbourhoods are playing a crucial role in sustainable urban transformation. We study some successful
+                          experiences and the principles that define a sustainable neighbourhood.
+                      </p>
+                    </a>
+                    <a href="#section6" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Case Studies: Digitalization and sustainability in Bergen and Drancy</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the role of digitalization to achieve sustainable cities in Bergen (Norway) and Drancy (France).
+                        </p>
+                      </a>
+                 </div>
+              </div>
+              <img
+              src="{{url_for('static', filename='figures/auditing_accounting_business/ch1/ch1.svg')}}"
+                      alt=""/>
+          </div>
+      </header>
+</section>
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+
+      <div class="container">
+          <div class="boxa" style="background: #96C6D9;">
+            <h2 style="justify-content: center;">Introduction</h2>
+            <p>
+                Which will be the role of cities to decarbonize the economic system? Which is the key indicators that define a sustainable
+                city and a sustainable neighbourhood? Which is the right way to plan urban infrastructure to achieve sustainable cities?
+            </p>
+              <div class="section_container_buttons_chapters" style="justify-content: center;">
+                  <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch1_ex1_questionnaire') }}">Question 1</a>
+                  <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch1_ex2_questionnaire') }}">Question 2</a>
+                  <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch1_ex3_questionnaire') }}">Question 3</a>
+                  <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch1_ex4_questionnaire') }}">Question 4</a>
+              </div> 
+          </div>              
+      </div>
+     
+ </section>  
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+
+    <div class="container" style="display:block;">
+        <h2>Processes of sustainable urban transformation</h2>
+
+        <p>
+            The 21st century has been called the “urban century” by UN-Habitat (the United Nations agency responsible for sustainable
+            human settlements) and by many others. In fact, over 50% of the global population now lives in urban areas,
+            and this trend will continue.
+            </br>
+            </br>
+            There are three key areas to discuss when it comes to sustainable
+            urban transformation: Governance and planning, innovation and business, and lifestyles and consumption.
+        </p>
+
+        <!--Enumerated list (table)-->
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Governance and planning.</div>
+                <p class="text-right">
+                    Effective strategic planning and integration of policy
+                    instruments is essential. Such efforts should be interconnected across sectors and adapted for
+                    specific urban and national policy conditions to ensure empowerment, engagement and collaboration
+                    of relevant stakeholders.
+                    </br>
+                    </br>
+                    In order for strategic planning to be effective, however, three key policy challenges have to be taken into account:
+                    </br>
+                    <ol type="a">
+                    <li>Policies must be ambitious but politically and economically
+                    realistic.</li>
+                    </br>
+                    <li>Policies must be developed quickly and with flexibility for rapidly changing urban conditions.</li>
+                    </br>
+                    <li>Contradictory policies have to be eliminated.</li>
+                </ol>
+                </p>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Innovation and business.</div>
+                <p class="text-right">
+                    There are significant challenges in reconciling economic growth and maintaining or restoring local and global environment. Innovation and clean technology
+                    are key parts of a green economy, but also for fostering urban competitiveness in a globalising economy.
+                </p>
+            </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+            <div class="ms-2 me-auto">
+                <div class="fw-bold">Lifestyles and consumption.</div>
+                <p class="text-right">
+                    Negative implications of over-consumption are particularly evident in cities.
+                </p>
+            </div>
+            </li>
+        </ol>
+    </div> 
+
+
+</section> 
+
+
+<!-- Section 3 -->
+<section class="section_3" id="section3">
+
+    <div class="container" style="display:block;">
+        <h2>Climate governance and urban experiments</h2>
+
+                <p>
+                    From the early 2000s, we can identify a new wave of action. Over the past decade, we have seen a greater
+                    range and diversity of cities getting involved with responses to climate change. A number of city networks (such as ICLEI – Local
+                    Governments for Sustainability and the C40 Cities Climate Leadership Group) formed, through which municipal governments
+                    co-operate internationally, and a whole host of partners
+                    from the private sector to civil society are getting involved
+                    in trying to address climate change at the urban level.
+                    </br>
+                    </br>
+                    Part of the reason for this shift is a change in how climate change is seen as a policy problem. Rather than
+                    focusing on targets for reducing greenhouse gas emissions, we now see an increasing emphasis on the need for
+                    decarbonisation, i.e., for uncoupling economic growth and social well-being from the use of fossil carbon-based
+                    fuels. As this requires more systematic change across urban areas and
+                    infrastructure networks, there has been a shift in how and where climate governance is taking place in the city.
+                    </br>
+                    </br>
+                    Looking at climate governance in this way has helped us to recognise a new phenomenon – the growth of urban
+                    <strong> experiments designed to respond to climate change</strong>>. Why is experimentation taking place as a means of governing
+                    climate change at the urban scale?
+                </p>
+
+                <!--Enumerated list (table)-->
+                <ol class="list-group list-group-numbered">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                    <div class="fw-bold">Municipal governments.</div>
+                    <p class="text-right">
+                        <strong>Municipal governments</strong> have limited powers to act on climate change alone and need to
+                        develop projects or specific interventions that attract other organisations to work with them.
+                    </p>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                    <div class="fw-bold">Private sector and community actors.</div>
+                    <p class="text-right">
+                        <strong>Private sector and community actors</strong> also find urban environments an important site for
+                        action, but lack the power or capacity to intervene at the level of the city as a whole.
+                    </p>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                    <div class="fw-bold">Projects.</div>
+                    <p class="text-right">
+                        <strong>Projects</strong> that might have taken place in the past without being thought about in climate
+                        change terms are increasingly seen through a climate change lens. In a sense, climate change has 
+                        come to be a ubiquitous reason for taking different and disparate forms of action at the urban level.
+                    </p>
+                    </div>
+                </li>
+                </ol>
+    </div> 
+
+    <div class="container">
+        <div class="boxa" style="background: #789091;">
+            <h5 style="text-align:center;">Experiences in urban areas</h5>
+            <p>
+                Some links about experiments taken place in urban areas:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3_box" href="https://wwf.panda.org/our_work/our_focus/projects/one_planet_cities/" target="_blank">One planet cities WWF</a>
+                <a class="btn-section3_box" href="https://iclei.org/" target="_blank">ICLEI - Local Governments for Sustainability</a>
+                <a class="btn-section3_box" href="https://www.c40.org/" target="_blank">Cities C40</a>
+            </div> 
+        </div> 
+        <div class="boxa">
+            <h5 style="text-align:center;">Urban design in cities</h5>
+            <p>
+                Some useful reports about urban design in cities:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3_box" href="https://www.lse.ac.uk/cities" target="_blank">LSE cities</a>
+                <a class="btn-section3_box" href="https://www.lse.ac.uk/cities/publications/research-reports/Copenhagen-Green-Economy-Leader-Report" target="_blank">LSE Cities, Copenhagen</a>
+                <a class="btn-section3_box" href="https://www.lse.ac.uk/cities/publications/research-reports/Stockholm-Green-Economy-Leader-Report" target="_blank">LSE Cities, Stockholm</a>
+            </div> 
+        </div>               
+    </div>
+
+</section> 
+
+<!-- Section 4 -->
+<section class="section_4" id="section4">
+        
+    <div class="container" style="display:block;">
+        <h2>Urban infrastructure and planning</h2>
+            <p>
+                Municipal and city planners are challenged with how to plan structural transformations and they are 
+                exploring how urban infrastructure can play a part in greening the economy. Urban infrastructure is the basic 
+                physical and organizational structures
+                needed for the operation of a city or urban area. It is also the <strong>services and facilities</strong> necessary
+                for society and the economy to function. This can include <strong>infrastructure</strong> for water, waste, shelter,
+                energy, telecommunications, and mobility, including streets, buildings, sewers, parks and energy systems. 
+                Importantly, urban infrastructure can advance sustainability and green economies, or, adversely, it can lock in unsustainable
+                systems and prevent sustainable urban transformation.
+                </br>
+                </br>
+                To learn more about infrastructure and planning, <strong>urban mobility</strong>
+                is a good example to examine.
+            </p>
+
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <p class="text-right">
+                        In 2013, there were over 5,000 electric vehicles in the urban
+                        area of <strong>Oslo</strong> in Norway. Electric vehicles in Norway are powered by hydro-electricity, resulting in low emissions, improved air quality and less noise. The city council hopes to grow the numbers of electric vehicles through innovative
+                        policy and additional infrastructure, for example by continuing
+                        to add to the over 700 public and free charging stations
+                        already provided in the city. The City of Oslo leads by example in buying only zero emission electric vehicles for its
+                        municipal fleet. Electric vehicles are also encouraged through
+                        city transport rules allowing them to use bus transit lanes as
+                        well as national level taxes on fossil fuels and road charge
+                        exemptions for electric vehicles. Of course, electric vehicles
+                        help with reducing emissions, but congestion still remains a
+                        challenge. For this reason, the City of Oslo is also working
+                        with its public transportation system.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <p class="text-right">
+                        Greener city planning encourages people to act sustainably
+                        without thinking about the environment. For example, in
+                        <strong>Copenhagen</strong>, most people bike for the convenience of it,
+                        rather than its environmental benefits. In fact, the top two
+                        reasons for biking in the city are said to be convenience and
+                        health. The environment is number three. This is made possible
+                        by making biking as convenient as possible and giving it
+                        priority in planning across Copenhagen.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <p class="text-right">
+                        In order to make public transport a competitive alternative
+                        that can take you conveniently from your front door to your
+                        intended destination, <strong>the connection between different sustainable
+                            transport modes needs to be as seamless as possible</strong>.
+                        An important challenge is to build transport hubs where, for
+                        example, bus, train and subway stations are located next to
+                        each other, preferably with access to convenient bicycle par
+                        king
+                        nearby.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <p class="text-right">
+                        Another possibility is to integrate <strong>information
+                            and communication technology</strong> with public transport and
+                        to provide passengers with real-time information and other
+                        online services.
+                  </p>
+                </div>
+              </li>
+            </ol>
+    </div> 
+
+    <div class="container">
+        <div class="boxa" style="background: #546E75;">
+            <h5 style="text-align:center;">Infrastructure and planning</h5>
+            <p>
+                Some links to study urban infrastructure and planning:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section4_box" href="https://www.youtube.com/watch?v=Bcz87XTyDi8" target="_blank">Oslo</a>
+                <a class="btn-section4_box" href="https://eiuperspectives.economist.com/sustainability/european-green-city-index" target="_blank">City index, The Economist</a>
+                <a class="btn-section4_box" href="https://assets.new.siemens.com/siemens/assets/api/uuid:fddc99e7-5907-49aa-92c4-610c0801659e/european-green-city-index.pdf" target="_blank">European Green City Index</a>
+            </div> 
+        </div>               
+    </div>
+
+</section>
+
+<!-- <section class="section_4">
+    <div class="container">
+        <div class="box_questions_two">
+                  
+        </div>
+        <div class="box_questions_two">
+            <p style="text-align: center;"><strong>...</strong> </p>
+            <p style="text-align: left;">...</p>            
+            <div class="container_buttons_links_questions">
+                <div class="btn">
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Section 4, Q1</a>
+                </div>
+            </div>        
+        </div>
+        <div class="box_questions_two">
+            <p style="text-align: center;"><strong>...</strong> </p>
+            <p style="text-align: left;">...</p>   
+            <div class="container_buttons_links_questions">
+                <div class="btn">
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Section 4, Q2</a>
+                </div>
+            </div> 
+        </div>
+        <div class="box_questions_two">
+                  
+        </div>
+    </div>
+</section>  -->
+
+<!-- Section 5 -->
+<section class="section_1" id="section5">
+
+    <div class="container" style="display:block;">
+        <h2>Sustainable neighbourhoods</h2>
+            <p>
+                Sustainable lifestyles and neighbourhoods can have an
+                impact on sustainable urban development overall. The
+                lifestyles of eco-villages (often developed in rural contexts
+                with strong sustainability principles) are increasingly utilised
+                in mainstream practice in sustainable urban development
+                in Scandinavia. In contrast to rural eco-villages, cities and
+                sustainable neighbourhoods concentrate higher numbers of
+                people in one area, which enables more sustainable services
+                like public transportation and recycling.
+                </br>
+                </br>
+                We have introduced the example of the Western Harbour in
+                Malmö, Sweden, as a leading sustainable neighbourhood.
+                The Western Harbour was formerly contaminated industrial
+                land which housed a variety of warehouses and factories.
+                The area has since been re-designed as a new neighbourhood
+                with good public transport links and pedestrian and
+                cycle ways to discourage car dependency. There are a
+                mix of buildings for different uses around squares where
+                people can gather. There are systems for managing waste
+                and water sustainably, and renewable energy technologies
+                integrated in the area.
+                </br>
+                </br>
+                Four <strong>key principles</strong> characterising
+                sustainable neighbourhoods:
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Energy systems.</div>
+                  <p class="text-right">
+                        Most sustainable neighbourhoods have
+                        shared ownership of renewable energy technologies and
+                        low energy demands. For example, residents can build and
+                        live in passive energy-saving multi-dwelling buildings. They
+                        can have adopted innovative solutions to reduce resource use
+                        and stimulate recycling, and they manage water and waste
+                        resources sustainably.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Socio-economic balance.</div>
+                  <p class="text-right">
+                        Sustainable neighbourhoods
+                        often have local – and organic – food cooperatives which are
+                        run by residents. These neighbourhoods often have a strong
+                        ”social ecology” element that includes direct democracy,
+                        transparency and tolerance. They can have trading systems
+                        in which local goods and services are traded without the use
+                        of money. Furthermore, they have a strong emphasis on the
+                        local economy and the local community.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Transport and mobility.</div>
+                  <p class="text-right">
+                        Many sustainable neighbourhoods
+                        have efficient public transport connections and might
+                        not even allow cars in the area. They promote cycling and
+                        walking, and they plan for a compact building layout in order
+                        to minimise travel distances. Transport and mobility is therefore
+                        closely connected to the urban design and planning of
+                        sustainable neighbourhoods.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Urban design.</div>
+                  <p class="text-right">
+                        Most sustainable neighbourhoods have
+                        multi-purpose community spaces that promote a variety
+                        of social activities, such as central plazas where people can
+                        meet, green spaces, public spaces, pedestrian streets, and
+                        bike trails. Overall, the design of sustainable neighbourhoods
+                        is critical to achieving goals on energy, socio-economic
+                        balance and transport.
+                  </p>
+                </div>
+              </li>
+            </ol>
+    </div> 
+
+    <div class="container">
+        <div class="boxa" style="background: #96C6D9;">
+          <h2 style="justify-content: center;">Sustainable neighbourhood experiences</h2>
+          <p>
+            Some links about successful sustainable neighbourhood experiences:
+          </p>
+            <div class="section_container_buttons_chapters" style="justify-content: center;">
+                <a class="btn-section1_box" href="https://www.youtube.com/watch?v=6yZYXSsWnsg">Mälmo, Europe's first carbon neutral neighbourhood</a>
+                <a class="btn-section1_box" href="https://www.pps.org">Project for Public Spaces</a>
+            </div> 
+        </div>              
+    </div>
+
+    <section class="section_1">
+        <div class="container">
+            <div class="box_questions_two">
+                        
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_m2_ch1_q1.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 1</legend>
+                    <p class="card-text">Which of the next initiatives is <strong>NOT</strong> in line with the <strong>energy principles</strong> adopted in sustainable neighborhoods? 
+                            (chose one of the next options):
+                        </p>
+                        <div class="form-group">
+                            {% if form_m2_ch1_q1.type.errors %}
+                                {{ form_m2_ch1_q1.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_m2_ch1_q1.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_m2_ch1_q1.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_m2_ch1_q1.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_m2_ch1_q2.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 2</legend>
+                    <p class="card-text">Which of the next initiatives is <strong>NOT</strong> in line with the <strong>urban principles</strong> adopted in sustainable neighborhoods?
+                        (chose one of the next options):
+                        </p>
+                        <div class="form-group">
+                            {% if form_m2_ch1_q2.type.errors %}
+                                {{ form_m2_ch1_q2.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_m2_ch1_q2.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_m2_ch1_q2.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_m2_ch1_q2.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                        
+            </div>
+        </div>
+    </section> 
+    
+   
+</section> 
+
+<!-- Section 6 -->
+<section class="section_2" id="section6">
+
+    <div class="container" style="display:block;">
+        <h2>Case Studies: Digitalization and sustainability in Bergen and Drancy
+        </h2>
+        <p>
+            We analyze the role of digitalization to foster decarbonization in the transportation in cities. We use an app developed by the students at HVL and NHH to work out transport carbon emissions, and we study the role of that app to abate transport carbon emissions in Bergen. We also study the role of digitalization to achieve sustainability in Drancy.
+        </p>
+    </div> 
+
+    <div class="container">
+        <div class="boxa" style="background: #49736f;">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+            <h5 style="text-align:center;">Bergen</h5>
+            <p>
+                In this cases study, we try to answer the following questions:
+            </p>
+            <ul>
+                <li>
+                    Which is (or could be) the <strong>business model for this case</strong>?
+                </li>
+                <li>
+                    Which is the <strong>digital value chain</strong> for this case?
+                </li>
+                <li>                    
+	                Which are the <strong>main challenges</strong> to implement digital solutions from a <strong>technical and social perspective</strong>?
+                </li>
+                <li>
+                    Which are (or could be) the <strong>target groups</strong> for this business model?
+                </li>
+                <li>
+                    How we can use <strong>digitalization</strong> to foster transport decarbonisation?
+                </li>
+                <li>
+                    Could you design a <strong>Business Canvas Model</strong> for this case?
+                </li>
+            </ul>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2_box" href="{{ url_for('gd_course_app_calculator.app_calculator_entry') }}" target="_blank">Transport Carbon App Calculator</a>
+            </div> 
+        </div> 
+        <div class="boxa">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+            <h5 style="text-align:center;">Drancy</h5>
+            <p>
+                In this cases study, we try to answer the following questions:
+            </p>
+            <ul>
+                <li>
+                    Which is (or could be) the <strong>business model for this case</strong>?
+                </li>
+                <li>
+                    Which is the <strong>digital value chain</strong> for this case?
+                </li>
+                <li>                    
+	                Which are the <strong>main challenges</strong> to implement digital solutions from a <strong>technical and social perspective</strong>?
+                </li>
+                <li>
+                    Which are (or could be) the <strong>target groups</strong> for this business model?
+                </li>
+                <li>
+                    How we can use <strong>digitalization</strong> to foster transport decarbonisation?
+                </li>
+                <li>
+                    Could you design a <strong>Business Canvas Model</strong> for this case?
+                </li>
+            </ul>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2_box" href="https://www.youtube.com/watch?v=NH8qG6Is7Js" target="_blank">Drancy is a smart city </a>
+            </div> 
+        </div>               
+    </div>
+   
+
+</section> 
+
+
+{% endblock content %}

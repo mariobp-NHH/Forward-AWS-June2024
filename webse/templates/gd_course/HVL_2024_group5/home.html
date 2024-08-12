@@ -1,0 +1,174 @@
+{% extends "gd_course/HVL_2024_group5/layout.html" %} {% block content %}
+
+<div class="container">
+  <div class="left-block">
+    <!-- SECTION 1 -->
+    {% if current_user.is_authenticated %}
+    <h1>
+      {{ current_user.username }}, reduce your carbon footprint with EcoPaths
+    </h1>
+    {% else %}
+    <h1>Reduce your carbon footprint with EcoPaths</h1>
+    {% endif %}
+    <p>
+      Our app was meticulously crafted with the intention of aiding individuals
+      in lessening their carbon footprint effortlessly. It serves as a
+      convenient tool for calculating carbon emissions, presenting users with a
+      comprehensive overview derived from their input data.
+    </p>
+    <a href="{{url_for('gd_course_HVL_2024_group5.register')}}" class="cta"
+      >I want to try</a
+    >
+  </div>
+
+  <div class="right-block">
+    <img
+      src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/forestpath.jpg')}}"
+      class="forestpath"
+      alt="Path in the forest"
+    />
+  </div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="container">
+  <div class="right-block">
+    <img
+      src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/earthstorm.jpg')}}"
+      class="forestpath"
+      alt="Earth with thunder storm"
+    />
+  </div>
+
+  <div class="left-block">
+    <!-- Header -->
+    <h1>The problem of carbon emissions</h1>
+    <p>
+      As greenhouse gases envelop the Earth, they act like a thick blanket,
+      trapping the sun's heat and causing temperatures to rise globally. This
+      phenomenon, known as global warming, is driving significant changes in our
+      climate patterns. Alarmingly, the pace of this warming exceeds any
+      observed in recorded history.
+    </p>
+    <a
+      href="{{url_for('gd_course_HVL_2024_group5.carbon_app_home')}}"
+      class="cta"
+      >The solution</a
+    >
+  </div>
+</div>
+
+<!-- Developers -->
+
+<section class="dev_section">
+  <div class="dev_blocks">
+    <div class="dev_pic">
+      <img
+        src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/sacha.jpg')}}"
+        class="dev_img"
+        alt="Developer Sacha"
+      />
+      <div class="dev_linkedin">
+        <a
+          href="https://www.linkedin.com/in/sacha-van-cauwenbergh/"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin fa-2xl"></i>
+        </a>
+      </div>
+      <h4 class="dev_name">Sacha</h4>
+    </div>
+  </div>
+  <div class="dev_blocks">
+    <div class="dev_pic">
+      <img
+        src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/mar.jpg')}}"
+        class="dev_img"
+        alt="Developer Mar"
+      />
+      <div class="dev_linkedin">
+        <a
+          href="https://www.linkedin.com/in/maría-del-mar-lópez-urquiola"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin fa-2xl"></i>
+        </a>
+      </div>
+      <h4 class="dev_name">Mar</h4>
+    </div>
+  </div>
+  <div class="dev_blocks">
+    <div class="dev_pic">
+      <img
+        src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/antoine.jpg')}}"
+        class="dev_img"
+        alt="Developer Antoine"
+      />
+      <div class="dev_linkedin">
+        <a
+          href="https://www.linkedin.com/in/antoine-senger-6aba94224/"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin fa-2xl"></i>
+        </a>
+      </div>
+      <h4 class="dev_name">Antoine</h4>
+    </div>
+  </div>
+  <div class="dev_blocks">
+    <div class="dev_pic">
+      <img
+        src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/sara.jpg')}}"
+        class="dev_img"
+        alt="Developer Sara"
+      />
+      <div class="dev_linkedin">
+        <a href="www.linkedin.com/in/sara-rorato-9933a72b9" target="_blank">
+          <i class="fa-brands fa-linkedin fa-2xl"></i>
+        </a>
+      </div>
+      <h4 class="dev_name">Sara</h4>
+    </div>
+  </div>
+  <div class="dev_blocks">
+    <div class="dev_pic">
+      <img
+        src="{{url_for('static', filename='/gd_course_HVL_2024_group5/icons/marine.jpg')}}"
+        class="dev_img"
+        alt="Developer Marine"
+      />
+      <div class="dev_linkedin">
+        <a
+          href="https://www.linkedin.com/in/marine-croze-554a97192/"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin fa-2xl"></i>
+        </a>
+      </div>
+      <h4 class="dev_name">Marine</h4>
+    </div>
+  </div>
+</section>
+
+<!-- Methodlogy-->
+
+<div class="container">
+  <div class="methodology_container">
+    <p>
+      <a href="{{url_for('gd_course_HVL_2024_group5.methodology_home')}}"
+        >The methodology page</a
+      >
+      <br />
+      <br />
+      Discover the backbone of our Carbon App's functionality by exploring our
+      detailed methodology page. This page offers an insightful look into the
+      rigorous process behind our carbon emissions calculations. Delve into the
+      scientific foundations underpinning our methodology, from the collection
+      of real-world data to the development of intricate formulas. By visiting
+      this page, you'll gain a deeper understanding of your daily carbon
+      emissions and the pivotal role you play in combating climate change.
+    </p>
+  </div>
+</div>
+
+{% endblock content %}

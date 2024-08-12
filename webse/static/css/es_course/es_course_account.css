@@ -1,0 +1,71 @@
+/* Colors */
+/* Afternoon 10:
+Verde: #027B63
+Amarillo: #F1C435
+Naranga: #F2A534
+*/
+/* Morning 2:
+Azul: #9CD5CO
+Amarillo: #F2DA5D
+Crema: #F3CA99
+Naranga: #F29545
+Rojo: #F26934
+*/
+
+/*Container account header*/
+/*color=dark*/
+.account_section_css {
+  display: flex;
+  background: #fff;
+}
+
+.account_section_css .container {
+  display: flex;
+  background: #fff;
+}
+
+.account_section_css .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+/*color=dark*/
+.account_section_css .container .box {
+  flex: 1;
+  background: #fff;
+  color: #fff;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.account_section_css .container .box:nth-of-type(1) {
+  flex-grow: 1;
+  background: #fff;
+  color: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align: left;
+}
+
+.account_section_css .container .box:nth-of-type(2) {
+  flex-grow: 2;
+  background: #f1c435;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+.account_section_css .container .box:nth-of-type(3) {
+  flex-grow: 1;
+  background: #fff;
+  color: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align: left;
+}

@@ -1,0 +1,202 @@
+{% extends "sbm_course/sbm_NMBU_2023_group1/layout.html" %}
+{% block content %}
+  
+<!-- Header -->
+<section class="section_header_methodology">
+    <div class="container">
+  
+      <div class="header">
+        <div class="box"> 
+            <h1 style="font-size:55px; text-align:center; "><span class="text-logo">Methodology</span></h1>
+          <p style="text-align:center;">
+            The calculator employs kilometers as its metric unit of measurement and quantifies carbon emissions in terms of CO2. 
+            To determine your carbon emissions, it is essential to input the distance in kilometers you cover on a daily, weekly, monthly, or yearly basis.
+            For a more in-depth understanding of the methodology and access to our sources, please refer to our scientific paper by clicking the button below.
+          <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="{{url_for('sbm_course_NMBU_2023_group1.carbon_app')}}" class="btn btn-primary btn-lg mr-2", style="background-color:rgb(193, 211, 151); border: none;">Carbon App</a>
+            </div>
+          </div>  
+        </div>
+        <div class="box">
+          <img 
+            src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/methodology.png')}}"
+            style="width: 250px; height: auto;"
+            alt=""/>
+      </div>
+      
+    </div>
+</section> 
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+    <div class="container">
+
+    <div class="methodology" style="display:block; margin-top: 0; background-color: transparent;">
+        <h1 style="text-align:center;"> <br> Our numbers and formulas</h1>
+        <p style="text-align:center; margin-left: 40px; margin-right: 40px;">
+            Greenhouse gas emissions for various modes of transportation, to provide insight into how the choice of transport can impact the amount of emissions per person are presented below.
+            This information are sourced from framtiden.no and are intended to clarify for the user. 
+            The carbon app calculator's formulas and methodology are derived by our professor, Mario Blázquez de Paz.
+            He gathered the data from the European Environment Agency.
+            Our goal with the Carbon App is to heighten awareness regarding individuals' daily carbon footprints within transportation and inspire towards emission reduction.
+            <br><br>
+            1.	(https://www.framtiden.no/, retrieved 26. November 2023)
+            <br>
+            2.	(https://efdb.apps.eea.europa.eu/, retrieved 26. November 2023)
+            <br>
+            <br>
+        </p> 
+    </div>
+
+
+        <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:850px;">
+                <ol start="1">
+                    <li>
+                        <h4><strong>Cars</strong></h4>
+                        <p class="text-left">
+                            <strong>Gasoline:</strong><br>
+                            Framtiden.no reports that the average gasoline-powered car emits 63g CO2/km per passenger 
+
+                            <br>
+                            <div class="icons">
+                                <img 
+                                src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/bensin.png')}}"
+                                style="width: 400px; height: auto;"
+                                alt=""/>
+                            </div>
+                        </p>
+                        <p class="text-left">
+                            Diesel:<br>
+                            Framtiden.no reports that the average diesel-powered car emits 54gCO2/km per passenger. 
+
+                            <br>
+                            <div class="icons">
+                                <img 
+                                src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/diesel.png')}}"
+                                style="width: 400px; height: auto;"
+                                alt=""/>
+                            </div>
+                        </p>
+                        <p class="text-left">
+                            Electric:<br>
+                            Framtiden.no reports that the average electrical-powered car consumes 7g CO2/km per passenger
+
+                            <br>
+                            <div class="icons">
+                                <img 
+                                src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/elektrisk.png')}}"
+                                style="width: 400px; height: auto;"
+                                alt=""/>
+                            </div>
+                        </p>
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:850px;">
+                <ol start="2">
+                    <li>
+                        <h4>Busses</h4>
+                        <p class="text-left">
+                    
+                                Diesel:<br>
+                                Framtiden.no reports that the average diesel-powered bus consumes 25g Co2/km per passenger 
+                                <br><br>
+                                Biodiesel:<br>
+                                Framtiden.no reports that the average bio-diesel-powered bus consumes 7g Co2/km per passenger 
+                                
+                                <div class="icons">
+                                    <img 
+                                    src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/buss.png')}}"
+                                    style="width: 400px; height: auto;"
+                                    alt=""/>
+                                  </div>
+                        </p>
+                    </li>
+                </ol>
+                <ol start="3">
+                    <li>
+                        <h4>Airplanes</h4>
+                        <p class="text-left">
+                            Framtiden.no states that each individual traveling in business class is accountable for emitting 298g of CO2 per kilometer.
+                            <br><br>
+                            Framtiden.no states that each individual traveling in economy class is accountable for emitting 133g of CO2 per kilometer.
+                            <br>
+                            <div class="icons">
+                                <img 
+                                src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/fly.png')}}"
+                                style="width: 400px; height: auto;"
+                                alt=""/>
+                              </div>
+                        </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+
+        <!--Nederste boks-->
+        <div class="methodology">              
+            <div class="box_table1">
+                      
+            </div>
+            <div class="box_table1"> 
+                        <ol start="4">
+                            <li>
+                                <h4>Ferrys</h4>
+                                <p class="text-left">
+                                    According to framtiden.no, each person traveling by ferry is responsible for 266g of CO2 emissions per kilometer.
+                                    <br><br>
+                                    <div class="icons">
+                                        <img 
+                                        src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/ferge.png')}}"
+                                        style="width: 400px; height: auto;"
+                                        alt=""/>
+                                      </div>
+                                </p>
+                            </li>
+                        </ol>
+                        <ol start="5">
+                            <li>
+                                <h4>Train</h4>
+                                <p class="text-left">
+                                    According to framtiden.no, each person traveling by diesel-powered train is responsible for 91g of CO2 emissions per kilometer. 
+                                    Each person travelling with electric train is responsible for 7g of CO2 emissions per kilometer.
+                                    <br>
+                                    <div class="icons">
+                                        <img 
+                                        src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/tog.png')}}"
+                                        style="width: 400px; height: auto;"
+                                        alt=""/>
+                                      </div>                               
+                                </p>
+                            </li>
+                        </ol>
+                        <ol start="6">
+                            <li>
+                                <h4>Bicycling and walking</h4>
+                                <p class="text-left">
+                                    According to framtiden.no, there are zero emissions per kilometer for individuals cycling or walking.
+                                    <br>
+                                    <div class="icons">
+                                        <img 
+                                        src="{{url_for('static', filename='sbm_course_NMBU_2023_group1/icons/gå.png')}}"
+                                        style="width: 400px; height: auto;"
+                                        alt=""/>
+                                      </div>
+                                </p>
+                            </li>
+                        </ol>
+                    </div> 
+            <div class="box_table1">
+                      
+            </div>  
+        </div>
+
+        
+      
+    </div>
+</section>
+
+{% endblock content %}

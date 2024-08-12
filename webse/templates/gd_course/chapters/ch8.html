@@ -1,0 +1,519 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch8. Forms</span></h1>
+                    <p class="mb-1">
+                        Web forms, such as text fields and text areas, give users the ability to send data to your application to use it to perform an action, or to send larger areas of text to the application. In our app, we are using forms to register, to login, and to pass information to work out transport carbon emissions.
+                        <br>
+                        <br>
+                        In this chapter, we learn to <strong>create and validate forms</strong>, to <strong>connect forms with html files</strong>. We learn to create <strong>flash messages</strong> to provide valuable information to the users of our app when they introduce information in our forms. We also will learn to <strong>protect sensitive information</strong> related to our forms when we deploy our app in AWS.
+                    </p>
+                    <br>
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/uLv1rDj0Hk0"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 1)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/6Cg9KNmiBZ0" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 2a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/wpmhpk0OhVo" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 2b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/k3v3Nfy9yPY" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    <div class="btn">
+                        <a href="{{url_for('gd_course_app_carbon_app_2023_ch8.home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Creating and validating forms</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the routes package, we create and validate our forms. We learn how to create forms by using Flask-WTF, and how to activate it in our routes.py file.
+                        </p>
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Connecting forms with html templates and flashing messages</h5>
+                        </div>
+                        <p class="mb-1">
+                            Once that we create and validate the forms, we connect those forms with html templates. We design a register.html file where the user can register in the webpage.
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Deploying our app in AWS</h5>
+                            </div>
+                            <p class="mb-1">
+                                While we deploy our app in AWS, we need to protect the secret key used to work with forms. We learn how to create an environmental variable in Elastic Beanstalk to protect the secrete key. 
+                            </p>
+                            </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            We create a login webpage where the user can introduce her credentials. If those credentials are correct, the user is redirected to the home page. Otherwise, she is redirected to the login page to introduce her credentials again.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch8/ch8.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Creating forms and validating forms</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/uLv1rDj0Hk0" target="_blank">YouTube (Section 1)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Boilerplate1%20Register%20Package" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Final1%20Register%20Package" target="_blank">GitHub (Final)</a>
+            </div>
+            <p>
+                All the information in this section has been taken from the next links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application"  target="_blank">Digital Ocean</a>
+                <a class="btn-section1" href="https://python-adv-web-apps.readthedocs.io/en/latest/flask_forms.html"  target="_blank">Python Beginners</a>
+                <a class="btn-section1" href=" https://www.digitalocean.com/community/tutorials/how-to-use-and-validate-web-forms-with-flask-wtf"  target="_blank">Digital Ocean (Validate a Form)</a>
+                <a class="btn-section1" href="https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/"  target="_blank">Python Real (Create a Login Page) </a>
+            </div> 
+            <p>
+                There are many ways to create and validate forms, I have used mainly the approach followed in the next three links: 
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://flask-wtf.readthedocs.io/en/1.0.x/quickstart/" target="_blank">Flask-WTF</a>
+                <a class="btn-section1" href="https://flask-wtf.readthedocs.io/en/1.0.x/quickstart/ " target="_blank">Flask-WTF (Creating Forms): </a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=UIJKdCIEXUQ&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=3" target="_blank">Corey</a>
+            </div>
+            <h4>What is a Flask form (WTForms)?</h4>
+            <p>
+                Web forms, such as text fields and text areas, give users the ability to send data to your application to use it to perform an action, or to send larger areas of text to the application. In our app, we are using forms to register, to login, and to pass the number of kilometres, the means of conveyance and the type of fuel. In particular, we will use <strong>WTForms</strong> that is a flexible forms validation and rendering library for Python web development.
+                <br>
+                <br>
+                In our app, we are going to create a registration form. In that registration form, the users must introduce their username, their email, and password. Given that all the users must have these three fields, it is a good idea to create a <strong>class</strong>. Once that a single user introduces its username, email, and password, we will have an object generated by that class. Moreover, the classes that we are going to create can use methods programmed in flask that allows us to detect if the emails are incorrect, if the usernames do not fulfil certain requirements, etcetera. 
+            </p>  
+        </div>  
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Session and secret key</h4>
+                <p>
+                    If you have set <strong>Flask.secret_key (or configured it from SECRET_KEY)</strong> you can use sessions in Flask applications. A session makes it possible to remember information from one request to another. The way Flask does this is by using a signed cookie. The user can look at the session contents but can't modify it unless they know the secret key, so make sure to set that to something complex and unguessable.
+                    <br>
+                    <br>
+                    The <strong>secret key</strong> is useful to protect our app from Cross Site Request Forgery attacks. Cross-Site Request Forgery (CSRF) is an attack that forces authenticated users to submit a request to a Web application against which they are currently authenticated. CSRF attacks exploit the trust a Web application has in an authenticated user. (Conversely, cross-site scripting (XSS) attacks exploit the trust a user has in a particular Web application). A CSRF attack exploits a vulnerability in a Web application if it cannot differentiate between a request generated by an individual user and a request generated by a user without their consent.
+                    <br>
+                    <br>
+                    For more information about sessions, secret keys and Cross Site Request Forgery attacks check: 
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.synopsys.com/glossary/what-is-csrf.html" target="_blank">CSRF</a>
+                    <a class="btn-section1" href="https://flask.palletsprojects.com/en/2.0.x/api/#sessions" target="_blank">Session (Flask)</a>
+                </div>
+            </div> 
+            <div class="boxa">
+                <h5>How to create a random secret key</h5>
+                <p class="text-left">
+                    <ol>
+                        <li>
+                            Open a <strong>terminal</strong> in a Visual Studio.
+                        </li>
+                        <br>
+                        <li>
+                            In the Visual Studio terminal, type <strong>python</strong> and then you will have tree arrows indicating that you are in a Python terminal >>>
+                        </li>
+                        <br>
+                        <li>
+                            In the Python terminal, type: <strong>import os</strong>
+                        </li>
+                        <br>
+                        <li>
+                            Type again: <strong>os.urandom(24).hex()</strong>
+                        </li>
+                        <br>
+                        <li>
+                            You will obtain a random number that can be your secret key: <strong>application.config['SECRET_KEY'] = 'your secret key'</strong>
+                            We need to place that line of code in the __init__.py file where we define our flask application.
+                        </li>
+                        <br>
+                        <li>
+                            You can close the Python terminal by typing <strong>quit()</strong>.
+                        </li>
+                        <br>
+                        <li>
+                            To protect our secret key, when we deploy our app in AWS, we will protect the key by using an <strong>environmental variable</strong>.
+                        </li>
+                    </ol>
+                </p> 
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Creating forms</h4>
+                <p>
+                    To create WTForms, we proceed in three different steps:
+                    <ol>
+                        <li>
+                            We need to install some packages to use WTForms.
+                            <ol type="a">
+                                <li>
+                                    <strong>pip install flask-wtf</strong>
+                                </li>
+                                <li>
+                                    <strong>pip install email-validator</strong>
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            We need to import some <strong>packages</strong> and some <strong>validators</strong>.
+                        </li>
+                        <br>
+                        <li>
+                            We create a <strong>class</strong> named RegistrationForm with <strong>four fields </strong>and <strong>submit button</strong>. For each field, we create a label, and we introduce some validators to guarantee that the user introduces the right type of information. In the message flashing section, we will flash some messages to the user if the information introduced does not satisfy the validators requirements.
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Creating a form</h5>
+<pre><code class="html">
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+from wtforms.validators import DataRequired, Length, Email, EqualTo   
+
+class RegistrationForm(FlaskForm):
+    username = StringField('Username', 
+                    validators=[DataRequired(), Length(min=2, max=30)])
+    email = StringField('Email',
+                    validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    confirm_password = PasswordField('Confirm Password',
+                    validators=[DataRequired(), EqualTo('password')])
+    submit = SubmitField('Sign Up')
+</code></pre>
+            </div> 
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>Validating forms</h4>
+            <p>
+                To validate WTForms, we proceed in three different steps:
+                <ol>
+                    <li>
+                        We need to import some <strong>modules from Flask</strong> that we will use to validate our WTForm. Those modules are not strictly necessary, and if you use a different way to validate your WTForm, you will not need them.
+                    </li>
+                </ol>
+            </p>
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p>
+                    <ol start="2">
+                        <li>
+                            We need to import the <strong>class RegistrationForm</strong> that we have created previously. That class is located in the folder capp, the package users in the forms.py file.
+                        </li>
+                        <br>
+                        <li>
+                            When we define the <strong>route</strong>, we need to follow four steps:
+                            <ol type="a">
+                                <li>
+                                    We need to create a <strong>route</strong> for the registration form. That route not only accept GET requests, but also POST requests since the user will introduce some data in the form. 
+                                </li>
+                                <li>
+                                    In the function <strong>register()</strong>, we need to define the <strong>form= RegistrationForm()</strong>. 
+                                </li>
+                                <li>
+                                    If the user <strong>does not validate the form</strong>, we will disclose a register.html file where the user introduces her information. We define that register.html file in the next section.
+                                </li>
+                                <li>
+                                    If the user <strong>validates the form</strong> by clicking the submit button, we redirect the user to the home page.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa" style="height:350px;">
+                <h5>Validating a form</h5>
+<pre><code class="html">
+from flask import render_template, Blueprint, redirect, flash, url_for
+from capp.users.forms import RegistrationForm
+
+users=Blueprint('users',__name__)
+
+@users.route('/register', methods=['GET','POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        return redirect(url_for('home.home_home'))
+    return render_template('users/register.html', title='register', form=form)
+</code></pre>
+            </div> 
+        </div> 
+
+
+
+              
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Connecting forms with html templates and flashing messages</h1>
+            <h4>Connecting forms with html templates</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/6Cg9KNmiBZ0" target="_blank">YouTube (Section 2a)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Boilerplate2%20Register%20HTML" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Final2%20Register%20HTML" target="_blank">GitHub (Final)</a>
+            </div> 
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p style="text-align: left;">                    
+                    In the previous section we learnt how to create and validate a t WTForm. In this section, we learn how to connect the form with the register.html file where the user can fill the registration form. We proceed in different steps:
+                    <ol>
+                        <li>
+                            We define the form, and we must introduce the <strong>method POST</strong> that allows the user to post information.
+                        </li>
+                        <br>
+                        <li>
+                            To <strong>protect the form</strong>, we need to introduce the code: <strong>&#123;&#123; form.hidden_tag() &#125;&#125;</strong>
+                        </li>
+                        <br>
+                        <li>
+                            We define a fieldset where we create <strong>different fields</strong> that allow the user to interact with the form that we created in the previous section. 
+                        </li>
+                    </ol>
+                </p>      
+            </div>
+            <div class="boxa" style="height:260px;">
+                <h5>Connecting forms with html templates</h5>
+<pre><code class="html">
+    &#60;form method="POST" action=""&#62;
+    &#123;&#123; form.hidden_tag() &#125;&#125;
+    &#60;fieldset class="form-group"&#62;
+       &#60;legend class="border-bottom mb-4"&#62;Join Today&#60;/legend&#62;
+       &#60;div class="form-group"&#62;
+          &#123;&#123; form.username.label(class="form-control-label") &#125;&#125;
+          &#123;&#123; form.username(class="form-control form-control-lg") &#125;&#125;
+       &#60;/div&#62;
+   &#60;/form&#62;
+</code></pre>
+
+    
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Message Flashing.</h4>
+                <p>
+                    The links to the YouTube video, and the GitHub account for this section are below:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://youtu.be/wpmhpk0OhVo" target="_blank">YouTube (Section 2b)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Boilerplate3%20Messages" target="_blank">GitHub (Boilerplate)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Final3%20Messages" target="_blank">GitHub (Final)</a>
+                </div> 
+                <p>
+                    We are going to disclose two types of messages. First, in the register.html file, we disclose messages when the user introduces information that do not satisfy the validators requirements introduced in the forms.py file. Second, in the home.html file we disclose a message when the user registers her information correctly. 
+                    <br>
+                    <br>
+                    <u>Messages in the register.html file.</u> By using <strong>Jinja</strong>, we introduce and <strong>if-else statement</strong> that helps us to manage the error messages.
+                    <br>
+                    <br>
+                    If the user introduces some information in the username field that violates the <strong>validation requirements</strong> introduced in the forms.py file, we collect those errors and disclose them inside a container with the bootstrap class “invalid-feedback.” Otherwise, we do not disclose any error message.
+                    <br>
+                    <br>
+                    <u>Messages in the home.html file.</u> By using <strong>Jinja</strong>, we introduce a <strong>with</strong>, an <strong>if</strong> and <strong>for statement</strong> in our home.html file to disclose information to the user when she registers in the app.
+                    <br>
+                    <br>
+                    In those statements, we take the flashed messages from the route, and we disclose them taken into account the category of the message and creating a specific bootstrap depending on the category of the message.
+                </p>     
+            </div>
+            <div class="boxa" style="height:640px;">
+                <h5>Messages in the register.html file</h5>
+<pre><code class="html">
+&#60;div class="form-group"&#62;
+    &#123;&#123; form.username.label(class="form-control-label") &#125;&#125;
+        &#123;% if form.username.errors %&#125;
+            &#123;&#123; form.username(class="form-control form-control-lg is-invalid") &#125;&#125;
+            &#60;div class="invalid-feedback"&#62;
+                &#123;% for error in form.username.errors %&#125;
+                    &#60;span&#62;&#123;&#123; error &#125;&#125;&#60;/span&#62;
+                &#123;% endfor %&#125;
+            &#60;/div&#62;
+        &#123;% else %&#125;
+            &#123;&#123; form.username(class="form-control form-control-lg") &#125;&#125;
+        &#123;% endif %&#125;
+&#60;/div&#62;  
+</code></pre>
+                <h5>Messages in the home.html file</h5>
+<pre><code class="html">
+&#123;% with messages = get_flashed_messages(with_categories=true) %&#125;
+    &#123;% if messages %&#125;
+        &#123;% for category, message in messages %&#125;
+            &#60;div class="alert alert-&#123;&#123; category &#125;&#125;"&#62;
+                &#123;&#123; message &#125;&#125;
+            &#60;/div&#62; 
+        &#123;% endfor %&#125;
+    &#123;% endif %&#125;
+&#123;% endwith %&#125;  
+</code></pre>    
+            </div>
+        </div>   
+
+    </section> 
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+
+        <div class="container">
+
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h1>Deployment of our app in AWS</h1>
+                <p>
+                    The link to the YouTube video is below:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3" href="https://youtu.be/k3v3Nfy9yPY" target="_blank">YouTube (Section 3)</a>
+                </div> 
+                <p>
+                    To deploy our app in AWS we need to consider two things.
+                    <ol>
+                        <li>
+                            In the <strong>requirements.txt file</strong>, we need to add all the packages that we have used in this chapter, so the server can install the same packages. 
+                        </li>
+                        <br>
+                        <li>
+                            We need to <strong>protect our secret key</strong> by using instrumental variables. Please watch the video in which I show the changes that must be introduced in the <strong>__init__.py file</strong> before to place that file in <strong>GitHub</strong> and the changes that we need to introduce in <strong>AWS</strong> to create an <strong>environmental variable</strong> to protect our secret key. 
+                        </li>
+                    </ol>
+                </p>     
+            </div>
+            <div class="boxa" style="height:390px;">
+            <p>
+                <u>What are environment variables?</u>
+                Environment variables are predetermined values that are typically used to provide the ability to configure a value in your code from outside of your application.
+                <br>
+                <br>
+                <u>How can I keep these files secure?</u>
+                For instance, <strong>AWS keys</strong> are a valuable source. People run bots with the sole purpose of trying to scan Github for keys. If someone finds an AWS key, they could use this key to access resources such as running a bitcoin operation at your expense. This isn't to scare you, its to make you aware so you avoid your keys getting compromised.
+                <br>
+                <br>
+                The information about environmental variables has ben taken from the next link:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3_box" href="https://www.freecodecamp.org/news/what-are-environment-variables-and-how-can-i-use-them-with-gatsby-and-netlify/" target="_blank">FreeCodeCamp</a>
+            </div> 
+            </div>
+        </div>
+
+    </section> 
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+
+        <div class="container">
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;"> 
+                    In the weekly challenge, you must create a <strong>login page</strong>, where the user can introduce her credentials. If those credentials are correct, you redirect the user to the <strong>home page</strong> showing a message in that page indicating that the user can start to use the app. Otherwise, you redirect the user to the <strong>login page</strong> showing a message in that page indicating that the credentials are wrong.  
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch3_week1">Hints</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Boilerplate4%20Login" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub (Boilerplate)</a>
+                    </div> 
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch8%20Forms/Final4%20Login" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub (Final)</a>
+                    </div>  
+                    <div class="btn">
+                        <a href="{{url_for('gd_course_app_carbon_app_2023_ch8.home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                    </div>                 
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch3_week1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+      
+                            <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 8</h5>
+                            </div>
+      
+                            <div class="modal-body", style="color:black">
+                            <p style="text-align: left;">
+                                All the files for the weekly challenge are in the GitHub account. Please, download the Boilerplate folder, create a venv, and start to work following the directions in the hints. 
+                                <ol style="text-align: left;">
+                                    <li>
+                                        <strong>Creating a form</strong>: You should modify the forms.py file to create a class named LoginForm().
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Validating a form</strong>: In the routes.py, you must import that class, and modify the login() to validate the form on submit.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Connecting the form with html files</strong>: Modify the login.html to display the form.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Message Flashing</strong>: Modify the login.html file to disclose an error message while the user introduces wrong credentials.
+                                    </li>
+                                </ol>
+                            </p>
+                            </div>
+      
+                            <div class="modal-footer">
+                            <a href="{{ url_for('gd_course_chats.gd_course_chats_new_main_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                            </div>
+      
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="onebox">                  
+            </div> 
+        </div>
+      
+      </section>    
+
+
+{% endblock content %}

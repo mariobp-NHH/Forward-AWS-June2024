@@ -1,0 +1,147 @@
+{% extends "gd_course/HVL_2023_group1/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section class="section_header_carbon_app">
+        <div class="container">
+    
+        <div class="header_carbon_app">
+            <div class="box"> 
+            <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
+            <p style="text-align:left;">
+                Our app aims to help reduce carbon emissions in Bergen, and provide app users and Bergen Municipality with valuable insights on how to reduce carbon emissions. The app will let the municipality and its citizens cooperate better when aiming to reduce transport emissions. The app will also provide the municipalities with potentially valuable data for further research on the field. We can differentiate our app from competitors by implementing features such as notifying users in periods of high emissions to encourage them to choose trips with lower emission, and implement features that lets them compare their carbon emissions to the average person's. We believe these features will benefit municipalities in reducing emissions and encourage them to adopt our app.
+            </p>
+            <div class="container_buttons_links_header_carbon_app">
+                <div class="btn">
+                    <a href="{{url_for('gd_course_HVL_2023_group1.methodology_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#FF7F00;">Methodology</a>
+                </div>
+                <div class="btn">
+                    <a href="{{url_for('gd_course_HVL_2023_group1.your_data')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#FF7F00;">Your Data</a>
+                </div>
+                <div class="btn">
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#FF7F00;", data-toggle="modal" data-target="#carbon_app_instructions">Instructions</a>
+                </div>
+            </div>  
+            <!-- Modal Instructions -->
+            <div class="modal fade" id="carbon_app_instructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+          
+                    <div class="modal-header">
+                    <h5 class="modal-title", style="color:black; text-align: center;">Carbon App, instructions</h5>
+                    </div>
+          
+                    <div class="modal-body", style="color:black">
+                    <p style="text-align: left;">
+                        Welcome to the carbon app, here is the instruction for using our application. First choose your mode of transportation.
+                    </p>
+                    <ol style="text-align:left;">
+                        <li>
+                            Enter the number of kilometers you have travelled.
+                        </li>
+                        <li>
+                            Choose the type of fuel that your transportation used.
+                        </li>
+                    </ol>
+                    </div>
+          
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="box">
+            <img 
+                src="{{url_for('static', filename='gd_course_HVL_2023_group1/icons/Carbon_calculator_3.svg')}}"
+                width="325" 
+                height="325"
+                alt=""/>
+            </div>
+        </div>
+    </section>
+<section class="section_carbon_app_new_entry_main">
+    <div class="container">
+  
+      <div class="carbon_app_new_entry_main" style="display:block;">
+        <br>
+        <h3 style="text-align:center;">Please, select your mean of conveyance in the boxes below</h3>     
+      </div>
+  
+      <div class="carbon_app_new_entry_main">
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-bus"></i>
+            </div>
+            <h3>Bus</h3>
+            <p>Please, enter your kilometers by using the bus.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_HVL_2023_group1.new_entry_bus')}}">New Entry</a>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-car"></i>
+            </div>
+            <h3>Car</h3>
+            <p>Please, enter your kilometers by using the car.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_HVL_2023_group1.new_entry_car')}}">New Entry</a>
+            </div> 
+          </div>           
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+            <h3>Plane</h3>
+            <p>Please, enter your kilometers by using the plane.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_HVL_2023_group1.new_entry_plane')}}">New Entry</a>
+            </div> 
+          </div>
+          <div class="box">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="fa-solid fa-train"></i>
+            </div>
+            <h3>Train</h3>
+            <p>Please, enter your kilometers by using the Train.
+            </p>
+            <div class="section_container_buttons_carbon_app_new_entry_main">
+              <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_HVL_2023_group1.new_entry_train')}}">New Entry</a>
+            </div> 
+          </div>      
+      </div>
+
+      <div class="carbon_app_new_entry_main">
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-cart-flatbed"></i>
+          </div>
+          <h3>ElKick Scooter</h3>
+          <p>Please, enter your kilometers by using the eletric scooter.
+          </p>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_HVL_2023_group1.new_entry_ElkickScooter')}}">New Entry</a>
+          </div> 
+        </div>    
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-bicycle"></i>
+          </div>
+          <h3>Electric Bicycle</h3>
+          <p>Please, enter your kilometers by using the eletric bicycle.
+          </p>
+          <div class="section_container_buttons_carbon_app_new_entry_main">
+            <a class="btn_carbon_app_new_entry_main" href="{{url_for('gd_course_HVL_2023_group1.new_entry_ElBicycle')}}">New Entry</a>
+          </div> 
+        </div>     
+         
+    </div>  
+    <div class="box" style="background-color:#BACEC1;">
+    </div>      
+             
+</section> 
+       
+
+{% endblock content %}

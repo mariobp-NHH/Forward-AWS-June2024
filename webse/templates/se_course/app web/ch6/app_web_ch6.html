@@ -1,0 +1,179 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color:#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Chapter 6. Forms </span></h1>
+                    <p class="mb-1">
+                        In this chapter, we allow the user to interact with our app by selecting the means of conveyance, the type
+                        of fuel in a particular mean of conveyance, and the number of kilometers travelled by using that mean of
+                        conveyance.
+                        </br>
+                        </br>
+                        To develop a Flask form, we proceed in two steps. First, we program the form in two subsequent steps. First,
+                        we <strong>create that form</strong> in a separated form.py file; second, we <strong>connect that form</strong> with our routes in the app.py file.
+                        Second, we <strong>design and connect the form with the HTML code</strong> in the calculator.html file.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo">Video</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalVideo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 6
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/h0AB5h1vZHQ" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                       <div class="btn">
+                            <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch6.%20Forms%20Layout" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Github</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EmHlCudicWVDgDfYb31wIugB3sy1ybho9eqjY3fiYqZqCg?e=IEk0a3" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#monday" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Monday challenge breakfast</h5>
+                        </div>
+                        <p class="mb-1">
+                            The students can add more forms to their code by introducing other means of conveyance.
+                        </p>
+
+                      </a>
+                      <a href="#program" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Forms, programming</h5>
+                        </div>
+                        <p class="mb-1">
+                            We create the form in a separated form.py file; and we connect that form to the routes used to render
+                            the HTML files in the app.py file.
+                        </p>
+                      </a>
+                      <a href="#design" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Forms, design</h5>
+                        </div>
+                        <p class="mb-1">
+                            We design the calculator.html file where we disclose our form, and we connect the that file
+                            with the app.py file.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                    <img src="{{url_for('static', filename='figures/app/ch6/ch6_icon.svg')}}" alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="monday" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h2 style="justify-content:center;">Monday challenge breakfast</h2>
+                <p>
+                    The students can add more forms to their code by introducing other means of conveyance. By adding more
+                    structure to their code, they introduce more means of conveyance and type of fuels. This also introduce
+                    more complexity in the code, and it is important to pay attention to those steps to do not miss any important
+                    step in the coding.
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1. Form, programming-->
+    <section id="program" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Forms, programming</h2>
+
+            <p>
+                To program the flask form, we proceed in two steps:
+
+                <ol>
+                    <li>
+                        We create a file named forms.py where we import all the tools that we will need to create our form;
+                        we create the form as a class; and we define all the elements that we will use in our form.
+                    </li>
+                    <li>
+                        We connect the form.py with our routes by using the app.py file.
+                        <ol type="a">
+                            <li>We import the file forms.py that we
+                        created in the previous step: <code3>from forms import AddRecordForm</code3></li>
+                            <li>We create a secret key: <code3>app.config['SECRET_KEY'] = '3434345791628bb0b13ce0c676dfde280ba245'</code3></li>
+                            <li>In the route where we will use the form,
+                        we introduce the methods get and post in such a way that the users can interact with our app: <code3>@app.route('/app_calculator', methods=['GET', 'POST'])</code3></li>
+                            <li>We pass the information of our form to the app_caculator.html:
+                                <div class="container" style="text-align: center;">
+                                    <pre> <code4>
+def app_calculator():
+form = AddRecordForm()
+return render_template('app_calculator.html', title='App Calculator', legend='App Calculator',
+                       paragraph='(Based on the code developed by Gabriel Fuentes for the course ENE425)',
+                       form=form)
+                                    </code4> </pre>
+                                </div>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--Section Form, design-->
+    <section id="design" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Forms, design</h2>
+
+            <p>
+                We design the layout of our form by using HTML and CSS code in the app_calculator.html.
+                We connect the app_calculator.html file with our form by using the app.py file.
+
+                <ol>
+                    <li>
+                        We design the layout of our form by using HTML and CSS code in the app_calculator.html. We proceed
+                        as in chapters 3 and 4. Therefore, we do not spend a lot of time explaining that part of the code.
+                    </li>
+                    <li>
+                        We connect the app_calculator.html file with the routes in the app.py file by creating a form within
+                        our app_calcultor.html file <code1>form method="POST" action=""</code1>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+{% endblock content %}

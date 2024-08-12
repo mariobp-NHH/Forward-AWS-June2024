@@ -1,0 +1,61 @@
+{% extends "gd_course/NHH_2024_group4/layout.html" %} {% block content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='/gd_course_NHH_2024_group4/new_entry.css') }}"
+/>
+<section class="new_entry">
+  <div class="container">
+    <div id="new_entry_grid" class="box">
+      <div class="icon_box">
+        <img
+          class="transport_icon"
+          src="{{ url_for('static', filename='/gd_course_NHH_2024_group4/icons/transport_train.svg') }}"
+          alt=""
+        />
+      </div>
+      <div id="instruction_box">
+        <h3>Train CO2 Emissions Calculator</h3>
+        <ol style="text-align: left">
+          <li>Please enter the number of kilometers.</li>
+          <li>Please select the fuel type.</li>
+        </ol>
+      </div>
+      <form id="transportForm" method="POST" action="">
+        {{ form.csrf_token }}
+        <fieldset class="form-group">
+          <div class="form-group">
+            {{ form.kms.label(class="form-control-label") }} {% if
+            form.kms.errors %} {{ form.kms(class="form-control form-control-lg
+            is-invalid", placeholder="Enter kilometers") }}
+            <div class="invalid-feedback">
+              {% for error in form.kms.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %} {{ form.kms(class="form-control form-control-lg",
+            placeholder="Enter kilometers") }} {% endif %}
+          </div>
+
+          <div class="form-group">
+            {{ form.fuel_type.label(class="form-control-label") }} {% if
+            form.fuel_type.errors %} {{ form.fuel_type(class="form-control
+            form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.fuel_type.errors %}
+              <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+            {% else %} {{ form.fuel_type(class="form-control form-control-lg")
+            }} {% endif %}
+          </div>
+        </fieldset>
+        <br />
+        <div class="form-group">
+          {{ form.submit(class="btn_carbon_app_new_entry_main") }}
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

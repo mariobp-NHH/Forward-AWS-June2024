@@ -1,0 +1,209 @@
+/* Colors */
+/* Rainy theme 5 -Green Digitalization Course and Students Apps-:
+Navbar (background): #8bbbd9
+Navbar (a hover): #466fa6
+Navbar (logo): #568c63
+Navbar (a menu): #2a4359
+*/
+
+/* Google fonts Roboto  */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+/* CSS utilities */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  line-height: 1.6;
+}
+.container {
+  margin: auto;
+  max-width: 100%;
+}
+ul { 
+  list-style: none;
+  font-size: 400;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1, h2 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+img {
+  width: 100%;
+}
+/* Navbar  */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+.section_navbar {
+  width: 100%;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 70px;
+}
+
+.navbar .logo {
+  font-size: 25px;
+}
+
+
+.navbar a {
+  margin-left: 30px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  padding-bottom: 5px;
+}
+
+
+.navbar ul li a {
+  margin: 0px;
+  font-size: 13px;
+}
+
+.container {
+	width: 80%;
+	margin: 0px auto;
+}
+
+header {
+  background: #444;
+}
+
+header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  display: inline;
+  margin-left: 70px;
+  padding-top: 20px;
+
+  position: relative;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: none;
+  font-size: 17px;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background-color: #444;
+
+  position: absolute;
+  top: 10px;
+  width: 0;
+
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
+
+/* Footer  */
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  padding: 0 0px;
+}
+
+
+@media(max-width:1020px){
+  .navbar {
+      flex-direction: column;
+      height: 125px; 
+      display: block;
+      margin-left: -70px;
+      align-items: center; 
+      justify-content: center; 
+  }
+  .navbar .logo a {
+    margin-top: 10px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    margin-right: -53px;
+}
+.navbar .logo a .text-logo {
+  margin-right: -180px; 
+}
+
+.navbar .logo .fa-calculator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+  .navbar a {
+    flex-direction: column;
+    position: relative; 
+  }
+  .navbar ul {
+      flex-direction: row; 
+      justify-content: center;
+  }
+  .navbar ul li {
+    margin-left: 30px;
+    font-size: 13px;
+    align-items: center;
+  }
+
+  nav a {
+    position: relative; 
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 3px;
+    background-color: #444;
+    position: absolute;
+    top: -8px; 
+    width: 0;
+    left: 0;
+    transition: width ease-in-out 250ms;
+  }
+
+  nav li:hover a::before {
+    width: 100%;
+  }
+}

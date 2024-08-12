@@ -1,0 +1,373 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+
+  <!-- Refresh -->
+  <section class="main_menu">
+    <div class="container">
+        <div class="box">
+
+        </div>
+        <div class="box" style="background-color: #568c63;"> 
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div> 
+                    {% endfor %}
+                {% endif %}
+            {% endwith %} 
+            <h2>Changes to improve the course</h2>
+            <p>
+              <ol style="text-align: left;">
+                  <li>
+                    <strong>Teaching</strong>: Which teaching material do you like the most (and the least)?  
+                    Which thing(s) do you like the most (and the least) in the lectures?
+                    How could I improve the lectures?
+                  </li>
+                  <li>
+                    <strong>Entrepreneurship</strong>. How could I organize the course to help you to found your own startups/cooperatives/companies in the future?
+                  </li>
+                  <li>
+                    <strong>Cooperation</strong>. How could I organize the course to help students from HVL and NHH to cooperate?
+                  </li>
+                  <li>
+                    <strong>Gender</strong>. Which changes in the curriculum/methodology/pedagogy could I introduce in the course to foster gender balance?
+                  </li>
+              </ol>
+            </p>         
+            <div class="container_buttons_links_main_menu">
+              <div class="btn">
+                <a href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_mc_summary') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Refresh</a>
+              </div>
+              <div class="btn">
+                <a href="{{ url_for('gd_course_questionnaires.gd_course_questionnaires_mc_summary_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">New Chat</a>
+              </div>
+            </div>        
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+</section> 
+
+
+<!-- Analysis -->
+<section class="section_gd_course_questionnaire" style="background-color: #9fa7bf;">
+  <div class="container">
+    <div class="column column1">
+      <div class="column column1 box">
+        <p style="text-align: left;"><strong>Question 1 (Entrepreneurship):</strong> The presentation of a business model for your app could increase your skills to found your own startup/cooperative/company in the future? </p>
+        <br>
+        <canvas id="questionnaire_q1" style="width:300px;"></canvas>
+      </div>
+      <div class="column column1 box">
+        <p style="text-align: left;"><strong>Question 2 (Entrepreneurship):</strong> The presentation of your app in the AWS Summit and the Lysdagen conference could increase your skills to found your own startup/cooperative/company in the future? </p>
+        <br>
+        <canvas id="questionnaire_q2" style="width:300px;"></canvas>
+      </div>
+      <div class="column column2 box">
+        <p style="text-align: left;"><strong>Question 3 (Cooperation):</strong> The creation of mixed students groups between HVL and NHH (and potentially other universities) could foster the adoption of new team work and business ideas? </p>
+        <br>
+        <canvas id="questionnaire_q3" style="width:300px;"></canvas>
+      </div>
+    </div>
+    <div class="column column2">      
+      <div class="column column2 box">
+        <p style="text-align: left;"><strong>Question 4 (Cooperation):</strong> The introduction of online chats and zoom meetings could facilitate the cooperation between mixed students groups from different universities?</p>
+        <br>
+        <br>
+        <canvas id="questionnaire_q4" style="width:300px;"></canvas>
+      </div>
+      <div class="column column2 box">
+        <p style="text-align: left;"><strong>Question 5 (Gender):</strong> The app development and the essay are conducted in groups. This way of organizing the assignments could promote the gender balance in the course?</p>
+        <br>
+        <br>
+        <canvas id="questionnaire_q5" style="width:300px;"></canvas>
+      </div>
+      <div class="column column2 box">
+        <p style="text-align: left;"><strong>Question 6 (Gender):</strong> In the course, the development of the app follows a storyline instead of learning different programming languages in separated blocks. Could this way of learning promote the gender balance in the course?</p>
+        <canvas id="questionnaire_q6" style="width:300px;"></canvas>
+      </div>
+    </div>
+    <div class="column column3">
+      <div class="column column3 box">
+        <div class="h1 mb-3">
+          <i class="bi bi-chat-square-dots"></i>
+        </div>
+        <h3 class="text-center"><span class="text-warning"> Chat: </span></h3>
+        {% for chat in chats.items %}
+          <article class="media content-section">
+          <img class="rounded-circle article-img" src="data:image/jpeg;base64,{{ func(chat.author.image_file) }}">
+          <div class="media-body">
+              <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('gd_course_questionnaires.user_chats_mc', username=chat.author.username) }}">{{ chat.author.username }}</a>
+              <small class="text-muted">{{ chat.date_chat.strftime('%Y-%m-%d') }}</small>
+              </div>
+              <h4><a class="article-title" href="{{ url_for('gd_course_questionnaires.chat_mc', chat_id=chat.id) }}">{{ chat.title_chat }}</a></h4>
+              <p class="article-content">{{ chat.content }}</p>
+          </div>
+          </article>
+        {% endfor %}
+        {% for page_num in chats.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+          {% if page_num %}
+            {% if chats.page == page_num %}
+              <a class="btn btn-info mb-4" href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_mc_summary', page=page_num) }}">{{ page_num }}</a>
+            {% else %}
+              <a class="btn btn-outline-info mb-4" href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_mc_summary', page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+          {% else %}
+            ...
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  {% block javascript %}
+  
+    
+    <script>
+    let q1_results_data = JSON.parse({{ q1_results | tojson }})
+    let q2_results_data = JSON.parse({{ q2_results | tojson }})
+    let q3_results_data = JSON.parse({{ q3_results | tojson }})
+    let q4_results_data = JSON.parse({{ q4_results | tojson }})
+    let q5_results_data = JSON.parse({{ q5_results | tojson }})
+    let q6_results_data = JSON.parse({{ q6_results | tojson }})
+  
+
+
+    let questionnaire_q1 = new Chart(document.getElementById('questionnaire_q1'), {
+      type: 'pie',
+      data: {
+        labels: ['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'],
+        datasets: [{
+          label: 'Questionnaire, question 1',
+          data: q1_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q2 = new Chart(document.getElementById('questionnaire_q2'), {
+      type: 'pie',
+      data: {
+        labels: ['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'],
+        datasets: [{
+          label: 'Questionnaire, question 2',
+          data: q2_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q3 = new Chart(document.getElementById('questionnaire_q3'), {
+      type: 'pie',
+      data: {
+        labels: ['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'],
+        datasets: [{
+          label: 'Questionnaire, question 3',
+          data: q3_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q4 = new Chart(document.getElementById('questionnaire_q4'), {
+      type: 'pie',
+      data: {
+        labels: ['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'],
+        datasets: [{
+          label: 'Questionnaire, question 4',
+          data: q4_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q5 = new Chart(document.getElementById('questionnaire_q5'), {
+      type: 'pie',
+      data: {
+        labels: ['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'],
+        datasets: [{
+          label: 'Questionnaire, question 5',
+          data: q4_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q6 = new Chart(document.getElementById('questionnaire_q6'), {
+      type: 'pie',
+      data: {
+        labels: ['Strongly Agree', 'Agree', 'Disagree', 'Strongly Disagree'],
+        datasets: [{
+          label: 'Questionnaire, question 6',
+          data: q4_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+
+
+  </script>
+
+  {% endblock%}
+  
+
+
+{% endblock content %}

@@ -1,0 +1,149 @@
+/* Colors 
+Methodology, section 1 (header, background): #2a4359
+Methodology, section 1 (header, boxes): #6da6a6
+Methodology, section 2 (methodology, background): #466fa6
+Methodology, section 2 (methodology, boxes): #8badd9
+*/
+
+/* Section header */
+.section_header_methodology {
+  background-color: #899cc4;
+}
+
+.header {
+  display: flex;
+  align-items: start;
+
+}
+
+.header .box {
+
+
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .box:nth-of-type(1) {
+  flex-grow: 2;
+}
+
+.header .box:nth-of-type(2) {
+  flex-grow: 1;
+}
+
+.container_buttons_links_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+
+
+.container_buttons_links_header btn {
+  width: 100px;
+  height: 100px;
+  background-color: #899cc4;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Section methodology */
+.section_body_methodology {
+  background-color: #445c93;
+}
+
+@media (max-width:1288px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .encomp_allencomp {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+  }
+
+  .box {
+    width: 700px;
+  }
+
+  .allencomp {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+  }
+
+  .allencomp2 {
+    flex-direction: column;
+    display: flex;
+    width: fit-content;
+  }
+}
+
+.encomp_allencomp {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+
+}
+
+.allencomp {
+  width: 600px;
+  height: fit-content;
+  padding: 15px;
+  margin: 10px;
+}
+
+.allencomp2 {
+  width: 600px;
+  height: fit-content;
+  padding: 15px;
+  margin: 10px;
+}
+
+.drop {
+  width: 300px;
+  height: 50px;
+  outline-style: solid;
+  outline-width: 4px;
+  outline-color: #349370;
+  background-color: #8bcb8f;
+  margin: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  /* Align horizontal */
+  align-items: center;
+  /* Align vertical */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 8px;
+  user-select: none;
+}
+
+.drop:hover {
+  background-color: #349370;
+  cursor: pointer;
+}
+
+.inside {
+  margin-left: 30px;
+  width: 500px;
+  font-size: larger;
+  color: #FBFAF5;
+}

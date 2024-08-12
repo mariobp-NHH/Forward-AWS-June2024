@@ -1,0 +1,125 @@
+{% extends "gd_course/NHH_2024_group4/layout.html" %}
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='/gd_course_NHH_2024_group4/carbon_app.css') }}">
+
+<!-- Header -->
+<section class="section_header_carbon_calculator d-flex">
+
+    <div class="container flex-row">
+        <section class="transport">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                <script>
+                    setTimeout(function() {
+                        var flashes = document.querySelector('.flashes');
+                        if (flashes) {
+                            flashes.remove();
+                        }
+                    }, 5000);
+                </script>
+            {% endif %}
+        {% endwith %}
+            <h2>Choose you transport method</h2>
+            <div id="alert-box"></div>
+            <div class="row">
+                <ul>
+                    <div class="col-md-3">
+                        <li class="box">
+                            <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_bus')}}" class="btn btn-carbon-app">
+                                <h3>Bus</h3>
+                                <i class="fa-solid fa-bus fa-2xl"></i>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="col-md-3">
+                        <li class="box">
+                            <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_train')}}" class="btn btn-carbon-app">
+                                <h3>Train</h3>
+                                <i class="fa-solid fa-train fa-2xl"></i>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="col-md-3">
+                        <li class="box">
+                            <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_car')}}" class="btn btn-carbon-app">
+                                <h3>Car</h3>
+                                <i class="fa-solid fa-car fa-2xl"></i>
+                            </a>
+                        </li>
+                    </div>
+                    <div class="col-md-3">
+                        <li class="box">
+                            <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_plane')}}" class="btn btn-carbon-app">
+                                <h3>Plane</h3>
+                                <i class="fa-solid fa-plane fa-2xl"></i>
+                            </a>
+                        </li>
+                    </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <li class="box">
+                        <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_motorbike')}}" class="btn btn-carbon-app">
+                            <h3>Motorbike</h3>
+                            <i class="fa-solid fa-motorcycle fa-2xl"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li class="box">
+                        <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_ferry')}}" class="btn btn-carbon-app">
+                            <h3>Ferry</h3>
+                            <i class="fa-solid fa-ferry fa-2xl"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li class="box">
+                        <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_bicycle')}}" class="btn btn-carbon-app">
+                            <h3>Bicycle</h3>
+                            <i class="fa-solid fa-bicycle fa-2xl"></i>
+                        </a>
+                    </li>
+                </div>
+                <div class="col-md-3">
+                    <li class="box">
+                        <a href="{{url_for('gd_course_NHH_2024_group4.new_entry_walk')}}" class="btn btn-carbon-app">
+                            <h3>Walk</h3>
+                            <i class="fa-solid fa-person-walking fa-2xl"></i>
+                        </a>
+                    </li>
+                </div>
+
+            </div>
+            <div class="box">
+                <!-- button for you emissions -->
+                <a href="{{url_for('gd_course_NHH_2024_group4.carbon_your_emissions')}}" class="btn btn-nice" >Your Emissions</a>
+
+            </div>
+
+
+
+        </section>
+
+</section>
+
+
+
+
+
+</div>
+
+
+
+
+<!-- End block-->
+
+{% endblock content %}

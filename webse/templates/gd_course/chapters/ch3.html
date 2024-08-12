@@ -1,0 +1,1140 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch3. HTML: Head and Body</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we study the main components of an <strong>HTML document</strong>, the <strong>head</strong>, and the <strong>body</strong>. We study the most salient elements in the head and the body, and their properties. This will help us to improve the design of our app in chapter 4 and 5 and 7.
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/6dBZW1HUiyE"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (section 2)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/zKj4QERE4yA" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (section 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch3%20HTML%20Head%20and%20Body" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Head</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main elements in the head paying special attention to the <strong>title</strong>, <strong>style</strong> and <strong>meta</strong>.
+                        </p>
+
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Body: Box-sizing and HTML block and inline elements</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main elements inside the body tag. We also study in details certain elements in the body and its properties that will help us to improve the design of our app. We will study <strong>box-sizing</strong>; <strong>HTML block and inline elements</strong>.  
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Body: CSS display property, flexbox, and CSS media queries</h5>
+                            </div>
+                            <p class="mb-1">
+                                We study the  <strong>CSS display property</strong>; <strong>flexbox</strong>; and <strong>CSS media queries</strong>.
+                            </p>
+                            </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            This chapter is long, and we have two weekly challenges. In the first weekly challenge, we create a box with a paragraph, a list, and a button. In the second weekly challenge, we create a flex container with a list with of three elements. The list changes its direction from row to column depending on the screen size.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch3/ch3.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Head</h1>
+            <p>
+                All the information in this section has been taken from the next link:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.w3schools.com/html/html_head.asp"  target="_blank">HTML, head</a>
+                </div> 
+                The <code style="color:black;">&lt;head</code>&gt; element is a container for metadata (data about data) and is placed between the <code style="color:black;">&lt;html</code>&gt; tag and the <code style="color:black;">&lt;body</code>&gt; tag.
+                <br><br>
+                HTML metadata is data about the HTML document. Metadata is not displayed.
+                <br><br>
+                Metadata typically define the document <strong>title</strong>, character set, <strong>styles</strong>, scripts, and other <strong>meta information</strong>.  
+            </p>
+        </div>  
+        
+        <div class="container" style="display:block;">
+            <h4>The HTML <code style="color:black;">&lt;title</code>&gt; Element</h4>
+            <p>
+                The <code style="color:black;">&lt;title</code>&gt; element defines the title of the document. The title must be text-only, and it is shown in the browser's title bar or in the page's tab.
+                <br><br>
+                The <code style="color:black;">&lt;title</code>&gt; element is required in HTML documents!
+                <br><br>
+                The content of a page title is very important for search engine optimization! The page title is used by search engine algorithms to decide the order when listing pages in search results.
+                <br><br>
+                The <code style="color:black;">&lt;title</code>&gt; element:
+                <ul>
+                    <li>
+                        <strong>Defines</strong> a title in the browser toolbar.
+                    </li>
+                    <li>
+                        <strong>Provides</strong> a title for the page when it is added to favorites. 
+                    </li>
+                    <li>
+                        <strong>Displays</strong> a title for the page in search engine-results.
+                    </li>
+                </ul>	
+                So, try to make the title as accurate and meaningful as possible!                     
+            </p>
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>The HTML <code style="color:black;">&lt;style</code>&gt; Element</h4>
+            <p>                
+                The <code style="color:black;">&lt;style</code>&gt; element is used to define <strong>style information</strong> for a single HTML page. We are going to use it in the body section.               
+            </p>
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>The HTML <code style="color:black;">&lt;link</code>&gt; Element</h4>
+            <p>  
+                The <code style="color:black;">&lt;link</code>&gt; element defines the relationship between the current document and an external resource.
+                <br><br>
+                The <code style="color:black;">&lt;link</code>&gt; tag is most often used to <strong>link to external style sheets</strong>.
+                <br><br>
+                We will use links several times in the next chapters. An example of a link: <strong><code style="color:black;">&lt;link rel="stylesheet" href="mystyle.css"&gt;</code></strong>                  
+            </p>
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>HTML <code style="color:black;">&lt;meta&gt;</code> Tag.</h4>
+            <p> 
+                All the information in this section has been taken from the next link:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.w3schools.com/tags/tag_meta.asp"  target="_blank">HTML, meta</a>
+                </div> 
+                <u>Definition and Usage</u>
+                <br><br>
+                The <code style="color:black;">&lt;meta&gt;</code> tag defines metadata about an HTML document. Metadata is data (information) about data.
+                <br><br>
+                <code style="color:black;">&lt;meta&gt;</code> tags always go inside the <code style="color:black;">&lt;head&gt;</code> element, and are typically used to specify <strong>character set</strong>, <strong>page description</strong>, <strong>keywords</strong>, <strong>author of the document</strong>, and <strong>viewport</strong> settings.
+                <br><br>
+                Metadata is used <strong>by browsers</strong> (how to display content or reload page), <strong>search engines</strong> (keywords), and other <strong>web services</strong>.
+                <br><br>
+                There is a method to let web designers take control over the <strong>viewport</strong> (the user's visible area of a web page), through the <code style="color:black;">&lt;meta&gt;</code> tag (See "Setting The Viewport" example below).
+                <br><br>
+                <u>Some examples</u>
+                <br><br>
+                <ol>
+                    <li>
+                        Define <strong>keywords</strong> for search engines: <code style="color:black;">&lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;</code>
+                    </li>
+                    <li>
+                        Define a <strong>description</strong> of your web page: <code style="color:black;">&lt;meta name="description" content="Free Web tutorials for HTML and CSS"&gt;</code> 
+                    </li>
+                    <li>
+                        Define the <strong>author</strong> of a page: <code style="color:black;">&lt;meta name="author" content="John Doe"&gt;</code> 
+                    </li>
+                    <li>
+                        <strong>Refresh </strong>document every 30 seconds: <code style="color:black;">&lt;meta http-equiv="refresh" content="30"&gt;</code> 
+                    </li>
+                    <li>
+                        Setting the <strong>viewport</strong> to make your website look good on all devices: <code style="color:black;">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                    </li>
+                    <li>
+                        Setting the Viewport (See section below). 
+                    </li>
+                </ol>        
+            </p>
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>Responsive Web Design - The Viewport</h4>
+            <p>       
+                All the information in this section has been taken from the next two links:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.w3schools.com/css/css_rwd_viewport.asp"  target="_blank">HTML, viewport 1</a><a class="btn-section1" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag"  target="_blank">HTML, viewport 2</a>
+                </div>   
+                <u>What is The Viewport?</u>
+                <br><br>
+                The viewport is the <strong>user's visible area of a web page</strong>.
+                <br><br>
+                The viewport varies with the device and will be smaller on a mobile phone than on a computer screen.
+                <br><br>
+                Before tablets and mobile phones, web pages were designed only for computer screens, and it was common for web pages to have a static design and a fixed size.
+                <br><br>
+                Then, when we started surfing the internet using tablets and mobile phones, fixed size web pages were too large to fit the viewport. To fix this, browsers on those devices scaled down the entire web page to fit the screen. 
+                <br><br>
+                <u>Setting The Viewport.</u>
+                <br><br>
+                HTML5 introduced a method to let web designers <strong>take control over the viewport</strong>, through the <code style="color:black;">&lt;meta&gt;</code> tag.
+                <br><br>
+                You should include the following <code style="color:black;">&lt;meta&gt;</code> viewport element in all your web pages:
+                <strong><code style="color:black;">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></strong>
+                <br><br>
+                This gives the browser instructions on how to control the page's dimensions and scaling.
+                <br><br>
+                The width=device-width part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).
+                <br><br>
+                The initial-scale=1.0 part sets the initial zoom level when the page is first loaded by the browser.
+            </p>
+        </div>      
+
+        <div class="container">
+            <div class="box_questions_two">
+                      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q1.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 1</legend>
+                        <p class="card-text">The title in the head tag is relevant because 
+                            <strong>(chose one of the next options):</strong>      
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q1.type.errors %}
+                                {{ form_gdc_ch3_q1.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q1.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q1.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q1.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>         
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q2.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 2</legend>
+                        <p class="card-text">The meta tags provide data about 
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q2.type.errors %}
+                                {{ form_gdc_ch3_q2.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q2.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q2.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q2.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                      
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_questions_two">
+                      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q3.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 3</legend>
+                        <p class="card-text">A link in the head of a HTML a document ...
+                            <strong>(chose one of the next options):</strong>      
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q3.type.errors %}
+                                {{ form_gdc_ch3_q3.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q3.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q3.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q3.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>         
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q4.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 4</legend>
+                        <p class="card-text">The viewport in the head of a HTML a document ...
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q4.type.errors %}
+                                {{ form_gdc_ch3_q4.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q4.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q4.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q4.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                      
+            </div>
+        </div>        
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Body: Box-sizing and HTML block and inline elements</h1>
+            <h4>Body</h4>
+                <p>
+                    All the information in this section has been taken from the next link:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://www.w3schools.com/tags/tag_body.asp#:~:text=The%20tag%20defines%20the,%2C%20tables%2C%20lists%2C%20etc" target="_blank">Body</a> 
+                    </div> 
+                    The <code style="color:black;">&lt;body</code>&gt; element contains all the contents of an HTML document, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
+                </p>  
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Box-sizing.</h4>
+                <p style="text-align: left;">                    
+                    The information in this section, the video with all the steps in this section, and the code can be found in the YouTube and GitHub links below:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank">Body, box-sizing 1</a> <a class="btn-section2" href="https://www.w3schools.com/css/css3_box-sizing.asp" target="_blank">Body, box-sizing 2</a> <a class="btn-section2" href="https://youtu.be/6dBZW1HUiyE" target="_blank">YouTube (section 2)</a> <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch3%20HTML%20Head%20and%20Body/Box-Sizing" target="_blank">GitHub (Box Sizing)</a>
+                    </div> 
+                    The CSS box-sizing property allows us to include the padding and border in an element's total width and height.
+                    <br>
+                    <br>
+                    <u>Without the CSS box-sizing Property</u>
+                    <br>
+                    <br>
+                    By default, the width and height of an element is calculated like this:
+                    <ul>
+                        <li>
+                            width + padding + border = actual width of an element
+                        </li>
+                        <li>
+                            height + padding + border = actual height of an element
+                        </li>
+                    </ul>
+                    This means: When you set the width/height of an element, the element often appears bigger than you have set (because the element's border and padding are added to the element's specified width/height).
+                    <br>
+                    <br>
+                    <u>With the CSS box-sizing Property</u>
+                    <br>
+                    <br>
+                    The box-sizing property allows us to include the padding and border in an element's total width and height.
+                    <br>
+                    If you set box-sizing: border-box; on an element, padding and border are included in the width and height.
+                </p>      
+            </div>
+            <div class="boxa" style="height:970px; align-self:center;">
+<p><strong>Without the CSS box-sizing Property</strong>   
+    <div class="section_container_buttons_chapters">
+        <a class="btn-section2_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_box_sizing') }}" target="_blank">Use it Yourself</a>
+    </div>                  
+<pre><code class="html">
+&lt;head&gt;
+    &lt;style&gt; 
+        .div1 &#123;
+            width: 300px;
+            height: 100px;
+            border: 1px solid blue;
+            &#125;    
+        .div2 &#123;
+            width: 300px;
+            height: 100px;  
+            padding: 50px;
+            border: 1px solid red;
+            &#125;
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;    
+    &lt;h1&gt;Without box-sizing&lt;/h1&gt;    
+    &lt;div class="div1"&gt;This div is smaller (width is 300px and height is 100px).&lt;/div&gt;
+    &lt;div class="div2"&gt;This div is bigger (width is also 300px and height is 100px).&lt;/div&gt;    
+&lt;/body&gt;
+</code></pre>
+<strong>With the CSS box-sizing Property</strong> 
+<div class="section_container_buttons_chapters">
+    <a class="btn-section2_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_box_sizing') }}" target="_blank">Use it Yourself</a>
+</div> 
+<pre><code class="html">
+        .div1 &#123;
+            width: 300px;
+            height: 100px;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        &#125;  
+        .div2 &#123;
+            width: 300px;
+            height: 100px;
+            padding: 50px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        &#125;
+</code></pre>
+</p>
+    
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_questions_one">
+                      
+            </div>
+            <div class="box_questions_one">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q5.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 5</legend>
+                        <p class="card-text">The introduction of the box-sizing property on an element determines that ...
+                            <strong>(chose one of the next options):</strong>      
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q5.type.errors %}
+                                {{ form_gdc_ch3_q5.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q5.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q5.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q5.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>         
+            </div>
+            <div class="box_questions_one">
+                      
+            </div>
+        </div>  
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>HTML Block and Inline Elements.</h4>
+                <p style="text-align: left;">                    
+                    The information in this section, the video with all the steps in this section, and the code can be found in the YouTube and GitHub links below:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://www.w3schools.com/html/html_blocks.asp" target="_blank">Block and inline elements 1</a> <a class="btn-section2" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">Block and inline elements 2</a> <a class="btn-section2" href="https://youtu.be/6dBZW1HUiyE" target="_blank">YouTube (section 2)</a> <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch3%20HTML%20Head%20and%20Body/Block%20and%20Inline%20Elements" target="_blank">GitHub (Block and Inline)</a>
+                    </div> 
+                    Every HTML element has a default display value, depending on what type of element it is. There are two display values: <strong>block</strong> and <strong>inline</strong>.
+                    <br>
+                    <br>
+                    <u>Block-level Elements</u>
+                    <br>                 
+                    A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element.
+                    <br>
+                    A block-level element always <strong>takes up the full width available</strong> (stretches out to the left and right as far as it can).
+                    <br>
+                    Some commonly used block elements are: <code style="color:black;">&lt;p&gt;</code>, <code style="color:black;">&lt;div&gt;</code>, <code style="color:black;">&lt;ul&gt;</code>, <code style="color:black;">&lt;li&gt;</code>, <code style="color:black;">&lt;ol&gt;</code> <code style="color:black;">&lt;nav&gt;</code>, <code style="color:black;">&lt;form&gt;</code>, <code style="color:black;">&lt;canvas&gt;</code>, <code style="color:black;">&lt;footer&gt;</code>, <code style="color:black;">&lt;fieldset&gt;</code> and <code style="color:black;">&lt;section&gt;</code>.
+                    <br>
+                    A complete list of block elements can be found in the link:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://www.w3schools.com/html/html_blocks.asp" target="_blank">List block elements</a>
+                    </div> 
+                    <u>Inline Elements</u>
+                    <br>                  
+                    An inline element does not start on a new line.
+                    <br>
+                    An inline element only <strong>takes up as much width as necessary</strong>.
+                    <br>
+                    Some commonly used inline elements are: <code style="color:black;">&lt;a&gt;</code>, <code style="color:black;">&lt;img&gt;</code>, <code style="color:black;">&lt;span&gt;</code>, <code style="color:black;">&lt;strong&gt;</code>, <code style="color:black;">&lt;select&gt;</code>, <code style="color:black;">&lt;br&gt;</code>, <code style="color:black;">&lt;button&gt;</code>, and <code style="color:black;">&lt;code&gt;</code>.    
+                    <br>                
+                    A complete list of inline elements can be found in the link:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://www.w3schools.com/html/html_blocks.asp" target="_blank">List inline elements</a>
+                    </div> 
+                </p>      
+            </div>
+            <div class="boxa" style="height:645px; align-self:center;">
+<p><strong>Block elements</strong> 
+    <div class="section_container_buttons_chapters">
+        <a class="btn-section2_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_block_inline') }}" target="_blank">Use it Yourself</a>
+    </div>                    
+<pre><code class="html">
+&lt;body&gt;    
+<code style="color:black;">&lt;p style="border: 1px solid blue"&gt;</code>Hello World<code style="color:black;">&lt;/p&gt;</code>
+<code style="color:black;">&lt;div style="border: 1px solid red"&gt;</code>Hello World<code style="color:black;">&lt;/div&gt;</code>
+
+<code style="color:black;">&lt;p&gt;</code>The P and the DIV elements are both block elements, /
+and they will always start on a new line and take up /
+the full width available (stretches out to /
+the left and right as far as it can).<code style="color:black;">&lt;/p&gt;</code>
+&lt;/body&gt;
+</code></pre>
+<strong>Inline elements</strong>
+<div class="section_container_buttons_chapters">
+    <a class="btn-section2_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_block_inline') }}" target="_blank">Use it Yourself</a>
+</div>  
+<pre><code class="html">
+&lt;body&gt;    
+    <code style="color:black;">&lt;p&gt;</code>This is an inline span <code style="color:black;">&lt;span style="border: 1px solid red"&gt;</code>/
+    Hello World<code style="color:black;">&lt;/span&gt;</code> element inside a paragraph.<code style="color:black;">&lt;/p&gt;</code>
+
+    <code style="color:black;">&lt;p&gt;</code>The SPAN element is an inline element, and will not start /
+     on a new line and only takes up as much width as necessary.<code style="color:black;">&lt;/p&gt;</code>
+&lt;/body&gt;
+</code></pre>
+</p>
+    
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="box_questions_one">
+                      
+            </div>
+            <div class="box_questions_one">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q6.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 6</legend>
+                        <p class="card-text">When a block element is rendered in a webpage, it takes ... 
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q6.type.errors %}
+                                {{ form_gdc_ch3_q6.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q6.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q6.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q6.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_one">
+                      
+            </div>
+        </div>  
+
+    </section> 
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+
+        <div class="container">
+
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h1>Body: CSS display property, flexbox, and CSS media queries</h1>
+                <h4>CSS display property</h4>
+                <p>
+                    All the information in this section has been taken from the next links:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/cssref/pr_class_display.php" target="_blank">CSS display 1</a> <a class="btn-section3" href="https://www.w3schools.com/css/css_inline-block.asp#:~:text=The%20display%3A%20inline%2Dblock%20Value,display%3A%20inline%20they%20are%20not" target="_blank">CSS display 2</a> <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Display/ch3_display.html" target="_blank">GitHub (Display)</a>
+                    </div> 
+                    The display property specifies the display behavior (the type of rendering box) of an element.
+                    <br>
+                    <br>
+                    Some <strong>commonly used block elements</strong> are: 
+                    <br>
+                    <br>
+                    <ol>
+                        <li>
+                            <strong>Inline</strong>: Displays an element as an inline element (like <code style="color:black;">&lt;span&gt;</code>). Any height and width properties will have no effect.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Block</strong>: Displays an element as a block element (like <code style="color:black;">&lt;p&gt;</code>). It starts on a new line and takes up the whole width.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex</strong>: Displays an element as a block-level flex container.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Grid</strong>: Displays an element as a block-level grid container.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Inline-block</strong>: Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values.
+                        </li>
+                    </ol>
+                
+                </p>      
+            </div>
+            <div class="boxa" style="height:855px; align-self:center;">
+<p><strong>CSS display Property</strong> 
+    <div class="section_container_buttons_chapters">
+        <a class="btn-section3_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_display') }}" target="_blank">Use it Yourself</a>
+    </div>                    
+<pre><code class="html">
+&lt;style&gt;    
+    span.a &#123;
+        display: inline; /* the default for span */
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 1px solid blue;  
+        background-color: yellow; 
+    &#125;  
+    span.b &#123;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 1px solid blue;    
+        background-color: yellow; 
+    &#125;  
+    span.c &#123;
+        display: block;
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 1px solid blue;    
+        background-color: yellow; 
+    &#125;
+&lt;/style&gt;    
+&lt;body&gt;    
+    <code style="color:black;">&lt;h2&gt;</code>Display: Inline<code style="color:black;">&lt;/h2&gt;</code>
+    <code style="color:black;">&lt;div&gt;</code>... <code style="color:black;">&lt;span class="a"&gt;</code>Aliquam<code style="color:black;">&lt;/span&gt;</code> <code style="color:black;">&lt;span class="a"&gt;</code>venenatis<code style="color:black;">&lt;/span&gt;</code> ... <code style="color:black;">&lt;/div&gt;</code>
+    <code style="color:black;">&lt;h2&gt;</code>Display: Inline-Block<code style="color:black;">&lt;/h2&gt;</code>
+    <code style="color:black;">&lt;div&gt;</code>... <code style="color:black;">&lt;span class="b"&gt;</code>Aliquam<code style="color:black;">&lt;/span&gt;</code> <code style="color:black;">&lt;span class="b"&gt;</code>venenatis<code style="color:black;">&lt;/span&gt;</code> ... <code style="color:black;">&lt;/div&gt;</code>
+    <code style="color:black;">&lt;h2&gt;</code>Display: Block<code style="color:black;">&lt;/h2&gt;</code>
+    <code style="color:black;">&lt;div&gt;</code>... <code style="color:black;">&lt;span class="c"&gt;</code>Aliquam<code style="color:black;">&lt;/span&gt;</code> <code style="color:black;">&lt;span class="c"&gt;</code>venenatis<code style="color:black;">&lt;/span&gt;</code> ... <code style="color:black;">&lt;/div&gt;</code>
+&lt;/body&gt;
+</code></pre>
+</p>
+    
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_questions_one">
+                      
+            </div>
+            <div class="box_questions_one">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q7.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 7</legend>
+                        <p class="card-text">When an inline-block element is rendered in a webpage  ... 
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q7.type.errors %}
+                                {{ form_gdc_ch3_q7.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q7.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q7.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q7.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_one">
+                      
+            </div>
+        </div>  
+
+        <div class="container" style="display:block;">
+            <h4>Flexbox</h4>
+            <p>
+                All the information in this section has been taken from the next link:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a>
+                </div> 
+                The Flexbox Layout (Flexible Box) module aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word “flex”).
+                <br>
+                <br>
+                The main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space or shrinks them to prevent overflow.
+                <br>
+                <br>
+                Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).
+            </p> 
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p>                    
+                    <u>CSS Flex Container</u>
+                    To follow this section, it is necessary to follow the YouTube video in the playlist of the curse. In that video, we will analyze the flexbox properties with more detail. 
+                    All the information in this section has been taken from the next two links:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">Flex container 1</a> <a class="btn-section3" href="https://www.w3schools.com/css/css3_flexbox_container.asp" target="_blank">Flex container 2</a> <a class="btn-section3" href="https://youtu.be/zKj4QERE4yA" target="_blank">YouTube (section 3)</a> <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Display/ch3_flex_container.html" target="_blank">GitHub (Flex)</a>
+                    </div> 
+                    To start using the Flexbox model, we need first to define a flex container.
+                    <br>
+                    <br>
+                    In the YouTube video, I create a flex container (the blue area) with three flex items. We explore the flexbox properties in the video. Those properties are summarized below:
+                    <br>
+                    <br>
+                    <ol>
+                        <li>
+                            <strong>Align-content</strong>: Modifies the behavior of the flex-wrap property. It is like align-items, but instead of aligning flex items, it aligns flex lines.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Align-items</strong>: Vertically aligns the flex items when the items do not use all available space on the cross-axis.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Display</strong>: Specifies the type of box used for an HTML element.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-direction</strong>: Specifies the direction of the flexible items inside a flex container.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-flow</strong>: A shorthand property for flex-direction and flex-wrap.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-wrap</strong>: Specifies whether the flex items should wrap or not, if there is not enough room for them on one flex line.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Justify-content</strong>: Horizontally aligns the flex items when the items do not use all available space on the main-axis.
+                        </li>
+                    </ol>
+                
+                </p>      
+            </div>
+            <div class="boxa" style="height:830px; align-self:center;">
+<p><strong>CSS Flex Container</strong> 
+    <div class="section_container_buttons_chapters">
+        <a class="btn-section3_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_css_flex_container') }}" target="_blank">Use it Yourself</a>
+    </div>                    
+<pre><code class="html">
+&lt;style&gt;    
+    .flex_container &#123;
+    display: flex;
+    flex-direction: row;
+    background-color: DodgerBlue;
+    width: 800px;
+    height: 800px;
+    align-items: center;
+    justify-content: center;
+    &#125;
+    .flex_container .item1 &#123;
+    background-color: red;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 150px;
+    height: 150px;
+    &#125;
+    .flex_container .item2 &#123;
+    ...
+    &#125;
+    .flex_container .item3 &#123;
+    ...
+    &#125;
+&lt;/style&gt;    
+&lt;body&gt;    
+&lt;div class="flex_container"&gt;
+    &lt;div class="item1"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item2"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item3"&gt;Item 3&lt;/div&gt;  
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+</p>    
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p>                    
+                    <u>CSS Flex Items</u>
+                    All the information in this section has been taken from the next two links:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css3_flexbox_items.asp" target="_blank">Flex Items</a> <a class="btn-section3" href="https://youtu.be/zKj4QERE4yA" target="_blank">YouTube (section 3)</a> <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Display/ch3_flex_container.html" target="_blank">GitHub (Flex)</a>
+                    </div> 
+                    The direct child elements of a flex container automatically become flexible (flex) items.
+                    <br>
+                    <br>
+                    In the YouTube video, I create a flex container (the blue area) with three flex items. We explore the flexbox properties of the child elements in the video. Those properties are summarized below:
+                    <br>
+                    <br>
+                    <ol>
+                        <li>
+                            <strong>Align-self</strong>: Specifies the alignment for a flex item (overrides the flex containers align-items property).
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex</strong>: A shorthand property for the flex-grow, flex-shrink, and the flex-basis properties.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-basis</strong>: Specifies the initial length of a flex item.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-grow</strong>: Specifies how much a flex item will grow relative to the rest of the flex items inside the same container.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-shrink</strong>: Specifies how much a flex item will shrink relative to the rest of the flex items inside the same container.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Order</strong>: Specifies the order of the flex items inside the same container.
+                        </li>
+                    </ol>
+                
+                </p>      
+            </div>
+            <div class="boxa" style="height:730px; align-self:center;">
+<p><strong>CSS Flex Items</strong> 
+    <div class="section_container_buttons_chapters">
+        <a class="btn-section3_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_css_flex_items') }}" target="_blank">Use it Yourself</a>
+    </div>                    
+<pre><code class="html">
+&lt;style&gt;    
+    .flex_container .item1 &#123;
+    background-color: red;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 150px;
+    height: 150px;
+    flex-grow: 1;
+    &#125;
+    .flex_container .item2 &#123;
+    background-color: red;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 150px;
+    height: 150px;
+    flex-grow: 2;
+    &#125;
+&lt;/style&gt;    
+&lt;body&gt;    
+&lt;div class="flex_container"&gt;
+    &lt;div class="item1"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item2"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item3"&gt;Item 3&lt;/div&gt;  
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+</p>    
+            </div>
+        </div>        
+
+        <div class="container">
+            <div class="box_questions_two">
+                      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q8.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 8</legend>
+                        <p class="card-text">To center vertically and horizontally in a container by using flexbox, we need to introduce the two next properties  ... 
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q8.type.errors %}
+                                {{ form_gdc_ch3_q8.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q8.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q8.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q8.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q9.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 9</legend>
+                        <p class="card-text">The items flex-grow property determines  ... 
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q9.type.errors %}
+                                {{ form_gdc_ch3_q9.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q9.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q9.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q9.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                      
+            </div>
+        </div> 
+        
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>CSS Media Queries</h4>
+                <p>  
+                    All the information in this section has been taken from the next links:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css3_mediaqueries.asp" target="_blank">CSS Media Queries</a> <a class="btn-section3" href="https://youtu.be/zKj4QERE4yA" target="_blank">YouTube (section 3)</a> <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch3%20HTML%20Head%20and%20Body/Media%20Query" target="_blank">GitHub (Media Queries)</a>
+                    </div> 
+                    The @media rule, introduced in CSS2, made it possible to define different style rules for different media types.
+                    <br>
+                    <br>
+                    Examples: You could have one set of style rules for computer screens, one for printers, one for handheld devices, one for television-type devices, and so on.
+                    <br>
+                    <br>
+                    Media queries in CSS3 extended the CSS2 media types idea: Instead of looking for a type of device, they look at the capability of the device.
+                    <br>
+                    <br>
+                    Media queries can be used to check many things, such as:
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            Width and height of the viewport.
+                        </li>
+                        <br>
+                        <li>
+                            Width and height of the device.
+                        </li>
+                        <br>
+                        <li>
+                            Orientation (is the tablet/phone in landscape or portrait mode?).
+                        </li>
+                        <br>
+                        <li>
+                            Resolution.
+                        </li>
+                    </ul>
+                    Using media queries are a popular technique for delivering a tailored style sheet to desktops, laptops, tablets, and mobile phones (such as iPhone and Android phones).
+                </p>      
+            </div>
+            <div class="boxa" style="height:525px; align-self:center;">
+<p><strong>CSS Media Queries</strong> 
+    <div class="section_container_buttons_chapters">
+        <a class="btn-section3_box" href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_media_query') }}" target="_blank">Use it Yourself</a>
+    </div>                    
+<pre><code class="html">
+&lt;head&gt;   
+    &lt;meta name="viewport" content="user-scalable=yes, width=device-width, initial-scale=1"&gt;
+    &lt;style&gt; 
+        ...   
+        @media (max-width:768px) &#123; 
+        .flex_container &#123;
+            flex-direction: column;
+            &#125;
+        &#125;
+    &lt;/style&gt;    
+&lt;/head&gt;     
+&lt;body&gt;    
+&lt;div class="flex_container"&gt;
+    &lt;div class="item1"&gt;Item 1&lt;/div&gt;
+    &lt;div class="item2"&gt;Item 2&lt;/div&gt;
+    &lt;div class="item3"&gt;Item 3&lt;/div&gt;  
+&lt;/div&gt;
+&lt;/body&gt;
+</code></pre>
+</p>    
+            </div>
+        </div> 
+
+        <div class="container">
+            <div class="box_questions_one">
+                      
+            </div>
+            <div class="box_questions_one">
+                <form method="POST" action="">
+                    {{ form_gdc_ch3_q10.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 10</legend>
+                        <p class="card-text">CSS3 media queries idea is to change the CSS code based on ... 
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch3_q10.type.errors %}
+                                {{ form_gdc_ch3_q10.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch3_q10.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch3_q10.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch3_q10.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_one">
+                      
+            </div>
+        </div>  
+
+    </section> 
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+
+        <div class="container">
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;"> 
+                    In the <strong>first weekly challenge</strong>, we create a box with a paragraph, a list and a button. 
+                    <br>
+                    <br>  
+                    I am aware that this weekly challenge is difficult. Try to use the code in the GitHub account and understand the code. The group selected will explain the code, and I will help in case that the group faces some problems during the explanation.   
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch3_week1">Hints</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Weekly%20Challenge/box_sizing_block_inline.html" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>   
+                    <div class="btn">
+                        <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_week1') }}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                    </div>                 
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch3_week1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+      
+                            <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 3</h5>
+                            </div>
+      
+                            <div class="modal-body", style="color:black">
+                            <p style="text-align: left;">
+                                I am aware that this weekly challenge is difficult. Try to use the code in the GitHub account and understand the code. The group selected will explain the code, and I will help in case that the group faces some problems during the explanation. 
+                            </p>
+                            </div>
+      
+                            <div class="modal-footer">
+                            <a href="{{ url_for('gd_course_chats.gd_course_chats_new_main_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                            </div>
+      
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: left;"> 
+                    In the <strong>second weekly challenge</strong>, we create a flex container with a list with of three elements. The list changes its direction from row to column depending on the  screen size.
+                    <br>
+                    <br>  
+                    I am aware that this weekly challenge is difficult. Try to use the code in the GitHub account and understand the code. The group selected will explain the code, and I will help in case that the group faces some problems during the explanation.  
+                    <br>
+                    <br>  
+                    We will discuss the weekly challenge on <strong>Thursday 2 February at NHH</strong>, and on <strong>Friday 3 February at HVL</strong>. We will use the main chat to help each other in the weekly challenge. Within <strong>those days</strong>, please share your <strong>code</strong> with the rest of the groups by using the main chat, so that we can learn from each other. 
+                  </p>  
+                  <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch3_week2">Hints</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Weekly%20Challenge/flex_container.html" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>   
+                    <div class="btn">
+                        <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3_week2') }}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                    </div>                 
+                    <!-- Modal Instructions2 -->
+                    <div class="modal fade" id="weekly_challenge_ch3_week2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                  
+                            <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 3</h5>
+                            </div>
+                  
+                            <div class="modal-body", style="color:black">
+                            <p style="text-align: left;">
+                                I am aware that this weekly challenge is difficult. Try to use the code in the GitHub account and understand the code. The group selected will explain the code, and I will help in case that the group faces some problems during the explanation. 
+                            </p>
+                            </div>
+                  
+                            <div class="modal-footer">
+                            <a href="{{ url_for('gd_course_chats.gd_course_chats_new_main_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                            </div>
+                  
+                        </div>
+                        </div>
+                    </div>
+                  </div>                      
+      
+            </div>   
+            <div class="onebox">                  
+            </div> 
+        </div>
+      
+      </section>    
+
+
+{% endblock content %}

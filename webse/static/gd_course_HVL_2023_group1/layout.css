@@ -1,0 +1,78 @@
+/* Colors 
+Home, section 1 (header, background): #698269
+Home, section 1 (header, boxes): #B99B6B
+Home, section 2 (developers, background): #F1DBBF 
+Home, section 2 (developers, boxes): #AA5656 
+*/
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap');
+
+
+/* CSS utilitis  */
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1,6;
+}
+.container {
+    margin: auto;
+    max-width: 1320px;
+}
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+.section_navbar {
+    background-color: #F6F4E8;
+}
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #F6F4E8;
+    padding: 0px;
+}
+.navbar a {
+    color: #40574D;
+    padding: 5px 20px;
+    margin: 0 5px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.navbar ul {
+    display: flex;
+}
+
+.navbar .logo {
+    font-weight: 400;
+}
+
+.text-logo {
+    color: #40574D;
+}
+
+/* Buttom bar */
+.section_footer {
+    background-color: #F6F4E8;
+    
+}
+.footer {
+    color: #1D3124;
+    background-color: #F6F4E8;
+}
+
+/* Media Query */
+@media(max-width:768px){
+    .navbar {
+        flex-direction: column;
+    }
+    .navbar ul {
+        flex-direction: column;
+    }
+}

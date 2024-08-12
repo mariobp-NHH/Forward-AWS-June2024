@@ -1,0 +1,158 @@
+/* Colors 
+Farge rosa: 205, 180, 158
+Farge beige: 243, 232, 204
+Farge lys grønn: 193, 211, 151
+Farge mørk grønn: 80, 94, 41
+Farge brun: 43, 41, 28
+Bakgrunnsfarge - lys beige: 248, 244, 236
+Farge i boksene: 
+*/
+
+/* Utilities  */
+.p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: white
+}
+
+/* Section header_home */
+.section_header_home {
+  background-color:rgb(248, 244, 236);
+}  
+.header_home{
+  display: flex;  
+  align-items: start;
+  background:rgb(248, 244, 236);
+}
+.header_home .box {
+  flex: 1;
+  background: rgba(80, 94, 41, 0.500);
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 30px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.header_home .box.logo {
+  background: rgb(248, 244, 236); /* Endre bakgrunnsfargen til ønsket farge (f.eks. blå) */
+  /* Andre stiler for den blå boksen */
+}
+.header_home .box:nth-of-type(1) {
+  flex-grow:2;
+}
+.header_home .box:nth-of-type(2) {
+  flex-grow:1;
+}
+.container_buttons_header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_header_home a:hover {
+  color: #e2e4ec;
+}
+.container_buttons_header_home btn {
+  width: 50px;
+  height: 50px;
+  background: #9fa7bf;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Section developers */
+
+.section_developers {
+background-color: rgb(248, 244, 236);
+}
+
+.developers {
+display: flex;
+flex-wrap: wrap;
+justify-content: center; /* Sentrer elementene horisontalt */
+background: rgb(248, 244, 236);
+}
+
+.developers .box,
+.developers .box2 {
+flex: 1 0 calc(33.333% - 60px); /* 33.333% for 3 bokser i en rad, minus 60px for margin og padding */
+max-width: 300px; /* Sett ønsket maksimal bredde */
+height: 600px; /* Sett ønsket høyde */
+background: rgba(80, 94, 41, 0.5);
+color: white;
+border-radius: 10px;
+margin: 20px;
+padding: 15px 20px;
+text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+.container_buttons_developers {
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px 0;
+}
+
+.btn_developers {
+padding: 10px 20px;
+margin: 10px;
+color: #fff;
+border-radius: 5px;
+text-decoration: none;
+font-size: 18px;
+background-color: rgb(193, 211, 151);
+border: none;
+transition: transform 0.3s ease;
+}
+
+.btn_developers:hover {
+background-color: rgb(248, 244, 236);
+color: rgb(193, 211, 151);
+border: 2px solid rgb(248, 244, 236);
+transform: scale(1.1);
+}
+
+/* CSS for the second button inside developers*/
+.container_buttons_developers2 .btn_developers2 {
+padding: 10px 20px;
+margin: 10px;
+color: #fff;
+border-radius: 5px;
+text-decoration: none;
+font-size: 18px;
+background-color: rgb(193, 211, 151);
+border: none;
+}
+
+.container_buttons_developers2 .btn_developers2:hover {
+background-color: rgb(193, 211, 151);
+border: 2px solid rgb(193, 211, 151);
+}
+
+
+@media (max-width:768px) { 
+  .header_home {
+    flex-direction: column;
+  } 
+  .developers {
+    flex-direction: column;
+  } 
+  .container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .box,
+  .box2 {
+    flex: 1 0 100%; /* Ved mindre skjermer, tar hver boks 100% av foreldrecontaineren (1 boks per rad) */
+  }
+}

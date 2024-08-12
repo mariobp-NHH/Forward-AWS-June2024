@@ -1,0 +1,96 @@
+{% extends "gd_course/HVL_2024_group2/layout.html" %}
+{% block content %}
+
+  <div class="section_home">
+        <div class="container"> 
+          <div class="top_home">
+          <div class="home_heading">
+          Innovating your carbon footprint
+          </div>
+        <div class="home_heading_info">
+          <p>
+            Welcome to our cutting-edge carbon tracker for businesses. 
+            We're here to revolutionize how you manage your carbon footprint. 
+            With real-time insights and actionable data, we empower you to drive meaningful change towards sustainability. 
+            Let's innovate your carbon footprint together.
+        </p>
+        </div>
+        <div class="home_heading_info_more">
+          <div>
+            <a href="{{url_for('gd_course_HVL_2024_group2.methodology_home')}}">See how <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+        
+      </div>
+      </div>
+    <div class="container">
+      <section class="container-one">
+        <img src="{{ url_for('static', filename='/gd_course_HVL_2024_group2/pictures/data-table.png') }}" loading="eager" width="400px" sizes="(max-width: 400px) 60vw, 400px" alt="Two people at a desk using sustainability software." class="lifestyle-image">
+        <img src="{{url_for('static',filename='/gd_course_HVL_2024_group2/pictures/linjediagram.png')}}" loading="eager" width="400px" sizes="(max-width: 400px) 60vw, 400px" alt="Card showing a companys total emissions: 3,174 MT CO2e" width="318px" class="emissions-card">
+        <img src="{{url_for('static',filename='/gd_course_HVL_2024_group2/pictures/piechart.png')}}" loading="eager" width="400px" sizes="(max-width: 400px) 60vw, 400px" alt="Sample Sustain.Life impact dashboard showing emissions, spend, and offsets " class="impact-chart">
+        <img src="{{url_for('static',filename='/gd_course_HVL_2024_group2/pictures/data-car.png')}}" loading="eager" width="400px" sizes="(max-width: 400px) 60vw, 400px" alt="Sustain.Life emissions card showing building-related emissions" class="category-card">
+      </section>
+    <div class="container">
+      <section class="container-home-two">
+        <h4 class="container-home-two-text">
+          Developed together and across our partners
+        </h4>
+        <div>
+          <img src="https://www.hvl.no/globalassets/hvl-internett/bilde/logo/hvl_logo_en_neg.png" alt="logo-hvl" class="logo-hvl">
+          <img src="{{url_for('static',filename='/gd_course_HVL_2024_group2/pictures/GitHub_Logo_White.png')}}" alt="logo-github" class="logo-github">
+        </div>
+      </section>
+    </div>
+    </div>
+  </div>
+    <section class="home-second-box">
+      <div class="container">
+      <div class="small-heading-home2">
+        HOW IT WORKS
+      </div>
+      <div class="big-heading-home2">
+        Analyzing-<br>Calculating-<br>your footprint
+      </div>
+      <div class="container"> 
+        <div class="top_home">
+      <div class="home_heading_info2">
+        <p style="color: #212529;">
+          Our Calculator tool is designed to help you understand and reduce your carbon footprint by providing insights into your transportation choices. Here's how it works: <br><br>
+          You'll start by selecting your preferred mode of transportation and entering the distance you travel using that mode. Our app will then calculate your carbon emissions based on your input. <br><br>
+          After you've entered your data, our app will generate a comprehensive graph showing your total emissions and the breakdown of emissions by transportation mode. This will give you a clear overview of your environmental impact and help you identify areas where you can make greener choices. <br><br>
+          Thank you for using our app! We hope it empowers you to make more sustainable lifestyle choices.
+      </p>
+      </div>
+      <div class="home_heading_info_more">
+        <div class="demo_box">
+          <div class="btn_nav_demo">
+             <a href="{{url_for('gd_course_HVL_2024_group2.your_data')}}">Calculator</a>
+          </div>
+         </div>
+        <div>
+          <a href="{{url_for('gd_course_HVL_2024_group2.methodology_home')}}" style="color: #212529;">See how<i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      
+    </div>
+    </div>
+    </div>
+    </section>
+
+    <section class="home-third-box">
+      <div class="container">
+        <div class="yellow-container">
+        <div class="big-heading-home3">
+          Change your<br>carbon footprint<br>now.
+        </div>
+        <div>
+          <img style="width: 300px; padding: 25px;" src="{{url_for('static',filename='/gd_course_HVL_2024_group2/pictures/traveling-photo.jpeg')}}" alt="">
+        </div>
+      </div>
+      </div>
+    </section>
+
+</body>
+</html>
+
+{% endblock content %}

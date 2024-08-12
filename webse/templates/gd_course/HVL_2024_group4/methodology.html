@@ -1,0 +1,295 @@
+{% extends "gd_course/HVL_2024_group4/layout.html" %} {% block content %}
+<!-- Header -->
+<section id="methodology">
+  <div class="container" data-aos="fade-up" data-aos-duration="1000">
+    <div class="text-container">
+      <span class="subtitle">Methodology</span>
+      <h1>Understanding carbon footprints</h1>
+      <p>
+        Delve into the intricacies of carbon footprint calculation with our
+        methodology tailored for organizations. Our carbon footprint calculator
+        meticulously maps the transport emissions of employees, offering
+        valuable insights into the environmental impact of daily commutes.
+        <br /><br />Through comprehensive analysis and innovative solutions, we
+        empower organizations to reduce their carbon footprint and embrace
+        sustainable transport options, driving positive change for a greener
+        future
+      </p>
+    </div>
+  </div>
+</section>
+  
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+    <div class="container">
+        <div class="methodology" style="display:block;">
+            <h2> Our numbers and formulas</h2>
+            <p>
+              We are going to study some \(\LaTeX ~ formulas\) that could be useful for our project:
+            </p> 
+        </div>
+
+        <!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+                <ol >
+                    <li>
+                        <h4>Mathematical expressions 1</h4>
+                        <p class="text-left">
+                            Mathematical expressions \( x = {-b \pm \sqrt{b^2-4ac} \over 2a} \) inside text.
+                            <br>
+                            Mathematical expressions outside text:
+                            \[ x = {-b \pm \sqrt{b^2-4ac} \over 2a} \]
+                        </p>
+                    </li>
+               
+                    <li>
+                        <h4>Mathematical expressions 2</h4>
+                        <p class="text-left">
+                            Mathematical expressions \( x^2 + y^2 = z^2 \) inside text.
+                            <br>
+                            Mathematical expressions outside text:
+                            \[ x^2 + y^2 = z^2 \]
+                        </p>
+                    </li>
+             
+                    <li>
+                        <h4>Sums</h4>
+                        <p class="text-left">
+                            Sum \(\sum_{n=1}^{\infty} 2^{-n} = 1\) inside text.
+                            <br>
+                            Sum outside text:
+                            \[ \sum_{n=1}^{\infty} 2^{-n} = 1 \]
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Products</h4>
+                        <p class="text-left">
+                            Product \(\prod_{i=a}^{b} f(i)\) inside text.
+                            <br>
+                            Product outside text:
+                            \[ \prod_{i=a}^{b} f(i) \]
+                        </p>
+                    </li>
+           
+                    <li>
+                        <h4>Limits</h4>
+                        <p class="text-left">
+                            Limit \(\lim_{x\to\infty} f(x)\) inside text.
+                            <br>
+                            Limit outside text:
+                            \[ \lim_{x\to\infty} f(x) \]
+                        </p>
+                    </li>
+                    <li>
+                        <h4>Integrals</h4>
+                        <p class="text-left">
+                            Integral \(\int_{a}^{b} x^2 \,dx\) inside text.
+                            <br>
+                            Integral outside text:
+                            \[ \int_{a}^{b} x^2 \,dx \]
+                        </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+    </div>
+</section>
+
+<section id="methodoly-table">
+    <div class="container">
+          
+            <div class="box_table1">
+                <ol>
+                    <li class="main-container">
+                        <h4>Buses</h4>
+                        <p class="text-left">
+                            The <strong>carbon dioxide emissions</strong> produced by buses are organized in <strong>four categories</strong>. The carbon dioxide emission produced by diesel buses is 0.10231 grammes per kilometer. The carbon dioxide emission produced by CNG buses is 0.08 grammes per kilometer. The carbon dioxide emission produced by petrol buses is 0.10231 grammes per kilometer. If the buses do not use fossil fuel, their dioxide carbon emissions are 0 grammes per kilometer.
+                            <br>
+                            To work out buses dioxide emissions, we use the next formula:
+                            \[CO^2 = {Cte + \sqrt{f(km)} \over t}.\]
+                            <br>
+                            Where:
+                            <ul style="text-align:left;">
+                                <li>
+                                    \(Cte\) is a constant, since the engine requires some fuel to initialize.
+                                </li>
+                                <li>
+                                    \(km\) are the kilometers.
+                                </li>
+                                <li>
+                                    \(f\) is a coefficient depending on the type of fuel (see paragraph above).
+                                </li>
+                                <li>
+                                    \(t\) is the temperature, since in winter the engines require less fuel.
+                                </li>
+                            </ul>
+                            
+                        </p>
+                    </li>
+                    <li class="main-container">
+                        <h4>Cars</h4>
+                        <p class="text-left">
+                            The <strong>carbon dioxide emissions</strong> produced by cars are organized in <strong>five categories</strong>: petrol, diesel, biodiesel, electric cars in Nordic countries, and electric cars in Europe. The CO2 emissions are measured in grammes per kilometer.
+                            <br>
+                            To determine car CO2 emissions, we use the following table as reference:
+                            <table style="width:100%; text-align:center;" class="modern-table">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Petrol</th>
+                                        <th>Diesel</th>
+                                        <th>Biodiesel</th>
+                                        <th>Electric car (Nordic countries)</th>
+                                        <th>Electric cars Europe</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td> <strong>Small car</strong></td>
+                                        <td>127 gCO2/km</td>
+                                        <td>104 gCO2/km</td>
+                                        <td>28 gCO2/km</td>
+                                        <td>11 gCO2/km</td>
+                                        <td>34 gCO2/km</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Car</strong></td>
+                                        <td>167 gCO2/km</td>
+                                        <td>137 gCO2/km</td>
+                                        <td>37 gCO2/km</td>
+                                        <td>14 gCO2/km</td>
+                                        <td>45 gCO2/km</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Big car (7seater)</strong></td>
+                                        <td>220 gCO2/km</td>
+                                        <td>181 gCO2/km</td>
+                                        <td>49 gCO2/km</td>
+                                        <td>18 gCO2/km</td>
+                                        <td>60 gCO2/km</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            The user can select between three car sizes: a small car, a mid-size car, and a big car (7-seater). The CO2 emissions per kilometre per passenger for different sizes of cars are shown in the table above.
+                        </p>
+                        
+                    </li>
+                    <li class="main-container">
+                        <h4>Planes</h4>
+                        <p class="text-left">
+                            Air travel is a major contributor to carbon emissions, and the environmental impact varies significantly depending on the type of flight and class of service. Here, we break down the carbon dioxide emissions for different types of flights:
+                            <ul style="text-align:left;">
+                                <li>
+                                    <strong>Scheduled Economy Class:</strong> The carbon dioxide emissions for economy class on scheduled flights average around <strong>133g of CO2 per km per passenger.</strong>
+                                </li>
+                                <li>
+                                    <strong>Charter Flights:</strong> Charter flights typically have a slightly lower carbon footprint, emitting approximately <strong>118g of CO2 per km per passenger.</strong>
+                                </li>
+                                <li>
+                                    <strong>Scheduled Business Class:</strong> Business class flights have a significantly higher carbon footprint, averaging around <strong>98g of CO2 per km per passenger.</strong>
+                                </li>
+                            </ul>
+                            <br>
+                            When considering air travel, these differences highlight the importance of choosing more efficient options whenever possible to reduce your carbon footprint. Opting for economy class over business class or charter flights can help minimize the environmental impact of your journey. Additionally, supporting airlines that invest in fuel-efficient aircraft and sustainable practices can contribute to lowering the overall emissions from air travel.
+                        </p>
+                        
+                    </li>
+                    <li class="main-container">
+                        <h4>Walking</h4>
+                         <p class="text-left">
+                         Walking is often hailed as one of the most <strong>eco-friendly modes of transportation</strong> due to its minimal environmental impact. Unlike many other forms of transportation that rely on fossil fuels or electricity produced from non-renewable sources, walking is powered solely by human energy. This means that walking produces <strong>0 grams of CO2 emissions per kilometer</strong> traveled, making it a carbon-neutral activity.
+                          <br>
+                         To work out the environmental impact of walking, we can consider it as a <strong>zero-emission</strong> mode of transportation.
+                         <br>
+                         Including walking in our daily routines or for short-distance travels can be a simple yet impactful way to <strong>reduce our carbon footprint</strong>. By choosing to walk instead of driving or taking other forms of transportation for short trips, we can contribute to <strong>lowering overall emissions</strong> and mitigating the effects of climate change. This highlights the importance of considering walking as a viable and sustainable transportation option in our efforts to combat environmental challenges.
+                         </p>
+
+                    </li>
+                    <li class="main-container">
+                     <h4> Cycling and Electric Bicycles (E-bikes)</h4>
+                    <p class="text-left">
+                        Cycling and electric bicycles (e-bikes) are both popular modes of transportation offering eco-friendly alternatives to cars and motorized vehicles. Both aim to reduce carbon emissions and promote sustainable travel. Normal cycling boasts zero CO2 emissions and lower initial costs, relying on human power and offering health benefits through physical exertion. Electric bicycles, while having a higher initial cost due to their electric motor and battery, provide the convenience of electric assist, making it easier to tackle hills and cover longer distances with less effort. They emit approximately 6g of CO2 per km, still making them a relatively eco-friendly transportation option compared to many others.
+                  
+                        <table style="width:100%; text-align:center;">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Normal Cycling</th>
+                                <th>Electric Bicycles (E-bikes)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Emissions</strong></td>
+                                <td>Zero CO2 emissions</td>
+                                <td>Approx. 6g CO2/km per passenger (assumed)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Energy Efficiency</strong></td>
+                                <td>High (human-powered)</td>
+                                <td>High (electric assist)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cost</strong></td>
+                                <td>Lower initial cost</td>
+                                <td>Higher initial cost (due to electric motor and battery)</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </p>
+                </li>
+                    
+
+                    <li class="main-container">
+                        <h4>Scooters</h4>
+                        <p class="text-left">
+                            Scooters have become a popular urban transport option, with their <strong>carbon dioxide emissions</strong> varying based on the fuel type used.
+                            <br>
+                            The environmental advantage of electric scooters is evident, as they generally have a much lower carbon footprint per passenger compared to gasoline scooters. However, it's important to note that the actual emissions from electric scooters can vary depending on the source of electricity used, ranging from coal to renewables.
+                            <br>
+                            <strong>Gasoline-powered</strong> scooters: <strong>75g CO2/km per passenger</strong>
+                            <br>
+                            <strong>Electric</strong> scooters: <strong>15g CO2/km per passenger</strong>
+                            <br>
+                            Despite the variability in electric scooter emissions based on electricity sources, they support cleaner urban mobility and contribute to reducing overall emissions.
+                        </p>
+                        
+                    </li>
+                    <li class="main-container">
+                        <h4>Motorcycles</h4>
+                        <p class="text-left">
+                            Motorcycles emit approximately <strong>129g of CO2 per km per passenger</strong>. While this emission rate is more efficient than many cars, it still contributes to a significant carbon footprint per passenger. This emphasizes the importance of considering sustainable transportation alternatives.
+                        </p>
+                        
+                    </li>
+                    <li class="main-container">
+                        <h4>Trains</h4>
+                        <p class="text-left">
+                            In Europe (including the Nordic countries), trains are primarily powered by electricity, with only a tiny portion still relying on diesel (Transport Calculations | Travel & Climate, n.d.). However, the way electricity is produced differs per country, leading to variations in emissions. 
+                            <br>
+                            For clarity, emissions are categorized based on the region and type of train:
+                            <ul style="text-align:left;">
+                                <li><strong>Electric trains in Nordic countries (except Denmark): 7 gCO2/km per passenger</strong></li>
+                                <li><strong>Electric trains in European countries (except Norway, Sweden, and Finland): 24 gCO2/km per passenger</strong></li>
+                                <li><strong>Diesel trains (average): 91 gCO2/km per passenger in both Nordic and other European countries </strong></li>
+                            </ul>
+                        </p>
+                        
+                    </li>
+                    <li class="main-container">
+                        <h4>Ferries</h4>
+                        <p class="text-left">
+                            Ferries emit approximately <strong>226g of CO2 per km per passenger</strong>. This emission rate is higher than many land-based transportation options, reflecting the energy-intensive nature of marine transport. While ferries are essential for maritime connections, their carbon footprint underscores the importance of seeking more sustainable travel alternatives.
+                        </p>
+                        
+                    </li>
+                </ol>                        
+            </div>
+           
+    </div>
+</section>
+
+{% endblock content %}

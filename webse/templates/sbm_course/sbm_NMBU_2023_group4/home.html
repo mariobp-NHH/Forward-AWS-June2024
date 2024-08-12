@@ -1,0 +1,101 @@
+{% extends "sbm_course/sbm_NMBU_2023_group4/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+        <h1 style="font-size:55px;"><span class="text-logo"> Welcome to The Carbon App</span></h1>
+        <p style="text-align:left;">
+          Carbon app for you who commute. This app is made for you who must travel every day to get where you need to be. Our mission is to help you measure your environmental impact. This app lets you find the route with the least environmental impact. 
+          You can also build a network and find others who commute the same way as you. 
+          Add them and schedule a carpool. 
+                </p> 
+              <p><b>“LET'S TRAVEL TOGETHER AND POLLUTE LESS”</b></p>
+
+      </div>
+      <div class="box">
+        <img 
+          src="{{url_for('static', filename='sbm_course_NMBU_2023_group4/icons/carbon_app.svg')}}"
+          width="325" 
+          height="325"
+          alt=""/>
+      </div>
+    </div>
+
+  </div>
+</section> 
+
+<!-- Developers -->
+<section class="section_developers">
+  <div class="container">
+
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center;"> Our Team</h1>
+      <p>
+        We know what it is like to commute. Together we took the train every day to NMBU, a university outside of Oslo. We became friends on the train. 
+      Hopefully, others can too. Join our community. Let's turn shared journeys into shared successes. Connect with us on LinkedIn and be part of something exceptional.
+              </p>      
+    </div>
+
+    <div class="developers">
+        <div class="box">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group4/icons/Ida.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h2>Ida Dyrdal Ellingsen</h3>
+          <p>  <h3 style="text-align:center;">Sustainability Officer</h1>
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/ida-min-dyrdal-ellingsen/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>
+        <div class="box">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group4/icons/Espen.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h2>Espen Hinsch</h3>
+          <p>  <h3 style="text-align:center;">Business and Finance Officer</h1>
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://www.facebook.com/espen.hinsch.3"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>           
+        <div class="box">
+          <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group4/icons/Emma.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h2>Emma Grønning Bergem </h3>
+          <p>  <h3 style="text-align:center;">Content Creation Officer </h1>
+
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/emma-gr%C3%B8nning-bergem/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>     
+    </div>
+
+    <div class="developers">
+      <div class="box2">
+        <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group4/icons/Maria.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+        <h2>Maria Wiig</h3>
+        <p>  <h3 style="text-align:center;"> Operations Officer</h1>
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.facebook.com/maria.wiig.33"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      <div class="box2">
+        <img src="{{url_for('static', filename='sbm_course_NMBU_2023_group4/icons/Ane.jpeg')}}" alt="" style="border-radius: 50%; width:200px;">
+        <h2>Ane Langebraaten</h3>
+        <p>  <h3 style="text-align:center;">Chief  Officer</h1>
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/ane-langebraaten-73b93626a/"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>           
+      <div class="box2">
+        
+      </div>     
+  </div>
+
+  </div>          
+</section>
+        
+{% endblock content %}

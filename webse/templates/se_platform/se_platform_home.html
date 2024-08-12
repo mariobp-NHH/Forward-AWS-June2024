@@ -1,0 +1,156 @@
+{% extends "se_platform/se_platform_layout.html" %}
+{% block content %}
+    <!-- Showcase -->
+    <section class="home_section_css">
+        <div class="container">
+            <div class="header">
+                  <div class="box">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    <div class="alert alert-{{ category }}">
+                                        {{ message }}
+                                    </div> 
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}               
+                        <h1 class="text-center"><span class="text-warning"> Sustainable Energy </span> Platform</h1>
+                        <p class="mb-1">
+                            The Sustainable Energy Platform aims to achieve a <strong>sustainable energy future</strong> by hosting the most advanced <strong>research</strong> in the fields of energy market design, sustainable energy, and climate change.
+                            </br>
+                            </br>
+                            To achieve a sustainable energy future, the platform not only hosts research, but also <strong>dashboards</strong> and <strong>databases</strong> that provide salient information in that field in real time. 
+                            </br>
+                            </br>
+                            To facilitate the discussion between researchers, students and practitioners, the platform provides different <strong>forums</strong> where the users can share information and discuss relevant topics. To foster the dissemination and to facilitate the formation of the students, the papers contain a section with <strong>questions</strong> where the students can check their understanding of the papers. 
+  
+                        </p>
+                  </div>
+                  <div class="box">
+                    <div class="h1 mb-3">
+                      <i class="bi bi-bell"></i>
+                    </div>
+                    <h3 class="text-center"><span class="text-warning"> Announcements: </span>
+                    </h3>
+                    {% for announcement in announcements.items %}
+                        <article class="media content-section">
+                          <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
+                          <div class="media-body">
+                            <div class="article-metadata">
+                              <a class="mr-2" href="{{ url_for('se_platform_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
+                              <small class="text-muted">{{ announcement.date_posted.strftime('%Y-%m-%d') }}</small>
+                            </div>
+                            <h4><a class="article-title" href="{{ url_for('se_platform_announcements.announcement', announcement_id=announcement.id) }}">{{ announcement.title }}</a></h4>
+                            <p class="article-content">{{ announcement.content }}</p>
+                          </div>
+                        </article>
+                    {% endfor %}
+                    {% for page_num in announcements.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+                      {% if page_num %}
+                        {% if announcements.page == page_num %}
+                          <a class="btn btn-info mb-4" href="{{ url_for('se_platform_home.se_platform_home_home', page=page_num) }}">{{ page_num }}</a>
+                        {% else %}
+                          <a class="btn btn-outline-info mb-4" href="{{ url_for('se_platform_home.se_platform_home_home', page=page_num) }}">{{ page_num }}</a>
+                        {% endif %}
+                      {% else %}
+                        ...
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+              </div>
+          </div>
+        </div>
+      </section> 
+
+        <!-- Section chapters   -->
+        <section class="section_chapter2" style="background-color: #9fa7bf;">
+            <div class="container">
+      
+              <div class="column column1">          
+                <div class="column column1 box">
+                  <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-brightness-alt-high"></i>
+                  </div>
+                  <p><strong>Spot-GO market design:</strong> In this paper the authors study if the introduction of a guarantees of origin electricity market has a pro-competitive effect on the spot electricity market. </p> 
+                  
+                  <div class="container_buttons_links_chapters">
+                    <div class="btn">
+                        <a href="/spot_go/" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Paper</a>
+                    </div>
+                  </div>              
+                </div>
+          
+              </div>              
+      
+              <div class="column column2">
+                <div class="column column2 box">
+                  <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-brightness-alt-high"></i>
+                  </div>
+                  <p><strong>Paper 2</strong> ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... ..... .....</p>
+      
+                  <div class="container_buttons_links_chapters">
+                    <div class="btn">
+                        <a href="/redispatch/" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Paper</a>
+                    </div>
+                  </div>  
+                </div>    
+
+              </div>
+
+            </div>
+          </section>  
+
+
+    <!-- Boxes -->
+    <!-- <section class="p-5">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md">
+                    <div class="card text-light", style="background-color:#343a40;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <img src="/static/figures/dashboards/spot-go/spot_go_icon.svg" width="50" 
+                                height="50">
+                            </div>
+                            <h3 class="card-title mb-3">
+                                App Development Module
+                            </h3>
+                            <p class="card-text">
+                                In this part of the course, we develop a carbon emission calculator by using Flask, Python, HTML and CSS
+                            </p>
+                            <div class="container_buttons_links_header">
+                              <div class="btn">
+                                <a href="{{url_for('se_course_app_module.app_web')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">App Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="card text-light", style="background-color:#6c757d;">
+                        <div class="card-body text-center">
+                            <div class="h1 mb-3">
+                                <i class="bi bi-brightness-alt-high"></i>
+                            </div>
+                            <h3 class="card-title mb-3">
+                                Sustainable Energy Module
+                            </h3>
+                            <p class="card-text">
+                                In this part of the course we cover the most salient topics in sustainable energy, and we connect those topics
+                                with the Sustainable Development Goals
+                            </p>
+                            <div class="container_buttons_links_newsletter">
+                              <div class="btn">
+                                <a href="{{url_for('se_course_se_module.sustainable_energy_web')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Sustainable Energy Web</a>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+{% endblock content %}

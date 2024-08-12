@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--Import the Bootstrap CSS file:-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    />
+    <!--Initial metadata-->
+    <!--Writing Language-->
+    <meta charset="UTF-8">
+    <!--Addaption for device-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- CSS code -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gd_course_NHH_2023_group2_layout.css') }}">
+
+    <!--Awesome link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600;700&display=swap" rel="stylesheet">
+    
+
+    <!--For the plots-->
+      <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    
+    <!--Application title-->
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Carbon App</title>
+    {% endif %}
+
+    <!--Page relevant settings-->
+    {% block head %}{% endblock %}
+
+</head>
+<body>
+    {% block header %} {% endblock%}
+    <section class="section_navbar">
+        <div class="container">
+            <div class="navbar">
+                <!--Logo-->
+                <div class="logo_div">
+                    <h1 class="logo_h1">
+                        <span class="logo_1"><i class="fa-solid fa-earth-europe"></i> CARBON</span>  
+                        <span class="logo_2">App</span>
+                    </h1>
+                </div>
+                <!--Navigation-->
+                <div class="nav_div">
+                    <nav>
+                        <ul>
+                            <li>
+                                <a href="{{url_for('gd_course_NHH_2023_group2.home_func')}}">
+                                    <span class="nav_icon2"><i class="fa-solid fa-house"></i>  </span>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url_for('gd_course_NHH_2023_group2.methodology_func')}}">
+                                    <span class="nav_icon2"><i class="fa-solid fa-microscope">  </i></span>
+                                    Methodology
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{url_for('gd_course_NHH_2023_group2.carbon_calculator_func')}}">
+                                    <span class="nav_icon2"><i class="fa-solid fa-calculator"></i></span>
+                                    Calculator
+                                </a>
+                            </li>
+                            {%if current_user.is_authenticated%}
+                            <li class="last_li">
+                                <a href="{{url_for('gd_course_NHH_2023_group2.logout')}}">
+                                    <span class="nav_icon2"><i class="fa-solid fa-circle-user"></i> </span> 
+                                    Logout
+                                </a>
+                            </li>
+                        
+                            {% else %}
+                            <li class="last_li">
+                                <a href="{{url_for('gd_course_NHH_2023_group2.login')}}">
+                                    <span class="nav_icon2"><i class="fa-solid fa-circle-user"></i> </span> 
+                                    Login
+                                </a>
+                            </li>
+                            <li class="last_li">
+                                <a href="{{url_for('gd_course_NHH_2023_group2.register')}}">
+                                    <span class="nav_icon2"><i class="fa-solid fa-pen"></i> </span> 
+                                    Register
+                                </a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div> 
+            </div>
+        </div>
+    </section>
+    
+    {% block content %} {% endblock %}
+    
+    <section class="section_footer">
+        <div class="container">
+          <div class="div_footer">
+            <h1>
+                <span class="logo_1"><i class="fa-solid fa-earth-europe"></i> CARBON</span>  
+                <span class="logo_2">App</span>
+            </h1>
+          </div>
+        </div>
+      </section>
+</body>
+</html>

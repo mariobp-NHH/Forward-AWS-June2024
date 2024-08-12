@@ -1,0 +1,572 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch2. Structure and Templates </span></h1>
+                    <p class="mb-1">
+                        We start to re-organize the strucuture of our app. To do that, we proceed in two steps. First, we organize all our html files in a <strong>template folder</strong>, and we access to them from our application.py file. Second, to avoid repetition in the html files code, we introduce <strong>templates</strong>. These two steps will help us to make our code more efficient and accessible. We conclude the chapter with the weekly challenge, where we introduce a <strong>navigation menu</strong> to navigate to the home, the methodology and the carbon app pages.
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/NX7sZngJ5QM"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (section 1)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/E6POdA6K59M" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (section 2)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch2%20Structure%20and%20Templates" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Template folder</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we move all the html code from the application.py file to separate html files and we organize those files in a <strong>template</strong> folder.
+                        </p>
+
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Templates</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the html files, there are lines of code that appear in all files, and that is not very efficient. To avoid that problem and make our code more efficient and clean, we introduce <strong>templates</strong>.
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            We develop a <strong>navigation menu</strong> to access to the home, the methodology and the carbo app pages.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch2/ch2.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Template folder</h1>
+            <p>
+                In chapter 1, all the code of our app is in a single file (application.py). That is not the best way to organize the code, since when we introduce more code to our app, it is very difficult to organize the code in a single file. Within the development of our app, we will modify the structure of our app to make the code more efficient and clearer.
+                
+            </p>
+        </div>        
+        
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h3>Moving the html code to a Template folder:</h3>
+                <p style="text-align: left;">The video with all the steps in this section, and the code can be found in the YouTube and GitHub links below:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section1" href="https://youtu.be/NX7sZngJ5QM"  target="_blank">YouTube (section 1)</a> <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch2%20Structure%20and%20Templates/Ch2%20Section%201" target="_blank">GitHub (section 1)</a>
+                    </div> 
+                </p>
+                <p>
+                    <ol>
+                        <li>
+                            In your computer, create a folder named <strong>“Chapter 2” </strong>(or the name that you choose). In that folder create a folder named <strong>“templates”</strong> (templates is the standard name for the template folder, I suggest you to use that name).                            
+                        </li>
+                        </br>
+                        <li>
+                            In the templates folder, create a file named <strong>“home.html”</strong>. In that file type the code that appears in the right box.
+                        </li>
+                        </br>
+                        <li>
+                            Once that we have created our “home.html” file, we must <strong>call it</strong> from our application.py file. To do that, it is necessary to do two things (see the code in the right box):
+                            </br>
+                            </br>
+                            <ol type="a">
+                                <li>
+                                    We need to import the Flask function <strong>render_template</strong> from the package flask.
+                                </li>
+                                <li>
+                                    By using the render_template function, we <strong>call the home.html file</strong>.
+                                </li>
+                                <li>
+                                    Optionally, we can <strong>pass information from our application.py file to our html files</strong>. In particular, in this case we are going to pass a <strong>title</strong> for our home.html file. In the application.py file we must pass the title (see the code in the right box), and in the home.html file, we have to disclose the title placing it between two brackets (see code in the right box).
+                                </li>
+                            </ol>
+                        </li>
+                        </br>
+                        <li>
+                            Once that we have changed the application.py file and we have created a templates folder, we must <strong>create our virstual environment, and install flask on it</strong>. We have two options. First, copy and paste the virtual environment that we have created in chapter 1. Second, follow all the steps described in chapter 1 to create a new virtual environment, activate it, install flask.
+                        </li>
+                        </br>
+                        <li>
+                            With the virtual environment activated, <strong>run our app</strong> by typing: <strong>python application.py</strong> and open it in the local server of your computer.
+                        </li>
+                    </ol>               
+                </p>       
+            </div>
+            <div class="boxa" style="height:850px; align-self:center;">
+                <p style="text-align: center;"><strong>The code in the home.html file:</strong> </p>
+                    
+<pre><code class="python">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;    
+    &lt;title&gt;&#123;&#123;title&#125;&#125;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Home&lt;/h1&gt;
+    &lt;p&gt;
+        Transport carbon emissions are an \
+        important share of carbon emissions. We develop a methodology to \
+        compute transport carbon emissions, and we develop an app to track \
+        those emissions.
+    &lt;/p&gt;
+    &lt;p&gt;
+    Developers:
+    &lt;ul&gt;
+        &lt;li&gt;
+            Developer 1: Brief bio. Link to cv.
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+                <p style="text-align: center;"><strong>The code in the application.py file:</strong> </p>
+                    
+<pre><code class="python">
+from flask import Flask, render_template
+application = Flask(__name__)
+
+@application.route('/')
+@application.route('/home')
+def home():
+    return render_template('home.html', title='home')
+
+if __name__ == '__main__':
+    application.run(debug=True)
+</code></pre>
+            </div>
+        </div>
+
+        <div class="container" style="display:block;">
+            <h3>Add links to pages within our app (url_for):</h3>
+            <p>
+                So far, to access our webpages, we need to introduce manually the routes in the browser. That is not very practical. In the weekly challenge, we will introduce a navigation menu to access to the home, the methodology and the carbon app pages. In this section, we are going to explain how to introduce a link to a route within our flask app.
+                
+            </p>
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p style="text-align: left;">
+                    To access to routes in our flask app, we will use the flask function url_for. Flask url_for is defined as a function that enables developers to build and generate URLs on a Flask application. The way to use url_for in our flask app is very simple. In this section, we are using url_for in a link. Later in the course, we will use it in other situations.
+                    <br>
+                    <br>
+                    In the home.html file, we are going to create a link to the methodology and the carbon calculator pages. To do that, we type (see code in the right box): 
+                    <pre>
+(&lt;a href=&#34;&#123;&#123; url_for('methodology') &#125;&#125;&#34;&gt;link&lt;/a&gt;)
+                    </pre>                    
+                </p>
+     
+            </div>
+            <div class="boxa" style="height:250px; align-self:center;">
+                <p style="text-align: center;"><strong>The code in the home.html file:</strong> </p>
+                    
+<pre><code class="python">
+    &lt;p&gt;
+        Transport carbon emissions are an \
+        important share of carbon emissions. We develop a methodology \
+        (&lt;a href=&#34;&#123;&#123; url_for('methodology') &#125;&#125;&#34;&gt;link&lt;/a&gt;) to \
+        compute transport carbon emissions, and we develop an app to track \
+        those emissions.
+    &lt;/p&gt;
+
+</code></pre>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_questions_two">
+                      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch2_q1.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 1</legend>
+                        <p class="card-text">Which is the Flask function that allows us to connect our application.py file with our html files?
+                            <strong>(chose one of the next options):</strong>      
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch2_q1.type.errors %}
+                                {{ form_gdc_ch2_q1.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch2_q1.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch2_q1.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch2_q1.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>         
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch2_q2.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 2</legend>
+                        <p class="card-text">Which is the way to disclose a title passed from the application.py file into the home.html file? 
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch2_q2.type.errors %}
+                                {{ form_gdc_ch2_q2.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch2_q2.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch2_q2.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch2_q2.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                      
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_questions_two">
+                      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch2_q3.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 3</legend>
+                        <p class="card-text">In HTML code, which is the way to define an unordered list in your code?
+                            <strong>(chose one of the next options):</strong>      
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch2_q3.type.errors %}
+                                {{ form_gdc_ch2_q3.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch2_q3.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch2_q3.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch2_q3.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>         
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch2_q4.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 4</legend>
+                        <p class="card-text">In Flask, which is the function that allows us to link webpages within our app?
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch2_q4.type.errors %}
+                                {{ form_gdc_ch2_q4.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch2_q4.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch2_q4.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch2_q4.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                      
+            </div>
+        </div>
+
+        
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Templates</h1>
+            <h3>Flask Templates and Jinja2</h3>
+                <p>
+                    As can be observed in the templates folder in the previous section, all the html files have the same structure. Each file start with html, then the head and then the body. That is not an efficient way to write code because there are parts of the code that are repeated in each single file. We can avoid that repetition by using <strong>templates</strong>.
+                    <br>
+                    <br>
+                    Flask leverages Jinja2 as its <strong>template engine</strong>. You are obviously free to use a different template engine, but you still must install Jinja2 to run Flask itself. To check that you have already installed Jingja2, you can open your requirements.txt file, and there you can see that when you install flask, you also install Jinja 2 by default. 
+                    <br>
+                    <br>
+                    A Jinja template is simply a <strong>text file</strong>. Jinja can generate any text-based format (HTML, XML, CSV, LaTeX, etc.). A Jinja template doesn't need to have a specific extension: .html, .xml, or any other extension is just fine.
+                    <br>
+                    <br>
+                    A template contains <strong>variables</strong> and/or <strong>expressions</strong>, which get replaced with values when a template is rendered; and tags, which control the <strong>logic of the template</strong>. The template syntax is heavily inspired by Django and Python.
+                    <br>
+                    <br>
+                    We have already used Jinja2 in the previous section when we pass the title of our webpage from the file application.py to the home.html file by using <strong>{{tittle}}</strong>.
+                    <br>
+                    <br>
+                    More information about Flask Templates and Jinja2:
+                </p>
+            
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://jinja.palletsprojects.com/en/3.1.x/templates/" target="_blank">Jinja2 (link 1)</a> <a class="btn-section2" href="https://flask.palletsprojects.com/en/2.2.x/templating/" target="_blank">Jinja2 (link 2)</a>
+                </div> 
+                
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h3>Flask Templates and Jinja2 in action:</h3>
+                <p style="text-align: left;">The video with all the steps in this section, and the code can be found in the YouTube and GitHub links below:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://youtu.be/E6POdA6K59M" target="_blank">YouTube (section 2)</a> <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch2%20Structure%20and%20Templates/Ch2%20Section%202" target="_blank">GitHub (section 2)</a>
+                    </div> 
+                </p>
+                <p>
+                    We will use Jinja2 within our project several times. In this section, we are going to use it to make our code more efficient and to introduce some logic statements in our code.
+                    <ol>
+                        <li>
+                            We create a <strong>layout.html file</strong> where we present the basic html structure of our file. In that file, we introduce two Jinja2 elements.
+                        </br>
+                        </br>
+                        <ol type="a">
+                            <li>
+                                In the <strong>head</strong> of the layout.html file, we introduce a logical statement to disclose the title of each of the webpages in our app (see code in the right box).
+                            </li>
+                            <li>
+                                In the <strong>body</strong> of the layout.html file, we introduce a statement to introduce blocks of html code in our layout.html file. This will help us to inherit the layout.html code avoiding typing the same code again and again in each single html file (see code in the right box).
+                            </li>
+                        </ol>  
+                        </li>
+                        </br>
+                        <li>
+                            To use the layout.html file, we need to <strong>modify the rest of html files</strong>. To make that communication possible, in the html files, we need to introduce two changes.
+                        </br>
+                        </br>
+                        <ol type="a">
+                            <li>
+                                To use the layout.html file within our html files, we need to <strong>extend it</strong> (see code in the right box).
+                            </li>
+                            <li>
+                                Within our html files, we need to define the <strong>html blocks</strong> that will be inserted in the layout.html file (see code in the right box).
+                            </li>
+                        </ol> 
+                        </li>
+                    </ol>               
+                </p>       
+            </div>
+            <div class="boxa" style="height:755px; align-self:center;">
+                <p style="text-align: center;"><strong>The code the layout.html file:</strong> </p>
+                    
+<pre><code class="python">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &#123;&#37; if title &#37;&#125;
+            &lt;title&gt;&#123;&#123; title &#125;&#125;&lt;/title&gt;
+        &#123;&#37; else &#37;&#125;
+            &lt;title&gt;home&lt;/title&gt;
+        &#123;&#37; endif &#37;&#125;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &#123;&#37; block content &#37;&#125; &#123;&#37; endblock &#37;&#125;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+                <p style="text-align: center;"><strong>The code the home.html file:</strong> </p>
+                    
+<pre><code class="python">
+&#123;&#37; extends "layout.html" &#37;&#125;
+&#123;&#37; block content &#37;&#125;
+        &lt;h1&gt;Home&lt;/h1&gt;
+        &lt;p&gt;
+            Transport carbon emissions are an important ...
+        &lt;/p&gt;           
+        &lt;p&gt;
+            Developers:
+            &lt;ul&gt;
+                &lt;li&gt;
+                    &lt;strong&gt;Developer 1&lt;/strong&gt;: Brief bio. Link to cv.
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/p&gt;
+&#123;&#37; endblock content &#37;&#125;
+</code></pre>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="box_questions_two">
+                      
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch2_q5.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 5</legend>
+                        <p class="card-text">What is Jinja2, and which is the role of Jinja2 in our templates? 
+                            <strong>(chose one of the next options):</strong>      
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch2_q5.type.errors %}
+                                {{ form_gdc_ch2_q5.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch2_q5.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch2_q5.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch2_q5.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>         
+            </div>
+            <div class="box_questions_two">
+                <form method="POST" action="">
+                    {{ form_gdc_ch2_q6.csrf_token }}
+                        <legend class="border-bottom mb-4">Question 6</legend>
+                        <p class="card-text">If we want to reuse our layout.html in the rest of our html files, in the body of our layout.html file, we need to introduce the next block of code
+                            <strong>(chose one of the next options):</strong>
+                        </p>
+                        <div class="form-group">
+                            {% if form_gdc_ch2_q6.type.errors %}
+                                {{ form_gdc_ch2_q6.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_gdc_ch2_q6.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_gdc_ch2_q6.type(class="form-control form-control") }}
+                            {% endif %}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_gdc_ch2_q6.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>
+            </div>
+            <div class="box_questions_two">
+                      
+            </div>
+        </div>
+
+
+
+
+    </section> 
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+
+        <div class="container">            
+
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;">
+                    So far, to navigate to the home, the methodology and the carbon app webpages, we need to <strong>change the roots manually in the browser</strong>. That makes the navigation very difficult. 
+                    <br>
+                    <br>  
+                    In this weekly challenge, we introduce a <strong>navigation menu </strong>to access to all the webpages. We want that the navigation menu appears in all the webpages. Moreover, if we want to introduce a new tab in our navigation menu, we want it to appear in all the webpages, and we do not want to do that by changing each single webpage. Therefore, we will use templates, and in particular, we will introduce the navigation menu in the layout.html file, so, the other webpages inherit the navigation menu.                    
+                    <br>
+                    <br>    
+                    We will discuss the weekly challenge on <strong>Thursday 26 January at NHH</strong>, and on <strong>Friday 27 January at HVL</strong>. We will use the main chat to help each other in the weekly challenge. Within <strong>those days</strong>, please share your <strong>methodology route code</strong> with the rest of the groups by using the main chat, so that we can learn from each other. 
+                    <br>
+                    <br>
+                    I will share my <strong>personal solution</strong> for the weekly challenge in the GitHub link below after the lecture on <strong>...</strong>.
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Hints</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>                    
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 2</h5>
+                            </div>
+
+                            <div class="modal-body", style="color:black">
+                            <p>
+                                <ol style="text-align: left;">
+                                    <li>
+                                        In section one, home.html file, we introduce some code to introduce a <strong>list of students</strong>. That could be a good idea to organize the menu.                                       
+                                    </li>
+                                    </br>
+                                    <li>
+                                        In section one, home.html file, we introduce a <strong>link to the methodology.html file</strong>. That could be a good idea to connect our menu with the home, the methodology and the carbon app webpages.
+                                    </li>
+                                </br>
+                                    <li>
+                                        In section two, we introduce a <strong>layout.html file</strong> that will be inherited from the rest of html files. That could be a good place to introduce our navigation menu, since it will be inherit by the rest of the webpages. In the layout.html file, where should place the navigation menu, in the header or in the body?
+                                    </li>
+                                </ol>
+                            </p>
+                            </div>
+
+                            <div class="modal-footer">
+                            <a href="{{ url_for('gd_course_chats.gd_course_chats_new_main_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                        </div>
+                    </div>
+                </div>                    
+
+            </div>   
+            <div class="onebox">                  
+            </div> 
+            
+        </div>
+    </section> 
+
+{% endblock content %}

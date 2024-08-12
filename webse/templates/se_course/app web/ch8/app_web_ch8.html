@@ -1,0 +1,166 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color:#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Chapter 8. Graphs</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we take the carbon emissions that we compute in the previous chapter, and we graph
+                        them by using Chart.js.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+
+                       <div class="btn">
+                            <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch8.%20Graphs" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Github</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Eib-4bKM811NqhAtkBdPL6wBLUJQWycpcuX42tWugwwL5w?e=HMCiT9" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#monday" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Monday challenge breakfast</h5>
+                        </div>
+                        <p class="mb-1">
+                            The students can change the app_calculator2.html file by modifying the JavaScript in their code
+                            to plot other means of conveyance.
+                        </p>
+
+                      </a>
+                      <a href="#layout" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Layout</h5>
+                        </div>
+                        <p class="mb-1">
+                            We modify the layout.html file to use Chart.js.
+                        </p>
+                      </a>
+                      <a href="#graph" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Graph</h5>
+                        </div>
+                        <p class="mb-1">
+                            We introduce JavaScript code in the app_calculator2.html file to graph the carbon emissions for
+                            the bus depending on the type of fuel and the kilometers.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                    <img src="{{url_for('static', filename='figures/app/ch8/ch8_icon.svg')}}" alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="monday" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h2 style="justify-content:center;">Monday challenge breakfast</h2>
+                <p>
+                    The students can change the app_calculator2.html file by modifying the JavaScript in their code
+                            to plot other means of conveyance.
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1. Form-->
+    <section id="layout" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Layout</h2>
+
+            <p>
+                In the layout.html file, we have to modify the code to use Chart.js:
+                <code3>src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"</code3>
+            </p>
+        </div>
+    </section>
+
+<!--Section Calculator-->
+    <section id="graph" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Graph</h2>
+
+            <p>
+                In the app_calculator2.html file, we need to introduce two changes to plot the graph with the carbon emissions.
+
+                <ol>
+                    <li>
+                        We create a canvas where the graph will be located:
+                        <code1>canvas id="co2_transport"</code1>
+                    </li>
+                    <li> We program the JavaScript to plot the graph:
+
+                        <div class="container" style="text-align: center;">
+                            <pre> <code4 style="background-color:#6c757d;">
+block javascript2
+script
+    Chart.scaleService.updateScaleDefaults('linear', {
+            ticks: {
+                min: 0
+            }
+    });
+    let co2_transport_chart = new Chart(co2_transport, {
+            type: 'pie',
+            data: {
+            labels: ['CO2 bus'],
+                datasets: [{
+                    label: "CO2 transport",
+                    data: [{{co2_bus}}],
+                    backgroundColor: ['#f2935c'],
+
+                    borderWidth: 1,
+                    hoverBorderColor: "black",
+                    hoverBorderWidth: 2,
+                    hoverBackgroundColor: 'rgba(154, 245, 140)',
+                    pointHoverRadius: 5
+                }],
+            },
+            options: {
+                    title: {
+                        display: true,
+                            text: "CO2 Transport",
+                                fontSize: 20,
+                    },
+                    legend: {
+                        position: "right",
+                            labels: {
+                            fontColor: "gray"
+                        },
+                        display: true,
+                    },
+
+                    elements: {
+                        hitRadius: 3,
+                    }
+            }
+        })
+script
+endblock
+                            </code4> </pre>
+                        </div>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+#contact_page .col-l {
+  width: 40%;
+  min-width: 400px;
+}
+#contact_page .col-r {
+  max-width: 400px;
+  margin-top: 50px;
+}
+
+#contact_page .hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 100px;
+  margin-top: 50px;
+}

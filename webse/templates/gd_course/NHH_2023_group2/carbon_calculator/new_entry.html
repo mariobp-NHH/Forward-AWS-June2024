@@ -1,0 +1,157 @@
+{% extends "gd_course/NHH_2023_group2/layout.html" %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gd_course_NHH_2023_group2_carbon_calculator.css') }}">
+
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<section class="register">
+    <div class="container">
+        <div class="form_div">  
+            <!-- Button trigger modal -->
+            
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <legend class="div_high">New Entry</legend>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Instructions
+                </button>
+            </div>
+    
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Instructions</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                    <p>The following steps tells how to add and remove a new entry.</p>
+                    <ol>
+                        <li>Pick the used transport</li>
+                        <li>If optional, pick transport specifications: fuel, etc.</li>
+                        <li>Input the traveled distance by the transport in kilometers</li>
+                        <li>Click <b>New Entry</b> to add entry </li>
+                    </ol>
+                    <p>If the entry is wrong, click the <b>Your Data</b>-button to view your entries,
+                        and click the Delete to remove the wrong entry. To add the right entry, follow the steps over.</p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>            
+    
+        <form method="POST" action="">
+            {{form.csrf_token}}
+            <fieldset class="form-group">
+            <div class="form-group">
+                <label class="form_label">Transportation Method:</label>
+                <select class="form-control form-control-lg" id="transport" name="transport" required="">
+                    <option value="Walking">Walking</option>
+                    <option value="Bike">Bike</option>
+                    <option value="Car">Car</option>
+                    <option value="Motorcycle">Motorcycle</option>
+                    <option value="Bus">Bus</option>
+                    <option value="Ferry">Ferry</option>
+                    <option value="Plane">Plane</option>
+                    <option value="Tram">Tram</option>
+                    <option value="Metro">Metro</option>
+                    <option value="Train">Train</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="form_label">Specification:</label>
+                <select class="form-control form-control-lg" id="fuel" name="fuel">
+                    <option value="No Fuel">No Fuel</option>
+                </select>
+            </div>
+            <div class="form-group">
+            {{form.kms.label(class="form_label")}}
+                {% if form.kms.errors %}
+                    {{ form.kms(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                    {% for error in form.kms.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                    </div>
+                {% else %}
+                    {{form.kms(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            </fieldset>
+            <br>
+            <div class="form-group-1">
+                {{ form.submit(class="btn btn-success")}}
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <script>
+        //Dictionaries - text and values - of transports & specifications
+        const spec = {
+            "Walking": ["No Fuel"],
+            "Bike": ["No Fuel", "Electric"],
+            "Car": ["Gasoline", "Diesel", "Electric (BEV)", "Plug-in Hybrid (PHEV)"],
+            "Bus": ["Diesel"],
+            "Plane": ["Jet fuel (Kerosine)"],
+            "Ferry": ["With Car", "Without Car"],
+            "Motorcycle": ["Gasoline"],
+            "Train": ["Electric"],
+            "Metro": ["Electric"],
+            "Tram": ["Electric"]
+        };
+        const spec_v = {
+            "Walking": ["No Fuel"],
+            "Bike": ["No Fuel", "Electric"],
+            "Car": ["Gas", "Diesel", "Electric", "Electric & Gas"],
+            "Bus": ["Diesel"],
+            "Motorcycle": ["Gas"],
+            "Metro": ["Electric"],
+            "Tram": ["Electric"],
+            "Train": ["Electric"],
+            "Ferry": ["With_Car", "Without_Car"],
+            "Plane": ["Domestic"]
+        };
+        //Initial variables
+        const t_sel = document.getElementById("transport");
+        const f_sel = document.getElementById("fuel");
+        
+        //Decide when functions will be called
+        t_sel.addEventListener("change", update_sel);
+        document.getElementById("submit").onclick = unlock;
+        update_sel();
+
+        //Function to decide specification-select and if it can be chosen
+        function update_sel() {
+            const t_type = t_sel.value;
+            f_sel.innerHTML = "";
+            spec[t_type].forEach(function(f_type, index) {
+                const option = document.createElement("option");
+                option.text = f_type;
+                option.value = spec_v[t_type][index];
+                f_sel.appendChild(option);
+            });
+            if (spec[t_type].length === 1) {
+                f_sel.disabled = true;
+            } else {
+                f_sel.disabled = false;
+            };
+        }
+        //Due to select not able to register if disabled, the disabled attribute is removed on submit
+        function unlock() {
+            f_sel.disabled = false;
+        }
+        
+    </script>
+        </div>
+    </div>
+</section>
+{% endblock %}

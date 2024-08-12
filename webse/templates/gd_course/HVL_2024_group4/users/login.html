@@ -1,0 +1,74 @@
+{% extends "gd_course/HVL_2024_group4/layout.html" %}
+{% block content %}
+
+<section id="register" data-aos="fade-up"
+data-aos-duration="1000">
+<img
+class="bg-img"
+src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/env-img.jpg') }}"
+alt="nature image"
+data-aos="fade-left"
+data-aos-duration="1000"
+/>
+  <div class="container">
+         
+          <div class="box">
+              {% with messages = get_flashed_messages(with_categories=true) %}
+                  {% if messages %}
+                      {% for category, message in messages %}
+                          <div class="alert alert-{{ category }}">
+                              {{ message }}
+                          </div> 
+                      {% endfor %}
+                  {% endif %}
+              {% endwith %}
+              <form method="POST" action="">
+                <div class="subtitle">Login</div>
+                <span>Welcome back to <strong>Sustainability</strong> !</span>
+                  {{ form.hidden_tag() }}
+                          <div class="label">
+                              {{ form.email.label(class="form-control-label") }}
+                              {% if form.email.errors %}
+                                  {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                  <div class="invalid-feedback">
+                                      {% for error in form.email.errors %}
+                                          <span>{{ error }}</span>
+                                      {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{ form.email(class="form-control form-control-lg") }}
+                              {% endif %}
+                          </div>
+                          <div class="label">
+                              {{ form.password.label(class="form-control-label") }}
+                              {% if form.password.errors %}
+                                  {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                  <div class="invalid-feedback">
+                                      {% for error in form.password.errors %}
+                                          <span>{{ error }}</span>
+                                      {% endfor %}
+                                  </div>
+                              {% else %}
+                                  {{ form.password(class="form-control form-control-lg") }}
+                              {% endif %}
+                          </div>
+                          <div class="form-check">
+                              {{ form.remember(class="form-check-input") }}
+                              {{ form.remember.label(class="form-check-label") }}
+                          </div>
+                      </br>
+                      <div class="label">
+                          {{ form.submit(class="btn btn-outline-info") }}
+                      </div>
+                      <p>New here ? <a href="{{url_for('gd_course_HVL_2024_group4.register')}}">Register</a></p>
+              </form>
+              </br>
+            
+
+          </div>
+        
+  </div>
+</section>
+
+        
+{% endblock content %}

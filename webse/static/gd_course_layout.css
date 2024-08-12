@@ -1,0 +1,250 @@
+/*
+ bg-primary: #007bff
+ bg-secondary: #6c757d
+ bg-success: #28a745
+ bg-danger: #dc3545
+ bg-warning: #ffc107
+ bg-info: #17a2b8
+ bg-light: #f8f9fa
+ bg-dark: #343a40
+ bg-white: #ffffff   */
+
+ /* Morning theme 1 -Sustainable Energy Course-:
+ mt-1: #9ac2be
+ mt-2: #f2e3b6
+ mt-3: #f2c299
+ mt-4: #f2935c
+ mt-5: #f2c1b6
+Afternoon theme:
+ at-1: #f2d95c
+ at-2: #f2b84b
+ at-3: #f2b84b
+ at-4: #f27405
+ at-5: #f27979
+Afternon Theme 7:
+ at-7: #5fd9cd
+Morning theme 5 -Gender Platform-:
+ mt5-1: #977abf
+ mt5-2: #3854a6
+ mt5-3: #8badd9
+ mt5-4: #a0e3f2
+ mt5-5: #f5f1bf
+Rainy theme 5 -Green Digitalization Course-:
+ rt4-1: #c5c8d9
+ rt4-2: #9fa7bf
+ rt4-3: #2a4359
+ rt4-4: #49736f
+ rt4-5: #568c63
+ */
+ *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ .container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+ }
+
+.navbar .container {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.container .menu_left .menu ul {
+    display: flex;
+}
+
+.container .menu_left .menu  ul li{
+    margin-right: 20px;
+}
+
+.container .menu_right ul {
+    display: flex;
+}
+
+.container .menu_right ul li{
+    margin-left: 20px;
+}
+
+.navbar {
+    background: #8bbbd9;
+    color: #fff;
+    height: 70px;
+ }
+
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+     /* font-weight: bold; */
+ }
+
+.navbar a:hover {
+    color: #9ac2be;
+}
+
+.menu_left{
+    height: 50px;
+    background: #8bbbd9;
+    color: #fff;
+    margin: 0px 0px;
+    display: flex;
+ }
+
+.logo{
+    height: 50px;
+    background: #8bbbd9;
+    color: #fff;
+    margin: 0px 0px;
+    padding: 2px 2px;
+ }
+
+ .navbar .logo a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    /*font-weight: bold;*/
+ }
+
+.navbar .logo a:hover{
+    color: #9ac2be;
+ }
+
+.menu{
+    height: 50px;
+    background: #8bbbd9;
+    color: #fff;
+    margin: 0px 0px;
+    padding: 10px;
+ }
+
+.menu_right{
+    height: 50px;
+    background: #8bbbd9;
+    color: #fff;
+    margin: 0px 10px;
+    padding: 10px;
+ }
+
+ /*footer;*/
+ .footer {
+    background: #8bbbd9;
+    color: #fff;
+    height: 100px;
+ }
+
+ .footer .container {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    height: 100%;
+}
+
+.footer .container .item{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+
+/*Hamburger*/
+ .hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+
+.bar{
+    display: mone;
+    width: 25px;
+    height: 3px;
+    margin: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: white
+}
+
+/*Questionnaires questions*/
+/*Container exercises*/
+.exercises_css {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+      /*color=mt-2*/
+.exercises_css .exercise {
+    flex: 1;
+    background: #8bbbd9;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+    padding: 15px 20px;
+}
+
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+    }
+    .bar{
+        display:block;
+    }
+    .hamburger.active .bar:nth-child(2){
+        opacity:0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .menu .nav{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #8bbbd9;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .menu .nav-item{
+        margin: 16px 0;
+    }
+    .menu .nav.active{
+        left: 0;
+    }
+    .menu_right .nav{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #8bbbd9;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .menu_right .nav-item{
+        margin: 16px 0;
+    }
+    .menu_right .nav.active{
+        left: 0;
+    }
+
+    .header {
+        flex-direction: column;
+        padding-top: 20px;
+        text-align: center;
+          }
+
+}
+

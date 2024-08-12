@@ -1,0 +1,426 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color:#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Chapter 3. Navbar </span></h1>
+                    <p class="mb-1">
+                        This chapter consists on three parts. First, in the layout.html file, we create a basic navigation bar
+                        by using HTML code. With the navigation bar, the user can move to the home and the app calculator webpages. Second,
+                        in the head of the layout.html file, we introduce some CSS style classes to make our navigation bar more
+                        appealing and functional. Finally, to clean the layout.html, and to make our code as efficient and functional
+                        as possible, we place all the CSS style classes in
+                        a separated file (style_carbon.css) located in a separated folder (static).
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo1">Video 1</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalVideo1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video 1: Navbar, HTML.</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 3, section (Navbar, HTML),
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/YjZdtjXw138" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 1</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo2">Video 2</a>
+                        </div>
+                        <!-- Modal Video2 -->
+                        <div class="modal fade" id="instructionsModalVideo2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video 2: Navbar, CSS style.</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 3, section (Navbar, CSS style),
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/eJdVH8gVe50" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 2</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalVideo3">Video 3</a>
+                        </div>
+                        <!-- Modal Video2 -->
+                        <div class="modal fade" id="instructionsModalVideo3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Video 3: Navbar, CSS file.</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>Please, read the instructions in the webpage of chapter 3, section (Navbar, CSS file),
+                                    before to watch the video of this section.</p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <a href="https://youtu.be/z-YjO6_9HZY" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 3</a>
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+                       <div class="btn">
+                            <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch3.%20Navbar" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Github</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EhSOsjY_BgxKmFt8U8nGTswBB2t9TUb7UHNrv8irZ8vBDw?e=3X1eJt" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#monday" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Monday challenge breakfast</h5>
+                        </div>
+                        <p class="mb-1">
+                            The students have to change some basic CSS class styles in the style_carbon.css file. For
+                              example the navigation bar background color, the font color, the hod effect...
+                        </p>
+
+                      </a>
+                      <a href="#navbar_html" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Navbar, HTML</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the layout.html file, we introduce a basic navigation bar by using HTML code.
+                        </p>
+                      </a>
+                      <a href="#navbar_css_style" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Navbar, CSS style</h5>
+                        </div>
+                        <p class="mb-1">
+                            In the head of the layout.html file, we introduce some CSS style classes to make the
+                              navigation bar more appealing and functional.
+                        </p>
+                      </a>
+                       <a href="#navbar_css_file" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Navbar, CSS file</h5>
+                        </div>
+                        <p class="mb-1">
+                            To make our code more clean, efficient and functional, we move the CSS style classes from
+                              the layout.html file to a separate file (style_carbon.css) in a separated folder (static).
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                    <img src="{{url_for('static', filename='figures/app/ch3/ch3_icon.svg')}}" alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="monday" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h2 style="justify-content:center;">Monday challenge breakfast</h2>
+                <p>
+                    The students have to change some basic CSS class styles in the style_carbon.css file. For
+                    example the navigation bar background color, the font color, the hod effect...
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1-->
+    <section id="navbar_html" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Navbar, HTML</h2>
+
+            <p>
+                In the layout.html file, we introduce a basic navigation bar by using HTML code.
+
+                <ol>
+                    <li>
+                        <strong>Download</strong> the <u>entire folder (Ch3.a. Navbar HTML Initial)</u> with the project (virtual environment + rest of the files) that corresponds to your operative system (Windows or Mac).
+                        Be sure that you download the <u>INITIAL</u> folder.
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EhSOsjY_BgxKmFt8U8nGTswBB2t9TUb7UHNrv8irZ8vBDw?e=3X1eJt" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch3.a. Navbar HTML Initial</a>
+                       </div>
+                    </li>
+                    <li>
+                        In PyCharm, <strong>open</strong> the entire project (File>Open>(Select the folder that you have downloaded in the previous step).
+                    </li>
+                    <li>
+                        Follow the instructions in the link to video 1. In that video, I explain how to add code step by step until you
+                        have a basic navigation bar where you can move to the home and the app calculator web pages.
+                        <div class="btn">
+                            <a href="https://youtu.be/YjZdtjXw138" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 1: Navbar HTML</a>
+                       </div>
+                    </li>
+                    </br>
+                    <li>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalRun">Run the app</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Run the app</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <ol>
+                                        <li>
+                                            In PyCharm, open the terminal and <strong>activate the virtual environment</strong>.
+                                            <ul>In Windows: (venv\Scripts\activate)</ul>
+                                            <ul>In Mac: (source venv/bin/activate)</ul>
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                                        </li>
+                                    </ol>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        The final version of the code can be downloaded from
+                        the Github account and from the OneDrive folder. In the OneDrive folder, it is also included the
+                        virtual environment. To run the final version, follow the steps described in the previous step.
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--Section Navbar CSS style-->
+    <section id="navbar_css_style" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Navbar, CSS style</h2>
+
+            <p>
+                In the head of the layout.html file, we introduce some CSS style classes to make the
+                              navigation bar more appealing and functional.
+
+                <ol>
+                    <li>
+                        <strong>Download</strong> the <u>entire folder (Ch3.b. Navbar CSS Style)</u> with the project (virtual environment + rest of the files) that corresponds to your operative system (Windows or Mac).
+                        Be sure that you download the <u>INITIAL</u> folder.
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EhSOsjY_BgxKmFt8U8nGTswBB2t9TUb7UHNrv8irZ8vBDw?e=3X1eJt" class="btn btn-secondary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch3.b. Navbar CSS Style Initial</a>
+                       </div>
+                    </li>
+                    <li>
+                        In PyCharm, <strong>open</strong> the entire project (File>Open>(Select the folder that you have downloaded in the previous step).
+                    </li>
+                    <li>
+                        Follow the instructions in the link to video 2. In that video, I explain how to add code step by step until you
+                        have a more elaborated navigation bar where you can move to the home and the app calculator web pages. In this section,
+                        we focus in the creation of CSS style classes within the layout.html file.
+                        <div class="btn">
+                            <a href="https://youtu.be/eJdVH8gVe50" class="btn btn-secondary btn-lg mr-2", style="background-color:#007bff;">Video 2: Navbar CSS Style</a>
+                       </div>
+                    </li>
+                    </br>
+                    <li>
+                        <div class="btn">
+                            <a href="#" class="btn btn-secondary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalRun">Run the app</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Run the app</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <ol>
+                                        <li>
+                                            In PyCharm, open the terminal and <strong>activate the virtual environment</strong>.
+                                            <ul>In Windows: (venv\Scripts\activate)</ul>
+                                            <ul>In Mac: (source venv/bin/activate)</ul>
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                                        </li>
+                                    </ol>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        The final version of the code can be downloaded from
+                        the Github account and from the OneDrive folder. In the OneDrive folder, it is also included the
+                        virtual environment. To run the final version, follow the steps described in the previous step.
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+<!--Section 3 Navbar CSS file-->
+    <section id="navbar_css_style" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>Navbar, CSS File</h2>
+
+            <p>
+                To make our code more clean, efficient and functional, we move the CSS style classes from
+                              the layout.html file to a separate file (style_carbon.css) in a separated folder (static).
+
+                <ol>
+                    <li>
+                        <strong>Download</strong> the <u>entire folder (Ch3.c. Navbar CSS File)</u> with the project (virtual environment + rest of the files) that corresponds to your operative system (Windows or Mac).
+                        Be sure that you download the <u>INITIAL</u> folder.
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/EhSOsjY_BgxKmFt8U8nGTswBB2t9TUb7UHNrv8irZ8vBDw?e=3X1eJt" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive, Ch3.c. Navbar CSS File</a>
+                       </div>
+                    </li>
+                    <li>
+                        In PyCharm, <strong>open</strong> the entire project (File>Open>(Select the folder that you have downloaded in the previous step).
+                    </li>
+                    <li>
+                        Follow the instructions in the link to video 3. In that video, I explain how to modify the structure of the
+                        project to place all the CSS style classes in a separated file (style_carbon.css) in a separated folder (static).
+                        This makes the structure of our project more efficient, functional and clean.
+                        <div class="btn">
+                            <a href="https://youtu.be/z-YjO6_9HZY" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Video 3: Navbar CSS File</a>
+                       </div>
+                    </li>
+                    </br>
+                    <li>
+                        <div class="btn">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#instructionsModalRun">Run the app</a>
+                        </div>
+                        <!-- Modal Video1 -->
+                        <div class="modal fade" id="instructionsModalRun" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                              <div class="modal-header">
+                                <h5 class="modal-title", style="color:black">Run the app</h5>
+                              </div>
+
+                              <div class="modal-body", style="color:black">
+                                <p>
+                                    <ol>
+                                        <li>
+                                            In PyCharm, open the terminal and <strong>activate the virtual environment</strong>.
+                                            <ul>In Windows: (venv\Scripts\activate)</ul>
+                                            <ul>In Mac: (source venv/bin/activate)</ul>
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                        </li>
+                                        </br>
+                                        <li>
+                                            <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                                        </li>
+                                    </ol>
+                                </p>
+                              </div>
+
+                              <div class="modal-footer">
+                                <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li>
+                        The final version of the code can be downloaded from
+                        the Github account and from the OneDrive folder. In the OneDrive folder, it is also included the
+                        virtual environment. To run the final version, follow the steps described in the previous step.
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+    </section>
+{% endblock content %}

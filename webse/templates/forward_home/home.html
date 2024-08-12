@@ -1,0 +1,556 @@
+{% extends "forward_home/layout.html" %} {% block content %} {% if
+current_user.is_authenticated %}
+<!-- Header -->
+<section class="home_header_css">
+  <div class="container">
+    <div class="box">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+      <script>
+        setTimeout(function () {
+          var flashes = document.querySelectorAll(".alert");
+          flashes.forEach((flash) => flash.remove());
+        }, 5000);
+      </script>
+      <h1 class="text-center">
+        <span class="text-warning"> Forward: </span> Connecting Education and
+        Society
+      </h1>
+      <p class="lead my-3">
+        Forward is an <b>educational platform</b> that aims to connect education
+        and society making that interaction fluent and effective.
+      </p>
+      <p class="lead my-3">
+        To achieve that objective, Forward hosts different <b>courses</b> to
+        facilitate the access to education by active learning. Forward also host
+        thematic <b>platforms</b> where the users have access to dashboards that
+        disclose useful data in different disciplines, and where the user have
+        access to frontier research in those disciplines.
+      </p>
+      <div class="container_buttons_links_header">
+        <div class="btn">
+          <a
+            href="{{url_for('forward_users.forward_users_register')}}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #007bff"
+            >Register</a
+          >
+        </div>
+        <div class="btn">
+          <a
+            href="{{url_for('forward_users.forward_users_login')}}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #007bff"
+            >Login</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <img
+        src="{{url_for('static', filename='figures/forward/forward_icon.svg')}}"
+        width="325"
+        height="325"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+{% else %}
+<!-- Header -->
+<section class="home_header_css">
+  <div class="container">
+    <div class="box">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+      <script>
+        setTimeout(function () {
+          var flashes = document.querySelectorAll(".alert");
+          flashes.forEach((flash) => flash.remove());
+        }, 5000);
+      </script>
+      <h1 class="text-center">
+        <span class="text-warning"> Forward: </span> Connecting Education and
+        Society
+      </h1>
+      <p class="lead my-3">
+        Forward is an <b>educational platform</b> that aims to connect education
+        and society making that interaction fluent and effective.
+      </p>
+      <p class="lead my-3">
+        To achieve that objective, Forward hosts different <b>courses</b> to
+        facilitate the access to education by active learning. Forward also host
+        thematic <b>platforms</b> where the users have access to dashboards that
+        disclose useful data in different disciplines, and where the user have
+        access to frontier research in those disciplines.
+      </p>
+      <div class="container_buttons_links_header">
+        <div class="btn">
+          <a
+            href="{{url_for('forward_users.forward_users_register')}}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #007bff"
+            >Register</a
+          >
+        </div>
+        <div class="btn">
+          <a
+            href="{{url_for('forward_users.forward_users_login')}}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #007bff"
+            >Login</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="box">
+      <img
+        src="{{url_for('static', filename='figures/forward/forward_icon.svg')}}"
+        width="325"
+        height="325"
+        alt=""
+      />
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Courses -->
+<section class="p-5">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #8bbbd9">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/digitalization_course_icon.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">
+              Green Digitalization and App Development
+            </h3>
+            <p class="card-text">
+              This course helps the students to develop a complete app to work
+              out transport carbon emissions.
+            </p>
+            <div class="container_buttons_links_course_green">
+              <div class="btn">
+                <a
+                  href="{{url_for('gd_course.gd_course_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Green Digitalization Course</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #f2c299">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/forward/se_course_icon.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">
+              Sustainable Energy and App Development
+            </h3>
+            <p class="card-text">
+              This course covers the most salient topics in sustainable energy,
+              and connects those topics with the Sustainable Development Goals
+            </p>
+            <div class="container_buttons_links_course_se">
+              <div class="btn">
+                <a
+                  href="{{url_for('se_course.se_course_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Sustainable Energy Course</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-5">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #9fa7bf">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/sustainable_business_models/sustainable_business_models.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">
+              Sustainable Business Models and App Development
+            </h3>
+            <p class="card-text">
+              This course studies the most advanced sustainable business models,
+              and develop an app to work out transport carbon emissions.
+            </p>
+            <div class="container_buttons_links_sustainable_business_models">
+              <div class="btn">
+                <a
+                  href="{{url_for('sbm_course.sbm_course_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Sustainable Business Course</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #3f89a6">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/auditing_accounting_business/auditing_accounting_business.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">
+              Auditing, Accounting and Business
+              <br />
+              <br />
+            </h3>
+            <p class="card-text">
+              This course studies auditing, accounting, and the role of
+              digitalization in the most advanced business models in the green
+              economy sector.
+            </p>
+            <div class="container_buttons_links_auditing_accounting_business">
+              <div class="btn">
+                <a
+                  href="{{url_for('aab_course.aab_course_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Auditing, Accounting and Business Course</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-5">
+  <div class="container">
+    <div class="row text-center g-4">
+
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #F29545">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/economies_of_spanish_course/economies_of_spanish.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">
+              Economías del Español
+            </h3>
+            <p class="card-text">
+              Este curso desarrolla una app para el aprendizaje del español 
+              combinando un modelo lingüístico con varios lenguajes de 
+              programación.
+            </p>
+            <div class="container_buttons_links_economies_of_spanish">
+              <div class="btn">
+                <a
+                  href="{{url_for('es_course.es_course_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Economías del Español</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-light" style="background-color: white; color: white; border-width: 0px;">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <!-- <img
+                src="{{url_for('static', filename='figures/auditing_accounting_business/auditing_accounting_business.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              /> -->
+            </div>
+            <h3 class="card-title mb-3">
+              <!-- Auditing, Accounting and Business
+              <br />
+              <br /> -->
+            </h3>
+            <p class="card-text">
+              This course studies auditing, accounting, and the role of
+              digitalization in the most advanced business models in the green
+              economy sector.
+            </p> 
+            <!-- <div class="container_buttons_links_auditing_accounting_business">
+              <div class="btn">
+                <a
+                  href="{{url_for('aab_course.aab_course_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Auditing, Accounting and Business Course</a
+                >
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Platforms -->
+<section class="p-5" , style="background-color: #6c757d">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #9ac2be">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/forward/se_platform_icon.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">Sustainable Energy Platform</h3>
+            <p class="card-text">
+              This <b>platform</b> provides dashboards with useful data about
+              <b>energy markets</b>. It also host the most advanced research on
+              energy markets.
+            </p>
+            <div class="container_buttons_links_platform_se">
+              <div class="btn">
+                <a
+                  href="{{url_for('se_platform_home.se_platform_home_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Sustainable Energy Platform</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #977abf">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/forward/gender_platform_icon.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">Gender Studies Platform</h3>
+            <p class="card-text">
+              This <b>platform</b> provides dashboards with useful data about
+              <b>gender studies</b>. It also host the most advanced research on
+              gender studies.
+            </p>
+            <div class="container_buttons_links_platform_gender">
+              <div class="btn">
+                <a
+                  href="{{url_for('gender_platform.gender_platform_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Gender Studies Platform</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- People Researchers -->
+<section class="p-5">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #8bbbd9">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/digitalization_course_icon.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">Mario Blazquez</h3>
+            <p class="card-text">....</p>
+            <div class="container_buttons_links_course_green">
+              <div class="btn">
+                <a
+                  href="{{url_for('people_researchers.mario_blazquez')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Web</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Question Accordion -->
+<section id="questions" class="p-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+  </div>
+  <div class="accordion accordion-flush" id="privacy">
+    <!-- Item 1 -->
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne"
+        >
+          Forward Data Privacy.
+        </button>
+      </h2>
+      <div
+        id="flush-collapseOne"
+        class="accordion-collapse collapse"
+        aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample"
+      >
+        <div class="accordion-body">
+          <p>
+            Forward is hosted in the servers of Amazon Web Services (AWS)
+            located in the European Union, EU (Stockholm). Therefore, the data
+            of the users of the platform are protected by the next
+            <strong>three law layers</strong>:
+            <br />
+            <br />
+            First, the data of the users of Forward are protected by the
+            <a
+              href="https://aws.amazon.com/agreement/"
+              style="text-decoration: none"
+              target="_blank"
+              ><strong>AWS Customer Agreement</strong></a
+            >, and the
+            <a
+              href="https://d1.awsstatic.com/legal/aws-gdpr/AWS_GDPR_DPA.pdf"
+              style="text-decoration: none"
+              target="_blank"
+              ><strong>AWS data processing Addendum</strong></a
+            >.
+            <br />
+            <br />
+            Second, the data of the users of Forward are protected by the
+            <a
+              href="https://aws.amazon.com/compliance/gdpr-center/"
+              style="text-decoration: none"
+              target="_blank"
+              ><strong
+                >European Union General Data Protection Regulation
+                (GDPR)</strong
+              ></a
+            >. The data is also protected by the
+            <a
+              href="https://aws.amazon.com/compliance/cispe/"
+              style="text-decoration: none"
+              target="_blank"
+              ><strong
+                >Cloud Infrastructure Services Providers in Europe code of
+                conduct</strong
+              ></a
+            >.
+            <br />
+            <br />
+            Third, at the international level, the data of the users of Forward
+            are safeguard by numerous internationally-recognized certifications
+            and accreditations, such as
+            <a
+              href="https://aws.amazon.com/compliance/iso-27017-faqs/"
+              style="text-decoration: none"
+              target="_blank"
+              ><strong>ISO 27017</strong></a
+            >
+            for cloud security,
+            <a
+              href="https://aws.amazon.com/compliance/iso-27701-faqs/"
+              style="text-decoration: none"
+              target="_blank"
+              ><strong>ISO 27701</strong></a
+            >
+            for privacy information management, and
+            <a
+              href="https://aws.amazon.com/compliance/iso-27018-faqs/"
+              style="text-decoration: none"
+              target="_blank"
+              ><strong>ISO 27018</strong></a
+            >
+            for cloud privacy.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

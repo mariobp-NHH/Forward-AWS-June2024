@@ -1,0 +1,101 @@
+/*Container chat header*/
+/*color=dark*/
+.chat_section_css {
+  display: flex;
+  background: #fff;
+  }
+  
+  .chat_section_css .container {
+  display: flex;
+  background: #fff;
+  }
+  
+  .chat_section_css .container {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+      /*color=dark*/
+  .chat_section_css .container .box {
+    flex: 1;
+    background: #fff;
+    color: #fff;
+    border-radius: 2px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+  }
+  
+  .chat_section_css .container  .box:nth-of-type(1) {
+    flex-grow:1;
+    background: #fff;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align:left;
+  }
+  
+  .chat_section_css .container  .box:nth-of-type(2) {
+    flex-grow:6;
+  background: #977abf;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  }
+  
+  .chat_section_css .container  .box:nth-of-type(3) {
+    flex-grow:1;
+  background: #fff;
+  color: #fff;
+  border-radius: 10px;
+  margin: 0px 0px;
+  padding: 0px 0px;
+  text-align:left;
+  }
+
+  /*Display chat by id*/
+  /*Container section display_chat; color=at-5*/
+  .section_display_chat_css {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.section_display_chat_css .box {
+    flex: 1;
+    background: #f27979;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+}
+.section_display_chat_css .box:nth-of-type(1) {
+    flex-grow:1;
+    background: #fff;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align:left;
+}
+.section_display_chat_css .box:nth-of-type(2) {
+    flex-grow:6;
+    background: #f27979;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+}
+.section_display_chat_css .box:nth-of-type(3) {
+    flex-grow:1;
+    background: #fff;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align:left;
+}

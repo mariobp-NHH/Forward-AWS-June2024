@@ -1,0 +1,13 @@
+@media(max-width:768px){
+    .table tr {
+        font-size: 10px;
+
+    }
+    .table td a {
+        font-size: 10px;
+    }
+    .table_main .container .box:nth-of-type(2) {
+        padding: 0;
+        margin: 0;
+    }
+}

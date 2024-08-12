@@ -1,0 +1,1758 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch5. Sustainable Energy. Wind Energy </span></h1>
+                    <p class="mb-1">
+                        Wind power is one of the fastest-growing renewable energy technologies. We study the history of wind energy, its technological
+                        characteristics and the implications of those characteristics from an economic perspective. We study the main economic aspects
+                        of wind energy. We conclude the chapter with a case study.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch5/materialch5.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch5/presentationch5.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main technological characteristics of wind energy and the economic implications of those characteristics.
+                        </p>
+
+                      </a>
+                      <a href="#history" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">History</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we describe briefly the history of wind energy.
+                        </p>
+                      </a>
+                       <a href="#technology" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Technology</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we study all the technical aspects that affect wind energy and that will determine the economic
+                            adoption and development of this technology.
+                        </p>
+                      </a>
+                      <a href="#key_indicators" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Wind key indicators</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we present the wind key indicators in the roadmap to 2050.
+                        </p>
+                      </a>
+                      <a href="#onshore_offshore" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Onshore and Offshore wind</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we study the main trends of onshore and offshore wind, we also study its technological challenges,
+                            and regional development.
+                        </p>
+                      </a>
+                      <a href="#case_study" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Case Study</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we will study a real case study of offshore wind investments. You will have 45 minutes to read
+                            different documents, to find relevant information, and to prepare two slides that you will present in 7 minutes in the
+                            second part of the lecture. The work will be conducted in teams simulating a consultancy work (job market interview).
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch5/ch5_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+   <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Introduction</h2>
+
+            <p>
+                Wind power is one of the fastest-growing renewable energy technologies. Usage is on the rise worldwide,
+                in part because costs are falling. Global installed wind-generation capacity onshore and offshore has increased
+                by a factor of almost 75 in the past two decades, jumping from 7.5 gigawatts (GW) in 1997 to some 564 GW by 2018.
+                Production of wind electricity doubled between 2009 and 2013, and in 2016 wind energy accounted for 16% of the
+                electricity generated by renewables. Many parts of the world have strong wind speeds, but the best locations for
+                generating wind power are sometimes remote ones. Offshore wind power offers tremendous potential.
+                </br>
+                </br>
+                Wind-turbine capacity has increased over time. In 1985, typical turbines had a rated capacity of 0.05
+                megawatts (MW) and a rotor diameter of 15 metres. Today’s new wind power projects have turbine capacities
+                of about 2 MW onshore and 3–5 MW offshore.
+                </br>
+                </br>
+                Commercially available wind turbines have reached 8 MW capacity, with rotor diameters of up to 164 metres.
+                The average capacity of wind turbines increased from 1.6 MW in 2009 to 2 MW in 2014.
+            </p>
+            </br>
+
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    For complete web with useful data about renewable energy check:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="\href{https://irena.org/publications/2019/Mar/Renewable-Capacity-Statistics-2019" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">IRENA (Data & Statistics)</a>
+                   </div>
+                </div>
+            </div>
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Introduction</h3>
+                <p>
+                    We study the main technological characteristics of wind energy and the economic implications of those characteristics.
+                    First, we analyze why the wind turbines have 3 blades, and the main technological characteristics that determine
+                    wind energy production. Second, we study which will be the estimated wind energy production in 2050, and the role
+                    of this energy to decarbonize the economy.
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch5_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 1</a>
+                   </div>
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch5_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 2</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+<!--Section 1-->
+    <section id="history" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>History</h2>
+
+            <p>
+                Wind turbines first emerged more than a century ago. Following the invention of the electric generator in
+                the 1830s, engineers started attempting to harness wind energy to produce electricity.
+                Wind power generation took place in the United Kingdom and the United States in 1887 and 1888,
+                but modern wind power is considered to have been first developed in Denmark, where horizontal-axis wind
+                turbines were built in 1891 and a 22.8-metre wind turbine began operation in 1897.
+                </br>
+                </br>
+                <u>People have been using wind energy for thousands of years.</u>
+                </br>
+                </br>
+                People used wind energy to propel boats along the Nile River as early as 5,000 BC. By 200 BC,
+                simple wind-powered water pumps were used in China, and windmills with woven-reed blades were grinding
+                grain in Persia and the Middle East.
+                </br>
+                </br>
+                New ways to use wind energy eventually spread around the world. By the 11th century, people in the
+                Middle East were using wind pumps and windmills extensively for food production. Merchants and the
+                Crusaders brought wind technology to Europe. The Dutch developed large windpumps to drain lakes and
+                marshes in the Rhine River Delta. Immigrants from Europe eventually took wind energy technology to the
+                Western Hemisphere.
+                </br>
+                </br>
+                American colonists used windmills to grind grain, to pump water, and to cut wood at sawmills.
+                Homesteaders and ranchers installed thousands of wind pumps as they settled the western United States.
+                In the late 1800s and early 1900s, small wind-electric generators (wind turbines) were also widely used.
+                </br>
+                </br>
+                The number of wind pumps and wind turbines declined as rural electrification programs in the 1930’s extended
+                power lines to most farms and ranches across the country. However, some ranches still use wind pumps to
+                supply water for livestock. Small wind turbines are becoming more common again, mainly to supply electricity
+                in remote and rural areas.
+                </br>
+                </br>
+                <u>Wind energy use expanded in the wake of oil shortages and environmental concerns.</u>
+                </br>
+                </br>
+                The oil shortages of the 1970s changed the energy environment for the United States and the world.
+                The oil shortages created an interest in developing ways to use alternative energy sources, such as wind energy,
+                to generate electricity. The U.S. federal government supported research and development of large wind turbines.
+                In the early 1980s, thousands of wind turbines were installed in California, largely because of federal and state
+                policies that encouraged the use of renewable energy sources.
+                </br>
+                </br>
+                In the 1990s and 2000s, the U.S. federal government established incentives to use renewable energy
+                sources in response to a renewed concern for the environment. The federal government also provided
+                research and development funding to help reduce the cost of wind turbines and offered tax and investment
+                incentives for wind power projects. In addition, state governments enacted new requirements for electricity
+                generation from renewable sources, and electric power marketers and utilities began to offer electricity generated
+                from wind and other renewable energy sources (sometimes called green power) to their customers. These policies and
+                programs resulted in an increase in the number of wind turbines and in the amount of electricity generated from wind energy.
+                </br>
+                </br>
+                The share of U.S. electricity generation from wind grew from less than 1% in 1990 to about 7.3% in 2019.
+                Incentives in Europe have resulted in a large expansion of wind energy use there. China has invested heavily in
+                wind energy and is now the world's largest wind electricity generator. In 1990, 16 countries generated a total of
+                about 3.6 billion kWh of wind electricity. In 2017, 129 countries generated a total of about 1.13 trillion kWh
+                of wind electricity.
+            </p>
+        </div>
+    </section>
+<!--Section 2-->
+    <section id="technology" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Technology</h2>
+            <p>
+                In this section we study all the technical aspects that affect wind energy and that will determine the economic
+                adoption and development of this technology.
+            </p>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    Two very useful videos to know more about the technological aspects of the <strong>wind turbines</strong>:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=qSWm_nprfqE" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How do wind turbines work?</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.youtube.com/watch?v=RNPIRfxUTQ4" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Why do wind turbines have three blades?</a>
+                   </div>
+                </div>
+                <p>
+                    More information about<strong> wind turbine generators</strong> can be found in the  webpage:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.alternative-energy-tutorials.com/wind-energy/wind-turbine-generator.html" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Alternative energy Tutorials</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>How wind turbines work</h3>
+
+            <p>
+                Wind turbines use blades to collect the wind’s kinetic energy. Wind flows over the blades creating lift
+                (similar to the effect on airplane wings), which causes the blades to turn. The blades are connected to
+                a drive shaft that turns an electric generator, which produces (generates) electricity.
+            </p>
+
+            <h3>Energy from moving air</h3>
+
+            <p>
+                Wind is caused by uneven heating of the earth's surface by the sun. Because the earth's surface is made up of different types of
+                land and water, it absorbs the sun's heat at different rates. One example of this uneven heating is the daily wind cycle.
+                </br>
+                </br>
+                During the day, air above the land heats up faster than air over water. Warm air over land expands and rises, and heavier,
+                cooler air rushes in to take its place, creating wind. At night, the winds are reversed because air cools more
+                rapidly over land than it does over water.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        In the same way, the atmospheric winds that circle the earth are created because the land near the earth's equator is hotter than the land near the
+                        North Pole and the South Pole. The global wind kinetic energy averaged approximately 1.50 MJ/m2 over the period from 1979 to 2010,
+                        1.31 MJ/m2 in the Northern Hemisphere with 1.70 MJ/m2 in the Southern Hemisphere. The atmosphere acts as a thermal engine,
+                        absorbing heat at higher temperatures, releasing heat at lower temperatures. The process is responsible for the production
+                        of wind kinetic energy at a rate of 2.46 W/m2 sustaining thus the circulation of the atmosphere against frictional dissipation.
+                        </br>
+                        </br>
+                        Wind is used to produce electricity using the kinetic energy created by air in motion. This is transformed into electrical energy using wind turbines or
+                        wind energy conversion systems. Wind first hits a turbine’s blades, causing them to rotate and turn the turbine connected to them. That changes the
+                        kinetic energy to rotational energy, by moving a shaft which is connected to a generator, and thereby producing electrical energy through
+                        electromagnetism.
+                        </br>
+                        </br>
+                        The amount of power that can be harvested from wind depends on the size of the turbine and the length of its blades. The output is
+                        proportional to the dimensions of the rotor and to the cube of the wind speed. Theoretically, when wind speed doubles, wind power
+                        potential increases by a factor of eight.
+                    </p>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch5/wind_cycle.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>The mathematics of wind energy</h3>
+
+            <p>
+                1. Total <strong>wind energy</strong> flowing through an imaginary surface with area <strong>A</strong> during the time <strong>t</strong> is:
+                </br>
+                </br>
+
+
+                <math display='block'>
+                 <semantics style="font-size: 17px;">
+                  <mrow>
+                   <mi>E</mi><mo>=</mo><mfrac>
+                    <mn>1</mn>
+                    <mn>2</mn>
+                   </mfrac>
+                   <mo>&#x22C5;</mo><mi>m</mi><mo>&#x22C5;</mo><msup>
+                    <mi>v</mi>
+                    <mn>2</mn>
+                   </msup>
+                   <mo>=</mo><mfrac>
+                    <mn>1</mn>
+                    <mn>2</mn>
+                   </mfrac>
+                   <mo>&#x22C5;</mo><mfenced>
+                    <mrow>
+                     <mi>A</mi><mi>v</mi><mi>t</mi><mi>&#x03C1;</mi></mrow>
+                   </mfenced><mo>&#x22C5;</mo><mfenced>
+                    <mrow>
+                     <msup>
+                      <mi>v</mi>
+                      <mn>2</mn>
+                     </msup>
+                     </mrow>
+                   </mfenced></mrow>
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamyraiabg2
+                  da9maalaaabaGaaGymaaqaaiaaikdaaaGaeyyXICTaamyBaiabgwSi
+                  xlaadAhadaahaaWcbeqaaiaaikdaaaGccqGH9aqpdaWcaaqaaiaaig
+                  daaeaacaaIYaaaaiabgwSixpaabmaabaGaamyqaiaadAhacaWG0bGa
+                  eqyWdihacaGLOaGaayzkaaGaeyyXIC9aaeWaaeaacaWG2bWaaWbaaS
+                  qabeaacaaIYaaaaaGccaGLOaGaayzkaaaaaa@5159@
+                  </annotation>
+                 </semantics>
+                </math>
+
+                <math display='block'>
+                 <semantics style="font-size: 17px;">
+                  <mtable columnalign='left'>
+                   <mtr>
+                    <mtd>
+                     <mtext>Where:</mtext>
+                    </mtd>
+                   </mtr>
+                   <mtr>
+                    <mtd>
+                     <mfenced>
+                      <mrow>
+                       <mi>A</mi><mi>v</mi><mi>t</mi><mi>&#x03C1;</mi></mrow>
+                     </mfenced><mtext>&#x00A0;is&#x00A0;the&#x00A0;mass&#x00A0;of&#x00A0;wind&#x00A0;with&#x00A0;density&#x00A0;</mtext><mi>&#x03C1;</mi><mtext>&#x00A0;that&#x00A0;pass&#x00A0;through&#x00A0;an&#x00A0;area&#x00A0;</mtext><mi>A</mi><mtext>.</mtext>
+                    </mtd>
+                   </mtr>
+                   <mtr>
+                    <mtd>
+                     <mfenced>
+                      <mrow>
+                       <msup>
+                        <mi>v</mi>
+                        <mn>2</mn>
+                       </msup>
+                       </mrow>
+                     </mfenced><mtext>&#x00A0;is&#x00A0;the&#x00A0;wind&#x00A0;speed</mtext><mtext>.</mtext>
+                    </mtd>
+                   </mtr>
+                  </mtable>
+
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaacaqGxb
+                  GaaeiAaiaabwgacaqGYbGaaeyzaiaabQdaaeaadaqadaqaaiaadgea
+                  caWG2bGaamiDaiabeg8aYbGaayjkaiaawMcaaiaabccacaqGPbGaae
+                  4CaiaabccacaqG0bGaaeiAaiaabwgacaqGGaGaaeyBaiaabggacaqG
+                  ZbGaae4CaiaabccacaqGVbGaaeOzaiaabccacaqG3bGaaeyAaiaab6
+                  gacaqGKbGaaeiiaiaabEhacaqGPbGaaeiDaiaabIgacaqGGaGaaeiz
+                  aiaabwgacaqGUbGaae4CaiaabMgacaqG0bGaaeyEaiaabccacqaHbp
+                  GCcaqGGaGaaeiDaiaabIgacaqGHbGaaeiDaiaabccacaqGWbGaaeyy
+                  aiaabohacaqGZbGaaeiiaiaabshacaqGObGaaeOCaiaab+gacaqG1b
+                  Gaae4zaiaabccacaqGHbGaaeOBaiaabccacaqGHbGaaeOCaiaabwga
+                  caqGHbGaaeiiaiaadgeacaqGUaaabaWaaeWaaeaacaWG2bWaaWbaaS
+                  qabeaacaaIYaaaaaGccaGLOaGaayzkaaGaaeiiaiaabMgacaqGZbGa
+                  aeiiaiaabshacaqGObGaaeyzaiaabccacaqG3bGaaeyAaiaab6gaca
+                  qGKbGaaeiiaiaabohacaqGWbGaaeyzaiaabwgacaqGKbGaaeOlaaaa
+                  aa@8C2B@
+                  </annotation>
+                 </semantics>
+                </math>
+                </br>
+                </br>
+
+                2. <strong>Power</strong> is energy per unit time, so the wind power incident on <strong>A</strong> (e.g. equal to the rotor area of a wind turbine) is:
+                </br>
+                </br>
+
+                <math display='block'>
+                 <semantics style="font-size: 17px;">
+                  <mrow>
+                   <mi>P</mi><mo>=</mo><mfrac>
+                    <mi>E</mi>
+                    <mi>t</mi>
+                   </mfrac>
+                   <mo>=</mo><mfrac>
+                    <mn>1</mn>
+                    <mn>2</mn>
+                   </mfrac>
+                   <mi>A</mi><mi>&#x03C1;</mi><msup>
+                    <mi>v</mi>
+                    <mn>3</mn>
+                   </msup>
+                   </mrow>
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamiuaiabg2
+                  da9maalaaabaGaamyraaqaaiaadshaaaGaeyypa0ZaaSaaaeaacaaI
+                  XaaabaGaaGOmaaaacaWGbbGaeqyWdiNaamODamaaCaaaleqabaGaaG
+                  4maaaaaaa@4099@
+                  </annotation>
+                 </semantics>
+                </math>
+
+                3. The <strong>net capacity factor</strong> is the unitless ratio of an actual electrical energy output over a
+                given period of time to the maximum possible electrical energy output over that period. The capacity
+                factor is defined for any electricity producing installation, such as a fuel consuming power plant or
+                one using renewable energy, such as wind or the sun. The average capacity factor can also be defined for
+                any class of such installations, and can be used to compare different types of electricity production.
+                </br>
+                </br>
+                The Danish offshore wind farm Horns Rev 2 has a nameplate capacity of 209.3 MW. As of January 2017 it
+                has produced 6416 GWh since its commissioning 7 years ago, i.e. an average annual production of 875 GWh/year
+                and a <strong>capacity factor of</strong>:
+                </br>
+                </br>
+
+                <math display='block'>
+                 <semantics style="font-size: 17px;">
+                  <mrow>
+                   <mfrac>
+                    <mrow>
+                     <mn>875.000</mn><mi>M</mi><mi>W</mi><mo>&#x22C5;</mo><mi>h</mi></mrow>
+                    <mrow>
+                     <mfenced>
+                      <mrow>
+                       <mn>365</mn><mi>d</mi><mi>a</mi><mi>y</mi><mi>s</mi></mrow>
+                     </mfenced><mo>&#x22C5;</mo><mfenced>
+                      <mrow>
+                       <mn>24</mn><mi>h</mi><mi>o</mi><mi>u</mi><mi>r</mi><mi>s</mi><mo>/</mo><mi>d</mi><mi>a</mi><mi>y</mi></mrow>
+                     </mfenced><mo>&#x22C5;</mo><mfenced>
+                      <mrow>
+                       <mn>209.3</mn><mi>M</mi><mi>W</mi></mrow>
+                     </mfenced></mrow>
+                   </mfrac>
+                   <mo>=</mo><mn>0.477</mn><mo>=</mo><mn>47.7</mn><mi>&#x0025;</mi></mrow>
+                  <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                  feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                  hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                  4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                  vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                  fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaWaaSaaaeaaca
+                  aI4aGaaG4naiaaiwdacaGGUaGaaGimaiaaicdacaaIWaGaamytaiaa
+                  dEfacqGHflY1caWGObaabaWaaeWaaeaacaaIZaGaaGOnaiaaiwdaca
+                  WGKbGaamyyaiaadMhacaWGZbaacaGLOaGaayzkaaGaeyyXIC9aaeWa
+                  aeaacaaIYaGaaGinaiaadIgacaWGVbGaamyDaiaadkhacaWGZbGaai
+                  4laiaadsgacaWGHbGaamyEaaGaayjkaiaawMcaaiabgwSixpaabmaa
+                  baGaaGOmaiaaicdacaaI5aGaaiOlaiaaiodacaWGnbGaam4vaaGaay
+                  jkaiaawMcaaaaacqGH9aqpcaaIWaGaaiOlaiaaisdacaaI3aGaaG4n
+                  aiabg2da9iaaisdacaaI3aGaaiOlaiaaiEdacaGGLaaaaa@67A7@
+                  </annotation>
+                 </semantics>
+                </math>
+                </br>
+                Sites with lower capacity factors may be deemed feasible for wind farms, for example the
+                onshore 1 GW Fosen Vind which as of 2017 is under construction in Norway has a projected capacity
+                factor of 39%. Feasibility calculations may be affected by seasonality. For example in Finland, capacity
+                factor during the cold winter months is more than double compared to July. While the annual average in Finland
+                is 29.5%, the high demand for heating energy correlates with the higher capacity factor during the winter.
+                <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    Capacity factor calculator:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#instructionsModalInstructions1">Capacity Factor Calculator (Instructions, Video, Github)</a>
+                    </div>
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="instructionsModalInstructions1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                          <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">Capacity Factor Calculator (Instructions)</h5>
+                          </div>
+
+                          <div class="modal-body", style="color:black">
+                            <p>
+                                <ol>
+                                    <li>
+                                        In the folder of the course in YOUR COMPUTER, <strong>create a folder</strong>, and name it (Calculators).
+                                        If you have already created that folder, go to step 3.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        In PyCharm, open that folder. By default, that folder has a file named (main.py).
+                                        Rename that file by using: (refactor>rename). <strong>Rename the file</strong> as (capacity_factor.py).
+                                    </li>
+                                    </br>
+                                    <li>
+                                        In PyCharm, open that folder. If that folder has already other python files that you have created during the course,
+                                        create a new file by using: (file>new>file). <strong>Name the file</strong> as (capacity_factor.py).
+                                    </li>
+                                    </br>
+                                    <li>
+                                        Copy the code from the <a href="https://github.com/mariobp-NHH/ENE425-Code/blob/main/Wind%20Apps/capacity_factor.py">Github account</a>,
+                                        and paste it in the (capacity_factor.py) file.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        By using the terminal in Pycharm, <strong>run your App</strong>: (python capacity_factor.py) (or phyton3 capacity_factor.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        <strong>The rusult</strong> will appear in your terminal.
+                                    </li>
+                                </ol>
+                            </p>
+                          </div>
+
+                          <div class="modal-footer">
+                            <a href="https://youtu.be/8TGNTQ00NwU" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Capacity Factor (Video)</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+                </br>
+                </br>
+                4. The capacity factor of a wind turbine measures actual production relative to possible production, it is unrelated to
+                <strong>Betz's coefficient</strong> of 16/27 = 59.3%, which limits production vs. energy available in the wind.
+                </br>
+                </br>
+                Betz's law indicates the maximum power that can be extracted from the wind, independent of the design of a
+                wind turbine in open flow. It was published in 1919 by the German physicist Albert Betz. The law is derived
+                from the principles of conservation of mass and momentum of the air stream flowing through an idealized "actuator disk"
+                that extracts energy from the wind stream. According to Betz's law, no turbine can capture more than 16/27=59.3%
+                of the kinetic energy in wind. The factor 16/27 (0.593) is known as Betz's coefficient.
+                Practical utility-scale wind turbines achieve at peak 75-80% of the Betz limit.
+
+
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Energy:</u>
+			        </br>
+                    </br>
+			        As energy is defined via work, the International System of Units unit of energy is the same as the unit 
+                    of work – the <strong>joule (J)</strong>, named in honor of James Prescott Joule and his experiments on the
+                    mechanical equivalenta of heat. In slightly more fundamental terms, <strong>1 joule is equal to 1 newton metre</strong>
+                    and, in terms of International System of Units base units:
+                    </br>
+
+                    <math display='block'>
+                     <semantics style="font-size: 17px;">
+                      <mrow>
+                       <mn>1</mn><mi>J</mi><mo>=</mo><mfenced>
+                        <mrow>
+                         <mn>1</mn><mi>k</mi><mi>g</mi><mfrac>
+                          <mi>m</mi>
+                          <mrow>
+                           <msup>
+                            <mi>s</mi>
+                            <mn>2</mn>
+                           </msup>
+                           </mrow>
+                         </mfrac>
+                         </mrow>
+                       </mfenced><mi>m</mi><mo>=</mo><mn>1</mn><mfrac>
+                        <mrow>
+                         <mi>k</mi><mi>g</mi><mo>&#x22C5;</mo><msup>
+                          <mi>m</mi>
+                          <mn>2</mn>
+                         </msup>
+                         </mrow>
+                        <mrow>
+                         <msup>
+                          <mi>s</mi>
+                          <mn>2</mn>
+                         </msup>
+                         </mrow>
+                       </mfrac>
+                       </mrow>
+                      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                      feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                      hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                      4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                      vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                      fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaaGymaiaadQ
+                      eacqGH9aqpdaqadaqaaiaaigdacaWGRbGaam4zamaalaaabaGaamyB
+                      aaqaaiaadohadaahaaWcbeqaaiaaikdaaaaaaaGccaGLOaGaayzkaa
+                      GaamyBaiabg2da9iaaigdadaWcaaqaaiaadUgacaWGNbGaeyyXICTa
+                      amyBamaaCaaaleqabaGaaGOmaaaaaOqaaiaadohadaahaaWcbeqaai
+                      aaikdaaaaaaaaa@4A3F@
+                      </annotation>
+                     </semantics>
+                    </math>
+
+                    <u>Electricity is measured in Watts and kilowatts:</u>
+                    </br>
+                    </br>
+                    Electricity is measured in units of power called Watts, named to honor James Watt, the inventor of
+                    the steam engine. A Watt is the unit of electrical power equal to <strong>one ampere under the pressure of one volt</strong>.
+                    </br>
+                    </br>
+                    <strong>One Watt is a small amount of power.</strong> Some devices require only a few Watts to operate, and other devices require larger
+                    amounts. The power consumption of small devices is usually measured in Watts, and the power consumption of larger devices
+                    is measured in kilowatts (kW), or 1,000 Watts.
+                    </br>
+                    </br>
+                    Electricity generation capacity is often measured in multiples of kilowatts, such as megawatts (MW) and gigawatts (GW).
+                    One MW is 1,000 kW (or 1,000,000 Watts), and one GW is 1,000 MW (or 1,000,000,000 Watts).
+                    </br>
+                    </br>
+                    <u>Electricity use over time is measured in Watthours:</u>
+                    </br>
+                    </br>
+                    A Watthour (Wh) is equal to the energy of one Watt steadily supplied to, or taken from, an electric circuit for
+                    one hour. <strong>The amount of electricity that a power plant generates or an electric utility customer
+                    uses is typically measured in kilowatthours (kWh)</strong>. One kWh is one kilowatt generated or consumed for one hour.
+                    For example, if you use a 40-Watt (0.04 kW) light bulb for five hours, you have used 200 Wh, or 0.2 kWh, of electrical energy.
+                    </br>
+                    </br>
+                    For more information about energy measures visit:
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://www.eia.gov/energyexplained/electricity/measuring-electricity.php" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Energy Information Administration</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://en.wikipedia.org/wiki/Wind_power" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Wikipedia, wind power</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Units_of_energy" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Wikipedia, units of energy</a>
+                   </div>
+                    <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Electric_power" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Wikipedia, electric power</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>Types of wind turbines</h3>
+
+            <p>
+                The size of wind turbines varies widely. The length of the blades is the biggest factor in determining
+                the amount of electricity a wind turbine can generate. Small wind turbines that can power a single home
+                may have an electricity generating capacity of 10 kilowatts (kW). The largest wind turbines in operation
+                have electricity generating capacities of up to kilowatts (10 megawatts), and larger turbines are in development.
+                Large turbines are often grouped together to create wind power plants, or wind farms, that provide power to electricity grids.
+                </br>
+                </br>
+                There are two basic types of wind turbines
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Horizontal-axis turbines are similar to propeller airplane engines.</div>
+                  <p class="text-right">
+                      Horizontal-axis turbines have blades like airplane propellers, and they commonly have three blades.
+                      The largest horizontal-axis turbines are as tall as 20-story buildings and have blades
+                      more than 100 feet long. Taller turbines with longer blades generate more electricity.
+                      Nearly all of the wind turbines currently in use are horizontal-axis turbines.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Vertical-axis turbines look like egg beaters.</div>
+                  <p class="text-right">
+                      Vertical-axis turbines have blades that are attached to the top and the bottom of a vertical rotor.
+                      The most common type of vertical-axis turbine—the Darrieus wind turbine, named after the French
+                      engineer Georges Darrieus who patented the design in 1931—looks like a giant, two-bladed egg beater.
+                      Some versions of the vertical-axis turbine are 100 feet tall and 50 feet wide. Very few vertical-axis wind
+                      turbines are in use today because they do not perform as well as horizontal-axis turbines.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    The <strong>Global Wind Atlas</strong> is a web-based application developed to help policymakers and investors
+                    identify potential high-wind areas for wind power generation virtually anywhere in the world, and perform
+                    preliminary calculations.
+                    </br>
+                    </br>
+                    It provides <strong>free access to data on wind power density and wind speed at multiple heights</strong> using
+                    the latest historical weather data and modeling, at an output resolution of 250 meters.
+                    </br>
+                    </br>
+                    It was developed and is maintained by the <strong>Wind Energy Department of the Technical University of
+                    Denmark (DTU Wind Energy)</strong> in partnership with the<strong> World Bank</strong>, with funding provided by the
+                    Energy Sector Management Assistance Program (ESMAP).
+                    </br>
+                    </br>
+                    For more information about the Global Wind Atlas visit:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://globalwindatlas.info/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Global Wind Atlas</a>
+                   </div>
+                </div>
+            </div>
+            
+            <h3>Questions</h3>
+            
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q1.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 1</legend>
+                            <p class="card-text">The energy produced by a wind turbine is determined by
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q1.type.errors %}
+                                    {{ form_m2_ch5_q1.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q1.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q1.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q1.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q2.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 2</legend>
+                            <p class="card-text">The capacity factor of an energy production device
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q2.type.errors %}
+                                    {{ form_m2_ch5_q2.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q2.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q2.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q2.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q3.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 3</legend>
+                            <p class="card-text">A wind farm with 200 MW of installed capacity produces 800.000 Mw hour in one year, which
+                                is the capacity factor of that wind farm:
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q3.type.errors %}
+                                    {{ form_m2_ch5_q3.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q3.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q3.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q3.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q4.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 4</legend>
+                            <p class="card-text">The maximum capacity factor of a wind turbine is termined by Betz's coefficient. Which
+                                is the maximum capacity factor of a wind turbine
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q4.type.errors %}
+                                    {{ form_m2_ch5_q4.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q4.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q4.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q4.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!--Section 3-->
+    <section id="key_indicators" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+            <h2>Wind key indicators</h2>
+
+            <!--Enumerated list (table)-->
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <p>
+                        In this section, we present the key indicators and the main trends of wind energy production in the
+                        roadmap to 2050.
+                    </p>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <h5 class="mb-1">1. Wind energy and carbon emissions abatement.</h5>
+                          <p class="mb-1">
+                              Accelerated deployment of renewables, combined with deep electrification an increased energy efficiency,
+                              can achieve over 90% of the energy-related CO2 emissions reductions needed by 2050 to set the world on an
+                              energy patway towards meeting the <strong>Paris climate targets</strong>.
+                              </br>
+                              </br>
+                              Among all low-carbon technology options, accelerated deployment of wind power when coupled with deep
+                              electrification would contribute to more than one-quarter of the total emissions reductions needed
+                              <strong>(nearly 6.3 gigatonnes of carbon dioxide (Gt CO2) annually) in 2050</strong> (figure: CO2 reduction potential by wind power).
+
+                          </p>
+                      </li>
+                    </ul>
+                </div>
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_CO2.svg')}}" alt=""/>
+            </div>
+
+
+            <!--Enumerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">2. Wind capacity installation.</h5>
+                  <p class="mb-1">
+                      The achievement of the Paris climate targets is only possible by greatly <strong>scaling up wind capacity installations</strong>
+                      in the next three decades.
+                      </br>
+                      </br>
+                      This entails increasing the global cumulative installed capacity of <strong>onshore wind power</strong> more
+                      than three fold by 2030 (to 1787 gigawatts (GW)) and nine-fold by 2050 (to 5044 GW) compared to
+                      installed capacity in 2018 (542 GW). For <strong>offshore wind power</strong>, the global cumulative
+                      installed capacity would increase almost ten-fold by 2030 (to 228 GW) and substantially towards 2050,
+                      with total offshore installation nearing 1 000 GW by 2050 (figures: Wind power in total generation mix
+                      and Wind total installed capacity).
+                  </p>
+              </li>
+            </ul>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_total_generation.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_installed_capacity.svg')}}" alt=""/>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">3. Annual capacity additions for onshore wind.</h5>
+                  <p class="mb-1">
+                      Annual capacity additions for onshore wind would increase more than four-fold, to more than 200 GW
+                      per year in the next 20 years, compared to 45 GW added in 2018. Even higher growth would be
+                      required in<strong> annual offshore wind capacity additions</strong> – around a ten-fold increase,
+                      to 45 GW per year by 2050 from 4.5 GW added in 2018 (figure: Wind annual deployment).
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">4. Wind energy at regional level.</h5>
+                  <p class="mb-1">
+                      At a regional level, Asia would largely drive the pace of wind capacity installations, becoming the world leader in wind energy.
+                      <ul>
+                        <li>Asia (mostly China) would continue to dominate the <strong>onshore wind</strong> power industry,
+                            with more than 50% of global installations by 2050, followed by North America (23%)
+                            and Europe (10%).
+                        </li>
+                        <li>
+                            For <strong>offshore wind</strong>, Asia would take the lead in the coming decades with more than
+                            60% of global installations by 2050, followed by Europe (22%) and North America (16%).
+                        </li>
+                    </ul>
+                  </p>
+              </li>
+                <li class="list-group-item">
+                  <h5 class="mb-1">5. Wind energy investments.</h5>
+                  <p class="mb-1">
+                      <strong>Scaling up wind energy investments</strong> is key to accelerating the growth of global wind power 
+                      installations over the coming decades (figure: Wind average annual investment).
+                      <ul>
+                        <li>
+                            This would imply increasing global average annual<strong> onshore wind</strong> power
+                            investments by more than two-fold from now until 2030 (USD 146 billion/year) and more than 
+                            three-fold over the remaining period to 2050 (USD 211 billion/year) compared to 2018 investments 
+                            (USD 67 billion/year). 
+                        </li>
+                        <li>
+                            For <strong>offshore wind</strong>, global average annual investments would need to increase three-fold from now
+                            until 2030 (USD 61 billion/year) and more than five-fold over the remaining period to 2050 (USD 100 billion/year) 
+                            compared to 2018 investments (USD 19 billion/year).
+                        </li>
+                    </ul>
+                  </p>
+              </li>
+            </ul>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_annual_deployment.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_annual_investment.svg')}}" alt=""/>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">6. Costs of wind power.</h5>
+                  <p class="mb-1">
+                      Increasing economies of scale, more competitive supply chains and further technological improvements
+                      will continue to reduce the <strong>costs of wind power</strong>.
+                      <ul>
+                        <li>
+                            The <strong>total installation cost</strong> of <strong>onshore wind projects</strong> would continue to decline
+                            in the next three decades with the average cost falling in 	the range of USD 800 to 1350 per
+                            kilowatt (kW) by 2030 and USD 650 to 1000/kW by 2050, compared to the global-weighted average
+                            of USD 1497/kW in 2018. For <strong>offshore wind projects</strong>, the average total installation cost
+                            would further drop in coming decades to between USD 1700 and 3200/kW by 2030 and between
+                            USD 1400 and 2800/kW by 2050 (figure: Wind total installation cost).
+                        </li>
+                        <li>
+                            The <strong>levelised cost of electricity (LCOE)</strong> for <strong>onshore wind</strong>  will continue to
+                            fall from an average of USD 0.06 per kilowatt-hour (kWh) in 2018 to between USD 0.03 to 0.05/kWh 
+                            by 2030 and between USD 0.02 to 0.03/kWh by 2050. The LCOE of offshore wind would drop from an average 
+                            of USD 0.13/kWh in 2018 to an average between USD 0.05 to 0.09/kWh by 2030 and USD 0.03 to 0.07/kWh by 2050
+                            (figure: Wind levelised cost of electricity).
+                        </li>
+                    </ul>
+                  </p>
+              </li>
+            </ul>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_installation_cost.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_LCOE.svg')}}" alt=""/>
+            </div>
+
+            <!--No numerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">7. Capacity factors.</h5>
+                  <p class="mb-1">
+                      Ongoing <strong>innovations</strong> and <strong>technology enhancements</strong> towards larger capacity 
+                      turbines as well as increased hub heights and rotor diameters help improve yields for the same 
+                      location (figure: .
+                      <ul>
+                        <li>
+                            For <strong>onshore wind plants</strong>, global weighted average capacity factors would increase 
+                            from 34% in 2018 to a range of 30% to 55% in 2030 and 32% to 58% in 2050.
+                        </li>
+                        <li>
+                            For <strong>offshore wind farms</strong>, even higher progress would be achieved, with capacity factors in the 
+                            range of 36% to 58% in 2030 and 43% to 60% in 2050, compared to an average of 43% in 2018
+                        </li>
+                    </ul>
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">8. Employment.</h5>
+                  <p class="mb-1">
+                      The wind industry can employ 3.74 million people by 2030 and more than 6 million people by 2050,
+                      a figure nearly three times higher and five times higher respectively than the 1.16 million jobs in 2018 (figure: Wind employment).
+                  </p>
+              </li>
+            </ul>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_capacity_factor.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_employment.svg')}}" alt=""/>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <strong>The levelized cost of energy (LCOE)</strong>, or levelized cost of electricity, is a measure
+                    of the average net present cost of electricity generation for a generating plant over its lifetime.
+                    The LCOE is calculated as the ratio between all the discounted costs over the lifetime of an electricity
+                    generating plant divided by a discounted sum of the actual energy amounts delivered.
+                    </br>
+                    </br>
+                    The LCOE is used
+                    to compare different methods of electricity generation on a consistent basis. The LCOE "represents the
+                    average revenue per unit of electricity generated that would be required to recover the costs of building
+                    and operating a generating plant during an assumed financial life and duty cycle." Inputs to LCOE are chosen
+                    by the estimator. They can include cost of capital, "fuel costs, fixed and variable operations and maintenance costs,
+                    financing costs, and an assumed utilization rate.
+			        </br>
+                    </br>
+			        The LCOE is calculated as:
+
+                    <math display='block'>
+                     <semantics style="font-size: 17px;">
+                      <mrow>
+                       <mi>L</mi><mi>C</mi><mi>O</mi><mi>E</mi><mo>=</mo><mfrac>
+                        <mrow>
+                         <mtext>Sum&#x00A0;of&#x00A0;cost&#x00A0;over&#x00A0;lifetime</mtext></mrow>
+                        <mrow>
+                         <mtext>Sum&#x00A0;of&#x00A0;electricity&#x00A0;produced&#x00A0;over&#x00A0;lifetime</mtext></mrow>
+                       </mfrac>
+                       <mo>=</mo><mfrac>
+                        <mrow>
+                         <mstyle displaystyle='true'>
+                          <munderover>
+                           <mo>&#x2211;</mo>
+                           <mrow>
+                            <mi>t</mi><mo>=</mo><mn>1</mn></mrow>
+                           <mi>n</mi>
+                          </munderover>
+                          <mrow>
+                           <mfrac>
+                            <mrow>
+                             <msub>
+                              <mi>I</mi>
+                              <mi>t</mi>
+                             </msub>
+                             <mo>+</mo><msub>
+                              <mi>M</mi>
+                              <mi>t</mi>
+                             </msub>
+                             <mo>+</mo><msub>
+                              <mi>F</mi>
+                              <mi>t</mi>
+                             </msub>
+                             </mrow>
+                            <mrow>
+                             <mi>c</mi><mi>t</mi><msup>
+                              <mi>e</mi>
+                              <mi>t</mi>
+                             </msup>
+                             </mrow>
+                           </mfrac>
+                           </mrow>
+                         </mstyle></mrow>
+                        <mrow>
+                         <mstyle displaystyle='true'>
+                          <munderover>
+                           <mo>&#x2211;</mo>
+                           <mrow>
+                            <mi>t</mi><mo>=</mo><mn>1</mn></mrow>
+                           <mi>n</mi>
+                          </munderover>
+                          <mrow>
+                           <mfrac>
+                            <mrow>
+                             <msub>
+                              <mi>E</mi>
+                              <mi>t</mi>
+                             </msub>
+                             </mrow>
+                            <mrow>
+                             <mi>c</mi><mi>t</mi><msup>
+                              <mi>e</mi>
+                              <mi>t</mi>
+                             </msup>
+                             </mrow>
+                           </mfrac>
+                           </mrow>
+                         </mstyle></mrow>
+                       </mfrac>
+                       </mrow>
+                      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                      feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                      hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                      4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                      vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                      fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamitaiaado
+                      eacaWGpbGaamyraiabg2da9maalaaabaGaae4uaiaabwhacaqGTbGa
+                      aeiiaiaab+gacaqGMbGaaeiiaiaabogacaqGVbGaae4Caiaabshaca
+                      qGGaGaae4BaiaabAhacaqGLbGaaeOCaiaabccacaqGSbGaaeyAaiaa
+                      bAgacaqGLbGaaeiDaiaabMgacaqGTbGaaeyzaaqaaiaabofacaqG1b
+                      GaaeyBaiaabccacaqGVbGaaeOzaiaabccacaqGLbGaaeiBaiaabwga
+                      caqGJbGaaeiDaiaabkhacaqGPbGaae4yaiaabMgacaqG0bGaaeyEai
+                      aabccacaqGWbGaaeOCaiaab+gacaqGKbGaaeyDaiaabogacaqGLbGa
+                      aeizaiaabccacaqGVbGaaeODaiaabwgacaqGYbGaaeiiaiaabYgaca
+                      qGPbGaaeOzaiaabwgacaqG0bGaaeyAaiaab2gacaqGLbaaaiabg2da
+                      9maalaaabaWaaabCaeaadaWcaaqaaiaadMeadaWgaaWcbaGaamiDaa
+                      qabaGccqGHRaWkcaWGnbWaaSbaaSqaaiaadshaaeqaaOGaey4kaSIa
+                      amOramaaBaaaleaacaWG0baabeaaaOqaaiaadogacaWG0bGaamyzam
+                      aaCaaaleqabaGaamiDaaaaaaaabaGaamiDaiabg2da9iaaigdaaeaa
+                      caWGUbaaniabggHiLdaakeaadaaeWbqaamaalaaabaGaamyramaaBa
+                      aaleaacaWG0baabeaaaOqaaiaadogacaWG0bGaamyzamaaCaaaleqa
+                      baGaamiDaaaaaaaabaGaamiDaiabg2da9iaaigdaaeaacaWGUbaani
+                      abggHiLdaaaaaa@939F@
+                      </annotation>
+                     </semantics>
+                    </math>
+
+                    <math display='block'>
+                     <semantics style="font-size: 17px;">
+                      <mtable columnalign='left'>
+                       <mtr>
+                        <mtd>
+                         <mtext>Where:</mtext>
+                        </mtd>
+                       </mtr>
+                       <mtr>
+                        <mtd>
+                         <mi>c</mi><mi>t</mi><mi>e</mi><mo>:</mo><mn>1</mn><mo>+</mo><mi>r</mi><mo>.</mo>
+                        </mtd>
+                       </mtr>
+                       <mtr>
+                        <mtd>
+                         <msub>
+                          <mi>I</mi>
+                          <mi>t</mi>
+                         </msub>
+                         <mo>:</mo><mtext>&#x00A0;Investment&#x00A0;expenditure&#x00A0;in&#x00A0;the&#x00A0;year&#x00A0;t</mtext><mtext>.</mtext>
+                        </mtd>
+                       </mtr>
+                       <mtr>
+                        <mtd>
+                         <msub>
+                          <mi>M</mi>
+                          <mi>t</mi>
+                         </msub>
+                         <mo>:</mo><mtext>&#x00A0;Operations&#x00A0;and&#x00A0;maintenance&#x00A0;expenditures&#x00A0;in&#x00A0;the&#x00A0;year&#x00A0;t</mtext><mtext>.</mtext>
+                        </mtd>
+                       </mtr>
+                       <mtr>
+                        <mtd>
+                         <msub>
+                          <mi>F</mi>
+                          <mi>t</mi>
+                         </msub>
+                         <mo>:</mo><mtext>&#x00A0;Fuel&#x00A0;expenditures&#x00A0;in&#x00A0;the&#x00A0;year&#x00A0;t</mtext><mtext>.</mtext>
+                        </mtd>
+                       </mtr>
+                       <mtr>
+                        <mtd>
+                         <msub>
+                          <mi>E</mi>
+                          <mi>t</mi>
+                         </msub>
+                         <mo>:</mo><mtext>&#x00A0;Electricity&#x00A0;generated&#x00A0;in&#x00A0;the&#x00A0;year&#x00A0;t</mtext><mtext>.</mtext>
+                        </mtd>
+                       </mtr>
+                       <mtr>
+                        <mtd>
+                         <mi>r</mi><mo>:</mo><mtext>&#x00A0;Discount&#x00A0;rate</mtext><mtext>.</mtext>
+                        </mtd>
+                       </mtr>
+                       <mtr>
+                        <mtd>
+                         <mi>n</mi><mo>:</mo><mtext>&#x00A0;Expected&#x00A0;lifetime&#x00A0;of&#x00A0;system&#x00A0;or&#x00A0;power&#x00A0;station</mtext><mtext>.</mtext>
+                        </mtd>
+                       </mtr>
+                      </mtable>
+
+                      <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                      feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                      hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                      4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                      vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                      fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGceaqabeaacaqGxb
+                      GaaeiAaiaabwgacaqGYbGaaeyzaiaabQdaaeaacaWGJbGaamiDaiaa
+                      dwgacaGG6aGaaGymaiabgUcaRiaadkhacaGGUaaabaGaamysamaaBa
+                      aaleaacaWG0baabeaakiaacQdacaqGGaGaaeysaiaab6gacaqG2bGa
+                      aeyzaiaabohacaqG0bGaaeyBaiaabwgacaqGUbGaaeiDaiaabccaca
+                      qGLbGaaeiEaiaabchacaqGLbGaaeOBaiaabsgacaqGPbGaaeiDaiaa
+                      bwhacaqGYbGaaeyzaiaabccacaqGPbGaaeOBaiaabccacaqG0bGaae
+                      iAaiaabwgacaqGGaGaaeyEaiaabwgacaqGHbGaaeOCaiaabccacaqG
+                      0bGaaeOlaaqaaiaad2eadaWgaaWcbaGaamiDaaqabaGccaGG6aGaae
+                      iiaiaab+eacaqGWbGaaeyzaiaabkhacaqGHbGaaeiDaiaabMgacaqG
+                      VbGaaeOBaiaabohacaqGGaGaaeyyaiaab6gacaqGKbGaaeiiaiaab2
+                      gacaqGHbGaaeyAaiaab6gacaqG0bGaaeyzaiaab6gacaqGHbGaaeOB
+                      aiaabogacaqGLbGaaeiiaiaabwgacaqG4bGaaeiCaiaabwgacaqGUb
+                      GaaeizaiaabMgacaqG0bGaaeyDaiaabkhacaqGLbGaae4Caiaabcca
+                      caqGPbGaaeOBaiaabccacaqG0bGaaeiAaiaabwgacaqGGaGaaeyEai
+                      aabwgacaqGHbGaaeOCaiaabccacaqG0bGaaeOlaaqaaiaadAeadaWg
+                      aaWcbaGaamiDaaqabaGccaGG6aGaaeiiaiaabAeacaqG1bGaaeyzai
+                      aabYgacaqGGaGaaeyzaiaabIhacaqGWbGaaeyzaiaab6gacaqGKbGa
+                      aeyAaiaabshacaqG1bGaaeOCaiaabwgacaqGZbGaaeiiaiaabMgaca
+                      qGUbGaaeiiaiaabshacaqGObGaaeyzaiaabccacaqG5bGaaeyzaiaa
+                      bggacaqGYbGaaeiiaiaabshacaqGUaaabaGaamyramaaBaaaleaaca
+                      WG0baabeaakiaacQdacaqGGaGaaeyraiaabYgacaqGLbGaae4yaiaa
+                      bshacaqGYbGaaeyAaiaabogacaqGPbGaaeiDaiaabMhacaqGGaGaae
+                      4zaiaabwgacaqGUbGaaeyzaiaabkhacaqGHbGaaeiDaiaabwgacaqG
+                      KbGaaeiiaiaabMgacaqGUbGaaeiiaiaabshacaqGObGaaeyzaiaabc
+                      cacaqG5bGaaeyzaiaabggacaqGYbGaaeiiaiaabshacaqGUaaabaGa
+                      amOCaiaacQdacaqGGaGaaeiraiaabMgacaqGZbGaae4yaiaab+gaca
+                      qG1bGaaeOBaiaabshacaqGGaGaaeOCaiaabggacaqG0bGaaeyzaiaa
+                      b6caaeaacaWGUbGaaiOoaiaabccacaqGfbGaaeiEaiaabchacaqGLb
+                      Gaae4yaiaabshacaqGLbGaaeizaiaabccacaqGSbGaaeyAaiaabAga
+                      caqGLbGaaeiDaiaabMgacaqGTbGaaeyzaiaabccacaqGVbGaaeOzai
+                      aabccacaqGZbGaaeyEaiaabohacaqG0bGaaeyzaiaab2gacaqGGaGa
+                      ae4BaiaabkhacaqGGaGaaeiCaiaab+gacaqG3bGaaeyzaiaabkhaca
+                      qGGaGaae4CaiaabshacaqGHbGaaeiDaiaabMgacaqGVbGaaeOBaiaa
+                      b6caaaaa@151D@
+                      </annotation>
+                     </semantics>
+                    </math>
+                    </br>
+                    For more information about the levelized cost of energy (LCOE) visit:
+                    </br>
+
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="https://en.wikipedia.org/wiki/Levelized_cost_of_energy" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Wikipedia</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.eia.gov/outlooks/aeo/pdf/electricity_generation.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Energy Information Administration</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://corporatefinanceinstitute.com/resources/knowledge/finance/levelized-cost-of-energy-lcoe/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">LCOE example</a>
+                   </div>
+                   <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#instructionsModalInstructions2">LCOE Calculator (Instructions, Video, Github)</a>
+                    </div>
+                    <!-- Modal Instructions2 -->
+                    <div class="modal fade" id="instructionsModalInstructions2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                          <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">LCOE Calculator (Instructions)</h5>
+                          </div>
+
+                          <div class="modal-body", style="color:black">
+                            <p>
+                                <ol>
+                                    <li>
+                                        In the folder of the course in YOUR COMPUTER, <strong>create a folder</strong>, and name it (Calculators).
+                                        If you have already created that folder, go to step 3.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        In PyCharm, open that folder. By default, that folder has a file named (main.py).
+                                        Rename that file by using: (refactor>rename). <strong>Rename the file</strong> as (LCOE.py).
+                                    </li>
+                                    </br>
+                                    <li>
+                                        In PyCharm, open that folder. If that folder has already other python files that you have created during the course,
+                                        create a new file by using: (file>new>file). <strong>Name the file</strong> as (LCOE.py).
+                                    </li>
+                                    </br>
+                                    <li>
+                                        Copy the code from the <a href="https://github.com/mariobp-NHH/ENE425-Code/blob/main/Wind%20Apps/LCOE.py">Github account</a>,
+                                        and paste it in the (LCOE.py) file.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        By using the terminal in Pycharm, <strong>run your App</strong>: (python LCOE.py) (or phyton3 LCOE.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        <strong>The rusult</strong> will appear in your terminal.
+                                    </li>
+                                </ol>
+                            </p>
+                          </div>
+
+                          <div class="modal-footer">
+                            <a href="https://youtu.be/9F250cxt2bI" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">LCOE (Video)</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Questions</h3>
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q5.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 5</legend>
+                            <p class="card-text">Which will be the expected share of wind energy in 2050?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q5.type.errors %}
+                                    {{ form_m2_ch5_q5.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q5.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q5.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q5.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q6.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 6</legend>
+                            <p class="card-text">Which will be expected installed capacity of onshore and offshore wind
+                                energy in 2050?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q6.type.errors %}
+                                    {{ form_m2_ch5_q6.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q6.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q6.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q6.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q7.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 7</legend>
+                            <p class="card-text">Which will be the wind energy investments per year in the next 20 to achieve the objective of 5044 GW of onshore
+                                wind energy capacity and 1000 GW of offshore wind energy capacity in 2050?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q7.type.errors %}
+                                    {{ form_m2_ch5_q7.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q7.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q7.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q7.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q8.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 8</legend>
+                            <p class="card-text">Which will be expected installation cost of onshore and offshore wind
+                                energy in 2050?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q8.type.errors %}
+                                    {{ form_m2_ch5_q8.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q8.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q8.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q8.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q9.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 9</legend>
+                            <p class="card-text">Which will be the expected levelised cost of onshore and offshore wind
+                                energy in 2050?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q9.type.errors %}
+                                    {{ form_m2_ch5_q9.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q9.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q9.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q9.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q10.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 10</legend>
+                            <p class="card-text">A hypothetical wind turbine takes one year to build and costs 1.5 million.
+                                The operating and maintenance costs are $300,000 per year, with an associated growth rate of 2% annually.
+                                There are no associated fuel costs. The wind turbine’s lifespan is 10 years, and it is estimated to produce
+                                3 million kWh each year. Finally, the associated discount rate for the project is 8%.
+                                Which will be levelised cost of that turbine?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q10.type.errors %}
+                                    {{ form_m2_ch5_q10.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q10.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q10.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q10.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="questions_css">
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q11.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 11</legend>
+                            <p class="card-text">Which is the expected capacity factor of onshore and offshore wind
+                                energy in 2050?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q11.type.errors %}
+                                    {{ form_m2_ch5_q11.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q11.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q11.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q11.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+
+                <div class="question">
+                    <form method="POST" action="">
+                        {{ form_m2_ch5_q12.csrf_token }}
+                            <legend class="border-bottom mb-4">Question 12</legend>
+                            <p class="card-text">Which is the expected employment in the wind industry in 2050?
+                                <strong>(chose one of the next options):</strong>
+                            </p>
+                            <div class="form-group">
+                                {% if form_m2_ch5_q12.type.errors %}
+                                    {{ form_m2_ch5_q12.type(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form_m2_ch5_q12.type.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_m2_ch5_q12.type(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            </br>
+                            <div class="form-group border-bottom pb-3">
+                                {{ form_m2_ch5_q12.submit(class="btn btn-outline-info")}}
+                            </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+<!--Section 4-->
+    <section id="onshore_offshore" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Onshore and Offshore wind. Regional development</h2>
+            <h3>Onshore wind</h3>
+            <p>
+                <strong>China</strong>’s onshore wind installed capacity would grow from 205 GW in 2018 (CWEA, 2019) to almost 2150 GW in 2050. This represents nearly
+                a quarter of China’s total land-based wind potential, which is estimated at around 8 800 GW considering an average
+                wind turbine height of 80 metres. In particular,
+                China’s northern regions have abundant onshore wind potential. The provinces of Qinghai, Xinjiang and Inner Mongolia,
+                and the country’s north east, have the highest power density (average values between 400 and 600 watts per square metre (W/m2)).
+                </br>
+                </br>
+                The onshore wind installed capacity in the 3.5 million km2  of land excluding protected areas, <strong>US</strong>
+                would grow from 94 GW in 2018 to almost cities and water This massive potential is mostly 857 GW by 2050.
+                According to the National concentrated in a central area of the country Renewable Energy Laboratory (NREL),
+                the total land-based wind potential in the country is more than 10 000 GW, equivalent to almost 3.5
+                million  km2  of land excluding protected areas, cities and water This massive potential is mostly
+                concentrated in a central area of the country from Minnesota/North-Dakota to Texas, which is likely
+                to see the most deployment of future in land wind installations (NREL, 2018).
+                </br>
+                </br>
+                After China and the US, <strong>Europe</strong> is the third largest market for onshore wind in the coming three decades.
+                The installed onshore capacity is expected to increase more than two-fold by 2050 compared to the 161
+                GW installed as of the end of 2018. The region’s total land-based
+                wind potential is an estimated 13 900 GW (EEA, 2009). The best sites for onshore installations are in northern
+                and central continental Europe as well as in the UK (EEA, 2009).
+            </p>
+
+            <h3>Offshore wind</h3>
+            <p>
+                Moving forward, a prominent shift in deployment would happen in Asian waters (mostly in China, India, Chinese Taipei, the Republic of Korea, Japan,
+                Indonesia, the Philippines and Vietnam) in the next three decades. <strong>Asia</strong> would eventually dominate global
+                offshore wind power installations with a total capacity exceeding 100 GW by 2030 and 600 GW by 2050. Within Asia,
+                significant offshore wind deployment would occur in China, where the installed capacity would reach around 56 GW
+                by 2030 and 382 GW by 2050.
+                </br>
+                </br>
+                China would dominate offshore wind installations, outpacing Europe in less than two decades from now.
+                <strong>Europe</strong> would continue to dominate offshore wind installations for a decade or so, with
+                total offshore wind capacity growing four-fold to 78 GW by 2030 and more than eleven-fold to 215 GW by 2050,
+                compared to 19 GW in 2018. After Asia and Europe, <strong>North America</strong>
+                would be another emerging offshore wind market. In the US, offshore wind installed capacity would grow more strongly,
+                from less than 1 GW today to almost 23 GW by 2030 and 164 GW by 2050.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_onshore_technology.svg')}}" alt=""/>
+                <img src="{{url_for('static', filename='figures/se/ch5/wind_offshore_technology.svg')}}" alt=""/>
+            </div>
+
+            <h2>Onshore and Offshore wind. Technological development</h2>
+            <p>
+                1. <strong>Future generation turbines.</strong>
+                </br>
+                </br>
+                Developments in blade, drivetrain and control technologies, in particular, would enable the development
+                of larger, more reliable turbines with higher capacity ratings. Turbine sizes have increased rapidly in
+                recent decades and the technological changes make that the turbine size will increase even more in the
+                next years (figures: Onshore wind turbines improvement; Offshore wind turbines improvement).
+                </br>
+                </br>
+                2. <strong>Floating foundations.</strong>
+                </br>
+                </br>
+                Technological developments in wind turbine foundations are one of the key factors enabling the
+                accelerated deployment of offshore wind, permitting access to better wind resources. Turbines are
+                now routinely being installed in water depths of up to 40 metres and as far as 80 kilometres from shore.
+                These turbines, rooted in the seabed by monopile or jacket foundations, are currently restricted to waters
+                less than 60 metres deep. This is a major limitation, as some of the largest potential markets for offshore
+                wind, such as Japan and the US, have few shallow-water sites.
+                </br>
+                </br>
+                In such cases, floating foundations may be a better choice. Floating wind farms are one of the most exciting
+                developments in ocean energy technologies. Floating foundations offer the offshore wind industry <strong>three important opportunities</strong>:
+
+                <ol>
+                    <li>
+                        They allow access to sites with water deeper than 60 metres.
+                    </li>
+                    <li>
+                        They ease turbine set-up, even for mid-depth conditions (30–50 metres) and may in time offer a lower-cost
+                        alternative to fixed foundations.
+                    </li>
+                    <li>
+                        Floating foundations generally offer environmental benefits compared with fixed-bottom designs due to
+                        less-invasive activity on the seabed during installation.
+                    </li>
+                </ol>
+
+                <!--Text-Image-->
+                <div class="text_image_css">
+                    <div>
+                        <p>
+                            Three main designs are under development and have been tested: spar-buoys, spar-submersibles and
+                            tension-leg platforms (figure: Offshore wind turbine foundation technologies).
+                            </br>
+                            </br>
+                            The ability of floating offshore wind turbines to unlock areas of deep water close to shore and large population
+                            centres, notably in Japan and the US, could greatly expand offshore wind deployment. Floating technologies can
+                            also be applied intensively in south-east Asia, Oceania and Northern Europe. Floating foundations therefore
+                            are potentially a “game-changing” technology to effectively exploit abundant wind potential in deeper waters
+                            and thus are leading the way for rapid future growth in the offshore wind power market.
+                            </br>
+                            </br>
+                            3. <strong>Integrated turbine and foundation installation.</strong>
+                            </br>
+                            </br>
+                            Most offshore installation operations can be eliminated through the development of technologies and
+                            processes that enable assembling and precommissioning of wind turbines in a harbour followed by installation
+                            of the complete, integrated turbine (including rotor, tower and foundation) in a single operation offshore.
+                            </br>
+                            </br>
+                            Commercialisation is anticipated around 2025, but technology developments would need to continue to meet the needs of
+                            larger turbines.
+                        </p>
+                    </div>
+                    <img
+                    src="{{url_for('static', filename='figures/se/ch5/wind_offshore_floatting.svg')}}"
+                            alt=""/>
+                </div>
+
+                4. <strong>HVDC technology.</strong>
+                </br>
+                </br>
+                For projects far offshore, high-voltage direct current (HVDC) transmission is preferable to high-voltage
+                alternating current (HVAC) transmission in order to overcome the reactive resistance (capacitance) caused
+                by the export cables in a long grid connection (offshore and onshore).
+                </br>
+                </br>
+                Today, HVDC infrastructure is used to connect two points, but it cannot be used to create a
+                multi-nodal network. However, commercialisation of HVDC infrastructure for wind farms is under way,
+                with point-to-point grid connections used on a few projects in European waters.
+                </br>
+                </br>
+                5. <strong>Optimised power electronics:</strong> Optimising the power inverters reliability and dimensions could reduce turbine
+                installation and operation costs.
+                </br>
+                </br>
+                6. <strong>“Smart/Intelligent” wind turbines:</strong> The digital revolution is affecting wind energy with new technologies for
+                turbine monitoring and controls.
+            </p>
+
+        </div>
+    </section>
+
+<!--Section 3-->
+    <section id="case_study" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+
+        <div class="container">
+            <h2>Case Study</h2>
+            <p>
+                In this section, we will study a real case study of offshore wind investments. You will have 45 minutes to read
+                different documents, to find relevant information, and to prepare two slides that you will present in 7 minutes in the
+                second part of the lecture.
+                </br>
+                </br>
+                You will work in teams simulating a consultancy work (job market interview), where you have to analyze
+                a relevant topic in a short period of time, and present some economic analysis and policy/investment recommendations.
+            </p>
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Case Study</h3>
+                <p>
+                    Which are the right location(s) for offshore wind in Norway? Which will be the role of those wind farms in Norway and in Europe?
+                    Which investments are required to achieve those projects? Which are the main environmental and social concerns? How those investments will
+                    affect other sectors?
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="https://energyio.org/wind1.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Havvind 2010</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://energyio.org/wind2.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Havvind 2013</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://energyio.org/wind3.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Royal Decree 2020</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://energyio.org/wind4.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Regulation Offshore Wind</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+{% endblock content %}

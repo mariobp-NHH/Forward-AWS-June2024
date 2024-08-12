@@ -1,0 +1,1421 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch10. Sustainable Energy. Carbon Capture</span></h1>
+                    <p class="mb-1">
+                        As he have studied in the previous chapters, the use of renewables alongside efficiency improvements provide
+                        80% of the required CO2 emissions reductions. However, there are some specific parts in the transport and industry
+                        sectors that could be difficult to decarbonize. In those sectors, the role of hydrogen and bioenergy combined with carbon
+                        capture will play a crucial role to abate carbon emissions. We study the main carbon capture technologies, and
+                        its current and future development. We conclude the chapter analyzing the potential of Norway in the carbon
+                        capture industry.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch10/ch10_material.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch10/ch10_presentation.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main carbon capture business models, the cost associated to the different carbon capture technologies,
+                            and the sectors in which this technology could be more useful to abate carbon emissions.
+                        </p>
+
+                      </a>
+                      <a href="#carbon_capture" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">The role of Carbon Capture</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the role of carbon capture, and the different technologies to capture carbon:
+                            Carbon Capture and Storage (CCS), Carbon Capture and Utilisation (CCU), and Carbon Dioxide Removal (CDR).
+                        </p>
+                      </a>
+                      <a href="#current_status" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">The current status of carbon capture, transportation, utilisation and storage</h5>
+                        </div>
+                        <p class="mb-1">
+                            We analyze the current status of carbon capture by studying the cost of the different technologies,
+                            the cost of transport and storage of CO2.
+                        </p>
+                      </a>
+                      <a href="#future" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">The future role of CCS, CCU and CDR</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the future of carbon capture in the industry sector, bioenergy with CSS, and other CDR technologies
+                        </p>
+                      </a>
+                      <a href="#norway" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Carbon Capture in Norway</h5>
+                        </div>
+                        <p class="mb-1">
+                            We analyze the carbon capture sector in Norway, the main projects of carbon capture, transport and
+                            storage in Norway
+                        </p>
+                      </a>
+                      <a href="#case" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Case Study</h5>
+                        </div>
+                        <p class="mb-1">
+                            By working in groups, the students will have one hour to study official and company documents about carbon capture in
+                            Norway. Then, they present their analysis by providing policy recommendations on investments,
+                            challenges, business models, integration with other sectors and countries.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch10/ch10_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+   <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Introduction</h2>
+
+
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    To motivate the chapter, we start by watching the video
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=cxVFopLpIQY" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Money Is Pouring Into Carbon Capture Tech, But Challenges Remain</a>
+                   </div>
+                </div>
+                <h3>Questions</h3>
+                
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q1.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 1</legend>
+                            <p class="card-text">With the current technology, direct carbon capture technologies are more expensive
+                                than natural climate carbon solutions (plant trees). Can you quantify the difference in cost?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q1.type.errors %}
+                                        {{ form_m2_ch10_q1.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q1.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q1.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q1.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q2.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 2</legend>
+                            <p class="card-text">There are different carbon capture business models: Carbon capture storage and sell
+                                that storage as a carbon emission right; carbon capture and utilization (synthetic fuels, grow vegetables, food production (eg. Coca-cola));
+                                and enhanced oil recovery (EOR).
+                                Which of these business models is controversial from an environmental perspective,
+                                and one of the companies in the video does not include it in its business model?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q2.type.errors %}
+                                        {{ form_m2_ch10_q2.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q2.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q2.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q2.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                    
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q3.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 3</legend>
+                            <p class="card-text">The current price of carbon emissions (17/03/2022) is 80 Euros/Tonne. According to the video, which is the
+                                current cost of the carbon capture technologies?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q3.type.errors %}
+                                        {{ form_m2_ch10_q3.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q3.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q3.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q3.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Introduction</h3>
+                <p>
+                    We study the main carbon capture business models, the cost associated to the different carbon capture technologies,
+                    and the sectors in which this technology could be more useful to abate carbon emissions.
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch10_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+<!--Section 1 (grey)-->
+    <section id="carbon_capture" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>The role of Carbon Capture</h2>
+            <p>
+                As he have studied in the previous chapters, the use of renewables alongside efficiency improvements provide
+                80% of the required CO2 emissions reductions. <strong>Renewable sources</strong>, including renewable
+                power generation sources and the direct use of renewable heat and biomass, would contribute to 25% of CO2
+                emissions reductions, an additional 25% of CO2 reductions would come from the <strong>reduced demand</strong> compared
+                to the baseline scenario, <strong>efficiency improvements</strong> and <strong>circular economy</strong>. The
+                <strong>electrification of transport</strong> and
+                <strong>heat applications</strong> would account for 20% of CO2 emissions reductions, while the use of <strong>hydrogen and synthetic
+                fuels and feedstocks</strong> would enable 10% of CO2 emissions reductions.
+                </br>
+                </br>
+                However, the scale of the challenge, the relatively limited time available, the legacy of systems built around
+                fossil fuel use, and the complexities of some industrial processes mean that even a very aggressive ramping
+                up of renewables will not be sufficient to address all emissions. Some fossil fuel use will remain in 2050 and
+                some industrial processes will produce CO2 emissions irrespective of the energy source.
+                </br>
+                </br>
+                There is a targeted role, therefore, for a combination of <strong>carbon capture and storage (CCS)</strong> processes that
+                reduce emissions released into the atmosphere, for <strong>carbon capture and utilisation (CCU)</strong> processes that might
+                reduce emissions, and for <strong>carbon dioxide removal (CDR)</strong> processes which, combined with long-term storage,
+                can remove CO2 from the atmosphere, resulting in negative emissions.
+                </br>
+                </br>
+                <u>There are different types of carbon capture technologies (Figure: Carbon cycle):</u>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <ul>
+                        <li><strong>Carbon Capture and Storage (CCS)</strong> refers to processes that directly capture CO2 emissions from “point
+                        sources” – i.e. from fossil-fuel use or industrial processes with the CO2 subsequently stored in ways that lock
+                        it away for long periods. If effectively implemented, the process reduces most of the CO2 emissions being
+                        released into the atmosphere, although usually not all.</li>
+                        </br>
+                        <li><strong>Carbon Capture and Utilisation (CCU)</strong> refers to processes that directly capture CO2 emissions from “point
+                        sources” – i.e. from fossil-fuel use or industrial processes – but then utilise that CO2 in secondary processes
+                        such as producing synthetic fuels, chemicals and materials. As with CCS, if effectively implemented, CCU
+                        reduces some CO2 emissions being immediately released into the atmosphere but, depending on the life-cycle
+                        of the products produced, some or all of the utilised CO2 may be subsequently released into the atmosphere.
+                        The impact of CCU on emissions is complex therefore and must be carefully managed.</li>
+                        </br>
+                        <li><strong>Carbon Dioxide Removal (CDR)</strong> refers to processes that actually “remove” CO2 from the atmosphere rather
+                        than simply reduce what is added. If combined with long-term storage, these can result in negative emissions.
+                        These technologies and practices are sometimes therefore called negative emissions technologies (NETs) and
+                        include natural approaches such as afforestation or reforestation and technological or engineered approaches
+                        such as the use of bioenergy coupled with CCS (BECCS) or direct air capture and storage (DACCS).</li>
+                    </ul>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch10/CCS_carbon_cycle.svg')}}"
+                        alt=""/>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>CDR Technologies Remove CO2 from the atmosphere.</u>
+                    <ul>
+                        <li><strong>BECCS
+                        (bioenergy with carbon capture and storage)</strong>
+                        When growing, biomass captures CO2 from the
+                        atmosphere. In power or industrial processes, the
+                        biomass (or fuels derived from the biomass) is
+                        combusted, releasing CO2. In BECCS the majority of
+                        that CO2 is captured and then stored. BECCS applies the
+                        same technology as CCS with the difference that it uses
+                        biogenic feedstock/fuels.</li>
+                        </br>
+                        <li><strong>DACCS
+                        (direct air carbon capture and storage)</strong>
+                        Instead of capturing CO2 from point sources such as
+                        relatively high concentration flue gas streams, the CO2
+                        is separated from ambient air. The low concentration
+                        of CO2 in ambient air requires a higher surface area
+                        of solvents or sorbents in their liquid or solid form in
+                        contact with the input air stream, as well as a large
+                        amount of energy.</li>
+                    </ul>
+                </p>
+            </div>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q4.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 4</legend>
+                            <p class="card-text">The production of synthetic fuels by combining CO2 and hydrogen, could be considered as
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q4.type.errors %}
+                                        {{ form_m2_ch10_q4.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q4.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q4.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q4.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q5.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 5</legend>
+                            <p class="card-text">The production of bioenergy combined with carbon capture and storage, could be considered as
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q5.type.errors %}
+                                        {{ form_m2_ch10_q5.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q5.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q5.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q5.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q6.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 6</legend>
+                            <p class="card-text">The utilization of CO2 in the enhanced oil recovery process (EOR), could be considered as
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q6.type.errors %}
+                                        {{ form_m2_ch10_q6.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q6.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q6.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q6.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+
+<!--Section 2 (blue)-->
+    <section id="current_status" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>The current status of carbon capture, transportation, utilisation and storage</h2>
+            <p>
+                As of early 2021, <strong>24 commercial fossil fuel-based CCS and CCU facilities</strong> were in operation globally with an
+                installed capacity to capture around 0.04 Gtpa of energy- and process-related CO2 emissions.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch10/CCS_pilots.svg')}}"
+                        alt=""/>
+                <div>
+                    Of these <strong>CCS and CCU facilities</strong>, 11 are <strong>natural gas processing plants</strong> (where CO2 needs to be removed anyway
+                    to produce natural gas that meets specific standards) and one is a<strong> coal-fired power plant</strong>. <strong>Chemical plants</strong>
+                    (mostly for ethanol production), <strong>hydrogen production in refineries</strong>, and <strong>iron and steel plants</strong> account for the
+                    remainder. Three plants were operational but are now closed or suspended. An additional 30 plants are at
+                    various stages of development. A further 16 small scale pilot and demonstration plants are operating, 19 are
+                    at various stages of development, and 24 have been completed and closed (Figure: Share of commercial CCS, DACCS and BECCS).
+                    </br>
+                    </br>
+                    If all 30 commercial plants under development are completed, the capture capacity would rise to approximately
+                    0.1 Gtpa.
+                    </br>
+                    </br>
+                </div>
+            </div>
+            <p>
+                There are currently three operational commercial facilities that use <strong>bioenergy with CCS (BECCS)</strong> and seven
+                commercial plants are in development. The current capture capacity of operational commercial BECCS plants
+                is very small at 1.13 Mtpa, which would rise to 9.7 Mtpa if all plants under development reach operation. A
+                further nine smaller scale BECCS pilot and demonstration plants are operational – six completed and four in
+                different stages of development.
+                </br>
+                </br>
+                There are currently <strong>two facilities that use DACCS</strong>, with one in development, plus 15 pilot and demonstration
+                plants in operation or development; however, collectively their capture capacities are quite small.
+            </p>
+
+            <h3>Costs are uncertain and vary by application</h3>
+
+            <p>
+                The costs of CCS, CCU and CDR will be a crucial factor in decisions on their future roles; however, <strong>cost
+                estimates vary widely</strong>, with <strong>future projections having a high degree of uncertainty</strong>.
+                </br>
+                </br>
+                CCS is capital intensive and, in some cases, has significant operating costs. In general, <strong>capture costs</strong> dominate
+                but in some cases <strong>CO2 transportation costs</strong> can be significant. Actual costs are site specific and differ
+                significantly depending on the technology used. Capture costs are mainly dependent on CO2 concentration
+                and pressure, and transport cost on volume and distance.
+                </br>
+                </br>
+                While the costs of capture in CCU are fairly well understood, the <strong>costs of converting CO2 into products</strong> such
+                as fuel, fertilisers, building materials, etc. are less clear and require further research and analysis. The <strong>costs of
+                CDR</strong>, and particularly BECCS, depend on biomass feedstock, while the costs of DACCS as a novel technology
+                are currently very high with an uncertain cost reduction trajectory.
+                </br>
+                </br>
+                Many cost estimates focus only on capture costs and either do not include costs for compression/liquefaction,
+                transportation and storage (including assessment and monitoring costs) or treat transport and storage as
+                lump sums.
+                </br>
+                </br>
+                Cost estimates tend to focus on large-scale CCS facilities with large CO2 volumes (such as gas plants) that can
+                justify dedicated transport and storage infrastructure, rather than smaller industrial plants that emit lower CO2
+                volumes per year (such as cement plants) and will therefore have to rely on clusters, hubs and transportation
+                networks to benefit from economies of scale. The same applies to CDR facilities. The calculated costs in
+                feasibility studies also tend to be much lower than the costs of actual projects that have been implemented.
+                </br>
+                </br>
+                When discussing and comparing costs, therefore, the project specifics and the full end-to-end project costs
+                need to be considered.
+                </br>
+                </br>
+                As CCS applied to fossil fuel processes results in additional energy use, it can in turn lead to additional CO2
+                emissions and the difference can range from 10 to 25%. To account for that, cost per tonne of CO2 avoided (and
+                not cost per tonne of CO2 captured) is the best measure to compare CCS with renewable options.
+            </p>
+
+            <h3>Transportation costs</h3>
+
+            <p>
+                Transporting relatively small quantities of CO2 is an established process and there are a few larger projects,
+                mostly located in the US, which involve the pipeline transportation of CO2 for enhanced oil recovery (CO2-
+                EOR) or EU regional transport by ships.
+                </br>
+                </br>
+                With experience of transporting other more volatile gasses, the safe transportation of CO2 is not likely
+                to be barrier to CCS uptake, although public acceptance may remain a concern, particularly for onshore
+                transportation options.
+                </br>
+                </br>
+                There is a lack of detailed data on costs. Transport and storage costs are often modelled in the integrated
+                assessment models as lump sums at USD 10/tCO2 and disregard the flowrate, distance to storage and
+                utilisation sites, transport mode and storage type, as well as the variability in geographical, geological and
+                institutional settings. The models also focus mostly on large-scale plants with high volumes of CO2. There are
+                a few more detailed studies that focus on a handful of countries with established infrastructures.
+                </br>
+                </br>
+                Based on current estimates, for pipelines the capital expenditure (CAPEX) is the major component amounting
+                up to 90% of total transport costs. For transporting CO2 by ship, the situation reverses and the major
+                component is operating costs (OPEX) for liquefaction, fuels, loading/unloading and temporary storage.
+                </br>
+
+            </p>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <p class="mb-1">
+                        Based on current estimated costs for capacities of 2.5 to 20 Mtpa CO2 for distances between 180 km
+                        and 500 km, onshore pipeline has the lowest costs at USD 1.7–6.1/tCO2, followed by offshore pipelines at
+                        USD 3.5‑32.4/tCO2. Transport via offshore pipelines up to 1 500 km entails costs of up to USD 58.4/tCO2.
+                        Shipping ranges from USD 12.5-22.4/tCO2 for distances between 180 km to 1 500 km.
+                  </p>
+              </li>
+            </ul>
+
+            <h3>Geological storage of CO2</h3>
+
+            <p>
+                Permanent geological storage options include saline formations and depleted oil and gas fields. Other storage
+                options relate to enhanced hydrocarbons – <strong>particularly enhanced oil recovery (EOR)</strong>. Geological storage
+                in saline formations and in EOR has been carried out at Mtpa scale in past decades, but there is not yet
+                experience in storing CO2 at Gtpa scale, as the CO2 captured has not yet reached Gtpa scale.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    The largest experience in storing CO2 is in EOR, which has a very low risk of CO2 leakage. For CO2 pumped
+                    underground into geological formations, researchers expect less than 0.0008% of stored CO2 to be leaked
+                    over 10 000 years. While the risks of leakage are small, public perceptions towards this
+                    approach may still become an issue. Monitoring and verification processes will be important, and must be a
+                    mandated and –ideally – a regulated part of any storage project.
+                    </br>
+                    </br>
+                    There is more than <strong>12 000 Gt of potential</strong>, albeit mostly unverified, of CO2 storage resources in saline
+                    formations globally, out of which 400 Gt of storage is currently well documented; but there are only a small
+                    number of large-scale commercial projects. There are currently six projects storing almost
+                    0.009 Gtpa of CO2 in the United States, Canada, Algeria and Norway.
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch10/CCS_cost_storage.svg')}}"
+                        alt=""/>
+            </div>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <p class="mb-1">
+                        Depending on the continent, onshore saline formation cost estimates range from USD 0.2–6.2/tCO2, with the
+                        cheapest storage in Australia and the most expensive in the EU. Offshore saline formation costs range from
+                        USD 0.5‑30.2 /tCO2, with a lower range in Europe (Figure: Cost estimates for onshore and offshore storage).
+                        Costs estimates for depleted oil onshore fields in the US
+                        range from USD 0.5‑4.0/tCO2, and gas onshore fields in the United States range from USD 0.5‑12.2/tCO2. Cost
+                        estimates for depleted onshore oil and gas fields in the EU range from USD 1.2‑3.8/tCO2, with offshore at
+                        USD 3.8–8.1/tCO2. These cost ranges come with many caveats; in particular, lower ranges look optimistic and
+                        it is unclear how much they include the costs of monitoring, verification or pressurisation.
+                  </p>
+              </li>
+            </ul>
+
+            <h3>Total end-to-end process costs</h3>
+
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <p class="mb-1">
+                        Cost estimates of avoided CO2 for <strong>carbon capture, transport and storage</strong> range from USD 22‑225/tCO2
+                        depending on the sector, capture technologies, distance from storage and storage location.
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <p class="mb-1">
+                        The lowest range is for the production of <strong>ammonia and methanol</strong> (USD 22–62/tCO2), followed by <strong>natural
+                        gas processing plants</strong> (USD 31–49/tCO2) and production of <strong>hydrogen</strong> (USD 73–88/tCO2). The highest
+                        range is in the <strong>iron and steel industry</strong>, with costs of USD 75–131/tCO2, followed by the <strong>cement industry</strong>
+                        (USD 62–102/tCO2), with the most expensive price put on the production of <strong>ethylene</strong> (USD 212–225/tCO2).
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <p class="mb-1">
+                        Cost estimates for<strong> bioenergy</strong> with carbon capture, transport and storage also vary significantly depending
+                        upon the sector of application (USD 69–105/tCO2).
+                  </p>
+              </li>
+            </ul>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q7.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 7</legend>
+                            <p class="card-text">The estimated costs of carbon capture, transport and storage in the iron and steel industry are
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q7.type.errors %}
+                                        {{ form_m2_ch10_q7.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q7.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q7.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q7.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q8.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 8</legend>
+                            <p class="card-text">The estimated costs of carbon capture, transport and storage in the cement industry are
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q8.type.errors %}
+                                        {{ form_m2_ch10_q8.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q8.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q8.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q8.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q9.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 9</legend>
+                            <p class="card-text">The estimated costs of bioenergy with carbon capture and storage are
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q9.type.errors %}
+                                        {{ form_m2_ch10_q9.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q9.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q9.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q9.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+
+<!--Section 3 (white)-->
+    <section id="future" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>The future role of CCS, CCU and CDR</h2>
+            <p>
+                Low-cost renewables make carbon capture combined with fossil
+                fuel use unnecessary in many sectors and contexts, but it will be
+                needed in some applications (Figure: The role of CCS, CCU and BECCS across sectors).
+                </br>
+                </br>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    Renewables and CCS (applied to fossil fuel use and/or process emissions) are often perceived as competitors
+                    in the energy transition but in some applications they can be partners and, in a few cases, CCS is the only
+                    option.
+                    </br>
+                    </br>
+                    The respective roles of renewables versus CCS vary by country, sector and the specific contexts of each
+                    deployment. <strong>Factors of importance</strong> include: relative costs; practicality of deployment; availability of supporting
+                    transport and storage infrastructure; actual emission abatement potential; deployment time scales; skills and
+                    knowledge; social impacts; and societal attitudes.
+                    </br>
+                    </br>
+                    In <strong>most contexts in the power sector, renewables outcompete CCS</strong> on cost per tonne of CO2 and sustainability
+                    grounds.
+                    </br>
+                    <h3>Carbon capture in industry</h3>
+
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <p class="mb-1" style="background-color:#6c757d; color:white; padding: 5px 5px;">
+                                Carbon capture for fossil fuel and process emissions in industry
+                              must be aggressively scaled to reach <strong>3.4 Gtpa by 2050</strong>  (Figure: The role of CCS, CCU and BECCS across sectors).
+                          </p>
+                      </li>
+                    </ul>
+                    </br>
+                    In IRENA’s 1.5°C Scenario, the use of CCS and CCU for fossil fuel or process emissions is limited to the most
+                    essential applications – in particular to capturing process emissions in hydrogen, cement, iron and steel and
+                    chemical production with a limited deployment for industry/waste incinerators, etc. CCS is not deployed for
+                    fossil-fuel based power production.
+                    </br>
+                    </br>
+                    In the 1.5°C Scenario, CCS and CCU for fossil fuel or process emissions from power, fuel production and
+                    industrial process rises from 0.04 Gtpa today to 2.8 Gtpa of CO2 in 2040 and 3.4 Gtpa of CO2 in 2050,
+                    cumulatively capturing 58 Gt globally over that period.
+                    </br>
+                    </br>
+                    These figures include 2.4 Gtpa in 2050 from CCS applied in the <strong>cement, chemical and steel sectors</strong>, and
+                    1.1 Gtpa in 2050 captured in the <strong>production of blue hydrogen</strong> from natural gas with CCS, which accounts for
+                    30% of total hydrogen supply.
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch10/CCS_2050.svg')}}"
+                        alt=""/>
+            </div>
+            </br>
+            <h3>Bioenergy with CCS (BECCS)</h3>
+
+            <p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                      <p class="mb-1" style="background-color:#6c757d; color:white; padding: 5px 5px;">
+                            Bioenergy with CCS (BECCS) is essential for the net-zero goal but
+                            needs to reach <strong>4.5 Gtpa by 2050</strong> and faces multiple challenges (Figure: The role of CCS, CCU and BECCS across sectors).
+                      </p>
+                  </li>
+                </ul>
+
+                </br>
+                CDR processes, combined with long-term storage, can in principle remove CO2 from the atmosphere, resulting
+                in negative emissions. CDR technologies are therefore a critical component of net-zero pathways.
+                </br>
+                </br>
+                CDR measures and technologies can include nature-based processes such as reforestation, as well as
+                technology or engineered approaches such as BECCS, DACCS and some other experimental approaches.
+                </br>
+                </br>
+                The most developed example of CDR technology is BECCS. <strong>Biomass absorbs CO2 from the atmosphere as
+                it grows</strong>, and the use of CCS prevents most of that CO2 from going back to the atmosphere during biomass
+                final use. The overall result is that CO2 is effectively removed from the atmosphere through biomass growth
+                and storage elsewhere.
+                </br>
+                </br>
+                Net-zero pathways rely on BECCS but it is currently unproven in most contexts and there are complexities to
+                be addressed. The extensive use of BECCS requires both a scaling up of CCS deployment and strategies to
+                ensure sufficient suitable and sustainable biomass feedstock supplies.
+                </br>
+                </br>
+                <strong>There are a range of potential applications of BECCS</strong>, including: power and heat generation with biomass
+                providing some or all of the fuel (e.g. wood pellets, sugarcane or municipal solid waste); cement kilns
+                with biomass providing the fuel; blast furnaces for iron production, where charcoal can be used as a fuel and
+                reducing agent; chemical plants where the chemical feedstock is biomass (e.g. bio-methanol or in bioethanol
+                production); and biogas upgrading where the CO2 fraction of biogas is separated for the production of
+                biomethane.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch10/CCS_biogenic.svg')}}"
+                        alt=""/>
+                <div>
+                    Depending on the plant design, biomass can be the only fuel, or it can be co-fired with coal or natural gas. In
+                    the past decade, a small number of coal power plants have been converted into 100% biomass power plants
+                    or are in the process of doing so. However, the number of such conversions to date is small and only one fully
+                    converted power plant has a clear publicly announced plan to add CCS; as yet, no co-firing coal or natural gas
+                    power plants have announced plans to add CCS.
+                    </br>
+                    </br>
+                    In IRENA’s 1.5°C Scenario, BECCS use results in 2.7 Gtpa of CO2 captured and stored in 2040, and 4.5 Gtpa of CO2
+                    in 2050 (Figure: The role of CCS, CCU and BECCS across sectors). This includes the carbon balance in the chemical and petrochemical industry through
+                    carbon stocks in chemical products, recycling and carbon capture in waste incineration. As a result, towards
+                    2050 the power and industry sectors become net negative; i.e. the CO2 captured more than compensates for
+                    remaining CO2 emissions in those sectors. To capture 4.5 Gtpa of CO2 by 2050 would require investments of
+                    more than USD 1.1 trillion between 2021 and 2050.
+                </div>
+            </div>
+            </br>
+            <p>
+                BECCS can, in principle, be utilised in a range of processes but the optimum application of BECCS requires
+                more detailed investigation of costs, logistics and sustainable biomass supply chains, and will be highly
+                country and context specific. IRENA’s 1.5°C Scenario includes biomass-based processes from which 10.12 Gtpa
+                could be captured and stored by 2050 (Figure: Potential for biogenic carbon capture in 2050). Of that potential, the scenario assumes 44% (4.5Gtpa)
+                is actually captured and stored but is not specific about where BECCS would be applied. <strong>The most significant
+                opportunities are in power, heat, chemicals and biorefineries</strong> but BECCS <strong>could also be significant in cement,
+                pulp and paper, and food production</strong>. The potential in iron and steel production is low in the 1.5°C Scenario
+                by 2050, since the scenario assumes a nearly complete transition away from blast furnaces by then, but the
+                BECCS potential could be larger there during the transition or if more blast furnaces utilising biomass and
+                CCS are retained.
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    To illustrate the scale of BECCS required, the Drax power plant in the UK has converted four coal-fired units
+                    (each rated at c. 660 MW) to biomass and is planning to retrofit CCS to at least two units. Each
+                    individual unit would capture circa 4 Mtpa. Capturing 4.5 Gtpa would require over 1 100 such units around the
+                    world, or an equivalent, and most BECCS applications will be much smaller than this.
+                </p>
+            </div>
+
+            <h3>Other CDR technologies</h3>
+
+            <p>
+                Other CDR technologies include DACCS and some other approaches that are mostly at an early experimental
+                stage, which makes their future potential hard to quantify. According to this early experience, projects face
+                high energy and land requirements, but offer flexibility in terms of their location.
+                </br>
+                </br>
+                DACCS is another CDR technology that is in the early stages of development and a long way from reaching the
+                gigatonne-scales needed to be impactful. There are two commercial plants currently operating and capturing
+                a negligible amount of CO2 (0.0009 Mtpa, 0.9 ktpa), and one other plant is under development and would
+                add an additional 0.021 Mtpa (21 ktpa) of CO2 capture. In addition, there are 15 pilot and demonstration plants
+                – three completed, seven in operation and five at various stages of development.
+                </br>
+                </br>
+                These technologies do not currently play a major role in the IRENA 1.5°C Scenario. However, countries and
+                investors are beginning to make financial commitments to large-scale DACCS projects, which – if successful
+                in driving scale – would allow DACCS to offset some of the need for BECCS or could allow for more emissions
+                elsewhere.
+            </p>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q10.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 10</legend>
+                            <p class="card-text">To achieve the 1.5 degree scenario, carbon capture for fossil fuel and process emissions
+                                in the <strong>industry sector</strong> must reach
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q10.type.errors %}
+                                        {{ form_m2_ch10_q10.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q10.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q10.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q10.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q11.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 11</legend>
+                            <p class="card-text">To achieve the 1.5 degree scenario, <strong>bioenergy with CCS</strong> must reach
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q11.type.errors %}
+                                        {{ form_m2_ch10_q11.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q11.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q11.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q11.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch10_q12.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 12</legend>
+                            <p class="card-text">In the industry sector, the main opportunities for CCS are
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch10_q12.type.errors %}
+                                        {{ form_m2_ch10_q12.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch10_q12.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch10_q12.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch10_q12.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+    </section>
+
+<!--Section 4 (Grey)-->
+    <section id="norway" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Carbon Capture in Norway</h2>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This chapter is based on the links:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.regjeringen.no/en/dokumenter/meld.-st.-33-20192020/id2765361/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Longship white paper</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.stortinget.no/no/Saker-og-publikasjoner/Saker/Sak/?p=81101" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Langskip - fangst og lagring av CO2</a>
+                   </div>
+                </div>
+            </div>
+
+            <h3>Overview</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the links:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://ccsnorway.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">CCS Norway</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.regjeringen.no/en/historical-archive/solbergs-government/Ministries/smk/Press-releases/2020/the-government-launches-longship-for-carbon-capture-and-storage-in-norway/id2765288/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Long ship</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://www.regjeringen.no/en/topics/energy/carbon-capture-and-storage/id86982/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Government Norway (Carbon capture and storage - CCS)</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.regjeringen.no/en/historical-archive/solbergs-government/Ministries/smk/Press-releases/2020/the-government-launches-longship-for-carbon-capture-and-storage-in-norway/id2765288/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Government Norway (Long ship project)</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://ccsnorway.com/public-and-private-cooperation/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">CSS Norway (Public and private cooperation)</a>
+                   </div>
+                </div>
+            </div>
+
+            <p>
+                Norway has the knowledge and many years of experience with CCS, not only in CCS technology such as CO2 monitoring
+                and storage but in essential related sectors such as geology, offshore engineering and industrial processes.
+                </br>
+                </br>
+                With a large, natural geological CO2 storage capacity area under the North Sea and more than 20 years of experience with CO2
+                storage, Norway is in a strong position to demonstrate CCS at scale.
+                </br>
+                </br>
+                The Government proposes September 21, 2021 to launch a carbon capture and storage (CCS) project in Norway.
+                The project has been named ‘Longship’, in Norwegian ‘Langskip’.
+                </br>
+                </br>
+                Longship seeks to fulfill the objectives of both Government and industry by reducing investment barriers for
+                business and developing sustainable value creation opportunities.
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Reducing barriers.</div>
+                  <p class="text-right">
+                      Since the world has agreed on ambitious climate targets and there is a growing consensus among international bodies that
+                      CCS is needed to achieve them, why has CCS not already taken off?
+                      </br>
+                      </br>
+                      To date there has been a lack of investment in CCS projects. The very same IEA, UN and EU reports
+                      which extol the virtues of CCS have also been quick to point this out.
+                      </br>
+                      </br>
+                      This lack of commercialization has primarily been driven by several CCS specific market failures.
+                      So there is an obvious need for cooperation between the private and the public sectors to overcome market
+                      hurdles to increase investment in CCS.
+                      </br>
+                      </br>
+                      How then, do we unlock this investment? The key lies in demonstrating CCS to prove that it is viable,
+                      building open-access CO2 infrastructure and developing public-private cooperation.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">The Norwegian Contribution in the development of CCS.</div>
+                  <p class="text-right">
+                      CCS has been proven to be technically viable in several existing projects around the world. Globally,
+                      there are large-scale CCUS projects already in operation, such as Equinor’s Sleipner project, SaskPower’s
+                      Boundary Dam project and Shell’s Quest project.
+                      </br>
+                      </br>
+                      All of these projects are incredibly useful and Longship will be building on the lessons that have
+                      been learned and shared as CCS technology has developed over the years. In addition, the Longship
+                      aims to address more of the market failures which have so far held up investment in CCS as a broad
+                      climate mitigation tool. Longship aims to do this by:
+                      </br>
+                      <ul>
+                        <li>Demonstrating the full CCS chain.</li>
+                        </br>
+                        <li>Establishing an open access transport and storage infrastructure.</li>
+                        </br>
+                        <li>Capturing CO2 from a cement factory and potentially from a Waste to Energy (WtE) plant.</li>
+                        </br>
+                        <li>Testing CCS under the condition of relevant EU regulation.</li>
+                      </ul>
+                      </br>
+                      Longship is also driven by public-private cooperation with a shared responsibility for investment.
+                      Each industrial partner is responsible for designing their own project, while the state coordinates
+                      and creates a framework for each partner’s role.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <h3>Longship project</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the link:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.regjeringen.no/en/historical-archive/solbergs-government/Ministries/smk/Press-releases/2020/the-government-launches-longship-for-carbon-capture-and-storage-in-norway/id2765288/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Government Norway (Longship)</a>
+                   </div>
+                </div>
+            </div>
+
+            <p>
+                In a Government White Paper to the Norwegian parliament submitted 21/09/2020, the Government proposes to
+                launch a carbon capture and storage (CCS) project in Norway. The project has been named ‘Longship’,
+                in Norwegian 'Langskip'.
+                </br>
+                </br>
+                Longship is a milestone in the Government’s industry and climate efforts. The project will lead to
+                emission cuts, and facilitate development of new technology and thus new jobs.
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Others must follow.</div>
+
+                    <div class="text_image_css">
+                        <div>
+                            <p class="text-right">
+                              The Government proposes to first implement carbon capture at Norcem’s cement factory in Brevik.
+                              In addition, the Government also intends to fund Fortum Oslo Varme’s waste incineration facility in Oslo,
+                              providing that the project secures sufficient own funding as well as funding from the EU or other sources
+                              (Figure: CSS projects in Norway).
+                              </br>
+                              </br>
+                              For Longship to be a successful climate project for the future, other countries also have to start using this
+                              technology.
+                              </br>
+                              </br>
+                              Longship also comprises funding for the transport and storage project Northern Lights, a joint project between Equinor,
+                              Shell and Total. Northern Lights will transport liquid CO2 from capture facilities to a terminal at
+                              Øygarden in Vestland County. From there, CO2 will be pumped through pipelines to a reservoir beneath the
+                              sea bottom.
+                          </p>
+                        </div>
+                        <img
+                        src="{{url_for('static', filename='figures/se/ch10/CCS_norway_map.svg')}}"
+                                alt=""/>
+                    </div>
+
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Bit by bit.</div>
+                  <p class="text-right">
+                      For many years, various Norwegian governments have supported technology development, test and pilot
+                      projects, and underscored the importance of carbon capture and storage as an important climate tool
+                      internationally. The present Government has followed up this work and made targeted efforts on CCS since 2013.
+                      </br>
+                      </br>
+                      According to the UN Intergovernmental Panel on Climate Change, CCS will be necessary to reduce global
+                      greenhouse gas emissions in line with the climate targets at the lowest possible cost. There are
+                      currently few facilities in operation on a global basis. We therefore need more projects that bring
+                      learning and technological development. In turn, they will help  reduce costs. If CCS is to become an
+                      efficient climate policy instrument, new facilities must be established in Europe and globally.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">A necessary climate measure.</div>
+                  <p class="text-right">
+                      Norway has committed itself to cutting domestic emissions by 50-55 precent by 2030.
+                      </br>
+                      </br>
+                      For the world to achieve the goals that we have committed ourselves to in the Paris Agreement,
+                      we need large-scale carbon capture and storage. Not all emissions can be cut by applying renewable energy.
+                      In several industrial processes, such as production of cement, CCS is the only technology that can cut emissions.
+                      With Longship, Norway will support development of climate solutions for the future.
+                      </br>
+                      </br>
+                      Norway is in a good position to contribute to the development of CCS. The country has a strong
+                      technological community in the field of carbon capture, transport and storage. For decades, the
+                      development and operation of the CO2 storage projects on the Sleipner and Snøhvit fields have demonstrated
+                      safe carbon storage on the Norwegian continental shelf.
+                      </br>
+                      </br>
+                      Effective climate policies must be positive industrial policies. Through Longship, the Government
+                      will strengthen Norwegian industry by enabling enterprises to meet the climate requirements of the
+                      future. The project is an important contribution to green growth and will secure and create new
+                      jobs in the industry.
+                      </br>
+                      </br>
+                      Longship facilitates the further development of CCS both in Norway and Europe. The project has
+                      been matured to a level required for an investment decision, and the decision basis shows that
+                      all parts of the project are feasible.
+                      </br>
+                      </br>
+                      The project also involves risks. For Longship to have the desired effect, an ambitious development
+                      of climate policies in Europe is needed.  The risks are primarily connected to the economy of the
+                      project, such as the technical integration of the different parts of the project, the scope of
+                      following projects and necessary support schemes for such projects from the EU and individual
+                      countries. What is not at risk is the safety and integrity of the storage solution for CO2.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">25 billion NOK.</div>
+                  <p class="text-right">
+                      The total investments in Longship are estimated at NOK 17.1 billion. This includes both Norcem,
+                      Fortum Oslo Varme as well as  Northern Lights. The operating costs for ten years of operation are
+                      estimated at NOK 8 billion. The total cost estimate is thus NOK 25.1 billion. Longship will receive
+                      state aid in accordance with negotiated agreements. The state’s part of these costs are estimated
+                      at NOK 16.8 billion.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <h3>CO2 transport and storage: Northern Lights project</h3>
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the links:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://ccsnorway.com/transport-storage-northern-lights/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">CCS Norway (Northern Lights)</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://northernlightsccs.com/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Northern Lights</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.mr-sustainability.com/stories/2021/equinor-moves-ahead-with-ccs" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Equinor (Northern Lights)</a>
+                   </div>
+                </div>
+            </div>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch10/CCS_northern_lights.svg')}}"
+                        alt=""/>
+                <div>
+                    <strong>Equinor</strong> is the operator of the Northern Lights project, which also includes <strong>Shell</strong>
+                    and <strong>Total</strong> (Figure: Northern Lights project). They will build an open access CO2
+                    transport and storage infrastructure that provides capacity above and beyond that required for
+                    the <strong>Norcem</strong> and <strong>Fortum</strong> capture sites.
+                    </br>
+                    </br>
+                    As a part of the Longship CCS project, we share the experience from previous and ongoing CCS projects
+                    like Northern Lights. By increasing the knowledge of CCS technologies, we aim to speed up the development and
+                    demonstrate that carbon capture and storage can be executed at large scale.
+                    </br>
+                    </br>
+                    The Northern Lights project is developing a CCS technology where the CO2 will be stored in pressurized
+                    tanks before being pumped offshore through a pipeline to one or more injection wells that are located on the seafloor.
+                    No offshore platform is required for these wells and they will be controlled using existing oil and gas
+                    infrastructure on the Norwegian continental shelf. Much of the design and operations of these facilities
+                    is similar to the ones used for liquid petroleum gas (LPG), with the exception of the fire hazard, which is
+                    absent for CO2.
+                </div>
+            </div>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Space to grow – CO2 transportation from across Europe.</div>
+                  <p class="text-right">
+                      Given the ambition to transport CO2 from across the European Continent, the receiving terminal
+                      has been designed with future expansion in mind. The number of pressure tanks can be increased
+                      and there is even an option for building a second jetty to be able to receive two tankers at a
+                      time. The pipeline from the receiving terminal can transport the volumes of CO2 required and
+                      additional wells can be connected to the end of the pipeline.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Regulation.</div>
+                  <p class="text-right">
+                      Equinor was awarded a permit to develop the CO2 storage site on behalf of the Northern Lights 
+                      consortium in January 2019. The acreage lies to the south of the giant Troll hydrocarbon field, 
+                      west of Bergen, and represents a prime location for the geological storage of CO2 deep below 
+                      the seafloor.
+                      </br>
+                      </br>
+                      Northern Lights drilled a well to confirm the properties of the storage reservoir in Q1 2020 
+                      and this will also serve as the injector well once CO2 starts flowing from the capture plants 
+                      when the project begins.
+                      </br>
+                      </br>  
+                      However, before injection of CO2 can commence, the Northern Lights consortium will also need to 
+                      obtain a CO2 Storage permit from the Environmental Protection Agency, which has a mandate to 
+                      protect the natural environment on the seafloor and in the sea itself.
+                      </br>
+                      </br>  
+                      In order to adhere to the regulations that come with these permits, Equinor and their partners 
+                      will put in place a robust monitoring system, similar to the ones they have used for many years 
+                      at the Sleipner and Snøhvit storage fields.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <h3>Carbon capture: Fortum Oslo Varme</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the links:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.fortum.com/media/2018/11/full-scale-carbon-capture-and-storage-ccs-project-initiated-norway" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Fortum web page</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://ccsnorway.com/capture-fortum-oslo-varme/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">CCS Norway (Fortum Oslo Varme)</a>
+                   </div>
+                </div>
+            </div>
+
+            <p>
+                Fortum Oslo Varme’s <strong>Waste-to-energy plant</strong> at Klemetsrud on the outskirts of Oslo, Norway’s capital
+                could be the world's first of its kind with full-scale carbon capture. The plant will be able to capture 
+                400,000 tonnes of CO2 a year, and provide transfer opportunities to other industrial plants in the Nordic 
+                region and Europe. Fortum Oslo Varme's CCS project shows how cities across Europe best possibly can handle 
+                waste that should not or cannot be recycled. The excess heat from the end treatment of residual waste is 
+                used to produce electricity, district heating and soon cooling to the city of Oslo.
+                </br>
+                </br>
+                The flue gas from the end treatment of waste is currently cleaned of dioxins, NOX and CO. Now Fortum wants 
+                to capture the CO2. A 5500 hour pilot in 2019 demonstrated the possibility to capturing<strong> more than 
+                90% of all CO2 in the flue gas</strong>. Estimately 50% of the waste incinerated at the plant is of
+                biological origin such as non-recyclable food scraps, paper and wood, making the plant carbon-negative. 
+                When capturing CO2 from biological origin, it means that CO2 is taken out of the atmosphere. 
+                This is also known as bio-CCS, or BECCS, something that both the European Commission, the UN and the 
+                International Energy Agency all emphasize is of the utmost importance for achieving the world's climate goals.
+                </br>
+                </br>
+                The City of Oslo has ambitious climate targets and needs CO2 capture at the waste-to-energy plant to 
+                reach its goal. The carbon capture project is also strongly rooted in Fortum’s strategy to build a 
+                cleaner world.
+                </br>
+                </br>
+                <u>City solutions by responsible waste handling:</u>
+                <ul>
+                    <li>Goal to capture about 400 000 tonnes CO2 per year, 90% cleaning of CO2.</li>
+                    </br>
+                    <li>CCS at Waste-to-Energy plants will capture both fossil and biological CO2 (50% BECCS).</li>
+                    </br>
+                    <li>CO2 transport to port via emission free trucks: WtE-plant not at port.</li>
+                    </br>
+                    <li>Successful pilot testing on real flue gas: 5500 test hours, up to 95% capture.</li>
+                    </br>
+                    <li>Technology supplier with full-scale experience (Shell’s amine), EPC contractor TechnipFMC.</li>
+                    </br>
+                    <li>Feasibility, Concept and FEED studies completed 2015-2019.</li>
+                    </br>
+                    <li>Fortum Oslo Varme's carbon capture project is one of 70 projects that in the March of 2021 was
+                        qualified for a final and more comprehensive application round for support from the EU Innovation Fund.</li>
+                    </br>
+                    <li>The application for the second stage was submitted June 23rd 2021.</li>
+                    </br>
+                    <li>The European Commission's allocation of funds is made in the Q4 of 2021.</li>
+                </ul>
+            </p>
+
+            <h3>Carbon capture: Norcem</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the links:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://ccsnorway.com/capture-norcem" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">CSS Norway (Norcem)</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.norcem.no/en/CCS" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Norcem web page</a>
+                   </div>
+                </div>
+                <p>
+                    A good video to connect cement and carbon capture
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=UNF-dB4A9LA" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">CNBC Green cement</a>
+                   </div>
+                </div>
+            </div>
+
+            <p>
+                Norcem AS is the sole <strong>producer of cement</strong> in Norway, and is an experienced international supplier of
+                cement. Norcem has an ambitious plan to capture the carbon emissions derived from the production of cement, 
+                and it participate actively in the <strong>Northern Lights project</strong>.
+            </p>
+
+
+        </div>
+    </section>
+
+<!--Section 3-->
+    <section id="case" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+
+        <div class="container">
+            <h2>Case Study</h2>
+            <p>
+                By working in groups, we will study a real case study of carbon capture in Norway. You will have 45 minutes to read
+                different documents, to find relevant information, and to prepare some slides that you will present in 15 minutes in the
+                second part of the lecture.
+                </br>
+                </br>
+                You will work in teams simulating a consultancy work (job market interview), where you have to analyze
+                a relevant topic in a short period of time, and present some economic analysis and policy/investment recommendations.
+            </p>
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Case Study</h3>
+                <p>
+                    <ol>
+                        <li>Which are the Norwegian laws that regulate carbon capture, transport and storage in Norway?</li>
+                        </br>
+                        <li>Which are the main
+                    characteristics and challenges faces by the Longship project (carbon storage)?</li>
+                        </br>
+                        <li>Which are the main actors and
+                    challenges of the Northern Lights project (carbon transport)? </li>
+                        </br>
+                        <li>Which are the two main Norwegian companies involved in the
+                    Longship and Northern Lights projects? Which are the business models of those companies?</li>
+                    </br>
+                        <li>Which is the business
+                    model of the Longship and Northern lights projects related to the companies Fortum and Norcem?</li>
+                    </br>
+                        <li>Could that business
+                    model be extended to other companies in Europe?</li>
+                    </ol>
+
+                    Use the Longship white paper, the links in the previous section, and the information that you consider relevant.
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="https://www.regjeringen.no/en/dokumenter/meld.-st.-33-20192020/id2765361/" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Longship white paper</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+{% endblock content %}

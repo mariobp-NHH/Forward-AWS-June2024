@@ -1,0 +1,242 @@
+/* Container statistics */
+.section_statistics .container {
+  background-color: #f2b84b;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.section_statistics .container .column {
+  background: #f2b84b;
+  display: flex;
+  flex-direction: column;
+  border: #ccc solid 0px;
+  margin: 10px;
+  padding: 10px;
+  text-align: left;
+  border-radius: 10px;      
+  flex:1;
+}
+.section_statistics .container .column1 .box {
+  flex: 1;
+  background: #f28e13;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+.section_statistics .container .column2 .box {
+  flex: 1;
+  background: #f28e13;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+.section_statistics .container .column3 .box {
+  flex: 1;
+  background: #f28e13;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+.section_statistics .container .column4 .box {
+  flex: 1;
+  background: #f28e13;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+/* End container statistics */
+
+/*Container buttons section chapters*/
+.container_buttons_links_chapters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_chapters a:hover {
+  color: #f28e13;
+}
+/*End container buttons section chapters*/
+
+/*Container statistics*/
+.section_statistics .container .statistics_css {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}    
+.section_statistics .container .statistics_css .box {
+  flex: 1;
+  background: #f28e13;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+  padding: 15px 20px;
+}
+.section_statistics .container .statistics_css .box:nth-of-type(1) {
+  flex-grow:2;
+  background: #f28e13;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+.section_statistics .container .statistics_css .box:nth-of-type(2) {
+  flex-grow:1;
+  background: #f28e13;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+/*End container statistics*/
+
+/*Container statistics summary 3 boxes*/
+.section_statistics .container .statistics_summary3_css {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}    
+.section_statistics .container .statistics_summary3_css .box {
+  flex: 1;
+  background: #f28e13;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+/*End container statistics summary 3 boxes*/
+
+/*Container statistics summary 2 boxes*/
+.statistics_summary2_css {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}     
+.statistics_summary2_css .box {
+    flex: 1;
+    background: #f28e13;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+}
+.statistics_summary2_css .box:nth-of-type(1) {
+    flex-grow:1;
+    background: #f28e13;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:left;
+}
+.statistics_summary2_css .box:nth-of-type(2) {
+    flex-grow:1;
+    background: #f28e13;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+}
+.statistics_summary2_css .box:nth-of-type(3) {
+    flex-grow:1;
+    background: #f2b84b;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:left;
+}
+/*Container statistics summary 2 boxes*/
+
+/*Container statistics summary 1 box*/
+.statistics_summary1_css {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  justify-content: space-between;
+}     
+.statistics_summary1_css .box {
+  flex: 1;
+  background: #f28e13;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+}
+.statistics_summary1_css .box:nth-of-type(1) {
+  flex-grow:1;
+  background: #f28e13;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:left;
+}
+.statistics_summary1_css .box:nth-of-type(2) {
+  flex-grow:1;
+  background: #f2b84b;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}
+.statistics_summary1_css .box:nth-of-type(3) {
+  flex-grow:1;
+  background: #f2b84b;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:left;
+}
+/*Container statistics summary 1 box*/
+
+
+@media(max-width:768px){
+  .section_statistics .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+  .section_statistics .container .column1 .box {
+    text-align: center;
+    min-width: 300px;
+  }
+  .section_statistics .container .column2 .box {
+    text-align: center;
+    min-width: 300px;
+  }
+  .section_statistics .container .column3 .box {
+    text-align: center;
+    min-width: 300px;
+  }
+  .section_statistics .container .column4 .box {
+    text-align: center;
+    min-width: 300px;
+  }
+  .section_statistics .container .statistics_css {
+    flex-direction: column;
+    text-align:center;
+  }
+  .statistics_summary3_css {
+    flex-direction: column;
+    padding: 0px 0px;
+    text-align: center;
+  }
+  .statistics_summary2_css {
+    flex-direction: column;
+    padding: 0px 0px;
+    text-align: center;
+  }
+  .statistics_summary1_css {
+    flex-direction: column;
+    padding: 0px 0px;
+    text-align: center;
+  }
+}

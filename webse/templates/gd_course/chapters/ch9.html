@@ -1,0 +1,872 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch9. Databases</span></h1>
+                    <p class="mb-1">
+                        In the previous chapter, we introduced forms to help the users to interact with our app. In that chapter, when a user registers in our app, her information is not recorded in a database. To avoid that problem, in this section, we learn to <strong>create databases</strong> and to introduce basic <strong>queries to access to the information stored in our databases</strong>.
+                    </p>
+                    <br>
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/ApIQECXYyJg"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 1a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/i1cc2GOZRA0" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 1b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/3uGKs4P8jTI" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 1c)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/xcKXt11A1mU" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 2a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/IK65RvZY4OM" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 2b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Databases, basic</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we learn how to create database/databases in a simple app. First, we create one database with one table. Second, we create one database with two tables. Third, we create two databases with one table each that are connected.
+                        </p>
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Databases, applied</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we learn how to create two databases in our app. First, we create two databases connected between them. Second, we create some queries and disclose the information from those queries in our app.
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            We create more data in our database, and we learn how to introduce more queries to disclose that information. 
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch9/ch9.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Databases, basic</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube videos, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/ApIQECXYyJg" target="_blank">YouTube (Section 1a)</a>
+                <a class="btn-section1" href="https://youtu.be/i1cc2GOZRA0" target="_blank">YouTube (Section 1b)</a>
+                <a class="btn-section1" href="https://youtu.be/3uGKs4P8jTI" target="_blank">YouTube (Section 1c)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate1" target="_blank">GitHub (Boilerplate1)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final1" target="_blank">GitHub (Final1)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate2" target="_blank">GitHub (Boilerplate2)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final2" target="_blank">GitHub (Final2)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate3" target="_blank">GitHub (Boilerplate3)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final3" target="_blank">GitHub (Final3)</a>
+            </div>
+            <p>
+                We are going to use the command line to interact with our databases, but we will also access to them by using Graphical User Interface. I suggest you to download and install DB Browser for SQlite or any other Graphical User Interface to interact with our database. To download DB Browser for SQlite, you can use the next links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://sqlitebrowser.org/dl/"  target="_blank">SQLite (Windows and Mac)</a>
+                <a class="btn-section1" href="https://sqlitebrowser.org/blog/macos-installer-rebuilt-for-3-11-1/"  target="_blank">SQLite (Mac)</a>
+            </div> 
+            <p>
+                All the information in this section has been taken from the next links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://flask-sqlalchemy.palletsprojects.com/en/3.0.x/"  target="_blank">Flask SQLAlchemy</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=cYWiDiIUxQc&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=4"  target="_blank">Corey</a>
+                <a class="btn-section1" href="https://courses.prettyprinted.com/courses/1016334/lectures/21156835"  target="_blank">PrettyPrinted</a>
+            </div> 
+            <h4>What is Flask-SQLAlchemy?</h4>
+            <p>
+                Flask-SQLAlchemy is an <strong>extension for Flask</strong> that adds support for SQLAlchemy to your application. It simplifies using SQLAlchemy with Flask by setting up common objects and patterns for using those objects, such as a session tied to each web request, models, and engines. Flask-SQLAlchemy does not change how SQLAlchemy works or is used.
+                <br>
+                <br>
+                <u>What is SQLAlchemy?</u> <strong>SQLAlchemy is the Python SQL toolkit</strong> and Object Relational Mapper that gives application developers the full power and flexibility of SQL. 
+                <br>
+                <br>
+                It provides a full suite of well-known enterprise-level persistence patterns, designed for efficient and high-performing database access, adapted into a simple and Pythonic domain language.
+                <br>
+                <br>
+                <u>What is SQL?</u> <strong>Structured Query Language</strong>, abbreviated as SQL, is a domain-specific language used in programming and designed for managing data held in a relational database management system, or for stream processing in a relational data stream management system.
+
+            </p>  
+        </div>  
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Our first database. One database with one table.</h4>
+                <p>
+                    The links to the YouTube video, and the GitHub account for this section are below:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://youtu.be/ApIQECXYyJg" target="_blank">YouTube (Section 1a)</a>
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate1" target="_blank">GitHub (Boilerplate1)</a>
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final1" target="_blank">GitHub (Final1)</a>
+                </div>
+                <p class="text-left">
+                    We start creating a simple application with a database with one table. We proceed in five steps (the code for the app is in the right panel):
+                    <ol>
+                        <li>
+                            We <strong>import</strong> SQLAlchemy: 
+                            <pre><code class="html"></code>
+from flask_sqlalchemy import SQLAlchemy
+                            </code></pre>                             
+                        </li>
+                        <li>
+                            We assign a <strong>location </strong>for the database. In our case, the database will be in our local computer. Later, in the production part of our app, we will create a PostgreSQL database in AWS: 
+                            <pre><code class="html"></code>
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///carbon_app.db'
+                            </code></pre> 
+                        </li>
+                        <li>
+                            We define our database:
+                            <pre><code class="html"></code>
+db = SQLAlchemy(application)
+                            </code></pre> 
+                        </li>                       
+                    </ol>
+                </p> 
+            </div> 
+            <div class="boxa">
+                <h5>One database with one table</h5>
+<pre><code class="html">
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+application = Flask(__name__) 
+
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///carbon_app.db'
+db = SQLAlchemy(application)
+
+class User(db.Model):
+    __tablename__ = "user_table"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    
+@application.route('/')
+@application.route('/home')
+def home():
+    return "&#60;h1&#62;Welcome Home&#60;/h1&#62;"
+
+if __name__=='__main__':
+    application.run(debug=True) 
+</code></pre>                
+            </div> 
+        </div> 
+
+        <div class="container" style="display:block;">
+            <p class="text-left">
+                <ol start="4">
+                    <li>
+                        We <strong>create</strong> a table for our database.
+                        <pre><code class="html">
+class User(db.Model):
+__tablename__ = "user_table"
+id = db.Column(db.Integer, primary_key=True)
+username = db.Column(db.String(30), unique=True, nullable=False)
+                        </code></pre> 
+                    </li>
+                    <li>
+                        We <strong>create our database</strong>. We need to proceed in three steps.
+                    </li>
+                    <ol type="a">
+                        <li>
+                            In the Visual Studio Code Terminal, type: python.
+                        </li>
+                        <br>
+                        <li>
+                            In the python terminal, type: from application import db
+                        </li>
+                        <br>
+                        <li>
+                            In the python terminal, type: db.create_all()
+                        </li>
+                        <br>
+                        <li>
+                            When you finish, type: quit()
+                        </li>
+                    </ol>                        
+                </ol>
+            </p> 
+        </div>  
+
+        <div class="container">
+            <div class="boxa" style="background-color: #568c63;">
+                <h5>1. Populate our database</h5>
+                <p>
+                    Once that we have created our database, we can start to <strong>populate</strong> our database with data. We proceed in different steps:
+                    <ol>
+                        <li>
+                            In the <strong>Visual Studio terminal</strong>, type: python
+                        </li>
+                        <li>
+                            In the <strong>Python terminal</strong>, type one by one the next lines of code:
+                            <pre><code class="html"></code>
+from application import User
+user1=User(username='Bjørk')
+db.session.add(user1)
+user2=User(username='Fjell')
+db.session.add(user2)
+db.session.commit()
+                            </code></pre> 
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>2. Basic queries</h5>
+                <p>
+                    We can also introduce some <strong>basic queries</strong>. 
+                    <ol>
+                        <li>
+                            In the <strong>Visual Studio terminal</strong>, type: python
+                        </li>
+                        <li>
+                            In the <strong>Python terminal</strong>, type one by one the next lines of code:
+                            <pre><code class="html"></code>
+User.query.first()
+User.query.filter_by(username='Bjørk').all()
+User.query.filter_by(username='Bjørk').first().username
+                                               
+                            </code></pre> 
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+        </div>
+        
+        <div class="container">
+            <div class="boxa" style="background-color: #568c63;">
+                <h5>3. Create variables</h5>
+                <p>
+                    We can <strong>create variables</strong> by using basic queries.
+                    <ol>
+                        <li>
+                            In the <strong>Visual Studio terminal</strong>, type: python
+                        </li>
+                        <li>
+                            In the <strong>Python terminal</strong>, type one by one the next lines of code:
+                            <pre><code class="html"></code>
+user1 = User.query.get(1)
+user1.id  
+user1.username 
+user2 = User.query.filter_by(username='Bjørk').first()
+user2.id        
+user2.username                                               
+                            </code></pre> 
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa" style="background-color: #9fa7bf;">
+                
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>One database with two tables</h4>
+                <p>
+                    The links to the YouTube video, and the GitHub account for this section are below:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://youtu.be/i1cc2GOZRA0" target="_blank">YouTube (Section 1b)</a>
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate2" target="_blank">GitHub (Boilerplate2)</a>
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final2" target="_blank">GitHub (Final2)</a>                
+                </div>
+                <p class="text-left">
+                    To introduce a second table in our database, we proceed in two different steps (the code for the app is in the right panel):
+                    <ol>
+                        <li>
+                            We create a <strong>second table</strong>:
+                            <pre><code class="html"></code>
+class Transport(db.Model):
+    __tablename__= 'transport_table'
+    id = db.Column(db.Integer, primary_key=True)
+    kms = db.Column(db.Float)                              
+                            </code></pre>                             
+                        </li>
+                        <li>
+                            We need to <strong>connect the User and the Transport tables</strong>, to do that, we need to introduce one change in the table User, and another in the table Transport.
+                            <ol type="a">
+                                <li>
+                                    In the User table:
+                                    <pre><code class="html"></code>
+transport = db.relationship('Transport', backref='author', lazy=True)
+                                    </code></pre> 
+                                </li>
+                                <li>
+                                    In the Transport table:
+                                    <pre><code class="html"></code>
+user_id = db.Column(db.Integer, db.ForeignKey('user_table.id'), //
+nullable=False)
+                                    </code></pre> 
+                                </li>
+                            </ol>
+                        </li>                     
+                    </ol>
+                </p> 
+            </div> 
+            <div class="boxa">
+                <h5>One database with two tables</h5>
+<pre><code class="html">
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+application = Flask(__name__) 
+
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///carbon_app.db'
+db = SQLAlchemy(application)
+
+class User(db.Model):
+    __tablename__ = "user_table"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    transport = db.relationship('Transport', backref='author', lazy=True)
+
+class Transport(db.Model):
+    __tablename__= 'transport_table'
+    id = db.Column(db.Integer, primary_key=True)
+    kms = db.Column(db.Float)
+    user_id = db.Column(db.Integer, db.ForeignKey('user_table.id'), //
+    nullable=False)
+    
+@application.route('/')
+@application.route('/home')
+def home():
+    return "&#60;h1&#62;Welcome Home&#60;/h1&#62;"
+
+if __name__=='__main__':
+    application.run(debug=True) 
+</code></pre>                
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background-color: #568c63;">
+                <h5>1. Populate our database</h5>
+                <p>
+                    Once that we have created our database, we can start to <strong>populate</strong> our database with data. We proceed in different steps:
+                    <ol>
+                        <li>
+                            In the <strong>Visual Studio terminal</strong>, type: python
+                        </li>
+                        <li>
+                            In the <strong>Python terminal</strong>, type one by one the next lines of code:
+                            <pre><code class="html"></code>
+from application import User
+user1=User(username='Bjørk')
+db.session.add(user1)
+user2=User(username='Fjell')
+db.session.add(user2)
+db.session.commit()
+from application import Transport
+transport1 = Transport(kms=10, user_id=user1.id)
+transport2 = Transport(kms=15, user_id=user1.id)
+db.session.add(transport1)
+db.session.add(transport2)
+transport3 = Transport(kms=5, user_id=user2.id)
+transport4 = Transport(kms=7, user_id=user2.id)
+db.session.add(transport3)
+                            </code></pre> 
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>2. Basic queries</h5>
+                <p>
+                    We can also introduce some <strong>basic queries</strong>. 
+                    <ol>
+                        <li>
+                            In the <strong>Visual Studio terminal</strong>, type: python
+                        </li>
+                        <li>
+                            In the <strong>Python terminal</strong>, type one by one the next lines of code:
+                            <pre><code class="html"></code>
+transport1 = Transport.query.first()
+transport1.user_id
+transport1.author
+transport1.author.username
+transport1.kms
+db.session.add(transport4)
+db.session.commit()
+                            </code></pre> 
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Two databases, with one table each</h4>
+                <p>
+                    The links to the YouTube video, and the GitHub account for this section are below:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://youtu.be/3uGKs4P8jTI" target="_blank">YouTube (Section 1c)</a>
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate3" target="_blank">GitHub (Boilerplate3)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final3" target="_blank">GitHub (Final3)</a>               
+                </div>
+                <p class="text-left">
+                    In many cases, we are interested in having different databases in our app. If our company operates in different countries, it could be useful to have separate databases for each country. If our company has different factories, it also could be useful to have different databases. We learn how to create two databases with one table each. It is very easy to create more databases, and/or tables in each database.
+                    <br>
+                    <br>
+                    To create two databases with two tables, we proceed in three steps (the code for the app is in the right panel):
+                    <ol>
+                        <li>
+                            We need to <strong>create binds</strong> to each extra database.
+                            <pre><code class="html"></code>
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+application.config['SQLALCHEMY_BINDS'] ={'transport': 'sqlite:///transport.db'}
+                            </code></pre>                             
+                        </li>
+                        <li>
+                            We need to <strong>introduce that bind in the table/tables</strong> associated with that database.
+                            <pre><code class="html"></code>
+class Transport(db.Model):
+    __bind_key__ = 'transport'
+    __tablename__= 'transport_table'
+                            </code></pre>                                 
+                        </li>
+                        <li>
+                            We <strong>create our database</strong>. We need to proceed in four steps.
+                        </li>
+                        <ol type="a">
+                            <li>
+                                In the Visual Studio Code Terminal, type: python.
+                            </li>
+                            <br>
+                            <li>
+                                In the python terminal, type: from application import db
+                            </li>
+                            <br>
+                            <li>
+                                In the python terminal, type: db.create_all()
+                            </li>
+                            <br>
+                            <li>
+                                When you finish, type: quit()
+                            </li>
+                        </ol>  
+                    </ol>
+                </p> 
+            </div> 
+            <div class="boxa">
+                <h5>Two database with one table each</h5>
+<pre><code class="html">
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+
+application = Flask(__name__) 
+
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+application.config['SQLALCHEMY_BINDS'] =//
+{'transport': 'sqlite:///transport.db'}
+db = SQLAlchemy(application)
+
+class User(db.Model):
+    __tablename__ = "user_table"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    transport = db.relationship('Transport', backref='author', lazy=True)
+
+class Transport(db.Model):
+    __bind_key__ = 'transport'
+    __tablename__= 'transport_table'
+    id = db.Column(db.Integer, primary_key=True)
+    kms = db.Column(db.Float)
+    user_id = db.Column(db.Integer, db.ForeignKey('user_table.id'), //
+     nullable=False)
+    
+@application.route('/')
+@application.route('/home')
+def home():
+    return "&#60;h1&#62;Welcome Home&#60;/h1&#62;"
+
+if __name__=='__main__':
+    application.run(debug=True) 
+</code></pre>                
+            </div> 
+        </div>
+
+              
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Databases, applied</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/xcKXt11A1mU" target="_blank">YouTube (Section 2a)</a>
+                <a class="btn-section2" href="https://youtu.be/IK65RvZY4OM" target="_blank">YouTube (Section 2b)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate4" target="_blank">GitHub (Boilerplate4)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final4" target="_blank">GitHub (Final4)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate5" target="_blank">GitHub (Boilerplate5)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final5" target="_blank">GitHub (Final5)</a>
+            </div> 
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Create the databases</h4>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://youtu.be/xcKXt11A1mU" target="_blank">YouTube (Section 2a)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate4" target="_blank">GitHub (Boilerplate4)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final4" target="_blank">GitHub (Final4)</a>
+                </div> 
+                <p style="text-align: left;">                    
+                    In this section, we create two databases in our app with one table each. We proceed in four different steps.
+                    <ol>
+                        <li>
+                            In the <strong>__init__.py</strong> file:
+                            <ol type="a">
+                                <li>
+                                    We import SQLAlchemy:
+                                    <pre><code class="html"></code>
+from flask_sqlalchemy import SQLAlchemy
+                                    </code></pre> 
+                                </li>
+                                <li>
+                                    We define a location for our database, we create the binds, and we define the database:
+                                    <pre><code class="html"></code>
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
+application.config['SQLALCHEMY_BINDS'] ={'transport': 'sqlite:///transport.db'}
+db = SQLAlchemy(application) 
+                                    </code></pre> 
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            In the <strong>models.py</strong> file, we must define our tables (the code for the app is in the right panel):
+                        </li>
+                        <br>
+                        <li>
+                            In the <strong>routes</strong>, we must introduce some changes to create the tables when we create the databases. This is because we are working with blueprints, and if we do not import the tables to our blueprint packages and define those tables there, when we create the database, it will be empty, since we have not defined the tables.
+                            <ol type="a">
+                                <li>
+                                    In the <strong>home package</strong>, and in the routes.py file, we must type:
+                                    <pre><code class="html"></code>
+from capp.models import User 
+                                   </code></pre> 
+                                </li>
+                                <li>
+                                    In the <strong>carbon_app package</strong>, and in the routes.py file, we must type:
+                                    <pre><code class="html"></code>
+from capp.models import Transport
+                                    </code></pre> 
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            After introducing the three previous steps, we <strong>create our database</strong>. We need to proceed in three steps. See the previous section, since the steps are exactly the same.
+                        </li>
+                    </ol>
+                </p>      
+            </div>
+            <div class="boxa" style="height:660px;">
+                <h5>models.py</h5>
+<pre><code class="html">
+from capp import db
+from datetime import datetime
+
+# Database User
+class User(db.Model):
+    __tablename__ = "user_table"
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(30), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+    transport = db.relationship('Transport', backref='author', //
+    lazy=True)
+
+# Database Transport
+class Transport(db.Model):
+    __bind_key__ = 'transport'
+    __tablename__= 'transport_table'
+    id = db.Column(db.Integer, primary_key=True)
+    kms = db.Column(db.Float)
+    transport = db.Column(db.String)
+    fuel = db.Column(db.String)
+    date = db.Column(db.DateTime, nullable=False, //
+    default=datetime.utcnow)
+    co2= db.Column(db.Float)
+    ch4= db.Column(db.Float)
+    total = db.Column(db.Float)  
+    user_id = db.Column(db.Integer, db.ForeignKey('user_table.id'),//
+    nullable=False)
+</code></pre>    
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Adding users to our database and create secure passwords</h4>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://youtu.be/IK65RvZY4OM" target="_blank">YouTube (Section 2b)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate5" target="_blank">GitHub (Boilerplate5)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final5" target="_blank">GitHub (Final5)</a>
+                </div> 
+                <p style="text-align: left;">                    
+                    In the <strong>user package</strong>, in the routes.py file, we must introduce three changes (the code for the app is in the right panel):
+                    <ol>
+                        <li>
+                            We <strong>import the packages</strong> that we need:
+                            <pre><code class="html"></code>
+from capp import db, bcrypt
+                            </code></pre>
+                        </li>
+                        <li>
+                            We <strong>secure</strong> the password:
+                            <pre><code class="html"></code>
+user_hashed_password = bcrypt.generate_password_hash//
+(form.password.data).decode('utf-8')
+                            </code></pre>
+                        </li>
+                        <li>
+                            We <strong>add the user</strong> created in the form to our database:
+                            <pre><code class="html"></code>
+user = User(username=form.username.data, //
+email=form.email.data, password=user_hashed_password)
+db.session.add(user)
+db.session.commit()                                
+                            </code></pre>
+                        </li>
+                        <br>
+                    </ol>
+                </p>      
+            </div>
+            <div class="boxa" style="height:460px;">
+                <h5>routes.py</h5>
+<pre><code class="html">
+from capp import db, bcrypt
+
+@users.route('/register', methods=['GET','POST'])
+def register():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user_hashed_password = bcrypt.generate_password_hash//
+        (form.password.data).decode('utf-8')
+        user = User(username=form.username.data, //
+        email=form.email.data, password=user_hashed_password)
+        db.session.add(user)
+        db.session.commit()
+        flash('Your account has been created! //
+        Now, you are able to login!', 'success')
+        return redirect(url_for('home.home_home'))
+    return render_template('users/register.html', title='register',//
+        form=form)
+</code></pre>    
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Introducing queries in our app</h4>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://youtu.be/IK65RvZY4OM" target="_blank">YouTube (Section 2b)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate5" target="_blank">GitHub (Boilerplate5)</a>
+                    <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final5" target="_blank">GitHub (Final5)</a>
+                </div>
+                <p style="text-align: left;">   
+                    Some useful links about SQLAlchemy queries can be found in the next links:
+                </p> 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://docs.sqlalchemy.org/en/14/orm/tutorial.html " target="_blank">SQLAlchemy I</a>
+                    <a class="btn-section2" href="https://docs.sqlalchemy.org/en/14/core/tutorial.html" target="_blank">SQLAlchemy II</a>
+                    <a class="btn-section2" href="https://www.datacamp.com/tutorial/sqlalchemy-tutorial-examples" target="_blank">Radar</a>
+                    <a class="btn-section2" href="https://towardsdatascience.com/sqlalchemy-python-tutorial-79a577141a91" target="_blank">Kudari</a>
+                </div>   
+                <p style="text-align: left;">                    
+                    In the <strong>home package</strong>, in the routes.py file, we must introduce three changes.
+                    <ol>
+                        <li>
+                            We <strong>import the tables</strong> that we need:
+                            <pre><code class="html"></code>
+from capp.models import User, Transport
+                            </code></pre>
+                        </li>
+                        <li>
+                            We <strong>create</strong> the queries:
+                            <pre><code class="html"></code>
+user1 = User.query.first().username
+transport1 = Transport.query.first().kms
+user3 = User.query.filter_by(username='Bjørk').first().username
+user4 = User.query.filter_by(username='Bjørk').first()
+transports = Transport.query.filter_by(user_id=user4.id)
+users = User.query.all()
+                            </code></pre>
+                        </li>
+                        <li>
+                            We <strong>pass the queries</strong> to the html files:
+                            <pre><code class="html"></code>
+return render_template('home.html', user1=user1, //
+transport1=transport1, user3=user3, transports=transports, users=users)
+                            </code></pre>
+                        </li>
+                    </ol>
+                    In the <strong>templates folder</strong>, in the home.html file we need to disclose the queries (the code for the app is in the right panel):
+                </p>      
+            </div>
+            <div class="boxa" style="height:540px;">
+                <h5>home.html</h5>
+<pre><code class="html">
+&#60;!-- Queries --&#62;
+&#60;section class="section_developers"&#62;
+    &#60;div class="container"&#62;
+    &#60;div class="developers" style="display:block;"&#62;
+        &#60;h5&#62;Query 1&#60;/h5&#62;
+        &#123;&#123;user1&#125;&#125;
+        &#60;h5&#62;Query 2&#60;/h5&#62;
+        &#123;&#123;transport1&#125;&#125;
+        &#60;h5&#62;Query 3&#60;/h5&#62;
+        &#123;&#123;user3&#125;&#125;
+        &#60;h5&#62;Query 4&#60;/h5&#62;
+        &#123;%for transport in transports %&#125;
+        &#123;&#123;transport.kms&#125;&#125;
+        &#123;% endfor %&#125;
+        &#60;h5&#62;Query 5&#60;/h5&#62;
+        &#123;%for user in users %&#125;
+        &#123;&#123;user.username&#125;&#125;
+        &#123;% endfor %&#125;
+    &#60;/div&#62;
+    &#60;/div&#62;          
+&#60;/section&#62;
+</code></pre>    
+            </div>
+        </div>
+
+    </section> 
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+
+        <div class="container">
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;"> 
+                    In this weekly challenge, we are going to create some <strong>SQLAlchemy queries</strong> to access to our databases, and we are going to use some <strong>Python code</strong> to extract information from the row information obtained by using the queries.
+                    <br>
+                    <br>
+                    We are going to focus on six different queries. However, I encourage you to can create your own queries and experiment with the databases and the Python code. The six queries that we are going to study in the weekly challenge are:
+                    <ol style="text-align: left;">
+                        <li>
+                            Query 1: Kilometres by user.
+                        </li>
+                        <li>
+                            Query 2: Round kilometres by user.
+                        </li>
+                        <li>
+                            Query 3: Maximum kilometres by user.
+                        </li>
+                        <li>
+                            Query 4: CO2 per kilometre by user. 
+                        </li>
+                        <li>
+                            Query 5: Maximum CO2 per kilometre by user. 
+                        </li>
+                        <li>
+                            Query 6: Type of transport with maximum CO2 per kilometre by user.
+                        </li>
+                    </ol>
+                </p> 
+                <p style="text-align: left;">    
+                    I know that this weekly challenge can be difficult, since you are going to use SQLAlchemy queries and Python, and some of you are not familiar with these two programming languages. I encourage you to through the code, run the app and try to understand the logic behind the code. We are going to go through the weekly challenge together during the lectures.
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch3_week1">Hints</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Boilerplate6" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub (Boilerplate)</a>
+                    </div> 
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch9%20Databases/DB_Final6" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub (Final)</a>
+                    </div>                 
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch3_week1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+      
+                            <div class="modal-header">
+                            <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 9</h5>
+                            </div>
+      
+                            <div class="modal-body", style="color:black">
+                            <p style="text-align: left;">
+                                In the GitHub account, you have the code for the weekly challenge.
+                                <ol style="text-align: left;">
+                                    <li>
+                                        Install the packages in the requirements.txt file.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Create the databases and the populate them by using the create_data.py file.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Go to the routes.py file in the home package and type the code for the queries.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Go to the home.html file and type the code to disclose the queries.
+                                    </li>
+                                </ol>
+                            </p>
+                            </div>
+      
+                            <div class="modal-footer">
+                            <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                            <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                            </div>
+      
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="onebox">                  
+            </div> 
+        </div>
+
+    </section> 
+
+
+  
+
+
+{% endblock content %}

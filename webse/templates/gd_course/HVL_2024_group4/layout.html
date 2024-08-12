@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Matjax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+
+    <!-- CSS code -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/gd_course_HVL_2024_group4/styles/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/gd_course_HVL_2024_group4/style.css') }}"
+    />
+
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='/gd_course_HVL_2024_group4/favicon.ico') }}"
+      type="image/x-icon"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!--For the plots-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- To activate media queries in devices -->
+    <meta
+      name="viewport"
+      content="user-scalable=yes, width=device-width, initial-scale=1"
+    />
+
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>home</title>
+    {% endif %}
+  </head>
+  <body>
+    <div class="header" id="menu-container">
+      <div class="container">
+        <a
+          class="logo"
+          href="{{url_for('gd_course_HVL_2024_group4.home_home')}}"
+        >
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/carbon_logo.svg') }}"
+            alt="carbno app logo"
+          />
+
+          <span class="text-logo"> Carbon App</span>
+        </a>
+        <nav>
+          <ul>
+            <li>
+              <a
+                href="{{url_for('gd_course_HVL_2024_group4.home_home')}}"
+                data-page="page-home"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{url_for('gd_course_HVL_2024_group4.methodology_home')}}"
+                data-page="page-methodology"
+                >Methodology</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{url_for('gd_course_HVL_2024_group4.carbon_app_home')}}"
+                data-page="page-carbon-app"
+                >Carbon App</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="account-container">
+          {% if current_user.is_authenticated %}
+
+          <a
+            class="user-container"
+            href="{{url_for('gd_course_HVL_2024_group4.your_data')}}"
+            data-page="page-carbon-app"
+          >
+            <img
+              src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/user_illu.png') }}"
+              alt="user icon"
+            />
+            <span>{{ current_user.username }}</span>
+          </a>
+          <a href="{{ url_for('gd_course_HVL_2024_group4.logout') }}">
+            <img
+              class="logout-icon"
+              src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/sign-out-alt (1).svg') }}"
+              alt="logout icon"
+          /></a>
+          {% else %}
+          <li>
+            <a href="{{url_for('gd_course_HVL_2024_group4.register')}}"
+              >Register</a
+            >
+          </li>
+          <li class="login">
+            <a href="{{url_for('gd_course_HVL_2024_group4.login')}}">Login</a>
+          </li>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="cursor"></div>
+
+    {% block content %} {% endblock %}
+
+    <section id="footer">
+      <div class="container">
+        <div class="col">
+          <a
+            class="logo"
+            href="{{url_for('gd_course_HVL_2024_group4.home_home')}}"
+          >
+            <img
+              src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/carbon_logo.svg') }}"
+              alt="carbno app logo"
+            />
+
+            <span class="text-logo"> Carbon App</span>
+          </a>
+        </div>
+
+        <div class="col col-links">
+          <span>Explore</span>
+          <ul>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group4.home_home')}}"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{url_for('gd_course_HVL_2024_group4.methodology_home')}}"
+                >Methology</a
+              >
+            </li>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group4.carbon_app_home')}}"
+                >Carbon App</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col col-links">
+          <span>Quick access</span>
+          <ul>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group4.register')}}"
+                >Register</a
+              >
+            </li>
+            <li>
+              <a href="{{url_for('gd_course_HVL_2024_group4.login')}}">Login</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col col-text">
+          <span>Join the movement</span>
+          <p>
+            We provide practical tools for individuals to consider the climate
+            impact of their transportation choices.
+          </p>
+          <a href="{{url_for('gd_course_HVL_2024_group4.carbon_app_home')}}"
+            >Try the Carbon App</a
+          >
+        </div>
+      </div>
+    </section>
+    <section id="sub-footer">
+      <div class="container">
+        <span
+          >2023 - 2024 | Carbon App is a project carried out as part of
+          HVL©</span
+        >
+        <img
+          src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/hvl_logo.png') }}"
+          alt="carbno app logo"
+        />
+      </div>
+    </section>
+    <script src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/JS/main.js') }}"></script>
+    <script>
+      AOS.init();
+    </script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

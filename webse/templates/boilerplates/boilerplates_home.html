@@ -1,0 +1,267 @@
+{% extends "boilerplates/boilerplates_layout.html" %}
+{% block content %}
+
+  <!-- Header -->
+  <section class="home_header_css">
+    <div class="container">
+      <div class="box">
+        <h1 class="text-center"><span class="text-warning"> Forward: </span> Connecting Education and Society</h1>
+        <p class="lead my-3">
+            Forward is an <b>educational platform</b> that aims to connect education and society making that interaction fluent and effective.
+        </p>
+        <p class="lead my-3">
+            To achieve that objective, Forward hosts different <b>courses</b> to facilitate the access to education by active learning. Forward also host thematic <b>platforms</b> where the users have access to dashboards that disclose useful data in different disciplines, and where the user have access to frontier research in those disciplines.
+        </p>
+        <div class="container_buttons_links_header">
+          <div class="btn">
+              <a href="{{url_for('forward_users.forward_users_register')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Register</a>
+          </div>
+          <div class="btn">
+              <a href="{{url_for('forward_users.forward_users_login')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Login</a>
+          </div>
+        </div>  
+      </div>
+      <div class="box">
+        <img 
+        src="{{url_for('static', filename='figures/forward/forward_icon.svg')}}"
+          width="325" 
+          height="325"
+        alt=""/>
+      </div>
+    </div>
+  </section> 
+
+  <!-- Section chapters   -->
+  <section class="section_chapter2">
+    <div class="container">
+      <div class="column column1">
+        <div class="column column1 box">
+          <p><strong>Question 1:</strong> The introduction of female professor quotas could have a positive impact mitigating the gender gap?</p>
+          
+        </div>
+        <div class="column column1 box">
+          <p><strong>Question 2:</strong> The introduction of salary incentives to conduct more research on gender or to introduce new courses on gender studies 
+            could have a positive impact mitigating the gender gap?</p>
+        </div>
+      </div>
+      <div class="column column2">
+        <div class="column column2 box">
+          <p><strong>Question 3:</strong> A change in the research areas, promoting gender studies could increase the number of female professors?</p>
+        </div>
+        <div class="column column2 box">
+          <p><strong>Question 4:</strong> A change in the teaching methodology and teaching assigments, promoting student group activities could increase the number of female professors?</p>
+        </div>
+      </div>
+      <div class="column column3">
+        <div class="column column3 box">
+          <div class="h1 mb-3">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <h3 class="text-center"><span class="text-warning"> Chat: </span></h3>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section chapters   -->
+
+  <section class="home_chapter_css">
+    <div class="container">
+      <div class="box">
+      </div>
+      <div class="box">
+        Box 1
+      </div>
+      <div class="box">
+        Box 2
+      </div>
+      <div class="box">
+        Box 3
+      </div>
+      <div class="box">
+        Box 4
+      </div>
+      <div class="box">
+      </div>
+    </div>
+  </section> 
+
+   <!-- Question Accordion -->
+   <section id="questions" class="p-5">
+    <div class="container" style="text-center;">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+    </div>
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+      <!-- Item 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+          >
+            Assignment and final grades.
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+          <p>The assignment of the course consists on two parts.
+          <br>
+          <br>
+          First, the students have to write an essay of <strong>5 pages</strong> with the methodology
+          used to work out the transport carbon emissions. This part of the course counts for the 30% of the final grade.
+          <br>
+          <br>
+          The objective of this part of the course is that you know the basic methodology to work out transport carbon
+          emissions for cars, buses, boats, planes, motorbikes. I would like that the students provide some basic
+          information about the carbon emissions of those means of conveyance. The students can fine-tune their
+          methodology by differentiating among fuel types: diesel, electric. 
+          An introduction to frame the discussion, and an example to give some numerical analysis could be also useful.
+          For example, a comparison of the carbon emissions between Bergen and Oslo depending on the means of
+          conveyance can be useful and illustrative.
+          <br>
+          <br>
+          The methodology could be fine-tuned in different respects. For example, by differentiating between
+          types of hydrogen used in transport: brown, grey, blue or green. By differentiating the types of bioenergy,
+          or the source of electricity to charge electric batteries. The methodology could also be fine-tuned by considering
+          life cycle of batteries, and the means of conveyance. However, I do not want the students go in that direction.
+          The students will have the opportunity to go deeper and further in their analysis in their 20 pages project, since
+          that is the topic that the students consider interesting for them.
+          <br>
+          <br>
+          Second, the students have to write an essay of <strong>20 pages</strong> on a topic that they choose related to the content of
+          the course. The students also have to present this research in the conference organized at the end of the course.
+          This part of the course counts for the 70% of the final grade. This part of the course will be evaluated by me, and
+          Elisa Trujillo from University of Lleida.
+          <br>
+          <br>
+          The objective of this part of the course is that you choose a topic that interest you, and that you write 20
+          pages about it. The way in which you address that topic depends on you. You can write a survey, a
+          theoretical, an empirical, or an operation research paper. That depends on your preferences. It is
+          important that the style of the paper suits the methodology that you choose. It is also important that
+          the style fits the 20 pages objective. Most of the students tend to use the structure of a 100 pages
+          master thesis even when I ask them to write 20 pages. The objective of this part of the course is
+          that you learn to write different types of documents, with different length and different styles.
+          <br>
+          <br>
+          The app developed by the students does not account for the final grade.
+          <br>
+          <br>
+          The students have to write a one page summary of their final essay to be published in the newsletter of the course, but
+          that part does not account for the final grade.
+          </p>
+          </div>
+        </div>
+      </div>
+      <!-- Item 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+          >
+            Groups.
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+          <p>The development of the app is conducted in random groups of six persons. In the future the students will need to
+          work with persons from different background, and this part of the course helps them to make that transition smoothly.
+          <br>
+          <br>
+          The essay in the topic chosen by the students is conducted in groups of six persons. These groups can be formed
+          by the students as they want. I suggest the students to form balanced groups by gender, nationality.
+          </p>
+          </div>
+        </div>
+      </div>
+      <!-- Item 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+          <button class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+          >
+            Key dates and final exam.
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+          <p>The 5 pages essay with the methodology used to work out carbon emissions have to be delivered by March 21.
+          <br>
+          <br>
+          On April 04, we organize the midway conference where the students present their 20 pages essay. This helps the students to train for the final conference, and to
+          know the points that have to be fine-tuned in their research.
+          <br>
+          <br>
+          The 20 pages essay has to be delivered by April 15, and the final conference will take place on April 22.
+          </p>
+          </div>
+        </div>
+      </div>
+      <!-- Item 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFour">
+          <button class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFour"
+          >
+            Lectures.
+          </button>
+        </h2>
+        <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+          <p>The first hour of the lectures on Monday will be allocated to build students' app. During the first fifteen minutes, we conduct the
+          Mondays Challenge Breakfast, where one of the groups will present the development of the app the previous week plus some small change on their app. During the
+          second part of the lecture, we add some more lines of code ot our app. We conclude each lecture by pushing our app to the server, and the students
+          can see from the first day the progress in their work.
+          <br>
+          <br>
+          The code for each lecture will be available in a Github account, so the students can have access to that code and they will be sure that their app run
+          at the end of each lecture. By doing that, the students will focus on the process, and will not be stressed if they miss some part of the code.
+          <br>
+          <br>
+          The second part of the lecture on Monday, and the lectures on Wednesdays will be allocated to study the sustainable energy module of the course.
+          That part of the course consists on debates, videos, presentations, and exercises. We complement those lectures with keynote speakers lectures.
+          <br>
+          <br>
+          All the lectures will be streamed, recorded and posted on Canvas.
+          </p>
+          </div>
+        </div>
+      </div>
+      <!-- Item 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingFive">
+          <button class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseFive"
+          >
+            Tutorials.
+          </button>
+        </h2>
+        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+          <p>The tutorials will take place on Fridays from 10:00 to 12:00. We can meet in my office (C318) located in the third floor of the tall building.
+              With your card, you do not have access to the corridor, so make me a phone call (0047 93461979), and I will open the door.
+              <br>
+              <br>
+              We can set an appointment on Fridays from 10:00 to 12:00 by using Zoom (https://nhh.zoom.us/j/6343089435).
+              <br>
+              <br>
+              If you cannot meet on Fridays at that time, please drop me a line, and we set an appointment at a different time.
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+{% endblock content %}

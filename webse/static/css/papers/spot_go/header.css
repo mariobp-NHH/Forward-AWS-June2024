@@ -1,0 +1,22 @@
+/*Container buttons section header*/
+.container_buttons_links_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+
+.container_buttons_links_header a:hover {
+  color: #343a40;
+}
+/*color=dark*/
+.container_buttons_links_header btn {
+  width: 100px;
+  height: 100px;
+  background: #343a40;
+  color: #fff;
+
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}

@@ -1,0 +1,441 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch13. Charts</span></h1>
+                    <p class="mb-1">
+                        In this chapter we learn how to make <strong>queries</strong> to extract relevant information from our databases, and we learn how to pass that information from the server to the browser. By using Chart.js, we disclose the information from our databases in two types of <strong>charts</strong>.
+                    </p>
+                    <br>
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/_2M90VCIlSI"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 1)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/Zba9nhiFxJs" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 2)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/zyXbmbyepEQ" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch13%20Chart" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">JSON dumps</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we learn how to transform the information from a <strong>Python dictionary</strong> into a <strong>JSON list</strong>. This will be useful to move information from the server to the browser.
+                        </p>
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">JSON parse</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we learn how to transform the information from the browser into a <strong>JavaScript object</strong>. We also learn how to access to that information from the browser console.
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">JSON, Flask, and Chart.js</h5>
+                            </div>
+                            <p class="mb-1">
+                                In this section, we make <strong>queries</strong> to access to the databases in our app, and we learn how to disclose that information by using different <strong>charts</strong>.
+                            </p>
+                            </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            Each group must introduce some queries in its code to extract relevant information from their databases and disclose that information by using different charts.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch13/ch13.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>JSON dumps</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/_2M90VCIlSI" target="_blank">YouTube (Section 1)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch13%20Chart/JSON%20dumps" target="_blank">GitHub</a>
+            </div>
+            <p>
+                All the information in this section has been taken from the next links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://www.geeksforgeeks.org/json-dumps-in-python/"  target="_blank">Link 1</a>
+                <a class="btn-section1" href="https://www.analyticssteps.com/blogs/working-python-json-object"  target="_blank">Link 2</a>
+                <a class="btn-section1" href="https://www.geeksforgeeks.org/read-write-and-parse-json-using-python/"  target="_blank">Link 3</a>
+            </div> 
+            <p>
+            <p>
+                In this chapter, we make a query to extract information from our database, and we pass that information to the server to be disclosed in a graph. To pass information between the server and the browser, we need to place that information in a JSON format.
+                <br>
+                <br>
+                <strong>JSON</strong> is an acronym that stands for JavaScript Object Notation. Despite its name, JSON is a language agnostic format that is most used to transmit data between systems, and on occasion, store data. Programs written in Python, as well as many other programming languages, can ingest JSON formatted data, and can serialize data in memory into the JSON format. 
+                <br>
+                <br>
+                <strong>Python</strong> supports JSON through a built-in package called json. To use this feature, import the json package into the Python script or module in which you wish to serialize or deserialize your data. JSON utilizes comma delimited key value pairs contained in double quotes and separated by colons. The body of a JSON file can be delimited in curly braces { } or square braces [] (also known as “brackets” in some locales). The JSON format appears to be like the dictionary in Python, but the specifics of the JSON format have significant differences, so use care when working with both formats.
+                <br>
+                <br>
+                When we make a query to our database, we obtain a Python dictionary. In this section, we use the function <strong>json.dumps()</strong> to convert a subset of Python objects into a json string. Not all objects are convertible, and you may need to create a dictionary of data you wish to expose before serializing to JSON. We illustrate the use of json.dumps() with different <u>examples</u>:
+            </p>  
+        </div>  
+
+     
+        <div class="container">
+            <div class="boxa" style="background-color: #568c63;">
+                <h5>Example 1:</h5>
+                <p>Passing the Python dictionary to json.dumps() function will return a string.</p>
+<pre><code class="html">
+import json
+Dictionary ={(1, 2, 3):'Welcome', 2:'to',
+            3:'Geeks', 4:'for',
+            5:'Geeks'} 
+# Our dictionary contains tuple
+# as key, so it is automatically
+# skipped If we have not set
+# skipkeys = True then the code
+# throws the error
+json_string = json.dumps(Dictionary,
+                            skipkeys = True) 
+print('Equivalent json string of dictionary:',
+        json_string)      
+</code></pre>
+            </div> 
+            <div class="boxa">
+                <h5>Example 2:</h5>
+                <p>By setting the <strong>skipkeys</strong> to True(default: False) we automatically skip the keys that are not of basic type.</p>
+<pre><code class="html">
+import json    
+# Creating a dictionary
+Dictionary ={1:'Welcome', 2:'to',
+            3:'Geeks', 4:'for',
+            5:'Geeks'}  
+# Converts input dictionary into
+# string and stores it in json_string
+json_string = json.dumps(Dictionary)
+print('Equivalent json string of input dictionary:',
+        json_string)
+print("        ") 
+# Checking type of object
+# returned by json.dumps
+print(type(json_string))    
+</code></pre>
+            </div> 
+        </div> 
+
+        <div class="container">
+            <div class="boxa" style="background-color: #568c63;">
+                <h5>Example 3:</h5>
+                <p>If <strong>allow_nan</strong> is False (default: True), then it will be a ValueError to serialize out of range float values (nan, inf, -inf) in strict compliance of the JSON specification. If allow_nan is True, their JavaScript equivalents (NaN, Infinity, -Infinity) will be used.</p>
+<pre><code class="html">
+import json
+# We are adding nan values
+# (out of range float values)
+# in dictionary
+Dictionary ={(1, 2, 3):'Welcome', 2:'to',
+            3:'Geeks', 4:'for',
+            5:'Geeks', 6:float('nan')} 
+# If we hadn't set allow_nan to
+# true we would have got
+# ValueError: Out of range float
+# values are not JSON compliant
+json_string = json.dumps(Dictionary,
+                         skipkeys = True,
+                         allow_nan = True) 
+print('Equivalent json string of dictionary:',
+      json_string)
+</code></pre>
+            </div> 
+            <div class="boxa">
+                <h5>Example 4:</h5>
+                <p>If <strong>indent</strong> is a non-negative integer or string, then JSON array elements and object members will be pretty-printed with that indent level. An indent level of 0, negative, or “” will only insert newlines. None (the default) selects the most compact representation. Using a positive integer indent indents that many spaces per level. If indent is a string (such as “\t”), that string is used to indent each level.</p>
+<pre><code class="html">
+import json
+Dictionary ={(1, 2, 3):'Welcome', 2:'to',
+            3:'Geeks', 4:'for',
+            5:'Geeks', 6:float('nan')} 
+# Indentation can be used
+# for pretty-printing
+json_string = json.dumps(Dictionary,
+                            skipkeys = True,
+                            allow_nan = True,
+                            indent = 6) 
+print('Equivalent json string of dictionary:',
+        json_string)
+</code></pre>
+            </div> 
+        </div>               
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>JSON Parse</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/Zba9nhiFxJs" target="_blank">YouTube (Section 2)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch13%20Chart/JSON%20parse" target="_blank">GitHub </a>
+            </div>
+            <p>
+                All the information in this section has been taken from the next links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://www.w3schools.com/js/js_json_parse.asp" target="_blank">Link 1</a>
+                <a class="btn-section2" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank">Link 2</a>
+                <a class="btn-section2" href="https://www.freecodecamp.org/news/json-stringify-example-how-to-parse-a-json-object-with-javascript/ " target="_blank">Link 3</a>
+            </div> 
+            <p>
+                As we have studied in the previous section, a common use of JSON is to exchange data to/from a web server. When receiving data from a web server, the data is always a string. Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+                We are going to study the function JSON.parse() with a couple of <u>examples:</u>
+            </p> 
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="background-color: #49736f">
+                <h5>Example 1. Dictionary</h5>
+<pre><code class="html">
+&#60;!DOCTYPE html&#62;
+&#60;html&#62;
+&#60;body&#62;
+&#60;h2&#62;Creating an Object from a JSON String&#60;/h2&#62;
+&#60;p id="demo"&#62;&#60;/p&#62;
+&#60;script&#62;
+const txt = '{"name":"John", "age":30, "city":"New York"}'
+const obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+console.log(obj.name)
+console.log(obj.age)
+&#60;/script&#62;
+&#60;/body&#62;
+&#60;/html&#62;
+</code></pre>        
+            </div>
+            <div class="boxa">
+                <h5>Example 2. Array</h5>
+<pre><code class="html">
+&#60;!DOCTYPE html&#62;
+&#60;html&#62;
+&#60;body&#62;
+&#60;h2&#62;Parsing a JSON Array.&#60;/h2&#62;
+&#60;p&#62;Data written as an JSON array will be parsed into a JavaScript array.&#60;/p&#62;
+&#60;p id="demo"&#62;&#60;/p&#62;
+&#60;script&#62;
+const text = '[ "Ford", "BMW", "Audi", "Fiat" ]';
+const myArr = JSON.parse(text);
+document.getElementById("demo").innerHTML = myArr[0];
+console.log(myArr[0])
+console.log(myArr[1])
+&#60;/script&#62; 
+&#60;/body&#62;
+&#60;/html&#62;    
+</code></pre>    
+            </div>
+        </div>
+  
+
+    </section> 
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+
+        <div class="container" style="display:block;">
+            <h1>Section. JSON, Flask, and Chart.js</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3" href="https://youtu.be/zyXbmbyepEQ" target="_blank">YouTube (Section 3)</a>
+                <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch13%20Chart/App%20Boilerplate" target="_blank">GitHub (Boilerplate) </a>
+                <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch13%20Chart/App%20Final " target="_blank">GitHub (Final) </a>
+            </div>
+            <p>
+                All the information in this section has been taken from the next link:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3" href="https://flask.palletsprojects.com/en/2.2.x/patterns/javascript/" target="_blank">Link</a>
+            </div> 
+        </div>
+
+        <div class="container">
+
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Deployment of our app in AWS</h4>
+                <p>
+                    It is important to understand the difference between templates and JavaScript. Templates are rendered on the server, before the response is sent to the user's browser. JavaScript runs in the user's browser, after the template is rendered and sent. Therefore, it is impossible to use JavaScript to affect how the Jinja template is rendered, but it is possible to render data into the JavaScript that will run.
+                    <br>
+                    <br>
+                    To provide data to JavaScript when rendering the template, use the tojson() filter in a &#60;script&#62; block. This will convert the data to a valid JavaScript object and ensure that any unsafe HTML characters are rendered safely. If you do not use the tojson filter, you will get a SyntaxError in the browser console.
+                </p>    
+            </div>
+            <div class="boxa">
+                <h5>The basic code in the routes and in the html files is:</h5>
+                <pre><code class="html">
+data = generate_report()
+return render_template(&#34;report.html&#34;, chart_data=data)
+&#60;script&#62;
+    const chart_data = &#123;&#123; chart_data|tojson &#125;&#125;
+    chartLib.makeChart(chart_data)
+&#60;/script&#62;      
+                </code></pre> 
+            </div>
+        </div>
+
+        <div class="container" style="display:block;">
+            <h4>Query and information transfer between the server and the browser</h4>
+            <p>
+                When we make a query to our database, the information is stored in a Python dictionary. We make some data manipulation to prepare the data to be transferred from the server to the browser, and then to be plotted by using Chart.js. 
+                <br>
+                <br>
+                We extract the information referred to emissions (the steps for the kilometers are identical). To work out the carbon emissions, we obtain the emissions by means of conveyance, and then, we obtain the emissions by time (in the last five days). 
+                <br>
+                <br>
+                To work out the <strong>emission by means of conveyance</strong>, we proceed in three steps:
+                <br>
+                <ol>
+                    <li>
+                        We make a query and store the data in a <strong>Python dictionary</strong>.
+                    </li>
+                    <br>
+                    <li>
+                        We create two <strong>Python lists</strong>. In the first list, we store the emissions. In the second list, we store the means of conveyance.
+                    </li>
+                    <br>
+                    <li>
+                        We pass the list with the emissions to the browser by using <strong>json.dumps(data)</strong>. 
+                    </li>
+                    <br>
+                    <li>
+                        Please, watch the YouTube video for this section and in the GitHub folder, go through the routes.py file in the carbon_app folder to see all the details of the code.
+                    </li>
+                </ol>
+                To work out the emissions by date, we proceed in three steps:
+                <br>
+                <br>
+                <ol>
+                    <li>
+                        We make a query and store the data in a <strong>Python dictionary</strong>.
+                    </li>
+                    <br>
+                    <li>
+                        We create <strong>two Python lists</strong>. In the first list, we store the emissions. In the second list, we store the date.
+                    </li>
+                    <br>
+                    <li>
+                        We pass the two lists with the emissions and the date to the browser by using  <strong>json.dumps(data)</strong>. 
+                    </li>
+                    <br>
+                    <li>
+                        Please, watch the YouTube video for this section and in the GitHub folder, go through the routes.py file in the carbon_app folder to see all the details of the code.
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="container" style="display:block;">
+            <h4>Information in the browser and Chart.js</h4>
+            <p>
+                Once that we have sent the data from the server to the browser by using jons.dumps(data), we must transform that data into json object by using: object== JSON.parse( &#123;&#123; data | tojson &#125;&#125; ). 
+                <br>
+                <br>
+                Once that we have the information converted into a valid JavaScript object, we can start to plot it by using Chart.js: 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3" href="https://www.chartjs.org/" target="_blank">Chart.js</a>
+                </div> 
+                To use Chart.js, we proceed in three steps.
+                <br>
+                <ol>
+                    <li>
+                        In the <strong>layout.html</strong> file, we must introduce: &#60;script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"&#62;&#60;/script&#62;
+                        <br>
+                        It is important to notice that I introduce the version 2.8.0. For the charts that I am introducing in this chapter that version is required. However, for other charts, you do not need that version.
+                    </li>
+                    <br>
+                    <li>
+                        In the <strong>your_data.html</strong> file, we define the canvas for the chart:
+                        <pre><code class="html">
+&#60;section class="two_emissions_graphs"&#62;
+    &#60;div class="container"&#62;
+        &#60;div class="box"&#62;
+            &#60;canvas id="emissions_by_transport"&#62;&#60;/canvas&#62;
+        &#60;/div&#62;
+        &#60;div class="box"&#62;
+            &#60;canvas id="over_time_emissions"&#62;&#60;/canvas&#62; 
+        &#60;/div&#62;
+    &#60;/div&#62;
+&#60;/section&#62;                                
+                        </code></pre> 
+                    </li>
+                    <li>
+                        In the <strong>your_data.html</strong> file, we define the script, we define a JavaScript object, and create a chart.
+                        <pre><code class="html">
+&#123;% block javascript %&#125;
+    &#60;script&#62;
+    data...
+    chart...
+    &#60;/script&#62;
+&#123;% endblock %&#125;                               
+                        </code></pre> 
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="container" style="display:block;">
+            <h4>Access to the information passed from the server by using the browser console</h4>
+            <p>
+                Once that we create a JavaScript object, we can access to it from the console in the browser terminal. We can type the next code (<strong>console.log(emission_transport_data)</strong>) and access to very useful information. 
+            </p>
+        </div>
+
+    </section> 
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+
+        <div class="container">
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;"> 
+                    In this weekly challenge, each group must introduce some queries in its code to extract relevant information from their databases and disclose that information by using different charts. 
+                </p> 
+            </div>   
+            <div class="onebox">                  
+            </div> 
+        </div>
+      
+      </section>    
+
+
+{% endblock content %}

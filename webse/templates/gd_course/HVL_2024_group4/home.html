@@ -1,0 +1,211 @@
+{% extends "gd_course/HVL_2024_group4/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section
+  class="hero-section"
+  id="home"
+  data-aos="fade-up"
+  data-aos-duration="1000"
+>
+  <div class="container">
+    <div class="content-container">
+      <div class="col-l">
+        <h1 class="hero-title">
+          <span>Together</span>, companies can halt climate change
+        </h1>
+        <p>
+          We provide practical tools for individuals to consider the climate
+          impact of their transportation choices.
+        </p>
+
+        <div class="btn-container">
+          <a class="stripe-btn" href="#value">Explore</a>
+          <a
+            class="full-btn"
+            href="{{url_for('gd_course_HVL_2024_group4.carbon_app_home')}}"
+            >Discover the Carbon App</a
+          >
+        </div>
+      </div>
+
+      <div class="col-r">
+        <img
+          data-aos="fade-left"
+          data-aos-duration="1500"
+          src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/nature01.jpg') }}"
+          alt="nature image"
+        />
+        <img
+          data-aos="fade-left"
+          data-aos-duration="1500"
+          data-aos-delay="100"
+          src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/nature02.jpg') }}"
+          alt="nature image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="value">
+  <div class="container flex-container">
+    <div
+      class="inner-container"
+      data-aos="fade-up-right"
+      data-aos-duration="1000"
+    >
+      <h2>Understanding the Carbon App</h2>
+      <p>
+        Our innovative Carbon App is designed to revolutionize the way companies
+        approach sustainability by tackling one of the most significant
+        contributors to carbon emissions: employee commuting.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="product" class="classElement">
+  <div class="container flex-container">
+    <div class="col-l">
+      <img
+        src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/appview.png') }}"
+        alt="nature image"
+      />
+    </div>
+
+    <div class="col-r">
+      <div class="block-container flex-container">
+        <div class="block b1">
+          <span>1<strong>.</strong></span>
+          <h3>Calculate Carbon Footprint</h3>
+          <p>
+            determine carbon emissions from employee commutes using our
+            intuitive interface.
+          </p>
+        </div>
+
+        <div class="block b2">
+          <span>2<strong>.</strong></span>
+          <h3>Tailored Sustainability Plans</h3>
+          <p>
+            Receive customized plans with actionable strategies to reduce carbon
+            emissions from commuting.
+          </p>
+        </div>
+        <div class="block b3">
+          <div class="block-header">
+            <span>3<strong>.</strong></span>
+            <h3>Engage Employees</h3>
+          </div>
+          <p>
+            Motivate employees with incentives and gamified challenges to adopt
+            eco-friendly commuting habits.
+          </p>
+        </div>
+        <a
+          class="block b4"
+          href="{{url_for('gd_course_HVL_2024_group4.carbon_app_home')}}"
+        >
+          <span class="link-title">Try the Carbon <strong>App</strong></span>
+          <img
+            data-aos="fade-up"
+            data-aos-duration="1500"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/arrow-corner-2.svg') }}"
+            alt="nature image"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="container">
+    <div class="content-container">
+      <h2 class="hero-title">Meet our <span>team</span></h2>
+      <p>
+        Get to know the faces behind our mission and join us in shaping a
+        brighter, greener future.
+      </p>
+    </div>
+    <div class="flex-container" data-aos="fade-up" data-aos-duration="1500">
+      <a
+        target="_blank"
+        class="card"
+        href="https://www.linkedin.com/in/linda-dortmans-726a3521b/"
+      >
+        <div class="image-container">
+          <img
+            class="member-picture"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/linda-pic.jpeg') }}"
+            alt="team member"
+          />
+          <img
+            class="linkedin-icon"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/linkedin_icon.svg') }}"
+            alt="team member"
+          />
+        </div>
+        <div class="content">
+          <span><strong>Dortmans </strong>Linda</span>
+        </div>
+      </a>
+      <a
+        target="_blank"
+        class="card"
+        href="https://www.linkedin.com/in/jean-d-huart-1b786a187/"
+      >
+        <div class="image-container">
+          <img
+            class="member-picture"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/jean-pic.jpg') }}"
+            alt="team member"
+          />
+          <img
+            class="linkedin-icon"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/linkedin_icon.svg') }}"
+            alt="team member"
+          />
+        </div>
+        <div class="content">
+          <span><strong>d'Huart </strong>Jean</span>
+        </div>
+      </a>
+      <a target="_blank" class="card" href="https://www.linkedin.com">
+        <div class="image-container">
+          <img
+            class="member-picture"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/userunk.jpeg') }}"
+            alt="team member"
+          />
+        </div>
+        <div class="content">
+          <span><strong>Grégoire </strong>Robin</span>
+        </div>
+      </a>
+      <a
+        target="_blank"
+        class="card"
+        href="https://www.linkedin.com/in/olaf-bo%C4%87ko-943616259/"
+      >
+        <div class="image-container">
+          <img
+            class="member-picture"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/olaf-pic.jpeg') }}"
+            alt="team member"
+          />
+          <img
+            class="linkedin-icon"
+            src="{{ url_for('static', filename='/gd_course_HVL_2024_group4/assets/linkedin_icon.svg') }}"
+            alt="team member"
+          />
+        </div>
+        <div class="content">
+          <span><strong>Boćko</strong> Olaf</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+{% include "gd_course/HVL_2024_group4/cta_layout.html" %} {% endblock content %}

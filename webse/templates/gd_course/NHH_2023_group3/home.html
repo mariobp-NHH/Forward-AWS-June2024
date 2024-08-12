@@ -1,0 +1,103 @@
+{% extends "gd_course/NHH_2023_group3/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+
+    <div class="header_home">
+      <div class="box"> 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div> 
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <a href="{{ url_for('gd_course_NHH_2023_group3.purpose_home') }}"><h3 style="font-size:55px;text-align: left" id = 'htext'>Our purpose</h3><a>
+        <p style="text-align:left; color: white;">
+          How does the temperature on earth evolve? How will we contribute to change? How can you contribute?        
+      </div>
+
+      <div class="box">
+        <img 
+          src="{{url_for('static', filename='gd_course_NHH_2023_group3/icons/carbon_app.svg')}}"
+          width="500" 
+          height="300"
+          style="fill: white;"
+          alt=""/>
+      </div>
+    </div>
+
+  </div>
+</section> 
+
+<!-- Links -->
+<section class="section_links">
+  <div class="container">
+
+    <div class="links" style="display:block;">
+
+        
+    </div>
+
+
+    <div class="links">
+        <div class="box">
+          <h3>Carbon App</h3>
+          <p> Our carbon app uses data from our users to calculate individual carbon emissions in addition to calculting emissions for our enire user base. 
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="{{url_for('gd_course_NHH_2023_group3.carbon_app_home')}}">Calculate your carbon emmision </a>
+          </div> 
+        </div>
+
+
+        <div class="box">
+          <h3>Methodology</h3>
+          <p> The app that we developed are focusing on carbon dioxide which is the primary greenhouse gas emitted through human activities, making up about 79% of our total emissions. 
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="{{url_for('gd_course_NHH_2023_group3.methodology_home')}}">Read more about our methodology</a>
+          </div> 
+        </div>
+        <div class="box">
+          <h3>Our team</h3>
+          <p>  Our team of developers and economists is working hard on developing and improving our economic model, the carbon app and the website. Get to know them better here.
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="{{url_for('gd_course_NHH_2023_group3.developers')}}">Read more about our team </a>
+          </div> 
+        </div>
+
+
+        
+      </div>
+
+    <div class="links">
+
+
+
+
+        <div class="box">
+          <h3></h3>
+          <p> 
+          </p>
+          
+          </div> 
+        </div>
+
+    
+  </div>
+
+  </div>          
+</section>
+
+<!-- Picture -->
+<section class="section_pics">
+  <div class="container">
+
+        
+{% endblock content %}

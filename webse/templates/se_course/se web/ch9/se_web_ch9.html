@@ -1,0 +1,2210 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch9. Sustainable Energy. Batteries and Electric Vehicles </span></h1>
+                    <p class="mb-1">
+                        We study the main features of Electric Vehicles (EV), the  potential contribution of EV to the flexibility
+                        in the electric system, the different types of flexibility, the expected evolution of that flexibility in the
+                        incoming years, and main trends and challenges in the market.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="{{url_for('static', filename='material/se/ch9/ch9_material.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('static', filename='material/se/ch9/ch9_presentation.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#introduction" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the main characteristics of EV, the potential contribution of EV to the flexibility in the electric system, and
+                            the policies that could contribute to make that flexibility more effective.
+                        </p>
+
+                      </a>
+                      <a href="#batteries" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">How do batteries work?</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study first how do galvanic cells (voltaic cells) work, and based on that the lessons learned
+                            in that section, we study how do lithium-ion batteries work.
+                        </p>
+                      </a>
+                      <a href="#state" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">State of play</h5>
+                        </div>
+                        <p class="mb-1">
+                            We analyze the current state of the EV market and the role of EV providing flexibility to the electric system.
+                        </p>
+                      </a>
+                      <a href="#charge" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Smart charging</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the impact of charging on the demand and the grid infrastructure. We also analyze the
+                            services provided by smart charging, and the types of smart charging.
+                        </p>
+                      </a>
+                      <a href="#business" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Business models</h5>
+                        </div>
+                        <p class="mb-1">
+                            We analyze the different business models to commercialize EV and its services.
+                        </p>
+                      </a>
+                      <a href="#emobility" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">E-mobility outlook</h5>
+                        </div>
+                        <p class="mb-1">
+                            We study the evolution of EV and batteries markets and prices.
+                        </p>
+                      </a>
+                      <a href="#hydrogen" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Hydrogen versus Electric vehicles</h5>
+                        </div>
+                        <p class="mb-1">
+                            We compare hydrogen and electric vehicles.
+                        </p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/ch9_icon.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+   <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+
+            <h2>Introduction</h2>
+
+
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    To motivate the chapter, we start by watching the video
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=OpTOKKKGWV8" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How Tesla, GM And Others Will Fix Electric Vehicle Range Anxiety</a>
+                   </div>
+                </div>
+                <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q1.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 1</legend>
+                            <p class="card-text">Which are the main concerns in the adoption of electric vehicles in USA?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q1.type.errors %}
+                                        {{ form_m2_ch9_q1.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q1.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q1.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q1.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q2.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 2</legend>
+                            <p class="card-text">There are three main types of chargers level 1 and level 2 (120-240 volts), level 3 (480 volts).
+                                Which is the range of miles charged per hour in the three types of chargers?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q2.type.errors %}
+                                        {{ form_m2_ch9_q2.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q2.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q2.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q2.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                    
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q3.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 3</legend>
+                            <p class="card-text">There are two different business models for chargers. One EV company develops
+                                its own chargers, while other companies use chargers platforms as IONITY, EV-GO, ChargePoint.
+                                Which company has its onw chargers network?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q3.type.errors %}
+                                        {{ form_m2_ch9_q3.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q3.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q3.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q3.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+                </div>
+            </div>
+
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Introduction</h3>
+                <p>
+                    We study the main characteristics of EV, the potential contribution of EV to the flexibility in the electric system, and
+                            the policies that could contribute to make that flexibility more effective.
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_course_se_module.se_web_ch9_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+<!--Section 1 (grey)-->
+    <section id="batteries" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>How do batteries work?</h2>
+            <p>
+                We study first how do galvanic cells (voltaic cells) work, and based on that the lessons learned in that
+                section, we study how do lithium-ion batteries work.
+            </p>
+
+            <h3>How do galvanic cells (voltaic cells) work?</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the video:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=7b34XYgADlM" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Galvanic Cells (Voltaic Cells)</a>
+                   </div>
+                </div>
+            </div>
+            
+            <p>
+                Galvanic cells also called voltaic cells are devices that use a <strong>chemical reaction to produce electricity</strong>.
+                As in the chapter where we study hydrogen, the chemical reaction used to produce electricity is the 
+                <strong>oxidation-reduction reaction</strong>.
+                </br>
+                </br>
+                Galvanic cells (voltaic cells) are very popular, since <strong>batteries</strong> work by using the same principle.
+                The batteries have chemicals that react together in an oxidation-reduction reaction to produce electricity.
+                </br>
+                </br>
+                Before to explain the chemical reaction that generates electricity, we introduce the
+                    <strong>parts of a voltaic cell</strong> (Figure: Voltaic cell (oxidation-reduction process)).
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <ol>
+                        <li>
+                            There are two containers with <strong>water</strong>.
+                        </li>
+                        </br>
+                        <li>
+                            One of the containers has a <strong>zinc-sulfate solution</strong> (ZnSO4). The other container has
+                            a <strong>copper-sulfate solution</strong> (CuSO4).
+                        </li>
+                        </br>
+                        <li>
+                            We have a <strong>piece of zinc metal</strong> in the zinc-sulfate solution (ZnSO4), and a
+                            <strong>piece of copper metal</strong> in the copper-sulfate solution (CuSO4).
+                            </br>
+                            </br>
+                            In the electrochemical series, there are metals that have a <strong>high tendency to lose electrons</strong>
+                            (Li(3.04V), Mg(2.37V), Al(1.66V), Zn(0.76V), Fe(0.44V)); and others metals that have a
+                            <strong>high tendency to gain electrons</strong> (Hg(-0,24V), Cu(-0.34V), Ag(-1.69V)).
+                            </br>
+                            </br>
+                            The idea behind a battery is to connect metals with tendency to lose electrons with metals with
+                            tendency to gain electrons to generate an electric current.
+                        </li>
+                        </br>
+                        <li>
+                            A <strong>metal wire</strong> connects the metallic pieces of zinc and copper.
+                        </li>
+                        </br>
+                        <li>
+                            Finally, a <strong>salt bridge</strong> connects the two containers with water.
+                        </li>
+                    </ol>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_voltaic_cell1.svg')}}"
+                        alt=""/>
+            </div>
+            
+            <p>
+                We explain how voltaic cells work. We divide the entire process in two steps. First, we explain the 
+                <strong>oxidation-reduction process</strong>. Second, we explain the role of <strong>salt bridge</strong> in the entire
+                process. By splitting the process in two parts, we will make easier to understand the entire process. 
+                Moreover, this will also help us to know how do lithium-ion batteries work (next section).
+                </br>
+                </br>
+                <u>Oxidation-reduction reaction (Figure: Voltaic cell (oxidation-reduction process)).</u>
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Anode (oxidation process)</div>
+                  <p class="text-right">
+                      The zinc metal has a high tendency to lose electrons. Therefore, the oxidation process
+                      (lose of electrons) will take place in the container where the zinc metal is located.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Cathode (reduction process)</div>
+                  <p class="text-right">
+                      The copper has a high tendency to gain electrons. Therefore, the reduction process
+                      (gain of electrons) will take place in the container where the copper metal is located.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">During the oxidation process</div>
+                  <p class="text-right">
+                      <strong>During the oxidation process</strong>, the atoms of zinc (Zn) in the metal  lose two electrons.
+                      When a metal loses electrons tends to become liquid. Therefore, during the oxidation process
+                      <strong>the zinc metal stick becomes more and more thinner</strong>.
+                      </br>
+                      </br>
+                      The <strong>half-equation in the anode</strong>:
+                      <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>Z</mi><mi>n</mi><mo stretchy='false'>(</mo><mi>s</mi><mo stretchy='false'>)</mo><mo>&#x2192;</mo><mi>Z</mi><msup>
+                            <mi>n</mi>
+                            <mrow>
+                             <mo>+</mo><mn>2</mn></mrow>
+                           </msup>
+                           <mo stretchy='false'>(</mo><mi>a</mi><mi>q</mi><mo stretchy='false'>)</mo><mo>+</mo><mn>2</mn><msup>
+                            <mi>e</mi>
+                            <mo>&#x2212;</mo>
+                           </msup>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamOwaiaad6
+                          gacaGGOaGaam4CaiaacMcacqGHsgIRcaWGAbGaamOBamaaCaaaleqa
+                          baGaey4kaSIaaGOmaaaakiaacIcacaWGHbGaamyCaiaacMcacqGHRa
+                          WkcaaIYaGaamyzamaaCaaaleqabaGaeyOeI0caaaaa@4681@
+                          </annotation>
+                         </semantics>
+                        </math>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">During the reduction process</div>
+                  <p class="text-right">
+                      <strong>During the reduction process</strong>, the atoms of copper (Co+2) dissolved in the copper-sulfate
+                      solution (CuSO4) gains two electrons. When a metal becomes neutral, it has a tendency to become solid. 
+                      Therefore, during the reduction process, <strong>the copper metal stick becomes more and more thick</strong>.
+                      </br>
+                      </br>
+                      The <strong>half-equation in the cathode</strong>:
+                      <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>C</mi><msup>
+                            <mi>u</mi>
+                            <mrow>
+                             <mo>+</mo><mn>2</mn></mrow>
+                           </msup>
+                           <mo stretchy='false'>(</mo><mi>a</mi><mi>q</mi><mo stretchy='false'>)</mo><mo>+</mo><mn>2</mn><msup>
+                            <mi>e</mi>
+                            <mo>&#x2212;</mo>
+                           </msup>
+                           <mo>&#x2192;</mo><mi>C</mi><mi>u</mi><mo stretchy='false'>(</mo><mi>s</mi><mo stretchy='false'>)</mo></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4qaiaadw
+                          hadaahaaWcbeqaaiabgUcaRiaaikdaaaGccaGGOaGaamyyaiaadgha
+                          caGGPaGaey4kaSIaaGOmaiaadwgadaahaaWcbeqaaiabgkHiTaaaki
+                          abgkziUkaadoeacaWG1bGaaiikaiaadohacaGGPaaaaa@466B@
+                          </annotation>
+                         </semantics>
+                        </math>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Balance equation</div>
+                  <p class="text-right">
+                      The<strong> balance equation</strong>. By placing together the half-equation in the anode and the
+                      half-equation in the cathode, we obtain the balance equation:
+                      <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>Z</mi><mi>n</mi><mo stretchy='false'>(</mo><mi>s</mi><mo stretchy='false'>)</mo><mo>+</mo><mi>C</mi><msup>
+                            <mi>u</mi>
+                            <mrow>
+                             <mo>+</mo><mn>2</mn></mrow>
+                           </msup>
+                           <mo stretchy='false'>(</mo><mi>a</mi><mi>q</mi><mo stretchy='false'>)</mo><mo>&#x2192;</mo><mi>Z</mi><msup>
+                            <mi>n</mi>
+                            <mrow>
+                             <mo>+</mo><mn>2</mn></mrow>
+                           </msup>
+                           <mo stretchy='false'>(</mo><mi>a</mi><mi>q</mi><mo stretchy='false'>)</mo><mo>+</mo><mi>C</mi><mi>u</mi><mo stretchy='false'>(</mo><mi>s</mi><mo stretchy='false'>)</mo></mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamOwaiaad6
+                          gacaGGOaGaam4CaiaacMcacqGHRaWkcaWGdbGaamyDamaaCaaaleqa
+                          baGaey4kaSIaaGOmaaaakiaacIcacaWGHbGaamyCaiaacMcacqGHsg
+                          IRcaWGAbGaamOBamaaCaaaleqabaGaey4kaSIaaGOmaaaakiaacIca
+                          caWGHbGaamyCaiaacMcacqGHRaWkcaWGdbGaamyDaiaacIcacaWGZb
+                          Gaaiykaaaa@4F82@
+                          </annotation>
+                         </semantics>
+                        </math>
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <p>
+                <u>Salt bride (Figure: Voltaic cell. Salt bridge).</u>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_voltaic_cell2.svg')}}"
+                        alt=""/>
+                <div>
+                    <ol>
+                        <li>
+                            Due to the loss of electrons, <strong>during the oxidation process</strong>, the zinc-sulfate
+                            solution (ZnSO4) becomes more and more positively charged.
+                        </li>
+                        </br>
+                        <li>
+                            Due to the gain of electrons, <strong>during the reduction process</strong>, the copper-sulfate
+                            solution (CuSO4) becomes more and more negatively charged.
+                        </li>
+                        </br>
+                        <li>
+                            Due to the oxidation-reduction reaction, the charge in the containers changes, and that
+                            <strong>could stop the flow of electrons</strong>, since the electrons do not want to move to
+                            the container full of electrons (electrons repeal each other).
+                        </li>
+                        </br>
+                        <li>
+                            To avoid that the flow of electrons stops, a <strong>salt bridge</strong> is used to maintain the
+                            charge of the zinc-sulfate (ZnSO4) and the copper-sulfate  (CuSO4) solutions neutral.
+                            The salt bridge contains chlorine Cl- and sodium Na+.
+	                        </br>
+                            </br>
+	                        The Chlorine Cl- move to the container where the oxidation takes place (anode), and the sodium Na+ moves
+                            to the container where the reduction takes place (cathode). By doing that, the zinc-sulfate  
+                            (ZnSO4) and the copper-sulfate (CuSO4)  solutions are balanced and the flow of
+                            electrons can continue.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3>How do lithium-ion batteries work?</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    This section is based on the next links:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=VxMM4g2Sk8U" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Lithium-ion battery, How does it work?</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://www.youtube.com/watch?v=G5McJw4KkG8" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How do Lithium-ion Batteries Work?</a>
+                   </div>
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=9OVtk6G2TnQ" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">How batteries work - Adam Jacobson</a>
+                   </div>
+                   <div class="btn">
+                        <a href="https://en.wikipedia.org/wiki/Lithium-ion_battery" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Lithium-ion battery</a>
+                   </div>
+                </div>
+            </div>
+
+            <p>
+                As voltaic cells, lithium-ion batteries use a <strong>chemical reaction to produce electricity</strong>.
+                </br>
+                </br>
+                Before to explain the chemical reaction that generates electricity, we introduce the
+                <strong>parts of a voltaic cell</strong> (Figure: Lithium-ion battery (oxidation-reduction process)).
+            </p>
+            
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <ol>
+                        <li>
+                            There are <strong>two electrodes</strong>. The <strong>anode</strong> is a structure that combines carbon and 
+                            lithium (LiC6) (lithium-graphite structure). The <strong>cathode</strong> is a structure that
+                            combines cobalt and Oxygen (CoO2) (oxido(oxo)-cobalt).
+                            </br>
+                            </br>
+                            The lithium has a high tendency to lose electrons. The cobalt combined with the oxygen has a 
+                            high tendency to gain electrons.
+                            </br>
+                            </br>
+                            An electric current is generated by connecting the structure that contains (LiC6) (anode),
+                            and the structure that contains (CoO2) (cathode).
+                        </li>
+                        </br>
+                        <li>
+                            A <strong>metal wire</strong> connects the structures (LiC6) and (CoO2).
+                        </li>
+                        </br>
+                        <li>
+                            Finally, a <strong>electrolyte</strong> connects the two structures. The electrolyte plays a similar
+                            role to the salt bridge in the voltaic cells, since it leaves to pass lithium-ions (Li+) 
+                            to balance the charge in the anode and the cathode to facilitate the flow of electrons.
+                        </li>
+                    </ol>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_lithium_cell1.svg')}}"
+                        alt=""/>
+            </div>
+
+            <p>
+                We explain how voltaic cells work. We divide the entire process in two steps. First, we explain the
+                <strong>oxidation-reduction process</strong>. Second, we explain the role of <strong>electrolyte</strong> in
+                the entire process.
+                </br>
+                </br>
+                <u>Oxidation-reduction reaction (Figure: Lithium-ion battery (oxidation-reduction process)).</u>
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Anode (oxidation process)</div>
+                  <p class="text-right">
+                      The lithium has a high tendency to lose electrons. Therefore, the oxidation process (lose of electrons)
+                      will take place in the anode where the lithium-graphite structure (LiC6) is located.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Cathode (reduction process)</div>
+                  <p class="text-right">
+                      The cobalt has a high tendency to gain electrons. Therefore, the reduction process (gain of electrons)
+                      will take place in the cathode where the oxido(oxo)-cobalt (CoO2) structure is located.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">During the oxidation process</div>
+                  <p class="text-right">
+                      <strong>During the oxidation process</strong>, the atoms of lithium (Li) in the lithium-graphite structure 
+                      (LiC6)  lose one electron. When the lithium loses one electron it does not form part
+                      any more of the lithium-graphite structure.
+                      </br>
+                      </br>
+                      The <strong>half-equation in the anode</strong>:
+                      <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>L</mi><mi>i</mi><msub>
+                            <mi>C</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <mo>&#x2192;</mo><msub>
+                            <mi>C</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <mo>+</mo><mi>L</mi><msup>
+                            <mi>i</mi>
+                            <mo>+</mo>
+                           </msup>
+                           <mo>+</mo><msup>
+                            <mi>e</mi>
+                            <mo>&#x2212;</mo>
+                           </msup>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamitaiaadM
+                          gacaWGdbWaaSbaaSqaaiaaiAdaaeqaaOGaeyOKH4Qaam4qamaaBaaa
+                          leaacaaI2aaabeaakiabgUcaRiaadYeacaWGPbWaaWbaaSqabeaacq
+                          GHRaWkaaGccqGHRaWkcaWGLbWaaWbaaSqabeaacqGHsislaaaaaa@43BB@
+                          </annotation>
+                         </semantics>
+                        </math>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">During the reduction process</div>
+                  <p class="text-right">
+                      <strong>During the reduction process</strong>, the oxido(oxo)-cobalt (CoO2) structure gains one electron.
+                      </br>
+                      </br>
+                      The <strong>half-equation in the cathode</strong>:
+                      <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>C</mi><mi>o</mi><msub>
+                            <mi>O</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <mo>+</mo><mi>L</mi><msup>
+                            <mi>i</mi>
+                            <mo>+</mo>
+                           </msup>
+                           <mo>+</mo><msup>
+                            <mi>e</mi>
+                            <mo>&#x2212;</mo>
+                           </msup>
+                           <mo>&#x2192;</mo><mi>L</mi><mi>i</mi><mi>C</mi><mi>o</mi><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaam4qaiaad+
+                          gacaWGpbWaaSbaaSqaaiaaiAdaaeqaaOGaey4kaSIaamitaiaadMga
+                          daahaaWcbeqaaiabgUcaRaaakiabgUcaRiaadwgadaahaaWcbeqaai
+                          abgkHiTaaakiabgkziUkaadYeacaWGPbGaam4qaiaad+gacaWGpbWa
+                          aSbaaSqaaiaaikdaaeqaaaaa@4747@
+                          </annotation>
+                         </semantics>
+                        </math>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Balance equation</div>
+                  <p class="text-right">
+                      The<strong> balance equation</strong>. By placing together the half-equation in the anode and
+                      the half-equation in the cathode, we obtain the balance equation:
+                      <math display='block'>
+                         <semantics>
+                          <mrow>
+                           <mi>L</mi><mi>i</mi><msub>
+                            <mi>C</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <mo>+</mo><mi>C</mi><mi>o</mi><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           <mo>&#x2192;</mo><msub>
+                            <mi>C</mi>
+                            <mn>6</mn>
+                           </msub>
+                           <mo>+</mo><mi>L</mi><mi>i</mi><mi>C</mi><mi>o</mi><msub>
+                            <mi>O</mi>
+                            <mn>2</mn>
+                           </msub>
+                           </mrow>
+                          <annotation encoding='MathType-MTEF'>MathType@MTEF@5@5@+=
+                          feaahqart1ev3aaatCvAUfeBSjuyZL2yd9gzLbvyNv2CaerbuLwBLn
+                          hiov2DGi1BTfMBaeXatLxBI9gBaerbd9wDYLwzYbItLDharqqtubsr
+                          4rNCHbGeaGqiVu0Je9sqqrpepC0xbbL8F4rqqrFfpeea0xe9Lq=Jc9
+                          vqaqpepm0xbba9pwe9Q8fs0=yqaqpepae9pg0FirpepeKkFr0xfr=x
+                          fr=xb9adbaqaaeGaciGaaiaabeqaamaabaabaaGcbaGaamitaiaadM
+                          gacaWGdbWaaSbaaSqaaiaaiAdaaeqaaOGaey4kaSIaam4qaiaad+ga
+                          caWGpbWaaSbaaSqaaiaaikdaaeqaaOGaeyOKH4Qaam4qamaaBaaale
+                          aacaaI2aaabeaakiabgUcaRiaadYeacaWGPbGaam4qaiaad+gacaWG
+                          pbWaaSbaaSqaaiaaikdaaeqaaaaa@4798@
+                          </annotation>
+                         </semantics>
+                        </math>
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <p>
+                <u>Electrolyte ("Salt bride") (Figure: Lithium-ion battery. Electrolyte ("Salt bridge")).</u>
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_lithium_cell2.svg')}}"
+                        alt=""/>
+                <div>
+                    <ol>
+                        <li>
+                            Due to the loss of electrons, <strong>during the oxidation process</strong>,
+                            lithium-graphite structure (LiC6) becomes more and more positively charged.
+                        </li>
+                        </br>
+                        <li>
+                            Due to the gain of electrons, <strong>during the reduction process</strong>,
+                            the oxido(oxo)-cobalt (CoO2) structure becomes more and more negatively charged.
+                        </li>
+                        </br>
+                        <li>
+                            Due to the oxidation-reduction reaction, the charge in the electrodes changes, and that
+                            <strong>could stop the flow of electrons</strong>, since the electrons do not want to
+                            move to the electrode full of electrons (electrons repeal each other).
+                        </li>
+                        </br>
+                        <li>
+                            To avoid that the flow of electrons stops, a <strong>electrolyte ("salt bridge")</strong> is used to 
+                            maintain the charge of the lithium-graphite  (LiC6) and the oxido(oxo)-cobalt (CoO2)
+                            structures neutral.
+                            
+                            The electrolyte membrane gives the free Lithium-ions (Li+) to pass through it and move to the
+                            oxido(oxo)-cobalt (CoO2) structure forming a lithium oxido(oxo)-cobalt (LiCoO2) structure.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <h3>Questions (All the questions are referred to the galvanic cells)</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q4.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 4</legend>
+                            <p class="card-text">During the oxidation process, the zinc loses electrons, and the zinc metal
+                                bar becomes
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q4.type.errors %}
+                                        {{ form_m2_ch9_q4.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q4.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q4.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q4.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q5.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 5</legend>
+                            <p class="card-text">During the reduction process, the cooper gains electrons, and the cooper metal
+                                bar becomes
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q5.type.errors %}
+                                        {{ form_m2_ch9_q5.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q5.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q5.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q5.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q6.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 6</legend>
+                            <p class="card-text">In the oxidation-reduction process, the salt bridge
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q6.type.errors %}
+                                        {{ form_m2_ch9_q6.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q6.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q6.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q6.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+        </div>
+    </section>
+
+<!--Section 2 (blue)-->
+    <section id="state" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>State of play</h2>
+            <h3>Market evolution</h3>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">EV sales evolution.</div>
+                  <p class="text-right">
+                        According to the Centre for Solar Energy and Hydrogen
+                        Research Baden-Württemberg (ZSW), 5.6 million EVs
+                        were on the world’s roads at the beginning of 2019. <strong>China
+                            and the United States (US)</strong> are the largest markets, with
+                        2.6 million and 1.1 million EVs, respectively. On average,
+                        EV sales grew rapidly during the period 2012 to 2017,
+                        with a <strong>compound annual growth rate (CAGR) of 57%</strong>.
+                        However, the market is still in an incipient phase, with
+                        EVs representing only 1.3% of all light-duty vehicles sold
+                        in 2017.
+                        </br>
+                        </br>
+                        The <strong>Chinese</strong> EV market has experienced the largest
+                        increase in sales, with a CAGR of 114% between 2012
+                        and 2017. In 2015 China surpassed the US in total
+                        EV sales, and in 2017 it was responsible for 48% of
+                        worldwide electric light-duty vehicle sales. The Chinese
+                        government has offered direct monetary incentives
+                        to support the purchase of EVs, including one-time
+                        subsidies and purchase tax exemptions, as well as
+                        non-monetary incentives, such as restrictions on
+                        registrations for ICE vehicles.
+                        </br>
+                        </br>
+                        After China and the US, the next largest markets are in
+                        <strong>Europe</strong>, with considerable growth in EV sales from 2012
+                        to 2017 in Germany (CAGR of 75%), Norway (70%) and
+                        the UK (68%). Figure: Evolution EV sales (2012-2017) shows the evolution of EV sales
+                        in the 10 countries that represented 88% of worldwide
+                        electric light-duty vehicle sales in 2017.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">EV penetration.</div>
+                  <p class="text-right">
+                        Although the Chinese and US markets are the largest
+                        for EV sales, other countries have had greater success in
+                        integrating EVs into their overall vehicle fleets. Figure: Evolution EV sales (2012-2017)
+                        shows the evolution of market <strong>penetration of EVs</strong> in
+                        light-duty vehicle sales. <strong>Norway</strong> has made remarkable
+                        progress since 2012, becoming a global leader with an
+                        almost 40% share of EVs in 2017. This was the result
+                        of a favourable policy environment in recent years
+                        comprising a large range of incentives, from tax breaks
+                        and exemptions to waivers on road tolls and ferry fees.
+                        </br>
+                        </br>                        
+                        After Norway, the markets with the highest progress in
+                        EV integration between 2012 and 2017 were <strong>Sweden</strong>, the
+                        <strong>US</strong> and the <strong>Netherlands</strong>, with EV shares representing
+                        5.1%, 3.3% and 2.7%, respectively, of the light-duty
+                        vehicle market in 2017. The remaining six largest markets
+                        did not exceed ratios of 2.5% of EV penetration and rank
+                        similarly to the global average.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">EV in big companies.</div>
+                  <p class="text-right">
+                        The <strong>EV100 initiative</strong>, launched by The Climate Group
+                        in 2017, encourages companies to commit to moving
+                        towards 100% electric corporate fleets and to install
+                        charging infrastructure. In its first several months,
+                        the initiative had already signed on <strong>10 multinationals</strong>,
+                        among them the Swedish power company Vattenfall,
+                        IKEA Group and the Chinese Internet giant Baidu (The
+                        Climate Group, 2017). <strong>Vattenfall</strong> has the most timeambitious
+                        goal of the initiative so far, with the company
+                        setting targets to shift its fleets (3 500 light-duty
+                        vehicles) to 100% electric by 2022 as part of its goal
+                        to be climate neutral by 2050. The replacement will
+                        take five years and will include fleets in Germany, the
+                        Netherlands and Sweden.
+                        </br>
+                        </br>
+                        The <strong>French postal service</strong> La Poste is also a pioneer
+                        in the field, owning 35 000 EVs out of a total fleet of
+                        75 000 vehicles. In 2017 <strong>Germany’s
+                            Deutsche Post DHL Group </strong>also set a target to achieve
+                        zero-emission logistics by 2050, in part through the use
+                        of EVs.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">E-buses.</div>
+                  <p class="text-right">
+                        The market for e-buses is concentrated mainly in<strong> Asia
+                            Pacific</strong>, where a market penetration of 27.6% was
+                        reached in 2016. Since 2014 there has been a large
+                        uptake of e-buses in <strong>China</strong>, which is now responsible
+                        for 99% of the worldwide sales and fleet. Market
+                        penetration in <strong>North America and Western Europe</strong> is
+                        around 0.6%. Whereas China reached 340 000 e-buses
+                        in 2017, the largest fleet of e-buses in Europe is in the UK
+                        and accounts for only 344 units.
+                        </br>
+                        </br>
+                        <strong>China</strong> is at the leading edge of the electrification of
+                        public transport buses because of the air pollution
+                        problems in its cities and industrial zones. The strategy
+                        of electrifying public transport comes from city
+                        administrations that want to reduce air pollution. The
+                        rapid and strong uptake of e-buses in Shenzen, for
+                        example, has helped to dramatically reduce the city’s
+                        greenhouse gas emissions. The shift to e-buses is also
+                        supported by the national government, which has huge
+                        ambitions in mass transit. Apart from electrification,
+                        China has invested in a national high-speed railway
+                        network, subways and bus rapid transit.
+                        </br>
+                        </br>
+                        In <strong>Europe</strong>, the number of e-buses is expected to
+                        grow considerably in the coming years. At least 19
+                        public transport operators and municipalities in 25
+                        European cities have outlined e-bus strategies for 2020.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">E-tracks.</div>
+                  <p class="text-right">
+                        The largest market for electric drive trucks is in <strong>Asia
+                            Pacific</strong>, responsible for around half of worldwide sales
+                        in 2016. However, electric trucks reached the highest
+                        market penetration in <strong>Western Europe</strong>. Although this is
+                        still a small market, with less than 10 000 units sold in
+                        2016, the use of electric trucks is expected to rise rapidly
+                        in certain sectors such as smaller service and delivery
+                        trucks (IRENA, 2017a).
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_sales_evolution.svg')}}"
+                        alt=""/>
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_sales_proportion.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>EV flexibility potential</h3>
+            
+            <p>
+                The uptake of smart charging for electric mobility is
+                expected to establish a positive feedback loop with
+                the integration of renewables, given that e-mobility is
+                a power-dense, mobile and controllable load. Studies
+                have shown that <strong>cars in general, including EVs, are
+                    parked for about 95% of their lifetime</strong>. This, combined with their storage capacity, could
+                make <strong>EVs an attractive flexibility solution to support
+                    system operation</strong>. They can become grid-connected
+                storage units with a potential to provide a broad range
+                of services to the system. In 2050, around 14 TWh of EV batteries would
+                be available to provide grid services, compared to
+                9 TWh of stationary batteries (IRENA, 2019b).
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    The typical electricity consumption of an EV driving
+                    15 000 km/year is about 3 000 kWh/year. Even with
+                    slow charging (i.e., charging with low power, say 3.7 kW),
+                    the total time needed to charge the yearly energy is
+                    about 10% of the time the car stands idle. Supposing
+                    that an EV is connected to charging infrastructure 100%
+                    of its parking time, this means that the yearly <strong>“flexibility
+                        window” for charging represents about 85% of the time</strong>.
+                    Theoretically, this would translate into a flexible energy
+                    output of about 3 000 kWh/year per car. In other words,
+                    EVs can be charged in a fraction of their parking time.
+                    Incentivising charging at times when electricity is the
+                    cheapest represents a significant opportunity for the
+                    power system and for EV owners.
+                    </br>
+                    </br>
+                    In practice, flexibility can be lower due to drivers’ time
+                    constraints, with fast charging, or when the vehicle
+                    is parked but not plugged in. The different factors
+                    that determine the amount of available flexible (dis-)
+                    charging energy from EVs available in the system are
+                    summarised in Figure: Factors determining available flexibility from a single EV.
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_factors_flexibility.svg')}}"
+                        alt=""/>
+            </div>
+
+            </br>
+            <h4>EVs providing power system flexibility today</h4>
+
+            <p>
+                Today, the EV fleet is very limited and the cars still have
+                relatively small batteries. EVs can already help maximise
+                self-consumption of on-site renewable production.
+                However, the flexibility that EVs provide to the grid is
+                limited. Their aggregated storage capacity today is
+                marginal from a power system perspective.
+                </br>
+                </br>
+                How long the car can be connected to the grid depends
+                on the immobilisation time, which is determined by the
+                type of vehicle and its use. Taxis or buses that travel a
+                high daily distance will have less immobilisation time
+                and therefore less flexibility than single cars used by
+                individuals. While an <strong>electric bus or truck</strong> may use 100%
+                or more of battery capacity every day, <strong>passenger cars
+                    and two-wheelers</strong> may use 40% to 50% of it.
+                </br>
+                </br>                
+                <u>When and where.</u>
+                </br>
+                </br>
+                When and where the vehicle is charged also depends on
+                the car type, its use, the <strong>geography</strong> and the <strong>availability
+                    of the infrastructure</strong>:
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Individual electric cars</div>
+                  <p class="text-right">
+                      Individual electric cars have predictable charging
+                        patterns:
+
+                      <ul>
+                        <li>
+                            <strong>Long-duration (> 4 hours)</strong> charging provides the
+                            highest flexibility for the system: most of the
+                            charging takes place at home during the evening,
+                            and at night and at the workplace during the day.
+                            EV drivers without home charging need assigned
+                            workplace charging.
+                        </li>
+                        </br>
+                        <li>
+                            <strong>Medium-duration (30 minutes to 2 hours)</strong>
+                            charging at shopping or leisure centres (movie
+                            theatre, gym, etc.) or short-duration (15 minutes
+                            to 1 hour) charging provide minimum flexibility for
+                            the system and are ill-suited for grid services: fast
+                            charging on highways is rather exceptional today
+                            as EVs are mostly not yet used for long trips (due
+                            mainly to the limited range issue and the lack of
+                            appropriate charging infrastructure).
+                        </li>
+                      </ul>
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Charging patterns of shared and commercial cars</div>
+                  <p class="text-right">
+                      Charging patterns of shared and commercial cars
+                        (e.g., taxi and other car fleets) may be less predictable,
+                        depending on the business models. Nevertheless,
+                        the transport service revenue is critical and the time
+                        of standing still should be reduced to a minimum,
+                        leading to smaller time with grid connection and
+                        higher charging power, compared to individual cars.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Electric bus</div>
+                  <p class="text-right">
+                      Electric bus charging patterns depend on the place of charging:
+                      <ul>
+                        <li>
+                            Long duration (> 4 hours) at the bus depot.
+                        </li>
+                        </br>
+                        <li>
+                            Medium duration (10 minutes) at the bus end-ofline.
+                        </li>
+                        </br>
+                        <li>
+                            Very short duration (flash charging) (30 seconds) at the bus stop.
+                        </li>
+                      </ul>
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            </br>
+            <p>
+                Depending on the <strong>geography</strong> and specifically the access
+                to a <strong>private parking space at the residential level</strong>, the
+                proportions among the charging locations might differ. In
+                less densely populated areas, most of the charging cycles
+                are performed at home or at work. In densely populated
+                cities with no charging points at home or at work, a larger
+                proportion of the charging could be done in public places
+                in the city. Large parking spaces or bus depots have more
+                technical opportunities and incentives to contribute to
+                energy flexibility than do disperse charging locations.
+            </p>
+
+            </br>
+            <h4>EVs providing power system flexibility by 2030</h4>
+
+            <p>
+                By 2030 individual ownership of vehicles will most likely
+                still prevail over car sharing. As a result, an <strong>increase in
+                    flexibility</strong> can be expected:
+
+                <ul>
+                <li><strong>More EVs available to the grid due to falling cost</strong>:
+                EVs get cheaper due to falling battery cost and
+                government policies, as outlined in the previous
+                section.</li>
+                </br>
+                <li><strong>Bigger batteries helping to overcome range
+                    anxiety</strong>: there will be more EVs with larger batteries
+                connected to the grid. Battery packs will be bigger –
+                increasing from 20-30 kWh currently to 40-60 kWh,
+                with ranges of around 300 km becoming widespread
+                in the next two years and growing even further.</li>
+                </br>
+                <li><strong>Cars, charging stations and smart charging and
+                    discharging functionalities</strong>: as standardisation
+                progresses and as the requirements for better
+                control of the charging power increase, the vehicles
+                and charging points will have smart charging options
+                including discharging as a common feature (provided
+                by auto manufacturers), and technically enabling
+                provision of ancillary services to the grid.</li>
+                </br>
+                <li>More opportunities for EV drivers to <strong>charge at
+                workplaces</strong>.</li>
+                </br>
+                <li><strong>Fast charging</strong> will remain limited as drivers will use
+                it mainly for long-distance trips and for necessary
+                top-ups given that enough range is available and as
+                long as charging at home remains cheaper. While
+                higher nominal charging capacity generally increases
+                the challenge of uncontrolled charging, daytime fast
+                charging could be aligned with grid needs in areas with
+                high solar production during the day.</li>
+            </ul>
+            </p>
+
+            </br>
+            <h4>EVs providing power system flexibility by 2050</h4>
+
+            <p>
+                Between 2030 and 2050, this picture could <strong>change
+                    substantially</strong>. Mobility business models such as <strong>mobilityas-
+                    a-service (MaaS)</strong> – i.e., seamless multimodal transport
+                – and technologies such as <strong>autonomous vehicles </strong>may
+                emerge and be broadly implemented, leading to a
+                shift from individual ownership of vehicles to fleet
+                management.
+                </br>
+                </br>
+                Studies have shown that “ride-sharing” could lead to
+                an <strong>increase in the number of kilometres</strong> driven as
+                the shift from public transport towards shared private
+                transport occurs at a larger scale. However, it also should
+                lead to lower use of private cars with low passenger
+                occupancy, which could in turn imply a reduction in the
+                net emissions of the transport system.
+                </br>
+                </br>
+                Nevertheless, downwards pressure on available
+                flexibility is likely to occur under this scenario, as:
+                <ul>
+                    <li><strong>Distance travelled by individual cars would increase</strong>,
+                    reducing the amount of time that they are idle,
+                    connected to the grid.</li>
+                    </br>
+                    <li>MaaS will also eventually impact the number of
+                    EVs in the system. The increase in <strong>EV sales would
+                        slow down</strong>: under the assumption that the EV
+                    revolution will precede the advent of an advanced
+                    MaaS ecosystem, new business models in MaaS
+                    will translate to downwards pressure on car sales
+                    for individuals after approximately 2030, following
+                    years of increasing market growth.</li>
+                    </br>
+                    <li><strong>Zones of strain on the local power grid can be created
+                        once charging is focused in hubs</strong>. These hubs may
+                    be relevant for centralised flexibility management in
+                    the night but still probably lower than with individual
+                    car ownership, as transport service optimisation
+                    will aim at maximum usage. Vehicle fleets will have
+                    to be steered towards an optimised fleet charging
+                    and routing, contributing to the goals of EV grid
+                    integration and optimised renewable energy use.</li>
+                </ul>
+            </p>
+            
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q7.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 7</legend>
+                            <p class="card-text">Cars are parked the 95% of the time, in case that during that time they are
+                                connected to a low intensity charger (3.7KW/h), which is the "flexibility window" to charge
+                                those cars?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q7.type.errors %}
+                                        {{ form_m2_ch9_q7.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q7.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q7.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q7.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q8.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 8</legend>
+                            <p class="card-text">In 2050, the expected installed capacity of <strong>stationary batteries</strong> is 9TWh, which is the
+                                expected installed capacity of <strong>EV batteries</strong>?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q8.type.errors %}
+                                        {{ form_m2_ch9_q8.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q8.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q8.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q8.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+        </div>
+    </section>
+
+<!--Section 3 (white)-->
+    <section id="charge" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>Smart charging</h2>
+
+            <h3>Impact on electricity capacity and demand</h3>
+            <p>
+                If EVs were charged simultaneously in an uncontrolled
+                way they could increase the peak demand on the grid,
+                contributing to overloading and the need for upgrades
+                at the distribution level. The extra load may even result
+                in the need for upgrades in the generation capacity
+                (or at least in an altered production cost profile). The
+                extent of possible impacts would depend on the power
+                system’s electricity mix, grid typology and penetration
+                of EVs, as demonstrated by various trials and studies
+                conducted globally.
+                </br>
+                </br>
+                The studies converge on <strong>three main conclusions</strong> about
+                the <strong>impacts of EVs on the power system</strong> and how these
+                impacts can be mitigated:
+                <ol>
+                    <li>
+                        <strong>Impact on electricity demand</strong> will be limited:
+                        <ul>
+                            <li>In a 100% electric mobility scenario for Europe, the
+                            energy needs of EVs might represent no more than
+                            10% to 15% of total electricity production. However,
+                            EV grid integration might lead to local power issues
+                            with increasing EV volumes (Eurelectric, 2015).</li>
+                            </br>
+                            <li>If all 2.7 million cars in Norway were EVs, they
+                            would only use 5-6% of the country’s annual
+                            hydropower output.</li>
+                            </br>
+                            <li>In a 25% electric mobility scenario for Germany, 10
+                            million EVs by 2035 would translate to an overall
+                            consumption increase of only 2.5-3%.</li>
+                            </br>
+                            <li>If all light-duty vehicles in the US were electric,
+                            they would have represented about 24% of the
+                            total electricity demand in the country in 2016.</li>
+                        </ul>
+                    </li>
+                    </br>
+                    <li>
+                        The <strong>impact on peak demand</strong>, however, can be much
+                        greater if the additional demand is not distributed
+                        smartly. For this, smart charging is key:
+                        <ul>
+                            <li>In a 10 million EV scenario for the UK by 2035,
+                            evening peak demand increases by 3 GW if
+                            charging is uncontrolled, but increases by only
+                            0.5 GW if charging is smart. With smart EV
+                            charging, the lowest price periods could see
+                            demand increase by 7 GW.</li>
+                            </br>
+                            <li>Modelling of EVs in New England showed that
+                            a 25% share of EVs in the system charged in an
+                            uncontrolled fashion would increase peak demand
+                            by 19%, requiring significant investment in grid and
+                            generation capacities. However, by spreading the
+                            load over the evening hours, the increase in peak
+                            demand could be cut to between 0% and 6%. And
+                            charging only at off-peak hours could avoid any
+                            increase at all in peak demand.</li>
+                        </ul>
+                    </li>
+                    </br>
+                    <li>
+                        The <strong>impact on local distribution grids</strong> might also be
+                        significant if not managed with smart charging:
+                        <ul>
+                            <li>Xcel Energy, Colorado in the US demonstrated
+                            that 4% of distribution transformers could be
+                            overloaded at EV market penetration of 5% if
+                            charging is aligned with peak load times.</li>
+                            </br>
+                            <li>The My Electric Avenue Project in the UK identified
+                            a need for 32% of distribution circuit upgrades with
+                            a 40-70% share of electrified cars.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </p>
+
+            </br>
+            <h3>Impact on grid infrastructure</h3>
+
+            <p>
+                EV charging will have an impact on <strong>distribution grid
+                    investments</strong>. The scope of grid investments (in terms
+                of cables and transformers) that will need to be made
+                in a given location will depend at least on the following
+                parameters:
+                <!--Ordered list-->
+                <ol>
+                    <li><strong>Congestion:</strong> such as in the local distribution network
+                    prior to any EV deployment.</li>
+                    </br>
+                    <li><strong>Simultaneity factor:</strong> as applied based on the size of
+                    each distribution grid. The simultaneity factor/coefficient
+                    measures the probability that a particular
+                    piece of equipment will need to be switched on at
+                    the same time as another piece of equipment. Every
+                    distribution system operator considers a different
+                    simultaneity factor.</li>
+                    </br>
+                    <li><strong>Load characteristics:</strong> for example, the impact of
+                    uncontrolled EV charging will be higher in locations
+                    with high shares of electric heating (thus leading to
+                    higher grid reinforcement). But if smart charging
+                    is used in such locations, it may be included with
+                    lower grid reinforcements than in locations where
+                    no electric heating is used, as the local grids are
+                    dimensioned for higher peaks.</li>
+                    </br>
+                    <li><strong>Generation assets connected at low voltage level:</strong>
+                    for example, integration of high shares of solar PV
+                    connected at low voltage level (e.g., in Germany)
+                    could be facilitated with smart charging, whereas in
+                    locations with no or very low shares of solar PV, EVs
+                    could increase the strain on local grids.</li>
+                    </br>
+                    <li><strong>Grid code limits and other regulations:</strong> for
+                    example, national grid codes define physical
+                    constraints in terms of both voltage and frequency
+                    variations that distribution system operators have
+                    to respect, and investment in grid reinforcement if
+                    these country-specific limits are exceeded due to EV
+                    charging.</li>
+                </ol>
+            <strong>Fast charging represents a challenge for grid
+                infrastructure development</strong>. The higher the power, the
+            more capacity you need from the distribution grid. In
+            addition, the locally deployed charging station/cables and vehicle must support this power. Both of those are
+            technologically feasible but come at a price:
+            </br>
+            <!--Ordered list-->
+            <ol>
+                <li>Vehicles require <strong>more expensive electronics</strong> and
+                protection devices.</li>
+                </br>
+                <li>Grid connection of fast-charging stations requires
+                <strong>bigger cables and transformers</strong>.</li>
+                </br>
+                <li>Such charging stations require more expensive
+                electronics and cooling as well as protecting devices.</li>
+                </br>
+                <li><strong> Active cooling of the charging cable is needed if
+                    very heavy cables are to be avoided</strong>. Increasing
+                voltage from today’s level will mitigate the need for
+                heavier cable and/or active cooling, but this is not
+                an optimal solution considering the interoperability
+                with the existing infrastructure (and with the existing
+                EVs).</li>
+            </ol>
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>EV charging impact on Hamburg's distribution grid.</u>
+			        </br>
+                    </br>
+                    Hamburg is currently the city with the highest number of charging points in Germany (several hundred
+                    charging points in households and 810 public charging points as of November 2018). The city expected to
+                    install 1 000 public charging points by the beginning of 2019. Electrification of public buses and EV growth
+                    are the most critical drivers of load development in the city. The majority of EVs will be in the suburbs where,
+                    in Hamburg’s case, the grid is weaker.
+                    </br>
+                    </br>
+                    The local distribution system operator, Stromnetz Hamburg, ran a load development analysis to identify
+                    critical situations for uncontrolled charging of EVs with charging point loads of 11 kW and 22 kW.<strong> A 9% EV
+                        share, corresponding to 60 000 EVs loading in private infrastructure, will cause bottlenecks in 15% of the
+                        feeders in the city’s distribution network</strong>.
+                    </br>
+                    </br>
+                    To avoid these critical situations, Stromnetz Hamburg assessed that investment needs for reinforcing the
+                    local grids would reach at least EUR 20 million. Stromnetz Hamburg is also exploring alternative solutions to
+                    address the problem. The key is to decrease the simultaneity, meaning decreasing the number of EVs that
+                    are charged at the same time on the same local grid. For that, a smart solution using digital technologies is
+                    being tested, which includes a real-time communication system that enables the distribution system operator
+                    to reduce the load of the charging points needed to address the problem. The 11 kW charging points, for
+                    example, can reduce their load from 16 amperes (A) to 8 A, allowing EVs to be charged but in a longer period
+                    of time.
+                </p>
+            </div>
+
+            <h3>Services provided by smartly charged EVs </h3>
+            <p>
+                Smart charging using vehicle-grid integration (VGI)
+                technologies is a means of managing EV loads. This is
+                done either by customers responding to price signals,
+                by the Electric vehicle supply equipment (EVSE) automated response to control signals
+                that react to the grid and market situations, or by a
+                combination of the two while respecting customers’
+                needs for vehicle availability. It consists of shifting
+                some charging cycles in time or modulating the power
+                in function of constraints (e.g., connection capacity,
+                user needs, real-time local energy production). Smart
+                charging therefore is a way of optimising the charging
+                process according to distribution grid constraints
+                and local renewable energy availability, as well as the
+                preferences of drivers and EVSE site hosts.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    If charged smartly, EVs can not only avoid adding stress
+                    to the local grid but also provide services to fill flexibility
+                    gaps both on the local level and on the system level
+                    (Figure: Potential range of flexibility services by EVs).
+                    </br>
+                    </br>
+                    The EVs can operate as grid-connected storage units
+                    with a potential to provide a broad range of services to
+                    the system. They could alternate their charging patterns
+                    to flatten peak demand, fill load valleys and support
+                    real-time balancing of grids by adjusting their charging
+                    levels.
+                    </br>
+                    </br>
+                    Smart charging not only mitigates EV-caused demand
+                    peaks but also flattens the load curve to better integrate
+                    VRE, both at the system level and locally, at the shorter
+                    term
+                    time scales. More specifically, adjusting charging
+                    patterns that today stand idle in parking for most of
+                    the time (90-95% of the time for most cars) could
+                    <strong>contribute to</strong>:
+
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_potential_flexibility.svg')}}"
+                        alt=""/>
+            </div>
+
+            <p>
+                <!--Ordered list-->
+                <ol>
+                    <li><strong>Peak shaving (system level/wholesale)</strong>: flattening
+                    the peak demand and filling the “valley” of demand
+                    by incentivising late morning/ afternoon charging in
+                    systems with large penetration of solar and nighttime
+                    charging that could be adjusted following nighttime
+                    wind production as cars are parked for longer
+                    time than they need to fully charge. Early-evening
+                    charging that may otherwise increase peak demand
+                    would be deferred in this way.</li>
+                    </br>
+                    <li><strong>Ancillary services (system and local levels /
+                        transmission and distribution system operators)</strong>:
+                    supporting real-time balancing of grids by adjusting
+                    the EV charging levels to maintain steady voltage and
+                    frequency.</li>
+                    </br>
+                    <li><strong>Behind-the-meter optimisation and “back-up
+                        power” (local level / consumers and prosumers)</strong>:
+                    this includes increasing self-consumption of locally
+                    produced renewable electricity as well as lowering
+                    dependence on the electricity grid and reducing the
+                    energy bill by buying cheap electricity from the grid
+                    at off-peak hours and using it to supply home when
+                    the electricity tariff is higher (during evenings).</li>
+                </ol>
+            </p>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Key technical terms for classifying battery technologies:</u>
+
+                    <ul>
+                        <li><strong>End of life (EoL)</strong>: moment when the battery
+                        retains only a fraction (typically 70%) of its
+                        initial capacity. It is expressed as a percentage
+                        of initial capacity.</li>
+                        </br>
+                        <li><strong>Depth of discharge (DoD)</strong>: the percentage
+                        (compared to full capacity) to which the
+                        battery can be discharged.</li>
+                        </br>
+                        <li><strong>State of charge (SoC)</strong>: the capacity of the
+                        battery expressed as a percentage of the full
+                        capacity at which the battery is during usage
+                        charge.</li>
+                        </br>
+                        <li><strong>Cycling rate (C-rate)</strong>: the rate of charge or
+                        discharge. 1C refers to a charge or discharge
+                        in 1 hour, 2C refers to 2 hours, and 0.5C refers
+                        to 30 minutes.</li>
+                    </ul>
+
+                </p>
+            </div>
+
+            <h3>Types of smart charging and their implementation</h3>
+
+            <p>
+                Smart charging includes different pricing and technical
+                charging options. The basic technical options are
+                summarised in Figure: Forms of smart charging.
+                </br>
+                </br>
+                Direct control mechanisms enabled by the EV and
+                the charging point will be necessary as a long-term
+                solution at higher penetration levels and for delivery
+                of close-to-real-time balancing and ancillary services. Such mechanisms range from basic switching on and
+                off of the charging or unidirectional control of vehicles
+                or EVSE (<strong>also called V1G</strong>) that allows for an increase or
+                decrease in the rate of charging, to more challenging
+                bidirectional <strong>vehicle-to-everything (V2X)</strong>.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_forms_smart_charging.svg')}}"
+                        alt=""/>
+                <div>
+                    For <strong>V2X</strong>, two specific configurations are particularly
+                    relevant:
+                    </br>
+                    <ul>
+                        <li><strong>Vehicle-to-home (V2H)</strong> or <strong>vehicle-to-building (V2B)</strong>
+                        do not typically directly affect grid performance.
+                        The EV is used as a residential back-up power supply
+                        during periods of power outage or for increasing self consumption
+                        of energy produced on-site (demand
+                        charge avoidance).</li>
+                        </br>
+                        <li><strong>Vehicle-to-grid (V2G)</strong> refers to providing services
+                        to the grid in the discharge mode. The utility /
+                        transmission system operator may be willing to
+                        purchase energy from customers during periods of
+                        peak demand, and/or to use the EV battery capacity
+                        for providing ancillary services, such as balancing
+                        and frequency control, including primary frequency
+                        regulation and secondary reserve.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>
+                In the
+                <strong>V1G</strong>, the driver, the EV charging site host or the
+                aggregator can be rewarded only for adjusting their
+                rate of charging up and down compared to the initial
+                charging power (3 kW is assumed for illustration). In
+                <strong>V2G</strong>, EVs can charge and discharge electricity from
+                and to the grid, respectively. The size of the “bids” for
+                grid services corresponds to the capabilities of the EV
+                and the requirements in the given market.
+            </p>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q9.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 9</legend>
+                            <p class="card-text">In a 100% electric mobility scenario for Europe, the energy needs of EVs might represent no more than
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q9.type.errors %}
+                                        {{ form_m2_ch9_q9.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q9.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q9.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q9.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q10.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 10</legend>
+                            <p class="card-text">If in New England, a 25% share of EVs in the system charged in an uncontrolled fashion would increase peak demand by
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q10.type.errors %}
+                                        {{ form_m2_ch9_q10.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q10.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q10.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q10.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+        </div>
+    </section>
+
+<!--Section 4 (Grey)-->
+    <section id="business" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Business models</h2>
+
+            <h3>E-mobility market actors</h3>
+            <p>
+                The e-mobility market includes the <strong>following segments</strong>:
+                <ul>
+                    <li><strong>EV sales</strong>: while most light-duty vehicles are sold via
+                    leasing, public procurement needs to be considered
+                    for public transport means such as buses.</li>
+                    </br>
+                    <li><strong>Mobility services</strong>: these services include e-car
+                    sharing, intermodal transport, fleet management,
+                    electromobility service provision and, increasingly,
+                    collection and analytics of data from drivers, fleet
+                    managers and charging stations.</li>
+                    </br>
+                    <li><strong>Electricity sales to power EVs</strong>: this includes
+                    electricity retail sales as well as re-selling by charging
+                    infrastructure providers.</li>
+                    </br>
+                    <li>Installation and maintenance of charging
+                    infrastructure.</li>
+                    </br>
+                    <li><strong>Charging station operations</strong> (smart charging / data
+                    management / billing).</li>
+                    </br>
+                    <li>E-roaming: this is key for interoperability of charging
+                    services as well as regional/national charging
+                    independence.</li>
+                    </br>
+                    <li><strong>Advanced grid services</strong> such as aggregation and
+                    V2G (emerging).</li>
+                </ul>
+                Many traditional as well as new actors from both the
+                mobility and energy sectors are active in this emerging
+                market. In addition to Tesla – with its vision of an
+                integrated mobility company stirring change in the sector
+                – new independent providers include<strong> e-car-sharing service providers</strong> (e.g., Zen Car and BlueIndy by Bolloré),
+                dedicated charging <strong>station developers</strong>, <strong>operators</strong>, <strong>data
+                    managers</strong>, <strong>e-roaming platform providers</strong>, as well as
+                providers and aggregators of advanced grid services.
+            </p>
+
+            <h3>Smart energy services provider and aggregator</h3>
+
+            <p>
+                The business model of monitoring and controlling large
+                number of resources together by aggregating them and
+                selling their energy and/or capacity in the wholesale or
+                ancillary services markets has been maturing for larger
+                loads and distributed generation. However, <strong>aggregation
+                    of batteries from EVs</strong> and offering services that EVs
+                can provide to the market have not yet been fully
+                commercialised.
+                </br>
+                </br>                
+                <strong>Profitability and competitiveness of EV
+                    flexibility</strong> with other flexibility sources at the system
+                level remains a key issue:
+                <ol>
+                    <li><strong>Price spreads</strong> in the system may be lowered –
+                    for example, by daytime solar PV generation – and
+                    may not rise again if there is sufficient flexibility in
+                    the system (low price spreads are expected in the
+                    German and Spanish day-ahead markets, but high
+                    ones are expected in the UK market).</li>
+                    </br>
+                    <li><strong>Revenues from ancillary services</strong> may not
+                    provide sufficient flexibility in all markets.  For instance, the calculation for
+                    Germany was based on a market volume of primary
+                    and secondary control of EUR 265 million for 2015,
+                    assuming 10 million EVs with 90% availability,
+                    representing a value of EUR 29 per EV per year.
+                    </br>
+                    </br>
+                    Notably, the demand for these services is currently
+                    limited to 660 MW, and these 10 million EVs would
+                    represent an approximate volume of 30 000 MW,
+                    thus pushing the prices even lower.</li>
+                    </br>
+                    <li><strong>EVs will compete with other types of
+                        decentralised flexibility such as demand-response
+                        resources</strong>, and with the used EV batteries themselves.
+                    Second-life EV batteries will be inexpensive and are
+                    already being deployed by automakers today.</li>
+                </ol>
+                </br>
+                <u>Types of EV flexibility.</u>
+            </p>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Unidirectional V1G</div>
+                  <p class="text-right">
+                      <strong>Unidirectional V1G</strong> could be handled by a charging point
+                        manager. If it were performed remotely, this could be
+                        done via a <strong>software-as-a-service (SaaS) structure</strong>, which
+                        could manage numerous charging points and other
+                        loads on a site. Alternatively, it can be implemented
+                        locally as within the charging infrastructure (e.g., local
+                        EV-PV synchronisation).
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">V2G and second-life batteries</div>
+                  <p class="text-right">
+                      <strong>V2G and second-life batteries</strong> operation <strong>require an
+                            aggregator</strong>. The original “niche” energy services
+                        provider and aggregator model will develop into an
+                        energy services platform provider, combining multiple
+                        VGI revenue streams and other energy products and
+                        services. Tailor-made combining of smart energy
+                        services / home and building energy management
+                        (smart charging, V2X) with V2G as part of a larger
+                        portfolio of aggregated distributed energy resources
+                        as well as second-life batteries will be commonplace,
+                        rather than a focus on a specific application as occurs
+                        today.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Virtual Power Plant</div>
+                  <p class="text-right">
+                      <strong>Virtual Power Plant </strong>operator Next Kraftwerke, and Jedlix,
+                        an electric vehicle (EV) aggregator and smart charging
+                        platform provider, have launched an international pilot
+                        project which uses EV batteries to deliver secondary
+                        control reserve to TennET, the transmission system
+                        operator in Netherlands. By connecting the EV to the Jedlix platform, Jedlix can coordinate user charging
+                        preferences and establish a live connection with the
+                        EV, making sure they are charged smartly. Depending
+                        on the charging preference, each EV can provide
+                        either positive or negative control reserves. Jedlix will
+                        be able to combine user preferences, car data, and
+                        charging station information to provide a continuous
+                        forecast of the available capacity. This is then used by
+                        Next Kraftwerke in the bidding process of TenneT for
+                        procuring grid services (NextKraftwerke, 2018).
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Vehicle-grid integration (VGI)</div>
+                  <p class="text-right">
+                      The current <strong>Vehicle-grid integration (VGI)</strong> is based largely on the provision of
+                        charging management software from developers of
+                        proprietary solutions (like AutoGrid or Nuvve) to utilities
+                        and fleets, sometimes operated by Original equipment manufacturer (OEMs). The energy
+                        services platform provider model is no longer B2B but
+                        integrates the software and provides a spectrum of B2C services. The case studies of Enel and Nissan (green box below)
+                        illustrate this emerging business strategy from the utility
+                        and the OEM perspectives, respectively.
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">Smart building “as-a-service”</div>
+                  <p class="text-right">
+                      But energy services platforms also may be integrated
+                        into other platforms and by other actors from
+                        other sub-sectors. For example, <strong>smart building
+                            “as-a-service”</strong> integrating energy management is
+                        gaining traction, and collecting data from occupants,
+                        aggregation and Vehicle-grid integration (VGI) back to the grid could be the
+                        next step, even if not the current focus. This space is
+                        currently dominated by electronics giants (Schneider
+                        Electric, Siemens, Panasonic). Siemens is using its
+                        building automation system Desigo in a research
+                        project integrating EVs into the energy management
+                        of the building (Siemens, 2017).
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    <u>Future energy services platform providers: Enel and Nissan strategies</u>
+                    </br>
+                    </br>
+                    In addition to developing charging infrastructure and bundled offers for home and public charging, Enel has
+                    invested in the development of an accessible DC V2X home charging station that charges and discharges at
+                    10 kW. Enel has participated in various pilot projects – for example, in the pilot with Nissan in the UK they have
+                    played the role of electricity supplier at the charging point, charging software provider as well as aggregator.
+                    </br>
+                    </br>
+                    In this pilot, <strong>EV clients received compensation</strong> in the form of a reduction in their electricity bill in exchange
+                    for provision of grid services, and, thanks to smart energy service, they locally optimise their consumption by
+                    increasing self-consumption of their locally generated solar energy and saving on the network charges. Enel
+                    integrated the purchased V2G power into its <strong>larger aggregated ancillary services portfolio</strong>, thus creating a
+                    “buffer” for uncertainties due to possible deviations in the schedules of individual vehicles, without directly
+                    controlling them. Enel is paid by the transmission and distribution system operators and shares the value with
+                    the client.
+                    </br>
+                    </br>                    
+                    The automaker <strong>Nissan</strong> also eyes valorisation of aggregated flexibility as an additional revenue stream. In
+                    January 2018 Nissan launched a new solar generation and energy storage system for domestic use in the
+                    UK (Nissan, 2018). The automaker claims that its solution will allow UK homeowners to <strong>increase the rate of
+                        self-consumption </strong>from on-site PV and cut energy bills by up to 66%. Over 880 000 UK homes already have
+                    solar panels and the market is growing. This new product is a further extension of <strong>xStorage Home</strong> that Nissan
+                    developed in partnership with Eaton with second-life EV batteries.
+                    </br>
+                    </br>
+                    In October 2017 Nissan announced a partnership with OVO Energy to launch a new offering combining
+                    the VNet capability of OVO with Nissan’s xStorage Home system to develop an OVO SolarStore and a V2G
+                    offering for private customers buying the latest Nissan LEAF (OVO Energy, 2017).
+                </p>
+            </div>
+
+            <h3>Questions</h3>
+
+                <div class="questions_css">
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q11.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 11</legend>
+                            <p class="card-text">The flexibility services provided by EV can be complemented/substituted by
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q11.type.errors %}
+                                        {{ form_m2_ch9_q11.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q11.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q11.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q11.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+                    <div class="question">
+                        <form method="POST" action="">
+                            {{ form_m2_ch9_q12.csrf_token }}
+                                <legend class="border-bottom mb-4">Question 12</legend>
+                            <p class="card-text">EV can provide flexibility services to the grid and to the buildings. Which
+                                type(s) of flexibility service(s) is(are) more related to buildings?
+                                    <strong>(chose one of the next options):</strong>
+                                </p>
+                                <div class="form-group">
+                                    {% if form_m2_ch9_q12.type.errors %}
+                                        {{ form_m2_ch9_q12.type(class="form-control form-control is-invalid") }}
+                                        <div class="invalid-feedback">
+                                            {% for error in form_m2_ch9_q12.type.errors %}
+                                                <span>{{ error }}</span>
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        {{ form_m2_ch9_q12.type(class="form-control form-control") }}
+                                    {% endif %}
+                                </div>
+                                </br>
+                                <div class="form-group border-bottom pb-3">
+                                    {{ form_m2_ch9_q12.submit(class="btn btn-outline-info")}}
+                                </div>
+                        </form>
+                    </div>
+
+        </div>
+    </section>
+
+<!--Section 2 (blue)-->
+    <section id="emobility" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>E-mobility outlook</h2>
+
+            <h3>Cost and competitiveness of EVs</h3>
+            <p>
+                Until now, the most crucial factor that has led to a
+                substantial cost decrease for EVs in the last few years
+                is the<strong> decline in battery pack costs</strong>. Improvements in
+                battery technologies have reduced the average price of
+                battery packs from USD 1 000/kWh in 2010 to around
+                USD 200/kWh in 2017 (UCS, 2017). Analysts expect a
+                further decrease in price to levels of USD 100/kWh in
+                2025 (McKinsey, 2014), which in turn would result in EVs
+                being competitive with ICE vehicles. As a rule of thumb,
+                this total cost of ownership parity between EVs and
+                conventional gasoline vehicles will be reached at battery
+                prices of around EUR 175/kWh (UCS, 2017).
+                </br>
+                </br>
+                Another notable factor that has helped to reduce EV
+                prices over the years is the increasing<strong> variety of models</strong>
+                being offered in the market. Whereas in 2010 early
+                customers interested in EVs could choose among only
+                a few limited options – such as the Nissan LEAF, the
+                Citroën C-Zero, etc. – today the range of models is more
+                extensive.
+            </p>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    <u>Total cost of ownership (TCO) comparison.</u>
+                    </br>
+                    </br>
+                    Figure: Total cost of ownership cars shows how the total cost of ownership (TCO) of diesel and EVs could
+                    evolve until 2050. The graph, although illustrative, aims
+                    to emphasise that in the medium term (the second half
+                    of the 2020s) EVs will eventually be more competitive
+                    than diesel vehicles even without subsidies and taxes.
+                    If that is the case, EVs could reach a global flee
+                    penetration of 7%(IEA, 2018a).
+                    </br>
+                    </br>
+                    The continued decrease in TCO is supported by the
+                    same trends described earlier and can be strengthened
+                    by<strong> two more observations</strong>. On the one hand, because of
+                    <strong>new mobility business models</strong> oriented to car-sharing
+                    practices that are expected by 2050, there will be a
+                    shift from privately owned cars to shared vehicles. This will inevitably increase the EV
+                    utilisation rate to ranges from 40 000 to 55 000 km per
+                    year, and will in turn increase the EV’s fuel cost savings
+                    in comparison with a diesel car driving the same yearly
+                    mileage.
+                    </br>
+                    </br>
+                    On the other hand, an<strong> unknown variable is how quickly
+                        the TCO of EVs will go down in comparison with diesel
+                        vehicles</strong>. This point could be influenced by the recent
+                    and upcoming wave of countries setting <strong>bans on fossil
+                        fuel vehicle sales</strong> by as early as 2025 (in the Netherlands)
+                    or by 2030 to 2040 (in France and the UK).
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_TCO.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h3>Outlook of batteries</h3>
+            
+            <p>
+                While <strong>Li-on
+                    will probably remain the prevalent technology until
+                    2030</strong>, potential breakthroughs in other technologies
+                may lead to its replacement in the long-term horizon.
+                </br>
+                </br>                
+                Two technologies that have already been commercialised
+                – for example, as minor technologies in e-buses for
+                around 10 years – are <strong>Zeolite Battery Research Africa
+                    (ZEBRA)</strong> and <strong>lithium-metal-polymer (LMP)</strong> battery
+                technologies.
+                </br>
+                </br>
+                <strong>Other technologies </strong>with lower maturity levels are
+                currently under development (only cells are sold, not
+                systems) and could be potentially disruptive if their
+                issues are solved, including:
+
+                <ul>
+                    <li>Li-ion systems with silicon (Si) as a negative electrode</li>
+                    </br>
+                    <li>Lithium-sulphur system (Li-S)</li>
+                    </br>
+                    <li>Sodium-ion batteries (Na-ion), which are raising
+                    interest due to the potential low cost and
+                    environmental friendliness</li>
+                    </br>
+                    <li>Metal-air batteries including aluminium-air (Al-air)
+                    and zinc-air (Zn-air)</li>
+                    </br>
+                    <li>Redox flow batteries for mobility applications.</li>
+                </ul>
+            </p>
+
+            <h3>Shared e-mobility: Mobility-as-a-service</h3>
+
+            <p>
+                Changing mobility needs will lead to the rise of business
+                models that could transform mobility systems over
+                the coming decades. Removing the pain points that
+                travellers face during their journeys could prove to be
+                a crucial opportunity for new businesses to appeal to
+                customers. A new concept is already paving the way
+                for these business opportunities to emerge, via a shift
+                from an ownership-centred approach of transport to
+                mobility options that are consumed as a service. This
+                service-centred mobility is called <strong>mobility as-a-service
+                (MaaS)</strong>.
+            </p>
+
+            <div class="text_image_css">
+                <img
+                src="{{url_for('static', filename='figures/se/ch9/EV_mobility_as_service.svg')}}"
+                        alt=""/>
+                <div>
+                    Mobility-as-a-service is a way to seamlessly combine
+                    transport alternatives from various providers (including
+                    shared mobility providers but beyond). MaaS goes
+                    beyond calculating the fastest path from one place to another and instead offers a one-stop shop for
+                    everything from optimised travel itineraries to payments.
+                    A MaaS offering thus consists of <strong>four complementary
+                        functionalities</strong>: <strong>trip planning</strong>, <strong>booking</strong>, <strong>payment</strong> and
+                    <strong>ticketing/billing</strong>.
+                    </br>
+                    </br>
+                    At the centre of the MaaS design are <strong>four main actors</strong>,
+                    each of them having a key role in providing the MaaS
+                    offering. These actors are the <strong>customers</strong>, the <strong>MaaS
+                        providers</strong>, the <strong>data providers</strong> and the <strong>transport operators</strong> (Figure: Simplified mobility-as-a-service value chain).
+                    </br>
+                    </br>
+                    Although customers have progressively
+                    adopted new mobility possibilities over the last decade,
+                    and while transport operators are already in place in
+                    many countries, MaaS providers and data providers
+                    remain almost non-existent. The following section and
+                    Figure 28 clarify the value that each step of the value
+                    chain offers to the customer.
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+<!--Section 3 (white)-->
+    <section id="hydrogen" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>Hydrogen versus Electric vehicles</h2>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    More information about hydrogen vs. electric vehicles in the link:
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="https://www.youtube.com/watch?v=f7MzFfuNOtY" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">The Truth about Hydrogen</a>
+                   </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    
+{% endblock content %}

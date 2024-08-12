@@ -1,0 +1,32 @@
+{% extends "gd_course/NHH_2024_group2/layout.html" %} {% block content %}
+<section class="contact-section">
+  <div class="contact-container">
+    <h1>Contact us!</h1>
+    <p>Here you can contact us if you have questions or feedback.</p>
+    <div class="contact-info">
+      <div class="info">
+        <h2>Address</h2>
+        <p>Helleveien 30, 5045 Bergen</p>
+      </div>
+      <div class="info">
+        <h2>Phone</h2>
+        <p>+47 123 45 678</p>
+      </div>
+      <div class="info">
+        <h2>Email</h2>
+        <p>info@greenjourney.com</p>
+      </div>
+    </div>
+    <form class="contact-form">
+      <input type="text" id="name" name="name" placeholder="Name" />
+      <input type="email" id="email" name="email" placeholder="Email" />
+      <textarea
+        id="message"
+        name="message"
+        placeholder="Write your message here..."
+      ></textarea>
+      <button type="submit">SEND</button>
+    </form>
+  </div>
+</section>
+{% endblock content %}

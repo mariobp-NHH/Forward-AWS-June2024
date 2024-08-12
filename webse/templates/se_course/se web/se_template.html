@@ -1,0 +1,328 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section>
+        <header class="header_css", style="background-color=#f2d95c">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Chapter 1. Frame </span></h1>
+                    <p class="mb-1">
+                      This chapter frames .....
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href=https://energyio.org/materialch1.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://energyio.org/presentationch1.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                    </div>
+                    </br>
+
+                   <div class="list-group", style="padding: 15px 0px;">
+                      <a href="#section..." class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Introduction</h5>
+                        </div>
+                        <p class="mb-1">...</p>
+
+                      </a>
+                      <a href="#section..." class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Section ....</h5>
+                        </div>
+                        <p class="mb-1">....</p>
+                      </a>
+                       <a href="#section...." class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Section...</h5>
+                        </div>
+                        <p class="mb-1">....</p>
+                      </a>
+                   </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch1.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="introduction" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2 style="justify-content:center;">Introduction</h2>
+
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h3 style="justify-content:center;">Exercises</h3>
+                <p>...
+                </br>
+			    ..
+                </p>
+                <div class="container_buttons_links_section_intro">
+                   <div class="btn">
+                       <a href="{{ url_for('se_module.se_web_ch3_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 1</a>
+                   </div>
+                   <div class="btn">
+                       <a href="{{ url_for('se_module.se_web_ch3_ex1') }}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Exercise 2</a>
+                   </div>
+                </div>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+<!--Section 1-->
+    <section id="section1" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Section....</h2>
+
+            <h3>Subsection</h3>
+
+            <!--External link-->
+            <div class="external_links_css">
+                <p>
+                    ...
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Link 1</a>
+                   </div>
+                   <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Link 2</a>
+                   </div>
+                </div>
+                <p>
+                    ...
+                </p>
+                <div class="container_buttons_links_external_links_css">
+                   <div class="btn">
+                       <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Link 3</a>
+                   </div>
+                </div>
+            </div>
+
+            <!--Box information-->
+            <div class="box_information_css">
+                <p>
+                    ...
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Link 1</a>
+                   </div>
+                   <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Link 2</a>
+                   </div>
+                </div>
+                <p>
+                    ...
+                </p>
+                <div class="container_buttons_links_box_information_css">
+                   <div class="btn">
+                       <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Link 3</a>
+                   </div>
+                </div>
+            </div>
+
+            <!--Modal-->
+            <div class="btn">
+                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#extra1Modal">Extra Q1</a>
+            </div>
+            <!-- Modal Video1 -->
+            <div class="modal fade" id="extra1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                  <div class="modal-header">
+                    <h5 class="modal-title", style="color:black">....</h5>
+                  </div>
+
+                  <div class="modal-body", style="color:black">
+                    <p>
+                        ...
+                    </p>
+                  </div>
+
+                  <div class="modal-footer">
+                    <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            <!--Unumerated list-->
+            <ul>
+                <li>...</li>
+                </br>
+                <li>...</li>
+                </br>
+                <li>...</li>
+                </br>
+                <li>...</li>
+                </br>
+                <li>...</li>
+            </ul>
+
+            <!--Ordered list-->
+            <ol type="a">
+                <li>...</li>
+                </br>
+                <li>...</li>
+                </br>
+                <li>...</li>
+                </br>
+                <li>...</li>
+                </br>
+                <li>...</li>
+            </ol>
+
+            <!--Text-Image-->
+            <div class="text_image_css">
+                <div>
+                    ....
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/se/ch3/ch3_icon.svg')}}"
+                        alt=""/>
+            </div>
+
+            <h2>Section title</h2>
+            <p class="text-right">
+                ...
+            </p>
+
+            <!--No numerated list (table)-->
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <h5 class="mb-1">...</h5>
+                  <p class="mb-1">
+                      ...
+                  </p>
+              </li>
+              <li class="list-group-item">
+                  <h5 class="mb-1">...</h5>
+                  <p class="mb-1">
+                      ...
+                  </p>
+              </li>
+            </ul>
+
+            <!--Enumerated list (table)-->
+            <ol class="list-group list-group-numbered">
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">List 1...</div>
+                  <p class="text-right">
+                      ...
+                  </p>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                  <div class="fw-bold">List 2...</div>
+                  <p class="text-right">
+                      ...
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+
+            <!--Modal-->
+            <div class="btn">
+                <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;" data-toggle="modal" data-target="#instructionsModalVideo3">Video 3</a>
+            </div>
+            <!-- Modal Video2 -->
+            <div class="modal fade" id="instructionsModalVideo3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                  <div class="modal-header">
+                    <h5 class="modal-title", style="color:black">Video 3: Navbar, CSS file.</h5>
+                  </div>
+
+                  <div class="modal-body", style="color:black">
+                    <p>Please, read the instructions in the webpage of chapter 3, section (Navbar, CSS file),
+                        before to watch the video of this section.</p>
+                  </div>
+
+                  <div class="modal-footer">
+                    <a href="https://youtu.be/z-YjO6_9HZY" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Video 3</a>
+                    <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Close</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+            </br>
+
+            <h3>Questions:</h3>
+            <div class="questions_css">
+                <div class="question">
+                    ...
+                </div>
+                <div class="question">
+                    ...
+                </div>
+            </div>
+        </div>
+    </section>
+<!--Section 2 (blue)-->
+    <section id="section2" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#007bff;">
+        <div class="container">
+            <h2>Section ....</h2>
+            <p>
+                ...
+            </p>
+        </div>
+    </section>
+
+<!--Section 3 (white)-->
+    <section id="section3" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <h2>Section ....</h2>
+            <p>
+                ...
+            </p>
+        </div>
+
+    </section>
+<!--Section 4 (Grey)-->
+    <section id="section4" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Section ....</h2>
+            <p>
+                ....
+            </p>
+
+
+            <h3>Questions:</h3>
+            <div class="questions_css">
+                <div class="question">
+                    ...
+                </div>
+                <div class="question">
+                    ...
+                </div>
+            </div>
+
+        </div>
+    </section>
+{% endblock content %}

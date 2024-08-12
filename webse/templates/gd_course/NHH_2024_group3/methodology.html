@@ -1,0 +1,136 @@
+{% extends "gd_course/NHH_2024_group3/layout.html" %}
+{% block content %}
+  
+<!-- Header -->
+<section class="section_header_methodology">
+    <section class="green-transportation-image-banner">
+        <div> 
+          <h1 style="font-size:55px;"><span class="text-logo">Methodology</span></h1>
+          <p style="text-align:center;">
+            Our methodology provides some background on how the carbon emissions are calculated when a user reports its transportation data in our Carbon Application.
+          </p>
+          <div class="container_buttons_links_header">
+            <div class="hero-btns">
+                <a href="{{ url_for('static', filename='gd_course_NHH_2024_group3/Essay.pdf') }}" class="btn">Paper</a>
+                <a href="{{url_for('gd_course_NHH_2024_group3.carbon_app_home')}}" class="btn">Carbon App</a>
+            </div>
+          </div>  
+        </div>
+      </div> 
+    </section>
+</section> 
+
+<!-- Methodology -->
+<section class="methodology-section">
+    <div class="container">
+        <div class="methodology-intro">
+            <h1>Methodology</h1>
+            <p>
+                The amount of CO2 emission is calculated by the following formula: <br>
+                \[
+                a = d*\frac{ef}{p}
+                \]   <br>
+                Where: <br>
+                a: the CO2 emission <br>
+                d: the distance traveled (km) <br>
+                ef: the emission factor <br>
+                p: the number of passengers <br>
+            </p>
+        </div>
+        <div class="transport-options">
+            <h1>Transportation Options</h1>
+            <p>
+                We offer the following transportation options. Emissions during manufacture, disposal, and maintenance are not considered.
+            </p>
+        </div>
+
+        <h3>Electric Vehicles</h3>
+        <div class="transport-grid">
+            <div class="transport-card-electric">
+                <i class="fa-solid fa-car"></i>
+                <h3>Electric Car</h3>
+                <p>50g of CO2/km</p>
+            </div>
+            <div class="transport-card-electric">
+                <i class="fa-solid fa-bus"></i>
+                <h3>Electric Bus</h3>
+                <p>650g of CO2/km</p>
+            </div>
+        </div>
+
+        <h3>Fossil Fuel Vehicles</h3>
+        <div class="transport-grid">
+            <div class="transport-card-fossil">
+                <i class="fa-solid fa-car"></i>
+                <h3>Petrol Car</h3>
+                <p>156.47g of CO2/km</p>
+            </div>
+            <div class="transport-card-fossil">
+                <i class="fa-solid fa-motorcycle"></i>
+                <h3>Motorcycle</h3>
+                <p>85.20g of CO2/km</p>
+            </div>
+            <div class="transport-card-fossil">
+                <i class="fa-solid fa-car"></i>
+                <h3>Diesel Car</h3>
+                <p>130.09g of CO2/km</p>
+            </div>
+            <div class="transport-card-fossil">
+                <i class="fa-solid fa-truck-pickup"></i>
+                <h3>Light Truck (pickup)</h3>
+                <p>181.85g of CO2/km</p>
+            </div>
+            <div class="transport-card-fossil">
+                <i class="fa-solid fa-truck-moving"></i>
+                <h3>Heavy Truck (highway truck)</h3>
+                <p>1,000.90g of CO2/km</p>
+            </div>
+            <div class="transport-card-fossil">
+                <i class="fa-solid fa-bus"></i>
+                <h3>Bus</h3>
+                <p>855.40g of CO2/km</p>
+            </div>
+        </div>
+        <h3>Air Travel</h3>
+        <div class="transport-grid">
+            <div class="transport-card-plane">
+                <i class="fa-solid fa-paper-plane"></i>
+                <h3>Regional Jet</h3>
+                <p>12,635g of CO2/km</p>
+            </div>
+            <div class="transport-card-plane">
+                <i class="fa-solid fa-plane"></i>
+                <h3>Narrowbody</h3>
+                <p>15,480g of CO2/km</p>
+            </div>
+            <div class="transport-card-plane">
+                <i class="fa-solid fa-plane-up"></i>
+                <h3>Widebody</h3>
+                <p>25,810g of CO2/km</p>
+            </div>
+        </div>
+        <h3>Boat</h3>
+        <div class="transport-grid">
+            <div class="transport-card-ferry">
+                <i class="fa-solid fa-ferry"></i>
+                <h3>Ferry</h3>
+                <p>226g of CO2/km</p>
+            </div>
+        </div>
+        <h3>Other</h3>
+        <div class="transport-grid">
+            <div class="transport-card-walk">
+                <i class="fa-solid fa-person-walking"></i>
+                <h3>Walk</h3>
+                <p>0g of CO2/km</p>
+            </div>
+            <div class="transport-card-walk">
+                <i class="fa-solid fa-person-biking"></i>
+                <h3>Bike (manual)</h3>
+                <p>0g of CO2/km</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

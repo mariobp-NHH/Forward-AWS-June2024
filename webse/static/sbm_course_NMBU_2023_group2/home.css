@@ -1,0 +1,158 @@
+/* Colors 
+Home, section 1 (head, background): #9fa7bf
+Home, section 1 (head, boxes): #568c63
+Home, section 2 (developers, background): #c5c8d9 
+Home, section 2 (developers, boxes): #49736f
+Home, section 2 (developers, boxes, writing): #333
+ */
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+/* Section header_home */
+
+.section_header_home {
+  background-image: url('https://www.rcplondon.ac.uk/sites/default/files/media/Webp.net-resizeimage%20%281%29_0.png');/* Image for Section header_home*/
+  background-color: #9fa7bf; 
+}
+
+.header_home {
+  display: flex;  
+  align-items: start;
+}
+
+
+.header_home .box {
+  flex: 1;
+  color: #9fa7bf;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header_home .box:nth-of-type(1) {
+  flex-grow:2;
+}
+.header_home .box:nth-of-type(2) {
+  flex-grow:1;
+}
+.container_buttons_links_header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_header_home a:hover {
+  color: hsl(225, 20%, 69%);
+}
+.container_buttons_links_header_home btn {
+  width: 100px;
+  height: 100px;
+  background: #333;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+/* Section developers */
+
+
+.section_developers {
+  background-color: rgba(1,126,68,255);
+  
+}
+
+.developers {
+  display: flex;  
+  align-items: start;
+  background: #067d42;
+}
+
+.developers .box {
+  flex: 1;
+  background: #94c947;
+  color: #333;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  
+}
+.developers .box:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(3) {
+  flex-grow:4;
+}
+.developers .box2 {
+  flex: 1;
+  background: #94c947;
+  color: #333;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.developers .box2:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(3) {
+  flex-grow:4;
+  background: #c5c8d9;
+}
+.section_container_buttons_developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+/* Color of the linkedin box  */
+.btn_developers {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #fff;
+  border: 2px solid  #fff;
+}
+.btn_developers:hover {
+  color: #fff;
+  background-color: #c5c8d9;
+  border: 2px solid #c5c8d9;
+  text-decoration: none;
+}
+
+
+@media (max-width:768px) { 
+  .header_home {
+    flex-direction: column;
+  } 
+  .developers {
+    flex-direction: column;
+  } 
+  .section_container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

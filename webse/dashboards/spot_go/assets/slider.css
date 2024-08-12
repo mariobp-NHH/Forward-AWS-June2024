@@ -1,0 +1,157 @@
+#ah_s
+.rc-slider-track {
+	background-color: rgb(42, 157, 143);
+}
+#ah_s
+.rc-slider-dot-active {
+	border-color: rgb(42, 157, 143);
+	border: solid 2px rgb(42, 157, 143);
+}
+#ah_s
+.rc-slider-handle {
+	background-color: rgb(42, 157, 143);
+	border-color: rgb(42, 157, 143);
+}
+#ah_s
+.rc-slider-handle:hover {
+	border-color: rgb(42, 157, 143);
+}
+#ah_s
+.rc-slider-handle-active:active {
+	border-color: rgb(42, 157, 143);
+}
+
+#al_s
+.rc-slider-track {
+	background-color: rgb(233, 196, 106);
+}
+
+#al_s
+.rc-slider-dot-active {
+	border-color: rgb(233, 196, 106);
+	border: solid 2px rgb(233, 196, 106);
+}
+
+#al_s
+.rc-slider-handle {
+	background-color: rgb(233, 196, 106);
+	border-color: rgb(233, 196, 106);
+}
+
+	#al_s
+	.rc-slider-handle:hover {
+		border-color: rgb(233, 196, 106);
+	}
+
+#al_s
+.rc-slider-handle-active:active {
+	border-color: rgb(233, 196, 106);
+}
+
+#ah_go
+.rc-slider-track {
+	background-color: rgb(38, 70, 83);
+}
+
+#ah_go
+.rc-slider-dot-active {
+	border-color: rgb(38, 70, 83);
+	border: solid 2px rgb(38, 70, 83);
+}
+
+#ah_go
+.rc-slider-handle {
+	background-color: rgb(38, 70, 83);
+	border-color: rgb(38, 70, 83);
+}
+
+	#ah_go
+	.rc-slider-handle:hover {
+		border-color: rgb(38, 70, 83);
+	}
+
+#ah_go
+.rc-slider-handle-active:active {
+	border-color: rgb(38, 70, 83);
+}
+
+#al_go
+.rc-slider-track {
+	background-color: rgb(244, 162, 97);
+}
+
+#al_go
+.rc-slider-dot-active {
+	border-color: rgb(244, 162, 97);
+	border: solid 2px rgb(244, 162, 97);
+}
+
+#al_go
+.rc-slider-handle {
+	background-color: rgb(244, 162, 97);
+	border-color: rgb(244, 162, 97);
+}
+
+#al_go
+.rc-slider-handle:hover {
+	border-color: rgb(244, 162, 97);
+	}
+
+#al_go
+.rc-slider-handle-active:active {
+	border-color: rgb(244, 162, 97);
+}
+
+#alpha1
+.rc-slider-track {
+	background-color: rgb(42, 157, 143);
+}
+
+#alpha1
+.rc-slider-dot-active {
+	border-color: rgb(42, 157, 143);
+	border: solid 2px rgb(42, 157, 143);
+}
+
+#alpha1
+.rc-slider-handle {
+	background-color: rgb(42, 157, 143);
+	border-color: rgb(42, 157, 143);
+}
+
+#alpha1
+.rc-slider-handle:hover {
+		border-color: rgb(42, 157, 143);
+	}
+
+#alpha1
+.rc-slider-handle-active:active {
+	border-color: rgb(42, 157, 143);
+}
+
+#alpha2
+.rc-slider-track {
+	background-color: rgb(38, 70, 83);
+}
+
+#alpha2
+.rc-slider-dot-active {
+	border-color: rgb(38, 70, 83);
+	border: solid 2px rgb(38, 70, 83);
+}
+
+#alpha2
+.rc-slider-handle {
+	background-color: rgb(38, 70, 83);
+	border-color: rgb(38, 70, 83);
+}
+
+#alpha2
+	.rc-slider-handle:hover {
+		border-color: rgb(38, 70, 83);
+}
+
+#alpha2
+.rc-slider-handle-active:active {
+	border-color: rgb(38, 70, 83);
+}

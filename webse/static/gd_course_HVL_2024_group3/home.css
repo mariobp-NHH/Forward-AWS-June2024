@@ -1,0 +1,269 @@
+/* Colors 
+Home, section 1 (head, background): #9fa7bf
+Home, section 1 (head, boxes): #568c63
+Home, section 2 (developers, background): #c5c8d9 
+Home, section 2 (developers, boxes): #49736f
+ */
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.hidden-element {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 2s ease-in-out;
+}
+
+.visible-element {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/*video */
+.video1 {
+  margin: 0px;
+  padding: 0;
+  z-index: 3;
+}
+
+.flex-container1 {
+  display: flex;
+  justify-content: center; /* Sentrerer innholdet horisontalt */
+  align-items: center; /* Sentrerer innholdet vertikalt */
+  width: 100vw; /* 100% av viewportens bredde */
+  height: 80vh; /* 100% av viewportens høyde */
+  margin: 0px;
+  padding: 0px ;
+}
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  overflow: cover;
+}
+
+.background-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* dette sørger for at videoen dekker hele området */
+}
+
+
+.content_background {
+  position: center;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+.content_background h1{
+  position: center;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+.glowing-text {
+  text-shadow: 0 0 10px #568c63, 0 0 20px #568c63, 0 0 30px #568c63, 0 0 40px #568c63, 0 0 70px #568c63, 0 0 80px #568c63, 0 0 100px #568c63, 0 0 150px #568c63; /* Glødende skygge-effekt */
+}
+
+
+.header_home {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Endre høyde etter behov*/
+  overflow: hidden; /* Hindrer innhold fra å gå utenfor containeren */
+}
+
+.header_home .box {
+  position: absolute;
+  width: 41%; /* Tilpasset bredde */
+}
+
+.header_home .text-box {
+  bottom: 15%; /* Reduserer verdien for å "løfte" tekstboksen */
+  left: 10%;
+  height: 60%; /* Mindre høyde enn bildeboksen */
+  background-color: #c5c8d930;
+  padding: 20px;
+  z-index: 1; /* Sørger for at tekstboksen overlapper bildeboksen */
+  display: flex;
+  align-items: center; /* Sentrerer teksten vertikalt */
+  justify-content: center; /* Sentrerer teksten horisontalt */
+  border-radius: 15px;
+  color: #fff;
+}
+
+.header_home .image-box {
+  top: 17%; /* Plasserer bildeboksen høyere enn tekstboksen */
+  right: 10%;
+  height: 60%; /* Gjør bildeboksen høyere */
+  z-index: 2;
+}
+
+.header_home .image-box img {
+  width: 50%;
+  height: auto;
+  display: block; /* Hindrer uønsket margin/padding */
+}
+
+.header_team {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Endre høyde etter behov*/
+  overflow: hidden; /* Hindrer innhold fra å gå utenfor containeren */
+}
+
+.header_team .box {
+  position: absolute;
+  width: 52%; /* Tilpasset bredde */
+}
+
+.header_team .text-box {
+  bottom: 15%; /* Reduserer verdien for å "løfte" tekstboksen */
+  right: 5%;
+  height: 65%; /* Mindre høyde enn bildeboksen */
+  background-color: #c5c8d930;
+  padding: 20px;
+  z-index: 1; /* Sørger for at tekstboksen overlapper bildeboksen */
+  display: flex;
+  align-items: center; /* Sentrerer teksten vertikalt */
+  justify-content: center; /* Sentrerer teksten horisontalt */
+  border-radius: 15px;
+  color: #fff;
+}
+
+.header_team .image-box {
+  top: 19%; /* Plasserer bildeboksen høyere enn tekstboksen */
+  left: 5%;
+  height: 60%; /* Gjør bildeboksen høyere */
+  z-index: 2;
+}
+
+.header_team .image-box img {
+  width: 50%;
+  height: auto;
+  display: block; /* Hindrer uønsket margin/padding */
+}
+
+/* Section developers */
+
+.developers {
+  display: table;  
+  align-items: start;
+  padding: 100px;
+  width: 100%;
+}
+
+.developers .box {
+  flex: 1;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  display: table-cell;
+  border-style:inset;
+  background-color: #c5c8d930;
+}
+.developers .box:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(3) {
+  flex-grow:4;
+}
+.developers .box2 {
+  flex: 1;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  display: table-cell;
+  border-style:inset;
+  background-color: #c5c8d930;
+}
+.developers .box2:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(3) {
+  flex-grow:4;
+}
+.developers .box3 {
+  flex: 1;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  display: table-cell;
+  border-style:inset;
+  background-color: #c5c8d930;
+}
+.developers .box3:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box3:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box3:nth-of-type(3) {
+  flex-grow:4;
+}
+.section_container_buttons_developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_developers {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #568c63;
+  border: 2px solid  #c5c8d9;
+}
+.btn_developers:hover {
+  color: #fff;
+  background-color: #c5c8d9;
+  border: 2px solid #c5c8d9;
+  text-decoration: none;
+}
+
+
+@media (max-width:768px) { 
+  .header_home {
+    flex-direction: column;
+  } 
+  .developers {
+    flex-direction: column;
+  } 
+  .section_container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

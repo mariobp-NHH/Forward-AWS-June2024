@@ -1,0 +1,143 @@
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.left-block,
+.right-block {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 100px;
+}
+
+.left-block {
+  flex: 1;
+  max-width: 40%;
+}
+
+a.cta {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #fadd76;
+  text-decoration: none;
+  color: #10321c;
+  max-width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+a.cta:hover {
+  background-color: #ffa500;
+}
+
+.right-block {
+  flex: 1;
+  max-width: 40%;
+  align-items: center;
+}
+
+img {
+  max-width: 90%;
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50px;
+  opacity: 0.9;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-block,
+  .right-block {
+    margin: 10px 0;
+    max-width: 90%;
+  }
+}
+
+/* Developers section */
+.dev_section {
+  background-color: #d9f1dd;
+  height: auto;
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  align-items: flex-start; /* Alignement en haut pour éviter la mise en page centrée verticalement */
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Permettre le passage à la ligne */
+}
+
+.dev_img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 40px 0px 40px 40px;
+  transition: 0.3s;
+}
+
+.dev_blocks:hover .dev_img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 40px;
+}
+
+.dev_blocks {
+  position: relative;
+  height: 320px;
+  width: 290px;
+  max-width: calc(
+    100% - 60px
+  ); /* Largeur maximale pour éviter le débordement sur les petits écrans */
+  background-color: #cae4ce;
+  border-radius: 40px;
+  margin-right: 25px;
+  margin-left: 25px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  box-shadow: 10px 5px 30px rgba(16, 50, 28, 0.2);
+}
+
+.dev_blocks:hover {
+  box-shadow: 10px 5px 30px rgba(16, 50, 28, 0.6);
+}
+
+.dev_pic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.dev_name {
+  margin-top: 10px;
+}
+
+.dev_linkedin i {
+  position: absolute;
+  top: 35px;
+  right: 30px;
+  color: #10321c;
+  transition: color 0.3s;
+}
+
+.dev_linkedin i:hover {
+  color: #ffa500;
+}
+
+/* METH */
+
+.methodology_container{
+  max-width: 90%;
+  margin: 100px;
+}

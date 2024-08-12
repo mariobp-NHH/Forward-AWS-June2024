@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 372.49 456.29">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #231f20;
+        font-family: MSReferenceSansSerif, 'MS Reference Sans Serif';
+        font-size: 18.57px;
+      }
+
+      .cls-2 {
+        letter-spacing: 0em;
+      }
+
+      .cls-3 {
+        fill: #cad8d8;
+        stroke: #0a3959;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="cls-3" x=".5" y=".5" width="371.49" height="455.29" rx="19.75" ry="19.75"/>
+    <image width="572" height="667" transform="translate(17.12 51.61) scale(.59)" xlink:href="transmission_bidding_zones.png"/>
+  </g>
+  <text class="cls-1" transform="translate(73.95 28.75)"><tspan x="0" y="0">Bidding </tspan><tspan class="cls-2" x="75.93" y="0">z</tspan><tspan x="85.58" y="0">ones in Europe</tspan></text>
+</svg>

@@ -1,0 +1,35 @@
+ /*Container text-Image*/
+.text_image_css {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.text_image_css img {
+    max-width: 600px;
+    padding: 15px 20px;
+}
+
+@media (max-width: 650px) {
+.text_image_css {
+    flex-direction: column;
+    padding-top: 20px;
+    text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

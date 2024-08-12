@@ -1,0 +1,390 @@
+{% extends "aab_course/aab_course_layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section>
+  <header class="header_css">
+    <div class="container">
+        <div>
+            <h1> <span class="text-warning"> Ch3. Accounting and Digitalization </span></h1>
+            <p class="mb-1">
+              In this chapter, we study the role of Audit Data Analytics (ADA) transforming the audit system in companies. 
+            </p>
+            </br>
+
+            <div class="container_buttons_links_header">
+              <div class="btn">
+                  <a href="#"  data-toggle="modal" data-target="#paper_Modal" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-regular fa-newspaper"></i> Material</a>
+                  <a href="#"  data-toggle="modal" data-target="#presentation_Modal" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-person-chalkboard"></i> Presentation</a>
+                  <a href="#"  data-toggle="modal" data-target="#carbon_app_instructions", class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-list"></i> Instructions</a>
+              </div>
+            </div>  
+
+            <!-- Modal Instructions -->
+            <div class="modal fade" id="carbon_app_instructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+          
+                    <div class="modal-header">
+                    <h5 class="modal-title", style="color:black; text-align: center;">Ch3, instructions</h5>
+                    </div>
+          
+                    <div class="modal-body", style="color:black">
+                      <p style="text-align: left;">
+                        In this chapter we will study one paper that study the implementation of <strong>Audit Data Analytics (ADA)</strong> in the Norwegian companies. You should read the material, and if you have time, you can read also the paper.
+                      </p>
+                    </div>
+          
+                    <div class="modal-footer">
+                    <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                    </div>
+          
+                </div>
+                </div>
+            </div>
+            
+            <!-- Modal Paper -->
+            <div class="modal fade" id="paper_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg " style="height: 80%;" >
+              <div class="modal-content" style="height:100%">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <iframe id="paper_frame" src="/static/material/aab_course/ch3/ch3_material.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+              </div> 
+
+              <!-- Modal Presentation -->
+            <div class="modal fade" id="presentation_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg " style="height: 80%;" >
+              <div class="modal-content" style="height:100%">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Presentation</h5>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <iframe id="presentation_frame" src="/static/material/aab_course/ch3/ch3_presentation.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+              </div> 
+
+            <div class="list-group", style="padding: 15px 0px;">
+              <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Introduction</h5>
+                </div>
+                <p class="mb-1">
+                    In this section, we frame the discussion by studying how can Audit Data Analytics (ADA) be useful for companies? and which are the most popular ADA tools in Norwegian companies?
+                </p>
+
+              </a>
+              <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">What is Audit Data Analytics (ADA)?</h5>
+                </div>
+                <p class="mb-1">
+                  In this section, we define Audit Data Analytics (ADA), we provides some general examples and some concrete examples used in the Norwegian companies. We also study the main benefits from the use fo ADA.
+                </p>
+              </a>
+              <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Eilifsen et al., 2020, "An Exploratory Study into the Use of Audit Data Analytics on Audit Engagements."</h5>
+                </div>
+                <p class="mb-1">
+                  In this section we study the role and the implementation of ADA in Norwegian companies.
+                </p>
+              </a>
+           </div>
+        </div>
+        <img
+        src="{{url_for('static', filename='figures/auditing_accounting_business/ch3/ch3.svg')}}"
+                alt=""/>
+    </div>
+  </header>
+</section>
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+
+  <div class="container">
+      <div class="boxa" style="background: #96C6D9;">
+        <h2 style="justify-content: center;">Introduction</h2>
+        <p>
+          we frame the discussion by studying how can <strong>Audit Data Analytics (ADA) be useful for companies</strong>? and which are the <strong>most popular ADA tools</strong> in Norwegian companies?
+        </p>
+          <div class="section_container_buttons_chapters" style="justify-content: center;">
+              <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch3_ex1_questionnaire') }}">Question 1</a>
+              <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch3_ex2_questionnaire') }}">Question 2</a>
+          </div> 
+      </div>              
+  </div>
+ 
+</section> 
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+
+  <div class="container" style="display:block;">
+      <h2>What is Audit Data Analytics (ADA)?</h2>
+
+      <p>
+        In this section, we define Audit Data Analytics (ADA), we provides some general examples and some concrete examples used in the Norwegian companies. We also study the main benefits from the use fo ADA.
+        <br>
+        <br>
+        All the information in this section has been taken from Eilifsen et al. (2020) and the next link.
+      </p>
+      <div class="section_container_buttons_chapters">
+        <a class="btn-section2" href="https://www.aicpa-cima.com/topic/audit-assurance/audit-data-analytics#:~:text=Audit%20Data%20Analytics%20is%20the,planning%20or%20performing%20the%20audit" target="_blank">Link</a>
+        <a class="btn-section2" href="#" data-toggle="modal" data-target="#paper_ch3_Modal">Paper</a>
+      </div>
+      <!-- Modal paper_ch3 -->
+      <div class="modal fade" id="paper_ch3_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg " style="height: 80%;" >
+          <div class="modal-content" style="height:100%">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <iframe id="paper_ch3_frame" src="/static/material/aab_course/ch3/paper_ch3.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+
+      <h5>Definition:</h5>
+        <p>
+          Audit data analytics (ADA) refers to the process of using technology, such as data analysis tools and techniques, to evaluate and analyze large volumes of data related to an entity’s financial transactions, 
+          operations, and controls during an audit. The purpose of ADA is to enhance the effectiveness and efficiency of 
+          the audit process by helping auditors identify risks, anomalies, trends, and patterns that may indicate potential misstatements, fraud, or control weaknesses.
+        </p>
+
+
+  </div> 
+
+  <div class="container">
+    <div class="boxa" style="background: #49736f;">
+      <h5 style="text-align:center;">ADA examples:</h5>
+      <p>
+        Some <strong>examples</strong> of audit data analytics techniques include:
+        <ul>
+          <li><strong>Descriptive analytics</strong>: Summarizing and visualizing data to understand the underlying patterns, trends, and relationships. 
+            For example, an auditor may create a bar chart or a heatmap to visualize sales revenue by product line or geographical region.</li>
+          <li><strong>Diagnostic analytics</strong>: Analyzing past data to determine the root causes of specific issues or anomalies. For example, an 
+            auditor may use clustering techniques to group similar transactions together and identify outliers or unusual transactions that require further investigation.</li>
+          <li><strong>Predictive analytics</strong>: Using statistical models and algorithms to forecast future events or trends based on historical data. 
+            For example, an auditor may use regression analysis to predict the likelihood of a material misstatement in a specific account based on 
+            historical financial data and risk factors.</li>
+            <li><strong>Prescriptive analytics</strong>: Recommending actions to optimize outcomes based on data analysis. For example, an auditor may use optimization techniques to suggest the most efficient allocation of audit resources based on the identified risks and priorities.</li>
+        </ul>
+      </p>
+    </div> 
+    <div class="boxa">
+      <h5 style="text-align:center;">ADA tools:</h5>
+      <p>
+        Some concrete examples with the type of <strong>ADA tool </strong>and the number of times they were used by engagement category and firm appears in Elilifsen et al. (2002).
+        <ul>
+          <li><strong>Excel with basic functionality</strong> is used as an ADA tool  the representing 34.4 percent of the total. </li>
+          <li>More <strong>advanced Excel</strong> (including Power-BI, Solver, Miner, and Macros) is used the 25.9 percent of the total.</li>
+          <li><strong>Statistical packages</strong> (e.g., R, Stata, SPSS); <strong>programming languages</strong> (e.g., Python
+            and Pearl), and <strong>visualization programs</strong> (e.g., Tableau and Spotfire) are used 2.7 percent, 2.2 percent, and 10.6 percent of the
+            total times, respectively. </li>
+          <li><strong>‘‘Other’’ ADA tools</strong> (8.1 percent of the total) include firm specific tools—PACE (EY), Halo (PwC),
+            KAAP (KPMG), and Spotlight (Deloitte). According to the firm Heads these tools include some of the tools described above.</li>
+          <li><strong>Business Intelligence</strong> (BI) Analytics Management Software (e.g., IBM, Oracle, SAP, SAS) and database management systems
+            (e.g., Access, MySQL, SQLServer, Oracle) were used 6.9 percent and 9.2 percent of the total times, respectively.</li>
+        </ul>
+      </p>
+    </div>               
+  </div>
+
+  <div class="container">
+    <div class="boxa" style="background: #49736f;">
+      <h5 style="text-align:center;">ADA benefits:</h5>
+      <p>
+        By incorporating audit data analytics into the audit process, auditors can gain deeper insights into the entity’s financial data, 
+        improve the identification and assessment of risks, and ultimately enhance the quality and effectiveness of the audit.
+        <br>
+        <br>
+        According with Eilifsen et al. (2020), proponents of the use of ADA cite three potential <strong>benefits from
+          their use</strong>:
+        <ul>
+          <li>Improved understanding of an entity’s operations and associated risks, including the risk of fraud;</li>
+          <li>increased potential for detecting material misstatements;</li>
+          <li>and improved communications with those charged with governance of audited entities.</li>
+        </ul>
+      </p>
+    </div> 
+    <div class="boxa">
+      <h5 style="text-align:center;">Heterogeneity in the implementation</h5>
+      <p>
+        According with Eilifsen et al. (2020), there exists a lot of <strong>heterogeneity to implement ADA in companies</strong>.
+        <ul>
+          <li>Some firms implement ADA as an extensive training of the audit teams on the
+            use of ADA tools where the teams locally would perform the ADA.</li>
+          <li>Some firms reported that they had
+            set up a specialist team, separate from the audit teams, that collected, cleaned, and structured client data and provided a set of
+            standardized ADA analyses for the audit teams.</li>
+          <li>Some firms were waiting before actively pushing for implementation of new ADA tools in
+            Norway because they felt it was too costly to pilot new tools on engagements. They preferred to wait until other firm countries
+            had tested the new tools, found them workable, and could provide guidance on how to efficiently use them on engagements.</li>
+          <li>Some firms admitted that they had not come far in ADA implementation, but were working hard on developing national tools that could 
+            extract data from external databases and make automated, standardized analysis.</li>
+        </ul>
+      </p>
+    </div>               
+  </div>
+
+</section>
+
+<!-- Section 3 -->
+<section class="section_3" id="section3">
+
+  <div class="container" style="display:block;">
+      <h2>Eilifsen et al., 2020, "An Exploratory Study into the Use of Audit Data Analytics on Audit Engagements."</h2>
+      <p>
+        In this section we study the role and the implementation of ADA in Norwegian companies.
+      </p>
+      <h5>Motivation</h5>
+      <p>Recently, the
+        major international public accounting firms have invested heavily to advance their audit technology and moved to
+        leverage the use of  <strong>audit data analytics (ADA)</strong> for financial statement audits 
+        (Deloitte 2016; KPMG 2016; PwC 2017; EY 2017). The adoption of ADA, as it is presented in the previous section, 
+        it is due to the fact that it could introduce some important advantages in the auditing system.
+      </p>
+      <h5>Methodology</h5>
+      <p>
+        The authors apply a two-stage research approach. First, they interviewed the heads of professional practice (‘‘Heads’’) of five
+        international public accounting firms in Norway to get an understanding of the status of ADA in each firm. Second, they
+        obtained responses to a detailed questionnaire from a large sample of 216 partners and managers who were in charge of 109
+        audit engagements about (1) their perceptions and insights on issues related to ADA and (2) extensive information on the actual
+        use of ADA in those 109 engagements.
+      </p>
+      <h5>Results</h5>
+      <p>
+        The main finding in the paper are as follows:
+      </p>
+      <br>
+      <!--Enumerated list (table)-->
+      <ol class="list-group list-group-numbered">
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+          <p class="text-right">
+            The Heads indicated that their firms do not require mandatory use of ‘‘advanced’’
+            ADA tools. This seems to be driven by the uncertainty about how the supervisory inspection authorities will evaluate and
+            accept ADA generated audit evidence. 
+          </p>
+          </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+          <p class="text-right">
+            While ADA use is high on the firms’ agenda and there is a global firm push for
+            ADA to be used on audit engagements, actual use is limited in our sample, including even the audits that were identified by the
+            Heads as expected to use ADA. 
+          </p>
+          </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+          <p class="text-right">
+            Based on our discussions with the Heads, the firms differ in their strategies in how they
+            implement the use of ADA in their organizations from, at one end of the spectrum, a ‘‘wait and see’’ approach to, at the other
+            end of the spectrum, centralization of ADA functions and significant firm involvement to facilitate ADA use.
+          </p>
+          </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+        <p class="text-right">
+          The
+          partners and managers indicated that their knowledge and training with firm available ADA tools were sufficient to permit their
+          use of ADA and their attitudes toward ADA usefulness are more positive for firm audits in general than for the sampled audit
+          engagements. 
+        </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+        <p class="text-right">
+          As expected, more ADA are used on engagements where the client has an integrated ERP/IT system.
+        </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+        <p class="text-right">
+          There is a higher frequency of ADA use on new audit engagements. Participants indicated that recent tender offers specifically
+          asked about firms’ use of new technology and ADA in audits, and that the audit firms promoted ADA use in the tender
+          process.
+        </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+        <p class="text-right">
+          The authors identify the various phases of the audit where ADA are used.
+          <ul>
+            <li>In the audit planning phase, ADA are used
+              for overall assessment of the client’s operations and performance, identifying and assessing key risks, and mapping of different
+              business processes. </li>
+            <li>In the substantive testing phase, ADA are used for journal entry testing, calculating sample-size, selection
+              of random samples, and summarizing ledgers.</li>
+            <li>In the completion phase of the audit, ADA are primarily used for reconciliation
+              and control between final accounts and underlying ledgers, analytical procedures, and final review of financial statements.</li>
+            <li>However, overall, the use of ADA in each phase of the audit is low and there is little use of what would be considered advanced
+              ADA (i.e., statistical regressions, clustering techniques, statistical predictive analysis, computerized process-mapping, etc.).
+              The use of Big Data and text-mining is almost non-existent. When ADA are used, ADA output is mostly used as supplementary evidence.</li>
+            <li>In summary, the results of the authors suggest that the use of ADA within the firms is limited and at an early stage of
+              implementation. </li>
+          </ul>
+        </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+        <p class="text-right">
+          Lastly, the authors believe that institutional theory provides a framework for explaining our findings. Institutional
+          theory suggests that the limited use of ADA will persist until ADA usage is proved to be superior to the current evidence
+          gathering process for audit team leaders and their use is supported by firms, regulators, and supervisors.
+        </p>
+        </div>
+      </li>
+      </ol>
+      <br>
+      <h5>Future research</h5>
+      <p>
+        The results from the study point to several potential fruitful avenues for future research. It would be interesting to perform
+        follow-up studies to learn some relevant points:
+        <ul>
+          <li>How the use of ADA in practice develops over time.</li>
+          <li>Whether ADA usage is more
+            accelerated for audits of very large companies than for audits in Norway, a relatively small country with a limited number of
+            large companies. </li>
+          <li>A key challenge for more ADA use seems to be how to cost-efficiently transform the output from ADA to
+            sufficient and appropriate audit evidence. Research can contribute to better understand which factors inhibit this transformation
+            to assist auditors to better apply ADA.</li>
+          <li>Uncertainty about supervisory
+            bodies’ inspection behavior inhibits auditors’ use of ADA. A better understanding on how inspection risk affects auditors’ ADA use (or non-use) is of importance. </li>
+          <li>Finally, insight into how clients may drive the demand for auditors’ ADA use,
+            including the role of ADA in the tender engagement process, seems a promising area for future research.</li>
+        </ul>
+      </p>
+  </div> 
+</section> 
+
+{% endblock content %}

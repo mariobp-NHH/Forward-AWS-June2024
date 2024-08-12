@@ -1,0 +1,46 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+<section class="gd_course_chat">
+  <div class="container">
+      <div class="box">
+
+      </div>
+      <div class="box"> 
+        <div class="h1 mb-3">
+          <i class="bi bi-chat-square-dots"></i>
+        </div>
+        <h3 class="text-center"><span class="text-warning"> {{legend}}: </span></h3>
+
+        {% for chat in chats.items %}
+          <article class="media content-section">
+          <img class="rounded-circle article-img" src="data:image/jpeg;base64,{{ func(chat.author.image_file) }}">
+          <div class="media-body">
+              <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('gd_course_chats.user_chats', username=chat.author.username) }}">{{ chat.author.username }}</a>
+              <small class="text-muted">{{ chat.date_posted.strftime('%Y-%m-%d') }}</small>
+              </div>
+              <h4><a class="article-title" href="{{ url_for('gd_course_chats.chat', chat_id=chat.id) }}">{{ chat.title }}</a></h4>
+              <p class="article-content">{{ chat.content }}</p>
+          </div>
+          </article>
+          {% endfor %}
+          {% for page_num in chats.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+            {% if page_num %}
+              {% if chats.page == page_num %}
+                <a class="btn btn-info mb-4" href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g1_chats', page=page_num) }}">{{ page_num }}</a>
+              {% else %}
+                <a class="btn btn-outline-info mb-4" href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g1_chats', page=page_num) }}">{{ page_num }}</a>
+              {% endif %}
+            {% else %}
+              ...
+            {% endif %}
+          {% endfor %}
+      </div>
+      <div class="box">
+
+      </div>
+  </div>
+</section> 
+
+{% endblock content %}

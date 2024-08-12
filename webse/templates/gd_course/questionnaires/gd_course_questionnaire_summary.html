@@ -1,0 +1,266 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+
+  <!-- Refresh -->
+  <section class="main_menu">
+    <div class="container">
+        <div class="box">
+
+        </div>
+        <div class="box" style="background-color: #568c63;"> 
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div> 
+                    {% endfor %}
+                {% endif %}
+            {% endwith %} 
+            <h2>Policies to reduce transport carbon emissions</h2>
+            <p>
+              <strong>Which policies could be implemented to reduce transport carbon emissions?</strong> Please, discuss your ideas in your group and use the <strong>chat</strong> to share them with the rest of the participants in the debate.
+            </p>         
+            <div class="container_buttons_links_main_menu">
+              <div class="btn">
+                <a href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_summary') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Refresh</a>
+              </div>
+              <div class="btn">
+                <a href="{{ url_for('gd_course_questionnaires.gd_course_questionnaires_summary_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">New Chat</a>
+              </div>
+            </div>        
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+</section> 
+
+
+<!-- Analysis -->
+<section class="section_gd_course_questionnaire" style="background-color: #9fa7bf;">
+  <div class="container">
+    <div class="column column1">
+      <div class="column column1 box">
+        <p><strong>Question 1:</strong> Which is your main source of transport carbon emissions?</p>
+        <canvas id="questionnaire_q1" style="width:300px;"></canvas>
+      </div>
+      <div class="column column1 box">
+        <p><strong>Question 2:</strong> Which is your main mean of transport (in kilometers)?</p>
+        <canvas id="questionnaire_q2" style="width:300px;"></canvas>
+      </div>
+    </div>
+    <div class="column column2">
+      <div class="column column2 box">
+        <p><strong>Question 3:</strong> Which is your main mean of transport (in frequency)?</p>
+        <canvas id="questionnaire_q3" style="width:300px;"></canvas>
+      </div>
+      <div class="column column2 box">
+        <p><strong>Question 4:</strong> Which is your favourite mean of transport?</p>
+        <canvas id="questionnaire_q4" style="width:300px;"></canvas>
+      </div>
+    </div>
+    <div class="column column3">
+      <div class="column column3 box">
+        <div class="h1 mb-3">
+          <i class="bi bi-chat-square-dots"></i>
+        </div>
+        <h3 class="text-center"><span class="text-warning"> Chat: </span></h3>
+        {% for chat in chats.items %}
+          <article class="media content-section">
+          <img class="rounded-circle article-img" src="data:image/jpeg;base64,{{ func(chat.author.image_file) }}">
+          <div class="media-body">
+              <div class="article-metadata">
+              <a class="mr-2" href="{{ url_for('gd_course_questionnaires.user_chats', username=chat.author.username) }}">{{ chat.author.username }}</a>
+              <small class="text-muted">{{ chat.date_chat.strftime('%Y-%m-%d') }}</small>
+              </div>
+              <h4><a class="article-title" href="{{ url_for('gd_course_questionnaires.chat', chat_id=chat.id) }}">{{ chat.title_chat }}</a></h4>
+              <p class="article-content">{{ chat.content }}</p>
+          </div>
+          </article>
+        {% endfor %}
+        {% for page_num in chats.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+          {% if page_num %}
+            {% if chats.page == page_num %}
+              <a class="btn btn-info mb-4" href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_summary', page=page_num) }}">{{ page_num }}</a>
+            {% else %}
+              <a class="btn btn-outline-info mb-4" href="{{ url_for('gd_course_questionnaires.gd_course_questionnaire_summary', page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+          {% else %}
+            ...
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  {% block javascript %}
+  
+    
+    <script>
+    let q1_results_data = JSON.parse({{ q1_results | tojson }})
+    let q2_results_data = JSON.parse({{ q2_results | tojson }})
+    let q3_results_data = JSON.parse({{ q3_results | tojson }})
+    let q4_results_data = JSON.parse({{ q4_results | tojson }})
+  
+
+
+    let questionnaire_q1 = new Chart(document.getElementById('questionnaire_q1'), {
+      type: 'pie',
+      data: {
+        labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Scooter', 'Walk', 'Other'],
+        datasets: [{
+          label: 'Questionnaire, question 1',
+          data: q1_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c', '#5fd9cd', '#f2d95c', '#f2b84b', '#f27979', '#a0e3f2'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q2 = new Chart(document.getElementById('questionnaire_q2'), {
+      type: 'pie',
+      data: {
+        labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Scooter', 'Walk', 'Other'],
+        datasets: [{
+          label: 'Questionnaire, question 2',
+          data: q2_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c', '#5fd9cd', '#f2d95c', '#f2b84b', '#f27979', '#a0e3f2'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q3 = new Chart(document.getElementById('questionnaire_q3'), {
+      type: 'pie',
+      data: {
+        labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Scooter', 'Walk', 'Other'],
+        datasets: [{
+          label: 'Questionnaire, question 3',
+          data: q3_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c', '#5fd9cd', '#f2d95c', '#f2b84b', '#f27979', '#a0e3f2'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  let questionnaire_q4 = new Chart(document.getElementById('questionnaire_q4'), {
+      type: 'pie',
+      data: {
+        labels: ['Bicycle', 'Bus', 'Car', 'Ferry', 'Motorbike', 'Plane', 'Scooter', 'Walk', 'Other'],
+        datasets: [{
+          label: 'Questionnaire, question 4',
+          data: q4_results_data,
+          backgroundColor: ['#9ac2be', '#f2e3b6', '#f2c299',
+                            '#f2935c', '#5fd9cd', '#f2d95c', '#f2b84b', '#f27979', '#a0e3f2'],
+          borderWidth: 1,
+          hoverBorderColor: "black",
+          hoverBorderWidth: 2,
+          hoverBackgroundColor: 'rgba(154, 245, 140)',
+          pointHoverRadius: 5
+        }]
+      },
+      options: {
+              legend: {
+                  position: "right",
+                      labels: {
+                      fontColor: "gray"
+                  },
+                  display: true,
+              },
+
+              elements: {
+                  hitRadius: 3,
+              }
+      }
+    });
+
+    Chart.scaleService.updateScaleDefaults('linear', {
+          ticks: {
+              min: 0
+          }
+  });
+
+  
+  </script>
+
+  {% endblock%}
+  
+
+
+{% endblock content %}

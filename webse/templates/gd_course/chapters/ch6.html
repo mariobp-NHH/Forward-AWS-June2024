@@ -1,0 +1,515 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section>
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch6. Structure and Blueprints</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we improve the software architecture of our app to make it more efficient, and to help us to keep our code organized. In the next chapters, we will add forms, python code and databases to our project, and our app will gain in complexity. To make that process as easy as possible, we restructure our app by using <strong>Flask Blueprints</strong>.
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/sxo3Ym30HUs"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Basic)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/6Upa7cyVccs"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Applied)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    <div class="btn">
+                        <a href="{{url_for('gd_course_app_carbon_app_2023_ch6.home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Structure and Blueprints (Basic)</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we learn wo to <strong>define Blueprints</strong>, to <strong>use them in our routes</strong>, to <strong>register</strong> those blueprints, and to <strong>run our application</strong>.
+                        </p>
+
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Structure and Blueprints (Applied): Connecting Blueprints routes with HTML files</h5>
+                        </div>
+                        <p class="mb-1">
+                            In this section, we are going to focus on the changes that we must introduce in our <strong>HTML files</strong> to connect our Blueprint routes with our HTML files.
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            We modify our app to include a <strong>new package</strong> named users where we will create new routes to <strong>register</strong> the user and to <strong>log in</strong>. We introduce further changes in our carbon_app package and carbon_app html files to introduce more functionalities.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch6/ch6.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Structure and Blueprints (Basic)</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/sxo3Ym30HUs" target="_blank">YouTube (Basic)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Boilerplate1" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Final2" target="_blank">GitHub (Final)</a>
+            </div>
+            <p>
+                All the information about Blueprints in this chapter has been taken from the next links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://realpython.com/flask-blueprint/" target="_blank">Real Python</a>
+                <a class="btn-section1" href=" http://exploreflask.com/en/latest/blueprints.html" target="_blank">Explore Flask</a>
+                <a class="btn-section1" href="https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy" target="_blank">Digital Ocean</a>
+                <a class="btn-section1" href="https://flask.palletsprojects.com/en/2.2.x/blueprints/ " target="_blank">Flask</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=Wfx4YBzg16s&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=11 " target="_blank">Corey Schafer</a>
+            </div>
+            <p>
+                We are going to use the command tree in this chapter to know the architecture of our app. You have more information about that command in the next link:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tree " target="_blank">Tree</a>
+            </div>
+        </div>  
+        
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Introduction</h4>
+                <p>
+                    So far, our Flask application has the next elements (right-hand side figure):
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Boilerplate1" target="_blank">GitHub (Boilerplate1)</a>
+                </div>
+                <p>
+                    <ol>
+                        <li>
+                            An <strong>application.py</strong> file that contains three blocks of information. First, a block where we import the functionalities that we need to build our app; and where we define our Flask application. Second, a block of information where we define our routes and the functions associated with those routes. Third, a block of information where we execute our application. 
+                        </li>
+                        <li>
+                            A <strong>template folder</strong> where we place all the html files of our app.
+                        </li>
+                        <li>
+                            A <strong>static folder</strong> where we place all the CSS files of our app and the pictures, icons, curriculums, essay, etcetera.
+                        </li>
+                    </ol>
+                    This way of organizing the app is not very efficient because in the application.py file, we are placing routes with functions that do very different things. Moreover, once that the project grows in complexity, the number of routes grows substantially, and it is very difficult to organize those routes in a single application.py file. In addition, if we add more elements to our application as forms or databases, the software architecture becomes even more complex. Therefore, we need to design an efficient software architecture. <strong>Flask Blueprint</strong> is the tool implemented in Flask to achieve that objective.
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>App architecture - Before Blueprint -</h5>
+                <pre><code class="html">
+                    C:.
+                    │   application.py
+                    │   requirements.txt
+                    │   
+                    ├───static
+                    │   │   carbon_app.css
+                    │   │   home.css
+                    │   │   layout.css
+                    │   │   methodology.css
+                    │   │   
+                    │   └───icons
+                    │           calculator.svg
+                    │           carbon_app.svg
+                    │           methodology1.svg
+                    │           methodology2.svg
+                    │
+                    └───templates
+                            carbon_app.html
+                            home.html
+                            layout.html
+                            methodology.html
+            </code></pre> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>What is Blueprint?</h4>
+                <p>
+                    Each Flask Blueprint is an <strong>object</strong> that works very similarly to a Flask application. They both can have resources, such as static files, templates, and views that are associated with routes.
+                    <br>
+                    <br>
+                    However, a Flask Blueprint is not actually an application. It needs to be registered in an application before you can run it. When you register a Flask Blueprint in an application, you're extending the application with the contents of the Blueprint.
+                    <br>
+                    <br>
+                    This is the key concept behind any Flask Blueprint. <strong>They record operations to be executed later when you register them on an application</strong>. For example, when you associate a view to a route in a Flask Blueprint, it records this association to be made later in the application when the Blueprint is registered.
+                </p>
+                <h4>How to build a basic flask application by using Flask Blueprints?</h4>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Final1 " target="_blank">GitHub (Final1)</a>
+                </div>
+                <p>
+                    We are going to use Flask Blueprints to improve the architecture of our application (right-hand side figure). It is important to notice that there are many ways to define the architecture of our application by using Flask Blueprint. I will teach you one way that I consider simple, easy, and efficient. However, there are many ways to do that, and I encourage you to read the links that I place at the beginning of the section to have more information. So, you can decide about the architecture that you want to create for your application.
+                    <br>
+                    <br>
+                    We are going to follow <strong>four steps</strong> to re-structure the software architecture of our app:
+                    <ol>
+                        <li>
+                            <strong>Making a Flask Blueprint</strong>. We create three folders (home, methodology and carbon app). Inside each folder, we create two .py files (__init__.py and routes.py). 
+                            <br>
+                            <br>
+                            The __init__.py file consists of a single element #. As soon, as we introduce a __init__.py file in a folder, that folder is a package in Python, i.e., we are going to organize our app by using Python packages.
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>App architecture - After Blueprint -</h5>
+                <pre><code class="html">
+                    C:.
+                    │   application.py
+                    │
+                    └───capp
+                        │   __init__.py
+                        │
+                        ├───carbon_app
+                        │   │   routes.py
+                        │   └───__init__.py
+                        │                       
+                        ├───home
+                        │   │   routes.py
+                        │   └───__init__.py
+                        │
+                        ├───methodology
+                        │   │   routes.py
+                        │   └───__init__.py
+                        │
+                        ├───static
+                        │   │   carbon_app.css
+                        │   │   home.css
+                        │   │   layout.css
+                        │   │   methodology.css
+                        │   │
+                        │   └───icons
+                        │           calculator.svg
+                        │           carbon_app.svg
+                        │           methodology1.svg
+                        │           methodology2.svg
+                        │
+                        └───templates
+                                carbon_app.html
+                                home.html
+                                layout.html
+                                methodology.html
+            </code></pre> 
+            </div>               
+        </div>
+
+        <div class="container" style="display:block;">
+            <p>
+                <ol start="1">
+                    <li style="list-style-type: none;">
+                        The routes.py file we will have the next information (example <strong>routes.py</strong> in the home package). First, we create the Blueprint object by using the next code:
+                        <pre><code class="html">
+        from flask import render_template, Blueprint
+        home=Blueprint('home',__name__)
+                        </code></pre>
+                        <ol>
+                            <li type="a">
+                                We import the flask elements that we need in the <strong>routes.py</strong> file: (<strong>from flask import render_template, Blueprint</strong>).
+                            </li>  
+                            <br>
+                            <li type="a">
+                                We create the Blueprint object (<strong>home=Blueprint('home',__name__)</strong>). When we define the Blueprint object, some arguments are specified when creating the Blueprint object. The first argument, 'home', is the Blueprint's name, which is used by Flask's routing mechanism. The second argument, __name__, is the Blueprint's import name, which Flask uses to locate the Blueprint's resources. 
+                            </li> 
+                            <br>
+                            <li type="a">
+                                The Blueprint object home has <strong>methods and decorators</strong> that allow us to record operations to be executed when registering the Flask Blueprint in an application to extend it. One of the most used decorators is route. It allows us to associate a view function to a URL route. By using that decorator, we create the route and the function associated to it.
+                                <pre><code class="html">
+        @home.route('/')
+        @home.route('/home')
+        def home_home():
+        return render_template('home.html')
+                                </code></pre>
+                            </li>                               
+                        </ol>
+                    </li>
+                    <li>
+                        <strong>Registering the Blueprint in Your Application</strong>. Inside the capp folder, we create an <strong>__init__.py</strong> file to introduce all the elements necessary to build our application.
+                        <br>
+                        <br>
+                        Recall that a Flask Blueprint is not actually an application. When you register the Flask Blueprint in an application, we extend the application with its contents. The following code shows how you can register the previously-created Flask Blueprint in an application:
+                        <pre><code class="html">
+            from flask import Flask
+            application = Flask(__name__)
+            
+            from capp.home.routes import home
+            from capp.methodology.routes import methodology
+            from capp.carbon_app.routes import carbon_app
+            
+            application.register_blueprint(home)
+            application.register_blueprint(methodology)
+            application.register_blueprint(carbon_app)                            
+                        </code></pre>
+                        When we call <strong>.register_blueprint()</strong>, we apply all operations recorded in the Flask Blueprint home to app.
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Create a file to run our application</strong>. In the route directory, create a folder named capp (carbon app) where we will place all the routes, databases, forms, CSS files, HTML files, etcetera. In the root directory, create an <strong>application.py</strong> file where we are going to run our application. 
+                        <pre><code class="html">
+            from capp import application
+            if __name__=='__main__':
+                application.run(debug=True)                                                          
+                        </code></pre>
+                    </li>
+                    <li>
+                        <strong>Install Blueprint and run our application</strong>. As in chapter 1, we must create a virtual environment, activate it, and install flask. On top of that, now, we need to install Blueprint by typing <strong>pip install Blueprint</strong>. After installing flask and blueprint, we can run our application by typing <strong>python application.py</strong>. 
+                    </li>
+                </ol>
+            </p>
+        </div> 
+
+
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+
+        <div class="container" style="display:block;">
+            <h1>Structure and Blueprints (Applied): Connecting Blueprints routes with HTML files.</h1>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/6Upa7cyVccs" target="_blank">YouTube (Applied)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Boilerplate2" target="_blank">GitHub (Boilerplate2)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Final2 " target="_blank">GitHub (Final)</a>
+            </div>
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>Connecting Blueprints routes with HTML files</h4>
+            <p>
+                In the previous section we have followed four steps to <strong>define Blueprints</strong>, to <strong>use them</strong> in our routes, to <strong>register those blueprints</strong>, and to <string>run our application</string>. In this section, we are going to focus on the changes that we must introduce in our HTML files to connect our Blueprint routes with our HTML files.
+                <br>
+                <br>
+                We must introduce changes in three of our <strong>HTML files</strong>: layout.html file; methodology.html; carbon_app.html file. In the weekly challenge, we also need to introduce changes in the home.html file.
+            </p>        
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5>Connecting HTML files and routes (layout.html) - Before Blueprint -</h5>
+                <pre><code class="html">
+&#60;ul&#62;
+    &#60;li&#62;
+        &#60;a href="&#123;&#123;url_for('home')&#125;&#125;"&#62;Home&#60;/a&#62;
+    &#60;/li&#62;
+    &#60;li&#62;
+        &#60;a href="&#123;&#123;url_for('methodology')&#125;&#125;"&#62;Methology&#60;/a&#62;
+    &#60;/li&#62;
+    &#60;li&#62;
+        &#60;a href="&#123;&#123;url_for('carbon_app')&#125;&#125;"&#62;Carbon App&#60;/a&#62;
+    &#60;/li&#62;
+&#60;/ul&#62;                                                            
+                </code></pre>                
+            </div> 
+            <div class="boxa">
+                <h5>Connecting HTML files and routes (layout.html) - After Blueprint -</h5>
+                <pre><code class="html">
+&#60;ul&#62;
+    &#60;li&#62;
+        &#60;a href="&#123;&#123;url_for('home.home_home')&#125;&#125;"&#62;Home&#60;/a&#62;
+    &#60;/li&#62;
+    &#60;li&#62;
+        &#60;a href="&#123;&#123;url_for('methodology.methodology_home')&#125;&#125;"&#62;Methology&#60;/a&#62;
+    &#60;/li&#62;
+    &#60;li&#62;
+        &#60;a href="&#123;&#123;url_for('carbon_app.carbon_app_home')&#125;&#125;"&#62;Carbon App&#60;/a&#62;
+    &#60;/li&#62;
+&#60;/ul&#62;                                                         
+                </code></pre>                    
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5>Connecting HTML files and routes</h5>
+                <h5>(methodology.html) - Before Blueprint -</h5>
+                <pre><code class="html">
+&#60;div class="container_buttons_links_header"&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="#"&#62;Paper&#60;/a&#62;
+    &#60;/div&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="&#123;&#123;url_for('carbon_app')&#125;&#125;"&#62;/
+        Carbon App&#60;/a&#62;
+    &#60;/div&#62;
+&#60;/div&#62;                                                       
+                </code></pre>                
+            </div> 
+            <div class="boxa">
+                <h5>Connecting HTML files and routes</h5>
+                <h5>(methodology.html) - After Blueprint -</h5>
+                <pre><code class="html">
+&#60;div class="container_buttons_links_header"&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="#"&#62;Paper&#60;/a&#62;
+    &#60;/div&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="&#123;&#123;url_for('carbon_app.carbon_app_home')&#125;&#125;"&#62;/
+        Carbon App&#60;/a&#62;
+    &#60;/div&#62;
+&#60;/div&#62;                                                       
+                </code></pre>                    
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5>Connecting HTML files and routes</h5>
+                <h5>(carbon_app.html) - Before Blueprint -</h5>
+                <pre><code class="html">
+&#60;div class="container_buttons_links_header_carbon_app"&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="&#123;&#123;url_for('methodology')&#125;&#125;"&#62;/
+        Methodology&#60;/a&#62;
+    &#60;/div&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="#"&#62;Instructions&#60;/a&#62;
+    &#60;/div&#62;
+&#60;/div&#62;                                           
+                </code></pre>                
+            </div> 
+            <div class="boxa">
+                <h5>Connecting HTML files and routes</h5>
+                <h5>(carbon_app.html) - After Blueprint -</h5>
+                <pre><code class="html">
+&#60;div class="container_buttons_links_header_carbon_app"&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="&#123;&#123;url_for('methodology.methodology_home')&#125;&#125;"&#62;/
+        Methodology&#60;/a&#62;
+    &#60;/div&#62;
+    &#60;div class="btn"&#62;
+        &#60;a href="#"&#62;Instructions&#60;/a&#62;
+    &#60;/div&#62;
+&#60;/div&#62;                                           
+                </code></pre>                     
+            </div>               
+        </div>
+
+    </section> 
+
+   <!-- Section 3 -->
+   <section class="section_3" id="section3">
+
+    <div class="container">            
+
+        <div class="onebox">                    
+        </div>
+        <div class="onebox">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="bi bi-calendar"></i>
+            </div>
+            <h1>Weekly challenge</h1>
+            <p style="text-align: left;">
+                In this weekly challenge, you should do two different things.
+                <br>
+                <br>
+                <strong>First</strong>, by using Blueprints, you must create a new package named users. Inside that package create two different functions, one to <strong>register the users</strong>, and another to help the users to <strong>login</strong>. In this chapter, we are going to create only two simple functions to render two html files, register.html and login.html. Those two html files are going to be in a folder named users inside the templates folder.
+                <br>
+                <br>
+                To use the two functions in the package users, we modify the navigation bar in the layout.html to introduce two new links. Moreover, in the home.html file, we have two buttons to register and to login. We also need two links those two buttons to the two functions in the package users. 
+                <br>
+                <br>
+                <strong>Second</strong>, by using Blueprints, we must create two functions inside the carbon_app package. Those two functions will give us <strong>access to our data</strong> and allow us also to introduce a <strong>new entry</strong> (kilometers by transport and fuel). As in the task users for this weekly challenge, the two functions will only render two simple html files, new_entry.html and your_data.html.
+                <br>
+                <br>
+                We place those two files, and the carbon_app.html file in a folder inside the template folder named carbon_app.
+                <br>
+                <br>
+                In the carbon_app.html, we must connect our buttons to the two functions created in the carbon_app package.
+                <br>
+                <br>  
+                We will discuss the weekly challenge on Thursday 23 February at NHH, and on Friday 24 February at HVL. We will use the main chat to help each other in the weekly challenge. Within those days, please share the information that you consider relevant to help the other groups. 
+            </p>  
+            <div class="container_buttons_links_section_3a">
+                <div class="btn">
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Hints</a>
+                </div>
+                <div class="btn">
+                    <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Boilerplate3" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub (Boilerplate)</a>
+                </div>  
+                <div class="btn">
+                    <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Final3" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub (Final)</a>
+                </div>
+                <div class="btn">
+                    <a href="{{url_for('gd_course_app_carbon_app_2023_ch6.home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                </div> 
+                <!-- Modal Instructions1 -->
+                <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                        <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 6</h5>
+                        </div>
+
+                        <div class="modal-body", style="color:black">
+                        <p style="text-align:left;">
+                            All the files for this project are in the GitHub account. I suggest you download that folder and follow the steps described in tasks 1 and 2 in the weekly challenge. There are four things that you must take into consideration:
+                            <ol style="text-align: left;">
+                                <li>
+                                    You should create a new package named <stong>users</stong>, with two .py files inside.                                  
+                                </li>
+                                </br>
+                                <li>
+                                    You should modify the <strong>__init__.py</strong> file inside capp folder to register the blueprint for the package users.
+                                </li>
+                                <br>
+                                <li>
+                                    You must create the templates associated to the functions defined in the <strong>routes.py</strong> inside the package users.
+                                </li>
+                                <br>
+                                <li>
+                                    Inside the html files <strong>layout.html</strong> and <strong>home.html</strong>, you must connect the navigation bar and the buttons to the two functions created in the routes.py inside the package users.
+                                </li>
+                                <li>
+                                    With the changes inside the <strong>package carbon_app</strong>, you must follow the same steps.
+                                </li>
+                            </ol>
+                        </p>
+                        </div>
+
+                        <div class="modal-footer">
+                        <a href="{{ url_for('gd_course_chats.gd_course_chats_new_main_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                        <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>                    
+
+        </div>   
+        <div class="onebox">                  
+        </div> 
+        
+    </div>
+   </section>   
+
+
+{% endblock content %}

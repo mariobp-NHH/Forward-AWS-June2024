@@ -1,0 +1,181 @@
+/* Colors */
+/* 
+Farge rosa: 205, 180, 158
+Farge beige: 243, 232, 204
+Farge lys grønn: 193, 211, 151
+Farge mørk grønn: 80, 94, 41
+Farge brun: 43, 41, 28
+Bakgrunnsfarge - lys beige: 
+*/
+
+/* Google fonts Montserrat  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* CSS utilities */
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  line-height: 1.6;
+}
+.container {
+  margin: auto;
+  max-width: 1320px;
+}
+ul { 
+  list-style: none;
+  font-size: 400;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1, h2 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+img {
+  width: 100%;
+}
+
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  font-size: 50px;
+}
+h5 {
+  font-size: 20px;
+}
+.container {
+  margin: auto;
+  max-width: 1320px;
+}
+.section1{
+  background:  #fff;
+}
+.section1 .container {
+  max-width: 1320px;
+  display: flex;
+  background:  #fff;
+  flex-direction: row;
+}
+.section1 .container .box {
+  flex: 1;
+  background: #8bbbd9;;
+  color: black;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:left;
+  font-size: 18px;
+}  
+.section1 .container .box:nth-of-type(1) {
+  flex-grow: 1;
+}  
+.section1 .container .box:nth-of-type(2) {
+  flex-grow: 1;
+} 
+
+
+
+/* Navbar */
+.section_navbar {
+  background-color: rgb(193, 211, 151);
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100px;
+  background-color: rgb(193, 211, 151);
+  padding: 0 20px;
+}
+
+.navbar .logo img {
+  width: auto;
+  height: 60px; /* Angi ønsket høyde for logoen */
+}
+
+.navbar img {
+  width: 30px; /* Angi ønsket bredde for ikonene */
+  height: 30px; /* Angi ønsket høyde for ikonene */
+  margin-right: 5px; /* Legg til mellomrom mellom ikonene og teksten */
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row; /* Plasser lenkene i en horisontal rad */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: rgb(80, 94, 41);
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  border-bottom: rgb(43, 41, 28) 4px solid;
+}
+
+.text-logo {
+  color: rgb(193, 211, 151)
+}
+
+
+/* Footer  */
+.section_footer{
+  background-color:rgb(193, 211, 151);
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  background-color: rgb(193, 211, 151);
+  padding: 0 0px;
+}
+.section_footer .footer a img {
+  width: 180px; /* Endre størrelsen etter behov */
+  height: auto; /* Behold proporsjonene */
+}
+
+
+/* Media query */
+@media(max-width:768px){
+  .navbar {
+    height: 160px;
+    flex-direction: column;
+  }
+  .navbar a {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+  .navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .navbar a:hover{
+    color: #568c63;
+    border-bottom: #2a4359 2px solid;
+  }
+}
+

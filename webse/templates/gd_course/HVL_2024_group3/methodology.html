@@ -1,0 +1,176 @@
+{% extends "gd_course/HVL_2024_group3/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section class="section_header_methodology">
+  <div class="container">
+    <div class="hidden-element animate">
+      <div class="header">
+        <div class="box">
+          <h1 style="font-size: 55px">Methodology</h1>
+          <p style="text-align: left">
+            Our group created an application designed to calculate carbon
+            emissions from various modes of transportation, providing users with
+            the necessary information to make environmentally conscious travel
+            choices. To gather the required data and statistics for calculating
+            emissions, we employed carbon footprint analysis techniques. This
+            approach entails quantifying the total greenhouse gas emissions
+            associated with different transportation options. By implementing a
+            carbon footprint analysis, we are able to offer a detailed
+            perspective on an individual's impact on the environment, taking
+            into account both indirect and direct emissions.
+          </p>
+          <div class="container_buttons_links_header">
+            <div class="btn">
+              <a
+                href="{{ url_for('static', filename='gd_course_HVL_2024_group3/icons/Group-3-paper.pdf') }}"
+                target="_blank"
+                class="btn btn-light"
+                ,
+                style="background-color: #568c63"
+                >Paper</a
+              >
+            </div>
+            <div class="btn">
+              <a
+                href="{{url_for('gd_course_HVL_2024_group3.carbon_app_home')}}"
+                class="btn btn-light"
+                ,
+                style="background-color: #568c63"
+                >Carbon App</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <img
+            src="{{ url_for('static', filename='gd_course_HVL_2024_group3/icons/methodology.jpg') }}"
+            width="325"
+            height="325"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+  <div class="container">
+    <div class="hidden-element animate">
+      <div class="methodology" style="display: block">
+        <p style="text-align: center; font-size: 40px">Our methodology</p>
+        <p>
+          Below is the outline of the methodology employed to compile data for
+          the Carbon App. This methodology hinges on sourcing reliable and
+          real-world data concerning carbon emissions. The students engaged in
+          this project have been seeking out data rooted in scientific research.
+          The objective of the Carbon App is to heighten awareness among users
+          about their everyday carbon emissions and inspire actions that can
+          lead to a reduction in their carbon footprint.
+        </p>
+      </div>
+    </div>
+    <!--Enumerated list (table with two columns)-->
+    <div class="hidden-element animate">
+      <div class="methodology">
+        <div class="box_table2" style="height: 300px">
+          <ol start="1">
+            <li>
+              <h4>General Formula</h4>
+              <p class="text-left">
+                \[CO^2 = {d · {ef \over p}}\] CO2 = Carbon emissions
+                <br />
+                d = Distance travelled
+                <br />
+                ef = Emission factor gCO2 / km
+                <br />
+                p = passengers
+              </p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="box_table2" style="height: 300px">
+          <ol start="2">
+            <li>
+              <h4>Electrical formula</h4>
+              <p class="text-left">
+                \[CO^2 = {d · 26 ·{ec \over p}}\] CO2 = Carbon emissions
+                <br />
+                d = Distance travelled
+                <br />
+                26 = Carbon intensity gCO2 / kWh
+                <br />
+                ec = Energy consumption kWh / km
+                <br />
+                p = passengers
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <!--Enumerated list (table with two columns)-->
+      <div class="methodology">
+        <div class="box_table2" style="height: 690px">
+          <ol start="3">
+            <li>
+              <h4>Car</h4>
+              <p class="text-left">
+                According to SSB.no, an avarage petrol car emits 156,47g CO2 per
+                km \[CO^2 = {km · {0,15647 kg \over passengers}}\] And an
+                avarage diesel car emits 130,09g CO2 per km \[CO^2 = {km ·
+                {0,130,09 kg \over passengers}}\]
+              </p>
+            </li>
+            <li>
+              <h4>Ferry</h4>
+              <p class="text-left">
+                According to framtiden.no, an avarage heavy fuel oil ferry emits
+                266g CO2 per km \[CO^2 = {km · {0,266 kg \over passengers}}\]
+              </p>
+            </li>
+            <li>
+              <h4>Motorcycle</h4>
+              <p class="text-left">
+                According to SSB, an avarage fuel-based motorcycle emits 85,2g
+                CO2 per km \[CO^2 = {km · {0,0852 kg \over passengers}}\]
+              </p>
+            </li>
+          </ol>
+        </div>
+        <div class="box_table2" style="height: 650px">
+          <ol start="6">
+            <li>
+              <h4>Train</h4>
+              <p class="text-left">
+                According to VY.no, an avarage train emits 10g CO2 per km \[CO^2
+                = {km · 26 · {0,01 kg \over passengers}}\]
+              </p>
+            </li>
+            <li>
+              <h4>Bus</h4>
+              <p class="text-left">
+                According to framtiden.no, an avarage diesel buss emits 25g CO2
+                per km per passenger \[CO^2 = {km · {0,025 kg \over
+                passengers}}\] while an avarage biodiesel buss emits 7g CO2 per
+                km \[CO^2 = {km · {0,007 kg \over passengers}}\]
+              </p>
+            </li>
+            <li>
+              <h4>Plane</h4>
+              <p class="text-left">
+                According to framtiden.no, an avarage airplane emits 133g CO2
+                per km per passenger \[CO^2 = {km · {0,133 kg \over
+                passengers}}\]
+              </p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,548 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section>
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch5. Methodology and Carbon App</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we conclude the methodology and the carbon app webpages. Now, we are familiar with the basic implementation to have a nice design for our webpages. Therefore, in this chapter, we introduce to features that allow us to improve the design of our webpages. First, we introduce <strong>mathematical expressions</strong> by using <strong>MathJax</strong>. This helps us to provide useful information about the mathematical expressions that we use to work out transport carbon emissions. Second, we introduce <strong>Bootstrap buttons, modals, and icons</strong>. The modal helps us to provide the <strong>instructions</strong> to use our carbon app to the users of our carbon app.
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/_8vTDjZ9LTg"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (MathJax)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/PZcYJ39iE8E"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Bootstrap)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch5%20Carbon%20App" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    <div class="btn">
+                        <a href="{{url_for('gd_course_chapters.gd_course_chapters_ch5_home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Mathematical Formulas (MathJax).</h5>
+                        </div>
+                        <p class="mb-1">
+                            We need <strong>mathematical expressions</strong> to work out carbon emissions. To help the reader to understand our methodology, we disclose those formulas in our methodology webpage by using <strong>MathJax</strong>.
+                        </p>
+
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Bootstrap modal functionalities</h5>
+                        </div>
+                        <p class="mb-1">
+                            We need to explain the users how to use our carbon app. To make the interaction with the user more dynamic, we disclose the <strong>instructions</strong> to use the app by using <strong>Bootstrap modal functionalities</strong>. 
+                        </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            We continue working on the students' apps. You must introduce small changes in the methodology.html, the carbon_app.html, the methodology.css and the carbon_app.css files to customize your app and to make it as functional and finalized as possible. Focus on the <strong>mathematical expressions</strong> and the <strong>user instructions</strong>.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch5/ch5.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1> Mathematical Formulas (MathJax).</h1>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/_8vTDjZ9LTg" target="_blank">YouTube (MathJax)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch5%20Carbon%20App/MathJax%20Boilerplate" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch5%20Carbon%20App/MathJax%20Final" target="_blank">GitHub (Final)</a>
+            </div>
+            <p>
+                To introduce mathematical formulas, we use MathJax that is a JavaScript display engine for mathematics that works in all browsers. More information about MathJax can be found in the next two links:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://www.mathjax.org/" target="_blank">MathJax</a>
+                <a class="btn-section1" href="https://www.mathjax.org/#gettingstarted" target="_blank">Getting started</a>
+            </div>
+            <p>
+                We are going to study MathJax by using different examples that will help us to display Latex formulas in our webpages by using MathJax. To facilitate our work, we are going to use some useful link with Latex formulas: 
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://www.overleaf.com/learn " target="_blank">Latex</a>
+                <a class="btn-section1" href="https://www.overleaf.com/learn/latex/Integrals%2C_sums_and_limits " target="_blank">Sums and Limits</a>
+                <a class="btn-section1" href="https://www.overleaf.com/learn/latex/Mathematical_expressions" target="_blank">Mathematical expressions</a>
+            </div>
+            <p>
+                We focus our analysis in four different types of mathematical formulas. In the lectures, we will use other mathematical formulas.
+            </p>
+        </div>  
+        
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Mathematical expressions 1 - Code -</h5>
+                <p>
+                    <code style="color: black;">
+                        Mathematical expressions &#92;( x = &#123;-b &#92;pm &#92;sqrt&#123;b^2-4ac&#125; &#92;over 2a&#125; &#92;) inside text.
+                    </code>
+                    <br>
+                    <br>
+                    <code style="color: black;">
+                    Mathematical expressions outside text:
+                    &#92;[ x = &#123;-b &#92;pm &#92;sqrt&#123;b^2-4ac&#125; &#92;over 2a&#125; &#92;]
+                    </code>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Mathematical expressions 1 - In the browser -</h5>
+                <p class="text-left">
+                Mathematical expressions \( x = {-b \pm \sqrt{b^2-4ac} \over 2a} \) inside text.
+                <br>
+                Mathematical expressions outside text:
+                \[ x = {-b \pm \sqrt{b^2-4ac} \over 2a} \]
+                </p> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Mathematical expressions 2 - Code -</h5>
+                <p>
+                    <code style="color: black;">
+                        Mathematical expressions &#92;( x^2 + y^2 = z^2 &#92;) inside text.
+                    </code>
+                    <br>
+                    <br>
+                    <code style="color: black;">
+                    Mathematical expressions outside text:
+                    &#92;[ x^2 + y^2 = z^2 &#92;]
+                    </code>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Mathematical expressions 2 - In the browser -</h5>
+                <p class="text-left">
+                    Mathematical expressions \( x^2 + y^2 = z^2 \) inside text.
+                    <br>
+                    Mathematical expressions outside text:
+                    \[ x^2 + y^2 = z^2 \]                 
+                </p> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Sums - Code -</h5>
+                <p>
+                    <code style="color: black;">
+                        Sum &#92;(&#92;sum_{n=1}^{&#92;infty} 2^{-n} = 1&#92;) inside text.
+                    </code>
+                    <br>
+                    <br>
+                    <code style="color: black;">
+                        Sum outside text:
+                        &#92;[ &#92;sum_{n=1}^{&#92;infty} 2^{-n} = 1 &#92;]
+                    </code>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Sums - In the browser -</h5>
+                <p class="text-left">
+                    Sum \(\sum_{n=1}^{\infty} 2^{-n} = 1\) inside text.
+                    <br>
+                    Sum outside text:
+                    \[ \sum_{n=1}^{\infty} 2^{-n} = 1 \]
+                
+                </p> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Limits - Code -</h5>
+                <p>
+                    <code style="color: black;">
+                        Limit &#92;(&#92;lim_{x&#92;to&#92;infty} f(x)&#92;) inside text.
+                    </code>
+                    <br>
+                    <br>
+                    <code style="color: black;">
+                        Limit outside text:
+                        &#92;[ &#92;lim_{x&#92;to&#92;infty} f(x) &#92;]
+                    </code>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Limits - In the browser -</h5>
+                <p class="text-left">
+                    Limit \(\lim_{x\to\infty} f(x)\) inside text.
+                    <br>
+                    Limit outside text:
+                    \[ \lim_{x\to\infty} f(x) \]
+
+                </p> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Products - Code -</h5>
+                <p>
+                    <code style="color: black;">
+                        Product &#92;(&#92;prod_{i=a}^{b} f(i)&#92;) inside text.
+                    </code>
+                    <br>
+                    <br>
+                    <code style="color: black;">
+                        Product outside text:
+                            &#92;[ &#92;prod_{i=a}^{b} f(i) &#92;]
+                    </code>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Products - In the browser -</h5>
+                <p class="text-left">
+                    Product \(\prod_{i=a}^{b} f(i)\) inside text.
+                    <br>
+                    Product outside text:
+                    \[ \prod_{i=a}^{b} f(i) \]
+
+                </p> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #568c63;">
+                <h5>Integrals - Code -</h5>
+                <p>
+                    <code style="color: black;">
+                        Integral &#92;(&#92;int_&#123;a&#125;^&#123;b&#125; x^2 &#92;,dx&#92;) inside text.
+                    </code>
+                    <br>
+                    <br>
+                    <code style="color: black;">
+                        Integral outside text:
+                            &#92;[ &#92;int_&#123;a&#125;^&#123;b&#125; x^2 &#92;,dx &#92;]
+                    </code>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Integrals- In the browser -</h5>
+                <p class="text-left">
+                    Integral \(\int_{a}^{b} x^2 \,dx\) inside text.
+                    <br>
+                    Integral outside text:
+                    \[ \int_{a}^{b} x^2 \,dx \]
+                </p> 
+            </div>               
+        </div>
+
+    </section>  
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+
+        <div class="container" style="display:block;">
+            <h1>Bootstrap: Installation, buttons and modal</h1>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/PZcYJ39iE8E" target="_blank">YouTube (Bootstrap)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch5%20Carbon%20App/Bootstrap%20Boilerplate" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch5%20Carbon%20App/Bootstrap%20Final" target="_blank">GitHub (Final)</a>
+            </div>
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>What is bootstrap? </h4>
+            <p>
+                <strong>Bootstrap</strong> is the most popular <strong>CSS Framework</strong> for developing responsive and <strong>mobile-first websites</strong>.
+                <br>
+                <br>
+                <u>What is mobile first?</u> A “mobile-first” approach involves designing a desktop site starting with the mobile version, which is then adapted to larger screens (contrary to the traditional approach of starting with a desktop site and then adapting it to smaller screens). Generally speaking, a mobile-first approach means building your website with your mobile users in mind, with the main goal of improving these mobile users' experience on your site.
+                <br>
+                <br>
+                <u>How to install Bootstrap?</u> To use bootstrap is necessary to add the CSS link in the head, and the JavaScript links in the body. The instructions to install Bootstrap are in the link below. We also explain how to install Bootstrap in the YouTube video of this section.
+            </p>  
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="#" target="_blank">YouTube (Bootstrap)</a>
+                <a class="btn-section2" href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" target="_blank">Bootstrap (Installation)</a>
+            </div>  
+            <h4>Buttons in Bootstrap</h4>    
+            <p>
+                Buttons are very useful, and they appear several times in our app. In the previous chapter, we used Bootstrap buttons, and we also created our own buttons. More information about Bootstrap's buttons can be found in the link below.
+            </p> 
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://getbootstrap.com/docs/4.0/components/buttons/ " target="_blank">Bootstrap (Buttons)</a>
+            </div>  
+            <p>
+                <u>Examples.</u> In this section, we are going to introduce three Bootstrap buttons focusing on <strong>three types of buttons</strong>.
+            </p>       
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5>Default Bootstrap buttons - Code -</h5>
+                &#60;button type="button" class="btn btn-primary"&#62;Primary&#60;/button&#62;
+                <br>
+                &#60;button type="button" class="btn btn-info"&#62;Info&#60;/button&#62;
+            </div> 
+            <div class="boxa">
+                <h5>Default Bootstrap buttons - Browser -</h5>
+                    <button type="button" class="btn btn-primary">Primary</button>
+                    <button type="button" class="btn btn-info">Info</button>
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5>Outline buttons - Code -</h5>
+                &#60;button type="button" class="btn btn-outline-danger"&#62;Danger&#60;/button&#62;
+                <br>
+               &#60;button type="button" class="btn btn-outline-warning"&#62;Warning&#60;/button&#62;
+            </div> 
+            <div class="boxa">
+                <h5>Outline buttons - Browser -</h5>
+                <button type="button" class="btn btn-outline-danger">Danger</button>
+                <button type="button" class="btn btn-outline-warning">Warning</button> 
+            </div>               
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5>Size buttons - Code -</h5>
+                &#60;button type="button" class="btn btn-primary btn-lg"	&#62;Large button&#60;/button	&#62;
+                <br>
+                &#60;button type="button" class="btn btn-secondary btn-sm"	&#62;Small button&#60;/button	&#62;
+            </div> 
+            <div class="boxa">
+                <h5>Size buttons - Browser -</h5>
+                <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                <button type="button" class="btn btn-secondary btn-sm">Small button</button> 
+            </div>               
+        </div>
+
+        <div class="container" style="display:block;">
+            <h4>Modal in Bootstrap</h4>
+            <p>
+                The link with information about modal in Bootstrap can be found below:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://getbootstrap.com/docs/4.0/components/modal/ " target="_blank">Bootstrap (Modal)</a>
+                </div> 
+                Bootstrap's JavaScript modal plugin adds dialogs to your site for lightboxes, user notifications, or completely custom content.
+                <br>
+                <br>
+                <u>How it works:</u> Before getting started with Bootstraps modal component, be sure to read the following as our menu options have recently changed.
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Modals are built with HTML, CSS, and JavaScript. Theyre positioned over everything else in the document and remove scroll from the <code style="color:black">&#60;body&#62;</code> so that modal content scrolls instead. 
+                    </li>
+                    <li>
+                        Clicking on the modal “backdrop” will automatically close the modal. 
+                    </li>
+                    <li>
+                        Bootstrap only supports one modal window at a time. Nested modals aren't supported as we believe them to be poor user experiences. 
+                    </li>
+                    <li>
+                        Modals use position: fixed, which can sometimes be a bit particular about its rendering. Whenever possible, place your modal HTML in a top-level position to avoid potential interference from other elements. You'll likely run into issues when nesting a modal within another fixed element. 
+                    </li>
+                    <li>
+                        Once again, due to position: fixed, there are some caveats with using modals on mobile devices. See our browser support docs for details. 
+                    </li>
+                </ul>
+                <u>An example:</u>
+            </p> 
+        </div>
+
+        <div class="container">            
+
+            <div class="box_table">                    
+            </div>
+            <div class="box_table" style="background: #49736f; text-align:left;">
+                <h5 style="text-align:left;">Modal - Code -</h5>
+                <pre><code class="html">
+&#60;!-- Button trigger modal --&#62;
+&#60;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"&#62;
+Launch demo modal
+&#60;/button&#62;
+
+&#60;!-- Modal --&#62;
+&#60;div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"&#62;
+&#60;div class="modal-dialog" role="document"&#62;
+&#60;div class="modal-content"&#62;
+    &#60;div class="modal-header"&#62;
+    &#60;h5 class="modal-title" id="exampleModalLabel"&#62;Modal title&#60;/h5&#62;
+    &#60;/div&#62;
+    &#60;div class="modal-body"&#62;
+    ...
+    &#60;/div&#62;
+    &#60;div class="modal-footer"&#62;
+    &#60;button type="button" class="btn btn-secondary" data-dismiss="modal"&#62;Close&#60;/button&#62;
+    &#60;button type="button" class="btn btn-primary"&#62;Save changes&#60;/button&#62;
+    &#60;/div&#62;
+&#60;/div&#62;
+&#60;/div&#62;
+&#60;/div&#62;
+            </code></pre>
+                <h5 style="text-align:left;">Modal - Browser -</h5>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Launch demo modal
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+  
+                                
+    
+            </div>   
+            <div class="box_table">                  
+            </div> 
+            
+        </div>
+
+        <div class="container" style="display:block;"> 
+            <h4>Icons in Bootstrap</h4>    
+            <p>
+                In chapter 4, we used Font Awesome to introduce icons in our app. We can also use Bootstrap icons in our app. In this section, we study how to introduce Bootstrap icons in our app.
+                <br>
+                <br>
+                Useful information about Bootstrap's icons can be found in the links below.
+            </p> 
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://getbootstrap.com/docs/5.0/extend/icons/" target="_blank">Bootstrap (Icons I)</a>
+                <a class="btn-section2" href="https://icons.getbootstrap.com/" target="_blank">Bootstrap (Icons II)</a>
+            </div>  
+            <p>
+                <u>Examples.</u>
+            </p>       
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="background: #49736f;">
+                <h5>Icons - Code -</h5>
+                &#60;i class="bi bi-arrow-up-circle-fill"&#62;&#60;/i&#62;
+                <br>
+                &#60;i class="bi bi-arrow-up-square-fill"&#62;&#60;/i&#62;
+                <br>
+                &#60;i class="bi bi-calculator"&#62;&#60;/i&#62;
+                <br>
+                &#60;i class="bi bi-bar-chart-fill"&#62;&#60;/i&#62;
+            </div> 
+            <div class="boxa">
+                <h5>Icons - Browser -</h5>
+                <div class="h1 mb-3">
+                    <i class="bi bi-arrow-up-circle-fill"></i>
+                    <i class="bi bi-arrow-up-square-fill"></i>
+                    <i class="bi bi-calculator"></i>
+                    <i class="bi bi-bar-chart-fill"></i>
+                </div>    
+            </div>               
+        </div>
+
+    </section> 
+
+   <!-- Section 3 -->
+   <section class="section_3" id="section3">
+
+    <div class="container">            
+
+        <div class="onebox">                    
+        </div>
+        <div class="onebox">
+            <div class="h1 mb-3" style="text-align: center;">
+                <i class="bi bi-calendar"></i>
+            </div>
+            <h1>Weekly challenge</h1>
+            <p style="text-align: left;">
+                In this weekly challenge, you should design your own methodology.html, carbon_app.html and methodology.css and carbon_app.css files. You do not need to do anything extraordinary. Focus on the methodology, the formulas, and the layout for the methodology. It is important that you provide a clear methodology, that helps the user to understand the economic model that you are using in your app. Focus also on the modal to provide some basic instructions. We will develop the instructions later in the course, but try to understand how the modal works. As in the previous chapter, try to have an advanced version of the methodology.html and carbon_app.html files, since that will help you to move forward in the development of your app.
+                <br>
+                <br>  
+                We will discuss the weekly challenge on Thursday 09 February at NHH, and on Friday 10 February at HVL. We will use the main chat to help each other in the weekly challenge. Within those days, please share the information that you consider relevant to help the other groups. 
+            </p>  
+            <div class="container_buttons_links_section_3a">
+                <div class="btn">
+                    <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Hints</a>
+                </div>
+                <div class="btn">
+                    <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch5%20Carbon%20App" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                </div>  
+                <div class="btn">
+                    <a href="{{url_for('gd_course_chapters.gd_course_chapters_ch5_home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
+                </div> 
+                <!-- Modal Instructions1 -->
+                <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                        <h5 class="modal-title", style="color:black">Weekly Challenge, chapter 5</h5>
+                        </div>
+
+                        <div class="modal-body", style="color:black">
+                        <p>
+                            <ol style="text-align: left;">
+                                <li>
+                                    Create a word file for the methodology.html and the carbon_app.html files where you have all the information related to those pages. So that you can update that information during the next weeks.                                    
+                                </li>
+                                </br>
+                                <li>
+                                    Go through the own methodology.html, carbon_app.html and methodology.css and carbon_app.css documents that we have developed in class and introduce the changes that you consider necessary to customize your own projects.
+                                </li>
+                            </ol>
+                        </p>
+                        </div>
+
+                        <div class="modal-footer">
+                        <a href="{{ url_for('gd_course_chats.gd_course_chats_new_main_chat') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Main Chat</a>
+                        <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
+            </div>                    
+
+        </div>   
+        <div class="onebox">                  
+        </div> 
+        
+    </div>
+   </section>   
+
+
+{% endblock content %}

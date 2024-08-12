@@ -1,0 +1,112 @@
+/* Colors */
+/* Rainy theme 5 -Green Digitalization Course and Students Apps-:
+Navbar (background): #8bbbd9
+Navbar (a hover): #808080
+Navbar (logo): #568c63
+Navbar (a menu): #A6C2A3
+*/
+
+/* Google fonts Roboto  */
+@import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner&family=Josefin+Sans&family=Roboto+Mono:ital,wght@1,300&display=swap');
+
+/* CSS utilities */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Josefin sans', sans-serif;
+  background: #fff;
+  line-height: 1.6;
+}
+.container {
+  margin: auto;
+  max-width: 1320px;
+}
+ul { 
+  list-style: none;
+  font-size: 400;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1, h2 {
+  font-weight: 400;
+  line-height: 2.5;
+}
+p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+img {
+  width: 100%;
+}
+/* Navbar  */
+.section_carbon_app_navbar {
+  background-color:#A6C2A3;
+}
+.carbon_app_navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 70px;
+  align-items: center;
+  background-color: #A6C2A3;
+  padding: 0 0px;
+}
+.carbon_app_navbar a {
+  color: #fff;
+  padding: 50px 20px;
+  margin: 0 10px;
+  font-size: 25px;
+  text-decoration: none;
+}
+.carbon_app_navbar a:hover{
+  border-bottom: #A6C2A3 4px solid;
+}
+.carbon_app_navbar ul {
+  display: flex;
+  flex-direction: row;
+}
+.carbon_app_navbar .logo {
+  font-weight: 400;
+}
+.text-logo {
+  color: #35573D;
+}
+/* Footer  */
+.section_footer{
+  background-color:#A6C2A3;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100px;
+  align-items: center;
+  background-color: #A6C2A3;
+  padding: 0 0px;
+}
+
+
+/* Media query */
+@media(max-width:768px){
+  .carbon_app_navbar {
+    height: 180px;
+    flex-direction: column;
+  }
+  .carbon_app_navbar a {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+  .carbon_app_navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .carbon_app_navbar a:hover{
+    color: #568c63;
+    border-bottom: #A6C2A3 2px solid;
+  }
+}

@@ -1,0 +1,46 @@
+{% extends "sbm_course/sbm_course_layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section>
+  <header class="header_css">
+      <div class="container">
+          <div>
+            <h1> <span class="text-warning"> Ch8. Forms</span></h1>
+            <p class="mb-1">
+                Web forms, such as text fields and text areas, give users the ability to send data to your application to use it to perform an action, or to send larger areas of text to the application. In our app, we are using forms to pass information to work out transport carbon emissions.
+                <br>
+                <br>
+                In this chapter, we learn to <strong>create and validate forms</strong>, to <strong>connect forms with html files</strong>. We learn to create messages to provide valuable information to the users of our app when they introduce information in our forms. We also will learn to <strong>protect sensitive information</strong> related to our forms when we deploy our app in AWS.
+            </p>
+            <br>
+
+            <div class="container_buttons_links_header">
+            <div class="btn">
+                <a href="https://youtu.be/Sr6z2FlcnUg"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube1 (Form)</a>
+            </div>
+            <div class="btn">
+                <a href="https://youtu.be/T2japuxC7kE"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube2 (Routes + HTML)</a>
+            </div>
+            <div class="btn">
+              <a href="https://youtu.be/k3v3Nfy9yPY"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube3 (AWS)</a>
+            </div>
+            <div class="btn">
+                <a href="https://github.com/mariobp-NHH/SustainableBusinessModels/tree/main/Ch8.%20Forms" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+            </div>
+            </div>  
+
+          </div>
+          <img
+          src="{{url_for('static', filename='figures/sustainable_business_models/app_development_module/ch8.svg')}}"
+                  alt=""/>
+      </div>
+  </header>
+</section>
+
+
+
+
+
+
+{% endblock content %}

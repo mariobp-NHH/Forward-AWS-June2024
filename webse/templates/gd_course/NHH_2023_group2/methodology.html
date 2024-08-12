@@ -1,0 +1,202 @@
+{% extends "gd_course/NHH_2023_group2/layout.html" %}
+{% block head %}
+<!--Importing MathJax-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='gd_course_NHH_2023_group2_methodology.css') }}">
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- JS/jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+{% endblock %}
+
+{% block header %}
+
+{% endblock%}
+
+{% block content %}
+<section class="methodology">
+    <div class="container">
+        <div class="header" style="z-index:-1">
+            <h1>Our purpose & Methodology:</h1>
+            <h6>Last updated May 2023</h6>
+            <p>
+                We will here give a short summary and explanation of different parameters. <br>
+                For a deeper understanding of every transport method and sources for our estimates see the methodology paper.
+            </p>
+
+            <a type="button" class="btn btn-success" href="#climate_change">Climate Change</a>
+            <a type="button" class="btn btn-success" href="#co2eq">CO2-equvalents</a>
+            <a type="button" class="btn btn-success" href="#Methodology">Methodology</a>
+            <a type="button" class="btn btn-success" href="#EF">Emission Factors</a>
+
+            <!-- Button trigger modal -->
+            
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Methodology Paper
+            </button>
+    
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Methodology Paper</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="{{ url_for('static', filename='methodology.pdf') }}" style="width:100%; height:500px;"></iframe>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
+            </div>      
+
+        <div class="transports">
+        <div class="transport" id="climate_change">
+            <h2>Climate change</h2>    
+            <p>
+                The goal of the Paris Agreement is to limit global warming to less than 2 
+                degrees Celsius by reducing greenhouse gas emissions. 
+                If this limit is exceeded, it could have devastating long-term effects on 
+                both people and nature. Our contribution to this effort is to empower users 
+                to make informed decisions about their travel by taking emissions into 
+                consideration. Given the significant variations in emissions between countries,
+                 we are striving to provide accurate estimates for transportation in Norway 
+                 specifically. 
+            </p>
+            
+        </div>
+        <div class="transport" id="co2eq">
+            <h2>What are CO2 equivalents?</h2>    
+            <p>
+                Different greenhouse gases (GHGs) have varying global warming potentials.
+                 Although carbon dioxide (CO2) is likely the most well-known GHG, CO2 
+                 emissions are responsible for only 80% of global warming. Therefore, it 
+                 is crucial to measure emissions of other GHGs, such as methane (CH4) and 
+                 nitrous oxide (N2O), which, when accumulated, are responsible for 97% of 
+                 global warming. The warming potential of CH4 and N2O is respectively 25 
+                 and 298 times greater than that of the same weight of CO2 over a 100-year 
+                 period. Therefore, we will be using CO2 equivalents (CO2e) to estimate 
+                 emissions, which captures the total warming potential from most emissions.
+            </p>
+        </div>
+        <div class="transport" id="Methodology">
+            <h2>Methodology</h2>    
+            <p>
+                The overall formula of our emission factors is based on the following formula:
+                <div class="formula">\[ CO2eq/km = CO2eq * EF \]</div>
+                <br>
+                To calculate the emissions per kilometer (gCO2eq/km), we factor in the 
+                transport emissions, which can be allocated among passengers (pkm). 
+                CO2e refers to the emissions produced when using a particular energy 
+                source, such as gasoline (gCO2eq/L) and electricity (gCO2eq/kWh). The 
+                energy factor (EF) represents the amount of energy required per kilometer 
+                for a specific mode of transportation (L/km and kWh/km). By combining 
+                these factors, we can estimate the GHG emissions per kilometer. However, 
+                it's important to note that our estimates do not consider emissions 
+                associated with the production and waste management of transportation 
+                methods. It's a common misconception that electric vehicles do not produce
+                 emissions, but this is not entirely accurate due to the emissions generated 
+                 during electricity production. Furthermore, there are significant variations
+                  in emissions between countries.
+            </p>
+        </div>
+        <div class="transport" id="EF" style="width: 100%;">
+            <h2>Overview of emission factors</h2>    
+            <table>
+                <tr class="table_top">
+                    <th>Transport</th>
+                    <th>Fuel</th>
+                    <th>Emissions (CO2eq)</th>
+                </tr>
+                <tr class="table_bot">
+                    <td>Walk</td>
+                    <td></td>
+                    <td style="text-align: right;">0.0</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Bike</td>
+                    <td>No fuel</td>
+                    <td style="text-align: right;">0.0</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Bike</td>
+                    <td>Electric</td>
+                    <td style="text-align: right;">0.2</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Car</td>
+                    <td>Gasoline</td>
+                    <td style="text-align: right;">155.5</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Car</td>
+                    <td>Diesel</td>
+                    <td style="text-align: right;">141.8</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Car</td>
+                    <td>Electric (BEV)</td>
+                    <td style="text-align: right;">7.2</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Car</td>
+                    <td>Plug-in hybrid (PHEV)</td>
+                    <td style="text-align: right;">88.4</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Motorcycle</td>
+                    <td>Gas</td>
+                    <td style="text-align: right;">163.5</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Bus</td>
+                    <td>Diesel</td>
+                    <td style="text-align: right;">82.1</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Train</td>
+                    <td>Electric</td>
+                    <td style="text-align: right;">0.4</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Tram</td>
+                    <td>Electric</td>
+                    <td style="text-align: right;">3.1</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Metro</td>
+                    <td>Electric</td>
+                    <td style="text-align: right;">3.9</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Plane</td>
+                    <td>Kerosine</td>
+                    <td style="text-align: right;">101.0</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Ferry with car</td>
+                    <td></td>
+                    <td style="text-align: right;">1,063.9</td>
+                </tr>
+                <tr class="table_bot">
+                    <td>Ferry without car</td>
+                    <td></td>
+                    <td style="text-align: right;">54.1</td>
+                </tr>
+
+            </table>
+            
+        </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

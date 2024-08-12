@@ -1,0 +1,50 @@
+.register .container{
+    background-color: white;
+    align-items: center;
+    height: 90dvh;
+    padding-top:20px;
+}
+.form_div{
+    margin: auto;
+    max-width: 500px;
+    background-color: #c3decf;
+    padding:15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.login{
+    text-decoration: none;
+    font-weight: bolder;
+    color:seagreen;
+}
+.login:hover{
+    color:green;
+}
+
+.div_low{
+    border-top: solid 1px #247a36;
+    padding-top:3px;
+    text-align: center;
+}
+.div_high{
+    border-bottom: solid 1px #247a36;
+    padding-top:3px; 
+}
+
+/*Form*/
+.form_label{
+    width:100%;
+    text-align: center;
+    font-size: smaller;
+}
+
+.form-group-1{
+    text-align: center;
+}
+.success{
+    margin: auto;
+    max-width: 500px;
+    background-color: #c3decf;
+    padding:15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom:10px;
+}

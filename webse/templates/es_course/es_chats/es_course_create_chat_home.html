@@ -1,0 +1,45 @@
+{% extends "es_course/es_course_layout.html" %} {% block content %}
+
+<!-- Introduction -->
+<section class="main_chat">
+  <div class="container">
+    <div class="box"></div>
+    <div class="box">
+      <div class="h1 mb-3" style="text-align: center">
+        <i class="bi bi-chat-square-dots"></i>
+      </div>
+      <p style="text-align: center">
+        <strong>Crear chat (chat principal):</strong>
+      </p>
+      <p style="text-align: left">
+        Usamos este chat para resolver dudas relacionadas con la programación,
+        desplegar la aplicación, instalar paquetes, diseñar la aplicación,
+        metodología,
+        <strong
+          >es decir, cualquier duda sobre los temas cubiertos en los capítulos
+          del curso</strong
+        >. El chat está abierto a todos los participantes del curso. Usamos el
+        chat regularmente para intercambiar información sobre el “desafío
+        semanal” y cualquier duda sobre el material cubierto en las clases.
+        <strong>Animo a todos los grupos (estudiantes)</strong> a participar
+        activamente en el chat y a ayudarse mutuamente. Participaré activamente
+        en el chat, intentando hacer el curso más útil para los estudiantes.
+      </p>
+
+      <div class="container_buttons_links_chats">
+        <div class="btn">
+          <a
+            href="{{ url_for('es_course_chats.es_course_chats_new_main_chat') }}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #007bff"
+            >Crear chat (chat principal)</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="box"></div>
+  </div>
+</section>
+
+{% endblock content %}

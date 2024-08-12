@@ -1,0 +1,71 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <section class="main_menu">
+        <div class="container">
+            <div class="box">
+
+            </div>
+            <div class="box" style="background-color: #568c63;"> 
+                <legend class="border-bottom mb-4">Changes to improve the course</legend>
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <p>
+                        <ol style="text-align: left;">
+                            <li>
+                                <strong>Teaching</strong>: Which teaching material do you like the most (and the least)?  
+                                Which thing(s) do you like the most (and the least) in the lectures?
+                                How could I improve the lectures?
+                            </li>
+                            <li>
+                                <strong>Entrepreneurship</strong>. How could I organize the course to help you to found your own startups/cooperatives/companies in the future?
+                            </li>
+                            <li>
+                                <strong>Cooperation</strong>. How could I organize the course to help students from HVL and NHH to cooperate?
+                            </li>
+                            <li>
+                                <strong>Gender</strong>. Which changes in the curriculum/methodology/pedagogy could I introduce in the course to foster gender balance?
+                            </li>
+                        </ol>
+                        </p> 
+                        <div class="form-group">
+                            {{ form.title.label(class="form-control-label") }}
+                            {% if form.title.errors %}
+                                {{ form.title(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.title.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.title(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>    
+                        <div class="form-group">
+                            {{ form.content.label(class="form-control-label") }}
+                            {% if form.content.errors %}
+                                {{ form.content(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.content.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.content(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    </br>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </form>     
+            </div>
+            <div class="box">
+
+            </div>
+        </div>
+    </section> 
+
+{% endblock content %}

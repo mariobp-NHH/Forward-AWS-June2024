@@ -1,0 +1,110 @@
+{% extends "sbm_course/sbm_course_layout.html" %}
+{% block content %}
+<section class="section_chapter2" style="background-color: #9AC7A9;">
+  <div class="container">
+
+    <div class="column column1">          
+      <div class="column column1 box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="bi bi-lightbulb"></i>
+        </div>
+        <p><strong>Group 1:</strong> 
+          <ul style="text-align: left;">
+            <li>Ida Hanssen Maltun</li>
+            <li>Marie Andersson Haug</li>
+            <li>Sofie Skuland</li>
+            <li>Hannah Bernstein</li>
+            <li>Eirin Losvik</li>
+          </ul>
+          <br>
+        </p>         
+        <div class="container_buttons_links_chapters">
+          <div class="btn">
+              <a href="{{ url_for('sbm_course_NMBU_2023_group1.home') }}" target="_blank" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">App</a>
+          </div>
+        </div>              
+      </div>
+               
+    </div>
+    
+
+    <div class="column column2">
+
+      <div class="column column2 box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="bi bi-lightbulb"></i>
+        </div>
+        <p><strong>Group 2:</strong> 
+          <ul style="text-align: left;">
+            <li>Sofie Myklebust</li>
+            <li>Jasper John Baguio</li>
+            <li>Reiner Hjemdahl</li>
+            <li>Ann Iren Haakenstad</li>
+            <li>Christina Aastø</li>
+            <li>Thea Dyring</li>
+          </ul>
+        </p> 
+        <div class="container_buttons_links_chapters">
+          <div class="btn">
+              <a href="{{ url_for('sbm_course_NMBU_2023_group2.home') }}" target="_blank" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">App</a>
+          </div>
+        </div> 
+      </div> 
+      
+    </div>
+
+    <div class="column column3">
+
+      <div class="column column3 box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="bi bi-lightbulb"></i>
+        </div>
+        <p><strong>Group 3:</strong> 
+          <ul style="text-align: left;">
+            <li>Karoline</li>
+            <li>Viktoria</li>
+            <li>Adrianna</li>
+            <li>Simen</li>
+          </ul>
+          <br>
+          <br>
+        </p> 
+        <div class="container_buttons_links_chapters">
+          <div class="btn">
+              <a href="{{ url_for('sbm_course_NMBU_2023_group3.home') }}" target="_blank" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">App</a>
+          </div>
+        </div>  
+
+      </div>         
+    </div>
+
+    <div class="column column4">          
+
+      <div class="column column4 box" style="background: #CED1A4;">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="bi bi-lightbulb"></i>
+        </div>
+        <p><strong>Group 4:</strong> 
+          <ul style="text-align: left;">
+            <li>Ida Dyrdal</li>
+            <li>Espen Hinsch</li>
+            <li>Emma Grønning</li>
+            <li>Maria Wiig</li>
+            <li>Ane Langebraaten</li>
+          </ul>
+          <br>
+        </p> 
+        <div class="container_buttons_links_chapters">
+          <div class="btn">
+              <a href="{{ url_for('sbm_course_NMBU_2023_group4.home') }}" target="_blank" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">App</a>
+          </div>
+        </div>  
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+{% endblock content %}

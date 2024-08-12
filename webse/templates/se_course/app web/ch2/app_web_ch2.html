@@ -1,0 +1,273 @@
+{% extends "se_course/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section>
+        <header class="header_css", style="background-color:#f2d95c">
+            <div class="container">
+                <div class="d-sm-flex align-items-center justify-content-between">
+                  <div class="col-lg-7 col-md-7 col-sm-6 col-12">
+                    <h1> <span class="text-warning"> Chapter 2. Templates in the HTML code </span></h1>
+                    <p class="mb-1">
+                      This chapter consists on three parts. First, in the routes file, we develop a complete HTML code
+                        with the content of each of the sections of our webpage. Second, to keep the route file as simple
+                        and organized as possible, we place the HTML code in a separated HTML file that is stored in the template
+                        folder. Finally, to avoid repetition, to simplify the HTML code and to increase the efficiency of our
+                        code, we introduce templates.
+                    </p>
+                    </br>
+                    <div class="container_buttons_links_header">
+                       <div class="btn">
+                           <a href="https://youtu.be/LPMUhHLrPqc" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Video 1</a>
+                       </div>
+                        <div class="btn">
+                           <a href="https://youtu.be/xaYBv1zsIIk" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Video 2</a>
+                       </div>
+                       <div class="btn">
+                           <a href="https://youtu.be/VtIeBBYvfp0" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Video 3</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://github.com/mariobp-NHH/ENE425-Code/tree/main/Ch2.%20Templates" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Github</a>
+                       </div>
+                       <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Emz8NaYUSoFCgSEIUbRU1h4B7GAV7L5wYMOYLHoUgKwg7g?e=jwsdwu" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">OneDrive</a>
+                       </div>
+                    </div>
+                    </br>
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <h5 class="mb-1">Monday challenge breakfast</h5>
+                          <p class="mb-1">
+                              The students have to change some basic styles in one of the HTML files.
+                          </p>
+                      </li>
+                      <li class="list-group-item">
+                          <h5 class="mb-1">HTML code within the routes file</h5>
+                          <p class="mb-1">
+                              In the routes file, we develop a complete HTML code
+                        with the content of each of the sections of our webpage.
+                          </p>
+                      </li>
+                      <li class="list-group-item">
+                          <h5 class="mb-1">HTML code in a separated HTML file</h5>
+                          <p class="mb-1">
+                              To keep the route file as simple
+                        and organized as possible, we place the HTML code in a separated HTML file that is stored in the template
+                        folder.
+                          </p>
+                      </li>
+                      <li class="list-group-item">
+                          <h5 class="mb-1">Templates in the HTML files</h5>
+                          <p class="mb-1">
+                              To avoid repetition, to simplify the HTML code and to increase the efficiency of our
+                        code, we introduce templates.
+                          </p>
+                      </li>
+                    </ul>
+                    </br>
+                  </div>
+                  <div class="col-lg-4 col-md-4 col-sm-5 col-12">
+                      <img src="{{url_for('static', filename='figures/app/ch2/ch2_icon.svg')}}" alt=""/>
+                  </div>
+                </div>
+            </div>
+        </header>
+    </section>
+
+
+<!--introduction-->
+    <section id="breakfast" class="bg-white p-5 p-lg-5 pt-lg-5 text-center text-sm-start">
+
+        <div class="container">
+            <div class="section_intro_css">
+                <div class="box">
+
+                </div>
+                <div class="box">
+                <h2 style="justify-content:center;">Monday challenge breakfast</h2>
+                <p>
+                    The students have to change some basic styles in one of the HTML files. You can change the background
+                    color, the size of the letters, the alignment of the content, underline some part of the text....
+                </p>
+                </div>
+                <div class="box">
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!--Section 1-->
+    <section id="section1" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+        <div class="container">
+
+            <h2>Instructions to run the Apps in chapter 2</h2>
+
+            <p>
+                Please follow the next steps to run the Apps in chapter 2:
+
+                <ol>
+                    <li>
+                        <strong>Download</strong> the <u>entire folder</u> with the project (virtual environment + app.py file) that corresponds to your operative system (Windows or Mac).
+                        <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Emz8NaYUSoFCgSEIUbRU1h4B7GAV7L5wYMOYLHoUgKwg7g?e=6YL8W7" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">OneDrive, Ch2.a</a>
+                       </div>
+                    </li>
+                    <li>
+                        In PyCharm, <strong>open</strong> the entire project (File>Open>(Select the folder that you have downloaded in the previous step).
+                    </li>
+                    </br>
+                    <li>
+                        In PyCharm, open the terminal and <strong>activate the virtual environment</strong>.
+                        <ul>In Windows: (venv\Scripts\activate)</ul>
+                        <ul>In Mac: (source venv/bin/activate)</ul>
+                    </li>
+                    </br>
+                    <li>
+                        By using the terminal in Pycharm, <strong>install flask</strong>: (pip install flask) (or pip3 install flask). The command pip (or pip3) depends on the Python version installed on your computer. Try both.
+                    </li>
+                    </br>
+                    <li>
+                        By using the terminal in Pycharm, <strong>run your App</strong>: (python app.py) (or phyton3 app.py). The command python (or python3) depends on the Python version installed on your computer. Try both.
+                    </li>
+                    </br>
+                    <li>
+                        <strong>Open the app in your browser</strong>: Open the blue link that appears in Pycharm after running your app.py file to open your app in the browser.
+                    </li>
+                    <li>
+                        <strong>Repeat</strong> the entire process for the folders Ch2.b and Ch2.c in <div class="btn">
+                            <a href="https://nhhit-my.sharepoint.com/:f:/g/personal/mario_paz_nhh_no/Emz8NaYUSoFCgSEIUbRU1h4B7GAV7L5wYMOYLHoUgKwg7g?e=6YL8W7" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">OneDrive, Ch2.b and Ch2.c.</a>
+                       </div>
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+
+
+<!--videos-->
+    <section id="videos" class="p-5 p-lg-5 pt-lg-5 text-white text-center text-sm-start", style="background-color:#6c757d;">
+
+        <div class="container">
+
+            <!-- Grid row -->
+            <div class="row">
+
+              <!-- Grid column -->
+              <div class="col-lg-4 col-md-12 mb-4">
+
+                <!--Modal: Name-->
+                <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+
+                    <!--Content-->
+                    <div class="modal-content">
+
+                      <!--Body-->
+                      <div class="modal-body mb-0 p-0">
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                          <iframe class="embed-responsive-item" src="https://youtu.be/LPMUhHLrPqc"
+                            allowfullscreen></iframe>
+                        </div>
+                      </div>
+
+                      <!--Footer-->
+                      <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                    <!--/.Content-->
+
+                  </div>
+                </div>
+                <!--Modal: Name-->
+
+                <a><img class="img-fluid z-depth-1" src="{{url_for('static', filename='figures/app/ch2/1_HTML_routes_web.svg')}}" alt="video"
+                    data-toggle="modal" data-target="#modal1"></a>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-lg-4 col-md-6 mb-4">
+
+                <!--Modal: Name-->
+                <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+
+                    <!--Content-->
+                    <div class="modal-content">
+
+                      <!--Body-->
+                      <div class="modal-body mb-0 p-0">
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                          <iframe class="embed-responsive-item" src="https://youtu.be/xaYBv1zsIIk"
+                            allowfullscreen></iframe>
+                        </div>
+                      </div>
+
+                      <!--Footer-->
+                      <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                    <!--/.Content-->
+
+                  </div>
+                </div>
+                <!--Modal: Name-->
+
+                <a><img class="img-fluid z-depth-1" src="{{url_for('static', filename='figures/app/ch2/2_HTML_folder_web.svg')}}" alt="video"
+                    data-toggle="modal" data-target="#modal6"></a>
+
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-lg-4 col-md-6 mb-4">
+
+                <!--Modal: Name-->
+                <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg" role="document">
+
+                    <!--Content-->
+                    <div class="modal-content">
+
+                      <!--Body-->
+                      <div class="modal-body mb-0 p-0">
+                        <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
+                          <iframe class="embed-responsive-item" src="https://youtu.be/VtIeBBYvfp0"
+                            allowfullscreen></iframe>
+                        </div>
+                      </div>
+
+                      <!--Footer-->
+                      <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-outline-primary btn-rounded btn-md ml-4" data-dismiss="modal">Close</button>
+                      </div>
+
+                    </div>
+                    <!--/.Content-->
+
+                  </div>
+                </div>
+                <!--Modal: Name-->
+
+                <a><img class="img-fluid z-depth-1" src="{{url_for('static', filename='figures/app/ch2/3_HTML_template_web.svg')}}" alt="video"
+                    data-toggle="modal" data-target="#modal4"></a>
+
+              </div>
+              <!-- Grid column -->
+
+            </div>
+            <!-- Grid row -->
+
+        </div>
+
+    </section>
+
+
+{% endblock content %}

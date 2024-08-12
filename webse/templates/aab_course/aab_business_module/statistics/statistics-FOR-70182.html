@@ -1,0 +1,63 @@
+{% extends "aab_course/aab_course_layout.html" %}
+{% block content %}
+
+
+<section class="section_chapter2" style="background-color: #6DA6A6;">
+  <div class="container">
+
+    <div class="column column1">          
+      <div class="column column1 box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="bi bi-graph-up"></i>
+        </div>
+        <p><strong>Ch1:</strong> Your statistics. </p> 
+        
+        <div class="container_buttons_links_chapters">
+          <div class="btn">
+              <a href="{{ url_for('aab_course_statistics.ch1') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 1</a>
+          </div>
+        </div>              
+      </div>
+               
+    </div>
+    
+
+    <div class="column column2">
+
+      <div class="column column2 box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="bi bi-graph-up"></i>
+        </div>
+        <p><strong>Ch2:</strong> Your statistics. </p> 
+        
+
+        <div class="container_buttons_links_chapters">
+          <div class="btn">
+              <a href="{{ url_for('aab_course_statistics.ch2') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 2</a>
+          </div>
+        </div> 
+      </div> 
+      
+    </div>
+
+    <div class="column column3">
+
+      <div class="column column3 box">
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="bi bi-graph-up"></i>
+        </div>
+        <p><strong>Ch3:</strong> Your statistics. </p> 
+
+        <div class="container_buttons_links_chapters">
+          <div class="btn">
+              <a href="{{ url_for('aab_course_business_module.ch3') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 3</a>
+          </div>
+        </div>  
+
+      </div>      
+    </div>
+
+  </div>
+</section>
+
+{% endblock content %}

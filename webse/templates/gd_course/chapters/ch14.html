@@ -1,0 +1,165 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> <span class="text-warning"> Ch14. App deployment in Heroku</span></h1>
+                    <p class="mb-1">
+                        In this chapter, we <strong>deploy </strong>our app in Heroku. First, we modify some files in GitHub. Second, we <strong>deploy</strong> and create a <strong>postgres database</strong> in Heroku. Third, in our local computer, we <strong>create the databases</strong> by connecting remotely to the postgres database in Heroku. Fourth, we <strong>populate</strong> the databases and make some postgres <strong>queries</strong>.
+                    </p>
+                    <br>
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/2e-SCUirqhE"  target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch14%20Heroku" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Deployment</h5>
+                        </div>
+                        <p class="mb-1">
+                            We follow four different steps to deploy our app in Heroku.
+                        </p>
+                        </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Weekly challenge</h5>
+                        </div>
+                        <p class="mb-1">
+                            The students have to deploy their own app in Heroku.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/green_digitalization_course/ch14/ch14.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>JSON dumps</h1>
+            <h4>Some useful links</h4>
+            <p>
+                The links to the YouTube video, and the GitHub account for this section are below:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/2e-SCUirqhE" target="_blank">YouTube</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch14%20Heroku" target="_blank">GitHub</a>
+            </div>
+            <p>
+                In this section, we learn how to deploy our app in Heroku, and we learn how to create a postgres database in Heroku. We proceed in four different steps:
+                <ol>
+                    <li>
+                        <strong>In GitHub</strong>. We need to upload our app in GitHub. 
+                        <br>
+                        <br>
+                        As when we deploy our app by using AWS, we need to upload the <strong>requirementx.txt file</strong>. On top of that we need to upload the <strong>Procfile file</strong>. Please, copy and paste that file from the GitHub repository associated to this chapter. 
+                        <br>
+                        <br>
+                        As when we deploy our app by using AWS, we need to introduce some changes in the <strong>__init__.py file</strong>. 
+                    </li>
+                    <br>
+                    <li>
+                        <strong>In Heroku</strong>. We proceed in three different steps.
+                        <br>
+                        <br>
+                        <ol type="a">
+                            <li>
+                                We <strong>deploy</strong> the app by connecting it to GitHub.
+                            </li>
+                            <br>
+                            <li>
+                                We <strong>create</strong> a postgres database.
+                            </li>
+                            <br>
+                            <li>
+                                We create some <strong>environmental variables</strong> to protect the secret key, and the database.                                 
+                            </li>
+                        </ol>
+                        <br>
+                        Some useful links about Heroku postgres databases and Heroku environmental variables:
+                        <div class="section_container_buttons_chapters">
+                            <a class="btn-section1" href="https://devcenter.heroku.com/articles/connecting-heroku-postgres" target="_blank">Link 1</a>
+                            <a class="btn-section1" href="https://devcenter.heroku.com/articles/config-vars" target="_blank">Link 2</a>
+                            <a class="btn-section1" href="https://devcenter.heroku.com/articles/getting-started-with-python#define-config-vars " target="_blank">Link 3</a>
+                        </div>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>In GitHub</strong>. We need to introduce the information associated with environmental variables.
+                        <br>
+                        <br>
+                        <ol type="a">
+                            <li>
+                                For the secret key: <strong>application.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")</strong>.
+                            </li>
+                            <br>
+                            <li>
+                                For the database: <strong>SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']</strong>. The problem with this line of code is that when we deploy the app, Heroku does not recognize that environmental variable. Therefore, we cannot use that environmental variable, and it is necessary to introduce the information related to our database without protecting it: <strong>DBVAR="postgresql://username:password@host:port/database"</strong>. It seems that to have access to the environmental variables in Heroku, it is necessary to change some information in AWS. I am not going to explain in more detail about that process, since that is out of the scope of this chapter. However, I leave a link below with more information.
+                            </li>
+                            <div class="section_container_buttons_chapters">
+                                <a class="btn-section1" href="https://devcenter.heroku.com/articles/encrypting-heroku-postgres-with-your-key" target="_blank">Link</a>
+                            </div>
+                        </ol>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>In your local computer</strong>. In our local computer, we connect remotely to Heroku, and we create the databases there. We proceed in two steps:                    
+                        <br>
+                        <br>
+                        <ol type="a">
+                            <li>
+                                In the __init__.py file, we connect remotely to the postgres database in Heroku, by typing <strong>DBVAR="postgresql://username:password@host:port/database"</strong>. 
+                            </li>
+                            <br>
+                            <li>
+                                In the terminal, we must type <strong>python</strong>. Once that we are in the Python terminal, we must type <strong>from capp import db</strong>, and then <strong>db.create_all()</strong>. By following these steps, we create the databases in Heroku.
+                            </li>
+                        </ol>
+                    </li>    
+                </ol>
+                <br>
+                Once we have created the databases, we can start to use the app hosted in Heroku and <strong>populate the database</strong>. After registering some users and introducing some means of entries in the database, we can create some <strong>Heroku clips </strong>to access the data by using some basic postsgresSQL commands.
+            </p>  
+        </div>  
+
+     
+            
+    </section>  
+
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+
+        <div class="container">
+            <div class="onebox">                    
+            </div>
+            <div class="onebox">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Weekly challenge</h1>
+                <p style="text-align: left;"> 
+                    In this weekly challenge, you must deploy your app in Heroku. Follow the four steps explained in the chapter and watch the video to complete the process.
+                </p> 
+            </div>   
+            <div class="onebox">                  
+            </div> 
+        </div>
+      
+      </section>    
+
+
+{% endblock content %}

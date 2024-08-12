@@ -1,0 +1,196 @@
+{% extends "sbm_course/sbm_course_layout.html" %}
+{% block content %}
+
+  <!-- Introduction -->
+  <section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1> <span class="text-warning"> App Development Module </span></h1>
+                <p class="mb-1">
+                  The app development module is organized in three blocks that complement each other. First, the students design the <strong>layout of the app</strong> by using HTML, CSS, JavaScript and Flask. Second, they program the <strong>economic simulations</strong> by using Python. Finally, they <strong>deploy their apps</strong> in the server, by using GitGub, Heroku, and Amazon Web Services.
+                </p>
+                </br> 
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">The <strong>first seven chapters</strong> of the course are a block of chapters that will help you to develop the <strong>home and the methodology webpages</strong> in your project. Those seven chapters are <strong>common with the course Green Digitalization and App Development</strong> that Mario teaches at HVL and NHH in Bergen. Therefore, when you click on the links to those chapters, you will be redirected to the chapters in the Green Digitalization and App Development webpage. If you want to come back to the main webpage of the course Sustainable Business Models, you only need to click on the <strong>icon of the course</strong> located on the main menu of the Green Digitalization and App Development webpage.</li>
+                  <li class="list-group-item">The <strong>last three chapters of the course</strong> are <strong>specific for the course Sustainable Business Models</strong>, and they will have their own webpages hosted in the Sustainable Business Models webpage. In those three chapters, we will develop all the <strong>tools necessary to work out transport carbon emissions</strong>.</li>
+                </ul>
+                <br>
+            </div>
+            <img
+            src="{{url_for('static', filename='figures/sustainable_business_models/app_development_module/app_development_module_home.svg')}}"
+                    alt=""/>
+        </div>
+    </header>
+</section>
+
+    <!-- Section chapters   -->
+    <section class="section_chapter2" style="background-color: #9AC7A9;">
+      <div class="container">
+
+        <div class="column column1">          
+          <div class="column column1 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch1:</strong> We install Python and Visual Studio Code. We learn to create virtual enviroments, and we create our first Flask app. </p> 
+            
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch1') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 1</a>
+              </div>
+            </div>              
+          </div>
+
+          <div class="column column1 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch2:</strong> By using Flask routes, we design the basic structure of our app (home page, and app calculator page). <br><br></p>
+
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch2') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 2</a>
+              </div>
+            </div> 
+          </div>           
+
+          <div class="column column1 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch3:</strong> We learn the basic elements of HTML (head and title), and we study the main elements and properties of the head and title. </p>
+  
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch3') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 3</a>
+              </div>
+            </div> 
+          </div> 
+                   
+        </div>
+        
+
+        <div class="column column2">
+
+          <div class="column column2 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch4:</strong> We develop the HTML and CSS file to design the navigation bar, the header and the developers sections in our home.html file.</p>
+            
+
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch4') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 4</a>
+              </div>
+            </div> 
+          </div> 
+
+          <div class="column column2 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch5:</strong> We develop the HTML and CSS file to design the methodology.html and carbon_app files. We also learn how to use Bootstrap.</p>
+
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch5') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 5</a>
+              </div>
+            </div>  
+          </div>
+
+          <div class="column column2 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch6:</strong> By using Blueprints, we change the structure of our app creating a package that will be hosted in the platform Forward.</p>
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch6') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 6</a>
+              </div>
+            </div>  
+          </div>
+
+          
+        </div>
+
+        <div class="column column3">
+
+          <div class="column column3 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch7:</strong> We create an account in GitHub and Amazon Web Services (AWS). We deploy our app in AWS by using Elastic Beanstalk and CodePipeline.</p>
+
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch7') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 7</a>
+              </div>
+            </div>  
+
+          </div>
+          <div class="column column3 box">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch8:</strong> We learn how to create forms to interact with the user. We protect sensitive information creating environmental variables.</p>
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('sbm_course.sbm_course_chapters_ch8') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 8</a>
+              </div>
+            </div>  
+          </div>
+
+          <div class="column column3 box">
+            <div class="h1 mb-3" style="text-align: center;" >
+              <i class="bi bi-calendar-check"></i>
+            </div>
+            <p><strong>Midway conference:</strong> The students present their apps and their business models. They also explain their team work strategy.</p>
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="#" class="btn btn-warning btn-sm mr-2" style="background-color: #f2b84b;">Midway Conference</a>
+              </div>
+            </div>  
+          </div>          
+        </div>
+
+        <div class="column column4">          
+
+          <div class="column column4 box" style="background: #CED1A4;">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch9:</strong> By using Python, we develop the mathematical machinery to work out users' transport carbon emissions.</p>
+            <br>
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('sbm_course.sbm_course_chapters_ch9') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 9</a>
+              </div>
+            </div>  
+          </div>
+
+          <div class="column column4 box" style="background: #CED1A4;">
+            <div class="h1 mb-3" style="text-align: center;">
+              <i class="bi bi-terminal-fill"></i>
+            </div>
+            <p><strong>Ch10:</strong> We learn to access users' carbon emissions data and we display that information by using chart.js.<br><br></p>
+
+            <div class="container_buttons_links_chapters">
+              <div class="btn">
+                  <a href="{{ url_for('sbm_course.sbm_course_chapters_ch10') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 10</a>
+              </div>
+            </div>  
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+{% endblock content %}

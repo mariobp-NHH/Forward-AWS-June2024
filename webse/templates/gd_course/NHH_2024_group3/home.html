@@ -1,0 +1,129 @@
+{% extends "gd_course/NHH_2024_group3/layout.html" %}
+{% block content %}
+
+
+<!-- Header -->
+<section class="section_header_home">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+      {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">
+              {{ message }}
+          </div> 
+      {% endfor %}
+  {% endif %}
+{% endwith %}
+  <section class="hero-banner">
+<h1>Eco-Vision Partners</h1>
+{% if current_user.is_authenticated %}
+  <div class="hero-btns">
+    <a href="{{url_for('gd_course_NHH_2024_group3.carbon_app_home')}}" class="btn">Access the Carbon App</a>
+  </div>
+      {% else %}
+      <div class="hero-btns">
+        <a href="{{url_for('gd_course_NHH_2024_group3.login')}}" class="btn">Login</a>
+        <a href="{{url_for('gd_course_NHH_2024_group3.register')}}" class="btn">Register</a>
+      </div>
+{% endif %}
+      </section>
+</section> 
+
+<!-- Developers -->
+
+<section class="section_developers" style="text-align: center;">
+  <div class="container">
+    <div class="developers" style="display: grid; place-items: center;">
+      <h1 style="margin-bottom: 20px;">Meet our Team</h1>
+      <p style="color:white; width: 97%; text-align: left;">This is the team behind the project. We are composed of 7 motivated students from all over the world. Our different backgrounds help us create a complete and diversified work environment. The mission of our project is to raise awareness among our users about how their lifestyles affects the planet and to provide them the motivation to change some habits. By selling our services to companies, we want to offer a user-friendly and modern tool for the employees could use to understand their environmental impact. Moreover, companies, by applying our recommendations towards an eco-friendlier lifestyle, could receive a green certificate that would give credit for the progress operated. </p>
+      <p 
+      style="color:white;" >If you want to learn more about our business model, click <a href="{{url_for('gd_course_NHH_2024_group3.about_us_home')}}">here</a>.</p>
+    </div>
+    
+    <div class="developers">
+        <div class="box">
+          <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/Borghild.jpg') }}" alt="" class="img_profile">
+          <h3>Borghild Nicolaysen</h3>
+          <p>  I am from Bergen, Norway, a second year student at NHH. Motivated by our enviromental crisis I am Interested in finding eco-friendly solutions and reducing carbon impact. I hope you will join us on this journey towards a sustainable future. 
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>
+        <div class="box">
+          <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/WhatsApp Image 2024-02-12 at 15.43.16.jpeg') }}" alt="" class="img_profile">
+          <h3>Diego Zumárraga</h3>
+          <p>  I am a 22 year old student from Deusto University, Spain who is currently studying abroad at NHH. My hobbies are calisthenics, hiking, cooking and reading. I am a nature lover, so I am really enjoying Norway's fjords!
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>           
+   
+    </div>
+
+    <div class="developers">
+      <div class="box">
+        <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/1628480166382-2.jpeg') }}" alt="" class="img_profile">
+        <h3>Eric Klassen</h3>
+        <p>I'm a 22 year business management student from London Canada on exchange at NHH. I love technology, and I am interested in discovering how I can use technology to better understand our impact on the environment.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/eric-klassen-551616205/"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      <div class="box">
+        <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/Fiona.jpg') }}" alt="" class="img_profile">
+        <h3>Fiona Müller</h3>
+        <p> I am a 21 years old exchange student at NHH from HEC Lausanne in Switzerland. I like to be creative and also enjoy to be outside in the nature. Getting a better understanding of how our society impacts the climate change is one of my particular interest.  
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/fiona-alyssa-m%C3%BCller-3b1b81266"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+                   
+  </div>
+    <div class="developers">
+      <div class="box">
+        <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/Bildet.jpeg') }}" alt="" class="img_profile">
+        <h3>Oscar Karlsen</h3>
+        <p> I am from Bergen and a third year student at Norwegian School of Economics. I have developed a great interest for technology, especially concerning ways that technology and innovation can make businesses and societies more efficient and sustainable. I’m intrigued by the potential of digital solutions when it comes to transitioning our societies and economies into a more sustainable future.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      <div class="box">
+        <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/Mirei.jpg') }}" alt="" class="img_profile">
+        <h3>Mirei Okabayashi</h3>
+        <p> 20 years old, exchange student from Japan <br> Hi! I'm currently interested in solving the issues regarding to sustainability. I have many hobbies such as dancing, traveling, baking, and so on. I started crocheting here in Bergen!  
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/mirei-okabayashi-51054a298/"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>    
+                  
+  </div>
+
+  <div>
+    <div class="developers">
+      <div class="box">
+        <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/Nozomi.jpg') }}" alt="" class="img_profile">
+        <h3>Nozomi Gomi</h3>
+        <p>  I am a Kobe University student studying abroad at NHH. I am into the cozy Bergen city and working out at gym. Inspired by start-up companies and entrepreneurs, I have majored in entrepreneurship and value creation for sustainability. As a cat lover, I have been volunteering at a animal shelter here.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/nozomi-gomi-28909427b/"  target="_blank">LinkedIn</a>
+        </div> 
+      </div> 
+      <div class="box">
+        <img src="{{ url_for('static', filename='gd_course_NHH_2024_group3/image.png') }}" alt="" class="img_profile">
+        <h3>Our Mascot</h3>
+        <p>Hei, I am an essential worker for the team. As a leaf, I serve as a reminder of our obligation to the planet, and encourage environmental responsibility.</p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+        </div>
+    </div>
+  </div>          
+</section>
+        
+{% endblock content %}

@@ -1,0 +1,1150 @@
+{% extends "aab_course/aab_course_layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section>
+  <header class="header_css">
+    <div class="container">
+        <div>
+            <h1> <span class="text-warning"> Ch2. Energy and Digitalization </span></h1>
+            <p class="mb-1">
+              In this chapter we study the main characteristics of <strong>electricity markets</strong>. We study the main characteristics of those markets that 
+              make them special in different dimensions. We study the reasons because companies can exercise <strong>market power</strong> in those markets. 
+              We analyze the design of <strong>electricity markets in Europe</strong>, and also the design of those markets in smaller markets, i.e., 
+              the <strong>distribution sector</strong>. We focus our attention on the role of digitalization in electricity markets, paying special attention to 
+              the business model implemented by the<strong> Norwegian company NODES</strong> that uses digitalization to increase flexibility in distribution electricity markets.
+            </p>
+            </br>
+
+            <div class="container_buttons_links_header">
+              <div class="btn">
+                  <a href="#"  data-toggle="modal" data-target="#paper_Modal" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-regular fa-newspaper"></i> Material</a>
+                  <a href="#"  data-toggle="modal" data-target="#presentation_Modal" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-person-chalkboard"></i> Presentation</a>
+                  <a href="#"  data-toggle="modal" data-target="#carbon_app_instructions", class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;"><i class="fa-solid fa-list"></i> Instructions</a>
+              </div>
+            </div>  
+
+            <!-- Modal Instructions -->
+            <div class="modal fade" id="carbon_app_instructions" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+          
+                    <div class="modal-header">
+                    <h5 class="modal-title", style="color:black; text-align: center;">Ch2, instructions</h5>
+                    </div>
+          
+                    <div class="modal-body", style="color:black">
+                    <p style="text-align: left;">
+                      In this chapter we study the role of digitalization in the energy sector. In the first part, we study the <strong>main features of electricity markets</strong>. In the second part, we study 
+                      the <strong>design of local electricity markets</strong>. In the third part, Guro Grøtterud, who works in NODES, will present the <strong>business model and the market design 
+                      implemented in NODES</strong> to foster flexibility in the electricity market.
+                    </p>
+                    <ol style="text-align:left;">
+                        <li>
+                          Read the <strong>material for this chapter</strong>. If you have time, read the first two papers in section 2 (Overview).
+                        </li>
+                        <li>
+                          Read the <strong>paper in section 4</strong> (Distribution electricity markets. NODES company business model). The paper can be downloaded from the website.
+                        </li>
+                        <li>
+                          During the last part of the lecture on Monday 20th November, you will work in groups to analyze that paper and prepare a <strong>short 
+                            presentation</strong> for the rest of the class. That will help you to prepare some questions for the talk of Guro Grøtterud.
+                        </li>
+                        <li>
+                          On Wednesday 22nd November <strong>Guro Grøtterud </strong>will give a talk about the digital value chain and the business model 
+                          implemented in NODES to trade flexibility in the distribution electricity market.
+                        </li>
+                    </ol>
+                    </div>
+          
+                    <div class="modal-footer">
+                    <button class="btn btn-secondary btn-lg mr-2", style="background-color:#6c757d;" data-dismiss="modal">Close</button>
+                    </div>
+          
+                </div>
+                </div>
+            </div>
+
+            <!-- Modal Paper -->
+            <div class="modal fade" id="paper_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg " style="height: 80%;" >
+              <div class="modal-content" style="height:100%">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <iframe id="paper_frame" src="/static/material/aab_course/ch2/ch2_material.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+              </div> 
+
+              <!-- Modal Presentation -->
+            <div class="modal fade" id="presentation_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg " style="height: 80%;" >
+              <div class="modal-content" style="height:100%">
+                  <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Presentation</h5>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                      <iframe id="presentation_frame" src="/static/material/aab_course/ch2/ch2_presentation.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                  </div>
+                  <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+              </div>
+              </div>
+              </div> 
+
+            <div class="list-group", style="padding: 15px 0px;">
+              <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Introduction</h5>
+                </div>
+                <p class="mb-1">
+                  We start the chapter with some questions that will help us to frame the main topics that we will cover in the chapter.
+                </p>
+
+              </a>
+              <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Overview</h5>
+                </div>
+                <p class="mb-1">
+                  We provide a general overview of the restructuring process of
+                  electricity markets that has taken place in the last years.
+                </p>
+              </a>
+              <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Electricity markets in Europe</h5>
+                </div>
+                <p class="mb-1">
+                  We present some of the key aspects in the integration process of electricity markets in
+                  Europe.
+                </p>
+              </a>
+              <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Distribution electricity markets. NODES company business model</h5>
+                </div>
+                <p class="mb-1">
+                  we study the role that companies like NODES has on the design of distribution electricity markets. 
+                  We start analyzing some use cases in that company, then, we study the market design implemented by NODES.
+                </p>
+              </a>
+              <a href="#section5" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">Case study: NODES</h5>
+                </div>
+                <p class="mb-1">
+                  We analyze the role of digitalization to increase flexibility in local electricity networks.
+                  We study the business model developed by NODES to foster that flexibility.
+                </p>
+              </a>
+           </div>
+        </div>
+        <img
+        src="{{url_for('static', filename='figures/auditing_accounting_business/ch2/ch2.svg')}}"
+                alt=""/>
+    </div>
+  </header>
+</section>
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+
+  <div class="container">
+      <div class="boxa" style="background: #96C6D9;">
+        <h2 style="justify-content: center;">Introduction</h2>
+        <p>
+          We start the chapter with some questions that will help us to frame the main topics that we will cover in the chapter. 
+          Which is the <strong>main characteristic of electricity markets</strong>? Which is the main characteristic of electricity markets that 
+          facilitate the <strong>exercise of market power</strong>? Which could be the mayor impact of <strong>digitalization</strong> in electricity markets?
+        </p>
+          <div class="section_container_buttons_chapters" style="justify-content: center;">
+              <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch2_ex1_questionnaire') }}">Question 1</a>
+              <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch2_ex2_questionnaire') }}">Question 2</a>
+              <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch2_ex3_questionnaire') }}">Question 3</a>
+              <a class="btn-section1_box" href="{{ url_for('aab_course_business_module.ch2_ex4_questionnaire') }}">Question 4</a>
+          </div> 
+      </div>              
+  </div>
+ 
+</section> 
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+
+  <!-- Borenstein -->
+  <div class="container" style="display:block;">
+      <h2>Overview</h2>
+
+      <p>
+        The objective of this section is to provide a general <strong>overview</strong> of the restructuring process of
+        electricity markets that has taken place in the last years. Electricity markets have been liberalized in the last two decades. In this section we study four papers that analyse that process in
+        detail. Those papers have been written for prominent researchers that has been involve in the
+        liberalization process of electricity markets in Europe and United States.
+        <br>
+        <br>
+        Based on those papers, we could identify the main problems in the restructuring process, and
+        how we could use those lessons to analyse the current challenges in electricity markets.
+        <br>
+        <br>
+        The authors analyse the restructuring process using different approaches, however there are
+        many ideas that appear recursively in the papers. Try to identify those key aspects and try to
+        think how those main aspects affect other utilities rather than electricity.
+      </p>
+      <h4>Borenstein, S., 2002, "The Trouble with Electricity Markets: Understanding California’s Restructuring Disaster," 
+        Journal of Economic Perspectives, 16, 1, 191-211.</h4>
+        <p>Please read the paper. Below, we address some questions that cover the main topics in the paper:</p>
+  </div> 
+
+  <div class="container">
+    <div class="boxa" style="background: #49736f;">
+        <h5 style="text-align:center;">Question 1:</h5>
+        <p>
+          Which are the <strong>characteristics of electricity markets</strong> that facilitate the exercise
+          of market power?
+          <ul>
+            <li>Demand is difficult to <strong>forecast</strong>.</li>
+            <li>Demand is <strong>insensitive</strong> to price fluctuations.</li>
+            <li>Supply faces <strong>binding constraints</strong> at peak times.</li>
+            <li><strong>Storage</strong> is prohibitively costly.</li>
+            <li>Demand and supply have to <strong>match</strong> all the time.</li>
+          </ul>
+        </p>
+    </div> 
+    <div class="boxa">
+        <h5 style="text-align:center;">Question 2:</h5>
+        <p>
+          Which are the <strong>market designs</strong> proposed by Borenstein to mitigate market power
+          in electricity markets?
+          <ul>
+            <li><strong>Long-term contracts</strong> between wholesale buyers and sellers.</li>
+            <li><strong>Real-time retail pricing</strong> of electricity, which indicates to the final consumer on an hourly
+              basis when electricity is more or less costly to consume.</li>
+          </ul>
+        </p>
+    </div>               
+  </div>
+
+  <div class="container">
+    <div class="boxa" style="background: #49736f;">
+        <h5 style="text-align:center;">Question 3:</h5>
+        <p>
+          Which is the role of<strong> long-term contracting</strong> in electricity markets? How <strong>long-term
+            contracting</strong> could contribute to mitigate market power?
+          <ul>
+            <li>When a firm has sold some output in advance, it has <strong>less incentive to restrict its output</strong>
+              in the spot market in an attempt to push up prices in that market, since it does not receive
+              the higher spot price on the output it has already sold through a forward contract.</li>
+              <li>
+                The incentive of a generating company to exercise market power will depend on its <strong>net
+                  purchasing position</strong> in the market at a given point in time.
+                  <ul>
+                    <li>If a firm were a large <strong>net seller</strong>, it would likely have an incentive to restrict output
+                      to raise price.</li>
+                      <li>
+                        If it had sold much of its output under forward contracts,then it would have much
+		                    less incentive to restrict its output to increase the spot price.</li>
+                  </ul>
+              </li>
+          </ul>
+        </p>
+    </div> 
+    <div class="boxa">
+        <h5 style="text-align:center;">Question 4:</h5>
+        <p>
+          How <strong>real time pricing</strong> could contribute to mitigate market power?
+          <ul>
+            <li>Real time pricing would prevent <strong>extreme price spikes</strong>.</li>
+            <li>It would also reduce the financial incentive of sellers to <strong>exercise market power</strong>, since one
+              firm’s reduction of output would have a smaller effect on price than it does when demand
+              is completely price-inelastic.</li>
+            <li>The effect of real-time pricing also has very important implications for the <strong>negotiation of
+                long-term contracts</strong>. If sellers, at the time of negotiation, believe that real-time pricing
+                is likely, then they will reduce their forecasts of the average spot prices they would be able
+                to earn if they did not sell through a long-term contract. As a result, the sellers will be
+                willing to accept a lower long-term contract price than they otherwise would.</li>
+          </ul>
+        </p>
+    </div>               
+  </div>
+
+  <section class="section_2">
+    <div class="container">
+        <div class="box_questions_two">
+                    
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ form_m2_ch2_q1.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 1</legend>
+                <p class="card-text">According to the previous paper, which is <strong>NOT</strong> a salient characteristic of electricity markets?
+                        (chose one of the next options):
+                    </p>
+                    <div class="form-group">
+                        {% if form_m2_ch2_q1.type.errors %}
+                            {{ form_m2_ch2_q1.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form_m2_ch2_q1.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form_m2_ch2_q1.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="form-group border-bottom pb-3">
+                        {{ form_m2_ch2_q1.submit(class="btn btn-outline-info")}}
+                    </div>
+            </form>      
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ form_m2_ch2_q2.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 2</legend>
+                <p class="card-text">According to the previous paper, how <strong>long-term contracts</strong> in electricity could <strong>mitigate market power</strong>?
+                        (chose one of the next options):
+                    </p>
+                    <div class="form-group">
+                        {% if form_m2_ch2_q2.type.errors %}
+                            {{ form_m2_ch2_q2.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form_m2_ch2_q2.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form_m2_ch2_q2.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="form-group border-bottom pb-3">
+                        {{ form_m2_ch2_q2.submit(class="btn btn-outline-info")}}
+                    </div>
+            </form>
+        </div>
+        <div class="box_questions_two">
+                    
+        </div>
+    </div>
+  </section> 
+
+  <!-- Joskow -->
+  <div class="container" style="display:block;">
+    <h4>Joskow, P., 2008, "Lessons Learned from Electricity Market Liberalization," The Energy Journal, Special Issue on the Future of Electricity, 9-42.</h4>
+      <p>Please read the paper. Below, we address some questions that cover the main topics in the paper:</p>
+  </div> 
+
+  <div class="container">
+    <div class="boxa" style="background: #49736f;">
+        <h5 style="text-align:center;">Question 1:</h5>
+        <p>
+          Which are the <strong>characteristics of electricity markets</strong> that facilitate the exercise
+          of market power?
+          <ul>
+            <li>Generator market power arises as a consequence of <strong>transmission constraints</strong> that limit
+              the geographic expanse of competition.</li>
+            <li><strong>Generation ownership concentration</strong> within constrained import areas.</li>
+            <li>The <strong>non-storability</strong> of electricity.</li>
+            <li>The very <strong>low elasticity of demand</strong> for electricity</li>
+          </ul>
+        </p>
+    </div> 
+    <div class="boxa">
+        <h5 style="text-align:center;">Question 2:</h5>
+        <p>
+          Which are the basic features that guarantees a proper <strong>market design</strong> in electricity
+          markets?
+          <ul>
+            <li>Transparent organized <strong>spot</strong> markets for energy and <strong>ancillary</strong> services (day-ahead and real
+              time balancing).</li>
+              <li><strong>Locational pricing</strong> of energy reflecting the marginal cost of congestion and losses at each
+              location.</li>
+              <li>The integration of spot wholesale markets for energy with the efficient allocation of scarce
+                transmission capacity.</li>
+              <li>Auctioning of <strong>transmission rights</strong> to hedge congestion, serve as a basis for incentives for
+                  good performance by system operators and transmission owners, and partially to support
+                  new transmission investment.</li>
+              <li>An <strong>active demand side</strong> that can respond to spot market price signals.</li>
+              <li><strong>Forward contracts</strong> to mitigate market power.</li>
+          </ul>
+        </p>
+    </div>               
+  </div>
+
+  <div class="container">
+    <div class="boxa" style="background: #49736f;">
+      <h5 style="text-align:center;">Question 3:</h5>
+      <p>
+        Could you identify bad practises that induce a <strong>lack of investment in transmission capacity</strong>? 
+        Could an only market mechanism induce the correct investment decision in transmission capacity
+        <ul>
+          <li>Fragmented transmission <strong>ownership</strong>.</li>
+          <li>Separation of <strong>system operations</strong> from <strong>transmission maintenance</strong> and <strong>investment</strong>.</li>
+          <li>Poorly designed incentive regulation mechanisms (Joskow, 2005).</li>
+          <li>Relying primarily on <strong>market-based “merchant transmission” investment</strong>, that is
+            where new transmission investments must be fully supported by congestion rents (the
+            difference in locational prices times the capacity of a new link) is likely to lead to inefficient
+            investment in transmission capacity (Joskow and Tirole, 2005).</li>
+        </ul>
+      </p>
+    </div> 
+    <div class="boxa" style="background: #c5c8d9;">
+         
+    </div>               
+  </div> 
+
+  <section class="section_2">
+    <div class="container">
+        <div class="box_questions_two">
+                    
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ form_m2_ch2_q3.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 3</legend>
+                <p class="card-text">According to the previous paper, which is <strong>NOT</strong> a salient characteristic of electricity markets?
+                        (chose one of the next options):
+                    </p>
+                    <div class="form-group">
+                        {% if form_m2_ch2_q3.type.errors %}
+                            {{ form_m2_ch2_q3.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form_m2_ch2_q3.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form_m2_ch2_q3.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="form-group border-bottom pb-3">
+                        {{ form_m2_ch2_q3.submit(class="btn btn-outline-info")}}
+                    </div>
+            </form>      
+        </div>
+        <div class="box_questions_two">
+            <form method="POST" action="">
+                {{ form_m2_ch2_q4.csrf_token }}
+                    <legend class="border-bottom mb-4">Question 4</legend>
+                <p class="card-text">According to the previous paper, which is <strong>NOT</strong> a salient feature to guarantee a good electricity market design?
+                        (chose one of the next options):
+                    </p>
+                    <div class="form-group">
+                        {% if form_m2_ch2_q4.type.errors %}
+                            {{ form_m2_ch2_q4.type(class="form-control form-control is-invalid") }}
+                            <div class="invalid-feedback">
+                                {% for error in form_m2_ch2_q4.type.errors %}
+                                    <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            {{ form_m2_ch2_q4.type(class="form-control form-control") }}
+                        {% endif %}
+                    </div>
+                    </br>
+                    <div class="form-group border-bottom pb-3">
+                        {{ form_m2_ch2_q4.submit(class="btn btn-outline-info")}}
+                    </div>
+            </form>
+        </div>
+        <div class="box_questions_two">
+                    
+        </div>
+    </div>
+  </section> 
+
+  <!-- Newbery -->
+  <div class="container" style="display:block;">
+    <h4>Newbery, D., 2005, "Electricity Liberalization in Britain: The Quest
+      for a Satisfactory Wholesale Market Design,", The Energy Journal, 26,
+      43-70.</h4>
+      <p>Please read the paper. Below, we address some questions that cover the main topics in the paper:</p>
+  </div> 
+
+  <div class="container">
+    <div class="boxa" style="background: #49736f;">
+        <h5 style="text-align:center;">Question 1:</h5>
+        <p>
+          Can you enumerate some of the ideas proposed by Newbery to <strong>increase competition in electricity markets</strong>?
+          <br>
+          <br>
+          Newbery proposed a market design similar to the one proposed in the previous papers.
+          His paper is relevant because he also analyses the role of <strong>market structure</strong> to guarantee that
+          the electricity markets work properly.
+        </p>
+    </div>               
+  </div>
+
+</section> 
+
+<!-- Section 3 -->
+<section class="section_3" id="section3">
+
+  <div class="container" style="display:block;">
+      <h2>European electricity markets</h2>
+      <p>
+        The purpose of this section is to present some of the key aspects in the integration process of electricity markets in
+        Europe. It also introduces two relevant elements in the design of electricity auctions: the design
+        of transmission tariffs and the delineation of bidding zones.
+      </p>
+      <h4>Integration of electricity markets in Europe. The role of the system operator.</h4>
+      <p>
+        This section is based on the next document: European Commission, 2015, "Options for Future European Electricity System Operation." (Only the first 11th pages.)
+        <br>
+        <br>
+        The European power sector is undergoing important changes. Especially the increasing penetration of renewable energy sources (RES), as part of the transition to a de-carbonised power
+        system, results in a need to continuously assess and decide upon (the adoption of) alternative
+        technologies, policies and practices. We study the main points presented in European Commission (2015) to improve the design of electricity markets.
+      </p>
+      <ol class="list-group list-group-numbered">
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <p class="text-right">
+              The main <strong>goals</strong> that should lead any proposed changes to <strong>system operations</strong> and <strong>planning</strong>:
+              <ol>
+                <li>Security of supply (secure for everybody)</li>
+                <li>Market facilitation (affordable and competitive pricing)</li>
+                <li>Integration of RES (environmentally sustainable).</li>
+              </ol>
+            </p>
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-start">
+          <div class="ms-2 me-auto">
+            <p class="text-right">
+              The <strong>system planning and operations</strong> that should be taken into account in the new regulation scenario are the next ones:
+              <ol>
+                <li>Long-term network planning (years),</li>
+                <li>System operation before real-time (months, day-ahead, intra-day),</li>
+                <li>Real-time system operation (less than 15 minutes)</li>
+              </ol>
+            </p>
+          </div>
+        </li>
+      </ol>
+  </div> 
+
+  <div class="container">
+      <div class="boxa" style="background: #789091;">
+        <p>            
+          To facilitate the <strong>governance</strong> of the system operator in the integration of electricity markets
+          in Europe, the European commission proposed the next parties which will assume different roles:
+          <ul>
+            <li>The <strong>European Commission</strong> to formulate general energy policy and directives</li>
+            <li><strong>European regulatory body</strong> (current ACER) with the power to independently check
+              the formulation and execution of methodologies, processes and procedures in line with the
+              general policy</li>
+            <li><strong>Regional Operation Centres</strong> (ROC) to execute prescribed tasks according to the formulated methodologies, 
+              processes and procedures; responsible for execution</li>
+            <li>European entity (current <strong>ENTSO-E</strong>) for development and implementation of methods
+              and tools for LT planning and SO. In consultation with ACER (who sets up guidelines by
+              request of the EC) this body develops the framework (e.g. grid codes) for execution of the
+              tasks by ROCs and ensures overall alignment between them, and with national TSOs.</li>
+          </ul>
+        </p>
+          
+      </div> 
+      <div class="boxa">
+        <p>
+          According with the European Commission, the long-term planning and system operator before real time operations should 
+          be centralized. The <strong>benefits from centralization</strong> are mainly related to:
+          <ul>
+            <li>Network planning,</li>
+            <li>and system operations functions such as capacity calculation, congestion management,
+              adequacy assessment and balancing.</li>
+          </ul>
+        </p>
+      </div>               
+  </div>
+
+  <div class="container">
+      <div class="boxa" style="background: #5A758C;">
+          <p>
+            The European entity for the development and implementation of methods and tools (current
+            ENTSO-E) is responsible for development of the way of working of the foreseen ROCs in line
+            with guidelines and/ or regulation. This is then monitored and enforced by the regulatory body
+            (current ACER).
+            <br>
+            <br>
+            The European Commission propose the next geographical partition for TSO coordination
+            (figure Geographical partition for TSO coordination):
+          </p>
+      </div> 
+      <div class="boxa" style="background: #5A758C;">
+        <img
+        src="{{url_for('static', filename='figures/auditing_accounting_business/ch2/geography.png')}}"
+                alt=""/>
+      </div>               
+  </div> 
+  <!-- Tariffs -->
+  <div class="container" style="display:block;">
+    <h4>Transmission tariffs.</h4>
+      <p>
+          This section is based on the next documents:
+
+          <ul>
+            <li>ENTSO-E, 2016, "ENTSO-E ITC Overview of Transmission Tariffs in Europe: Synthesis 2014."
+              (Only the first 21st pages).</li>
+            <li>Nord Pool, 2007, "TSO Congestion Rent. How to Calculate the Congestion Rents."</li>
+            <li>Nord Pool, 2010, "Point Tariff System."</li>
+          </ul>          
+        In the presence of transmission constraints the equilibrium prices differ across markets generating 
+        <strong>congestion rents</strong>. In a <strong>perfect competition scenario</strong>, 
+        the congestion rents are
+        enough to finance the investments in transmission capacity. However, in the presence of <strong>uncertainty</strong> 
+        or <strong>lumpy investments</strong> it is necessary to introduce tariffs to finance the investments in transmission capacity.
+        <br>
+        <br>
+        In the majority of the European countries, the tariff structure is based on a <strong>point of connection tariff</strong> system (ENTSO-E, 2016; Nord Pool, 2010). 
+        The <strong>users of the grid</strong> are charged
+        for injection or outtake of electricity at a connection point in the transmission grid. The point
+        of connection tariff consists of two parts, a <strong>power charge</strong> and an <strong>energy charge</strong>.
+        <br>
+        <br>
+        The <strong>power charge</strong> covers costs for expansion, operation and maintenance of the transmission grid. 
+        It is based on annual capacity subscription for injection and outtake of electricity at
+        each connection point. The cost the subscriber has to pay is the product of the annual capacity
+        subscription and the power charge in the connection point.
+        <br>
+        <br>
+        The <strong>energy charge</strong> is based on the transmission losses in the transmission grid caused by
+        injection and outtake of electricity in different connection points. It is dependent on how the
+        generation or load are distributed in the grid.
+        <br>
+        <br>
+        The power charge and the energy charge have a <strong>geographical</strong> (latitude, north/south) and a
+        time component (day/night, winter/spring, peak/off-peak) that provide a long-term locational
+        signal on where it is optimal to add generation and load capacity from a grid perspective.
+      </p>
+  </div> 
+
+  <!-- Bids -->
+  <div class="container" style="display:block;">
+    <h4>Bidding zones.</h4>
+      <p>
+          This section is based on the next document:
+          <ul>
+            <li>Ofgem, 2014, "Bidding Zones Literature Review."</li>
+          </ul>          
+          A bidding zone is the largest geographical area within which market participants are able to
+          <strong>exchange energy without capacity allocation</strong>.
+      </p>
+  </div> 
+
+  <div class="container">
+    <div class="boxa" style="background: #5A758C;">
+      <img
+      src="{{url_for('static', filename='figures/auditing_accounting_business/ch2/bid.png')}}"
+              alt=""/>
+    </div> 
+    <div class="boxa" style="background: #5A758C;">
+        <p>
+          Bidding zones in Europe are currently defined according to differing <strong>criteria</strong> (figure Bidding Zones in Europe).
+          <ul>
+            <li>The majority are defined by national borders (eg, France or the Netherlands);</li>
+            <li>however, some are larger than national borders (eg, Austria, Germany and Luxembourg or
+              the Single Electricity Market for the island of Ireland)</li>
+            <li>and some are smaller zones within individual countries (eg, Italy, Norway or Sweden).</li>
+          </ul>
+          <strong>How bidding zones can be delineated?</strong> Delineating bidding zones according to the location
+          of network constraints may be undertaken in a number of ways.
+          <ul>
+            <li>Nodal pricing: The equilibrium price across markets differs when the transmission line is
+              congested.</li>
+            <li>Zonal pricing: The equilibrium price across markets is the same even when the transmission
+              line is congested.</li>
+          </ul>
+          <strong>Why does bidding zone configuration matter?</strong>
+          <ul>
+            <li>An optimal delineation of bidding zones should promote robust price signals for <strong>efficient
+              short-term utilisation</strong></li>
+            <li>and <strong>long-term development</strong> of the power system,</li>
+            <li>whilst at the same time <strong>limiting system costs</strong>, including balancing costs and re-dispatch
+              actions undertaken by TSOs.</li>
+          </ul>
+        </p>
+    </div>               
+  </div> 
+
+  <div class="container" style="display:block;">
+    <p>
+      The delineation of bidding zones has important impacts on <strong>market efficiency, liquidity</strong>,
+      issues with <strong>market power, investment signals</strong> for new generation, <strong>distributional</strong> impacts
+      and the cross border <strong>flows</strong>. We analyse one by one those impacts.
+    </p>
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p class="text-right">
+            <strong>Impact on efficient use of the network</strong>. The configuration of bidding zones has important implications for system operation, providing short run signals to users of the
+            network that impact on the utilisation of available capacity and ultimately the overall efficiency of the system. These short run signals also have a long-term impact, influencing
+            the long-term investment decisions of market players.
+            <ul>
+              <li>Delineating bidding zones according to network constraints would allow these constraints to be managed by capacity allocation rather than re-dispatch (ie, ex- post
+                modifications of generation schedules undertaken by the SO), <strong>lowering constraint
+                management costs for the SO</strong>.</li>
+              <li>In export-constrained regions, the average wholesale price of electricity is likely to
+                fall. Conversely, the average wholesale price of electricity is likely to rise in those
+                areas at the other side of the constraint, where demand is higher. There is therefore
+                a <strong>distributional impact</strong> to be considered through any reconfiguration of bidding
+                zones.</li>
+            </ul>
+          </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p class="text-right">
+            <strong>Impact on market liquidity and hedging</strong>. The conventionally perceived impact on
+            market liquidity arising from the configuration of bidding zones is that of <strong>falling levels
+            of liquidity as the number of zones increases</strong>. This is a direct result of the smaller
+            size of the markets, with fewer market players and as such a lower level of churn.
+            <br>
+            <br>
+            <strong>Lower liquidity consequences</strong>:
+            <ul>
+              <li>Lower liquidity could mean a less clear indication of the <strong>future value of power</strong> from
+                the market, which adds a layer of risk which could lead to inefficient investment, or
+                efficient investment not taking place.</li>
+              <li>A fall in liquidity could also mean an increase in the <strong>cost of risk</strong>, due to lack of
+                trading partners; this could well have a knock on effect on investment.</li>
+            </ul>
+          </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p class="text-right">
+            <strong>Impact on investment</strong>. The configuration of bidding zones is crucial to provide long-run
+            signals that may affect investment decisions. The more the bidding zones configuration reflects the physical network constraints, 
+            the greater the efficiency of the price signals for
+            cross-zonal network development and the price signals for generation and load investments.
+            <br>
+            <br>
+            There are many <strong>practical considerations</strong> that should take into account to guarantee the
+            correct investment decisions:
+            <ul>
+              <li><strong>Lumpiness and economies of scale</strong> of transmission investments.</li>
+              <li><strong>Uncertainties</strong> about future generation investments and demand growth.</li>
+              <li>Difficulty of decentralising charges for <strong>reliability</strong> and quality of service.</li>
+              <li>Transmission charges.</li>
+            </ul>
+          </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p class="text-right">
+            <strong>Impact on market power</strong>. The precise impact of the number of bidding zones on market
+	          power is unclear in the literature.
+            <ul>
+              <li>Fewer, larger bidding zones imply a large number of market players in any market
+                and as such <strong>greater competition</strong> and liquidity.</li>
+              <li>Larger bidding zones <strong>may create potential market power</strong> in re-dispatch markets,
+                if it is assumed that larger bidding zones implies greater need for managing congestion
+                through re-dispatch.</li>
+            </ul>
+          </p>
+        </div>
+      </li>
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p class="text-right">
+            <strong>Impact on cross-border flows</strong>
+            <ul>
+              <li>If bidding zones are not delineated according to network constraints, there is an inherent 
+                <strong>risk to the efficiency of power flows across borders</strong>.</li>
+              <li>Prices in zones that are delineated according to network congestions are more reflective
+                of local conditions whereas larger zones that suffer from internal network congestion
+                do not tend to accurately reflect local conditions in their uniform wholesale prices,
+                potentially resulting in sub-optimal interconnector flows.</li>
+              <li><strong>Optimal interconnector usage</strong> between countries would be more likely if both sides
+                  of the interconnector use zonal pricing, as long as the zones are configured according
+                  to network constraints.</li>
+            </ul>
+          </p>
+        </div>
+      </li>
+    </ol>
+  </div> 
+
+</section> 
+
+<!-- Section 4 -->
+<section class="section_4" id="section4">
+        
+  <div class="container" style="display:block;">
+      <h2>Distribution electricity markets. NODES company business model</h2>
+      <p>
+        In this section we study the role that companies like NODES has on the design of distribution electricity markets. 
+        We start analyzing some use cases in that company, then, we study the market design implemented by NODES.
+      </p>
+      <h4>Use Cases</h4>
+      <p>
+        Below, we study to use cases implemented by NODES to understand the market design and the business model of the company.
+      </p>
+  </div> 
+
+  <div class="container">
+      <div class="boxa" style="background: #546E75;">
+          <h5 style="text-align:center;">Use Case 1: NorFlex project demonstrate integration to Statnett’s mFRR market</h5>
+          <p>
+            This transaction is the first of its kind, pioneered within the NorFlex pilot project, where flexibility offered 
+            from industrial, commercial buildings or households can be bought by both local grid companies and Statnett as a 
+            result of the coordination between the two marketplaces. The first trade resulted in activation of flexibility from greenhouses.
+            <br>
+            <br>
+            «Statnett has in a previous pilot project (eFleks) tested flexibility, where the aggregators have participated 
+            directly in the TSOs balancing markets. What is new in the NorFlex project, is that we are testing how a local 
+            flexibility market can be offered to both local grid companies and Statnett’s balancing markets, simultaneously. 
+            This has never been tested before and can contribute to increased liquidity in markets and the customers’ ability 
+            to make money» Says Pasi Norrbacka, Project manager for NorFlex at Statnett.
+            <br>
+            <br>
+            «To avoid bottlenecks in the grid, households and commercial companies can be paid to reduce their consumption, for 
+            example by switching off EV charging, boilers and other consumptions in a short period. The local grid companies Agder 
+            Energi Nett and Glitre Energi has tested this with flexibility from greenhouses, schools and nurseries by using different 
+            types of technology» says Inger Ose, NorFlex project manager at Agder Energi.
+            <br>
+            <br>
+            An important part of the project is to demonstrate how aggregation, trading and activation of flexibility can be done in an 
+            automated process. This important to Statnett, who are not set up to manage small bid volumes. Statnett uses electronic processes 
+            (e-bestill) when the bids are activated, and NODES are forwarding these activation signals.
+          </p>
+          <div class="section_container_buttons_chapters">
+              <a class="btn-section4_box" href="https://nodesmarket.com/norflex-project-demonstrate-integration-to-statnetts-mfrr-market/" target="_blank">Use Case 1</a>
+          </div> 
+      </div> 
+      <div class="boxa">
+          <h5 style="text-align:center;">Use Case 2: IntraFlex: Auto-rebalancing energy suppliers</h5>
+          <p>
+            Building on the success of its current procurement of flexibility services, Western Power Distribution has launched IntraFlex, 
+            a new innovation project with NODES and Smart Grid Consultancy.
+            <br>
+            <br>
+            The Network Innovation Allowance funded project will look to deploy the NODES platform in the UK and create new, closer 
+            to real time, flexibility market for the Distribution Network Operator. This will allow for providers to offer 
+            flexibility in the day-ahead and intra-day timeframes with a number of features developed to ensure that any 
+            actions do not create imbalance in the wider electricity market.
+            <br>
+            <br>
+            Operating closer to real time should allow new participants to access the markets whilst key features such as a day 
+            ahead information services as well as an auto-rebalancing function to the intra-day market will look to lower supplier 
+            exposure to imbalance costs and decrease the costs of providing flexibility in the long run.
+            <br>
+            <br>
+            The project will utilise a market platform designed and operated by NODES. This has been piloted in other European 
+            trial and will be extended by NODES as part of the project to add imbalance mitigation features.
+            <br>
+            <br>
+            The trial start with stakeholder engagement aimed at validating the market design and ensuring its value to the UK 
+            electricity system “This trial will help us to better understand the impact that calling flexibility will have on 
+            energy suppliers when we establish a flexibility market that operates close to real-time.  Utilising the NODES 
+            platform will allow for new flexibility providers to offer their services confidently in the market” says Ben Godfrey, 
+            Network Strategy Manager, WPD
+          </p>
+          <div class="section_container_buttons_chapters">
+              <a class="btn-section4_box" href="https://nodesmarket.com/case/intraflex/" target="_blank">Use Case 2</a>
+          </div> 
+      </div>               
+  </div>
+
+  <div class="container" style="display:block;">
+    <h4>Market design</h4>
+    <p>
+      Video that explains the market design
+    </p>
+    <div class="section_container_buttons_chapters">
+      <a class="btn-section3" href="https://nodesmarket.com/nodes-smartgrid/" target="_blank">Video</a>
+    </div>
+    <p>
+      We study the market design implemented by NODES by using a relevant the Use Case NorFlex and focusing in the role that NODES 
+      could have promoting flexibility in the EV sector in Norway. We study the next paper:
+      <ul>
+        <li>Abusdal, G. M., Hagen H., Kazemi S., and Pedersen J., 2022, "NorFlex: Accommodating E-mobility in the distribution 
+          grid utilising a flexibility market to manage grid congestion." \textit{CIRED workshop on E-mobility and power distribution 
+          systems Porto}, Paper 1316.
+        </li>
+      </ul>
+    </p>
+    <div class="section_container_buttons_chapters">
+      <a class="btn-section3" href="#" data-toggle="modal" data-target="#NODES1_Modal">Paper</a>
+    </div>
+    <!-- Modal NODES1 -->
+    <div class="modal fade" id="NODES1_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg " style="height: 80%;" >
+        <div class="modal-content" style="height:100%">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+              <iframe id="NODES1_frame" src="/static/material/aab_course/ch2/ch2_NODES1.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> 
+
+    <h5>Introduction</h5>
+    <p>
+      <strong>E-mobility in Norway.</strong>
+      Norway is the frontrunner in terms of EV adoption, 
+      boasting a sixty five percent market share of new-sales in 2022.
+      <br>
+      <br>
+      Private Charging Point Operators (CPOs) were invited to 
+      bid for both construction and operation of the charging 
+      infrastructure. Today Norway has a network of fast 
+      chargers on the major corridors. The public fast (50kW) 
+      and ultrafast (>150kW) charging points are accessible 24 
+      /7 and open to all types of EVs. In addition to CPOs 
+      developing fast chargers, other companies are developing 
+      AC charging at home and building complexes. 
+      <br>
+      <br>
+      <strong>Smart EV charging.</strong>
+      New innovative technology enables Electric Vehicles (EV) charging to 
+      become smarter. Remote monitoring and activation of 
+      charging enable new business models to develop. This 
+      creates value to the customers that are willing to make 
+      upwards or downwards adjustments in their consumption.
+      <br>
+      <br>
+      <strong>E-mobility impact on grid congestions.</strong>
+      The uptake of EVs is growing rapidly, resulting in an
+      associated charging infrastructure being rolled out. As the 
+      number of EVs increases, so does the electricity grid load 
+      and the potential need for grid reinforcement. 
+      <br>
+      <br>
+      Charging EVs might represent a problem for the grid.
+      Either when uncoordinated charging is started based on 
+      consumer behaviours from multiple chargers or started 
+      because of a coordinated charging process optimised on 
+      energy price alone. Smart charging represents both a 
+      challenge and an opportunity for the Distribution System Operator (DSO) in this respect.
+    </p>
+    <h5>Market-based approach</h5>
+    <p>
+      Sellers place sales bids of flexibility on NODES based on 
+      portfolios with one or more assets. Portfolios can be offered in the order book located at the lowest level of the 
+      grid and will be visible through linked order books on 
+      NODES. Each bid needs to have an associated baseline 
+      which will be locked in the event of a matched trade. The 
+      seller then provides meter data to the project’s Asset Hub
+      at a minimum of 2 hours before and 2 hours after the 
+      activated period.
+    </p>
+    <h5>Aggregating domestic flexibility from E-mobility.</h5>
+    <p>
+      Tibber is an energy company mainly focused on residential 
+      customers. Tibber interacts with its customers via its app. 
+      When a person downloads the app and becomes a 
+      customer, they can pair electric appliances to the Tibber 
+      app. Smart Charging guarantees the customer a discount
+      for their EV charging cost in exchange for letting Tibber 
+      control the device, always complying with the constraints 
+      previously defined in the app by the customer.
+      <br><br>
+      To be able to offer the price reduction, Tibber actively uses
+      arbitraging of the energy prices, either spot price or 
+      intraday asset back trading; or by using the assets in
+      flexibility markets, which can be provided to the TSO or 
+      DSO.
+    </p>
+    <h5>Results</h5>
+    <p>
+      <strong>Modelling the congestion areas/order books.</strong>
+
+      Building up the value chain and business models has been 
+      done by defining an area of the distribution grid where 
+      flexibility from various sources, levels, and providers has 
+      been incentivised through an open tender process. Flexible Services Provideres (FSPs) 
+      were invited to define and develop a business model using 
+      the market design of the flexibility market platform where 
+      the DSO and the TSO were the participants for utilising 
+      local aggregated flexibility. The pilot area is defined by the 
+      regional distribution grid transformers modelled in a DSO 
+      tool (GridTools) for assessing, optimising, and trading 
+      flexible resources through an API to the NODES market 
+      platform.
+      <br><br>
+      <strong>Tibber reflections.</strong>
+
+      Forecasting load on a portfolio level for baselines has been 
+      a very difficult challenge to solve, considering the size of 
+      each fleet and the randomness of customer behaviour.
+      When it comes to trading, algorithmic automated trading 
+      was developed for the project, which would need to be 
+      further developed as market liquidity increases.
+      <br><br>
+      In Norflex, meter data is reported to AssetHub. AssetHub 
+      is a platform developed by the DSO. Tibber believes that 
+      this is not a scalable solution, considering that there are 
+      hundreds of DSOs in Europe. Developing a custom 
+      solution for each market would limit the expansion of 
+      aggregators and impair the use of those assets. An ideal 
+      solution would be to have one platform at a country level.
+    </p>
+    <h5>Conclusions</h5>
+    <p>
+      <ol>
+        <li>This paper has described how smart charging of EVs in 
+          Norway can stimulate the use of EV flexibility to offer new 
+          services for solving congestion management in distributed 
+          grids via a new marketplace, NODES.</li>
+          <br>
+        <li>While some market barriers have already been solved, 
+          others still require attention. There is still a need for more 
+          testing of baseline methodologies for congestion 
+          management and testing of independent aggregation.</li>
+          <br>
+        <li>Smart and flexible solutions are required in order to 
+          facilitate a cost-effective development of the power 
+          system. Electric transport is one of the options that have
+          the potential to start playing a key role in developing a 
+          smart network.</li>
+          <br>
+        <li>During the NorFlex project, real trading has been 
+          successfully demonstrated with both the sellers and buyers 
+          posting bids in the market. NODES market has matched, 
+          validated, and settled these trades. From Jan 1 2021 to Jan 
+          31 2022, a total of 318 MWh has been traded for activation 
+          (ShortFlex) as a result of 12 618 trades at a volume
+          weighted average price of NOK 8 381,00 per MWh. The 
+          lowest traded volume was 0,001MWh, and the largest 
+          traded volume was 5 MWh (NODES Market Data, 2022).</li>
+      </ol>
+    </p>
+    
+
+     
+
+  </div> 
+</section>
+
+<section class="section_4">
+  <div class="container">
+      <div class="box_questions_two">
+                
+      </div>
+      <div class="box_questions_two">
+        <form method="POST" action="">
+          {{ form_m2_ch2_q5.csrf_token }}
+              <legend class="border-bottom mb-4">Question 5</legend>
+          <p class="card-text">According to the previous paper, which is the <strong>business model</strong> that NODES aims to exploit in the E-mobility sector?
+                  (chose one of the next options):
+              </p>
+              <div class="form-group">
+                  {% if form_m2_ch2_q5.type.errors %}
+                      {{ form_m2_ch2_q5.type(class="form-control form-control is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form_m2_ch2_q5.type.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form_m2_ch2_q5.type(class="form-control form-control") }}
+                  {% endif %}
+              </div>
+              </br>
+              <div class="form-group border-bottom pb-3">
+                  {{ form_m2_ch2_q5.submit(class="btn btn-outline-info")}}
+              </div>
+        </form>          
+      </div>
+      <div class="box_questions_two">
+        <form method="POST" action="">
+          {{ form_m2_ch2_q6.csrf_token }}
+              <legend class="border-bottom mb-4">Question 6</legend>
+          <p class="card-text">According to the previous paper, which is the <strong>main problem</strong> that NODES aims to solve in the E-mobility sector?
+                  (chose one of the next options):
+              </p>
+              <div class="form-group">
+                  {% if form_m2_ch2_q6.type.errors %}
+                      {{ form_m2_ch2_q6.type(class="form-control form-control is-invalid") }}
+                      <div class="invalid-feedback">
+                          {% for error in form_m2_ch2_q6.type.errors %}
+                              <span>{{ error }}</span>
+                          {% endfor %}
+                      </div>
+                  {% else %}
+                      {{ form_m2_ch2_q6.type(class="form-control form-control") }}
+                  {% endif %}
+              </div>
+              </br>
+              <div class="form-group border-bottom pb-3">
+                  {{ form_m2_ch2_q6.submit(class="btn btn-outline-info")}}
+              </div>
+          </form>
+      </div>
+      <div class="box_questions_two">
+                
+      </div>
+  </div>
+</section> 
+
+<!-- Section 5 -->
+<section class="section_1" id="section5">
+
+  <div class="container" style="display:block;">
+    <h2>Case Study: Digitalization and flexibility in local electricity networks
+    </h2>
+    <p>
+        We analyze the role of digitalization to increase flexibility in local electricity networks.
+        We study the business model developed by NODES to foster that flexibility.
+    </p>
+  </div> 
+
+  <div class="container">
+      <div class="boxa" style="background: #96C6D9;">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h5 style="text-align:center;">NODES Business Model</h5>
+          <p>
+              In this cases study, we try to answer the following questions:
+          </p>
+          <ul>
+              <li>
+                  Which is (or could be) the <strong>business model for this case</strong>?
+              </li>
+              <li>
+                  Which is the <strong>digital value chain</strong> for this case?
+              </li>
+              <li>                    
+                Which are the <strong>main challenges</strong> to implement digital solutions from a <strong>technical and social perspective</strong>?
+              </li>
+              <li>
+                  Which are (or could be) the <strong>target groups</strong> for this business model?
+              </li>
+              <li>
+                  How we can use <strong>digitalization</strong> to foster flexibility in the local network?
+              </li>
+              <li>
+                  Could you design a <strong>Business Canvas Model</strong> for this case?
+              </li>
+          </ul>
+          <div class="section_container_buttons_chapters">
+              <a class="btn-section1_box" href="https://nodesmarket.com/" target="_blank">NODES</a>
+          </div>
+      </div>              
+  </div>
+ 
+</section> 
+
+{% endblock content %}

@@ -1,0 +1,372 @@
+{% extends "gd_course/gd_course_layout.html" %}
+{% block content %}
+
+  <!-- Introduction -->
+  <section class="main_chat">
+    <div class="container">
+        <div class="box">
+
+        </div>
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat (main chat):</strong> </p>
+          <p style="text-align: left;">We use this chat to solve questions related to programming, to deploy the app, to install packages, to design the app, methodology, <strong>i.e., any question about the topics covered in the chapters of the course</strong>. The chat is open to all the participants in the course. We use the chat in a regular basis to exchange information about the “weekly challenge,” and any doubts about the material covered in the lectures. I <strong>encourage all the groups (students)</strong> to participate actively in the chat and to help each other. I will participate actively in the chat trying to make the course more useful for the students.</p>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_main_chats') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">View chat (main chat)</a>
+            </div>
+          </div>        
+        </div>
+        <div class="box">
+
+        </div>
+    </div>
+  </section>  
+
+  <!-- Section chats HVL   -->
+  <section class="section_chatsHVL" style="background-color: #9fa7bf;">
+    <div class="container">
+
+      <div class="column column1"> 
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 1 (HVL):</strong></p> 
+          <ul>
+            <li>Mona Amundsen</li>
+            <li>Line Vik	Birkelid</li>
+            <li>Andrei-Mihai	Cosmin</li>
+            <li>Lena	Engebretsen</li>
+            <li>Haeun	Jang</li>
+            <li>Haakon	Rekve</li>
+            <li>Oda Kalve	Strand</li>
+            <li>Keita	Ueda</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g1_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 1 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 2 (HVL):</strong></p> 
+          <ul>
+            <li>Tonje	Andersen</li>
+            <li>Brock Daniel	Cunningham</li>
+            <li>Augustin Sequoya	Hyde</li>
+            <li>Klaudia Karina	Kulawik</li>
+            <li>Andy Etsiako	Ntiamoah</li>
+            <li>Alexander Theodor Strøno</li>
+            <li>Augustina Maria-Ana	Vornehm</li>
+            <li>Tore Bjelland	Østrått</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g2_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 2 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+
+      </div>
+      
+
+      <div class="column column2">
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 3 (HVL):</strong></p> 
+          <ul>
+            <li>Eilie Jack	Afram</li>
+            <li>Nathan Denis Colette</li>
+            <li>Henrik Ansok	Høgås</li>
+            <li>Feyme	Mestanli</li>
+            <li>Simon Dreyer	Sindre</li>
+            <li>Bendik Nordli	Syverud</li>
+            <li>Julie	Vik</li>
+            <li>Michelle	Yang</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g3_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 3 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 4 (HVL):</strong></p> 
+          <ul>
+            <li>Rune Holt	Andreassen</li>
+            <li>Sandra Therese	Birkedal</li>
+            <li>Sander Lønne	Dyngeland</li>
+            <li>Petter Gustaf	Jonstang</li>
+            <li>Thea Ellendatter	Nordvold</li>
+            <li>Jens Høyem	Stensen</li>
+            <li>Tonje	Thrane</li>
+            <li>Sondre Engelsen	Vrålid</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g4_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 4 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+
+      </div>
+
+      <div class="column column3">
+        
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 5 (HVL):</strong></p> 
+          <ul>
+            <li>Signy Rut	Astvaldsdottir</li>
+            <li>Joachim	Duong</li>
+            <li>Anne	Helmen</li>
+            <li>Frida Lunde	Høisæther</li>
+            <li>Lena	Maes</li>
+            <li>Isa-Marie	Sommerseth</li>
+            <li>Eyakem Tesfamariam	Tecle</li>
+            <li>Magnus	Vevle</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g5_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 5 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 6 (HVL):</strong></p> 
+          <ul>
+            <li>Stine	Berg</li>
+            <li>Elias	Braut</li>
+            <li>Eirik Borgersrud	Grønvold</li>
+            <li>Elisa Norland	Høien</li>
+            <li>Mina Sandbakk	Lunde</li>
+            <li>Anders Fylling	Persson</li>
+            <li>Peder Eugen	Porsvik</li>
+            <li>Torill Thuestad	Stokka</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g6_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 6 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+      </div>
+
+      <!-- <div class="column column4">
+        
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 7 (HVL):</strong></p> 
+          <ul>
+            <li>Student 1</li>
+            <li>Student 2</li>
+            <li>Student 3</li>
+            <li>Student 4</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g7_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 7 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 8 (HVL):</strong></p> 
+          <ul>
+            <li>Student 1</li>
+            <li>Student 2</li>
+            <li>Student 3</li>
+            <li>Student 4</li>
+          </ul>            
+          <div class="container_buttons_links_chatsHVL">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_HVL_g8_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 8 (HVL)</a>
+            </div>
+          </div>              
+        </div>
+
+      </div> -->
+
+    </div>
+  </section>
+
+  <!-- Section chats NHH   -->
+  <section class="section_chatsNHH" style="background-color: #c5c8d9;">
+    <div class="container">
+
+      <div class="column column1"> 
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 1 (NHH):</strong></p> 
+          <ul>
+            <li>Martin Jåvold Akselsen</li>
+            <li>Christian Bøe Eriksen</li>
+            <li>Jon Kristoffer Solvang Kringeland</li>
+            <li>Richard Emil Myrdal</li>
+            <li>Sara Helen Birkeland Skjerping</li>
+            <li>Carl-Oscar Bergfjord Stoll</li>
+            <li>Vilde Marie Zeiner</li>
+            <li>Per Ole Lande</li>
+          </ul>            
+          <div class="container_buttons_links_chatsNHH">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g1_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 1 (NHH)</a>
+            </div>
+          </div>              
+        </div>
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 2 (NHH):</strong></p> 
+          <ul>
+            <li>Frede Andersen</li>
+            <li>Elias Kvalsvik Haugen</li>
+            <li>Elias Limayem</li>
+            <li>Ida Prestnes</li>
+            <li>Kåre Habbestad Skimmeland</li>
+            <li>Marte Søvre</li>
+            <li>Julian Liam Wolter</li>
+          </ul>  
+          <br>          
+          <div class="container_buttons_links_chatsNHH">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g2_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 2 (NHH)</a>
+            </div>
+          </div>              
+        </div>
+
+      </div>
+      
+
+      <div class="column column2">
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 3 (NHH):</strong></p> 
+          <ul>
+            <li>Sofie Klever Årdal</li>
+            <li>Mathias Haughom</li>
+            <li>Franziska Roszinski</li>
+            <li>Joachim Nygaard-Nilssen</li>
+            <li>Trisha Shenoy</li>
+            <li>Elise Isolde Stenevik</li>
+            <li>Serenne Vikebø</li>
+          </ul>   
+          <br>          
+          <div class="container_buttons_links_chatsNHH">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g3_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 3 (NHH)</a>
+            </div>
+          </div>              
+        </div>
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 4 (NHH):</strong></p> 
+          <ul>
+            <li>Emilie Bredenbekk</li>
+            <li>Alise Haukenes</li>
+            <li>Nikolai Jensen</li>
+            <li>William Ebert Nedal</li>
+            <li>Mads Bogen Øye</li>
+            <li>Eirik Berg Slinde</li>
+            <li>Magnus Njølstad Vonen</li>
+          </ul> 
+          <br>            
+          <div class="container_buttons_links_chatsNHH">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g4_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 4 (NHH)</a>
+            </div>
+          </div>              
+        </div>
+
+      </div>
+
+      <div class="column column3">
+        
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 5 (NHH):</strong></p> 
+          <ul>
+            <li>Øystein Breivik</li>
+            <li>Anders Hordvei Fossli</li>
+            <li>Sarib Ali Iqbal</li>
+            <li>Hanne Abrahamsen Jensen</li>
+            <li>Ole Henrik Birkeland Øgaard</li>
+            <li>Kaia Baumann Semb</li>
+            <li>Jonas Harald Stockkamp</li>
+          </ul>   
+          <br>          
+          <div class="container_buttons_links_chatsNHH">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g5_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 5 (NHH)</a>
+            </div>
+          </div>              
+        </div>
+
+        <div class="column column1 box">
+          <div class="h1 mb-3" style="text-align: center;">
+            <i class="bi bi-chat-square-dots"></i>
+          </div>
+          <p style="text-align: center;"><strong>View chat group 6 (NHH):</strong></p> 
+          <ul>
+            <li>Ole Eiane</li>
+            <li>Serina Haukefær Grøttå</li>
+            <li>Magnus Haaland</li>
+            <li>Kristian André Knarvik</li>
+            <li>Eilef Johansen Meyer</li>
+            <li>Herman Østensen</li>
+            <li>André Hansen Skarholm</li>
+          </ul>  
+          <br>           
+          <div class="container_buttons_links_chatsNHH">
+            <div class="btn">
+                <a href="{{ url_for('gd_course_chats.gd_course_chats_view_NHH_g6_chats') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">View chat group 6 (NHH)</a>
+            </div>
+          </div>              
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+{% endblock content %}

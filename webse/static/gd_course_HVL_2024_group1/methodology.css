@@ -1,0 +1,128 @@
+/* Colors 
+Methodology, section 1 (header, background): #2a4359
+Methodology, section 1 (header, boxes): #6da6a6
+Methodology, section 2 (methodology, background): #466fa6
+Methodology, section 2 (methodology, boxes): #8badd9
+*/
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 100;
+}
+h4 {
+  font-size: 18px;
+  text-align: left;
+  font-weight: 100;
+}
+ol {
+  font-size: 18px;
+  font-weight: 100;
+}
+/* Section header */
+.section_header_methodology {
+  background-color:#2a4359;
+}
+.header {
+  display: flex;  
+  align-items: start;
+  background: #2a4359;
+}
+.header .box {
+  flex: 1;
+  background: #2a4359;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.header .box:nth-of-type(1) {
+  flex: 1; 
+  max-width: 100%; 
+}
+.header .box:nth-of-type(2) {
+  flex-grow:1;
+}
+.container_buttons_links_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_header a:hover {
+  color: #2a4359;
+}
+.container_buttons_links_header btn {
+  width: 100px;
+  height: 100px;
+  background: #2a4359;
+  color: #fff;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+/* Section methodology */
+.section_body_methodology {
+  background-color: #2a4359;
+  color:#fff ;
+  margin: 20px 20px;
+  margin-bottom: 0px;
+  padding: 10px;
+}
+.methodology {
+  display: flex;  
+  align-items: center;
+  background: #2a4359;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+
+/* Table with two columns */
+.methodology .box_table2 {
+  flex: 1;
+  width: 100%; /* Set the width to 100% */
+  max-width: 100%; /* Allow the box to shrink */
+  background: rgba(76, 127, 182, 0.923);
+  color: #fff;
+  border-radius: 45px;
+  margin: 10px 10px;
+  padding: 10px;
+  list-style: none;
+  text-align: start;
+  align-items: end;
+  justify-content: center;
+}
+.methodology .box_table2:nth-of-type(1) {
+  flex-grow:1;
+  background: rgba(76, 127, 182, 0.923);
+}
+.methodology .box_table2:nth-of-type(2) {
+  flex-grow:1;
+  background: rgba(76, 127, 182, 0.923);
+}
+
+@media (max-width:1020px) { 
+  .text-logo {
+    margin-left: -30px;
+  }
+  .section_body_methodology {
+    margin: 10px 10px;
+  }
+  .header {
+    flex-direction: column;
+  } 
+  .methodology {
+    flex-direction: column;
+    margin-bottom: 0;
+    padding: 0;
+  } 
+  .methodology .box_table2 {
+    margin: 10px;
+  }
+}
+
