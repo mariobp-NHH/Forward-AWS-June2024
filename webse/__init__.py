@@ -58,7 +58,8 @@ login_manager.blueprint_login_views = {
     'es_course_chapters': 'forward_users.forward_users_login',
     'es_course_chats': 'forward_users.forward_users_login',
     'es_course_announcements': 'forward_users.forward_users_login',
-    'es_course_light_talk_app': 'forward_users.forward_users_login'
+    'es_course_light_talk_app': 'forward_users.forward_users_login',
+    'es_course_students_apps': 'forward_users.forward_users_login',
 }
 login_manager.login_message_category = 'info'
 
@@ -121,6 +122,7 @@ from webse.es_course_chapters.routes import es_course_chapters
 from webse.es_course_chats.routes import es_course_chats
 from webse.es_course_announcements.routes import es_course_announcements
 from webse.es_course_light_talk_app.routes import es_course_light_talk_app
+from webse.es_course_students_apps.routes import es_course_students_apps
 
 application.register_blueprint(forward_home)
 application.register_blueprint(forward_users)
@@ -180,3 +182,4 @@ application.register_blueprint(es_course_chapters)
 application.register_blueprint(es_course_chats)
 application.register_blueprint(es_course_announcements) 
 application.register_blueprint(es_course_light_talk_app)
+application.register_blueprint(es_course_students_apps)
