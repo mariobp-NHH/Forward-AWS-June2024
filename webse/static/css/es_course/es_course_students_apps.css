@@ -1,0 +1,113 @@
+/* Section students_apps_main */
+.section_students_apps_main {
+  background-color: #f29545;
+}
+.students_apps_main {
+  display: flex;
+  align-items: start;
+  background: #f29545;
+}
+.students_apps_main .box {
+  flex: 1;
+  background: #f26934;
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.students_apps_main .box:nth-of-type(1) {
+  flex-grow: 3;
+}
+.students_apps_main .box:nth-of-type(2) {
+  flex-grow: 3;
+}
+.students_apps_main .box:nth-of-type(3) {
+  flex-grow: 3;
+}
+.students_apps_main .box:nth-of-type(4) {
+  flex-grow: 3;
+}
+.section_container_buttons_students_apps_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_students_apps_main {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #000000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #f26934;
+  border: 2px solid #f3ca99;
+}
+.btn_students_apps_main:hover {
+  color: #000000;
+  background-color: #f3ca99;
+  border: 2px solid #f3ca99;
+  text-decoration: none;
+}
+
+/* Section students_apps_year */
+.section_students_apps_year {
+  background-color: #f29545;
+}
+.students_apps_year {
+  display: flex;
+  align-items: start;
+  background: #f29545;
+}
+.students_apps_year .box {
+  flex: 1;
+  background: #f26934;
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.students_apps_year .box:nth-of-type(1) {
+  flex-grow: 4;
+  flex: 1 0 33vh;
+}
+.students_apps_year .box:nth-of-type(2) {
+  flex-grow: 4;
+  flex: 1 0 33vh;
+}
+.students_apps_year .box:nth-of-type(3) {
+  flex-grow: 4;
+  flex: 1 0 33vh;
+}
+.section_container_buttons_students_apps_year {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_students_apps_year {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #000000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #f26934;
+  border: 2px solid #f3ca99;
+}
+.btn_students_apps_year:hover {
+  color: #000000;
+  background-color: #f3ca99;
+  border: 2px solid #f3ca99;
+  text-decoration: none;
+}
