@@ -1,54 +1,39 @@
-{% extends "gd_course/gd_course_layout.html" %} {% block content %}
+{% extends "es_course/es_course_layout.html" %} {% block content %}
 
-<!-- Section chats HVL   -->
-<section class="section_chatsHVL" style="background-color: #9fa7bf">
+<!-- students_apps_main -->
+<section class="section_students_apps_main">
   <div class="container">
-    <div class="column column1">
-      <div class="column column1 box">
+    <div class="students_apps_main">
+      <div class="box">
         <div class="h1 mb-3" style="text-align: center">
-          <i class="bi bi-lightbulb"></i>
+          <i class="fa-solid fa-lightbulb"></i>
         </div>
-        <p style="text-align: center">
-          <strong>Apps 2024</strong>
+        <h3>Apps 2024</h3>
+        <p>
+          Aquí puedes <strong>utilizar</strong> las apps desarrolladas por las
+          estudiantes en el año 2024.
         </p>
-        <div class="container_buttons_links_chatsHVL">
-          <div class="btn">
-            <a
-              href="{{ url_for('gd_course_students_apps.gd_students_apps_home_2024') }}"
-              class="btn btn-primary btn-sm mr-2"
-              ,
-              style="background-color: #007bff"
-              >Apps</a
-            >
-          </div>
+        <div class="section_container_buttons_students_apps_main">
+          <a
+            class="btn_students_apps_main"
+            href="{{url_for('es_course_students_apps.es_students_apps_home_2024')}}"
+            >Apps 2024</a
+          >
         </div>
       </div>
-
-      <div class="column column1 box" style="background-color: #9fa7bf"></div>
-    </div>
-
-    <div class="column column2">
-      <div class="column column1 box">
+      <div class="box">
         <div class="h1 mb-3" style="text-align: center">
-          <i class="bi bi-lightbulb"></i>
+          <i class="fa-solid fa-lightbulb"></i>
         </div>
-        <p style="text-align: center">
-          <strong>Apps 2023</strong>
+        <h3>Apps 2025</h3>
+        <p>
+          Aquí puedes <strong>utilizar</strong> las apps desarrolladas por las
+          estudiantes en el año 2025.
         </p>
-        <div class="container_buttons_links_chatsHVL">
-          <div class="btn">
-            <a
-              href="{{ url_for('gd_course_students_apps.gd_students_apps_home_2023') }}"
-              class="btn btn-primary btn-sm mr-2"
-              ,
-              style="background-color: #007bff"
-              >Apps</a
-            >
-          </div>
+        <div class="section_container_buttons_students_apps_main">
+          <a class="btn_students_apps_main" href="#">Apps 2025</a>
         </div>
       </div>
-
-      <div class="column column1 box" style="background-color: #9fa7bf"></div>
     </div>
   </div>
 </section>
