@@ -1,0 +1,56 @@
+{% extends "gd_course/gd_course_layout.html" %} {% block content %}
+
+<!-- Section chats HVL   -->
+<section class="section_chatsHVL" style="background-color: #9fa7bf">
+  <div class="container">
+    <div class="column column1">
+      <div class="column column1 box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="bi bi-lightbulb"></i>
+        </div>
+        <p style="text-align: center">
+          <strong>Apps 2024</strong>
+        </p>
+        <div class="container_buttons_links_chatsHVL">
+          <div class="btn">
+            <a
+              href="{{ url_for('gd_course_students_apps.gd_students_apps_home_2024') }}"
+              class="btn btn-primary btn-sm mr-2"
+              ,
+              style="background-color: #007bff"
+              >Apps</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="column column1 box" style="background-color: #9fa7bf"></div>
+    </div>
+
+    <div class="column column2">
+      <div class="column column1 box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="bi bi-lightbulb"></i>
+        </div>
+        <p style="text-align: center">
+          <strong>Apps 2023</strong>
+        </p>
+        <div class="container_buttons_links_chatsHVL">
+          <div class="btn">
+            <a
+              href="{{ url_for('gd_course_students_apps.gd_students_apps_home_2023') }}"
+              class="btn btn-primary btn-sm mr-2"
+              ,
+              style="background-color: #007bff"
+              >Apps</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="column column1 box" style="background-color: #9fa7bf"></div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
