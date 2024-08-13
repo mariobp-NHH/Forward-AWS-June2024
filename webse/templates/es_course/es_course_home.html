@@ -21,16 +21,19 @@
                           flashes.forEach((flash) => flash.remove());
                         }, 5000);
                       </script>              
-                      <h1 class="text-center">Green Digitalization Course</h1>
+                      <h1 class="text-center">Curso Economías del Español</h1>
                       <p class="mb-1">
-                          The Green Digitalization course aims to connect the most salient topics in <strong>green economy</strong> with <strong>digitalization</strong>.
+                          El curso de Economías del Español tiene como objetivo conectar los temas más relevantes en <strong>aprendizaje del español</strong> con la <strong>digitalización</strong>.
                           </br>
                           </br>
-                          To achieve that objective, during the course the students analyze relevant topic in <strong>green economy</strong>, they build an <strong>economic model</strong> to study that topic and they develop an <strong>app</strong> to conduct all the economic simulations in the economic model.
-                        </br>
-                        </br>
-                          To develop the app, the course is organized in three blocks that complement each other. First the students design the <strong>layout of the app</strong> by using HTML, CSS, JavaScript and Flask. Second, they program the <strong>economic simulations</strong> by using Python and SQLAlchemy. Finally, they <strong>deploy their apps</strong> in the server, by using GitGub, Heroku, and Amazon Web Services.
-
+                          Para lograr ese objetivo, durante el curso los estudiantes analizan temas relevantes en <strong>aprendizaje del español</strong>, construyen un <strong>modelo lingüístico</strong> 
+                          para aprender español y desarrollan una <strong>aplicación</strong> basada en ese modelo lingüístico.
+                          </br>
+                          </br>
+                          Para desarrollar la aplicación, el curso está organizado en tres bloques que se complementan entre sí. 
+                          Primero, los estudiantes diseñan la <strong>interfaz de la aplicación</strong> utilizando HTML, CSS, JavaScript y Flask. Segundo, 
+                          programan el <strong>modelo lingüístico</strong> utilizando Python y SQLAlchemy. Finalmente, <strong>despliegan sus aplicaciones</strong> 
+                          en el servidor, utilizando GitHub y Amazon Web Services.
                       </p>
                 </div>
                 <div class="box">
@@ -69,7 +72,7 @@
       </div>
     </section> 
 
-    <!-- Section chapters   -->
+        <!-- Section chapters   -->
     <section class="section_chapter2" style="background-color: #f29545;">
       <div class="container">
 
@@ -78,11 +81,13 @@
             <div class="h1 mb-3" style="text-align: center;">
               <i class="bi bi-laptop"></i>
             </div>
-            <p><strong>Ch1:</strong> We install Python and Visual Studio Code. We learn to create virtual enviroments, and we create our first Flask app. </p> 
-            
+            <p><strong>Capítulo 1:</strong> Instalamos Python y Visual Studio Code. Aprendemos a crear entornos virtuales y 
+            creamos nuestra primera aplicación Flask. También trabajamos con Jinja y con platillas de HTML para 
+            combinar el c´digo Python con HTML y organizar de una manera más eficiente nuestra app.</p>
+            <br>
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('es_course_chapters.es_course_chapters_ch1') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 1</a>
+                  <a href="{{ url_for('es_course_chapters.es_course_chapters_ch1') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 1</a>
               </div>
             </div>              
           </div>
@@ -91,11 +96,13 @@
             <div class="h1 mb-3" style="text-align: center;">
               <i class="bi bi-laptop"></i>
             </div>
-            <p><strong>Ch5:</strong> We develop the HTML and CSS file to design the methodology.html and carbon_app files. We also learn how to use Bootstrap.</p>
+            <p><strong>Capítulo 5:</strong> Utilizando Python, desarrollamos el modelo lingüístico para aprender español. 
+              Desplegamos nuestra aplicación conectada a una base de datos PostgreSQL en Amazon Web Services utilizando un Servicio de Base de Datos Relacional.</p>
+
 
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch2') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 5</a>
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch2') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 5</a>
               </div>
             </div> 
           </div>           
@@ -108,11 +115,14 @@
             <div class="h1 mb-3" style="text-align: center;">
               <i class="bi bi-laptop"></i>
             </div>
-            <p><strong>Ch2:</strong> By using Flask routes, we design the basic structure of our app (home page, and app calculator page).<br><br></p>
+            <p><strong>Capítulo 2:</strong> Aprendemos los elementos básicos de HTML (head y title), y estudiamos los principales 
+              elementos y propiedades del head y title. Desarrollamos el archivo HTML y CSS para diseñar la barra de navegación,
+               y la estructura de todas las páginas de nuestra app: home.html, business.html y light_talk_app.html.</p>
+
 
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch5') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 2</a>
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch5') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 2</a>
               </div>
             </div>  
           </div>
@@ -121,10 +131,13 @@
             <div class="h1 mb-3" style="text-align: center;">
               <i class="bi bi-laptop"></i>
             </div>
-            <p><strong>Ch6:</strong> By using Blueprints, we change the structure of our app creating a package that will be hosted in the platform Forward.</p>
+            <p><strong>Capítulo 6:</strong> Desarrollamos algunas consultas básicas para acceder a las frases introducidas por los
+              usuarios y las mostramos usando tablas. El usuario puede modificar sus bases de datos
+               y ver su progreso en el aprendizaje usando chart.js.</p>
+
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch6') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 6</a>
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch6') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 6</a>
               </div>
             </div>  
           </div>
@@ -136,11 +149,12 @@
             <div class="h1 mb-3" style="text-align: center;">
               <i class="bi bi-laptop"></i>
             </div>
-            <p><strong>Ch3:</strong> We connect our app to a database by using Flask-MySQL. We create queries to access users information.</p>
+            <p><strong>Capítulo 3:</strong> Usando Blueprints, cambiamos la estructura de nuestra aplicación. Aprendemos a crear formularios para interactuar con el usuario. 
+              Creamos una cuenta en GitHub y AWS. Usando esas cuentas, desplegamos nuestra aplicación en AWS usando Elastic Beanstalk y CodePipeline.</p>
             <br>
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch9') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 3</a>
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch9') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 3</a>
               </div>
             </div> 
           </div> 
@@ -149,10 +163,12 @@
             <div class="h1 mb-3" style="text-align: center;" >
               <i class="bi bi-calendar-check"></i>
             </div>
-            <p><strong>Midway conference:</strong> The students present their apps and their business models. They also explain their team work strategy.</p>
+            <p><strong>Conferencia Light-Day:</strong> Al final del curso, organizamos una conferencia donde las estudiantes comparten sus aplicaciones con startups, 
+              empresas tecnológicas y educativas. Esa conferencia está abierta a estudiantes y a la sociedad.</p>
+
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_conference') }}" class="btn btn-warning btn-sm mr-2" style="background-color: #f2b84b;">Midway Conference</a>
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_conference') }}" class="btn btn-warning btn-sm mr-2" style="background-color: #f2b84b;">Conferencia Light-Day</a>
               </div>
             </div>  
           </div>
@@ -165,10 +181,13 @@
             <div class="h1 mb-3" style="text-align: center;">
               <i class="bi bi-laptop"></i>
             </div>
-            <p><strong>Ch4:</strong> We deploy our app connected to a PostgreSQL database in Amazon Web Services by using a Relational Database Service.</p>
+            <p><strong>Capítulo 4:</strong> Conectamos nuestra aplicación a una base de datos utilizando Flask-MySQL. 
+              Creamos consultas para acceder a la información de los usuarios. Aprendemos a personalizar los mensajes de 
+              validación y nos centramos en las funcionalidades de inicio de sesión, cierre de sesión y autenticación.</p>
+
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch12') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Chapter 4</a>
+                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch12') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 4</a>
               </div>
             </div>  
           </div>
