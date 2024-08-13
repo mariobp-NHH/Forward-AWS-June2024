@@ -10,7 +10,7 @@ es_course_chapters= Blueprint('es_course_chapters', __name__)
 @es_course_chapters.route('/economías_del_español_curso/capítulo1', methods=['GET', 'POST'])
 @login_required
 def es_course_chapters_ch1(): 
-    return render_template('es_course/chapters/ch_template.html', title='Economías del Español Curso, ch1')
+    return render_template('es_course/chapters/ch1.html', title='Economías del Español Curso, ch1')
 
 #Chapter 2
 @es_course_chapters.route('/economías_del_español_curso/capítulo2', methods=['GET', 'POST'])
