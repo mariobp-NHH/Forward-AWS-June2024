@@ -1,0 +1,1366 @@
+{% extends "es_course/es_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1>Capítulo 2. HTML: Home, Modelo de Negocio y Light-Talk app</span></h1>
+                    <p class="mb-1">
+                        En este capítulo, estudiamos los componentes principales de un <strong>documento HTML</strong>, la <strong>cabeza</strong> y el <strong>cuerpo</strong>. 
+                        Estudiamos los elementos más destacados en la cabeza y el cuerpo, y sus propiedades. Esto nos ayudará a mejorar el diseño de nuestra aplicación.
+                        <br>
+                        <br>
+                        También vamos a crear la <strong>barra de navegación</strong>, el <strong>pie de página</strong>, y la <strong>página de inicio</strong> para nuestra aplicación. 
+                        Vamos a crear archivos HTML donde crearemos la <strong>estructura</strong> básica para nuestra barra de navegación. 
+                        Vamos a definir las clases CSS para crear un <strong>diseño</strong> atractivo para la barra de navegación, el pie de página y la página de inicio.
+                         Usando media queries, haremos que nuestra barra de navegación, pie de página y página de inicio sean adaptables en tamaño, es decir, la barra de navegación, 
+                         el pie de página y la página de inicio cambiarán según el dispositivo utilizado para acceder a la página web. También aprenderemos cómo introducir íconos en nuestra 
+                         aplicación utilizando Font Awesome, y cómo introducir diferentes <strong>tipos de fuentes</strong> utilizando Google Fonts.
+                        <br>
+                        <br>
+                        Para completar el diseño de nuestra app, también trabajaremos con <strong>Bootstrap</strong>.                        
+                    </p>
+
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 2)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 4a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 4b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 5a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 5b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 6)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Cabeza</h5>
+                            </div>
+                            <p class="mb-1">
+                                Estudiamos los principales elementos en la cabeza, prestando especial atención al <strong>título</strong>, <strong>estilo</strong> y <strong>meta</strong>.
+                            </p>  
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Cuerpo: Box-sizing y elementos de bloque e inline de HTML</h5>
+                            </div>
+                            <p class="mb-1">
+                                Estudiamos los principales elementos dentro de la etiqueta body. También estudiamos en detalle ciertos elementos en el cuerpo y sus 
+                                propiedades que nos ayudarán a mejorar el diseño de nuestra aplicación. Estudiaremos <strong>box-sizing</strong>; <strong>elementos de bloque e inline de HTML</strong>.
+                            </p>                            
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Cuerpo: Propiedad display de CSS, flexbox y media queries de CSS</h5>
+                            </div>
+                            <p class="mb-1">
+                                Estudiamos la <strong>propiedad display de CSS</strong>; <strong>flexbox</strong>; y las <strong>media queries de CSS</strong>.
+                            </p>                            
+                        </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Barra de navegación y pie de página</h5>
+                            </div>
+                            <p class="mb-1">
+                                Creamos un archivo HTML que define la <strong>estructura</strong> de nuestra barra de navegación y pie de página, y un archivo CSS que define la 
+                                <strong>apariencia-diseño</strong> de nuestra barra de navegación. Estudiamos y utilizamos los conceptos aprendidos en el 
+                                capítulo para mejorar el diseño de nuestra barra de navegación y pie de página. Aprendemos a hacer que nuestra barra de navegación 
+                                y pie de página respondan al tamaño utilizando media queries. También aprenderemos a introducir íconos y fuentes de fuentes externas.
+                            </p>                            
+                        </a>
+                        <a href="#section5" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Encabezado y Desarrolladores</h5>
+                            </div>
+                            <p class="mb-1">
+                                Seguimos el mismo enfoque que con la barra de navegación y el pie de página, pero para diseñar el encabezado y las 
+                                secciones de desarrolladores en la página de inicio de nuestra aplicación.
+                            </p>                            
+                        </a>
+                        <a href="#section6" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Bootstrap</h5>
+                            </div>
+                            <p class="mb-1">
+                                Aprendemos a usar Bootstrap y vemos como puede ser útil en el desarrollo de nuestra app.
+                            </p>
+                        </a>
+                        <a href="#section7" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Desafío semanal</h5>
+                            </div>
+                            <p class="mb-1">
+                                Continuamos trabajando en las aplicaciones de los estudiantes. Debes introducir pequeños cambios en los archivos business.html, light_talk_app.html, 
+                                business.css y light_app.css para personalizar tu aplicación y hacerla lo más funcional y completa posible. 
+                                Enfócate en los <strong>íconos</strong> y en las <strong>instrucciones para el usuario</strong>.
+                            </p>                            
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/economies_of_spanish_course/chapters/ch2.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Cabeza</h1>
+            <p>
+                Toda la información en esta sección ha sido tomada del siguiente enlace:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.w3schools.com/html/html_head.asp" target="_blank">HTML, cabeza</a>
+                </div> 
+                El elemento <code style="color:black;">&lt;head</code>&gt; es un contenedor para metadatos (datos sobre datos) y se coloca entre la etiqueta <code style="color:black;">&lt;html</code>&gt; y la etiqueta <code style="color:black;">&lt;body</code>&gt;.
+                <br><br>
+                Los metadatos de HTML son datos sobre el documento HTML. Los metadatos no se muestran.
+                <br><br>
+                Los metadatos típicamente definen el <strong>título</strong> del documento, el conjunto de caracteres, <strong>estilos</strong>, scripts, y otra <strong>información meta</strong>.
+            </p>
+        </div>  
+        
+        <div class="container" style="display:block;">
+            <h4>El Elemento HTML <code style="color:black;">&lt;title</code>&gt;</h4>
+            <p>
+                El elemento <code style="color:black;">&lt;title</code>&gt; define el título del documento. El título debe ser solo texto y se muestra en la barra de título del navegador o en la pestaña de la página.
+                <br><br>
+                ¡El elemento <code style="color:black;">&lt;title</code>&gt; es obligatorio en los documentos HTML!
+                <br><br>
+                ¡El contenido de un título de página es muy importante para la optimización en motores de búsqueda! El título de la página es utilizado por los algoritmos de los motores de búsqueda para decidir el orden al listar páginas en los resultados de búsqueda.
+                <br><br>
+                El elemento <code style="color:black;">&lt;title</code>&gt;:
+                <ul>
+                    <li>
+                        <strong>Define</strong> un título en la barra de herramientas del navegador.
+                    </li>
+                    <li>
+                        <strong>Proporciona</strong> un título para la página cuando se añade a favoritos.
+                    </li>
+                    <li>
+                        <strong>Muestra</strong> un título para la página en los resultados de motores de búsqueda.
+                    </li>
+                </ul>	
+                ¡Por lo tanto, trata de hacer el título lo más preciso y significativo posible!                     
+            </p>
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>El Elemento HTML <code style="color:black;">&lt;style</code>&gt;</h4>
+            <p>                
+                El elemento <code style="color:black;">&lt;style</code>&gt; se usa para definir <strong>información de estilo</strong> para una sola página HTML. Vamos a utilizarlo en la sección del cuerpo.               
+            </p>
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>El Elemento HTML <code style="color:black;">&lt;link</code>&gt;</h4>
+            <p>  
+                El elemento <code style="color:black;">&lt;link</code>&gt; define la relación entre el documento actual y un recurso externo.
+                <br><br>
+                La etiqueta <code style="color:black;">&lt;link</code>&gt; se utiliza más a menudo para <strong>vincular hojas de estilo externas</strong>.
+                <br><br>
+                Usaremos enlaces varias veces en los próximos capítulos. Un ejemplo de un enlace: <strong><code style="color:black;">&lt;link rel="stylesheet" href="mystyle.css"&gt;</code></strong>                  
+            </p>
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>Etiqueta HTML <code style="color:black;">&lt;meta&gt;</code></h4>
+            <p> 
+                Toda la información en esta sección ha sido tomada del siguiente enlace:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.w3schools.com/tags/tag_meta.asp" target="_blank">HTML, meta</a>
+                </div> 
+                <u>Definición y Uso</u>
+                <br><br>
+                La etiqueta <code style="color:black;">&lt;meta&gt;</code> define metadatos sobre un documento HTML. Los metadatos son datos (información) sobre datos.
+                <br><br>
+                Las etiquetas <code style="color:black;">&lt;meta&gt;</code> siempre van dentro del elemento <code style="color:black;">&lt;head&gt;</code>, y se utilizan típicamente para especificar <strong>conjunto de caracteres</strong>, <strong>descripción de la página</strong>, <strong>palabras clave</strong>, <strong>autor del documento</strong>, y configuraciones de <strong>viewport</strong>.
+                <br><br>
+                Los metadatos son utilizados <strong>por los navegadores</strong> (cómo mostrar el contenido o recargar la página), <strong>motores de búsqueda</strong> (palabras clave), y otros <strong>servicios web</strong>.
+                <br><br>
+                Hay un método para que los diseñadores web tomen control sobre el <strong>viewport</strong> (el área visible de la página web por el usuario), a través de la etiqueta <code style="color:black;">&lt;meta&gt;</code> (ver el ejemplo "Configurando el Viewport" a continuación).
+                <br><br>
+                <u>Algunos ejemplos</u>
+                <br><br>
+                <ol>
+                    <li>
+                        Definir <strong>palabras clave</strong> para los motores de búsqueda: <code style="color:black;">&lt;meta name="keywords" content="HTML, CSS, JavaScript"&gt;</code>
+                    </li>
+                    <li>
+                        Definir una <strong>descripción</strong> de tu página web: <code style="color:black;">&lt;meta name="description" content="Tutoriales gratuitos de HTML y CSS"&gt;</code> 
+                    </li>
+                    <li>
+                        Definir el <strong>autor</strong> de una página: <code style="color:black;">&lt;meta name="author" content="John Doe"&gt;</code> 
+                    </li>
+                    <li>
+                        <strong>Actualizar</strong> el documento cada 30 segundos: <code style="color:black;">&lt;meta http-equiv="refresh" content="30"&gt;</code> 
+                    </li>
+                    <li>
+                        Configurar el <strong>viewport</strong> para que tu sitio web se vea bien en todos los dispositivos: <code style="color:black;">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                    </li>
+                    <li>
+                        Configurando el Viewport (ver la sección a continuación). 
+                    </li>
+                </ol>        
+            </p>
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>Diseño Web Responsivo - El Viewport</h4>
+            <p>       
+                Toda la información en esta sección ha sido tomada de los siguientes dos enlaces:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.w3schools.com/css/css_rwd_viewport.asp" target="_blank">HTML, viewport 1</a>
+                    <a class="btn-section1" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag" target="_blank">HTML, viewport 2</a>
+                </div>   
+                <u>¿Qué es el Viewport?</u>
+                <br><br>
+                El viewport es el <strong>área visible de una página web</strong> por el usuario.
+                <br><br>
+                El viewport varía según el dispositivo y será más pequeño en un teléfono móvil que en una pantalla de computadora.
+                <br><br>
+                Antes de las tabletas y teléfonos móviles, las páginas web se diseñaban solo para pantallas de computadora, y era común que las páginas web tuvieran un diseño estático y un tamaño fijo.
+                <br><br>
+                Luego, cuando empezamos a navegar por internet utilizando tabletas y teléfonos móviles, las páginas web de tamaño fijo eran demasiado grandes para ajustarse al viewport. Para solucionar esto, los navegadores en esos dispositivos reducían el tamaño de toda la página web para ajustarla a la pantalla. 
+                <br><br>
+                <u>Configurando el Viewport.</u>
+                <br><br>
+                HTML5 introdujo un método para que los diseñadores web <strong>tomen control sobre el viewport</strong>, a través de la etiqueta <code style="color:black;">&lt;meta&gt;</code>.
+                <br><br>
+                Deberías incluir el siguiente elemento <code style="color:black;">&lt;meta&gt;</code> en todas tus páginas web:
+                <br><br>
+                <code style="color:black;">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+                <br><br>
+                Esta línea de código le da al navegador instrucciones sobre cómo controlar las dimensiones de la página y la escala.
+                <br><br>
+                <u>Explicación del Valor del Viewport:</u>
+                <br><br>
+                <ul>
+                    <li>
+                        <code style="color:black;">width=device-width</code>: Establece el ancho del viewport en el ancho del dispositivo.     
+                    </li>
+                    <li>
+                        <code style="color:black;">initial-scale=1.0</code>: Establece el nivel de zoom inicial cuando la página se carga por primera vez en el dispositivo.
+                    </li>
+                    <li>
+                        <code style="color:black;">user-scalable=no</code>: Desactiva el zoom, esto ayuda a que los usuarios vean una vista completa. 
+                    </li>
+                </ul>
+            </p>
+        </div>  
+    </section>
+ 
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Cuerpo: Box-sizing y Elementos HTML de Bloque e Inline</h1>
+            <h4>Cuerpo</h4>
+            <p>
+                Toda la información en esta sección ha sido tomada del siguiente enlace:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://www.w3schools.com/tags/tag_body.asp#:~:text=The%20tag%20defines%20the,%2C%20tables%2C%20lists%2C%20etc" target="_blank">Cuerpo</a> 
+                </div> 
+                El elemento <code style="color:black;">&lt;body</code>&gt; contiene todo el contenido de un documento HTML, como encabezados, párrafos, imágenes, hipervínculos, tablas, listas, etc.
+            </p>  
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Box-sizing.</h4>
+                <p style="text-align: left;">
+                    La información en esta sección, el video con todos los pasos de esta sección y el código se pueden encontrar en los enlaces de YouTube y GitHub a continuación:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank">Cuerpo, box-sizing 1</a> 
+                        <a class="btn-section2" href="https://www.w3schools.com/css/css3_box-sizing.asp" target="_blank">Cuerpo, box-sizing 2</a> 
+                        <a class="btn-section2" href="https://youtu.be/6dBZW1HUiyE" target="_blank">YouTube (sección 2)</a> 
+                        <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch3%20HTML%20Head%20and%20Body/Box-Sizing" target="_blank">GitHub (Box Sizing)</a>
+                    </div> 
+                    La propiedad CSS box-sizing nos permite incluir el padding y el borde en el ancho y alto total de un elemento.
+                    <br>
+                    <br>
+                    <u>Sin la Propiedad CSS box-sizing</u>
+                    <br>
+                    <br>
+                    Por defecto, el ancho y alto de un elemento se calculan así:
+                    <ul>
+                        <li>
+                            ancho + padding + borde = ancho real del elemento
+                        </li>
+                        <li>
+                            alto + padding + borde = alto real del elemento
+                        </li>
+                    </ul>
+                    Esto significa: Cuando estableces el ancho/alto de un elemento, el elemento a menudo parece más grande de lo que has establecido (porque el borde y el padding del elemento se suman al ancho/alto especificado del elemento).
+                    <br>
+                    <br>
+                    <u>Con la Propiedad CSS box-sizing</u>
+                    <br>
+                    <br>
+                    La propiedad box-sizing nos permite incluir el padding y el borde en el ancho y alto total de un elemento.
+                    <br>
+                    Si estableces box-sizing: border-box; en un elemento, el padding y el borde se incluyen en el ancho y alto.
+                </p>      
+            </div>
+            <div class="boxa" style="height:920px; align-self:center;">
+                <p><strong>Sin la Propiedad CSS box-sizing</strong>                 
+                    <pre><code class="html">
+    &lt;head&gt;
+        &lt;style&gt; 
+            .div1 &#123;
+                width: 300px;
+                height: 100px;
+                border: 1px solid blue;
+                &#125;    
+            .div2 &#123;
+                width: 300px;
+                height: 100px;  
+                padding: 50px;
+                border: 1px solid red;
+                &#125;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;    
+        &lt;h1&gt;Sin box-sizing&lt;/h1&gt;    
+        &lt;div class="div1"&gt;Este div es más pequeño 
+        (ancho es 300px y alto es 100px).&lt;/div&gt;
+        &lt;div class="div2"&gt;Este div es más grande 
+        (el ancho también es 300px y el alto es 100px).&lt;/div&gt;    
+    &lt;/body&gt;
+    </code></pre>
+                <strong>Con la Propiedad CSS box-sizing</strong> 
+                <pre><code class="html">
+        .div1 &#123;
+            width: 300px;
+            height: 100px;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        &#125;  
+        .div2 &#123;
+            width: 300px;
+            height: 100px;
+            padding: 50px;
+            border: 1px solid red;
+            box-sizing: border-box;
+        &#125;
+    </code></pre>
+                </p>
+            </div>
+        </div>
+    
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Elementos HTML de Bloque e Inline.</h4>
+                <p style="text-align: left;">
+                    La información en esta sección, el video con todos los pasos de esta sección y el código se pueden encontrar en los enlaces de YouTube y GitHub a continuación:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://www.w3schools.com/html/html_blocks.asp" target="_blank">Elementos de bloque e inline 1</a> 
+                        <a class="btn-section2" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display" target="_blank">Elementos de bloque e inline 2</a> 
+                        <a class="btn-section2" href="https://youtu.be/6dBZW1HUiyE" target="_blank">YouTube (sección 2)</a> 
+                        <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch3%20HTML%20Head%20and%20Body/Block%20and%20Inline%20Elements" target="_blank">GitHub (Block and Inline)</a>
+                    </div> 
+                    Cada elemento HTML tiene un valor de visualización predeterminado, dependiendo del tipo de elemento que sea. Hay dos valores de visualización: <strong>block</strong> e <strong>inline</strong>.
+                    <br>
+                    <br>
+                    <u>Elementos de Bloque</u>
+                    <br>                 
+                    Un elemento de bloque siempre comienza en una nueva línea, y los navegadores añaden automáticamente algún espacio (un margen) antes y después del elemento.
+                    <br>
+                    Un elemento de bloque siempre <strong>ocupa todo el ancho disponible</strong> (se extiende a la izquierda y derecha tanto como pueda).
+                    <br>
+                    Algunos elementos de bloque comúnmente usados son: <code style="color:black;">&lt;p&gt;</code>, <code style="color:black;">&lt;div&gt;</code>, <code style="color:black;">&lt;ul&gt;</code>, <code style="color:black;">&lt;li&gt;</code>, <code style="color:black;">&lt;ol&gt;</code> <code style="color:black;">&lt;nav&gt;</code>, <code style="color:black;">&lt;form&gt;</code>, <code style="color:black;">&lt;canvas&gt;</code>, <code style="color:black;">&lt;footer&gt;</code>, <code style="color:black;">&lt;fieldset&gt;</code> y <code style="color:black;">&lt;section&gt;</code>.
+                    <br>
+                    Una lista completa de elementos de bloque se puede encontrar en el enlace:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://www.w3schools.com/html/html_blocks.asp" target="_blank">Lista de elementos de bloque</a>
+                    </div> 
+                    <u>Elementos Inline</u>
+                    <br>                  
+                    Un elemento inline no comienza en una nueva línea.
+                    <br>
+                    Un elemento inline solo <strong>ocupa el ancho necesario</strong>.
+                    <br>
+                    Algunos elementos inline comúnmente usados son: <code style="color:black;">&lt;a&gt;</code>, <code style="color:black;">&lt;img&gt;</code>, <code style="color:black;">&lt;span&gt;</code>, <code style="color:black;">&lt;strong&gt;</code>, <code style="color:black;">&lt;select&gt;</code>, <code style="color:black;">&lt;br&gt;</code>, <code style="color:black;">&lt;button&gt;</code> y <code style="color:black;">&lt;code&gt;</code>.    
+                    <br>                
+                    Una lista completa de elementos inline se puede encontrar en el enlace:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://www.w3schools.com/html/html_blocks.asp" target="_blank">Lista de elementos inline</a>
+                    </div> 
+                </p>      
+            </div>
+            <div class="boxa" style="height:600px; align-self:center;">
+                <p><strong>Elementos de bloque</strong> 
+                    <pre><code class="html">
+    &lt;body&gt;    
+    <code style="color:black;">&lt;p style="border: 1px solid blue"&gt;</code>Hola Mundo<code style="color:black;">&lt;/p&gt;</code>
+    <code style="color:black;">&lt;div style="border: 1px solid red"&gt;</code>Hola Mundo<code style="color:black;">&lt;/div&gt;</code>
+    
+    <code style="color:black;">&lt;p&gt;</code>Los elementos P y DIV son elementos de bloque, /
+    y siempre comenzarán en una nueva línea y ocuparán /
+    todo el ancho disponible (se extienden /
+    hacia la izquierda y derecha tanto como sea posible).<code style="color:black;">&lt;/p&gt;</code>
+    &lt;/body&gt;
+    </code></pre>
+                <strong>Elementos Inline</strong>
+                <pre><code class="html">
+    &lt;body&gt;    
+        <code style="color:black;">&lt;p&gt;</code>Este es un span inline <code style="color:black;">&lt;span style="border: 1px solid red"&gt;</code>/
+        Hola Mundo<code style="color:black;">&lt;/span&gt;</code> elemento dentro de un párrafo.<code style="color:black;">&lt;/p&gt;</code>
+    
+        <code style="color:black;">&lt;p&gt;</code>El elemento SPAN es un elemento inline, y no comenzará /
+        en una nueva línea y solo ocupa el ancho necesario.<code style="color:black;">&lt;/p&gt;</code>
+    &lt;/body&gt;
+    </code></pre>
+                </p>
+            </div>
+        </div>
+    
+
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+
+        <div class="container">
+    
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h1>Cuerpo: Propiedad display de CSS, flexbox y media queries CSS</h1>
+                <h4>Propiedad display de CSS</h4>
+                <p>
+                    Toda la información en esta sección ha sido extraída de los siguientes enlaces:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/cssref/pr_class_display.php" target="_blank">CSS display 1</a> 
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css_inline-block.asp#:~:text=The%20display%3A%20inline%2Dblock%20Value,display%3A%20inline%20they%20are%20not" target="_blank">CSS display 2</a> 
+                        <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Display/ch3_display.html" target="_blank">GitHub (Display)</a>
+                    </div> 
+                    La propiedad display especifica el comportamiento de visualización (el tipo de caja de renderizado) de un elemento.
+                    <br>
+                    <br>
+                    Algunos <strong>elementos de bloque comúnmente utilizados</strong> son:
+                    <br>
+                    <br>
+                    <ol>
+                        <li>
+                            <strong>Inline</strong>: Muestra un elemento como un elemento en línea (como <code style="color:black;">&lt;span&gt;</code>). Las propiedades de altura y ancho no tendrán efecto.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Block</strong>: Muestra un elemento como un elemento de bloque (como <code style="color:black;">&lt;p&gt;</code>). Comienza en una nueva línea y ocupa todo el ancho.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex</strong>: Muestra un elemento como un contenedor de flexión de nivel de bloque.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Grid</strong>: Muestra un elemento como un contenedor de cuadrícula de nivel de bloque.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Inline-block</strong>: Muestra un elemento como un contenedor de bloque de nivel en línea. El elemento en sí se formatea como un elemento en línea, pero puedes aplicar valores de altura y ancho.
+                        </li>
+                    </ol>
+                </p>      
+            </div>
+            <div class="boxa" style="height:835px; align-self:center;">
+                <p><strong>Propiedad CSS display</strong>                  
+                    <pre><code class="html">
+    &lt;style&gt;    
+        span.a &#123;
+            display: inline; /* el valor predeterminado para span */
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid blue;  
+            background-color: yellow; 
+        &#125;  
+        span.b &#123;
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid blue;    
+            background-color: yellow; 
+        &#125;  
+        span.c &#123;
+            display: block;
+            width: 100px;
+            height: 100px;
+            padding: 5px;
+            border: 1px solid blue;    
+            background-color: yellow; 
+        &#125;
+    &lt;/style&gt;    
+    &lt;body&gt;    
+        <code style="color:black;">&lt;h2&gt;</code>Display: Inline<code style="color:black;">&lt;/h2&gt;</code>
+        <code style="color:black;">&lt;div&gt;</code>... <code style="color:black;">&lt;span class="a"&gt;</code>Aliquam<code style="color:black;">&lt;/span&gt;</code> <code style="color:black;">&lt;span class="a"&gt;</code>venenatis<code style="color:black;">&lt;/span&gt;</code> ... <code style="color:black;">&lt;/div&gt;</code>
+        <code style="color:black;">&lt;h2&gt;</code>Display: Inline-Block<code style="color:black;">&lt;/h2&gt;</code>
+        <code style="color:black;">&lt;div&gt;</code>... <code style="color:black;">&lt;span class="b"&gt;</code>Aliquam<code style="color:black;">&lt;/span&gt;</code> <code style="color:black;">&lt;span class="b"&gt;</code>venenatis<code style="color:black;">&lt;/span&gt;</code> ... <code style="color:black;">&lt;/div&gt;</code>
+        <code style="color:black;">&lt;h2&gt;</code>Display: Block<code style="color:black;">&lt;/h2&gt;</code>
+        <code style="color:black;">&lt;div&gt;</code>... <code style="color:black;">&lt;span class="c"&gt;</code>Aliquam<code style="color:black;">&lt;/span&gt;</code> <code style="color:black;">&lt;span class="c"&gt;</code>venenatis<code style="color:black;">&lt;/span&gt;</code> ... <code style="color:black;">&lt;/div&gt;</code>
+    &lt;/body&gt;
+    </code></pre>
+                </p>
+            </div>
+        </div>
+
+        <div class="container" style="display:block;">
+            <h4>Flexbox</h4>
+            <p>
+                Toda la información en esta sección ha sido tomada del siguiente enlace:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Flexbox</a>
+                </div> 
+                El módulo Flexbox Layout (Caja Flexible) tiene como objetivo proporcionar una manera más eficiente de organizar, alinear y distribuir el espacio entre los elementos en un contenedor, incluso cuando su tamaño es desconocido y/o dinámico (de ahí la palabra "flex").
+                <br>
+                <br>
+                La idea principal detrás del diseño flex es darle al contenedor la capacidad de alterar el ancho/alto (y el orden) de sus elementos para llenar mejor el espacio disponible (principalmente para adaptarse a todo tipo de dispositivos y tamaños de pantalla). Un contenedor flex expande los elementos para llenar el espacio libre disponible o los reduce para evitar el desbordamiento.
+                <br>
+                <br>
+                Lo más importante es que el diseño de flexbox es agnóstico a la dirección, a diferencia de los diseños regulares (block, que está basado verticalmente, e inline, que está basado horizontalmente). Mientras que estos funcionan bien para páginas, carecen de flexibilidad (sin juego de palabras) para soportar aplicaciones grandes o complejas (especialmente en lo que respecta a cambios de orientación, redimensionamiento, estiramiento, contracción, etc.).
+            </p> 
+        </div>
+        
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p>                    
+                    <u>Contenedor Flex de CSS</u>
+                    Para seguir esta sección, es necesario ver el video de YouTube en la lista de reproducción del curso. En ese video, analizaremos las propiedades de flexbox con más detalle.
+                    Toda la información en esta sección ha sido tomada de los siguientes dos enlaces:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css3_flexbox.asp" target="_blank">Contenedor Flex 1</a> 
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css3_flexbox_container.asp" target="_blank">Contenedor Flex 2</a> 
+                        <a class="btn-section3" href="https://youtu.be/zKj4QERE4yA" target="_blank">YouTube (sección 3)</a> 
+                        <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Display/ch3_flex_container.html" target="_blank">GitHub (Flex)</a>
+                    </div> 
+                    Para comenzar a usar el modelo Flexbox, primero debemos definir un contenedor flex.
+                    <br>
+                    <br>
+                    En el video de YouTube, creo un contenedor flex (el área azul) con tres elementos flexibles. Exploramos las propiedades de flexbox en el video. Estas propiedades se resumen a continuación:
+                    <br>
+                    <br>
+                    <ol>
+                        <li>
+                            <strong>Align-content</strong>: Modifica el comportamiento de la propiedad flex-wrap. Es similar a align-items, pero en lugar de alinear los elementos flexibles, alinea las líneas flexibles.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Align-items</strong>: Alinea verticalmente los elementos flexibles cuando los elementos no utilizan todo el espacio disponible en el eje transversal.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Display</strong>: Especifica el tipo de caja utilizado para un elemento HTML.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-direction</strong>: Especifica la dirección de los elementos flexibles dentro de un contenedor flex.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-flow</strong>: Propiedad abreviada para flex-direction y flex-wrap.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-wrap</strong>: Especifica si los elementos flexibles deben ajustarse o no, si no hay suficiente espacio para ellos en una línea flexible.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Justify-content</strong>: Alinea horizontalmente los elementos flexibles cuando los elementos no utilizan todo el espacio disponible en el eje principal.
+                        </li>
+                    </ol>
+                
+                </p>      
+            </div>
+            <div class="boxa" style="height:800px; align-self:center;">
+                <p><strong>Contenedor Flex de CSS</strong>                  
+                    <pre><code class="html">
+        &lt;style&gt;    
+            .flex_container &#123;
+                display: flex;
+                flex-direction: row;
+                background-color: DodgerBlue;
+                width: 800px;
+                height: 800px;
+                align-items: center;
+                justify-content: center;
+            &#125;
+            .flex_container .item1 &#123;
+                background-color: red;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+                width: 150px;
+                height: 150px;
+            &#125;
+            .flex_container .item2 &#123;
+                ...
+            &#125;
+            .flex_container .item3 &#123;
+                ...
+            &#125;
+        &lt;/style&gt;    
+        &lt;body&gt;    
+            &lt;div class="flex_container"&gt;
+                &lt;div class="item1"&gt;Ítem 1&lt;/div&gt;
+                &lt;div class="item2"&gt;Ítem 2&lt;/div&gt;
+                &lt;div class="item3"&gt;Ítem 3&lt;/div&gt;  
+            &lt;/div&gt;
+        &lt;/body&gt;
+        </code></pre>
+                </p>    
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p>                    
+                    <u>Elementos Flexibles de CSS</u>
+                    Toda la información en esta sección ha sido tomada de los siguientes dos enlaces:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css3_flexbox_items.asp" target="_blank">Elementos Flexibles</a> 
+                        <a class="btn-section3" href="https://youtu.be/zKj4QERE4yA" target="_blank">YouTube (sección 3)</a> 
+                        <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/blob/main/Ch3%20HTML%20Head%20and%20Body/Display/ch3_flex_container.html" target="_blank">GitHub (Flex)</a>
+                    </div> 
+                    Los elementos hijos directos de un contenedor flex se convierten automáticamente en elementos flexibles (flex).
+                    <br>
+                    <br>
+                    En el video de YouTube, creo un contenedor flex (el área azul) con tres elementos flexibles. Exploramos las propiedades de flexbox de los elementos hijos en el video. Estas propiedades se resumen a continuación:
+                    <br>
+                    <br>
+                    <ol>
+                        <li>
+                            <strong>Align-self</strong>: Especifica la alineación para un elemento flexible (anula la propiedad align-items del contenedor flex).
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex</strong>: Propiedad abreviada para las propiedades flex-grow, flex-shrink y flex-basis.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-basis</strong>: Especifica la longitud inicial de un elemento flexible.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-grow</strong>: Especifica cuánto crecerá un elemento flexible en relación con el resto de los elementos flexibles dentro del mismo contenedor.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Flex-shrink</strong>: Especifica cuánto se reducirá un elemento flexible en relación con el resto de los elementos flexibles dentro del mismo contenedor.
+                        </li>
+                        <br>
+                        <li>
+                            <strong>Order</strong>: Especifica el orden de los elementos flexibles dentro del mismo contenedor.
+                        </li>
+                    </ol>
+                
+                </p>      
+            </div>
+            <div class="boxa" style="height:700px; align-self:center;">
+                <p><strong>Elementos Flexibles de CSS</strong>                   
+                    <pre><code class="html">
+        &lt;style&gt;    
+            .flex_container .item1 &#123;
+                background-color: red;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+                width: 150px;
+                height: 150px;
+                flex-grow: 1;
+            &#125;
+            .flex_container .item2 &#123;
+                background-color: red;
+                margin: 10px;
+                padding: 20px;
+                font-size: 30px;
+                width: 150px;
+                height: 150px;
+                flex-grow: 2;
+            &#125;
+        &lt;/style&gt;    
+        &lt;body&gt;    
+            &lt;div class="flex_container"&gt;
+                &lt;div class="item1"&gt;Ítem 1&lt;/div&gt;
+                &lt;div class="item2"&gt;Ítem 2&lt;/div&gt;
+                &lt;div class="item3"&gt;Ítem 3&lt;/div&gt;  
+            &lt;/div&gt;
+        &lt;/body&gt;
+        </code></pre>
+                </p>    
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Media queries CSS</h4>
+                <p>  
+                    Toda la información en esta sección ha sido tomada de los siguientes enlaces:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://www.w3schools.com/css/css3_mediaqueries.asp" target="_blank">Media queries CSS</a> 
+                        <a class="btn-section3" href="https://youtu.be/zKj4QERE4yA" target="_blank">YouTube (sección 3)</a> 
+                        <a class="btn-section3" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch3%20HTML%20Head%20and%20Body/Media%20Query" target="_blank">GitHub (Consultas de Medios)</a>
+                    </div> 
+                    La regla @media, introducida en CSS2, permitió definir diferentes reglas de estilo para diferentes tipos de medios.
+                    <br>
+                    <br>
+                    Ejemplos: Podrías tener un conjunto de reglas de estilo para pantallas de computadoras, uno para impresoras, uno para dispositivos portátiles, uno para dispositivos tipo televisión, y así sucesivamente.
+                    <br>
+                    <br>
+                    Las media queries en CSS3 ampliaron la idea de los tipos de medios de CSS2: en lugar de buscar un tipo de dispositivo, examinan la capacidad del dispositivo.
+                    <br>
+                    <br>
+                    Las media queries se pueden usar para verificar muchas cosas, como:
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            Ancho y alto del área de visualización.
+                        </li>
+                        <br>
+                        <li>
+                            Ancho y alto del dispositivo.
+                        </li>
+                        <br>
+                        <li>
+                            Orientación (¿está la tableta/telefono en modo horizontal o vertical?).
+                        </li>
+                        <br>
+                        <li>
+                            Resolución.
+                        </li>
+                    </ul>
+                    El uso de media queries es una técnica popular para entregar una hoja de estilo personalizada a escritorios, portátiles, tabletas y teléfonos móviles (como iPhone y teléfonos Android).
+                </p>      
+            </div>
+            <div class="boxa" style="height:500px; align-self:center;">
+                <p><strong>Consultas de Medios CSS</strong>                   
+                    <pre><code class="html">
+        &lt;head&gt;   
+            &lt;meta name="viewport" content="user-scalable=yes, 
+            width=device-width, initial-scale=1"&gt;
+            &lt;style&gt; 
+                ...   
+                @media (max-width:768px) &#123; 
+                .flex_container &#123;
+                    flex-direction: column;
+                    &#125;
+                &#125;
+            &lt;/style&gt;    
+        &lt;/head&gt;     
+        &lt;body&gt;    
+        &lt;div class="flex_container"&gt;
+            &lt;div class="item1"&gt;Ítem 1&lt;/div&gt;
+            &lt;div class="item2"&gt;Ítem 2&lt;/div&gt;
+            &lt;div class="item3"&gt;Ítem 3&lt;/div&gt;  
+        &lt;/div&gt;
+        &lt;/body&gt;
+        </code></pre>
+                </p>    
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+        <div class="container" style="display:block;">
+            <h1>Barra de navegación y pie de página</h1>
+            <p>
+                Los enlaces al video de YouTube Y la cuenta de GitHub para esta sección están abajo:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section4" href="#" target="_blank">YouTube (sección 4a)</a>
+                <a class="btn-section4" href="#" target="_blank">YouTube (sección 4b)</a>
+                <a class="btn-section4" href="#" target="_blank">GitHub</a>
+            </div>
+        </div>  
+
+        <div class="container">
+            
+            <div class="box_three">
+                      
+            </div>
+            <div class="box_three">
+                <h4>Antes de comenzar</h4>
+                <p style="text-align:left;">
+                    Para tener un acceso rápido a íconos, fuentes y otros elementos en nuestro proyecto, vamos a utilizar <strong>conexiones CDN</strong>. Por lo tanto, es importante tener algunas nociones de lo que es una conexión CDN. Una red de distribución de contenido (CDN) es un grupo de servidores distribuidos geográficamente que acelera la entrega de contenido web al acercarlo a donde se encuentran los usuarios. Los centros de datos en todo el mundo utilizan el almacenamiento en caché, un proceso que almacena temporalmente copias de archivos, para que puedas acceder al contenido de Internet desde un dispositivo habilitado para la web o navegador más rápidamente a través de un servidor cercano a ti. Las CDNs almacenan en caché contenido como páginas web, imágenes y videos en servidores proxy cercanos a tu ubicación física. Esto te permite hacer cosas como ver una película, descargar software, verificar tu saldo bancario, publicar en redes sociales o hacer compras, sin tener que esperar a que se cargue el contenido.
+                    <br>
+                    <br>
+                    Más información sobre conexiones CDN: 
+                </p>  
+                <div class="section_container_buttons_chapters_box">
+                    <a class="btn-section4_box" href="https://www.akamai.com/our-thinking/cdn/what-is-a-cdn  " target="_blank">Conexiones CDN</a>
+                </div>       
+            </div>
+            <div class="box_three">
+                      
+            </div>
+        </div>  
+        
+        <div class="container" style="display:block;">
+            <h4>Barra de navegación</h4>
+            <p>
+                El código html de la barra de navegación está en el archivo <strong>layout.html</strong>, y se encuentra encima de <code style="color:black;">&#123;% block content %&#125; &#123;% endblock %&#125;</code>. 
+                <br>
+                <br>
+                El código html de la barra de navegación consta de:    
+                <ol>
+                    <li>
+                        Una sección que cubre todo el ancho de la pantalla.
+                    </li>
+                    <li>
+                        Un contenedor con un ancho de 1320px que contiene la barra de navegación.
+                    </li>
+                    <li>
+                        Una barra de navegación que contiene el logotipo de nuestra aplicación y una lista con enlaces a las rutas de inicio, metodología y aplicación de carbono.
+                    </li>
+                </ol>
+                En la barra de navegación, vamos a introducir un ícono importado de Font Awesome (o Bootstrap). Utilizando ese ícono, vamos a crear el logotipo de nuestra aplicación. Para usar los íconos, necesitamos importar algunas clases CSS de Font Awesome. Vamos a importar esas clases en el <strong>head</strong> de nuestro documento. Más información sobre <strong>Font Awesome</strong>:                
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section4" href="https://fontawesome.com/" target="_blank">Font Awesome</a>
+            </div>
+            <p>
+                Para mejorar nuestra barra de navegación, vamos a crear nuestro propio archivo de clases CSS (<strong>layout.css</strong>). En el archivo CSS, vamos a definir algunas clases que afectan a todo el documento. Agrupamos esas clases como <strong>utilidades</strong>. Utilidades es el nombre estándar que se utiliza en la programación para referirse a esas clases, y en general a funciones o partes del código que se pueden usar en todo el proyecto. Vamos a crear clases específicas que definan las propiedades de otros componentes de nuestra barra de navegación. Al igual que con Font Awesome, vamos a importar el archivo layout.css a nuestro archivo layout.html en el head del archivo layout.html. En la barra de navegación y en el resto de nuestro proyecto, estamos usando una fuente importada de Google Fonts. Vamos a importar las Google Fonts a nuestro archivo layout.css. Más información sobre <strong>Google Fonts</strong>: 
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section4" href="https://fonts.google.com/ " target="_blank">Google Fonts</a>
+            </div>
+            <p>
+                Para hacer nuestra barra de navegación responsiva a diferentes pantallas, vamos a usar <strong>media queries</strong>. Para evitar el uso de JavaScript, vamos a usar un simple flexbox de media, donde cuando accedemos a nuestra aplicación desde un teléfono móvil, la barra de navegación aparece en una columna y aumenta su ancho.
+            </p>
+            <h4>Pie de página</h4>
+            <p>
+                Para hacer nuestra barra de navegación responsiva a diferentes pantallas, vamos a usar <strong>media queries</strong>. Para evitar el uso de JavaScript, vamos a usar un simple flexbox de media, donde cuando accedemos a nuestra aplicación desde un teléfono móvil, la barra de navegación aparece en una columna y aumenta su ancho.
+                El <strong>pie de página</strong> de nuestro proyecto es muy simple. El código html está en el archivo layout.html, y se encuentra debajo de <code style="color:black;">&#123;% block content %&#125; &#123;% endblock %&#125;</code>. El código html del pie de página y las clases CSS son muy simples, están disponibles en la cuenta de GitHub, y vamos a escribir el código html y CSS durante las lecciones.
+            </p>
+        </div> 
+       
+    </section>  
+
+    <!-- Section 5 -->
+    <section class="section_1" id="section5">
+
+        <div class="container" style="display:block;">
+            <h1>Encabezado y Desarrolladores</h1>
+            <p>
+                Los enlaces al video de YouTube y la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="#" target="_blank">YouTube (sección 5a)</a>
+                <a class="btn-section1" href="#" target="_blank">YouTube (sección 5b)</a>
+                <a class="btn-section1" href="#" target="_blank">GitHub</a>
+            </div>
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>Antes de comenzar</h4>
+            <p>
+                En nuestra aplicación, vamos a utilizar diferentes imágenes y logotipos. Es importante saber qué tipo de formato es el más adecuado para fotos, imágenes y logotipos. Presentaré cuatro tipos de formatos de imagen: SVG, PNG, JPEG y GIF.
+            </p>                  
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5 style="text-align:center;">Archivos SVG</h5>
+                <p>
+                    <u>¿Qué es un archivo SVG?</u>
+                    <br>
+                    <br>
+                    Scalable Vector Graphics (SVG) es un formato de archivo vectorial compatible con la web. A diferencia de los archivos rasterizados basados en píxeles como los JPEG, los archivos vectoriales almacenan imágenes a través de fórmulas matemáticas basadas en puntos y líneas en una cuadrícula. Esto significa que los archivos vectoriales como SVG pueden redimensionarse significativamente sin perder calidad, lo que los hace ideales para logotipos y gráficos complejos en línea.
+                    <br>
+                    <br>
+                    <u>Ventajas de los archivos SVG.</u>
+                    <ul>
+                        <li>
+                            A diferencia de los archivos rasterizados, que están formados por píxeles, los gráficos vectoriales como los SVG siempre mantienen su resolución, sin importar cuán grandes o pequeños los hagas. No tienes que preocuparte por que las imágenes SVG pierdan calidad en ciertos navegadores o cuando las redimensionas para que aparezcan en diferentes lugares.
+                        </li>
+                        <li>
+                            Los archivos SVG básicos suelen ser más pequeños que las imágenes rasterizadas, que se construyen a partir de muchos píxeles de color en lugar de usar algoritmos matemáticos.
+                        </li>
+                        <li>
+                            Debido a que los archivos SVG tratan el texto como texto (y no como diseño), los lectores de pantalla pueden escanear cualquier palabra contenida en las imágenes SVG. Esto es muy útil para personas que necesitan ayuda para leer páginas web. Los motores de búsqueda también pueden leer e indexar el texto de las imágenes SVG.
+                        </li>
+                    </ul>
+                    <u>Desventajas de los archivos SVG.</u>
+                    <ul>
+                        <li>
+                            Los archivos SVG son ideales para gráficos web como logotipos, ilustraciones y gráficos. Pero su falta de píxeles hace que sea difícil mostrar fotos digitales de alta calidad. Los archivos JPEG son generalmente mejores para fotografías detalladas.
+                        </li>
+                        <li>
+                            Solo los navegadores modernos pueden soportar imágenes SVG. Puede que te resulte un desafío usar archivos SVG con Internet Explorer 8 y otros navegadores más antiguos.
+                        </li>
+                        <li>
+                            El código contenido en las imágenes SVG puede ser difícil de entender si eres nuevo en su formato de archivo.
+                        </li>
+                    </ul>
+                    Más información sobre archivos SVG:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1_box" href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">Archivos SVG</a>
+                </div> 
+            </div> 
+            <div class="box_two">
+                <h5 style="text-align:center;">Archivos PNG</h5>
+                <p>
+                    <u>¿Qué es un archivo PNG?</u>
+                    <br>
+                    <br>
+                    PNG es la abreviatura de Portable Network Graphic, un tipo de archivo de imagen rasterizada. Es un tipo de archivo especialmente popular entre los diseñadores web porque puede manejar gráficos con fondos transparentes o semitransparentes. El formato de archivo no está patentado, por lo que puedes abrir un PNG utilizando cualquier software de edición de imágenes sin necesidad de licencias.
+                    <br>
+                    <br>
+                    <u>Ventajas de los archivos PNG.</u>
+                    <ul>
+                        <li>
+                            Al manejar millones de opciones de color en lugar de cientos, los archivos PNG pueden almacenar imágenes mucho más detalladas que los GIF.
+                        </li>
+                        <li>
+                            PNG es un formato abierto, por lo que puedes ver y editar estos archivos en una gran variedad de programas sin una licencia, ya que no hay patente.
+                        </li>
+                        <li>
+                            Una imagen PNG no perderá ninguno de sus datos cuando se comprime, lo que facilita mucho su almacenamiento y transferencia. Esto es una gran ventaja sobre opciones con pérdida como los archivos JPEG, donde se pierde información en el proceso de compresión.
+                        </li>
+                    </ul>
+    
+                    <u>Desventajas de los archivos PNG.</u>
+                    <ul>
+                        <li>
+                            Al retener todos sus datos originales cuando se comprime, un archivo PNG generalmente será mucho más grande en tamaño que un GIF o un JPEG. Esto significa que ocupará más espacio en el disco duro de tu computadora.
+                        </li>
+                        <li>
+                            Desde el principio, los PNG fueron diseñados pensando en la web. Debido a esto, no admiten modos de color CMYK, por lo que transferirlos a impresión puede resultar difícil.
+                        </li>
+                        <li>
+                            Aunque los PNG comprimidos contienen datos de imágenes de alta calidad y detalle, su mayor tamaño de archivo significa tiempos de carga de página más lentos y menor capacidad de respuesta.
+                        </li>
+                    </ul>
+                    Más información sobre archivos PNG:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1_box" href="https://www.adobe.com/creativecloud/file-types/image/raster/png-file.html#:~:text=frequently%20asked%20questions-,What%20is%20a%20PNG%20file%3F,transparent%20or%20semi%2Dtransparent%20backgrounds" target="_blank">Archivos PNG</a>
+                </div> 
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5 style="text-align:center;">Archivos JPEG</h5>
+                <p>
+                    <u>¿Qué es un archivo JPEG?</u>
+                    <br>
+                    <br>
+                    JPEG significa Joint Photographic Experts Group, una organización internacional que estandarizó el formato durante finales de los 80 y principios de los 90. Es el formato de archivo preferido para imágenes digitales, y lo ha sido desde que los fotógrafos comenzaron a tomar y almacenar imágenes en cámaras digitales y otros dispositivos reprográficos.
+                    <br>
+                    <br>
+                    <u>Ventajas de los JPEG.</u>
+                    <ul>
+                        <li>
+                            Los archivos JPEG son, sin duda, el formato de archivo de imagen más reconocido universalmente, compatible con la mayoría de los navegadores, software y aplicaciones.
+                        </li>
+                        <li>
+                            Sus pequeños tamaños de archivo permiten una transferencia rápida y un acceso rápido para ver en línea. Al descartar inteligentemente todos los colores que el ojo humano no puede distinguir, llamado compresión con pérdida, los JPEG mantienen su tamaño de archivo lo más pequeño posible. En comparación con formatos sin pérdida como los GIF, los JPEG son significativamente más pequeños en tamaño.
+                        </li>
+                        <li>
+                            El post-procesamiento es más fácil porque el balance de blancos y la saturación en los JPEG se ajustan con un solo clic del obturador.
+                        </li>
+                    </ul>
+                    <u>Desventajas de los JPEG.</u>
+                    <ul>
+                        <li>
+                            La compresión con pérdida puede ahorrar espacio, pero cuando se trata de imágenes muy comprimidas, la calidad sufrirá. Las imágenes con bordes y líneas limpias perderán algo de nitidez en la compresión.
+                        </li>
+                        <li>
+                            Perder tantos datos puede causar posterización, la pérdida de transiciones suaves entre colores, haciendo que una imagen se vea más bloqueada y abrupta. También puede causar la aparición de artefactos, aliasing en los bordes, blooming o ruido, lo que puede afectar severamente la calidad de la imagen. Los fotógrafos pueden evitar los posibles problemas de artefactos y posterización guardando las fotos en formato raw.
+                        </li>
+                    </ul>
+                    Más información sobre archivos JPEG:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1_box" href="https://www.adobe.com/creativecloud/file-types/image/raster/jpeg-file.html" target="_blank">Archivos JPEG</a>
+                </div> 
+            </div> 
+            <div class="box_two">
+                <h5 style="text-align:center;">Archivos GIF</h5>
+                <p>
+                    <u>¿Qué es un archivo GIF?</u>
+                    <br>
+                    <br>
+                    Probablemente veas archivos GIF cada vez que revisas tus redes sociales. Pero, ¿qué significa GIF y cómo funcionan estos archivos?
+                    <br>
+                    <br>
+                    GIF significa Graphics Interchange Format. GIF es un formato de archivo rasterizado diseñado para imágenes relativamente básicas que aparecen principalmente en internet. Cada archivo puede admitir hasta 8 bits por píxel y puede contener 256 colores indexados. Los archivos GIF también permiten combinar imágenes o cuadros, creando animaciones básicas.
+                    <br>
+                    <br>
+                    <u>Ventajas de los archivos GIF.</u>
+                    <ul>
+                        <li>
+                            Lo que las animaciones GIF carecen de sofisticación lo compensan con velocidad e impacto. Son rápidas de crear, no requieren demasiado conocimiento técnico y pueden extenderse por las redes sociales como la pólvora en forma de memes.
+                        </li>
+                        <li>
+                            Los límites de color impuestos en los GIFs mantienen sus tamaños de archivo relativamente pequeños. Esto puede ayudar a que carguen más rápido en las páginas web.
+                        </li>
+                        <li>
+                            Los archivos GIF cuentan con una función llamada compresión sin pérdida. Esto significa que su calidad de imagen no disminuye cuando se comprimen sus datos.
+                        </li>
+                    </ul>
+    
+                    <u>Desventajas de los archivos GIF.</u>
+                    <ul>
+                        <li>
+                            El formato de archivo GIF solo admite una paleta de 256 colores, lo que significa que las imágenes pueden tener una resolución baja o incluso verse un poco borrosas.
+                        </li>
+                        <li>
+                            Debido a que usan múltiples imágenes, los archivos GIF animados pueden ser difíciles de editar una vez creados.
+                        </li>
+                        <li>
+                            Aunque los GIFs son generalmente pequeños y rápidos de cargar, una conexión lenta a internet podría retrasar o afectar negativamente su apariencia en una página web.
+                        </li>
+                    </ul>
+                    Más información sobre archivos GIF:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1_box" href="https://www.adobe.com/creativecloud/file-types/image/raster/gif-file.html" target="_blank">Archivos GIF</a>
+                </div> 
+            </div>               
+        </div>
+    
+        <div class="container" style="display:block;">
+            <h4>Encabezado</h4>
+            <p>
+                El código html del <strong>encabezado</strong> está en el <strong>archivo home.html</strong>, y se encuentra debajo de <code style="color:black;">&#123;% extends "layout.html" %&#125;, y entre &#123;% block content %&#125; y &#123;% endblock content %&#125;</code>. El código html del encabezado consiste en:
+                <ol>
+                    <li>
+                        Una sección que cubre todo el ancho de la pantalla.
+                    </li>
+                    <li>
+                        Un contenedor con un ancho de 1320px que contiene la barra de navegación.
+                    </li>
+                    <li>
+                        Un div con dos cajas flexibles. Una para el texto y otra para el logo.
+                    </li>
+                </ol>
+                Para definir todas las clases que modifican el código html, creamos un <strong>archivo home.css</strong>. Importamos el archivo home.css a nuestro proyecto en el encabezado de nuestro archivo layout.html. Al igual que con la barra de navegación, para el encabezado en el archivo home.html, utilizamos clases de utilidad y clases específicas que afectan la apariencia del archivo home.html.
+            </p> 
+            <h4>Desarrolladores</h4>
+            <p>
+                El código html de la <strong>sección de desarrolladores</strong> sigue la misma estructura que el código html de la sección de encabezado. El código CSS que define la apariencia de la sección de desarrolladores es similar al código CSS que define la sección de encabezado.
+            </p>
+        </div>
+    
+    </section>
+
+    <!-- Section 6 -->
+    <section class="section_2" id="section6">
+
+        <div class="container" style="display:block;">
+            <h1>Bootstrap: Instalación, botones y modal</h1>
+            <p>
+                Los enlaces al video de YouTube y a la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="#" target="_blank">YouTube (sección 6)</a>
+                <a class="btn-section2" href="#" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section2" href="#" target="_blank">GitHub (Final)</a>
+            </div>
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>¿Qué es Bootstrap?</h4>
+            <p>
+                <strong>Bootstrap</strong> es el <strong>Framework CSS</strong> más popular para desarrollar sitios web <strong>responsivos y mobile-first</strong>.
+                <br>
+                <br>
+                <u>¿Qué es mobile first?</u> Un enfoque "mobile-first" implica diseñar un sitio de escritorio comenzando con la versión móvil, que luego se adapta a pantallas más grandes (contrario al enfoque tradicional de comenzar con un sitio de escritorio y luego adaptarlo a pantallas más pequeñas). En términos generales, un enfoque mobile-first significa construir su sitio web pensando en sus usuarios móviles, con el objetivo principal de mejorar la experiencia de estos usuarios móviles en su sitio.
+                <br>
+                <br>
+                <u>¿Cómo instalar Bootstrap?</u> Para usar Bootstrap es necesario agregar el enlace CSS en el encabezado y los enlaces de JavaScript en el cuerpo. Las instrucciones para instalar Bootstrap están en el enlace a continuación. También explicamos cómo instalar Bootstrap en el video de YouTube de esta sección.
+            </p>  
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="#" target="_blank">YouTube (sección 6)</a>
+                <a class="btn-section2" href="https://getbootstrap.com/docs/4.3/getting-started/introduction/" target="_blank">Bootstrap (Instalación)</a>
+            </div>  
+            <h4>Botones en Bootstrap</h4>    
+            <p>
+                Los botones son muy útiles y aparecen varias veces en nuestra aplicación. En el capítulo anterior, utilizamos botones de Bootstrap y también creamos nuestros propios botones. Más información sobre los botones de Bootstrap se puede encontrar en el enlace a continuación.
+            </p> 
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://getbootstrap.com/docs/4.0/components/buttons/" target="_blank">Bootstrap (Botones)</a>
+            </div>  
+            <p>
+                <u>Ejemplos.</u> En esta sección, vamos a introducir tres botones de Bootstrap, centrándonos en <strong>tres tipos de botones</strong>.
+            </p>       
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Botones predeterminados de Bootstrap - Código -</h5>
+                &#60;button type="button" class="btn btn-primary"&#62;Primario&#60;/button&#62;
+                <br>
+                &#60;button type="button" class="btn btn-info"&#62;Info&#60;/button&#62;
+            </div> 
+            <div class="box_two">
+                <h5>Botones predeterminados de Bootstrap - Navegador -</h5>
+                <button type="button" class="btn btn-primary">Primario</button>
+                <button type="button" class="btn btn-info">Info</button>
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Botones Outline - Código -</h5>
+                &#60;button type="button" class="btn btn-outline-danger"&#62;Peligro&#60;/button&#62;
+                <br>
+               &#60;button type="button" class="btn btn-outline-warning"&#62;Advertencia&#60;/button&#62;
+            </div> 
+            <div class="box_two">
+                <h5>Botones Outline - Navegador -</h5>
+                <button type="button" class="btn btn-outline-danger">Peligro</button>
+                <button type="button" class="btn btn-outline-warning">Advertencia</button> 
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Botones de tamaño - Código -</h5>
+                &#60;button type="button" class="btn btn-primary btn-lg"	&#62;Botón grande&#60;/button&#62;
+                <br>
+                &#60;button type="button" class="btn btn-secondary btn-sm"	&#62;Botón pequeño&#60;/button&#62;
+            </div> 
+            <div class="box_two">
+                <h5>Botones de tamaño - Navegador -</h5>
+                <button type="button" class="btn btn-primary btn-lg">Botón grande</button>
+                <button type="button" class="btn btn-secondary btn-sm">Botón pequeño</button> 
+            </div>               
+        </div>
+    
+        <div class="container" style="display:block;">
+            <h4>Modal en Bootstrap</h4>
+            <p>
+                El enlace con información sobre el modal en Bootstrap se encuentra a continuación:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://getbootstrap.com/docs/4.0/components/modal/" target="_blank">Bootstrap (Modal)</a>
+                </div> 
+                El plugin modal de JavaScript de Bootstrap añade cuadros de diálogo a su sitio para lightboxes, notificaciones de usuarios o contenido completamente personalizado.
+                <br>
+                <br>
+                <u>Cómo funciona:</u> Antes de comenzar con el componente modal de Bootstrap, asegúrese de leer lo siguiente, ya que nuestras opciones de menú han cambiado recientemente.
+                <br>
+                <br>
+                <ul>
+                    <li>
+                        Los modales se construyen con HTML, CSS y JavaScript. Se posicionan sobre todo lo demás en el documento y eliminan el desplazamiento de la <code style="color:black">&#60;body&#62;</code> para que el contenido modal se desplace en su lugar. 
+                    </li>
+                    <li>
+                        Al hacer clic en el "backdrop" del modal, el modal se cerrará automáticamente. 
+                    </li>
+                    <li>
+                        Bootstrap solo admite una ventana modal a la vez. No se admiten modales anidados ya que creemos que ofrecen una mala experiencia de usuario. 
+                    </li>
+                    <li>
+                        Los modales usan position: fixed, lo que a veces puede ser un poco particular con respecto a su renderizado. Siempre que sea posible, coloque su HTML modal en una posición de nivel superior para evitar posibles interferencias de otros elementos. Es probable que se enfrente a problemas cuando anide un modal dentro de otro elemento fijo. 
+                    </li>
+                    <li>
+                        Una vez más, debido a position: fixed, existen algunas advertencias al usar modales en dispositivos móviles. Consulte nuestra documentación de soporte del navegador para obtener más detalles. 
+                    </li>
+                </ul>
+                <u>Un ejemplo:</u>
+            </p> 
+        </div>
+    
+        <div class="container">            
+    
+            <div class="box_three">                    
+            </div>
+            <div class="box_three" style="text-align:left;">
+                <h5 style="text-align:left;">Modal - Código -</h5>
+                <pre><code class="html">
+    &#60;!-- Botón para activar el modal --&#62;
+    &#60;button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"&#62;
+    Lanzar modal de demostración
+    &#60;/button&#62;
+    
+    &#60;!-- Modal --&#62;
+    &#60;div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"&#62;
+    &#60;div class="modal-dialog" role="document"&#62;
+    &#60;div class="modal-content"&#62;
+        &#60;div class="modal-header"&#62;
+        &#60;h5 class="modal-title" id="exampleModalLabel"&#62;Título del modal&#60;/h5&#62;
+        &#60;/div&#62;
+        &#60;div class="modal-body"&#62;
+        ...
+        &#60;/div&#62;
+        &#60;div class="modal-footer"&#62;
+        &#60;button type="button" class="btn btn-secondary" data-dismiss="modal"&#62;Cerrar&#60;/button&#62;
+        &#60;button type="button" class="btn btn-primary"&#62;Guardar cambios&#60;/button&#62;
+        &#60;/div&#62;
+    &#60;/div&#62;
+    &#60;/div&#62;
+    &#60;/div&#62;
+            </code></pre>
+                <h5 style="text-align:left;">Modal - Navegador -</h5>
+                <!-- Botón para activar el modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Lanzar modal de demostración
+                </button>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Título del modal</h5>
+                        </div>
+                        <div class="modal-body">
+                        ...
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Guardar cambios</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>   
+            <div class="box_three">                  
+            </div> 
+        </div>
+    
+        <div class="container" style="display:block;"> 
+            <h4>Íconos en Bootstrap</h4>    
+            <p>
+                Anteriormente en este capítulo utilizamos Font Awesome para introducir íconos en nuestra aplicación. También podemos usar íconos de Bootstrap en nuestra aplicación. En esta sección, estudiamos cómo introducir íconos de Bootstrap en nuestra aplicación.
+                <br>
+                <br>
+                Información útil sobre los íconos de Bootstrap se puede encontrar en los enlaces a continuación.
+            </p> 
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://getbootstrap.com/docs/5.0/extend/icons/" target="_blank">Bootstrap (Íconos I)</a>
+                <a class="btn-section2" href="https://icons.getbootstrap.com/" target="_blank">Bootstrap (Íconos II)</a>
+            </div>  
+            <p>
+                <u>Ejemplos.</u>
+            </p>       
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Íconos - Código -</h5>
+                &#60;i class="bi bi-arrow-up-circle-fill"&#62;&#60;/i&#62;
+                <br>
+                &#60;i class="bi bi-arrow-up-square-fill"&#62;&#60;/i&#62;
+                <br>
+                &#60;i class="bi bi-calculator"&#62;&#60;/i&#62;
+                <br>
+                &#60;i class="bi bi-bar-chart-fill"&#62;&#60;/i&#62;
+            </div> 
+            <div class="box_two">
+                <h5>Íconos - Navegador -</h5>
+                <div class="h1 mb-3">
+                    <i class="bi bi-arrow-up-circle-fill"></i>
+                    <i class="bi bi-arrow-up-square-fill"></i>
+                    <i class="bi bi-calculator"></i>
+                    <i class="bi bi-bar-chart-fill"></i>
+                </div>    
+            </div>               
+        </div>
+    
+    </section> 
+
+    <!-- Section 7 -->
+    <section class="section_3" id="section7">
+
+        <div class="container">            
+    
+            <div class="box_three">                    
+            </div>
+            <div class="box_three">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Desafío semanal</h1>
+                <p style="text-align: left;">
+                    En este desafío semanal, debes diseñar tus propios archivos layout.html, home.html, business.html, light_app.html, y los archivos de css asociados a estos archivos html.
+                     No necesitas hacer algo extraordinario. Enfócate en las distintas páginas del proyecto, y trata de que sean lo más avanzadas posible. 
+                     Es importante que proporciones un modelo de negocio claro, que ayude al usuario a entender el modelo de negocio que estás utilizando en tu aplicación. 
+                     Enfócate también en el modal para proporcionar algunas instrucciones básicas. Desarrollaremos las instrucciones más adelante en el curso, pero trata de entender cómo funciona el modal. 
+                     Como en el capítulo anterior, trata de tener una versión avanzada de los archivos html y css, ya que eso te ayudará a avanzar en el desarrollo de tu aplicación.
+                    <br>
+                    <br>  
+                    Discutiremos el desafío semanal el <strong>viernes.....</strong>. Utilizaremos el chat principal para ayudarnos mutuamente en el desafío semanal. 
+                    Dentro de esos días, por favor comparte la información que consideres relevante para ayudar a los demás grupos.
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Pistas</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" target="_blank" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">GitHub</a>
+                    </div> 
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+    
+                            <div class="modal-header">
+                            <h5 class="modal-title" style="color:black">Desafío semanal, capítulo 2</h5>
+                            </div>
+    
+                            <div class="modal-body" style="color:black">
+                            <p>
+                                <ol style="text-align: left;">
+                                    <li>
+                                        Crea un archivo de Word para los archivos home.html, business.html y light_talk_app.html donde tengas toda la información relacionada con esas páginas. 
+                                        De manera que puedas actualizar esa información durante las próximas semanas.                                    
+                                    </li>
+                                    </br>
+                                    <li>
+                                        Revisa los documentos home.html, business.html, light_talk_app.html y los archivos css asociados a esos documentos html que hemos desarrollado en clase e 
+                                        introduce los cambios que consideres necesarios para personalizar tus propios proyectos.
+                                    </li>
+                                </ol>
+                            </p>
+                            </div>
+    
+                            <div class="modal-footer">
+                            <a href="{{ url_for('es_course_chats.es_course_chats_create_chat') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Chat Principal</a>
+                            <button class="btn btn-secondary btn-lg mr-2" style="background-color:#6c757d;" data-dismiss="modal">Cerrar</button>
+                            </div>
+    
+                        </div>
+                        </div>
+                    </div>
+                </div>                    
+    
+            </div>   
+            <div class="box_three">                  
+            </div> 
+            
+        </div>
+    </section> 
+    
+    
+    
+
+{% endblock content %}
