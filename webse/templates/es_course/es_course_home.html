@@ -35,16 +35,16 @@
                           programan el <strong>modelo lingüístico</strong> utilizando Python y SQLAlchemy. Finalmente, <strong>despliegan sus aplicaciones</strong> 
                           en el servidor, utilizando GitHub y Amazon Web Services.
                       </p>
+                      
                 </div>
                 <div class="box">
                   <div class="h1 mb-3">
                     <i class="bi bi-bell"></i>
                   </div>
-                  <h3 class="text-center">Announcements: 
+                  <h3 class="text-center">Anuncios: 
                   </h3>
                   {% for announcement in announcements.items %}
                       <article class="media content-section">
-                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
                         <div class="media-body">
                           <div class="article-metadata">
                             <a class="mr-2" href="{{ url_for('es_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
@@ -72,7 +72,7 @@
       </div>
     </section> 
 
-        <!-- Section chapters   -->
+    <!-- Section chapters   -->
     <section class="section_chapter2" style="background-color: #f29545;">
       <div class="container">
 
@@ -187,7 +187,7 @@
 
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch12') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 4</a>
+                  <a href="{{ url_for('es_course_chapters.es_course_chapters_ch4') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 4</a>
               </div>
             </div>  
           </div>
