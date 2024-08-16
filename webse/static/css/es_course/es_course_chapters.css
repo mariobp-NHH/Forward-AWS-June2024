@@ -552,6 +552,29 @@ Rojo: #F26934
   padding: 15px 20px;
   text-align: left;
 }
+.section_4 .container .box_two {
+  flex: 1;
+  background: #f3ca99;
+  color: black;
+  border-radius: 5px;
+  margin: 20px 0px;
+  padding: 15px 0px;
+  text-align: center;
+}
+.section_4 .container .box_two:nth-of-type(1) {
+  background: #f3ca99; /* rt5-5: #F2DA5D  */
+  flex-grow: 1;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: left;
+}
+.section_4 .container .box_two:nth-of-type(2) {
+  background: #f3ca99;
+  flex-grow: 1;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: left;
+}
 .section_4 .container .box_three {
   flex: 1;
   background: #027b63;
