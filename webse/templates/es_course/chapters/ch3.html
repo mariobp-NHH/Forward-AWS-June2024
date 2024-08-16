@@ -1,0 +1,1166 @@
+{% extends "es_course/es_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1>Capítulo 3. Estructura, Blueprints, Formularios y Amazon Web Services</h1>
+                    <p class="mb-1">
+                        En este capítulo, mejoramos la arquitectura de software de nuestra aplicación para hacerla más eficiente y 
+                        para ayudarnos a mantener nuestro código organizado. En los próximos capítulos, añadiremos formularios,
+                         código en Python y bases de datos a nuestro proyecto, y nuestra aplicación ganará en complejidad. 
+                         Para facilitar este proceso lo más posible, reestructuramos nuestra aplicación utilizando <strong>Flask Blueprints</strong>.
+                         <br>
+                         <br>
+                         Los <strong>formularios web</strong>, como los campos de texto y las áreas de texto, permiten a los usuarios 
+                         enviar datos a su aplicación para utilizarlos en la ejecución de una acción o para enviar áreas de 
+                         texto más grandes a la aplicación. En nuestra aplicación, estamos utilizando formularios para registrarse, 
+                         iniciar sesión y añadir frases para el aprendizaje del español.
+                         <br>
+                         <br>
+                         En este capítulo, aprenderemos a <strong>crear y validar formularios</strong>, a <strong>conectar formularios con 
+                            archivos HTML</strong>. Aprenderemos a crear <strong>mensajes flash</strong> para proporcionar información valiosa a los usuarios de 
+                            nuestra aplicación cuando introducen información en nuestros formularios. También aprenderemos a 
+                            <strong>proteger información sensible</strong> relacionada con nuestros formularios cuando despleguemos nuestra aplicación en AWS.
+                        <br>
+                        <br>
+                        También vamos a desplegar nuestra aplicación. Para hacerlo, procedemos en dos pasos. 
+                        Primero, creamos un repositorio en <strong>GitHub</strong> donde colocaremos todos los archivos que definen nuestro proyecto. 
+                        Segundo, vamos a crear una cuenta en <strong>Amazon Web Services</strong>, utilizaremos <strong>Elastic Beanstalk</strong> para 
+                        desplegar nuestra aplicación y conectaremos nuestra cuenta de GitHub con nuestra cuenta de AWS utilizando <strong>CodePipeline</strong>.
+
+                    </p>
+                    </br>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 1)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 2)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 4a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 4b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 5)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 6a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 6b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 6c)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Estructura y Blueprints (Básico)</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, aprenderemos a <strong>definir Blueprints</strong>, a <strong>usarlos en nuestras rutas</strong>, 
+                                a <strong>registrar</strong> esos blueprints y a <strong>ejecutar nuestra aplicación</strong>.
+                            </p>    
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Estructura y Blueprints (Aplicado): Conectando las rutas de Blueprints con archivos HTML</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, nos enfocaremos en los cambios que debemos introducir en nuestros <strong>archivos HTML</strong> 
+                                para conectar las rutas de los Blueprints con nuestros archivos HTML.
+                            </p>                           
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Creación y validación de formularios</h5>
+                            </div>
+                            <p class="mb-1">
+                                En el paquete de rutas, creamos y validamos nuestros formularios. Aprendemos a crear formularios utilizando Flask-WTF y a activarlos en nuestro archivo routes.py.
+                            </p>                            
+                        </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Conectando formularios con plantillas HTML y mostrando mensajes flash</h5>
+                            </div>
+                            <p class="mb-1">
+                                Una vez que creamos y validamos los formularios, conectamos esos formularios con las plantillas HTML. Diseñamos un archivo register.html donde el usuario puede registrarse en la página web.
+                            </p>                 
+                        </a>
+                        <a href="#section5" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">GitHub</h5>
+                            </div>
+                            <p class="mb-1">
+                                Estudiamos qué es GitHub, <strong>creamos una cuenta en GitHub</strong>; aprendemos cómo editar el <strong>archivo readme.md</strong>; <strong>creamos un repositorio</strong> y añadimos carpetas y archivos a él; editamos archivos y carpetas y <strong>confirmamos los cambios</strong>; creamos <strong>ramas</strong> y fusionamos ramas; aprendemos cómo <strong>deshacer un commit</strong>.
+                            </p>                            
+                        </a>
+                        <a href="#section6" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Desplegando nuestra aplicación en AWS</h5>
+                            </div>
+                            <p class="mb-1">
+                                Desplegamos nuestra app en <strong>Amazon Web Services (AWS)</strong>. Al desplegar nuestra aplicación en AWS, necesitamos proteger la clave secreta utilizada para trabajar con formularios. 
+                                Aprendemos cómo crear una variable de entorno en Elastic Beanstalk para proteger la clave secreta.
+                            </p>                            
+                        </a>
+                        <a href="#section7" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Desafío semanal</h5>
+                            </div>
+                            <p class="mb-1">
+                                Modificamos nuestra aplicación para incluir un <strong>nuevo paquete</strong> llamado usuarios, 
+                                donde crearemos nuevas rutas para <strong>registrar</strong> al usuario y para <strong>iniciar sesión</strong>. 
+                                Introducimos cambios adicionales en nuestro paquete light_talk y en los archivos HTML de light_talk para añadir más funcionalidades.
+                            </p>                            
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/economies_of_spanish_course/chapters/ch3.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Estructura y Blueprints (Básico)</h1>
+            <h4>Algunos enlaces útiles</h4>
+            <p>
+                Los enlaces al video de YouTube y la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="#" target="_blank">YouTube (sección 1)</a>
+                <a class="btn-section1" href="#" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section1" href="#" target="_blank">GitHub (Final)</a>
+            </div>
+            <p>
+                Toda la información sobre Blueprints en este capítulo ha sido tomada de los siguientes enlaces:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://realpython.com/flask-blueprint/" target="_blank">Real Python</a>
+                <a class="btn-section1" href="http://exploreflask.com/en/latest/blueprints.html" target="_blank">Explore Flask</a>
+                <a class="btn-section1" href="https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy" target="_blank">Digital Ocean</a>
+                <a class="btn-section1" href="https://flask.palletsprojects.com/en/2.2.x/blueprints/" target="_blank">Flask</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=Wfx4YBzg16s&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=11" target="_blank">Corey Schafer</a>
+            </div>
+            <p>
+                Vamos a utilizar el comando tree en este capítulo para conocer la arquitectura de nuestra aplicación. Tienes más información sobre ese comando en el siguiente enlace:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/tree" target="_blank">Tree</a>
+            </div>
+        </div>  
+        
+        <div class="container">
+        <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+            <h4>Introducción</h4>
+            <p>
+                Hasta ahora, nuestra aplicación Flask tiene los siguientes elementos (figura del lado derecho):
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="#" target="_blank">GitHub (Boilerplate1)</a>
+            </div>
+            <p>
+                <ol>
+                    <li>
+                        Un archivo <strong>application.py</strong> que contiene tres bloques de información. Primero, un bloque donde importamos las funcionalidades que necesitamos para construir nuestra aplicación y donde definimos nuestra aplicación Flask. Segundo, un bloque de información donde definimos nuestras rutas y las funciones asociadas con esas rutas. Tercero, un bloque de información donde ejecutamos nuestra aplicación.
+                    </li>
+                    <li>
+                        Una <strong>carpeta de plantillas</strong> donde colocamos todos los archivos HTML de nuestra aplicación.
+                    </li>
+                    <li>
+                        Una <strong>carpeta estática</strong> donde colocamos todos los archivos CSS de nuestra aplicación, así como las imágenes, iconos, currículos, ensayos, etcétera.
+                    </li>
+                </ol>
+                Esta forma de organizar la aplicación no es muy eficiente porque en el archivo application.py, estamos colocando rutas con funciones que hacen cosas muy diferentes. Además, una vez que el proyecto crece en complejidad, el número de rutas crece sustancialmente, y es muy difícil organizar esas rutas en un solo archivo application.py. Además, si añadimos más elementos a nuestra aplicación, como formularios o bases de datos, la arquitectura del software se vuelve aún más compleja. Por lo tanto, necesitamos diseñar una arquitectura de software eficiente. <strong>Flask Blueprint</strong> es la herramienta implementada en Flask para lograr ese objetivo.
+            </div> 
+            <div class="boxa">
+                <h5>Arquitectura de la aplicación - Antes de Blueprint -</h5>
+                <pre><code class="html">
+C:.
+│   application.py
+│   requirements.txt
+│   
+├───static
+│   │   light_talk.css
+│   │   home.css
+│   │   layout.css
+│   │   business.css
+│   │   
+│   └───icons
+│           home.svg
+│           light_talk.svg
+│           business1.svg
+│           business2.svg
+│
+└───templates
+        light_talk.html
+        home.html
+        layout.html
+        business.html
+                </code></pre> 
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>¿Qué es un Blueprint?</h4>
+                <p>
+                    Cada Flask Blueprint es un <strong>objeto</strong> que funciona de manera muy similar a una aplicación Flask. Ambos pueden tener recursos, como archivos estáticos, plantillas y vistas que están asociados con rutas.
+                    <br>
+                    <br>
+                    Sin embargo, un Flask Blueprint no es realmente una aplicación. Necesita ser registrado en una aplicación antes de que puedas ejecutarlo. Cuando registras un Flask Blueprint en una aplicación, estás extendiendo la aplicación con los contenidos del Blueprint.
+                    <br>
+                    <br>
+                    Este es el concepto clave detrás de cualquier Flask Blueprint. <strong>Registran operaciones para ser ejecutadas más tarde cuando los registras en una aplicación</strong>. Por ejemplo, cuando asocias una vista a una ruta en un Flask Blueprint, registra esta asociación para que se haga más tarde en la aplicación cuando se registre el Blueprint.
+                </p>
+                <h4>¿Cómo construir una aplicación Flask básica usando Flask Blueprints?</h4>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Final1" target="_blank">GitHub (Final1)</a>
+                </div>
+                <p>
+                    Vamos a usar Flask Blueprints para mejorar la arquitectura de nuestra aplicación (figura del lado derecho). Es importante notar que hay muchas maneras de definir la arquitectura de nuestra aplicación utilizando Flask Blueprint. Te enseñaré una manera que considero simple, fácil y eficiente. Sin embargo, hay muchas formas de hacerlo, y te animo a leer los enlaces que coloqué al principio de la sección para obtener más información. Así, puedes decidir sobre la arquitectura que deseas crear para tu aplicación.
+                    <br>
+                    <br>
+                    Vamos a seguir <strong>cuatro pasos</strong> para reestructurar la arquitectura de software de nuestra aplicación:
+                    <ol>
+                        <li>
+                            <strong>Crear un Flask Blueprint</strong>. Creamos tres carpetas (home, business y light_talk). Dentro de cada carpeta, creamos dos archivos .py (__init__.py y routes.py). 
+                            <br>
+                            <br>
+                            El archivo __init__.py consiste en un único elemento #. Tan pronto como introducimos un archivo __init__.py en una carpeta, esa carpeta se convierte en un paquete en Python, es decir, vamos a organizar nuestra aplicación utilizando paquetes de Python.
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Arquitectura de la aplicación - Después de Blueprint -</h5>
+                <pre><code class="html">
+C:.
+│   application.py
+│
+└───capp
+    │   __init__.py
+    │
+    ├───light_talk
+    │   │   routes.py
+    │   └───__init__.py
+    │                       
+    ├───home
+    │   │   routes.py
+    │   └───__init__.py
+    │
+    ├───business
+    │   │   routes.py
+    │   └───__init__.py
+    │
+    ├───static
+    │   │   light_talk.css
+    │   │   home.css
+    │   │   layout.css
+    │   │   business.css
+    │   │
+    │   └───icons
+    │           calculator.svg
+    │           light_talk.svg
+    │           business1.svg
+    │           business2.svg
+    │
+    └───templates
+            light_talk.html
+            home.html
+            layout.html
+            business.html
+                </code></pre> 
+            </div>
+        </div>
+
+        <div class="container" style="display:block;">
+            <ol start="2">
+                <li>
+                    <strong>Registramos los Blueprints que acabamos de crear en la aplicación</strong>. Esto se logra mediante el archivo application.py. Ten en cuenta que no tenemos rutas o vistas en nuestro archivo application.py. En su lugar, registramos todos los Blueprints y Flask se encarga del resto.
+                </li>
+                <li>
+                    <strong>Definir las rutas de cada Blueprint</strong>. Las rutas son lo que definimos en nuestro archivo application.py (antes de reestructurar el código con Blueprints).
+                </li>
+                <li>
+                    <strong>Ejecuta la aplicación</strong>. Ejecutamos nuestra aplicación con el mismo código que antes.
+                </li>
+            </ol>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch6%20Blueprints/App%20Blueprints%20Final2" target="_blank">GitHub (Final2)</a>
+            </div>
+        </div>  
+    </section> 
+
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+
+        <div class="container" style="display:block;">
+            <h1>Estructura y Blueprints (Aplicado): Conectando rutas de Blueprints con archivos HTML.</h1>
+            <p>
+                Los enlaces al video de YouTube y la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="#" target="_blank">YouTube (sección 2)</a>
+                <a class="btn-section2" href="#" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section2" href="#" target="_blank">GitHub (Final)</a>
+            </div>
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>Conectando rutas de Blueprints con archivos HTML</h4>
+            <p>
+                En la sección anterior, seguimos cuatro pasos para <strong>definir Blueprints</strong>, <strong>usarlos</strong> en nuestras rutas, <strong>registrar esos Blueprints</strong>, y <strong>ejecutar nuestra aplicación</strong>. En esta sección, nos vamos a centrar en los cambios que debemos introducir en nuestros archivos HTML para conectar nuestras rutas de Blueprint con nuestros archivos HTML.
+                <br>
+                <br>
+                Debemos introducir cambios en tres de nuestros <strong>archivos HTML</strong>: archivo layout.html; archivo business.html; archivo light_talk.html.
+            </p>        
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Conectando archivos HTML y rutas (layout.html) - Antes de Blueprint -</h5>
+                <pre><code class="html">
+    &#60;ul&#62;
+        &#60;li&#62;
+            &#60;a href="&#123;&#123;url_for('home')&#125;&#125;"&#62;Inicio&#60;/a&#62;
+        &#60;/li&#62;
+        &#60;li&#62;
+            &#60;a href="&#123;&#123;url_for('business')&#125;&#125;"&#62;Negocio&#60;/a&#62;
+        &#60;/li&#62;
+        &#60;li&#62;
+            &#60;a href="&#123;&#123;url_for('light_talk')&#125;&#125;"&#62;Light Talk App&#60;/a&#62;
+        &#60;/li&#62;
+    &#60;/ul&#62;                                                            
+                </code></pre>                
+            </div> 
+            <div class="box_two">
+                <h5>Conectando archivos HTML y rutas (layout.html) - Después de Blueprint -</h5>
+                <pre><code class="html">
+&#60;ul&#62;
+&#60;li&#62;
+    &#60;a href="&#123;&#123;url_for('home.home_home')&#125;&#125;"&#62;Inicio&#60;/a&#62;
+&#60;/li&#62;
+&#60;li&#62;
+    &#60;a href="&#123;&#123;url_for('business.business_home')&#125;&#125;"&#62;Negocio&#60;/a&#62;
+&#60;/li&#62;
+&#60;li&#62;
+    &#60;a href="&#123;&#123;url_for('light_talk.light_talk_home')&#125;&#125;"&#62;Light Talk App&#60;/a&#62;
+&#60;/li&#62;
+&#60;/ul&#62;                                                         
+                </code></pre>                    
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Conectando archivos HTML y rutas</h5>
+                <h5>(business.html) - Antes de Blueprint -</h5>
+                <pre><code class="html">
+    &#60;div class="container_buttons_links_header"&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="#"&#62;Documento&#60;/a&#62;
+        &#60;/div&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="&#123;&#123;url_for('light_talk')&#125;&#125;"&#62;/
+            Light Talk App&#60;/a&#62;
+        &#60;/div&#62;
+    &#60;/div&#62;                                                       
+                </code></pre>                
+            </div> 
+            <div class="box_two">
+                <h5>Conectando archivos HTML y rutas</h5>
+                <h5>(business.html) - Después de Blueprint -</h5>
+                <pre><code class="html">
+    &#60;div class="container_buttons_links_header"&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="#"&#62;Documento&#60;/a&#62;
+        &#60;/div&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="&#123;&#123;url_for('light_talk.light_talk_home')&#125;&#125;"&#62;/
+            Light Talk App&#60;/a&#62;
+        &#60;/div&#62;
+    &#60;/div&#62;                                                       
+                </code></pre>                    
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Conectando archivos HTML y rutas</h5>
+                <h5>(light_talk.html) - Antes de Blueprint -</h5>
+                <pre><code class="html">
+    &#60;div class="container_buttons_links_header_light_talk"&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="&#123;&#123;url_for('business')&#125;&#125;"&#62;/
+            Negocio&#60;/a&#62;
+        &#60;/div&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="#"&#62;Instrucciones&#60;/a&#62;
+        &#60;/div&#62;
+    &#60;/div&#62;                                           
+                </code></pre>                
+            </div> 
+            <div class="box_two">
+                <h5>Conectando archivos HTML y rutas</h5>
+                <h5>(light_talk.html) - Después de Blueprint -</h5>
+                <pre><code class="html">
+    &#60;div class="container_buttons_links_header_light_talk"&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="&#123;&#123;url_for('business.business_home')&#125;&#125;"&#62;/
+            Negocio&#60;/a&#62;
+        &#60;/div&#62;
+        &#60;div class="btn"&#62;
+            &#60;a href="#"&#62;Instrucciones&#60;/a&#62;
+        &#60;/div&#62;
+    &#60;/div&#62;                                           
+                </code></pre>                     
+            </div>               
+        </div>
+    
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+        <div class="container" style="display:block;">
+            <h1>Creación y validación de formularios</h1>
+            <h4>Algunos enlaces útiles</h4>
+            <p>
+                Los enlaces al video de YouTube y la cuenta de GitHub para esta sección están abajo:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3" href="#" target="_blank">YouTube (Sección 3)</a>
+                <a class="btn-section3" href="#" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section3" href="#" target="_blank">GitHub (Final)</a>
+            </div>
+            <p>
+                Toda la información de esta sección ha sido tomada de los siguientes enlaces:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3" href="https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application"  target="_blank">Digital Ocean</a>
+                <a class="btn-section3" href="https://python-adv-web-apps.readthedocs.io/en/latest/flask_forms.html"  target="_blank">Python Beginners</a>
+                <a class="btn-section3" href=" https://www.digitalocean.com/community/tutorials/how-to-use-and-validate-web-forms-with-flask-wtf"  target="_blank">Digital Ocean (Validar un formulario)</a>
+                <a class="btn-section3" href="https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/"  target="_blank">Python Real (Crear una página de inicio de sesión)</a>
+            </div> 
+            <p>
+                Hay muchas formas de crear y validar formularios, he usado principalmente el enfoque seguido en los siguientes tres enlaces:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3" href="https://flask-wtf.readthedocs.io/en/1.0.x/quickstart/" target="_blank">Flask-WTF</a>
+                <a class="btn-section3" href="https://flask-wtf.readthedocs.io/en/1.0.x/quickstart/ " target="_blank">Flask-WTF (Creación de formularios):</a>
+                <a class="btn-section3" href="https://www.youtube.com/watch?v=UIJKdCIEXUQ&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=3" target="_blank">Corey</a>
+            </div>
+            <h4>¿Qué es un formulario Flask (WTForms)?</h4>
+            <p>
+                Los formularios web, como los campos de texto y las áreas de texto, permiten a los usuarios enviar datos a tu aplicación para usarlos en una acción o 
+                para enviar grandes áreas de texto a la aplicación. En nuestra aplicación, estamos usando formularios para registrarse, 
+                iniciar sesión e introducir frases a nuestra base de datos. En particular, usaremos <strong>WTForms</strong>, que es una biblioteca flexible de validación y renderización de formularios para el desarrollo web en Python.
+                <br>
+                <br>
+                En nuestra aplicación, vamos a crear un formulario de registro. En ese formulario de registro, los usuarios deben introducir su nombre de usuario, su correo electrónico y su contraseña. Dado que todos los usuarios deben tener estos tres campos, es una buena idea crear una <strong>clase</strong>. Una vez que un usuario introduce su nombre de usuario, correo electrónico y contraseña, se generará un objeto a partir de esa clase. Además, las clases que vamos a crear pueden usar métodos programados en flask que nos permiten detectar si los correos electrónicos son incorrectos, si los nombres de usuario no cumplen con ciertos requisitos, etcétera.
+            </p>  
+        </div>  
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Sesión y clave secreta</h4>
+                <p>
+                    Si has configurado <strong>Flask.secret_key (o lo ha configurado desde SECRET_KEY)</strong>, 
+                    puede usar sesiones en aplicaciones Flask. Una sesión hace posible recordar información de una solicitud a otra. 
+                    La forma en que Flask hace esto es mediante una cookie firmada. 
+                    El usuario puede ver el contenido de la sesión, pero no puede modificarlo a menos que conozca la clave secreta, por lo que asegúrate de que sea algo complejo e imposible de adivinar.
+                    <br>
+                    <br>
+                    La <strong>clave secreta</strong> es útil para proteger nuestra aplicación de ataques de Cross Site Request Forgery. El Cross-Site Request Forgery (CSRF) es un ataque que obliga a los usuarios autenticados a enviar una solicitud a una aplicación web en la que están autenticados. Los ataques CSRF explotan la confianza que una aplicación web tiene en un usuario autenticado. (Por el contrario, los ataques de cross-site scripting (XSS) explotan la confianza que un usuario tiene en una aplicación web en particular). Un ataque CSRF explota una vulnerabilidad en una aplicación web si no puede diferenciar entre una solicitud generada por un usuario individual y una solicitud generada por un usuario sin su consentimiento.
+                    <br>
+                    <br>
+                    Para obtener más información sobre sesiones, claves secretas y ataques de Cross Site Request Forgery, consulte: 
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section3" href="https://www.synopsys.com/glossary/what-is-csrf.html" target="_blank">CSRF</a>
+                    <a class="btn-section3" href="https://flask.palletsprojects.com/en/2.0.x/api/#sessions" target="_blank">Sesión (Flask)</a>
+                </div>
+            </div> 
+            <div class="boxa">
+                <h5>Cómo crear una clave secreta aleatoria</h5>
+                <p class="text-left">
+                    <ol>
+                        <li>
+                            Abre un <strong>terminal</strong> en Visual Studio.
+                        </li>
+                        <br>
+                        <li>
+                            En el terminal de Visual Studio, escribe <strong>python</strong> y luego verás tres flechas que indican que estás en un terminal de Python >>>
+                        </li>
+                        <br>
+                        <li>
+                            En el terminal de Python, escribe: <strong>import os</strong>
+                        </li>
+                        <br>
+                        <li>
+                            Escribe nuevamente: <strong>os.urandom(24).hex()</strong>
+                        </li>
+                        <br>
+                        <li>
+                            Obtendrás un número aleatorio que puede ser su clave secreta: <strong>application.config['SECRET_KEY'] = 'tu clave secreta'</strong>
+                            Debemos colocar esa línea de código en el archivo __init__.py donde definimos nuestra aplicación flask.
+                        </li>
+                        <br>
+                        <li>
+                            Puedes cerrar el terminal de Python escribiendo <strong>quit()</strong>.
+                        </li>
+                        <br>
+                        <li>
+                            Para proteger nuestra clave secreta, cuando implementemos nuestra aplicación en AWS, protegeremos la clave utilizando una <strong>variable de entorno</strong>.
+                        </li>
+                    </ol>
+                </p> 
+            </div> 
+        </div> 
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Creación de formularios</h4>
+                <p>
+                    Para crear WTForms, procedemos en tres pasos diferentes:
+                    <ol>
+                        <li>
+                            Necesitamos instalar algunos paquetes para usar WTForms.
+                            <ol type="a">
+                                <li>
+                                    <strong>pip install flask-wtf</strong>
+                                </li>
+                                <li>
+                                    <strong>pip install email-validator</strong>
+                                </li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>
+                            Necesitamos importar algunos <strong>paquetes</strong> y algunos <strong>validadores</strong>.
+                        </li>
+                        <br>
+                        <li>
+                            Creamos una <strong>clase</strong> llamada RegistrationForm con <strong>cuatro campos</strong> y un <strong>botón de envío</strong>. Para cada campo, creamos una etiqueta e introducimos algunos validadores para garantizar que el usuario introduzca el tipo de información correcto. En la sección de mensajes de notificación, mostraremos algunos mensajes al usuario si la información introducida no cumple con los requisitos de los validadores.
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa">
+                <h5>Creación de un formulario</h5>
+    <pre><code class="html">
+    from flask_wtf import FlaskForm
+    from wtforms import StringField, PasswordField, SubmitField
+    from wtforms.validators import DataRequired, Length, Email, EqualTo   
+    
+    class RegistrationForm(FlaskForm):
+        username = StringField('Nombre de usuario', 
+                        validators=[DataRequired(), Length(min=2, max=30)])
+        email = StringField('Correo electrónico',
+                        validators=[DataRequired(), Email()])
+        password = PasswordField('Contraseña', validators=[DataRequired()])
+        confirm_password = PasswordField('Confirmar Contraseña',
+                        validators=[DataRequired(), EqualTo('password')])
+        submit = SubmitField('Registrarse')
+    </code></pre>
+            </div> 
+        </div> 
+    
+        <div class="container" style="display:block;">
+            <h4>Validación de formularios</h4>
+            <p>
+                Para validar WTForms, procedemos en tres pasos diferentes:
+                <ol>
+                    <li>
+                        Necesitamos importar algunos <strong>módulos de Flask</strong> que usaremos para validar nuestro WTForm. Estos módulos no son estrictamente necesarios, 
+                        y si usas una forma diferente de validar su WTForm, no los necesitarás.
+                    </li>
+                </ol>
+            </p>
+        </div> 
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p>
+                    <ol start="2">
+                        <li>
+                            Necesitamos importar la <strong>clase RegistrationForm</strong> que hemos creado previamente. Esa clase se encuentra en la carpeta capp, el paquete users en el archivo forms.py.
+                        </li>
+                        <br>
+                        <li>
+                            Cuando definimos la <strong>ruta</strong>, necesitamos seguir cuatro pasos:
+                            <ol type="a">
+                                <li>
+                                    Necesitamos crear una <strong>ruta</strong> para el formulario de registro. Esa ruta no solo acepta solicitudes GET, sino también solicitudes POST, ya que el usuario introducirá algunos datos en el formulario.
+                                </li>
+                                <li>
+                                    En la función <strong>register()</strong>, necesitamos definir el <strong>form= RegistrationForm()</strong>.
+                                </li>
+                                <li>
+                                    Si el usuario <strong>no valida el formulario</strong>, mostraremos un archivo register.html donde el usuario introduce su información. Definimos ese archivo register.html en la siguiente sección.
+                                </li>
+                                <li>
+                                    Si el usuario <strong>valida el formulario</strong> haciendo clic en el botón de envío, redirigimos al usuario a la página de inicio.
+                                </li>
+                            </ol>
+                        </li>
+                    </ol>
+                </p>
+            </div> 
+            <div class="boxa" style="height:350px;">
+                <h5>Validación de un formulario</h5>
+    <pre><code class="html">
+    from flask import render_template, Blueprint, redirect, flash, url_for
+    from capp.users.forms import RegistrationForm
+    
+    users=Blueprint('users',__name__)
+    
+    @users.route('/register', methods=['GET','POST'])
+    def register():
+        form = RegistrationForm()
+        if form.validate_on_submit():
+            return redirect(url_for('home.home_home'))
+        return render_template('users/register.html', title='register', form=form)
+    </code></pre>
+            </div> 
+        </div>  
+    </section>
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+        <div class="container" style="display:block;">
+            <h1>Conectar formularios con plantillas HTML y mostrar mensajes flash</h1>
+            <h4>Conectar formularios con plantillas HTML</h4>
+            <p>
+                Los enlaces al video de YouTube y la cuenta de GitHub para esta sección están abajo:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section4" href="#" target="_blank">YouTube (Sección 4a)</a>
+                <a class="btn-section4" href="#" target="_blank">GitHub (Boilerplate)</a>
+                <a class="btn-section4" href="#" target="_blank">GitHub (Final)</a>
+            </div> 
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p style="text-align: left;">                    
+                    En la sección anterior aprendimos cómo crear y validar un WTForm. En esta sección, aprenderemos cómo conectar el formulario con el archivo register.html donde el usuario puede completar el formulario de registro. Procedemos en diferentes pasos:
+                    <ol>
+                        <li>
+                            Definimos el formulario, y debemos introducir el <strong>método POST</strong> que permite al usuario enviar información.
+                        </li>
+                        <br>
+                        <li>
+                            Para <strong>proteger el formulario</strong>, necesitamos introducir el código: <strong>&#123;&#123; form.hidden_tag() &#125;&#125;</strong>
+                        </li>
+                        <br>
+                        <li>
+                            Definimos un fieldset donde creamos <strong>diferentes campos</strong> que permiten al usuario interactuar con el formulario que creamos en la sección anterior. 
+                        </li>
+                    </ol>
+                </p>      
+            </div>
+            <div class="boxa" style="height:260px;">
+                <h5>Conectar formularios con plantillas HTML</h5>
+    <pre><code class="html">
+    &#60;form method="POST" action=""&#62;
+    &#123;&#123; form.hidden_tag() &#125;&#125;
+    &#60;fieldset class="form-group"&#62;
+       &#60;legend class="border-bottom mb-4"&#62;Únete hoy&#60;/legend&#62;
+       &#60;div class="form-group"&#62;
+          &#123;&#123; form.username.label(class="form-control-label") &#125;&#125;
+          &#123;&#123; form.username(class="form-control form-control-lg") &#125;&#125;
+       &#60;/div&#62;
+    &#60;/form&#62;
+    </code></pre>
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Mensajes Flash.</h4>
+                <p>
+                    Los enlaces al video de YouTube y la cuenta de GitHub para esta sección están abajo:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section4" href="#" target="_blank">YouTube (Sección 4b)</a>
+                    <a class="btn-section4" href="#" target="_blank">GitHub (Boilerplate)</a>
+                    <a class="btn-section4" href="#" target="_blank">GitHub (Final)</a>
+                </div> 
+                <p>
+                    Vamos a mostrar dos tipos de mensajes. Primero, en el archivo register.html, mostramos mensajes cuando el usuario introduce información que no cumple con los requisitos de validación introducidos en el archivo forms.py. Segundo, en el archivo home.html mostramos un mensaje cuando el usuario registra su información correctamente.
+                    <br>
+                    <br>
+                    <u>Mensajes en el archivo register.html.</u> Usando <strong>Jinja</strong>, introducimos una <strong>sentencia if-else</strong> que nos ayuda a gestionar los mensajes de error.
+                    <br>
+                    <br>
+                    Si el usuario introduce alguna información en el campo de nombre de usuario que viola los <strong>requisitos de validación</strong> introducidos en el archivo forms.py, recopilamos esos errores y los mostramos dentro de un contenedor con la clase de bootstrap “invalid-feedback”. De lo contrario, no mostramos ningún mensaje de error.
+                    <br>
+                    <br>
+                    <u>Mensajes en el archivo home.html.</u> Usando <strong>Jinja</strong>, introducimos una <strong>sentencia with</strong>, una <strong>if</strong> y una <strong>for statement</strong> en nuestro archivo home.html para mostrar información al usuario cuando se registra en la aplicación.
+                    <br>
+                    <br>
+                    En esas sentencias, tomamos los mensajes flash de la ruta y los mostramos teniendo en cuenta la categoría del mensaje y creando un bootstrap específico dependiendo de la categoría del mensaje.
+                </p>     
+            </div>
+            <div class="boxa" style="height:640px;">
+                <h5>Mensajes en el archivo register.html</h5>
+    <pre><code class="html">
+    &#60;div class="form-group"&#62;
+        &#123;&#123; form.username.label(class="form-control-label") &#125;&#125;
+        &#123;% if form.username.errors %&#125;
+            &#123;&#123; form.username(class="form-control form-control-lg is-invalid") &#125;&#125;
+            &#60;div class="invalid-feedback"&#62;
+                &#123;% for error in form.username.errors %&#125;
+                    &#60;span&#62;&#123;&#123; error &#125;&#125;&#60;/span&#62;
+                &#123;% endfor %&#125;
+            &#60;/div&#62;
+        &#123;% else %&#125;
+            &#123;&#123; form.username(class="form-control form-control-lg") &#125;&#125;
+        &#123;% endif %&#125;
+    &#60;/div&#62;  
+    </code></pre>
+                <h5>Mensajes en el archivo home.html</h5>
+    <pre><code class="html">
+    &#123;% with messages = get_flashed_messages(with_categories=true) %&#125;
+        &#123;% if messages %&#125;
+            &#123;% for category, message in messages %&#125;
+                &#60;div class="alert alert-&#123;&#123; category &#125;&#125;"&#62;
+                    &#123;&#123; message &#125;&#125;
+                &#60;/div&#62; 
+            &#123;% endfor %&#125;
+        &#123;% endif %&#125;
+    &#123;% endwith %&#125;  
+    </code></pre>    
+            </div>
+        </div>   
+    
+    </section>
+
+    <!-- Section 5 -->
+    <section class="section_1" id="section5">
+        <div class="container" style="display:block;">
+            <h1>GitHub</h1>
+            <h4>Algunos enlaces útiles</h4>
+            <p>
+                Los enlaces al video de YouTube y a la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="#" target="_blank">YouTube (sección 5)</a>
+            </div>
+            <h4>¿Qué es GitHub?</h4>
+            <p>
+                GitHub es una plataforma de desarrollo de software en línea. Se utiliza para almacenar, rastrear y colaborar en proyectos de software. Facilita a los desarrolladores compartir archivos de código y colaborar con otros desarrolladores en proyectos de código abierto. Se puede encontrar información útil para saber más sobre GitHub en los siguientes enlaces:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://blog.hubspot.com/website/what-is-github-used-for" target="_blank">HubSpot</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=w3jLJU7DT5E" target="_blank">GitHub</a>
+            </div>
+            <h4>Crear una cuenta y usar GitHub</h4>
+            <p>
+                En esta sección, creamos una cuenta de GitHub; aprendemos a editar el archivo readme.md; creamos un repositorio y agregamos carpetas y archivos; editamos archivos y carpetas y hacemos commit de los cambios; creamos ramas y fusionamos ramas; aprendemos a deshacer un commit.
+                <br>
+                <br>
+                Explicaré las bases de estos puntos en esta sección, pero la mejor manera de abordarlos es viendo el video de YouTube para esta sección, 
+                seguir los pasos y hacerlos vosotros mismos.
+                <br>
+                <br>                
+                Todas las cosas que haremos en esta sección se pueden hacer utilizando la línea de comandos (comando git). 
+                Esa es una forma eficiente de trabajar entre Visual Studio Code, GitHub y el servidor. 
+                Sin embargo, he decidido hacer todos los pasos en esta sección utilizando la interfaz gráfica de usuario en GitHub y usando <strong>GitHub Desktop</strong>. 
+                Por favor, descarga e instala GitHub Desktop en tu ordenador (el proceso es muy similar para Windows y Mac).
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://desktop.github.com/" target="_blank">GitHub Desktop</a>
+            </div>
+            <p> 
+                El objetivo de este curso es centrarse en aprender a programar una aplicación utilizando diferentes lenguajes de programación. No quiero que también tengas que aprender a usar el <strong>comando git</strong> para interactuar con GitHub. Eso está fuera del alcance de este curso. En el futuro, desarrollaré algunos videos y contenido específico para explicar eso. Tres buenos puntos de partida para aprender a usar el comando git se pueden encontrar aquí:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=RGOj5yH7evk&t=14s" target="_blank">Faraday</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=SWYqp7iY_Tc" target="_blank">Traversy</a>
+                <a class="btn-section1" href="https://www.youtube.com/watch?v=HVsySz-h9r4&t=39s" target="_blank">Corey</a>
+            </div>
+        </div>  
+    
+        <div class="container" style="display:block;">
+            <p>
+                <ol>
+                    <li>
+                        <strong>Crear una cuenta</strong>. Ve al siguiente enlace y crea una cuenta. Ese proceso es sencillo.
+                    </li>
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section1" href="https://github.com/" target="_blank">GitHub</a>
+                    </div>
+                    <li>
+                        <strong>Crear un repositorio</strong> y agregar carpetas y archivos. Vamos a crear nuestro primer repositorio y vamos a subir todos los archivos de nuestro proyecto (sigue las instrucciones en el video).
+                    </li>
+                    <br>
+                    <li>
+                        El archivo <strong>readme.md</strong>. Sintaxis básica de escritura y formato.
+                        <br>
+                        <br>
+                        El archivo readme.md será <strong>nuestro diario</strong>. En ese archivo explicaremos los cambios que hemos realizado en nuestro archivo, y será útil para divulgar información valiosa a otros desarrolladores sobre nuestra aplicación.
+                        <br>
+                        <br>
+                        La <strong>sintaxis</strong> para editar el archivo readme.md es simple y, en algunos aspectos, es similar a html. A continuación, proporciono algunos ejemplos básicos. Más información sobre la edición del archivo readme.md se puede encontrar en el siguiente enlace: 
+                    </li>
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section1" href="#" target="_blank">GitHub</a>
+                    </div>
+                </ol>    
+            </p>
+        </div> 
+        
+        <div class="container">
+            <div class="box_two">
+                <h5>Ejemplo 1 - Encabezado -</h5>
+                <p>
+                    &#35; El encabezado más grande
+                    <br>
+                    &#35;&#35; El segundo encabezado más grande
+                    <br>
+                    &#35;&#35;&#35;&#35;&#35;&#35; El encabezado más pequeño
+                </p>
+            </div> 
+            <div class="box_two">
+                <h5>Ejemplo 2 - Estilo de texto -</h5>
+                <p class="text-left">
+                    &#42;&#42;Este es un texto en negrita&#42;&#42;
+                    <br>
+                    &#42;Este texto está en cursiva&#42;
+                    <br>
+                    &#126;&#126;Este fue un texto erróneo&#126;&#126;
+                    <br>
+                    &#60;sub&#62;Este es un texto en subíndice&#60;/sub&#62;
+                </p> 
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Ejemplo 3 - Lista desordenada -</h5>
+                <p>
+                    - George Washington
+                    <br>
+                    * John Adams
+                    <br>
+                    + Thomas Jefferson
+                </p>
+            </div> 
+            <div class="box_two">
+                <h5>Ejemplo 4 - Lista ordenada -</h5>
+                <p class="text-left">
+                    1. James Madison
+                    <br>
+                    2. James Monroe
+                    <br>
+                    3. John Quincy Adams	
+                </p> 
+            </div>               
+        </div>
+    
+        <div class="container" style="display:block;">
+            <p>
+                <ol start="4">
+                    <li>
+                        Editando archivos y carpetas y <strong>haciendo commit de los cambios</strong>. Usualmente editamos los archivos y carpetas en nuestro editor Visual Studio y 
+                        hacemos commit de los cambios en GitHub. También podemos descargar el repositorio para trabajar en él en nuestro ordenador. El proceso de descargar y subir un repositorio en GitHub debe ser coordinado por los miembros del equipo para evitar sobrescribir el código y mezclar el código.
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Creando ramas</strong> y <strong>fusionando ramas</strong>.
+                        <br>
+                        <br>
+                        En el capítulo anterior, creamos ramas para facilitar la cooperación en el desarrollo. Al usar ramas, un grupo de desarrolladores puede centrarse en el paquete home y las plantillas asociadas a ese paquete; otro grupo puede centrarse en el desarrollo del paquete methodology y las plantillas asociadas a esa raíz, y así sucesivamente.
+                        <br>
+                        <br>
+                        Las ramas en GitHub facilitan aún más esa cooperación, ya que un grupo de desarrolladores puede crear una rama en el repositorio de GitHub para cambiar solo el paquete home y las plantillas asociadas con ese paquete; y otro grupo de desarrolladores puede crear una rama en el repositorio de GitHub para cambiar solo el paquete methodology y las plantillas asociadas con ese paquete. Después de trabajar en esas dos ramas de forma independiente, los dos grupos pueden fusionar su trabajo de manera coordinada usando GitHub.
+                    </li>
+                    <br>
+                    <li>
+                        <strong>Deshaciendo un commit</strong>. Si cometemos un error en nuestro código y queremos volver a una versión anterior de nuestro repositorio, eso se puede hacer fácilmente desde la línea de comandos usando git y usando GitHub Desktop (mira el video de YouTube).
+                    </li>
+                </ol>    
+            </p>
+        </div> 
+    </section>
+
+    <!-- Section 6 -->
+    <section class="section_2" id="section6">
+
+        <div class="container" style="display:block;">
+            <h1>Amazon Web Services</h1>
+            <p>
+                Los enlaces al video de YouTube y a la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="#" target="_blank">YouTube (sección 6a)</a>
+                <a class="btn-section2" href="#" target="_blank">YouTube (sección 6b)</a>
+                <a class="btn-section2" href="#" target="_blank">YouTube (sección 6c)</a>
+                <a class="btn-section2" href="#" target="_blank">GitHub</a>
+            </div>
+        </div> 
+    
+        <div class="container">
+            <div class="box_two">
+                <h5 style="text-align:center;">¿Qué es AWS?</h5>
+                <p>
+                    AWS (Amazon Web Services) es una <strong>plataforma de computación en la nube</strong> integral y en evolución proporcionada por Amazon que incluye una combinación de ofertas de <strong>infraestructura como servicio (IaaS)</strong>, <strong>plataforma como servicio (PaaS)</strong> y <strong>software como servicio (SaaS)</strong>. Los servicios de AWS pueden ofrecer a una organización herramientas como potencia de cálculo, almacenamiento de bases de datos y servicios de entrega de contenido.
+                    <br>
+                    <br>
+                    AWS ofrece más de 200 <strong>servicios completos</strong> desde centros de datos a nivel mundial. 
+                    Esos servicios incluyen almacenamiento, bases de datos, inteligencia artificial, balanceo de carga, 
+                    escalabilidad, etcétera. La versatilidad y flexibilidad de AWS ayudan a personalizar y escalar tu proyecto de manera fácil y económica. En el video en el que explico cómo crear usuarios y grupos, explico algunas de las características que usaremos durante el curso. Alguna información útil sobre AWS se puede encontrar en los siguientes enlaces:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://aws.amazon.com/what-is-aws/" target="_blank">AWS - I -</a>
+                    <a class="btn-section2_box" href="https://www.youtube.com/watch?v=a9__D53WsUs" target="_blank">AWS - II -</a>
+                </div> 
+                <h5 style="text-align:center;">Crear una cuenta</h5>
+                <p>
+                    Crear una cuenta en AWS es sencillo siguiendo el enlace a continuación. Es necesario introducir una tarjeta de crédito, aunque vamos a utilizar la versión Free Tier de AWS durante la mayor parte del curso. Al finalizar el curso, puedes eliminar tu cuenta, ya que tu aplicación se ejecutará en Forward y no necesitarás pagar por el servidor y sus servicios.
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://aws.amazon.com/" target="_blank">Crear una cuenta de AWS</a>
+                </div>
+            </div> 
+            <div class="box_two">
+                <h5 style="text-align:center;">Crear un usuario, un grupo e IAM</h5>
+                <p>
+                    AWS Identity and Access Management (IAM) es un servicio web que te ayuda a controlar de forma segura el acceso a los recursos de AWS. Con IAM, podemos gestionar centralmente los permisos que controlan a qué recursos de AWS pueden acceder los usuarios. Usamos IAM para controlar quién está autenticado (ha iniciado sesión) y autorizado (tiene permisos) para usar recursos.
+                    <br>
+                    <br>
+                    Cuando <strong>creamos una cuenta de AWS</strong>, comenzamos con una identidad de inicio de sesión que tiene acceso completo a todos los servicios y recursos de AWS en la cuenta. Esta identidad se llama el <strong>usuario raíz de la cuenta de AWS</strong> y se accede iniciando sesión con la dirección de correo electrónico y la contraseña que usamos para crear la cuenta. AWS <strong>recomienda encarecidamente no utilizar el usuario raíz para tareas cotidianas</strong>. Protege tus credenciales de usuario raíz y úsalas solo para realizar las tareas que solo el usuario raíz puede realizar. Esa es la razón por la que crear usuarios y grupos utilizando IAM es extremadamente útil.
+                    <br>
+                    <br>
+                    En el video de YouTube para esta sección, explico cómo crear <strong>grupos</strong>, <strong>usuarios</strong> y cómo <strong>agregar usuarios a un grupo</strong>. Esto será muy útil para nuestro proyecto, ya que cada miembro del grupo puede usar AWS sin comprometer la seguridad de la cuenta raíz.
+                    <br>
+                    <br>
+                    Algunos enlaces útiles para esa sección se pueden encontrar en los siguientes enlaces:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="#" target="_blank">YouTube (sección 6a)</a>
+                    <a class="btn-section2_box" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html" target="_blank">AWS - I -</a>
+                    <a class="btn-section2_box" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html#intro-video" target="_blank">AWS - II -</a>
+                </div> 
+            </div>               
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5 style="text-align:center;">Desplegando nuestra app 1: AWS Elastic Beanstalk.</h5>
+                <p>
+                    Elastic Beanstalk es un <strong>servicio</strong> para <strong>desplegar y escalar aplicaciones web y servicios</strong>. Carga tu código y Elastic Beanstalk maneja automáticamente el despliegue, desde la provisión de capacidad, balanceo de carga y autoescalado hasta la supervisión de la salud de la aplicación.
+                    <br>
+                    <br>
+                    Cuando usamos Elastic Beanstalk, creamos un entorno en el cual tenemos acceso a <strong>muchos servicios de AWS</strong> como EC2, S3, Simple Notification Service (SNS), CloudWatch, autoescalado y Elastic Load Balancers. Esta característica de Elastic Beanstalk facilita el despliegue de nuestra aplicación y nos ayuda a escalar nuestro proyecto de manera fácil y económica.
+                    <br>
+                    <br>
+                    Algunos enlaces útiles para esa sección se pueden encontrar en los siguientes enlaces:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="#" target="_blank">YouTube (sección 6b)</a>
+                    <a class="btn-section2_box" href="https://aws.amazon.com/elasticbeanstalk/" target="_blank">AWS - I -</a>
+                    <a class="btn-section2_box" href="https://www.youtube.com/watch?v=uiM1xzOX8Qg&t=1s" target="_blank">AWS - II -</a>
+                </div> 
+            </div> 
+            <div class="box_two">
+                <h5 style="text-align:center;">Desplegando nuestra app 2: AWS CodePipeline.</h5>
+                <p>
+                    AWS CodePipeline es un servicio de entrega continua totalmente gestionado que te ayuda a automatizar tus pipelines de lanzamiento para actualizaciones rápidas y confiables de aplicaciones e infraestructuras.
+                    <br>
+                    <br>
+                    <strong>AWS CodePipeline</strong> nos ayuda a conectar nuestro <strong>repositorio de GitHub</strong> con nuestro <strong>Elastic Beanstalk</strong> de manera muy eficiente. Así, cuando introducimos algunos cambios en nuestro código y hacemos commit de esos cambios en GitHub, podemos desplegar esos cambios fácilmente en el servidor usando CodePipeline.
+                    <br>
+                    <br>
+                    Algunos enlaces útiles para esa sección se pueden encontrar en los siguientes enlaces:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="#" target="_blank">YouTube (sección 6b)</a>
+                    <a class="btn-section2_box" href="https://aws.amazon.com/codepipeline/" target="_blank">AWS</a>
+                </div> 
+            </div>               
+        </div>
+
+        <div class="container">
+
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h1>Despliegue de nuestra aplicación en AWS</h1>
+                <p>
+                    El enlace al video de YouTube está a continuación:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://youtu.be/k3v3Nfy9yPY" target="_blank">YouTube (sección 6c)</a>
+                </div> 
+                <p>
+                    Para desplegar nuestra aplicación en AWS, necesitamos considerar dos cosas:
+                    <ol>
+                        <li>
+                            En el archivo <strong>requirements.txt</strong>, debemos agregar todos los paquetes que hemos utilizado en este capítulo, para que el servidor pueda instalar los mismos paquetes.
+                        </li>
+                        <br>
+                        <li>
+                            Necesitamos <strong>proteger nuestra clave secreta</strong> utilizando variables de entorno. Por favor, mira el video en el que muestro los cambios que deben introducirse en el archivo <strong>__init__.py</strong> antes de colocar ese archivo en <strong>GitHub</strong> y los cambios que necesitamos introducir en <strong>AWS</strong> para crear una <strong>variable de entorno</strong> que proteja nuestra clave secreta.
+                        </li>
+                    </ol>
+                </p>     
+            </div>
+            <div class="boxa" style="height:590px;">
+                <p>
+                    <u>¿Qué son las variables de entorno?</u>
+                    Las variables de entorno son valores predeterminados que generalmente se utilizan para proporcionar la capacidad de 
+                    configurar un valor en tu código desde fuera de tu aplicación.
+                    <br>
+                    <br>
+                    <u>¿Cómo puedo mantener seguros estos archivos?</u>
+                    Por ejemplo, las <strong>claves de AWS</strong> son un recurso valioso. Existen bots cuyo único propósito es tratar de escanear GitHub en busca de claves. Si alguien encuentra una clave de AWS, podría usarla para acceder a recursos, como ejecutar una operación de minería de bitcoins a tu costa. Esto no es para asustarte, es para que estés consciente y evites que tus claves sean comprometidas.
+                    <br>
+                    <br>
+                    La información sobre variables de entorno ha sido tomada del siguiente enlace:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://www.freecodecamp.org/news/what-are-environment-variables-and-how-can-i-use-them-with-gatsby-and-netlify/" target="_blank">FreeCodeCamp</a>
+                </div> 
+            </div>
+        </div>
+        
+    
+    </section>
+
+    <!-- Section 7 -->
+    <section class="section_3" id="section7">
+
+        <div class="container">            
+    
+            <div class="box_three">                    
+            </div>
+            <div class="box_three">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Desafío Semanal</h1>
+                <p style="text-align: left;">
+                    En este desafío semanal, debes hacer cuatro cosas diferentes.
+                    <br>
+                    <br>
+                    <strong>Primero</strong>, usando Blueprints, debes crear un nuevo paquete llamado usuarios. Dentro de ese paquete, crea dos funciones diferentes: una para <strong>registrar usuarios</strong> y otra para ayudar a los usuarios a <strong>iniciar sesión</strong>. En este capítulo, vamos a crear solo dos funciones simples para renderizar dos archivos HTML: register.html y login.html. Estos dos archivos HTML estarán en una carpeta llamada usuarios dentro de la carpeta templates.
+                    <br>
+                    <br>
+                    Para utilizar las dos funciones en el paquete usuarios, modificamos la barra de navegación en layout.html para introducir dos nuevos enlaces. Además, en el archivo home.html, tenemos dos botones para registrar e iniciar sesión. También necesitamos dos enlaces para esos dos botones a las dos funciones en el paquete usuarios.
+                    <br>
+                    <br>
+                    <strong>Segundo</strong>, usando Blueprints, debemos crear dos funciones dentro del paquete light_talk_app. 
+                    Estas dos funciones nos darán la oportunidad de <strong>añadir frases</strong> 
+                    y también nos permitirán <strong>acceder a las frases</strong> que estarán en nuestras bases de datos.
+                    <br>
+                    <br>
+                    Colocamos esos dos archivos, y el archivo light_talk_app.html en una carpeta dentro de la carpeta templates llamada light_talk_app.
+                    <br>
+                    <br>
+                    En el archivo light_talk_app.html, debemos conectar nuestros botones a las dos funciones creadas en el paquete light_talk_app.
+                    <br>
+                    <br>  
+                    <strong>Tercero</strong>, usando los formularios que hemos estudiado en este capítulo, creamos un <strong>formulario</strong> para registrarse y para hacer el login. 
+                    <br>
+                    <br>
+                    <strong>Cuarto</strong>, desplegamos nuestra app en AWS. 
+                    <br>
+                    <br>
+                    Discutiremos el desafío semanal el <strong>viernes ...</strong>. Usaremos el chat principal para ayudarnos mutuamente en el desafío semanal. Dentro de esos días, por favor comparte la información que consideres relevante para ayudar a los otros grupos.
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Pistas</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" target="_blank" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">GitHub (Boilerplate)</a>
+                    </div>  
+                    <div class="btn">
+                        <a href="#" target="_blank" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">GitHub (Final)</a>
+                    </div>
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+    
+                            <div class="modal-header">
+                            <h5 class="modal-title" style="color:black">Desafío Semanal, capítulo 6</h5>
+                            </div>
+    
+                            <div class="modal-body" style="color:black">
+                            <p style="text-align:left;">
+                                Todos los archivos para este proyecto están en la cuenta de GitHub. Te sugiero que descargues esa carpeta y sigas los pasos descritos en las tareas 1 y 2 del desafío semanal. Hay cuatro cosas que debes tener en cuenta:
+                                <ol style="text-align: left;">
+                                    <li>
+                                        Debes crear un nuevo paquete llamado <strong>usuarios</strong>, con dos archivos .py dentro.                                  
+                                    </li>
+                                    </br>
+                                    <li>
+                                        Debes modificar el archivo <strong>__init__.py</strong> dentro de la carpeta capp para registrar el blueprint para el paquete usuarios.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Debes crear las plantillas asociadas a las funciones definidas en <strong>routes.py</strong> dentro del paquete usuarios.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Dentro de los archivos HTML <strong>layout.html</strong> y <strong>home.html</strong>, debes conectar la barra de navegación y los botones a las 
+                                        dos funciones creadas en routes.py dentro del paquete usuarios.
+                                    </li>
+                                    <li>
+                                        Con los cambios dentro del <strong>paquete light_talk_app</strong>, debes seguir los mismos pasos.
+                                    </li>
+                                    <li>
+                                        Debes crear dos formularios, uno para registrarse, y otro para hacer el log in. 
+                                    </li>
+                                    <li>
+                                        Vamos a desplegar la app en AWS y a proteger información sensible utilizando variables ambientales. 
+                                    </li>
+                                </ol>
+                            </p>
+                            </div>
+    
+                            <div class="modal-footer">
+                            <a href="{{ url_for('es_course_chats.es_course_chats_create_chat') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Chat Principal</a>
+                            <button class="btn btn-secondary btn-lg mr-2" style="background-color:#6c757d;" data-dismiss="modal">Cerrar</button>
+                            </div>
+    
+                        </div>
+                        </div>
+                    </div>
+                </div>                    
+    
+            </div>   
+            <div class="box_three">                  
+            </div> 
+            
+        </div>
+    </section>
+    
+    
+    
+
+
+{% endblock content %}
