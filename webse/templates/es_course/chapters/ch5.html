@@ -1,0 +1,545 @@
+{% extends "es_course/es_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1>Capítulo 5. Modelo lingüístico y Bases de Datos en AWS</h1>
+                    <p class="mb-1">
+                        En esta sección desarrollamos el <strong>modelo lingüístico</strong> con distintos algoritmos para introducir frases en la base de datos, para 
+                        seleccionar frases, y para corregir frases.
+                        <br>
+                        <br>
+                        Posteriormente, aprendemos cómo <strong>crear una base de datos y tablas en Amazon Web Services</strong>. Aprendemos cómo <strong>conectarnos</strong> a la base de datos mediante pgAdmin. Usando pgAdmin, también escribimos algunas <strong>consultas</strong> para acceder a la información relevante en nuestra base de datos.
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/h4duKACi6hs" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 1a)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/Gri9hdFQGEM" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 1b)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/V0mtATq-890" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 1c)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/kp3UBtFU5RY" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 1d)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/paFWbodn09s" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Sección 4)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%205.%20Modelo%20linguistico%20y%20Bases%20de%20Datos%20en%20AWS" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Modelo lingüístico</h5>
+                        </div>
+                        <p class="mb-1">
+                            En esta sección desarrollamos el <strong>modelo lingüístico</strong>, aprendemos a añadir frases a nuestra base de datos, aprendemos a seleccionar 
+                            frases de esa base de datos y el usuario tiene que introducir la frase correcta. 
+                            Finalmente, desarrollamos una algoritmo en el que corregimos la frase introducida por el usuario y le damos  información sobre si la frase es correcta o incorrecta.
+                        </p>
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Introducción a Postgres</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, estudiamos qué es <strong>Postgres</strong> y qué es <strong>SQL</strong>.
+                            </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Crear una base de datos Postgres en AWS</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, aprendemos a crear una base de datos conectada a AWS. Introducimos algunos cambios en nuestro código para <strong>crear la base de datos</strong>, también modificamos algún código en GitHub para proteger información sensible, e introducimos cambios en el conjunto de datos de AWS para permitir el acceso a la base de datos desde pgAdmin.
+                            </p>                            
+                        </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Consultas para extraer información de nuestra base de datos</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, aprendemos <strong>consultas básicas en Postgres</strong> para acceder a la información relevante en nuestra base de datos.
+                            </p>                            
+                        </a>
+                        <a href="#section5" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Reto Semanal</h5>
+                            </div>
+                            <p class="mb-1">
+                                Esta semana nos centramos en el <strong>modelo lingüístico</strong>, y en la creación de la <strong>base de datos en AWS</strong>. 
+                                Sigue los pasos del capítulo para desarrollar tu propio modelo lingüístico y tu propia base de datos. 
+                            </p>                            
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/economies_of_spanish_course/chapters/ch5.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Modelo lingüístico</h1>
+            <h4>Algunos enlaces útiles</h4>
+            <p>
+                Los enlaces al video de YouTube y la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/h4duKACi6hs" target="_blank">YouTube (sección 1a)</a>
+                <a class="btn-section1" href="https://youtu.be/Gri9hdFQGEM" target="_blank">YouTube (sección 1b)</a>
+                <a class="btn-section1" href="https://youtu.be/V0mtATq-890" target="_blank">YouTube (sección 1c)</a>
+                <a class="btn-section1" href="https://youtu.be/kp3UBtFU5RY" target="_blank">YouTube (sección 1d)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%205.%20Modelo%20linguistico%20y%20Bases%20de%20Datos%20en%20AWS" target="_blank">GitHub</a>
+            </div>
+            <p>
+                En esta sección consta de tres partes en la que desarrollamos el <strong>modelo lingüístico</strong>. 
+                Primero, aprendemos a añadir frases a nuestra base de datos. Segundo, aprendemos a seleccionar 
+                frases de esa base de datos y el usuario tiene que introducir la frase correcta. 
+                Tercero, desarrollamos una algoritmo en el que corregimos la frase introducida por el usuario y le damos  información sobre si la frase es correcta o incorrecta.
+                <br>
+            </p>
+            <h4>Añadir frases a nuestra base de datos</h4>
+            <p>
+                Para añadir frases a nuestra base de datos, tenemos que conectar un formulario (panel de abajo a la izquierda) con nuestra ruta (panel de abajo a la derecha). 
+                El proceso es muy parecido al estudiado en los capítulos anteriores. Por lo tanto, solo presento el código. Una explicación más completa está en el primer video de esta sección.
+            </p>
+        </div> 
+
+        <div class="container">
+            <div class="box_two">
+                <h5>Formulario para añadir frases</h5>
+    <pre><code class="html">
+    from flask_wtf import FlaskForm
+    from wtforms import StringField, PasswordField, SubmitField
+    from wtforms.validators import DataRequired, Length, Email, EqualTo   
+    
+    class AddForm(FlaskForm):
+  incorrect_sentence = StringField('Frase Incorrecta', 
+  [InputRequired()])
+  correct_sentence_one = StringField('Frase Correcta 1', 
+  [InputRequired()], default="none")
+  correct_sentence_two = StringField('Frase Correcta 2', 
+  [InputRequired()], default="none")
+  correct_sentence_three = StringField('Frase Correcta 3', 
+  [InputRequired()], default="none")
+  objective = SelectField('Objetivo', [InputRequired()], 
+    choices=[('Genero', 'Genero'), ('Número', 'Número')])
+  source = SelectField('Fuente', [InputRequired()], 
+    choices=[('Inteligencia Artificial', 'Inteligencia Artificial'), 
+    ('Persona', 'Persona'), ('Lingüista', 'Lingüista')])
+  submit = SubmitField('Añadir')
+    </code></pre>       
+            </div>
+            <div class="box_two">
+                <h5>Añadir frases a nuestra base de datos</h5>
+    <pre><code class="html">
+    #Add a new sentence
+    @light_talk_app.route('/light_talk_app/añadir_frase', 
+    methods=['GET','POST'])
+    @login_required
+    def add_sentence():
+        form = AddForm()
+        if form.validate_on_submit():
+            incorrect_sentence = form.incorrect_sentence.data
+            correct_sentence_one = form.correct_sentence_one.data
+            correct_sentence_two = form.correct_sentence_two.data
+            correct_sentence_three = form.correct_sentence_three.data
+            your_sentence = "none"
+            objective = form.objective.data
+            source = form.source.data
+            result_string = "none"
+            result_num= "nan"
+            group = 'general'
+            university = 'University of Salamanca'
+            year = 2024
+        
+            sentence = Sentence(incorrect_sentence=incorrect_sentence, 
+            correct_sentence_one=correct_sentence_one, 
+            correct_sentence_two=correct_sentence_two, 
+            correct_sentence_three=correct_sentence_three, 
+            correct_sentence_four="none", your_sentence=your_sentence, 
+            objective=objective, source=source, 
+            result_string=result_string, result_num=result_num,  
+            group=group, university=university, year=year, 
+            author=current_user)
+            db.session.add(sentence)
+            db.session.commit()
+            return redirect(url_for('light_talk_app.light_talk_app_home'))
+        return render_template('light_talk_app/add_sentence.html', 
+        title='add sentence', form=form)
+    </code></pre>
+            </div>
+
+        </div> 
+
+        <div class="container" style="display:block;">
+            <h4>Seleccionar y verificar frases de nuestra base de datos</h4>
+            <p>
+                El proceso para seleccionar y verificar frases de nuestra base de datos es muy parecido al proceso de añadir frases,
+                pero los algoritmos en las rutas son diferentes. El proceso está explicado con detalle en los videos 1b y 1c. Además,
+                explicaré el código durante las clases.
+            </p>
+        </div> 
+    </section>  
+
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+        <div class="container" style="display:block;">
+            <h1>Introducción a Postgres</h1>
+            <p>
+                En esta sección, estudiamos qué es <strong>Postgres</strong> y qué es <strong>SQL</strong>.
+            </p>
+        </div>  
+    
+        <div class="container">
+            <div class="box_two">
+                <h4>¿Qué es Postgres?</h4>
+                <p>
+                    <u>¿Qué es PostgreSQL?</u>
+                    <br>
+                    <br>
+                    PostgreSQL es un sistema de base de datos relacional avanzado, de clase empresarial y de código abierto. PostgreSQL soporta consultas tanto SQL (relacionales) como JSON (no relacionales).
+                    <br>
+                    <br>
+                    PostgreSQL es una base de datos altamente estable respaldada por más de 20 años de desarrollo por parte de la comunidad de código abierto.
+                    <br>
+                    <br>
+                    PostgreSQL se utiliza como base de datos principal para muchas aplicaciones web, así como para aplicaciones móviles y de análisis.
+                    <br>
+                    <br>
+                    <u>¿Por qué usar PostgreSQL?</u>
+                    <br>
+                    <br>
+                    PostgreSQL viene con muchas características destinadas a ayudar a los desarrolladores a construir aplicaciones, a los administradores a proteger la integridad de los datos y a construir entornos tolerantes a fallos, y a ayudarle a gestionar sus datos sin importar el tamaño del conjunto de datos. Además de ser gratuito y de código abierto, PostgreSQL es altamente extensible. 
+                    Por ejemplo, puedes definir tus propios tipos de datos, construir funciones personalizadas, e incluso escribir código en diferentes lenguajes de programación sin recompilar tu base de datos.
+                    <br>
+                    <br>
+                    <u>Instalación de lenguajes procedurales</u>
+                    <br>
+                    <br>
+                    PostgreSQL permite que las funciones definidas por el usuario se escriban en otros lenguajes además de SQL y C. Estos otros lenguajes se denominan genéricamente lenguajes procedurales (PLs). Para una función escrita en un lenguaje procedural, el servidor de la base de datos no tiene conocimiento incorporado sobre cómo interpretar el texto fuente de la función. En su lugar, la tarea se pasa a un manejador especial que conoce los detalles del lenguaje. El manejador podría hacer todo el trabajo de análisis, sintaxis, ejecución, etc. por sí mismo, o podría servir como "pegamento" entre PostgreSQL y una implementación existente de un lenguaje de programación. El propio manejador es una función en lenguaje C compilada en un objeto compartido y cargada bajo demanda, al igual que cualquier otra función en C.
+                    <br>
+                    <br>
+                    Actualmente hay cuatro lenguajes procedurales disponibles en la distribución estándar de PostgreSQL: PL/pgSQL, PL/Tcl, PL/Perl y PL/Python.
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://www.postgresql.org/docs/current/plpython.html" target="_blank">Lenguajes procedurales</a>
+                </div>
+            </div> 
+            <div class="box_two" style="height:450px;">
+                <h5>¿Qué es SQL?</h5>
+                <p>
+                    El lenguaje de consulta estructurada (SQL) es un lenguaje de programación para almacenar y procesar información en una base de datos relacional. 
+                    Una base de datos relacional almacena información en forma de tabla, con filas y columnas que representan diferentes atributos de datos y las diversas relaciones entre los valores de los datos. 
+                    Puedes utilizar sentencias SQL para almacenar, actualizar, eliminar, buscar y recuperar información de la base de datos. También puedes usar SQL para mantener y optimizar el rendimiento de la base de datos.
+                    <br>
+                    <br>
+                    Más información sobre SQL en el siguiente enlace:
+                </p>
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2_box" href="https://aws.amazon.com/what-is/sql/" target="_blank">SQL-AWS</a>
+                </div>
+            </div> 
+        </div> 
+    </section>
+    
+
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section3">
+        <div class="container" style="display:block;">
+            <h1>Creando una base de datos Postgres en AWS vinculada a nuestro proyecto</h1>
+            <p>
+                Hasta ahora, hemos utilizado una base de datos sqlite para desarrollar nuestra aplicación. Ahora, es momento de desplegar nuestra aplicación en AWS mientras conectamos nuestros datos a una base de datos Postgres, es decir, debemos crear una <strong>base de datos de producción</strong>. Los enlaces al video de YouTube y a la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section3" href="https://youtu.be/paFWbodn09s" target="_blank">YouTube (sección 3)</a>
+                <a class="btn-section3" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%205.%20Modelo%20linguistico%20y%20Bases%20de%20Datos%20en%20AWS" target="_blank">GitHub</a>
+            </div> 
+            <h4>Procedimiento para conectar nuestros datos a una base de datos Postgres</h4>
+            <p>
+                El procedimiento para conectar nuestros datos a una base de datos Postgres consta de <strong>tres pasos</strong>:
+                <ol>
+                    <li>
+                        <strong>En Amazon Web Service</strong>. En el entorno donde hemos alojado nuestra aplicación, debemos ir a la configuración y, en la base de datos, debemos <strong>crear una base de datos</strong> y <strong>modificar las reglas de entrada</strong> para permitir el acceso a la base de datos. Siga las instrucciones en el video.
+                    </li>
+                    <br>
+                    <li>
+                        <strong>En nuestra computadora local</strong>. Una vez que hemos creado una base de datos en AWS, debemos crear <strong>todas las bases de datos y las tablas</strong>. Debemos hacerlo desde nuestra computadora local siguiendo los siguientes pasos:
+                        <ol type="a">
+                            <br>
+                            <li>
+                                En el <strong>archivo __init__.py</strong>, debemos escribir el siguiente código:
+                                <pre><code class="html"></code>
+    DBVAR = 'postgresql://username:password@endpoint:5432/ebdb'
+    application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
+    application.config['SQLALCHEMY_BINDS'] = {'light_talk': DBVAR}                                    
+                                </code></pre> 
+                                Donde en DBVAR, debes introducir los siguientes cinco bloques de información:
+                                <br>
+                                <br>
+                                <ul>
+                                    <li>
+                                        <strong>Nombre de usuario</strong>: Este es el nombre de usuario que elegiste al crear la base de datos. Te sugiero elegir el nombre de usuario <strong>postgres</strong>, ya que cuando programamos la base de datos utilizando la línea de comandos y pgAdmin, ese es el nombre estándar. Sin embargo, elige el nombre que decidas, pero asegúrate de recordarlo.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Contraseña</strong>: Esta es la contraseña que eliges al crear la base de datos. Recuerda esa contraseña, ya que la necesitaremos más adelante para conectarnos a la base de datos.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Endpoint</strong>: Este es el endpoint de la base de datos que obtienes desde la página de RDS en AWS.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Puerto</strong>: El puerto para bases de datos Postgres es <strong>5432</strong>.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <strong>Nombre de la base de datos</strong>: El nombre de la base de datos cuando se crea una base de datos dentro de Elastic Beanstalk es ebdb por ElasticBeanstalkDataBase.
+                                    </li>
+                                </ul>
+                            </li>
+                            <br>
+                            <li>
+                                <strong>En la terminal</strong>, debemos escribir: <strong>python</strong>. Una vez que estamos en la terminal de python, debemos escribir: <strong>from capp import db</strong>, y luego: <strong>db.create_all()</strong>.
+                            </li>
+                        </ol>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>En GitHub</strong>. Al igual que con el SECRET_KEY, queremos proteger la información sensible en nuestra cuenta de GitHub, ya que no queremos divulgar nuestro nombre de usuario, contraseña y el endpoint de nuestra base de datos. Para proteger esa información, necesitamos introducir las siguientes líneas de código y colocarlas en GitHub:
+                        <pre><code class="html"></code>
+    DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}
+    @{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
+                        </code></pre> 
+                    </li>
+                    <li>
+                        <strong>En AWS</strong>, dirígete a <strong>CodePipeline</strong> y libera los cambios. Una vez que hayamos liberado los cambios, deberíamos verificar que <strong>nuestra aplicación funcione correctamente</strong> al poblar la base de datos (registrar un nuevo usuario y agregar algunas frases en la Light Talk App). También debemos verificar que la funcionalidad de inicio de sesión funcione correctamente.
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </section>
+    
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+
+        <div class="container" style="display:block;">
+            <h1>Conexión y consultas a nuestra base de datos Postgres</h1>
+            <h4>Conexión a nuestra base de datos Postgres utilizando pgAdmin</h4>
+            <p>
+                Una vez que hemos creado nuestras bases de datos con tablas, es momento de acceder a esas bases de datos y realizar algunas consultas para utilizar la información en ellas. Usamos pgAdmin para acceder a nuestras bases de datos. Procedemos en tres pasos diferentes.
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section4" href="#" target="_blank">YouTube (Sección 4)</a>
+                    <a class="btn-section4" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%205.%20Modelo%20linguistico%20y%20Bases%20de%20Datos%20en%20AWS" target="_blank">GitHub</a>
+                </div> 
+                <ol>
+                    <li>
+                        <strong>Descargar pgAdmin</strong> para Mac o Windows: 
+                        <div class="section_container_buttons_chapters">
+                            <a class="btn-section4" href="https://www.pgadmin.org/download/" target="_blank">pgAdmin</a>
+                        </div>                         
+                    </li>
+                    <br>
+                    <li>
+                        <strong>En AWS</strong>, debemos permitir que nuestra base de datos sea accesible desde diferentes IPs (universidad, casa, etc.). Para hacerlo, debes seguir los siguientes pasos (sigue las instrucciones del video).
+                        <ol type="a">
+                            <br>
+                            <li>
+                                En AWS RDS, accede a tu base de datos.
+                            </li>
+                            <br>
+                            <li>
+                                Selecciona los grupos de seguridad VPC.
+                            </li>
+                            <br>
+                            <li>
+                                Selecciona las reglas de entrada.
+                            </li>
+                            <br>
+                            <li>
+                                Edita las reglas de entrada creando una nueva regla de entrada, donde permites todo el tráfico desde tu IP actual. 
+                            </li>
+                        </ol>
+                    </li>
+                    <br>
+                    <li>
+                        <strong>En pgAdmin</strong>, debemos conectarnos a la base de datos alojada en el servidor de AWS siguiendo los siguientes pasos:
+                        <ol type="a">
+                            <br>
+                            <li>
+                                Crea una nueva conexión de servidor, y nómbrala como prefieras.
+                            </li>
+                            <br>
+                            <li>
+                                En la conexión, introduce el EndPoint de tu base de datos de Amazon RDS.
+                            </li>
+                            <br>
+                            <li>
+                                En la conexión, también debes introducir el usuario y la contraseña que creaste en AWS.
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </p>
+            <h4>Consultas en nuestra base de datos usando pgAdmin</h4>
+            <p>
+                Todas las consultas en esta sección son una adaptación a nuestras bases de datos de las consultas en el siguiente video:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section4" href="https://www.youtube.com/watch?v=qw--VYLpxG4" target="_blank">FreeCodeCamp</a>
+            </div> 
+            <p>
+                Vamos a introducir algunas consultas útiles.
+            </p>
+        </div> 
+    
+        <div class="container">
+            <div class="box_two" style="height:200px;">
+                <h5>Comando SELECT:</h5>
+                <pre><code class="html"></code>
+    SELECT * FROM public.user_table;
+    SELECT username, email FROM public.user_table;
+    SELECT password FROM public.user_table;
+                </code></pre> 
+            </div> 
+            <div class="box_two" style="height:200px;">
+                <h5>Comando ORDER BY:</h5>
+                <pre><code class="html"></code>
+    SELECT * FROM public.user_table ORDER BY username;
+    SELECT * FROM public.user_table ORDER BY username ASC;
+    SELECT * FROM public.user_table ORDER BY username DESC;
+                </code></pre> 
+            </div> 
+        </div>
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>Timestamps y Fechas:</h5>
+                <pre><code class="html"></code>
+    SELECT NOW();
+    SELECT NOW()::DATE;
+    SELECT NOW()::TIME;
+                </code></pre> 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section4_box" href="https://www.postgresql.org/docs/current/datatype-datetime.html" target="_blank">Tipos de fecha/hora</a>
+                </div> 
+            </div> 
+            <div class="box_two" style="height:360px;">
+                <h5>Sumando y Restando Fechas:</h5>
+                <pre><code class="html"></code>
+    SELECT NOW() - INTERVAL '1 YEAR';
+    SELECT NOW()::DATE - INTERVAL '1 YEAR';
+    SELECT NOW()::DATE - INTERVAL '5 DAYS';
+    SELECT (NOW() + INTERVAL '5 DAYS')::DATE;
+                </code></pre>
+                <h5>Extrayendo Campos:</h5>
+                <pre><code class="html"></code>
+    SELECT EXTRACT(YEAR FROM NOW());
+    SELECT EXTRACT(MONTH FROM NOW());
+    SELECT EXTRACT(DAY FROM NOW());
+    SELECT EXTRACT(DOW FROM NOW());
+    SELECT EXTRACT(CENTURY FROM NOW());
+                </code></pre> 
+            </div> 
+        </div> 
+    
+        <div class="container">
+            <div class="box_two" style="height:200px;">
+                <h5>Eliminar registros:</h5>
+                <pre><code class="html"></code>
+    DELETE FROM  public.user_table WHERE id=1;
+                </code></pre> 
+            </div> 
+            <div class="box_two" style="height:200px;">
+                <h5>Actualizar registros:</h5>
+                <pre><code class="html"></code>
+    UPDATE public.user_table  SET email='hello@demo.com' 
+    WHERE id=1;
+    SELECT * FROM public.user_table  WHERE id=1;
+    UPDATE public.user_table  SET email='hello1@demo.com',
+    username='name1' WHERE id=1;
+    SELECT * FROM person WHERE id=1;
+                </code></pre> 
+            </div> 
+        </div> 
+    
+        <div class="container">
+            <div class="box_two">
+                <h5>EN CONFLICTO, NO HACER NADA:</h5>
+                <pre><code class="html"></code>
+    INSERT INTO public.user_table 
+    (id, username, email, password)
+    VALUES (1, 'name2', 'email2@demo.com', 'regn')
+    ON CONFLICT (id) DO NOTHING;
+    SELECT * FROM public.user_table;
+                </code></pre> 
+            </div> 
+            <div class="box_two" style="height:225px;">
+                <h5>UPSERT:</h5>
+                <pre><code class="html"></code>
+    SELECT * FROM public.user_table  WHERE id=1;
+    INSERT INTO public.user_table 
+    (id, username, email, password) 
+    VALUES (1, 'name2', 'email4@demo.com', 'regn')
+    ON CONFLICT (id) DO UPDATE SET email=EXCLUDED.email;
+                </code></pre> 
+            </div> 
+        </div> 
+    
+
+    
+    </section>
+
+    <!-- Section 5 -->
+    <section class="section_1" id="section5">
+        
+        <div class="container">
+
+            <div class="box_three">
+                       
+            </div>
+            <div class="box_three">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Reto Semanal</h1>
+                <p style="text-align: left;"> 
+                    Esta semana nos centramos en el <strong>modelo lingüístico</strong>, y en la creación de la <strong>base de datos en AWS</strong>. 
+                    Sigue los pasos del capítulo para desarrollar tu propio modelo lingüístico y tu propia base de datos. 
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="{{ url_for('es_course_chats.es_course_chats_create_chat') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Chat Principal</a>
+                    </div>  
+                </div>
+            </div> 
+            <div class="box_three">
+                       
+            </div>
+
+        </div>  
+    </section>  
+     
+
+
+{% endblock content %}

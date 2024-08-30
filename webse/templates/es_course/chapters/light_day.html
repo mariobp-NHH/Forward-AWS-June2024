@@ -1,0 +1,61 @@
+{% extends "es_course/es_course_layout.html" %} {% block content %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+  <header class="header_css">
+    <div class="container">
+      <div>
+        <h1><span class="text-warning"> Conferencia Light Day</span></h1>
+        <p class="mb-1">
+          En la conferencia Light Day, los estudiantes presentan sus modelos de
+          negocio, sus modelos lingüísticos y sus aplicaciones. Los estudiantes
+          han construido <strong>modelos lingüísticos</strong> muy avanzados
+          para fomentar el aprendizaje del español. Han diseñado
+          <strong>modelos de negocio</strong> innovadores para fomentar el
+          aprendizaje del español. Estos modelos de negocio varían desde la
+          enseñanza del español a personas migrantes, a niños en edad temprana,
+          adolescentes, universitarios, personas senior o transnacionales.
+          Finalmente, han combinado diferentes lenguajes de programación para
+          desarrollar <strong>aplicaciones innovadoras</strong> con una sólida
+          arquitectura de software.
+          <br />
+          <br />
+          La conferencia Light Day fomenta la colaboración entre la universidad
+          y la sociedad. Para conectar el trabajo desarrollado por los
+          estudiantes con la sociedad, invitaremos a la conferencia a
+          <strong>incubadoras de empresas</strong>, <strong>startups</strong>,
+          <strong>empresas digitales</strong>,
+          <strong>empresas vinculadas al ámbito educativo</strong>, el
+          <strong>ayuntamiento de Salamanca</strong> y otras
+          <strong>administraciones públicas</strong>.
+        </p>
+        <div class="container_buttons_links_header">
+          <div class="btn">
+            <a
+              href="#"
+              target="_blank"
+              class="btn btn-primary btn-lg mr-2"
+              style="background-color: #007bff"
+              >Folleto</a
+            >
+          </div>
+          <div class="btn">
+            <a
+              href="#"
+              target="_blank"
+              class="btn btn-primary btn-lg mr-2"
+              style="background-color: #007bff"
+              >Presentación</a
+            >
+          </div>
+        </div>
+      </div>
+      <img
+        src="{{url_for('static', filename='figures/economies_of_spanish_course/chapters/conference.svg')}}"
+        alt=""
+      />
+    </div>
+  </header>
+</section>
+
+{% endblock content %}

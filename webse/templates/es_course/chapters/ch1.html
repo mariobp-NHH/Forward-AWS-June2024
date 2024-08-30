@@ -1,0 +1,581 @@
+{% extends "es_course/es_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1> Capítulo 1. Instalación, primera aplicación Flask y organización de plantillas</h1>
+                    <p class="mb-1">
+                        Instalamos Python y Visual Studio Code. Aprendemos a crear entornos virtuales y creamos nuestra primera aplicación Flask.
+                        <br>
+                        Comenzamos a reorganizar la estructura de nuestra aplicación. Para hacerlo, procedemos en dos pasos. 
+                        Primero, organizamos todos nuestros archivos HTML en una <strong>carpeta de plantillas</strong> y accedemos a ellos desde nuestro archivo application.py. 
+                        Segundo, para evitar repeticiones en el código de los archivos HTML, introducimos <strong>plantillas</strong>. 
+                        Estos dos pasos nos ayudarán a hacer nuestro código más eficiente y accesible. 
+                        Concluimos el capítulo con el desafío semanal, donde introducimos un <strong>menú de navegación</strong> para navegar a las páginas de inicio, metodología y la aplicación light-talk.
+                    </p>
+
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/w_NpkvdGJk4" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (secciones 1 y 2)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/_q-5gLAPHiY" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 3)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/g4e1Ra6Snkk" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (sección 4)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%201.%20Instalacion%20-%20Primera%20App%20-%20Plantillas" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Instalación</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, instalamos Python y Visual Studio Code. También exploramos otros editores de código como PyCharm o Sublime Text.
+                            </p>  
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Nuestra Primera Aplicación Flask</h5>
+                            </div>
+                            <p class="mb-1">
+                                Desarrollamos nuestra primera aplicación Flask. Primero, creamos un entorno virtual y aprendemos a activarlo. Segundo, instalamos Flask en el entorno virtual. Tercero, escribimos el código de Flask. Finalmente, ejecutamos nuestra primera aplicación y la abrimos en el navegador.
+                            </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Carpeta de plantillas</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, trasladamos todo el código HTML del archivo application.py a archivos HTML separados y organizamos esos archivos en una carpeta de <strong>plantillas</strong>.
+                            </p>                            
+                        </a>
+                        <a href="#section4" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Plantillas</h5>
+                            </div>
+                            <p class="mb-1">
+                                En los archivos HTML, hay líneas de código que aparecen en todos los archivos, lo cual no es muy eficiente. Para evitar ese problema y hacer que nuestro código sea más eficiente y limpio, introducimos <strong>plantillas</strong>.
+                            </p>                            
+                        </a>
+                        <a href="#section5" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Reto semanal</h5>
+                            </div>
+                            <p class="mb-1">
+                                Desarrollamos un <strong>menú de navegación</strong> para acceder a las páginas de inicio, metodología y la aplicación light-talk.
+                            </p>
+                        </a>                        
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/economies_of_spanish_course/chapters/ch1.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Instalación</h1>
+            <h2>¿Qué es Python? Resumen Ejecutivo</h2>
+            <p>
+                Python es un lenguaje de programación interpretado, orientado a objetos y de alto nivel con semántica dinámica. Sus estructuras de datos integradas de alto nivel, combinadas con la tipificación dinámica y el enlace dinámico, lo hacen muy atractivo para el desarrollo rápido de aplicaciones, así como para su uso como un lenguaje de scripting o de conexión para integrar componentes existentes. La sintaxis simple y fácil de aprender de Python enfatiza la legibilidad y, por lo tanto, reduce el costo de mantenimiento de los programas. Python admite <strong>módulos y paquetes</strong>, lo que fomenta la modularidad del programa y la reutilización del código. El intérprete de Python y la extensa biblioteca estándar están disponibles en forma de código fuente o binario sin costo para todas las principales plataformas, y pueden ser distribuidos libremente.
+                <br>
+                <br>
+                Más información sobre Python:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.python.org/doc/essays/blurb/" target="_blank">Python</a>
+                </div> 
+            </p>
+            
+            <h4>Instalar Python:</h4> <p>Mira el video de YouTube proporcionado en el encabezado:</p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/w_NpkvdGJk4" target="_blank">YouTube (secciones 1 y 2)</a>
+            </div>
+        </div>        
+        <div class="container" style="display:block;">
+            <h2>Editores de Código</h2>
+            <p>
+                Para desarrollar nuestra aplicación, necesitamos escribir código. Hay muchos editores de código. Usaremos uno de los editores de código más populares: Visual Studio Code. Otros editores que he utilizado en mis clases son PyCharm y Sublime Text.
+            </p>
+            <h4>¿Qué es Visual Studio Code?</h4>
+            <p>
+                Visual Studio Code, comúnmente referido como VS Code, es un editor de código fuente creado por Microsoft con el framework Electron, para Windows, Linux y macOS. Sus características incluyen soporte para depuración, resaltado de sintaxis, autocompletado inteligente, fragmentos de código, refactorización de código y Git integrado. Los usuarios pueden cambiar el tema, los atajos de teclado, las preferencias, e instalar extensiones que añaden funcionalidad adicional.
+                <br>
+                <br>                
+                Más información sobre Visual Studio Code: 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
+                </div>
+                Más información sobre PyCharm: 
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.jetbrains.com/pycharm/" target="_blank">PyCharm</a>
+                </div>
+                Más información sobre Sublime Text:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section1" href="https://www.sublimetext.com/" target="_blank">Sublime Text</a>
+                </div>
+            </p>
+            <h4>Instalar Visual Studio Code:</h4><p>Mira el video de YouTube proporcionado en el encabezado:</p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/w_NpkvdGJk4" target="_blank">YouTube (secciones 1 y 2)</a>
+            </div>
+        </div> 
+
+    </section>
+
+
+
+        <!-- Section 2 -->
+        <section class="section_2" id="section2">
+            <div class="container" style="display:block;">
+                <h1>Nuestra Primera Aplicación Flask</h1>
+                <h2>¿Qué es Flask?</h2>
+                <p>
+                    Flask es un <strong>framework web</strong> micro escrito en Python. Se clasifica como un microframework porque no requiere herramientas o bibliotecas particulares. No tiene una capa de abstracción de base de datos, validación de formularios, ni otros componentes donde las bibliotecas de terceros preexistentes proporcionan funciones comunes. Sin embargo, Flask admite extensiones que pueden agregar características a la aplicación como si estuvieran implementadas en Flask mismo. Existen <strong>extensiones</strong> para mapeadores objeto-relacionales, validación de formularios, manejo de archivos cargados, varias tecnologías de autenticación abierta y varias herramientas comunes relacionadas con el framework.
+                </p>
+                <h2>¿Qué es un Framework Web?</h2>
+                <p>
+                    Un Framework de Aplicación Web o simplemente un Framework Web representa una colección de bibliotecas y módulos que permiten a los desarrolladores de aplicaciones web <strong>escribir aplicaciones sin preocuparse por detalles de bajo nivel como el protocolo, la gestión de hilos, y demás.</strong>
+                    <br>
+                    <br>
+                    Más información sobre Flask:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://pythonbasics.org/what-is-flask-python/" target="_blank">Flask (enlace 1)</a> <a class="btn-section2" href="https://en.wikipedia.org/wiki/Flask_(web_framework)" target="_blank">Flask (enlace 2)</a>
+                    </div> 
+                </p>
+            </div>
+            <div class="container">
+                <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                    <h2>Nuestra Primera Aplicación Flask:</h2>
+                    <p style="text-align: left;">Un video con el resumen de todos los pasos está en el canal de YouTube del curso. El código de la aplicación está en el repositorio de GitHub del curso.
+                    </p>
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section2" href="https://youtu.be/w_NpkvdGJk4" target="_blank">YouTube (secciones 1 y 2)</a> <a class="btn-section2" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%201.%20Instalacion%20-%20Primera%20App%20-%20Plantillas" target="_blank">GitHub (sección 2)</a>
+                    </div> 
+                    <p>
+                        <ol>
+                            <li>
+                                <strong>Crear</strong> un entorno virtual. Un entorno virtual funciona como una caja de herramientas donde puedes almacenar todas las herramientas necesarias para ejecutar tu aplicación. Cuando añadamos más estructura y funcionalidades a nuestra aplicación, necesitaremos más herramientas que almacenaremos en nuestro entorno virtual. Cuando despleguemos nuestra aplicación en el servidor, le daremos al servidor la lista de herramientas almacenadas en nuestro entorno virtual, para que pueda ejecutar nuestra aplicación.
+                                <br>
+                                <br>
+                                Una definición formal de un entorno virtual en Python:
+                                <div class="section_container_buttons_chapters">
+                                    <a class="btn-section2" href="https://docs.python.org/3/tutorial/venv.html" target="_blank">Entorno Virtual de Python</a>
+                                </div>  
+                                Para crear un entorno virtual, abre una terminal en VS Code y escribe:
+                                <ul>En Windows: <strong>(python -m venv venv)</strong> o <strong>(python3 -m venv venv)</strong> dependiendo de la versión de Python instalada en tu computadora.</ul>
+                                <ul>En Mac es necesario seguir dos pasos: Primero, es necesario instalar un paquete llamado virtualenv escribiendo en la línea de comandos de VS Code <strong>(pip install virtualenv)</strong>. Segundo, es necesario crear el entorno virtual escribiendo en la línea de comandos de VS Code <strong>(virtualenv venv)</strong>.</ul>
+                            </li>
+                            </br>
+                            <li>
+                                En VS Code, abre la terminal y <strong>activa el entorno virtual</strong>.
+                                <ul>En Windows: <strong>(venv\Scripts\activate)</strong>.</ul>
+                                <ul>En Mac: <strong>(source venv/bin/activate)</strong>.</ul>
+                            </li>
+                            </br>
+                            <li>
+                                Usando la terminal en VS Code, <strong>instala flask</strong>: (pip install flask) (o pip3 install flask). El comando pip (o pip3) depende de la versión de Python instalada en tu computadora. Prueba ambos.
+                            </li>
+                            </br>
+                            <li>
+                                Usando la terminal en VS Code, <strong>escribe el código de tu aplicación</strong>, y <strong>guarda</strong> ese archivo como application.py.
+                            </li>
+                            </br>
+                            <li>
+                                Usando la terminal en VS Code, <strong>ejecuta tu aplicación</strong>: (python application.py) (o python3 application.py). El comando python (o python3) depende de la versión de Python instalada en tu computadora. Prueba ambos.
+                            </li>
+                            </br>
+                            <li>
+                                <strong>Abre la aplicación en tu navegador</strong>: Abre el enlace azul que aparece en VS Code después de ejecutar tu archivo application.py para abrir tu aplicación en el navegador.
+                            </li>
+                        </ol>               
+                    </p>       
+                </div>
+                <div class="boxa" style="height:635px; align-self:center; padding:5px;">
+                    <p style="text-align: center;"><strong>El código de nuestra primera aplicación Flask 
+                        (versión extendida):</strong> </p>
+                        
+        <pre><code class="python">
+        from flask import Flask
+        application = Flask(__name__)
+        
+        @application.route('/')
+        @application.route('/home')
+        def home():
+            return "&lt;h1&gt;Página de inicio&lt;/h1&gt;" \
+                "&lt;p&gt;En este proyecto desarrollamos 
+                una aplicación...&lt;/p&gt;"
+        
+        @application.route('/desarrolladores')
+        def developers():
+            return "&lt;h1&gt;Desarrolladores&lt;/h1&gt;" \
+                "&lt;p&gt;En esta página web, presentamos 
+                a los desarrolladores de la aplicación...&lt;/p&gt;"
+        
+        @application.route('/light_talk_app')
+        def app_calculator():
+            return "&lt;h1&gt;Calculadora de Aplicaciones&lt;/h1&gt;" \
+                "&lt;p&gt;En esta página web, desarrollamos una 
+                aplicación para el aprendizaje del español...&lt;/p&gt;"
+        
+        if __name__ == '__main__':
+            application.run(debug=True)
+        </code></pre>
+                </div>
+            </div>
+
+        </section>
+        
+            <!-- Section 3 -->
+    <section class="section_3" id="section3">
+        <div class="container" style="display:block;">
+            <h1>Carpeta de Plantillas</h1>
+            <p>
+                En nuestra primera aplicación, todo el código está en un solo archivo (application.py). Esa no es la mejor manera de organizar el código, ya que cuando introducimos más código en nuestra aplicación, es muy difícil organizar el código en un solo archivo. Dentro del desarrollo de nuestra aplicación, modificaremos la estructura para hacer el código más eficiente y claro.
+            </p>
+        </div>        
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h3>Moviendo el código HTML a una Carpeta de Plantillas:</h3>
+                <p style="text-align: left;">El video con todos los pasos de esta sección y el código se pueden encontrar en los enlaces de YouTube y GitHub a continuación:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section3" href="https://youtu.be/_q-5gLAPHiY"  target="_blank">YouTube (sección 3)</a> <a class="btn-section3" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%201.%20Instalacion%20-%20Primera%20App%20-%20Plantillas" target="_blank">GitHub (sección 3)</a>
+                    </div> 
+                </p>
+                <p>
+                    <ol>
+                        <li>
+                            En tu computadora, crea una carpeta llamada <strong>“Sección 3”</strong> (o el nombre que elijas). Dentro de esa carpeta, crea una carpeta llamada <strong>“templates”</strong> (templates es el nombre estándar para la carpeta de plantillas, te sugiero que uses ese nombre).
+                        </li>
+                        </br>
+                        <li>
+                            En la carpeta templates, crea un archivo llamado <strong>“home.html”</strong>. En ese archivo, escribe el código que aparece en el cuadro de la derecha.
+                        </li>
+                        </br>
+                        <li>
+                            Una vez que hayas creado tu archivo “home.html”, debes <strong>llamarlo</strong> desde tu archivo application.py. Para hacer eso, es necesario hacer dos cosas (ver el código en el cuadro de la derecha):
+                            </br>
+                            </br>
+                            <ol type="a">
+                                <li>
+                                    Necesitamos importar la función <strong>render_template</strong> del paquete flask.
+                                </li>
+                                <li>
+                                    Usando la función render_template, <strong>llamamos al archivo home.html</strong>.
+                                </li>
+                                <li>
+                                    Opcionalmente, podemos <strong>pasar información desde nuestro archivo application.py a nuestros archivos HTML</strong>. En particular, en este caso vamos a pasar un <strong>título</strong> para nuestro archivo home.html. En el archivo application.py debemos pasar el título (ver el código en el cuadro de la derecha), y en el archivo home.html, tenemos que mostrar el título colocándolo entre dos corchetes (ver código en el cuadro de la derecha).
+                                </li>
+                            </ol>
+                        </li>
+                        </br>
+                        <li>
+                            Una vez que hayas modificado el archivo application.py y hayas creado una carpeta templates, debes <strong>crear tu entorno virtual e instalar Flask en él</strong>. 
+                            Tenemos dos opciones. Primero, copiar y pegar el entorno virtual que creamos en la segunda sección de este capítulo. 
+                            Segundo, seguir todos los pasos descritos en la segunda sección de este capítulo para crear un nuevo entorno virtual, activarlo e instalar Flask.
+                        </li>
+                        </br>
+                        <li>
+                            Con el entorno virtual activado, <strong>ejecuta tu aplicación</strong> escribiendo: <strong>python application.py</strong> y ábrelo en el servidor local de tu computadora.
+                        </li>
+                    </ol>               
+                </p>       
+            </div>
+            <div class="boxa" style="height:850px; align-self:center;">
+                <p style="text-align: center;"><strong>El código en el archivo home.html:</strong> </p>
+                    
+    <pre><code class="python">
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;    
+        &lt;title&gt;&#123;&#123;title&#125;&#125;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Inicio&lt;/h1&gt;
+        &lt;p&gt;
+            Nuestra app de aprendizaje del español light-talk....
+        &lt;/p&gt;
+        &lt;p&gt;
+        Desarrolladores:
+        &lt;ul&gt;
+            &lt;li&gt;
+                Desarrollador 1: Breve biografía. Enlace al CV.
+            &lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/p&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre>
+    
+                <p style="text-align: center;"><strong>El código en el archivo application.py:</strong> </p>
+                    
+    <pre><code class="python">
+    from flask import Flask, render_template
+    application = Flask(__name__)
+    
+    @application.route('/')
+    @application.route('/home')
+    def home():
+        return render_template('home.html', title='home')
+    
+    if __name__ == '__main__':
+        application.run(debug=True)
+    </code></pre>
+            </div>
+        </div>
+    
+        <div class="container" style="display:block;">
+            <h3>Agregar enlaces a páginas dentro de nuestra aplicación (url_for):</h3>
+            <p>
+                Hasta ahora, para acceder a nuestras páginas web, necesitamos introducir manualmente las rutas en el navegador. 
+                Eso no es muy práctico. En el desafío semanal, introduciremos un menú de navegación para acceder a las páginas de inicio, metodología y light-talk app. 
+                En esta sección, vamos a explicar cómo introducir un enlace a una ruta dentro de nuestra aplicación Flask.
+            </p>
+        </div> 
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p style="text-align: left;">
+                    Para acceder a rutas en nuestra aplicación Flask, utilizaremos la función url_for de Flask. La función url_for se define como una función que permite a los desarrolladores construir y generar URLs en una aplicación Flask. La forma de usar url_for en nuestra aplicación Flask es muy simple. En esta sección, utilizaremos url_for en un enlace. Más adelante en el curso, la usaremos en otras situaciones.
+                    <br>
+                    <br>
+                    En el archivo home.html, vamos a crear un enlace a las páginas de metodología y calculadora de carbono. Para hacerlo, escribimos (ver código en el cuadro de la derecha): 
+                    <pre>
+    (&lt;a href=&#34;&#123;&#123; url_for('business') &#125;&#125;&#34;&gt;enlace&lt;/a&gt;)
+                    </pre>                    
+                </p>
+            
+            </div>
+            <div class="boxa" style="height:250px; align-self:center;">
+                <p style="text-align: center;"><strong>El código en el archivo home.html:</strong> </p>
+                    
+    <pre><code class="python">
+        &lt;p&gt;
+            El objetivo de nuestra app es enseñar español. 
+            Para ello desarrollamos un modelo de negocio
+            (&lt;a href=&#34;&#123;&#123; url_for('business') &#125;&#125;&#34;&gt;enlace&lt;/a&gt;) para 
+            enseñar a nuestras estudiantes español.
+        &lt;/p&gt;
+    
+    </code></pre>
+            </div>
+        </div>
+    
+    </section>
+            
+
+
+
+    <!-- Section 4 -->
+    <section class="section_4" id="section4">
+        <div class="container" style="display:block;">
+            <h1>Plantillas</h1>
+            <h3>Plantillas de Flask y Jinja2</h3>
+                <p>
+                    Como se puede observar en la carpeta de plantillas en la sección anterior, todos los archivos html tienen la misma estructura. Cada archivo comienza con html, luego el head y luego el body. Esa no es una forma eficiente de escribir código porque hay partes del código que se repiten en cada archivo. Podemos evitar esa repetición utilizando <strong>plantillas</strong>.
+                    <br>
+                    <br>
+                    Flask aprovecha Jinja2 como su <strong>motor de plantillas</strong>. Obviamente, eres libre de usar un motor de plantillas diferente, pero aún así debes instalar Jinja2 para ejecutar Flask. 
+                    Para verificar que ya tienes instalado Jinja2, puedes abrir tu archivo requirements.txt, y allí podrás ver que cuando instalas Flask, también se instala Jinja2 por defecto.
+                    <br>
+                    <br>
+                    Una plantilla Jinja es simplemente un <strong>archivo de texto</strong>. Jinja puede generar cualquier formato basado en texto (HTML, XML, CSV, LaTeX, etc.). Una plantilla Jinja no necesita tener una extensión específica: .html, .xml o cualquier otra extensión está bien.
+                    <br>
+                    <br>
+                    Una plantilla contiene <strong>variables</strong> y/o <strong>expresiones</strong>, que se reemplazan con valores cuando se renderiza una plantilla; y etiquetas, que controlan la <strong>lógica de la plantilla</strong>. La sintaxis de la plantilla está muy inspirada en Django y Python.
+                    <br>
+                    <br>
+                    Ya hemos utilizado Jinja2 en la sección anterior cuando pasamos el título de nuestra página web desde el archivo application.py al archivo home.html utilizando <strong>{{tittle}}</strong>.
+                    <br>
+                    <br>
+                    Más información sobre Plantillas Flask y Jinja2:
+                </p>
+            
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section4" href="https://jinja.palletsprojects.com/en/3.1.x/templates/" target="_blank">Jinja2 (enlace 1)</a> <a class="btn-section4" href="https://flask.palletsprojects.com/en/2.2.x/templating/" target="_blank">Jinja2 (enlace 2)</a>
+                </div> 
+                
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h3>Plantillas de Flask y Jinja2 en acción:</h3>
+                <p style="text-align: left;">El video con todos los pasos en esta sección, y el código, se pueden encontrar en los enlaces de YouTube y GitHub a continuación:
+                    <div class="section_container_buttons_chapters">
+                        <a class="btn-section4" href="https://youtu.be/g4e1Ra6Snkk" target="_blank">YouTube (sección 4)</a> <a class="btn-section4" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%201.%20Instalacion%20-%20Primera%20App%20-%20Plantillas" target="_blank">GitHub (sección 4)</a>
+                    </div> 
+                </p>
+                <p>
+                    Usaremos Jinja2 dentro de nuestro proyecto varias veces. En esta sección, lo usaremos para hacer nuestro código más eficiente e introducir algunas declaraciones lógicas en nuestro código.
+                    <ol>
+                        <li>
+                            Creamos un <strong>archivo layout.html</strong> donde presentamos la estructura html básica de nuestro archivo. En ese archivo, introducimos dos elementos de Jinja2.
+                        </br>
+                        </br>
+                        <ol type="a">
+                            <li>
+                                En el <strong>head</strong> del archivo layout.html, introducimos una declaración lógica para revelar el título de cada una de las páginas web en nuestra aplicación (ver código en el recuadro derecho).
+                            </li>
+                            <li>
+                                En el <strong>body</strong> del archivo layout.html, introducimos una declaración para introducir bloques de código html en nuestro archivo layout.html. Esto nos ayudará a heredar el código de layout.html evitando escribir el mismo código una y otra vez en cada archivo html (ver código en el recuadro derecho).
+                            </li>
+                        </ol>  
+                        </li>
+                        </br>
+                        <li>
+                            Para usar el archivo layout.html, necesitamos <strong>modificar el resto de los archivos html</strong>. Para hacer posible esa comunicación, en los archivos html, necesitamos introducir dos cambios.
+                        </br>
+                        </br>
+                        <ol type="a">
+                            <li>
+                                Para usar el archivo layout.html dentro de nuestros archivos html, necesitamos <strong>extenderlo</strong> (ver código en el recuadro derecho).
+                            </li>
+                            <li>
+                                Dentro de nuestros archivos html, necesitamos definir los <strong>bloques html</strong> que se insertarán en el archivo layout.html (ver código en el recuadro derecho).
+                            </li>
+                        </ol> 
+                        </li>
+                    </ol>               
+                </p>       
+            </div>
+            <div class="boxa" style="height:765px; align-self:center;">
+                <p style="text-align: center;"><strong>El código del archivo layout.html:</strong> </p>
+                    
+    <pre><code class="python">
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &#123;&#37; if title &#37;&#125;
+                &lt;title&gt;&#123;&#123; title &#125;&#125;&lt;/title&gt;
+            &#123;&#37; else &#37;&#125;
+                &lt;title&gt;home&lt;/title&gt;
+            &#123;&#37; endif &#37;&#125;
+        &lt;/head&gt;
+        &lt;body&gt;
+            &#123;&#37; block content &#37;&#125; &#123;&#37; endblock &#37;&#125;
+        &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre>
+                <p style="text-align: center;"><strong>El código del archivo home.html:</strong> </p>
+                    
+    <pre><code class="python">
+    &#123;&#37; extends "layout.html" &#37;&#125;
+    &#123;&#37; block content &#37;&#125;
+            &lt;h1&gt;Inicio&lt;/hses1&gt;
+            &lt;p&gt;
+                El estudio del español ...
+            &lt;/p&gt;           
+            &lt;p&gt;
+                Desarrolladores:
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        &lt;strong&gt;Desarrollador 1&lt;/strong&gt;: Breve biografía. Enlace al CV.
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/p&gt;
+    &#123;&#37; endblock content &#37;&#125;
+    </code></pre>
+    
+            </div>
+        </div>
+    
+    </section>
+    
+
+    <!-- Section 5 -->
+
+    <section class="section_1" id="section5">
+
+        <div class="container">            
+    
+            <div class="box_three">                    
+            </div>
+            <div class="box_three">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Reto Semanal</h1>
+                <p style="text-align: left;">
+                    Hasta ahora, para navegar hacia la página de inicio, la del modelo de negocio y la aplicación light-talk, necesitamos <strong>cambiar las rutas manualmente en el navegador</strong>. 
+                    Esto hace que la navegación sea muy difícil.
+                    <br>
+                    <br>  
+                    En este desafío semanal, introduciremos un <strong>menú de navegación</strong> para acceder a todas las páginas web. Queremos que el menú de navegación aparezca en todas las páginas web. Además, si queremos introducir una nueva pestaña en nuestro menú de navegación, queremos que aparezca en todas las páginas web, y no queremos hacerlo cambiando cada página individualmente. Por lo tanto, utilizaremos plantillas y, en particular, introduciremos el menú de navegación en el archivo layout.html, de modo que las demás páginas web hereden el menú de navegación.                    
+                    <br>
+                    <br>    
+                    Discutiremos el desafío semanal el <strong>viernes ....</strong>. Utilizaremos el chat principal para ayudarnos mutuamente en el desafío semanal. 
+                    Dentro de <strong>esos días</strong>, por favor comparte tu <strong>código de ruta del modelo de negocio</strong> con el resto de los grupos usando el chat principal,
+                     para que podamos aprender unos de otros.
+                    <br>
+                    <br>
+                    Compartiré mi <strong>solución personal</strong> para el desafío semanal en el enlace de GitHub a continuación después de la clase el <strong>viernes...</strong>.
+                </p>  
+                <div class="container_buttons_links_section_1a">
+                    <div class="btn">
+                        <a href="#" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Sugerencias</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%201.%20Instalacion%20-%20Primera%20App%20-%20Plantillas" target="_blank" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">GitHub</a>
+                    </div>                    
+                    <!-- Modal Instructions1 -->
+                    <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+    
+                            <div class="modal-header">
+                            <h5 class="modal-title" style="color:black">Reto Semanal, capítulo 1</h5>
+                            </div>
+    
+                            <div class="modal-body" style="color:black">
+                            <p>
+                                <ol style="text-align: left;">
+                                    <li>
+                                        En la sección uno, archivo home.html, introducimos un código para incluir una <strong>lista de estudiantes</strong>. Esa podría ser una buena idea para organizar el menú.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        En la sección uno, archivo home.html, introducimos un <strong>enlace al archivo business.html</strong>. 
+                                        Esa podría ser una buena idea para conectar nuestro menú con las páginas de inicio, businees y la aplicación light-talk.
+                                    </li>
+                                    </br>
+                                    <li>
+                                        En la sección dos, introducimos un <strong>archivo layout.html</strong> que será heredado por el resto de los archivos HTML. 
+                                        Ese podría ser un buen lugar para introducir nuestro menú de navegación, ya que será heredado por las demás páginas web. 
+                                        En el archivo layout.html, ¿dónde deberíamos colocar el menú de navegación, en el encabezado o en el cuerpo?
+                                    </li>
+                                </ol>
+                            </p>
+                            </div>
+    
+                            <div class="modal-footer">
+                            <a href="{{ url_for('es_course_chats.es_course_chats_create_chat') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Chat Principal</a>
+                            <button class="btn btn-secondary btn-lg mr-2" style="background-color:#6c757d;" data-dismiss="modal">Cerrar</button>
+                            </div>
+    
+                        </div>
+                        </div>
+                    </div>
+                </div>                    
+    
+            </div>   
+            <div class="box_three">                  
+            </div> 
+            
+        </div>
+    </section>
+    
+
+
+{% endblock content %}

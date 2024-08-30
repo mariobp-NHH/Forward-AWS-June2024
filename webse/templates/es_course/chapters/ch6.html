@@ -1,0 +1,357 @@
+{% extends "es_course/es_course_layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section xmlns="http://www.w3.org/1999/html">
+        <header class="header_css">
+            <div class="container">
+                <div>
+                    <h1>Cápitulo 6. Tablas y Gráficos</h1>
+                    <p class="mb-1">
+                        En este capítulo aprendemos a realizar <strong>consultas</strong> para extraer información relevante de nuestras bases de datos, y
+                         aprendemos cómo pasar esa información del servidor al navegador. Primero, usamos tablas para mostrar esa información en el navegador.
+                         Segundo, usando Chart.js, mostramos la información de nuestras bases de datos en una <strong>gráfica</strong>.
+                    </p>
+                    </br>
+
+                    <div class="container_buttons_links_header">
+                    <div class="btn">
+                        <a href="https://youtu.be/qLNJr1ZKicc" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (secciones 1 y 2, parte I)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://youtu.be/TbstWP5YQ5E" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (secciones 1 y 2, parte II)</a>
+                    </div>
+                    <div class="btn">
+                        <a href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%206.%20Tablas%20y%20Graficos" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
+                    </div>
+                    </div>  
+
+                    <div class="list-group", style="padding: 15px 0px;">
+                        <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Consultas y tablas</h5>
+                            </div>
+                            <p class="mb-1">
+                                Utilizamos las <strong>consultas</strong> que aprendimos cuando estudiamos bases de datos para acceder a las 
+                                frases de los usuarios. Mostramos esa información en el navegador utilizando <strong>tablas de Bootstrap</strong>.
+                            </p>                            
+                        </a>
+                        <a href="#section2" class="list-group-item list-group-item-action flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Chart.js</h5>
+                            </div>
+                            <p class="mb-1">
+                                En esta sección, realizamos <strong>consultas</strong> para acceder a las bases de datos en nuestra aplicación, y 
+                                aprendemos cómo mostrar esa información utilizando diferentes <strong>gráficas</strong>.
+                            </p>
+                        </a>
+                        <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Reto semanal</h5>
+                        </div>
+                        <p class="mb-1">
+                            En este reto semanal, hacemos consultas en nuestra base de datos, y mostramos esa información en <strong>tablas</strong> y en <strong>gráficos</strong>.
+                        </p>
+                        </a>
+                    </div>
+                </div>
+                <img
+                src="{{url_for('static', filename='figures/economies_of_spanish_course/chapters/ch6.svg')}}"
+                        alt=""/>
+            </div>
+        </header>
+    </section>
+
+    <!-- Section 1 -->
+    <section class="section_1" id="section1">
+        <div class="container" style="display:block;">
+            <h1>Consultas y tablas</h1>
+            <p>
+                En esta sección, realizamos una <strong>consulta</strong> a la base de datos para recopilar información sobre las frases del usuario. 
+                Después de realizar una consulta, mostramos la información utilizando una <strong>tabla de Bootstrap</strong>. 
+                También aprendemos a <strong>eliminar</strong> una entrada de nuestra base de datos.
+            </p>
+            <h4>Algunos enlaces útiles</h4>
+            <p>
+                A continuación, se encuentran los enlaces al video de YouTube y a la cuenta de GitHub para esta sección:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://youtu.be/qLNJr1ZKicc" target="_blank">YouTube (secciones 1 y 2, parte I)</a>
+                <a class="btn-section1" href="https://youtu.be/TbstWP5YQ5E" target="_blank">YouTube (secciones 1 y 2, parte II)</a>
+                <a class="btn-section1" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%206.%20Tablas%20y%20Graficos" target="_blank">GitHub</a>
+            </div> 
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <h4>Consulta</h4>
+                <p style="text-align: left;">                    
+                    Realizamos una <strong>consulta</strong> a la base de datos introduciendo los siguientes <strong>filtros</strong>:
+                    <ol>
+                        <li>
+                            Filtramos por autor.
+                        </li>
+                        <br>
+                        <li>
+                            Filtramos las frases según el objetivo.
+                        </li>
+                        <br>
+                        <li>
+                            iltramos las frases según la fuente.
+                        </li>
+                        <br>
+                        <li>
+                            Ordenamos los datos en orden descendente según la fecha.
+                        </li>
+                    </ol>
+                </p>      
+            </div>
+            <div class="boxa" style="height:180px;">
+                <h5>Paquete light_talk_app, archivo routes.py</h5>
+    <pre><code class="html">
+        sentences = Sentence.query.filter_by(author=current_user). \
+        filter(Sentence.objective == objective).\
+        filter(Sentence.source != source).\
+        order_by(Sentence.date.desc()).all()
+    </code></pre>    
+            </div>
+        </div>
+    
+        <div class="container" style="display:block;">
+            <h4>Tabla</h4>
+            <p>
+                Utilizando una <strong>tabla de Bootstrap</strong>, mostramos los datos que obtuvimos en nuestra consulta. El enlace a las tablas de Bootstrap se encuentra a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section1" href="https://getbootstrap.com/docs/4.1/content/tables/" target="_blank">Tablas de Bootstrap</a>
+            </div> 
+            <p>
+                Debemos introducir los siguientes cambios en el <strong>archivo your_sentences.html</strong>.
+                <pre><code class="html">
+    &#60;table class="table"&#62;
+    &#60;thead class="thead-dark"&#62;
+        &#60;tr&#62;
+            &#60;th scope="col"&#62;Usuario&#60;/th&#62;
+            &#60;th scope="col"&#62;Fecha&#60;/th&#62;
+            &#60;th scope="col"&#62;Frase Incorrecta&#60;/th&#62;
+            &#60;th scope="col"&#62;...&#60;/th&#62;
+            &#60;th scope="col"&#62;Eliminar&#60;/th&#62;
+        &#60;/tr&#62;
+    &#60;/thead&#62;
+    &#60;tbody&#62;
+        &#123;&#37; for sentence in entries &#37;&#125;
+            &#60;tr&#62;
+                &#60;th scope="row"&#62;&#123;&#123; current_user.username &#125;&#125;&#60;/th&#62;
+                &#60;td&#62;&#123;&#123; sentence.date.strftime("&#37;m-&#37;d-&#37;Y") &#125;&#125;&#60;/td&#62;
+                &#60;td&#62;&#123;&#123; sentence.kms &#125;&#125;&#60;/td&#62;
+                &#60;td&#62;&#123;&#123; ...&#125;&#125;&#60;/td&#62;
+                &#60;td&#62;&#60;a href="&#123;&#123; url_for('light_talk_app.delete_emission', 
+                sentence_id = sentence.id) &#125;&#125;" 
+                class="btn btn-outline-danger btn-sm"&#62;Eliminar&#60;/a&#62;&#60;/td&#62;
+            &#60;/tr&#62;
+        &#123;&#37; endfor &#37;&#125;
+    &#60;/tbody&#62;
+    &#60;/table&#62;                  
+                </code></pre> 
+            </p>
+        </div>
+    
+        <div class="container" style="display:block;">
+            <h4>Eliminar una frase en la base de datos</h4>
+            <p>
+                Podemos estar interesados en permitir al usuario borrar una entrada de la base de datos. 
+                Para hacerlo, necesitamos introducir un <strong>enlace en la tabla</strong> y una <strong>nueva ruta para eliminar la entrada</strong>. 
+                El enlace en la tabla está en el código anterior. También muestro ese código en las siguientes líneas:
+            </p>
+            <p>
+                Debemos introducir los siguientes cambios en el <strong>archivo your_sentences.html</strong>.
+                <pre><code class="html">
+    &#60;td&#62;&#60;a href="&#123;&#123; url_for('light_talk_app.delete_sentence', 
+    sentence_id = sentence.id) &#125;&#125;" 
+    class="btn btn-outline-danger btn-sm"&#62;Eliminar&#60;/a&#62;
+    &#60;/td&#62;           
+                </code></pre> 
+            </p>
+        </div>
+    
+        <div class="container">
+            <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
+                <p style="text-align: left;">                    
+                    En el <strong>paquete light_talk_app</strong>, en el <strong>archivo routes.py</strong>, necesitamos introducir una nueva ruta para eliminar una entrada de la base de datos. 
+                    Procedemos en cuatro pasos:
+                    <ol>
+                        <li>
+                            Realizamos una <strong>consulta</strong> en la base de datos para encontrar la entrada. Si la entrada no está en la base de datos, proporcionamos un mensaje 404.
+                        </li>
+                        <br>
+                        <li>
+                            Utilizando el <strong>método delete</strong>, eliminamos la entrada.
+                        </li>
+                        <br>
+                        <li>
+                            Utilizando el <strong>método commit</strong>, confirmamos los cambios.
+                        </li>
+                        <br>
+                        <li>
+                            Mostramos un <strong>mensaje</strong> y <strong>redirigimos</strong> al usuario al archivo your_sentences.html.
+                        </li>
+                    </ol>
+                </p>      
+            </div>
+            <div class="boxa" style="height:250px;">
+                <h5>Paquete light_talk_app, archivo routes.py</h5>
+    <pre><code class="html">
+    @light_talk_app.route('/light_talk_app/elimina_frase/&#60;int:sentence_id&#62;')
+    def delete_sentence(sentence_id):
+        sentence = Sentence.query.get_or_404(int(sentence_id))
+        db.session.delete(sentence)
+        db.session.commit()
+        flash("Frase eliminada", "success")
+        return redirect(url_for('light_talk_app.your_sentences'))
+    </code></pre>    
+            </div>
+        </div>
+    
+    </section>   
+
+    <!-- Section 2 -->
+    <section class="section_2" id="section2">
+
+        <div class="container" style="display:block;">
+            <h1>Chart.js</h1>
+            <h4>Algunos enlaces útiles</h4>
+            <p>
+                Los enlaces al video de YouTube y a la cuenta de GitHub para esta sección están a continuación:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://youtu.be/qLNJr1ZKicc" target="_blank">YouTube (secciones 1 y 2, parte I)</a>
+                <a class="btn-section2" href="https://youtu.be/TbstWP5YQ5E" target="_blank">YouTube (secciones 1 y 2, parte II)</a>
+                <a class="btn-section2" href="https://github.com/mariobp-NHH/Economias-del-Espanol-Parte-I/tree/main/Cap%206.%20Tablas%20y%20Graficos" target="_blank">GitHub</a>
+            </div>
+            <p>
+                Toda la información en esta sección ha sido tomada del siguiente enlace:
+            </p>
+            <div class="section_container_buttons_chapters">
+                <a class="btn-section2" href="https://flask.palletsprojects.com/en/2.2.x/patterns/javascript/" target="_blank">Enlace</a>
+            </div> 
+        </div>
+
+
+
+        <div class="container">
+            <div class="box_two" style="background-color: #f3ca99; padding: 0px; margin: 0px;">
+                <h4>Consulta y transferencia de información entre el servidor y el navegador</h4>
+                <p>
+                    Para pasar la información necesaria para hacer los gráficos necesitamos hacer una consulta en nuestra base de datos, y luego pasar esa información desde el servidor al navegador. 
+                    Para eso introducimos dos cambios en las rutas del paquete light_talk_app. 
+                    <br>
+                    <br>
+                    La información con los dos pasos está en el panel de la derecha.
+                </p>
+            </div>
+            <div class="box_two">
+                <h5>Paquete light_talk_app, archivo routes.py, función your_sentences:</h5>
+                <pre><code class="html">
+    incorrect = Sentence.query.filter_by(author=current_user). \
+        filter(Sentence.result_num == 0).\
+        filter(Sentence.objective != objective).\
+        filter(Sentence.source != source).\
+        order_by(Sentence.date.desc()).count()
+    correct = Sentence.query.filter_by(author=current_user). \
+            filter(Sentence.result_num == 1).\
+            filter(Sentence.objective != objective).\
+            filter(Sentence.source != source).\
+            order_by(Sentence.date.desc()).count()
+
+
+    return render_template('light_talk_app/your_sentences.html', 
+    title='select your sentences', form=form, 
+    sentences=sentences, correct=correct, incorrect=incorrect)
+            </code></pre> 
+            </div>
+            
+        </div>
+
+        <div class="container" style="display:block;">
+            <h4>Información en el navegador y Chart.js</h4>
+            <p>
+                Una vez que tenemos la información en el navegador, podemos comenzar a graficarla utilizando Chart.js:
+                <div class="section_container_buttons_chapters">
+                    <a class="btn-section2" href="https://www.chartjs.org/" target="_blank">Chart.js</a>
+                </div>
+                Para usar Chart.js, procedemos en tres pasos.
+                <br>
+                <ol>
+                    <li>
+                        En el archivo <strong>layout.html</strong>, debemos introducir: &#60;script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"&#62;&#60;/script&#62;
+                        <br>
+                        Es importante notar que introduzco la versión 2.8.0. Para los gráficos que estoy introduciendo en este capítulo, se requiere esa versión. Sin embargo, para otros gráficos, no necesitas esa versión.
+                    </li>
+                    <br>
+                    <li>
+                        En el archivo <strong>your_sentences.html</strong>, definimos el lienzo (canvas) para el gráfico:
+                        <pre><code class="html">
+&#60;section class="section_light_talk_app_new_entry_main"&#62;
+    &#60;div class="container"&#62;
+        &#60;div class="box"&#62;
+            &#60;canvas id="correct_vs_incorrect""&#62;&#60;/canvas&#62;
+        &#60;/div&#62;
+    &#60;/div&#62;
+&#60;/section&#62;                                
+                        </code></pre> 
+                    </li>
+                    <li>
+                        En el archivo <strong>your_sentences.html</strong>, definimos el script, definimos un objeto JavaScript, y creamos un gráfico.
+                        <pre><code class="html">
+&#123;% block javascript %&#125;
+    &#60;script&#62;
+    data...
+    chart...
+    &#60;/script&#62;
+&#123;% endblock %&#125;                               
+                        </code></pre> 
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+        <div class="container" style="display:block;">
+            <h4>Acceso a la información pasada desde el servidor usando la consola del navegador</h4>
+            <p>
+                Una vez que creamos un objeto JavaScript, podemos acceder a él desde la consola en el terminal del navegador. Podemos escribir el siguiente código (<strong>console.log(emission_transport_data)</strong>) y acceder a información muy útil.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Section 3 -->
+    <section class="section_3" id="section5">
+        
+        <div class="container">
+
+            <div class="box_three">
+                      
+            </div>
+            <div class="box_three">
+                <div class="h1 mb-3" style="text-align: center;">
+                    <i class="bi bi-calendar"></i>
+                </div>
+                <h1>Reto Semanal</h1>
+                <p style="text-align: left;"> 
+                    En este reto semanal, hacemos consultas en nuestra base de datos, y mostramos esa información en <strong>tablas</strong> y en <strong>gráficos</strong>.
+                </p>  
+                <div class="container_buttons_links_section_3a">
+                    <div class="btn">
+                        <a href="{{ url_for('es_course_chats.es_course_chats_create_chat') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#007bff;">Chat Principal</a>
+                    </div>  
+                </div>
+            </div> 
+            <div class="box_three">
+                      
+            </div>
+
+        </div>  
+    </section> 
+
+
+{% endblock content %}
