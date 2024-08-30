@@ -45,7 +45,6 @@
                   </h3>
                   {% for announcement in announcements.items %}
                       <article class="media content-section">
-                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
                         <div class="media-body">
                           <div class="article-metadata">
                             <a class="mr-2" href="{{ url_for('es_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
@@ -103,7 +102,7 @@
 
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch2') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 5</a>
+                  <a href="{{ url_for('es_course_chapters.es_course_chapters_ch5') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 5</a>
               </div>
             </div> 
           </div>           
@@ -138,7 +137,7 @@
 
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_ch6') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 6</a>
+                  <a href="{{ url_for('es_course_chapters.es_course_chapters_ch6') }}" class="btn btn-primary btn-sm mr-2", style="background-color:#007bff;">Capítulo 6</a>
               </div>
             </div>  
           </div>
@@ -169,7 +168,7 @@
 
             <div class="container_buttons_links_chapters">
               <div class="btn">
-                  <a href="{{ url_for('gd_course_chapters.gd_course_chapters_conference') }}" class="btn btn-warning btn-sm mr-2" style="background-color: #f2b84b;">Conferencia Light-Day</a>
+                  <a href="{{ url_for('es_course_chapters.es_course_chapters_light_day_conference') }}" class="btn btn-warning btn-sm mr-2" style="background-color: #f2b84b;">Conferencia Light-Day</a>
               </div>
             </div>  
           </div>
