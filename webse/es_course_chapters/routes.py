@@ -44,3 +44,9 @@ def es_course_chapters_ch5():
 def es_course_chapters_ch6(): 
     return render_template('es_course/chapters/ch6.html', title='Economías del Español Curso, ch6') 
 
+#Light Day Conference
+@es_course_chapters.route('/economías_del_español_curso/light_day_conference', methods=['GET', 'POST'])
+@login_required
+def es_course_chapters_light_day_conference(): 
+    return render_template('es_course/chapters/light_day.html', title='Economías del Español Curso, conference') 
+
