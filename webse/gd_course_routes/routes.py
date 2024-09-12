@@ -8,7 +8,7 @@ gd_course= Blueprint('gd_course', __name__)
 @gd_course.route('/green_digitalization_course')
 def gd_course_home():
     page = request.args.get('page', 1, type=int)
-    announcements = AnnouncementGD.query.order_by(AnnouncementGD.date_posted.desc()).filter(AnnouncementGD.user_id==3).paginate(page=page, per_page=1)
+    announcements = AnnouncementGD.query.order_by(AnnouncementGD.date_posted.desc()).paginate(page=page, per_page=1)
     return render_template('gd_course/gd_course_home.html', announcements=announcements, title='Green Digitalization Course', func=read_image)
   
 
