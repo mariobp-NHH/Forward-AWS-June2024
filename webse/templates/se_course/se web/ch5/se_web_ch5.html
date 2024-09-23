@@ -15,12 +15,54 @@
                     </br>
                     <div class="container_buttons_links_header">
                        <div class="btn">
-                           <a href="{{url_for('static', filename='material/se/ch5/materialch5.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
+                           <a href="#"  data-toggle="modal" data-target="#material_Modal" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Material</a>
                        </div>
                        <div class="btn">
-                            <a href="{{url_for('static', filename='material/se/ch5/presentationch5.pdf')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                            <a href="#"  data-toggle="modal" data-target="#presentation_Modal" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
                        </div>
                     </div>
+
+                    <!-- Modal Material-->
+                    <div class="modal fade" id="material_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg " style="height: 80%;" >
+                        <div class="modal-content" style="height:100%">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe id="paper_frame" src="/static/material/se/ch5/materialch5.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div> 
+
+                    <!-- Modal Presentation-->
+                    <div class="modal fade" id="presentation_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg " style="height: 80%;" >
+                        <div class="modal-content" style="height:100%">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                            <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe id="paper_frame" src="/static/material/se/ch5/presentationch5.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                            </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div> 
+
+
+
+
+
+
                     </br>
 
                    <div class="list-group", style="padding: 15px 0px;">
@@ -1734,18 +1776,90 @@
                 </p>
                 <div class="container_buttons_links_section_intro">
                    <div class="btn">
-                       <a href="https://energyio.org/wind1.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Havvind 2010</a>
+                       <a href="#"  data-toggle="modal" data-target="#wind1_Modal" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Havvind 2010</a>
                    </div>
                    <div class="btn">
-                       <a href="https://energyio.org/wind2.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Havvind 2013</a>
+                       <a href="#"  data-toggle="modal" data-target="#wind2_Modal" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Havvind 2013</a>
                    </div>
                    <div class="btn">
-                       <a href="https://energyio.org/wind3.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Royal Decree 2020</a>
+                       <a href="#"  data-toggle="modal" data-target="#wind3_Modal" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Royal Decree 2020</a>
                    </div>
                    <div class="btn">
-                       <a href="https://energyio.org/wind4.pdf" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Regulation Offshore Wind</a>
+                       <a href="#"  data-toggle="modal" data-target="#wind4_Modal" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Regulation Offshore Wind</a>
                    </div>
                 </div>
+
+                <!-- Modal wind1-->
+                <div class="modal fade" id="wind1_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg " style="height: 80%;" >
+                    <div class="modal-content" style="height:100%">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="paper_frame" src="/static/material/se/ch5/wind1.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div> 
+
+                <!-- Modal wind2-->
+                <div class="modal fade" id="wind2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg " style="height: 80%;" >
+                    <div class="modal-content" style="height:100%">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="paper_frame" src="/static/material/se/ch5/wind2.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div> 
+
+                <!-- Modal wind3-->
+                <div class="modal fade" id="wind3_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg " style="height: 80%;" >
+                    <div class="modal-content" style="height:100%">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="paper_frame" src="/static/material/se/ch5/wind3.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div> 
+
+                <!-- Modal wind4-->
+                <div class="modal fade" id="wind4_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg " style="height: 80%;" >
+                    <div class="modal-content" style="height:100%">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe id="paper_frame" src="/static/material/se/ch5/wind4.pdf" width="100%" height="100%"></iframe>  <!-- Using iframe to view the pdf file.-->
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    </div>
+                </div> 
                 </div>
                 <div class="box">
 
