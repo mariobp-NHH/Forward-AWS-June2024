@@ -14,7 +14,13 @@
                                   </div> 
                               {% endfor %}
                           {% endif %}
-                      {% endwith %}               
+                      {% endwith %} 
+                      <script>
+                        setTimeout(function () {
+                          var flashes = document.querySelectorAll(".alert");
+                          flashes.forEach((flash) => flash.remove());
+                        }, 5000);
+                      </script>
                       <h1 class="text-center"><span class="text-warning"> Green Digitalization </span> Course</h1>
                       <p class="mb-1">
                           The Green Digitalization course aims to connect the most salient topics in <strong>green economy</strong> with <strong>digitalization</strong>.
