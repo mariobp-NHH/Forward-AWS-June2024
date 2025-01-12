@@ -169,6 +169,17 @@
   color: #f29545;
 }
 
+.container_buttons_links_boa205 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container_buttons_links_boa205 a:hover {
+  color: #578c64;
+}
+
 .container_buttons_links_auditing_accounting_business {
   display: flex;
   justify-content: center;
