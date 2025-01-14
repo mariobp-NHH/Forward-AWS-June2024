@@ -98,11 +98,11 @@
 /*Container main chat */
 .main_chat {
   display: flex;
-  background: #f2a534;
+  background: #4a736f;
 }
 .main_chat .container {
   display: flex;
-  background: #f2a534;
+  background: #4a736f;
 }
 .main_chat .container {
   display: flex;
@@ -111,7 +111,7 @@
 }
 .main_chat .container .box {
   flex: 1;
-  background: #f2a534;
+  background: #4a736f;
   border-radius: 2px;
   margin: 20px 10px;
   padding: 15px 20px;
@@ -127,7 +127,7 @@
 }
 .main_chat .container .box:nth-of-type(2) {
   flex-grow: 6;
-  background: #f3ca99;
+  background: #17a2b8;
   border-radius: 10px;
   margin: 20px 10px;
   padding: 15px 20px;
@@ -150,7 +150,7 @@
   flex-wrap: wrap;
 }
 .container_buttons_links_chats a:hover {
-  color: #f3ca99;
+  color: #17a2b8;
 }
 /*End container buttons section main chat*/
 
@@ -205,14 +205,14 @@
 
 /* chats NHH */
 .section_chatsNHH .container {
-  background-color: #f3ca99;
+  background-color: #17a2b8;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-around;
 }
 .section_chatsNHH .container .column {
-  background: #f3ca99;
+  background: #17a2b8;
   display: flex;
   flex-direction: column;
   border: #ccc solid 0px;
@@ -266,11 +266,11 @@
 /*Container es_course_chat */
 .es_course_chat {
   display: flex;
-  background: #f2a534;
+  background: #4a736f;
 }
 .es_course_chat .container {
   display: flex;
-  background: #f2a534;
+  background: #4a736f;
 }
 .es_course_chat .container {
   display: flex;
@@ -279,7 +279,7 @@
 }
 .es_course_chat .container .box {
   flex: 1;
-  background: #f2a534;
+  background: #4a736f;
   border-radius: 2px;
   margin: 20px 10px;
   padding: 15px 20px;
@@ -296,7 +296,7 @@
 .es_course_chat .container .box:nth-of-type(2) {
   flex-grow: 6;
   max-width: 450px;
-  background: #f3ca99;
+  background: #17a2b8;
   border-radius: 10px;
   margin: 20px 10px;
   padding: 15px 20px;
