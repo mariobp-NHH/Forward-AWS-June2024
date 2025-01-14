@@ -5,6 +5,6 @@ from wtforms import StringField, SubmitField, TextAreaField
 from wtforms.validators import DataRequired
 
 class AnnouncementForm(FlaskForm):
-    title = StringField('Title', validators=[DataRequired()])
-    content = TextAreaField('Content', validators=[DataRequired()])
-    submit = SubmitField('Announcement')
+    title = StringField('Tittel', validators=[DataRequired()])
+    content = TextAreaField('Innhold', validators=[DataRequired()])
+    submit = SubmitField('Kunngjøring')
