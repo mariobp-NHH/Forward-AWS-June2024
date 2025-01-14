@@ -7,6 +7,10 @@
       <h1 class="mb-3">Chatter av {{ user.username }} ({{ chats.total }})</h1>
       {% for chat in chats.items %}
       <article class="media content-section">
+        <img
+          class="rounded-circle account-img"
+          src="data:image/jpeg;base64,{{ func(chat.author.image_file) }}"
+        />
         <div class="media-body">
           <div class="article-metadata">
             <a
