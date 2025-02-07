@@ -1,0 +1,78 @@
+{% extends "gender_platform/gender_platform_layout.html" %}
+{% block content %}
+
+        <!-- IWD_questionnaire Section -->
+        <section class="IWD_questionnaire">
+            <div class="container">
+                <div class="box">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-question-circle"></i>
+                    </div>
+                    <h3>
+                        Questionnaire 1
+                    </h3>
+                    <p class="card-text">
+                        This questionnaire study the main challenges of the female professors, researchers and PhD. students at the university.
+                    </p>
+                    <div class="container_buttons_links_IWD_questionnaire">
+                        <div class="btn">
+                            <a href="{{url_for('gender_platform_questionnaires.gender_platform_questionnaire1_q1')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Questionnaire 1</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-question-circle"></i>
+                    </div>
+                    <h3>
+                        Questionnaire 2
+                    </h3>
+                    <p class="card-text">
+                        This questionnaire study the main challenges of the female bachelor and master students at the university.
+                    </p>
+                    <div class="container_buttons_links_IWD_questionnaire">
+                        <div class="btn">
+                            <a href="{{url_for('gender_platform_questionnaires.gender_platform_questionnaire2_q1')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Questionnaire 2</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-question-circle"></i>
+                    </div>
+                    <h3>
+                        Questionnaire 3
+                    </h3>
+                    <p class="card-text">
+                        This questionnaire study the main challenges of the female administrative staff at the university.
+                        <br> 
+                        <br>
+                    </p>
+                    <div class="container_buttons_links_IWD_questionnaire">
+                        <div class="btn">
+                            <a href="{{url_for('gender_platform_questionnaires.gender_platform_questionnaire3_q1')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Questionnaire 3</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="h1 mb-3">
+                        <i class="bi bi-question-circle"></i>
+                    </div>
+                    <h3>
+                        Questionnaire 4
+                    </h3>
+                    <p class="card-text">
+                        This questionnaire study the main challenges of the female maintenance staff at the university.
+                        <br> 
+                        <br>
+                    </p>
+                    <div class="container_buttons_links_IWD_questionnaire">
+                        <div class="btn">
+                            <a href="{{url_for('gender_platform_questionnaires.gender_platform_questionnaire4_q1')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Questionnaire 4</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+
+{% endblock content %}

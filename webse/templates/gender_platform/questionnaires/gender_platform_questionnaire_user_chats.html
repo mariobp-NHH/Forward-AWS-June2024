@@ -1,0 +1,45 @@
+{% extends "gender_platform/gender_platform_layout.html" %}
+{% block content %}
+
+<section class="main_menu">
+  <div class="container">
+      <div class="box">
+
+      </div>
+      <div class="box" style="background-color: #568c63;"> 
+        <h1 class="mb-3">Chats by {{ user.username }} ({{ chats.total }})</h1>
+        {% for chat in chats.items %}
+            <article class="media content-section">
+              <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(chat.author.image_file) }}">
+              <div class="media-body">
+                <div class="article-metadata">
+                  <a class="mr-2" href="{{ url_for('gender_platform_questionnaires.user_chats', username=chat.author.username) }}">{{ chat.author.username }}</a>
+                  <small class="text-muted">{{ chat.date_chat.strftime('%Y-%m-%d') }}</small>
+                </div>
+                <h2><a class="article-title" href="{{ url_for('gender_platform_questionnaires.chat', chat_id=chat.id) }}">{{ chat.title_chat }}</a></h2>
+                <p class="text-muted">{{ chat.content }}</p>
+              </div>
+            </article>
+        {% endfor %}
+        {% for page_num in chats.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+          {% if page_num %}
+            {% if chats.page == page_num %}
+              <a class="btn btn-info mb-4" href="{{ url_for('gender_platform_questionnaires.user_chats', username=user.username, page=page_num) }}">{{ page_num }}</a>
+            {% else %}
+              <a class="btn btn-outline-info mb-4" href="{{ url_for('gender_platform_questionnaires.user_chats', username=user.username, page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+          {% else %}
+            ...
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="box">
+
+      </div>
+  </div>
+</section> 
+
+
+
+
+{% endblock content %}
