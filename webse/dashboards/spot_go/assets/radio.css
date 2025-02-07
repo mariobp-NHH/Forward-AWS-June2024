@@ -1,0 +1,41 @@
+.char-btn1 input[type="radio"] {
+    background-color: rgb(42, 157, 143);
+    opacity: 0.7;
+    z-index: 100;
+}
+
+/* And the label bounding boxes are mutable this way */
+.char-btn1 label {
+    padding: 3px;
+    padding-right: 20px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    z-index: 90;
+    color: black;
+}
+
+/* And hovering works this way*/
+.char-btn1 label:hover {
+     background: rgb(42, 157, 143);
+}
+
+.char-btn2 input[type="radio"] {
+    background-color: rgb(244, 162, 97);
+    opacity: 0.7;
+    z-index: 100;
+}
+
+/* And the label bounding boxes are mutable this way */
+.char-btn2 label {
+    padding: 3px;
+    padding-right: 20px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+    z-index: 90;
+    color: black;
+}
+
+/* And hovering works this way*/
+    .char-btn2 label:hover {
+        background: rgb(244, 162, 97);
+    }
