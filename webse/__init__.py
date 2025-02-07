@@ -62,6 +62,9 @@ login_manager.blueprint_login_views = {
     'es_course_students_apps': 'forward_users.forward_users_login',
     'boa205_course_announcements': 'forward_users.forward_users_login',
     'boa205_course_chats': 'forward_users.forward_users_login',
+    'boa205_course_chapters': 'forward_users.forward_users_login',
+    'papers_spot_go': 'forward_users.forward_users_login',
+    'se_platform_announcements': 'forward_users.forward_users_login',
 }
 login_manager.login_message_category = 'info'
 
@@ -128,6 +131,19 @@ from webse.es_course_students_apps.routes import es_course_students_apps
 from webse.boa205_course_home.routes import boa205_course
 from webse.boa205_course_announcements.routes import boa205_course_announcements
 from webse.boa205_course_chats.routes import boa205_course_chats
+from webse.boa205_course_chapters.routes import boa205_course_chapters
+from webse.gender_platform_routes.routes import gender_platform
+from webse.gender_platform_chats.routes import gender_platform_chats
+from webse.gender_platform_questionnaires.routes import gender_platform_questionnaires
+from webse.se_platform_home.routes import se_platform_home
+from webse.se_platform_announcements.routes import se_platform_announcements
+from webse.dashboards.routes import dashboards
+from webse.papers.spot_go.routes import papers_spot_go
+from webse.dashboards.spot_go import create_dash_spot_go
+from webse.dashboards.dash_application2 import create_dash_application2
+from webse.dashboards.redispatch import create_dash_redispatch
+
+
 
 application.register_blueprint(forward_home)
 application.register_blueprint(forward_users)
@@ -191,3 +207,16 @@ application.register_blueprint(es_course_students_apps)
 application.register_blueprint(boa205_course)
 application.register_blueprint(boa205_course_announcements)
 application.register_blueprint(boa205_course_chats)
+application.register_blueprint(boa205_course_chapters)
+application.register_blueprint(gender_platform)
+application.register_blueprint(gender_platform_chats)
+application.register_blueprint(gender_platform_questionnaires)
+application.register_blueprint(dashboards)
+application.register_blueprint(papers_spot_go)
+application.register_blueprint(se_platform_home)
+application.register_blueprint(se_platform_announcements)
+
+
+create_dash_application2(application)
+create_dash_redispatch(application)
+create_dash_spot_go(application)
