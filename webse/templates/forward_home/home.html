@@ -346,6 +346,77 @@ current_user.is_authenticated %}
   </div>
 </section>
 
+<!-- Platforms -->
+<section class="p-5" , style="background-color: #6c757d">
+  <div class="container">
+    <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #9ac2be">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/forward/se_platform_icon.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">Sustainable Energy Platform</h3>
+            <p class="card-text">
+              This <b>platform</b> provides dashboards with useful data about
+              <b>energy markets</b>. It also host the most advanced research on
+              energy markets.
+            </p>
+            <div class="container_buttons_links_platform_se">
+              <div class="btn">
+                <a
+                  href="{{url_for('se_platform_home.se_platform_home_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Sustainable Energy Platform</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md">
+        <div class="card text-light" , style="background-color: #977abf">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <img
+                src="{{url_for('static', filename='figures/forward/gender_platform_icon.svg')}}"
+                width="50"
+                height="50"
+                alt=""
+              />
+            </div>
+            <h3 class="card-title mb-3">Gender Studies Platform</h3>
+            <p class="card-text">
+              This <b>platform</b> provides dashboards with useful data about
+              <b>gender studies</b>. It also host the most advanced research on
+              gender studies.
+            </p>
+            <div class="container_buttons_links_platform_gender">
+              <div class="btn">
+                <a
+                  href="{{url_for('gender_platform.gender_platform_home')}}"
+                  class="btn btn-primary btn-lg mr-2"
+                  ,
+                  style="background-color: #007bff"
+                  >Gender Studies Platform</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Question Accordion -->
 <section id="questions" class="p-5">
