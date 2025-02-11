@@ -28,7 +28,10 @@
                     <div class="btn">
                         <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch4%20Home" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
                     </div>
-                    </div>  
+                    <div class="btn">
+                        <a href="https://xd.adobe.com/view/b612ce2c-304e-4e20-95fa-eb27a9bf856d-e341/" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Exercise</a>
+                    </div>
+                    </div>
 
                     <div class="list-group", style="padding: 15px 0px;">
                         <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
@@ -45,7 +48,7 @@
                             <h5 class="mb-1">Header and Developers</h5>
                         </div>
                         <p class="mb-1">
-                            We follow the same approach that with the navigation bar and footer, but to design the header and developers’ sections in the home page of our app. 
+                            We follow the same approach that with the navigation bar and footer, but to design the header and developers’ sections in the home page of our app.
                         </p>
                         </a>
                         <a href="#section3" class="list-group-item list-group-item-action flex-column align-items-start">
@@ -53,7 +56,7 @@
                             <h5 class="mb-1">Weekly challenge</h5>
                         </div>
                         <p class="mb-1">
-                            We start to work on the students' apps. You must introduce <strong>small changes</strong> in the layout.html, the home.html, the layout.css and the home.css files to <strong>customize your app</strong> and to make it as functional and finalized as possible. 
+                            We start to work on the students' apps. You must introduce <strong>small changes</strong> in the layout.html, the home.html, the layout.css and the home.css files to <strong>customize your app</strong> and to make it as functional and finalized as possible.
                         </p>
                         </a>
                     </div>
@@ -78,12 +81,12 @@
                 <a class="btn-section1" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch4%20Home/Navbar%20%2B%20Footer" target="_blank">GitHub</a>
                 <a class="btn-section1" href="{{url_for('gd_course_chapters.gd_course_chapters_ch4_home1')}}" target="_blank">Use it Yourself</a>
             </div>
-        </div>  
+        </div>
 
         <div class="container">
-            
+
             <div class="box_one">
-                      
+
             </div>
             <div class="box_one">
                 <h4>Before to start</h4>
@@ -91,24 +94,24 @@
                     To have a quick access to icons, fonts, and other elements in our project, we are going to use <strong>CDN connections</strong>. Therefore, it is important to have some notions of what a CDN connection is. A content delivery network (CDN) is a group of geographically distributed servers that speed up the delivery of web content by bringing it closer to where users are. Data centers across the globe use caching, a process that temporarily stores copies of files, so that you can access internet content from a web-enabled device or browser more quickly through a server near you. CDNs cache content like web pages, images, and video in proxy servers near to your physical location. This allows you to do things like watch a movie, download software, check your bank balance, post on social media, or make purchases, without having to wait for content to load.
                     <br>
                     <br>
-                    More information about CDN connections: 
-                </p>  
+                    More information about CDN connections:
+                </p>
                 <div class="section_container_buttons_chapters">
                     <a class="btn-section1_box" href="https://www.akamai.com/our-thinking/cdn/what-is-a-cdn  " target="_blank">CDN connections</a>
-                </div>       
+                </div>
             </div>
             <div class="box_one">
-                      
+
             </div>
-        </div>  
-        
+        </div>
+
         <div class="container" style="display:block;">
             <h4>Navigation bar</h4>
             <p>
-                The html code of the navigation bar is in the <strong>layout.html</strong> file, and it is located above the <code style="color:black;">&#123;% block content %&#125; &#123;% endblock %&#125;</code>. 
+                The html code of the navigation bar is in the <strong>layout.html</strong> file, and it is located above the <code style="color:black;">&#123;% block content %&#125; &#123;% endblock %&#125;</code>.
                 <br>
                 <br>
-                The html code of the navigation bar consists of:    
+                The html code of the navigation bar consists of:
                 <ol>
                     <li>
                         A section that covers the entire width of the scream.
@@ -120,13 +123,13 @@
                         A navigation bar that contains the logo of our app and a list with links to the routes home, methodology and carbon app.
                     </li>
                 </ol>
-                In the navigation bar, we are going to introduce an icon imported from Font Awesome (or Bootstrap). By using that icon, we are going to create the logo for our app. To use the icons, we need to import some CSS classes from Font Awesome. We are going to import those classes in the <strong>head</strong> of our document.  More information about <strong>Font Awesome</strong>:                
+                In the navigation bar, we are going to introduce an icon imported from Font Awesome (or Bootstrap). By using that icon, we are going to create the logo for our app. To use the icons, we need to import some CSS classes from Font Awesome. We are going to import those classes in the <strong>head</strong> of our document.  More information about <strong>Font Awesome</strong>:
             </p>
             <div class="section_container_buttons_chapters">
                 <a class="btn-section1" href="https://fontawesome.com/" target="_blank">Font Awesome</a>
             </div>
             <p>
-                To improve our navigation bar, we are going to create our own CSS classes file (<strong>layout.css</strong>). In the CSS file, we are going to define some classes that affect the entire document. We group those classes as <strong>utilities</strong>. Utilities is the standard name used in the programming to referee to those classes, and in general to functions or part of the code that can be used in the entire project. We are going to create specific classes that define the properties of other components of our navigation bar. As with Font Awesome, we are going to import the layout.css file to our layout.html file in the head of the layout.html file. In the navigation bar and in the rest of our project, we are using a font imported from Google Fonts. We are going to import the Google Fonts to our layout.css file. More information about <strong>Google Fonts</strong>: 
+                To improve our navigation bar, we are going to create our own CSS classes file (<strong>layout.css</strong>). In the CSS file, we are going to define some classes that affect the entire document. We group those classes as <strong>utilities</strong>. Utilities is the standard name used in the programming to referee to those classes, and in general to functions or part of the code that can be used in the entire project. We are going to create specific classes that define the properties of other components of our navigation bar. As with Font Awesome, we are going to import the layout.css file to our layout.html file in the head of the layout.html file. In the navigation bar and in the rest of our project, we are using a font imported from Google Fonts. We are going to import the Google Fonts to our layout.css file. More information about <strong>Google Fonts</strong>:
             </p>
             <div class="section_container_buttons_chapters">
                 <a class="btn-section1" href="https://fonts.google.com/ " target="_blank">Google Fonts</a>
@@ -139,10 +142,10 @@
                 To make our navigation bar scream responsive, we are going to use <strong>media queries</strong>. To avoid the use of JavaScript, we are going to use a simple media flexbox, where when we access to our app from a mobile phone, the navigation bar appears in a column, and it increases its width.
                 The <strong>footer</strong> of our project is very simple. The html code is in the layout.html file, and it is located below the <code style="color:black;">&#123;% block content %&#125; &#123;% endblock %&#125;</code>. The html code of the footer and the CSS classes are very simple, they are available in the GitHub account, and we are going to type the html and the CSS code during the lectures.
             </p>
-        </div> 
-  
-       
-    </section>  
+        </div>
+
+
+    </section>
 
     <!-- Section 2 -->
     <section class="section_2" id="section2">
@@ -158,13 +161,13 @@
                 <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch4%20Home/Navbar%20%2B%20Footer%20%2B%20Header%20%2B%20Developers" target="_blank">GitHub</a>
                 <a class="btn-section2" href="{{url_for('gd_course_chapters.gd_course_chapters_ch4_home2')}}" target="_blank">Use it Yourself</a>
             </div>
-        </div> 
+        </div>
 
         <div class="container" style="display:block;">
             <h4>Before to start</h4>
             <p>
                 In our app, we are going to use different images and logos. It is important to know which type of format is the most appropriate for pictures, images, and logos. I will present three types of image formats: SVG, PNG, JPEG and GIF.
-            </p>                  
+            </p>
         </div>
 
         <div class="container">
@@ -174,7 +177,7 @@
                     <u>What is an SVG file?</u>
                     <br>
                     <br>
-                    Scalable Vector Graphics (SVG) is a web-friendly vector file format. As opposed to pixel-based raster files like JPEGs, vector files store images via mathematical formulas based on points and lines on a grid. This means that vector files like SVG can be significantly resized without losing any of their quality, which makes them ideal for logos and complex online graphics. 
+                    Scalable Vector Graphics (SVG) is a web-friendly vector file format. As opposed to pixel-based raster files like JPEGs, vector files store images via mathematical formulas based on points and lines on a grid. This means that vector files like SVG can be significantly resized without losing any of their quality, which makes them ideal for logos and complex online graphics.
                     <br>
                     <br>
                     <u>Advantages of SVG files.</u>
@@ -183,7 +186,7 @@
                             Unlike raster files, which are made up of pixels, vector graphics like SVGs always maintain their resolution — no matter how large or small you make them. You don't have to worry about SVG images losing their quality in certain browsers or when you resize them to appear in different places.
                         </li>
                         <li>
-                            Basic SVG files are often smaller than raster images, which are built from lots of colored pixels rather than using mathematical algorithms. 
+                            Basic SVG files are often smaller than raster images, which are built from lots of colored pixels rather than using mathematical algorithms.
                         </li>
                         <li>
                             Because SVG files treat text as text (and not as design), screen readers can scan any words contained in SVG images. This is very useful for people who need help reading webpages. Search engines can also read and index SVG image text.
@@ -195,7 +198,7 @@
                             SVG files are great for web graphics like logos, illustrations, and charts. But their lack of pixels makes displaying high-quality digital photos difficult. JPEG files are generally better for detailed photographs.
                         </li>
                         <li>
-                            Only modern browsers can support SVG images. You may find it a challenge to use SVG files with Internet Explorer 8 and other older browsers. 
+                            Only modern browsers can support SVG images. You may find it a challenge to use SVG files with Internet Explorer 8 and other older browsers.
                         </li>
                         <li>
                             The code contained in SVG images can be hard to understand if you're new to its file format.
@@ -205,8 +208,8 @@
                 </p>
                 <div class="section_container_buttons_chapters">
                     <a class="btn-section2_box" href="https://www.adobe.com/creativecloud/file-types/image/vector/svg-file.html" target="_blank">SVG files</a>
-                </div> 
-            </div> 
+                </div>
+            </div>
             <div class="boxa">
                 <h5 style="text-align:center;">PNG files</h5>
                 <p>
@@ -219,10 +222,10 @@
                     <u>Advantages of PNG files.</u>
                     <ul>
                         <li>
-                            By handling millions of color options rather than hundreds, PNG files can store much more detailed images than GIFs. 
+                            By handling millions of color options rather than hundreds, PNG files can store much more detailed images than GIFs.
                         </li>
                         <li>
-                            PNG is open format, so you can view and edit these files in a huge range of programs without a license because there's no patent. 
+                            PNG is open format, so you can view and edit these files in a huge range of programs without a license because there's no patent.
                         </li>
                         <li>
                             A PNG image won't lose any of its data when it's compressed, which makes it much easier to store and transfer. This is a big advantage over lossy options like JPEG files, where some information disappears in the compression process.
@@ -232,7 +235,7 @@
                     <u>Disadvantages of PNG files.</u>
                     <ul>
                         <li>
-                            By retaining all its original data when compressed, a PNG file will generally be a lot larger in size than a GIF or JPEG. This means it'll take up more room on your computer's hard drive. 
+                            By retaining all its original data when compressed, a PNG file will generally be a lot larger in size than a GIF or JPEG. This means it'll take up more room on your computer's hard drive.
                         </li>
                         <li>
                             From the outset, PNGs were designed with the web in mind. Because of this, they don't support CMYK color modes, so transferring them to print can prove difficult.
@@ -245,10 +248,10 @@
                 </p>
                 <div class="section_container_buttons_chapters">
                     <a class="btn-section2_box" href="https://www.adobe.com/creativecloud/file-types/image/raster/png-file.html#:~:text=frequently%20asked%20questions-,What%20is%20a%20PNG%20file%3F,transparent%20or%20semi%2Dtransparent%20backgrounds" target="_blank">PNG files</a>
-                </div> 
-            </div>               
+                </div>
+            </div>
         </div>
-    
+
         <div class="container">
             <div class="boxa" style="background: #49736f;">
                 <h5 style="text-align:center;">JPEG files</h5>
@@ -265,7 +268,7 @@
                             JPEG files are arguably the most universally recognized image file format — compatible with most browsers, software, and apps.
                         </li>
                         <li>
-                            Their small file sizes allow for quick transfer and fast access for viewing online. By intelligently discarding all the colors that the human eye can't pick out — called lossy compression — JPEGs keep their file size as small as possible. Compared to lossless formats like GIFs, JPEGs are dramatically smaller in size.  
+                            Their small file sizes allow for quick transfer and fast access for viewing online. By intelligently discarding all the colors that the human eye can't pick out — called lossy compression — JPEGs keep their file size as small as possible. Compared to lossless formats like GIFs, JPEGs are dramatically smaller in size.
                         </li>
                         <li>
                             Post-processing is easier because white balance and saturation in JPEGs are set with the click of the shutter.
@@ -274,7 +277,7 @@
                     <u>Disadvantages of JPEG.</u>
                     <ul>
                         <li>
-                            Lossy compression may be a space-saver, but when dealing with very heavily compressed images, the quality will suffer. Images with clean edges and lines will lose some of their sharpness in the compression. 
+                            Lossy compression may be a space-saver, but when dealing with very heavily compressed images, the quality will suffer. Images with clean edges and lines will lose some of their sharpness in the compression.
                         </li>
                         <li>
                             Losing so much data may cause posterization — the loss of smoother transition between colors, making an image look blockier and abrupt. It may also cause the appearance of artifacts — aliasing on edges, blooming, or noise — which can severely affect image quality. Photographers can avoid the potential pitfalls of artifacts and posterization by saving photos in raw format.
@@ -284,8 +287,8 @@
                 </p>
                 <div class="section_container_buttons_chapters">
                     <a class="btn-section2_box" href="https://www.adobe.com/creativecloud/file-types/image/raster/jpeg-file.html" target="_blank">JPEG files</a>
-                </div> 
-            </div> 
+                </div>
+            </div>
             <div class="boxa">
                 <h5 style="text-align:center;">GIF files</h5>
                 <p>
@@ -301,10 +304,10 @@
                     <u>Advantages of GIF files.</u>
                     <ul>
                         <li>
-                            What GIF animations lack in sophistication they make up for with speed and impact. They're quick to create, don't require too much technical know-how, and can spread across social media sites like wildfire as memes. 
+                            What GIF animations lack in sophistication they make up for with speed and impact. They're quick to create, don't require too much technical know-how, and can spread across social media sites like wildfire as memes.
                         </li>
                         <li>
-                            The color limits placed on GIFs keep their file sizes relatively small. This can help them load faster on web pages. 
+                            The color limits placed on GIFs keep their file sizes relatively small. This can help them load faster on web pages.
                         </li>
                         <li>
                             GIF files boast a feature called lossless compression. This means their image quality doesn't decline when their data gets compressed.
@@ -314,10 +317,10 @@
                     <u>Disadvantages of GIF files.</u>
                     <ul>
                         <li>
-                            The GIF file format only supports a palette of 256 colors, meaning images may have a low resolution or even look slightly blurry. 
+                            The GIF file format only supports a palette of 256 colors, meaning images may have a low resolution or even look slightly blurry.
                         </li>
                         <li>
-                            Because they use multiple images, animated GIF files can sometimes be tricky to return to and edit. 
+                            Because they use multiple images, animated GIF files can sometimes be tricky to return to and edit.
                         </li>
                         <li>
                             Although GIFs are generally small and quick to load, a slow internet connection could delay or negatively affect their appearance on a webpage.
@@ -327,8 +330,8 @@
                 </p>
                 <div class="section_container_buttons_chapters">
                     <a class="btn-section2_box" href="https://www.adobe.com/creativecloud/file-types/image/raster/gif-file.html " target="_blank">GIF files</a>
-                </div> 
-            </div>               
+                </div>
+            </div>
         </div>
 
         <div class="container" style="display:block;">
@@ -347,21 +350,21 @@
                     </li>
                 </ol>
                 To define all the classes that modify the html code, we create a <strong>home.css file</strong>. We import the home.css file to our project in the head of our layout.html file. As with the navigation bar, for the header in the home.html file, we use utility classes and specific classes that affect the appearance of the home.html file.
-            </p> 
+            </p>
             <h4>Developers</h4>
             <p>
-                The html code of the <strong>developers section</strong> follow the same structure that the html code for the header section. The CSS code that defines the appearance of the developers section is as the CSS code that defines the header section. 
+                The html code of the <strong>developers section</strong> follow the same structure that the html code for the header section. The CSS code that defines the appearance of the developers section is as the CSS code that defines the header section.
             </p>
         </div>
 
-    </section> 
+    </section>
 
    <!-- Section 3 -->
    <section class="section_3" id="section3">
 
-    <div class="container">            
+    <div class="container">
 
-        <div class="onebox">                    
+        <div class="onebox">
         </div>
         <div class="onebox">
             <div class="h1 mb-3" style="text-align: center;">
@@ -369,18 +372,18 @@
             </div>
             <h1>Weekly challenge</h1>
             <p style="text-align: left;">
-                In this weekly challenge, you should design your own layout.html, home.html, layout.css, and home.css files. You do not need to do anything extraordinary. Focus on changing the icons that appear in the navigation bar and the footer, the colors, some images, and other details. That is <strong>more than enough</strong>. Try to introduce your short biography, picture and your cv and provide information as accurate as possible. So that you can have a “final version” of the layout.html and home.html pages. 
+                In this weekly challenge, you should design your own layout.html, home.html, layout.css, and home.css files. You do not need to do anything extraordinary. Focus on changing the icons that appear in the navigation bar and the footer, the colors, some images, and other details. That is <strong>more than enough</strong>. Try to introduce your short biography, picture and your cv and provide information as accurate as possible. So that you can have a “final version” of the layout.html and home.html pages.
                 <br>
-                <br>  
+                <br>
                 We will discuss the weekly challenge on Thursday 02 February at NHH, and on Friday 03 February at HVL. We will use the main chat to help each other in the weekly challenge. Within those days, please share the information that you consider relevant to help the other groups.
-            </p>  
+            </p>
             <div class="container_buttons_links_section_3a">
                 <div class="btn">
                     <a href="#" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;" data-toggle="modal" data-target="#weekly_challenge_ch2">Hints</a>
                 </div>
                 <div class="btn">
                     <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch4%20Home/Navbar%20%2B%20Footer%20%2B%20Header%20%2B%20Developers" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
-                </div>                    
+                </div>
                 <!-- Modal Instructions1 -->
                 <div class="modal fade" id="weekly_challenge_ch2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -394,7 +397,7 @@
                         <p>
                             <ol style="text-align: left;">
                                 <li>
-                                    Create a word file for the home.html file where you have all the information related to that page. So that you can update that information during the next weeks.                                     
+                                    Create a word file for the home.html file where you have all the information related to that page. So that you can update that information during the next weeks.
                                 </li>
                                 </br>
                                 <li>
@@ -412,14 +415,14 @@
                     </div>
                     </div>
                 </div>
-            </div>                    
+            </div>
 
-        </div>   
-        <div class="onebox">                  
-        </div> 
-        
+        </div>
+        <div class="onebox">
+        </div>
+
     </div>
-</section>   
+</section>
 
 
 {% endblock content %}
