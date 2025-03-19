@@ -25,13 +25,16 @@
                         <a href="https://youtu.be/CMlVF0_fFC0" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">YouTube (Section 2c)</a>
                     </div>
                     <div class="btn">
+                        <a href="https://xd.adobe.com/view/04aff949-0236-43d7-bbf6-f13d9d6c57e2-51fc/" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Summary</a>
+                    </div>
+                    <div class="btn">
                         <a href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">GitHub</a>
                     </div>
-                    
+
                     <div class="btn">
                         <a href="{{url_for('gd_course_app_carbon_app_2023_ch10.home')}}" target="_blank" class="btn btn-primary btn-lg mr-2", style="background-color:#007bff;">Use it Yourself</a>
                     </div>
-                    </div>  
+                    </div>
 
                     <div class="list-group", style="padding: 15px 0px;">
                         <a href="#section1" class="list-group-item list-group-item-action flex-column align-items-start active">
@@ -86,20 +89,20 @@
             </p>
             <div class="section_container_buttons_chapters">
                 <a class="btn-section1" href="https://wtforms.readthedocs.io/en/3.0.x/validators/#custom-validators"  target="_blank">Flask Forms Validators</a>
-            </div> 
-        </div>  
+            </div>
+        </div>
 
         <div class="container">
             <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
                 <h4>Customize our WTF Forms Validators</h4>
                 <p>
-                    We customize the messages disclosed to the user. If for example, we try to register by using the same username or email, we get an ugly message. To avoid those messages that could not be very useful for the users of our app, we can customize our WTF Forms Validators.                    
-                </p> 
+                    We customize the messages disclosed to the user. If for example, we try to register by using the same username or email, we get an ugly message. To avoid those messages that could not be very useful for the users of our app, we can customize our WTF Forms Validators.
+                </p>
                 <div class="section_container_buttons_chapters">
                     <a class="btn-section1" href="https://youtu.be/i4fdNUPN36g" target="_blank">YouTube (Section 1a)</a>
                 </div>
                 <p class="text-left">
-                    In the <strong>package users</strong>, in the forms.py file. 
+                    In the <strong>package users</strong>, in the forms.py file.
                     <ol>
                         <li>
                             Copy and paste from the link above, and then customize.
@@ -110,14 +113,14 @@ name = StringField('Name', [InputRequired()])
 def validate_name(form, field):
     if len(field.data) > 50:
     raise ValidationError('Name must be less than 50 characters')
-                            </code></pre>                             
+                            </code></pre>
                         </li>
                         <li>
                             We <strong>import</strong> the tools that we need:
                             <pre><code class="html"></code>
 from capp.models import User
-from wtforms.validators import ValidationError                                
-                            </code></pre> 
+from wtforms.validators import ValidationError
+                            </code></pre>
                         </li>
                         <li>
                             <strong>Customize</strong> username and email errors.
@@ -127,35 +130,35 @@ def validate_username(self, username):
     if user:
         raise ValidationError('That username is taken.//
          Please choose a different one.')
-                              
+
 def validate_email(self, email):
     user = User.query.filter_by(email=email.data).first()
     if user:
         raise ValidationError('That email is taken. //
-        Please choose a different one.') 
-                            </code></pre> 
-                        </li>                 
+        Please choose a different one.')
+                            </code></pre>
+                        </li>
                     </ol>
-                </p> 
-            </div> 
+                </p>
+            </div>
             <div class="boxa" style="height:660px;">
                 <h5>In the package users, forms.py file</h5>
 <pre><code class="html">
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, 
+from wtforms import StringField, PasswordField, SubmitField,
     BooleanField
-from wtforms.validators import DataRequired, Length, Email, 
+from wtforms.validators import DataRequired, Length, Email,
     EqualTo, ValidationError
 from capp.models import User
 
 class RegistrationForm(FlaskForm):
-    username = StringField('Username', 
+    username = StringField('Username',
         validators=[DataRequired(), Length(min=2, max=30)])
     email = StringField('Email',
         validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',
-        validators=[DataRequired(), EqualTo('password')]) 
+        validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
     def validate_username(self, username):
@@ -169,14 +172,14 @@ class RegistrationForm(FlaskForm):
     if user:
         raise ValidationError('That email is taken. //
         Please choose a different one.')
-</code></pre>                
-            </div> 
-        </div> 
+</code></pre>
+            </div>
+        </div>
 
 
 
-              
-    </section>  
+
+    </section>
 
     <!-- Section 2 -->
     <section class="section_2" id="section2">
@@ -196,7 +199,7 @@ class RegistrationForm(FlaskForm):
                 <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Final3" target="_blank">GitHub (Final3)</a>
                 <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Boilerplate4" target="_blank">GitHub (Boilerplate4)</a>
                 <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Final4" target="_blank">GitHub (Final4)</a>
-            </div> 
+            </div>
             <p>
                 All the information in this section has been taken from the next links:
             </p>
@@ -218,12 +221,12 @@ class RegistrationForm(FlaskForm):
                         Let you restrict views to logged-in (or logged-out) users. (login_required).
                     </li>
                     <li>
-                        Handle the normally-tricky “remember me” functionality. 
+                        Handle the normally-tricky “remember me” functionality.
                     </li>
                     <li>
                         Help protect your users' sessions from being stolen by cookie thieves.
                     </li>
-                </ul>                
+                </ul>
             </p>
             <h4>How to use Flask-login?</h4>
             <ol>
@@ -242,7 +245,7 @@ class RegistrationForm(FlaskForm):
                     <pre><code class="html"></code>
 from flask_login import LoginManager
 login_manager = LoginManager()
-                    </code></pre> 
+                    </code></pre>
                     The login manager contains the code that lets your application and Flask-Login work together, such as how to load a user from an ID, where to send users when they need to log in, and the like.
                 </li>
                 <br>
@@ -255,7 +258,7 @@ login_manager = LoginManager()
 @login_manager.user_loader
 def load_user(user_id):
     return User.get(user_id)
-                    </code></pre> 
+                    </code></pre>
                     It should return None (not raise an exception) if the ID is not valid. (In that case, the ID will manually be removed from the session and processing will continue.)
                 </li>
                 <br>
@@ -274,7 +277,7 @@ def load_user(user_id):
                         </li>
                         <br>
                         <li>
-                            There are <strong>other classes</strong> that we are not going to use, but that can be studied in the link the Flask-login link that I provide above in this section. 
+                            There are <strong>other classes</strong> that we are not going to use, but that can be studied in the link the Flask-login link that I provide above in this section.
                         </li>
                     </ol>
                 </li>
@@ -328,7 +331,7 @@ def load_user(user_id):
                             <br>
                             <br>
                             Logs a user out. (You do not need to pass the actual user.) This will also clean up the remember me cookie if it exists.
-                        </li>                        
+                        </li>
                     </ol>
                 </li>
                 <br>
@@ -343,7 +346,7 @@ def load_user(user_id):
                 </li>
             </ol>
         </div>
-    
+
         <div class="container">
             <div class="boxa" style="text-align: left; margin:0px; padding:0px;">
                 <h4>Flask-login in our app.</h4>
@@ -351,12 +354,12 @@ def load_user(user_id):
                     <a class="btn-section2" href="https://youtu.be/7nf5lG1Hp8w" target="_blank">YouTube (Section 2a)</a>
                     <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Boilerplate2" target="_blank">GitHub (Boilerplate2)</a>
                     <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Final2" target="_blank">GitHub (Final2)</a>
-                </div> 
-                <p style="text-align: left;">                    
+                </div>
+                <p style="text-align: left;">
                     In this section, we use Flask-login in our application. We introduce four changes that allow us to use different Flask-login functionalities.
                     <ol>
                         <li>
-                            <strong>Installation</strong>: 
+                            <strong>Installation</strong>:
                             <pre><code class="html"></code>
 pip install flask-login
                             </code></pre>
@@ -370,16 +373,16 @@ pip install flask-login
 from flask_login import LoginManager
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                                 <li>
                                     Configure the application
                                     <pre><code class="html"></code>
 login_manager= LoginManager(application)
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                             </ol>
-                        </li> 
+                        </li>
                         <br>
                         <li>
                             <strong>How it Works</strong>. In the models.py file:
@@ -388,32 +391,32 @@ login_manager= LoginManager(application)
                                     Import the tools that we need
                                     <pre><code class="html"></code>
     from capp import login_manager
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                                 <li>
-                                    Import UserMixin: 
+                                    Import UserMixin:
                                     <pre><code class="html"></code>
     from flask_login import UserMixin
-                                    </code></pre>                                    
+                                    </code></pre>
                                 </li>
                                 <li>
                                     Define the function:
                                     <pre><code class="html"></code>
     @login_manager.user_loader
     def load_user(user_id):
-    return User.query.get(int(user_id)) 
-                                    </code></pre> 
+    return User.query.get(int(user_id))
+                                    </code></pre>
                                 </li>
                                 <li>
-                                    Use it in the Classes: 
+                                    Use it in the Classes:
                                     <pre><code class="html"></code>
     class User(db.Model, UserMixin)
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                             </ol>
-                        </li>                 
+                        </li>
                     </ol>
-                </p>      
+                </p>
             </div>
             <div class="boxa" style="height:900px;">
                 <h5>In the __init__.py file:</h5>
@@ -423,7 +426,7 @@ from flask_login import LoginManager
 login_manager= LoginManager(application)
 login_manager.login_view = 'users.login'
 login_manager.login_message_category = 'info'
-</code></pre>   
+</code></pre>
 <h5>In the models.py file:</h5>
 <pre><code class="html">
 from capp import login_manager
@@ -432,7 +435,7 @@ from flask_login import UserMixin
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.get(int(user_id))
-</code></pre> 
+</code></pre>
                 <h5>In the package users, in the routes.py file:</h5>
 <pre><code class="html">
 from capp.users.forms import RegistrationForm
@@ -457,15 +460,15 @@ def register():
         return redirect(url_for('users.login'))
     return render_template('users/register.html', //
     title='register', form=form)
-</code></pre>  
+</code></pre>
 
             </div>
         </div>
 
         <div class="container" style="display:block;">
-            <p style="text-align: left;">                    
+            <p style="text-align: left;">
                 <ol start="4">
-    
+
                     <li>
                         In the <strong>package users</strong>, routes.py file, login route:
                         <ol type="a">
@@ -473,7 +476,7 @@ def register():
                                 Import the tools that we need
                                 <pre><code class="html"></code>
     from flask_login import login_user
-                               </code></pre> 
+                               </code></pre>
                             </li>
                             <li>
                                 Modify the route
@@ -483,11 +486,11 @@ def register():
     login_user(user, remember=form.remember.data)
     flash('You have logged in! Now, you can start to use our App!', 'success')
     else:
-    flash('Login Unsuccessful. Please check email and password!', 'danger') 
-                                </code></pre> 
+    flash('Login Unsuccessful. Please check email and password!', 'danger')
+                                </code></pre>
                             </li>
                             <li>
-                                Check field: 
+                                Check field:
                                 <pre><code class="html"></code>
     login_user(user, remember=form.remember.data)
                                 </code></pre>
@@ -495,7 +498,7 @@ def register():
                         </ol>
                     </li>
                 </ol>
-            </p> 
+            </p>
         </div>
 
         <div class="container">
@@ -505,25 +508,25 @@ def register():
                     <a class="btn-section2" href="https://youtu.be/UXKL27XKYlQ" target="_blank">YouTube (Section 2b)</a>
                     <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Boilerplate3" target="_blank">GitHub (Boilerplate3)</a>
                     <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Final3" target="_blank">GitHub (Final3)</a>
-                </div> 
-                <p style="text-align: left;">                    
-                    In this section, we focus on three different uses of Flask-login that are useful for our app. 
+                </div>
+                <p style="text-align: left;">
+                    In this section, we focus on three different uses of Flask-login that are useful for our app.
                     <ol>
                         <li>
-                            If the user is authenticated, we do not want that the user log in our app again, but we want to redirect her to the home page. To do that, in the <strong>package users</strong>, in the <strong>routes.py file</strong>, we proceed in two steps: 
+                            If the user is authenticated, we do not want that the user log in our app again, but we want to redirect her to the home page. To do that, in the <strong>package users</strong>, in the <strong>routes.py file</strong>, we proceed in two steps:
                             <ol type="a">
                                 <li>
-                                    We import the tools that we need: 
+                                    We import the tools that we need:
                                     <pre><code class="html"></code>
 from flask_login import current_user
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                                 <li>
                                     In the login route, we need to redirect the user to the home page:
                                     <pre><code class="html"></code>
 if current_user.is_authenticated:
     return redirect(url_for('home.home_home'))
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                             </ol>
                         </li>
@@ -531,10 +534,10 @@ if current_user.is_authenticated:
                             We want to allow the user to log out. To do that, in the <strong>package users</strong>, in the <strong>routes.py file</strong>, we proceed in two steps:
                             <ol type="a">
                                 <li>
-                                    We import the tools that we need: 
+                                    We import the tools that we need:
                                     <pre><code class="html"></code>
 from flask_login import logout_user
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                                 <li>
                                     We need to create a new route:
@@ -542,11 +545,11 @@ from flask_login import logout_user
 @users.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('home.home_home')) 
-                                    </code></pre> 
+    return redirect(url_for('home.home_home'))
+                                    </code></pre>
                                 </li>
                             </ol>
-                        </li> 
+                        </li>
                         <br>
                         <li>
                             Given that the carbon app routes is connected to a database to record the kilometers, the type of transport and the type of fuel, we do not want to allow the user to access to that web page until the user has not logged in. To do that, in the <strong>package carbon app</strong>, in the <strong>routes.py file</strong>, we proceed in two steps:
@@ -555,19 +558,19 @@ def logout():
                                     We import the tools that we need:
                                     <pre><code class="html"></code>
 from flask_login import login_required
-                                    </code></pre> 
+                                    </code></pre>
                                 </li>
                                 <li>
                                     We introduce a new decorator in the routes that we want to modify:
                                     <pre><code class="html"></code>
 @carbon_app.route('/carbon_app')
 @login_required
-                                    </code></pre>                                    
+                                    </code></pre>
                                 </li>
                             </ol>
-                        </li>                
+                        </li>
                     </ol>
-                </p>      
+                </p>
             </div>
             <div class="boxa" style="height:1100px;">
                 <h5>In the package user, routes.py file:</h5>
@@ -577,7 +580,7 @@ from flask import render_template, Blueprint, redirect, flash,
 from capp.users.forms import RegistrationForm, LoginForm
 from capp.models import User
 from capp import db, bcrypt
-from flask_login import login_user, current_user, logout_user 
+from flask_login import login_user, current_user, logout_user
 
 users=Blueprint('users',__name__)
 
@@ -592,24 +595,24 @@ def login():
         return redirect(url_for('home.home_home'))
   if form.validate_on_submit():
     user = User.query.filter_by(email=form.email.data).first()
-    if user and bcrypt.check_password_hash(user.password, 
+    if user and bcrypt.check_password_hash(user.password,
         form.password.data):
         login_user(user, remember=form.remember.data)
         next_page = request.args.get('next')
-        flash('You have logged in! Now, you can start to 
+        flash('You have logged in! Now, you can start to
           use our Carbon App!', 'success')
-        return redirect(next_page) if next_page else 
+        return redirect(next_page) if next_page else
           redirect(url_for('home.home_home'))
     else:
-        flash('Login Unsuccessful. Please check email and password!', 
-          'danger') 
+        flash('Login Unsuccessful. Please check email and password!',
+          'danger')
   return render_template('users/login.html', title='login', form=form)
 
 @users.route('/logout')
-def logout():    
+def logout():
     logout_user()
     return redirect(url_for('home.home_home'))
-</code></pre>  
+</code></pre>
             <h5>In the package carbon_app, routes.py file:</h5>
 <pre><code class="html">
 @carbon_app.route('/carbon_app')
@@ -619,24 +622,24 @@ def logout():
 @login_required
 
 @carbon_app.route('/carbon_app/your_data')
-@login_required    
-</code></pre> 
+@login_required
+</code></pre>
 
             </div>
         </div>
 
         <div class="container" style="display:block;">
-            <p style="text-align: left;">                    
+            <p style="text-align: left;">
                 <ol start="4">
-    
+
                     <li>
-                        If the user tries to access to the routes that we want to protect forcing the user to be logged in, the user will be redirected to the login webpage. In that case, after logging in, we want that the user is redirected to the last page that she wanted to access. To do that, in the <strong>package users</strong>, in the <strong>routes.py file</strong>, we proceed in two steps: 
+                        If the user tries to access to the routes that we want to protect forcing the user to be logged in, the user will be redirected to the login webpage. In that case, after logging in, we want that the user is redirected to the last page that she wanted to access. To do that, in the <strong>package users</strong>, in the <strong>routes.py file</strong>, we proceed in two steps:
                         <ol type="a">
                             <li>
                                 We import the tools that we need:
                                 <pre><code class="html"></code>
 from flask import request
-                               </code></pre> 
+                               </code></pre>
                             </li>
                             <li>
                                 We modify the login route:
@@ -647,12 +650,12 @@ next_page = request.args.get('next')
 flash('You have logged in! Now, you can start to use our Carbon App!', 'success')
 return redirect(next_page) if next_page else redirect(url_for('home.home_home'))
 else:
-                                </code></pre> 
+                                </code></pre>
                             </li>
                         </ol>
                     </li>
                 </ol>
-            </p> 
+            </p>
         </div>
 
         <div class="container" style="display:block;">
@@ -667,7 +670,7 @@ else:
                 <a class="btn-section2" href="https://youtu.be/CMlVF0_fFC0" target="_blank">YouTube (Section 2c)</a>
                 <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Boilerplate4" target="_blank">GitHub (Boilerplate4)</a>
                 <a class="btn-section2" href="https://github.com/mariobp-NHH/GreenDigitalizationCourse2023/tree/main/Ch10%20Login/DB_Final4" target="_blank">GitHub (Final4)</a>
-            </div> 
+            </div>
         </div>
 
         <div class="container">
@@ -690,7 +693,7 @@ else:
             &#60;a href="&#123;&#123;url_for('carbon_app.carbon_app_home')&#125;&#125;"&#62;Carbon App&#60;/a&#62;
         &#60;/li&#62;
     &#60;/ul&#62;
-&#60;/nav&#62; 
+&#60;/nav&#62;
 &#123;% else %&#125;
 &#60;nav&#62;
     &#60;ul&#62;
@@ -712,7 +715,7 @@ else:
     &#60;/ul&#62;
 &#60;/nav&#62;
 &#123;% endif %&#125;
-                </code></pre>   
+                </code></pre>
             </div>
             <div class="boxa" style="height:410px;">
                 <h5>Changes in the home page (home.html file):</h5>
@@ -721,46 +724,46 @@ else:
 &#123;% else %&#125;
 &#60;div class="container_buttons_links_header_home"&#62;&#123;
     &#60;div class="btn"&#62;
-        &#60;a href="&#123;&#123;url_for('users.register')&#125;&#125;" 
-        class="btn btn-primary btn-lg mr-2", 
+        &#60;a href="&#123;&#123;url_for('users.register')&#125;&#125;"
+        class="btn btn-primary btn-lg mr-2",
         style="background-color:#007bff;"&#62;Register&#60;/a&#62;
     &#60;/div&#62;
     &#60;div class="btn"&#62;
-        &#60;a href="&#123;&#123;url_for('users.login')&#125;&#125;" 
-        class="btn btn-primary btn-lg mr-2", 
+        &#60;a href="&#123;&#123;url_for('users.login')&#125;&#125;"
+        class="btn btn-primary btn-lg mr-2",
         style="background-color:#007bff;"&#62;Login&#60;/a&#62;
     &#60;/div&#62;
 &#60;/div&#62;
-&#123;% endif %&#125;    
-</code></pre>  
+&#123;% endif %&#125;
+</code></pre>
             </div>
-        </div>        
+        </div>
 
-    </section> 
+    </section>
 
     <!-- Section 3 -->
     <section class="section_3" id="section3">
 
         <div class="container">
-            <div class="onebox">                    
+            <div class="onebox">
             </div>
             <div class="onebox">
                 <div class="h1 mb-3" style="text-align: center;">
                     <i class="bi bi-calendar"></i>
                 </div>
                 <h1>Weekly challenge</h1>
-                <p style="text-align: left;"> 
+                <p style="text-align: left;">
                     This chapter is very specific to user authentication, and there is not much that can be done within our app. Therefore, the weekly challenge consists in go through the material of the chapter and understand how the Flask-login package can be useful in our app.
-                </p> 
-            </div>   
-            <div class="onebox">                  
-            </div> 
+                </p>
+            </div>
+            <div class="onebox">
+            </div>
         </div>
 
-    </section> 
+    </section>
 
 
-  
+
 
 
 {% endblock content %}
