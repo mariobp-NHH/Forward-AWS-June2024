@@ -6,6 +6,16 @@
         <header class="header_css", style="background-color=#f2d95c">
             <div class="container">
                 <div>
+                    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+                        messages %} {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %} {% endif %} {% endwith %}
+                        <script>
+                          setTimeout(function () {
+                            var flashes = document.querySelectorAll(".alert");
+                            flashes.forEach((flash) => flash.remove());
+                          }, 5000);
+                        </script>
                     <h1> <span class="text-warning"> Ch5. Sustainable Energy. Wind Energy </span></h1>
                     <p class="mb-1">
                         Wind power is one of the fastest-growing renewable energy technologies. We study the history of wind energy, its technological
@@ -19,6 +29,9 @@
                        </div>
                        <div class="btn">
                             <a href="#"  data-toggle="modal" data-target="#presentation_Modal" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Presentation</a>
+                       </div>
+                       <div class="btn">
+                            <a href="{{url_for('se_course_se_module.ch5_email')}}" class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;">Email</a>
                        </div>
                     </div>
 
@@ -38,7 +51,7 @@
                             </div>
                         </div>
                         </div>
-                    </div> 
+                    </div>
 
                     <!-- Modal Presentation-->
                     <div class="modal fade" id="presentation_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -56,7 +69,7 @@
                             </div>
                         </div>
                         </div>
-                    </div> 
+                    </div>
 
 
 
@@ -620,7 +633,7 @@
                     <u>Energy:</u>
 			        </br>
                     </br>
-			        As energy is defined via work, the International System of Units unit of energy is the same as the unit 
+			        As energy is defined via work, the International System of Units unit of energy is the same as the unit
                     of work – the <strong>joule (J)</strong>, named in honor of James Prescott Joule and his experiments on the
                     mechanical equivalenta of heat. In slightly more fundamental terms, <strong>1 joule is equal to 1 newton metre</strong>
                     and, in terms of International System of Units base units:
@@ -779,9 +792,9 @@
                    </div>
                 </div>
             </div>
-            
+
             <h3>Questions</h3>
-            
+
             <div class="questions_css">
                 <div class="question">
                     <form method="POST" action="">
@@ -984,18 +997,18 @@
                 <li class="list-group-item">
                   <h5 class="mb-1">5. Wind energy investments.</h5>
                   <p class="mb-1">
-                      <strong>Scaling up wind energy investments</strong> is key to accelerating the growth of global wind power 
+                      <strong>Scaling up wind energy investments</strong> is key to accelerating the growth of global wind power
                       installations over the coming decades (figure: Wind average annual investment).
                       <ul>
                         <li>
                             This would imply increasing global average annual<strong> onshore wind</strong> power
-                            investments by more than two-fold from now until 2030 (USD 146 billion/year) and more than 
-                            three-fold over the remaining period to 2050 (USD 211 billion/year) compared to 2018 investments 
-                            (USD 67 billion/year). 
+                            investments by more than two-fold from now until 2030 (USD 146 billion/year) and more than
+                            three-fold over the remaining period to 2050 (USD 211 billion/year) compared to 2018 investments
+                            (USD 67 billion/year).
                         </li>
                         <li>
                             For <strong>offshore wind</strong>, global average annual investments would need to increase three-fold from now
-                            until 2030 (USD 61 billion/year) and more than five-fold over the remaining period to 2050 (USD 100 billion/year) 
+                            until 2030 (USD 61 billion/year) and more than five-fold over the remaining period to 2050 (USD 100 billion/year)
                             compared to 2018 investments (USD 19 billion/year).
                         </li>
                     </ul>
@@ -1027,8 +1040,8 @@
                         </li>
                         <li>
                             The <strong>levelised cost of electricity (LCOE)</strong> for <strong>onshore wind</strong>  will continue to
-                            fall from an average of USD 0.06 per kilowatt-hour (kWh) in 2018 to between USD 0.03 to 0.05/kWh 
-                            by 2030 and between USD 0.02 to 0.03/kWh by 2050. The LCOE of offshore wind would drop from an average 
+                            fall from an average of USD 0.06 per kilowatt-hour (kWh) in 2018 to between USD 0.03 to 0.05/kWh
+                            by 2030 and between USD 0.02 to 0.03/kWh by 2050. The LCOE of offshore wind would drop from an average
                             of USD 0.13/kWh in 2018 to an average between USD 0.05 to 0.09/kWh by 2030 and USD 0.03 to 0.07/kWh by 2050
                             (figure: Wind levelised cost of electricity).
                         </li>
@@ -1048,16 +1061,16 @@
               <li class="list-group-item">
                   <h5 class="mb-1">7. Capacity factors.</h5>
                   <p class="mb-1">
-                      Ongoing <strong>innovations</strong> and <strong>technology enhancements</strong> towards larger capacity 
-                      turbines as well as increased hub heights and rotor diameters help improve yields for the same 
+                      Ongoing <strong>innovations</strong> and <strong>technology enhancements</strong> towards larger capacity
+                      turbines as well as increased hub heights and rotor diameters help improve yields for the same
                       location (figure: .
                       <ul>
                         <li>
-                            For <strong>onshore wind plants</strong>, global weighted average capacity factors would increase 
+                            For <strong>onshore wind plants</strong>, global weighted average capacity factors would increase
                             from 34% in 2018 to a range of 30% to 55% in 2030 and 32% to 58% in 2050.
                         </li>
                         <li>
-                            For <strong>offshore wind farms</strong>, even higher progress would be achieved, with capacity factors in the 
+                            For <strong>offshore wind farms</strong>, even higher progress would be achieved, with capacity factors in the
                             range of 36% to 58% in 2030 and 43% to 60% in 2050, compared to an average of 43% in 2018
                         </li>
                     </ul>
@@ -1805,7 +1818,7 @@
                         </div>
                     </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Modal wind2-->
                 <div class="modal fade" id="wind2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1823,7 +1836,7 @@
                         </div>
                     </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Modal wind3-->
                 <div class="modal fade" id="wind3_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1841,7 +1854,7 @@
                         </div>
                     </div>
                     </div>
-                </div> 
+                </div>
 
                 <!-- Modal wind4-->
                 <div class="modal fade" id="wind4_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -1859,7 +1872,7 @@
                         </div>
                     </div>
                     </div>
-                </div> 
+                </div>
                 </div>
                 <div class="box">
 
