@@ -2169,7 +2169,6 @@ def ch5_email():
                   sender='mblazquezdepaz@gmail.com',
                   recipients=[current_user.email])
     msg.body = f'''
-Hello, your statistics for chapter 6 are in the next link ({url_for('se_course_statistics.statistics_se_ch5', _external=True)}), and below:
 Hello, your statistics for chapter 6 are in the next link (https://forwardedu.org/sustainable_energy_web/statistics/se_ch5), and below:
 Number of correct answers: {correct}.
 Number of incorrect answers: {incorrect}.
