@@ -1,5 +1,5 @@
 from flask import render_template, url_for, flash, redirect, request, abort, jsonify, Blueprint
-from webse import db, DBVAR
+from webse import db, DBVAR, mail
 from webse.se_course_se_module.forms import ChatFormUpdate, ChatFormExercise
 from webse.se_course_se_module.forms import ModulsForm_m2_ch1_e1, ModulsForm_m2_ch1_e2, ModulsForm_m2_ch1_q1, ModulsForm_m2_ch1_q2
 from webse.se_course_se_module.forms import ModulsForm_m2_ch2_e1, ModulsForm_m2_ch2_e2, ModulsForm_m2_ch2_e3, \
@@ -40,6 +40,7 @@ from webse.se_course_se_module.forms import ModulsForm_m2_ch10_q4, ModulsForm_m2
 from webse.models import Moduls, Chat
 from flask_login import login_user, current_user, logout_user, login_required
 from webse.forward_users.utils import read_image
+from flask_mail import Message
 
 se_course_se_module = Blueprint('se_course_se_module', __name__)
 
@@ -160,7 +161,7 @@ def se_web_ch1_ex1_questionnaire_refresh():
         filter(Moduls.title_ch == 'Chapter 1. Frame'). \
         filter(Moduls.question_option == 3). \
         order_by(Moduls.question_num.asc()).count()
-    
+
 
     return render_template('se_course/se web/ch1/se_web_ch1_ex1_questionnaire.html', title='SE Web - Ch1 - Ex1',
                            option_1=option_1, option_2=option_2, option_3=option_3,
@@ -1948,6 +1949,247 @@ def se_web_ch5_ex2_chat_query():
                                                                                                            per_page=4)
     return render_template('se_course/se web/ch5/se_web_ch5_ex2_chat_query.html', title='SE Web - ch5 - ex2',
                            chats=chats, legend='Sustainable Energy, Chapter 5, Exercise 2', func=read_image)
+
+@se_course_se_module.route('/sustainable_energy_web/ch5/email', methods=['GET', 'POST'])
+@login_required
+def ch5_email():
+    entries = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.title_mo=='Sustainable Energy'). \
+        filter(Moduls.title_ch=='Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option==50). \
+        order_by(Moduls.question_num.asc()).all()
+
+    incorrect = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_result==0). \
+        filter(Moduls.title_mo=='Sustainable Energy'). \
+        filter(Moduls.title_ch=='Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option==50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_result==1). \
+        filter(Moduls.title_mo=='Sustainable Energy'). \
+        filter(Moduls.title_ch=='Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option==50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q1 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 1). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q1 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 1). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q2 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 2). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q2 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 2). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q3 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 3). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q3 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 3). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q4 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 4). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q4 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 4). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q5 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 5). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q5 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 5). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q6 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 6). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q6 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 6). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q7 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 7). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q7 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 7). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q8 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 8). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q8 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 8). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q9 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 9). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q9 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 9). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q10 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 10). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q10 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 10). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q11 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 11). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q11 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 11). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    incorrect_q12 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 12). \
+        filter(Moduls.question_result == 0). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+
+    correct_q12 = Moduls.query.filter_by(author=current_user). \
+        filter(Moduls.question_num == 12). \
+        filter(Moduls.question_result == 1). \
+        filter(Moduls.title_mo == 'Sustainable Energy'). \
+        filter(Moduls.title_ch == 'Ch5. Sustainable Energy. Wind Energy'). \
+        filter(Moduls.question_option == 50). \
+        order_by(Moduls.question_num.asc()).count()
+    flash('We have sent you an email with your statistics for chapter 5!', 'info')
+    msg = Message('Your statistics',
+                  sender='mblazquezdepaz@gmail.com',
+                  recipients=[current_user.email])
+    msg.body = f'''
+Hello, your statistics for chapter 6 are in the next link ({url_for('se_course_statistics.statistics_se_ch5', _external=True)}), and below:
+Number of correct answers: {correct}.
+Number of incorrect answers: {incorrect}.
+Answer question 1 (where 0 means incorrect, and 1 means correct): {correct_q1}.
+Answer question 2 (where 0 means incorrect, and 1 means correct): {correct_q2}.
+Answer question 3 (where 0 means incorrect, and 1 means correct): {correct_q3}.
+Answer question 4 (where 0 means incorrect, and 1 means correct): {correct_q4}.
+Answer question 5 (where 0 means incorrect, and 1 means correct): {correct_q5}.
+Answer question 6 (where 0 means incorrect, and 1 means correct): {correct_q6}.
+Answer question 7 (where 0 means incorrect, and 1 means correct): {correct_q7}.
+Answer question 8 (where 0 means incorrect, and 1 means correct): {correct_q8}.
+Answer question 9 (where 0 means incorrect, and 1 means correct): {correct_q9}.
+Answer question 10 (where 0 means incorrect, and 1 means correct): {correct_q10}.
+Answer question 11 (where 0 means incorrect, and 1 means correct): {correct_q11}.
+Answer question 12 (where 0 means incorrect, and 1 means correct): {correct_q12}.
+'''
+    mail.send(msg)
+    return redirect(url_for('se_course_se_module.se_web_ch5'))
+
+
+
 
 ##########################################
 ## Sustainable Energy Module, Chapter 6 ##
