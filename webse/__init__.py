@@ -2,6 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+from flask_mail import Mail
 import os
 
 application = Flask(__name__)
@@ -13,10 +14,17 @@ application = Flask(__name__)
 
 # Code in GitHub
 DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
-# application.config['SECRET_KEY'] = '1dfc4dedcdsdsd5b2ffa3a090dfc34f845fd'
 application.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 application.config['SQLALCHEMY_BINDS'] ={'se_course': DBVAR, 'gd_course': DBVAR, 'gender_platform': DBVAR, 'se_platform': DBVAR, 'es_course': DBVAR}
+
+#Email configuration
+application.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+application.config['MAIL_PORT'] = 587
+application.config['MAIL_USE_TLS'] = True
+application.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
+application.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
+application.config['MAIL_DEFAULT_SENDER'] = os.environ['MAIL_DEFAULT_SENDER']
 
 db = SQLAlchemy(application)
 bcrypt = Bcrypt(application)
