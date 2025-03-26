@@ -25,6 +25,7 @@ application.config['MAIL_USE_TLS'] = True
 application.config['MAIL_USERNAME'] = os.environ['MAIL_USERNAME']
 application.config['MAIL_PASSWORD'] = os.environ['MAIL_PASSWORD']
 application.config['MAIL_DEFAULT_SENDER'] = os.environ['MAIL_DEFAULT_SENDER']
+mail = Mail(application)
 
 db = SQLAlchemy(application)
 bcrypt = Bcrypt(application)
