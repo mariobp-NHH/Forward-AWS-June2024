@@ -33,7 +33,6 @@ bcrypt = Bcrypt(application)
 #login_manager.login_view = 'forward_users.forward_users_login'
 #login_manager.login_message_category = 'info'
 
-login_manager= LoginManager(application)
 login_manager.blueprint_login_views = {
     'gd_course_questionnaires': 'forward_users.forward_users_login',
     'gd_course_chats': 'forward_users.forward_users_login',
@@ -61,6 +60,7 @@ login_manager.blueprint_login_views = {
     'gd_course_NHH_2024_group2' : 'gd_course_NHH_2024_group2.login',
     'gd_course_NHH_2024_group3' : 'gd_course_NHH_2024_group3.login',
     'gd_course_NHH_2024_group4' : 'gd_course_NHH_2024_group4.login',
+    'gd_course_NHH_2025_group1': 'gd_course_NHH_2025_group1.login',
     'sbm_course_chats': 'forward_users.forward_users_login',
     'aab_course_business_module': 'forward_users.forward_users_login',
     'aab_course_announcements': 'forward_users.forward_users_login',
@@ -118,6 +118,7 @@ from webse.gd_course_NHH_2024_group1.routes import gd_course_NHH_2024_group1
 from webse.gd_course_NHH_2024_group2.routes import gd_course_NHH_2024_group2
 from webse.gd_course_NHH_2024_group3.routes import gd_course_NHH_2024_group3
 from webse.gd_course_NHH_2024_group4.routes import gd_course_NHH_2024_group4
+from webse.gd_course_NHH_2025_group1.routes import gd_course_NHH_2025_group1
 from webse.sbm_course_home.routes import sbm_course
 from webse.sbm_course_announcements.routes import sbm_course_announcements
 from webse.sbm_course_chats.routes import sbm_course_chats
@@ -194,6 +195,7 @@ application.register_blueprint(gd_course_NHH_2024_group1)
 application.register_blueprint(gd_course_NHH_2024_group2)
 application.register_blueprint(gd_course_NHH_2024_group3)
 application.register_blueprint(gd_course_NHH_2024_group4)
+application.register_blueprint(gd_course_NHH_2025_group1)
 application.register_blueprint(sbm_course)
 application.register_blueprint(sbm_course_announcements)
 application.register_blueprint(sbm_course_chats)
