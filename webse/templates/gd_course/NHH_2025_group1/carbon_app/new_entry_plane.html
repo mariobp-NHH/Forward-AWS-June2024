@@ -1,0 +1,84 @@
+{% extends "gd_course/NHH_2025_group1/layout.html" %}
+{% block content %}
+
+<section class="background">
+    <div class="container">
+        <div class="title">
+            <p class="text-center">Based on the code developed by Gabriel Fuentes for the course ENE425,
+                our carbon emissions calculator will help you to estimate your carbon footprint based on
+                your selected mode of transport.</p>
+        </div>
+    </div>
+
+    <div class="page-content">
+    <div class="row">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Carbon Calculator</h5>
+                        <p class="card-text" style="font-size: 23px; text-align: center;"> Input the distance you're travelling and the type of fuel, and we will calculate the carbon emission for you. </p>
+
+                    <h3 class="card-text">Selected Mode of Transport: Plane </h3>
+
+          <form method="POST" action="">
+              {{ form.csrf_token }}
+              <fieldset class="form-group">
+
+                <div class="form-group">
+                    {{ form.kms.label(class="form-control-label") }}
+                    {% if form.kms.errors %}
+                        {{ form.kms(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.kms.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.kms(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.fuel_type.label(class="form-control-label") }}
+                    {% if form.fuel_type.errors %}
+                        {{ form.fuel_type(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.fuel_type.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.fuel_type(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+              </fieldset>
+              <div class="form-group-submit">
+                {{ form.submit(class="btn btn-success btn_carbon_app_new_entry_main") }}
+              </div>
+          </form>
+
+        </div>
+      </div>
+  </div>
+  <div class="col-sm-6">
+      <div class="card">
+          <div class="card-body">
+                <h1 class="card-title">Our Methodology</h5>
+                <p class="card-text" style="font-size: 23px; text-align: justify;">
+                    Airplanes use kerosene fuel, and carbon emissions vary based on ticket class due to differences in space per passenger.
+                    By selecting your ticket class, you can get a more accurate estimate of your carbon footprint, as higher classes accommodate
+                    fewer passengers per flight. (View our report <a href="{{ url_for('static', filename='gd_course_NHH_2025_group1/FOR19 METHODOLOGY PAPER.pdf/')}}#page=10" target="blank">here</a>)
+                </p>
+                <p class="card-text formula" style= "font-size: 30px;text-align: center;">Using the formula:
+                    <br>\(CO₂ = d ⋅ ef,\)
+                    and plane emission being 0.14062kg/km for economy, <br>0.40781kg/km for business, <br>0.56251kg/km for first class</p>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+{% endblock content %}

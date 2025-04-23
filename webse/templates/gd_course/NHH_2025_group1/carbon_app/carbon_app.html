@@ -1,0 +1,66 @@
+{% extends "gd_course/NHH_2025_group1/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section class="background">
+  <div class="container_capp">
+    <div class="title">
+      <h1 class="text-center">Choose Mode of Transport</h1>
+    </div>
+  </div>
+
+  <div class="container_capp mx-5">
+    <div class="row justify-content-center g-3 mt-4">
+      <div class="col-6 col-sm-4 col-md-3">
+        <a
+          href="{{ url_for('gd_course_NHH_2025_group1.new_entry_bus') }}"
+          class="btn btn-success grid-item"
+          ><i class="fas fa-bus"></i> BUS</a
+        >
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <a
+          href="{{ url_for('gd_course_NHH_2025_group1.new_entry_car') }}"
+          class="btn btn-success grid-item"
+          ><i class="fas fa-car"></i> CAR</a
+        >
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <a
+          href="{{ url_for('gd_course_NHH_2025_group1.new_entry_ferry') }}"
+          class="btn btn-success grid-item"
+          ><i class="fas fa-ferry"></i> FERRY</a
+        >
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <a
+          href="{{ url_for('gd_course_NHH_2025_group1.new_entry_train') }}"
+          class="btn btn-success grid-item"
+          ><i class="fas fa-train"></i> TRAIN</a
+        >
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <a
+          href="{{ url_for('gd_course_NHH_2025_group1.new_entry_motorbike') }}"
+          class="btn btn-success grid-item"
+          ><i class="fas fa-motorcycle"></i> MOTORBIKE</a
+        >
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <a
+          href="{{ url_for('gd_course_NHH_2025_group1.new_entry_plane') }}"
+          class="btn btn-success grid-item"
+          ><i class="fas fa-plane"></i> PLANE</a
+        >
+      </div>
+      <div class="col-6 col-sm-4 col-md-3">
+        <a
+          href="{{ url_for('gd_course_NHH_2025_group1.new_entry_van') }}"
+          class="btn btn-success grid-item"
+          ><i class="fas fa-van-shuttle"></i> VAN</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
