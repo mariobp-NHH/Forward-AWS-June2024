@@ -33,6 +33,7 @@ bcrypt = Bcrypt(application)
 #login_manager.login_view = 'forward_users.forward_users_login'
 #login_manager.login_message_category = 'info'
 
+login_manager= LoginManager(application)
 login_manager.blueprint_login_views = {
     'gd_course_questionnaires': 'forward_users.forward_users_login',
     'gd_course_chats': 'forward_users.forward_users_login',
