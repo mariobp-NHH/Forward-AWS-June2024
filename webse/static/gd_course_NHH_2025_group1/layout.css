@@ -1,0 +1,299 @@
+/* Google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita:wght@400;700;800&display=swap');
+
+
+a {
+  color: #f2f2f2;
+  text-decoration: none;
+}
+
+
+.section_carbon_app_navbar_home {
+  width: 100%;
+  background-color: transparent; /* Remove solid background */
+  position: absolute; /* Make it float at the top */
+  top: 10px; /* Adjust positioning */
+  left: 0;
+  padding: 10px 40px;
+  z-index: 1000;
+}
+
+.section_carbon_app_navbar {
+  width: 100%;
+  background-color: #1e4541; /* Remove solid background */
+  top: 10px; /* Adjust positioning */
+  left: 0;
+  padding: 20px 40px;
+  z-index: 1000;
+}
+
+/* Navbar Container */
+.carbon_app_navbar_home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.carbon_app_navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Navbar Menu */
+.carbon_app_navbar_home nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.carbon_app_navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Navbar Links */
+.carbon_app_navbar_home nav ul li a {
+  color: #2c2c2c;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: 0.3s;
+  position: relative;
+  font-family: 'Sansita', sans-serif;
+} 
+
+.carbon_app_navbar nav ul li a {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: 0.3s;
+  position: relative;
+  font-family: 'Sansita', sans-serif;
+}
+
+/* Hover and Active Effects */
+.carbon_app_navbar_home nav ul li a:hover,
+.carbon_app_navbar_home nav ul li a.active {
+  border-bottom: 2px solid #2c2c2c;
+}
+
+.carbon_app_navbar nav ul li a:hover,
+.carbon_app_navbar nav ul li a.active {
+  border-bottom: 2px solid #f2f2f2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carbon_app_navbar_home {
+      flex-direction: column;
+      align-items: center;
+  }
+  .carbon_app_navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carbon_app_navbar_home nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+  .carbon_app_navbar nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .carbon_app_navbar_home nav ul li a {
+      font-size: 14px;
+  }
+  .carbon_app_navbar nav ul li a {
+    font-size: 14px;
+  }
+}
+
+/* Logo (homepage)*/
+
+.logo_home {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+}
+
+.logo_home img {
+  width: 60px; /* Adjust size as needed */
+  height: auto;
+  background-color: none;
+}
+
+.logo_home span {
+  font-family: 'Sansita', sans-serif;
+  color: #1e4541;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Logo*/
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between logo and text */
+}
+
+.logo img {
+  width: 60px; /* Adjust size as needed */
+  height: auto;
+  background-color: none;
+}
+
+.logo span {
+  font-family: 'Sansita', sans-serif;
+  color: #f2f2f2;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Back to Top*/
+.back-to-top-wrapper {
+  background-color: #1e4541;
+  padding: 8px 0; /* reduce vertical space */
+  margin-bottom: 0; /* ensure no extra space before footer */
+  }
+
+.back-to-top-link {
+  color: #f2f2f2;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s ease;
+}
+
+.back-to-top-link:hover {
+  color: #2c2c2c; /* Lighter green on hover */
+  text-decoration: none;
+}
+
+
+
+/* Footer */
+.custom-footer {
+  background-color: #222;
+  color: white;
+  width: 100%;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-content {
+  width: 100%;
+}
+
+.footer-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 1rem;
+  font-family: 'Lexend Tera', sans-serif;
+}
+
+.footer-content ul li {
+  margin-bottom: 10px;
+  font-family: 'Lexend Tera', sans-serif;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.icon-dot {
+  font-size: 8px;
+  color: #1e3b36;
+  margin-right: 10px;
+}
+
+/* Dashboard Header Section Styles */
+.background {
+  background-color: #1e4541;
+  padding-bottom: 40px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.title {
+  color: #f2f2f2;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.new-entry-btn {
+  background-color: #35544c;
+  color: #2c3e38;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  box-shadow: none; /* Remove the old glow */
+  text-decoration: none;
+}
+
+.new-entry-btn:hover {
+  background-color: #042013;
+  color: #ffffff;
+}
+
+/* Table text color */
+.table {
+  color: #f2f2f2;
+}
+
+/* Header text + border */
+.table thead th {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+/* Row zebra striping */
+.table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Optional: hover effect for rows */
+.table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Optional: make headers bold and uppercased */
+.table thead th {
+  font-weight: bold;
+  text-transform: uppercase;
+}

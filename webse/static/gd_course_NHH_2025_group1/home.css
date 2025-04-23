@@ -1,0 +1,169 @@
+/* Reset og base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+
+/* Background Image */
+.hero {
+  background: url("/static/gd_course_NHH_2025_group1/web layout.jpg") no-repeat
+    center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #003322;
+  position: relative;
+}
+/* Dark overlay to improve text visibility */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Light transparent overlay */
+}
+
+.meet-our-team {
+  font-weight: bold;
+  color: white;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 85%;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  color: #1b2c2a;
+}
+
+/* Button */
+.explore-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #003322;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.explore-btn:hover {
+  background-color: #005544; /* slightly lighter green */
+  color: white; /* keep text white */
+  transform: scale(1.03); /* subtle zoom on hover */
+}
+
+/* MISSION */
+.mission-section {
+  background-color: #1e4541;
+  color: white;
+  /* padding: 50px 50px 20px; */
+  margin: 75px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.mission-section h2 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.mission-section p {
+  font-size: 1.2rem;
+  max-width: 80%;
+  margin: 0 auto 0;
+}
+
+/* Bølge fra MISSION → VISION */
+/* VISION */
+.vision-section {
+  background-color: #1e4541;
+  padding: 0 100px 10px;
+  text-align: center;
+}
+
+.vision-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.vision-section p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: white;
+}
+
+/* Bran's code */
+.card-img-top {
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  margin: 0 auto; /* Center horizontally */
+  margin-bottom: 10px;
+}
+
+.card-body {
+  background-color: #a2a2a5 !important;
+  color: black !important;
+}
+
+.card-text {
+  font-size: 13px !important;
+  text-align: left !important;
+}
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  display: flex;
+  align-items: flex-start; /* Aligns icon to the top */
+  gap: 0.5rem; /* spacing between icon and text */
+  margin-bottom: 0.5rem;
+}
+
+.row {
+  margin: 0 10px 0 0;
+}
+
+/* Buttons inside each card */
+.profile-buttons {
+  margin-top: 10px;
+}
+
+/* Example button style (reuse your existing .btn if you want) */
+.profile-buttons .btn {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 8px 12px;
+  background-color: #003322;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.profile-buttons .btn:hover {
+  background-color: #005544; /* Slightly lighter green on hover */
+}
