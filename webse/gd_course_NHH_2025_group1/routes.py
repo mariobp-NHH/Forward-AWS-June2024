@@ -260,12 +260,14 @@ def your_data():
     categories = ['Bus', 'Car', 'Ferry', 'Train', 'Motorbike', 'Plane', 'Van']
 
     entries = EmissionsGD.query.filter_by(author=current_user).\
+        filter(EmissionsGD.institution=='NHH_2025_group1').\
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).\
         order_by(EmissionsGD.date.desc()).order_by(EmissionsGD.transport.asc()).all()
 
     # Emissions by transport
     emissions_raw = db.session.query(db.func.sum(EmissionsGD.total), EmissionsGD.transport).\
         filter_by(author=current_user).\
+        filter(EmissionsGD.institution=='NHH_2025_group1').\
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).\
         group_by(EmissionsGD.transport).all()
 
@@ -278,6 +280,7 @@ def your_data():
     # Kilometers by transport
     kms_raw = db.session.query(db.func.sum(EmissionsGD.kms), EmissionsGD.transport).\
         filter_by(author=current_user).\
+        filter(EmissionsGD.institution=='NHH_2025_group1').\
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).\
         group_by(EmissionsGD.transport).all()
 
@@ -290,6 +293,7 @@ def your_data():
     # Emissions over time
     emissions_by_date = db.session.query(db.func.sum(EmissionsGD.total), EmissionsGD.date).\
         filter_by(author=current_user).\
+        filter(EmissionsGD.institution=='NHH_2025_group1').\
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).\
         group_by(EmissionsGD.date).order_by(EmissionsGD.date.asc()).all()
 
@@ -299,6 +303,7 @@ def your_data():
     # Kilometers over time
     kms_by_date = db.session.query(db.func.sum(EmissionsGD.kms), EmissionsGD.date).\
         filter_by(author=current_user).\
+        filter(EmissionsGD.institution=='NHH_2025_group1').\
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).\
         group_by(EmissionsGD.date).order_by(EmissionsGD.date.asc()).all()
 
