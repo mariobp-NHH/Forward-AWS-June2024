@@ -1,0 +1,138 @@
+{% extends "gd_course/NHH_2025_group4/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <!-- Background video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="{{ url_for('static', filename='gd_course_NHH_2025_group4/videos/161071-822582138_small.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+ <div class="header_home">
+  <div class="box">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <script>
+      setTimeout(function () {
+        var flashes = document.querySelectorAll(".alert");
+        flashes.forEach((flash) => flash.remove());
+      }, 5000);
+    </script>
+
+    <h1 class="animate-slide-down" style="font-size:55px; animation-delay: 0.2s; animation-fill-mode: both;"><span class="text-logo"> Home</span></h1>
+    <p class="animate-slide-down" style="text-align:left; animation-delay: 0.4s; animation-fill-mode: both;">
+      It is crucial to inform the public about carbon emissions because of
+          the growing awareness and responsibility we all share in addressing climate change, therefore we
+          built this webpage. Carbon emissions are a significant contributor to global warming, and understanding
+          their impact is essential for both individuals and businesses. A website that provides detailed information
+          about carbon emissions allows people to learn about their carbon footprint, track their activities,
+          and take proactive steps to reduce their environmental impact.
+    </p>
+  </div>
+</div>
+  </div>
+</section>
+
+<!-- Developers -->
+<section class="section_developers">
+  <div class="container">
+
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center;"> Our Team</h1>
+      <p>
+        Our team consists of enthusiastic undergraduate students studying at NHH,
+        each of us coming from different countries with diverse backgrounds. Despite
+        our differences, we share a strong passion for learning and expanding our
+        knowledge. We are deeply committed to sustainability and value the importance of
+        the environment in everything we do. Additionally, we have a keen interest in technology
+        and its potential to create innovative solutions for the future. Together, we aim to
+        combine our unique perspectives and skills to make a meaningful impact in both our
+        studies and the world around us.
+      </p>
+    </div>
+
+    <div class="developers">
+      <div class="box">
+        <div class="img-container">
+          <img src="../static/gd_course_NHH_2025_group4/images/yasmine_foto.jpg" alt="">
+        </div>
+        <h3>Yasmine Bejar</h3>
+        <p>
+          I am Yasmine, a student at Institude Mines-Telecom Business School currently studying Management of New Technologies.
+          I am eager to learn more about the digital world, and have a deep passion for the environment and for finding sustainable solutions.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://github.com/yasmine918" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="box2">
+        <div class="img-container">
+          <img src="../static/gd_course_NHH_2025_group4/images/7e1f4714-de99-4156-a57c-5daab2cb2edf.jpeg" alt="Picture of Iker Larrauri">
+        </div>
+        <h3>Iker Larrauri</h3>
+        <p>
+          I am Iker Larrauri, a student at the University of Deusto in Spain, and I am currently studying Business.
+          I am in the process of learning about computer science as I believe it is essential in this technological world. I also have adeep passion for the environment.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://github.com/ilarraguti" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="box2">
+        <div class="img-container">
+          <img src="../static/gd_course_NHH_2025_group4/images/fotoixchel.jpg" alt="">
+        </div>
+        <h3>Ixchel Rodriguez</h3>
+        <p>
+          My name is Ixchel, I am currently on my last year of a bachelor's program in Economics at
+          Maastricht University. I believe this project is essential to start achieving sustainability in a globalized world. I am also eager to learn new Technologies to achive that.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://github.com/ixchelrodriguezc" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="developers">
+      <div class="box">
+        <div class="img-container">
+          <img src="../static/gd_course_NHH_2025_group4/images/johanna_kronfuss.jpg" alt="Picture of Johanna Kronfuß">
+        </div>
+        <h3>Johanna Kronfuß</h3>
+        <p>
+          I am currently studying Business Informatics, where I focus on digitalization and its
+          impact on businesses. Additionally, I have a deep love for the environment and want to save our planet.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://github.com/hannik3" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="img-container">
+          <img src="../static/gd_course_NHH_2025_group4/images/AlbanPoutier.jpg" alt="">
+        </div>
+        <h3>Alban Poutier</h3>
+        <p>
+          I am a student at HEC Paris who cares about the environment. In my opinion, innovative minds shape the future through code.
+          Driven by sustainability, I want to build digital solutions that can help.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://github.com/albanpoutier" target="_blank">GitHub</a>
+        </div>
+      </div>
+      <div class="box" style="background-color: #d8cdc3;">
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,141 @@
+{% extends "gd_course/NHH_2025_group4/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section class="section_header_methodology">
+  <div class="container">
+    <div class="header">
+      <div class="box">
+        <h1 class="animate-slide-down" style="font-size: 55px">
+          <span class="text-logo"> Methodology</span>
+        </h1>
+        <p class="animate-slide-down"style="text-align: left; animation-delay: 0.3s; animation-fill-mode: both;">
+          Our methodology explains how carbon emissions are calculated when a
+          user enters their transportation data into our Carbon Application. By
+          considering factors such as travel distance, transport mode, and fuel
+          type, we ensure accurate and reliable emissions results to help users
+          understand and reduce their carbon footprint.
+        </p>
+        <div class="container_buttons_links_header">
+          <div class="btn">
+            <a
+              href="{{ url_for('static', filename='gd_course_NHH_2025_group4/documents/carbon_methodology_report.pdf.pdf') }}"
+              class="btn btn-primary btn-lg mr-2"
+              style="background-color: #407364"
+              target="_blank"
+            >
+              Paper
+            </a>
+          </div>
+          <div class="btn">
+            <a
+              href="{{url_for('gd_course_NHH_2025_group4.carbon_app_home')}}"
+              class="btn btn-primary btn-lg mr-2"
+              ,
+              style="background-color: #407364"
+              >Carbon App</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="box">
+        <img
+          src="{{url_for('static', filename='gd_course_NHH_2025_group4/images/illustration-people-with-nature-resources.png')}}"
+          width="325"
+          height="325"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <div class="header-wave">
+    <svg
+      class="header-wave-svg"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 100"
+      preserveAspectRatio="none"
+    >
+      <path
+        class="header-wave-path"
+        d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"
+      ></path>
+    </svg>
+  </div>
+  <!-- MathJax CSS -->
+  <script
+    id="MathJax-script"
+    async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+  ></script>
+</section>
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+  <div class="container">
+    <!--Enumerated list (table with one column)-->
+    <div
+      class="methodology"
+      style="
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+      "
+    >
+      <h1 class="animate-slide-down" style="animation-delay: 0.2s; animation-fill-mode: both;">Our numbers and formulas</h1>
+      <p class="animate-slide-down" style="animation-delay: 0.4s; animation-fill-mode: both;">Here are the numbers and formulas behind our carbon calculator</p>
+      <div class="box_table1"></div>
+      <div class="box_table1">
+        <h4>Formulas</h4>
+        <p class="text-center">
+          All of CarbonWise's calculations use a standard formula that can be
+          applied uniformly across all vehicle types:
+          <br />
+
+          \(CO2 = d*ef/p\)
+          <br />
+          Where: - \(CO2\) = carbon dioxide emissions in grams
+          <br />
+          - \(d\) = distance travelled (in kilometres)
+          <br />
+          - \(ef\) = emission factor (in grams CO₂ per kilometer)
+          <br />
+          - \(p\) = number of passengers
+          <br /><br />
+          For electric cars, a specific variant of this formula is used to
+          reflect electricity-related emissions better:
+          <br />
+          \(CO2 = d*ec*ci/p\)
+          <br />
+          Where: - \(CO2\) = carbon dioxide emissions in grams
+          <br />
+          - \(d\) = distance travelled (in kilometres)
+          <br />
+          - \(ec\) = energy consumption (in kWh/km)
+          <br />
+          - \(ci\) = carbon intensity of electricity production (in gCO₂/kWh),
+          here set at 240 gCO₂/kWh
+          <br />
+          - \(p\) = number of passengers
+          <br />
+        </p>
+        <p>
+          <div class="btn">
+            <a
+              href="{{ url_for('static', filename='gd_course_NHH_2025_group4/documents/carbon_methodology_report.pdf.pdf') }}"
+              class="btn btn-primary btn-lg mr-2"
+              style="background-color: #407364"
+              target="_blank"
+            >
+            You can read more in our paper
+            </a>
+          </div>
+          <div class="btn">
+        </p>
+      </div>
+    </div>
+  <div class="box_table1"></div>
+  </div>
+</section>
+
+{% endblock content %}

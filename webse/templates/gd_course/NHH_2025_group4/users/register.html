@@ -1,0 +1,103 @@
+{% extends "gd_course/NHH_2025_group4/layout.html" %}
+{% block content %}
+
+<section class="section_header_register">
+  <div class="header">
+    <div class="box">
+      <h1 style="font-size:55px;"><span class="text-logo"> Resgister</span></h1>
+      <p style="text-align:center;">
+          If you dont already have an account you should register know so that you can calculate your carbon footprint and
+          see what you can do.
+      </p>
+    </div>
+  </div>
+  <div class="header-wave">
+      <svg class="header-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+        <path class="header-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+      </svg>
+  </div>
+</section>
+<section class="register_section_css">
+    <div class="container">
+            <div class="box">
+
+            </div>
+            <div class="box">
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Join Today</legend>
+                        <div class="form-group">
+                            {{ form.username.label(class="form-control-label") }}
+                            {% if form.username.errors %}
+                                {{ form.username(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.username.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.username(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.email.label(class="form-control-label") }}
+                            {% if form.email.errors %}
+                                {{ form.email(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.email.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.email(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.label(class="form-control-label") }}
+                            {% if form.password.errors %}
+                                {{ form.password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.password(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                        <div class="form-group">
+                            {{ form.confirm_password.label(class="form-control-label") }}
+                            {% if form.confirm_password.errors %}
+                                {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.confirm_password.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.confirm_password(class="form-control form-control-lg") }}
+                            {% endif %}
+                        </div>
+                    </fieldset>
+                    </br>
+                    <div class="form-group">
+                        {{ form.submit(class="btn btn-outline-info") }}
+                    </div>
+                </form>
+                </br>
+                <div class="border-top pt-3">
+                    <small>
+                        Already Have An Account? <a class="ml-5" href="{{ url_for('gd_course_NHH_2025_group4.login') }}">Sign In</a>
+                    </small>
+                </div>
+
+            </div>
+            <div class="box">
+
+            </div>
+    </div>
+</section>
+
+
+{% endblock content %}
