@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='/gd_course_NHH_2025_group3/styles/layout.css')}}"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid container">
+            <a
+              class="navbar-brand"
+              href="{{url_for('gd_course_NHH_2025_group3.home_page')}}"
+            >
+              <img
+                src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/logo.png')}}"
+                alt="Logo"
+                width="50"
+                height="50"
+                class="d-inline-block align-text-middle"
+              />
+              <span>Carbon App</span>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              {% if current_user.is_authenticated %}
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.calculator_page')}}"
+                    >Calculator</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.your_data')}}"
+                    >Your Data</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.methodology_page')}}"
+                    >Methodology</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.about_page')}}"
+                    >About Us</a
+                  >
+                </li>
+              </ul>
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.logout')}}"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+              {% else %}
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.calculator_page')}}"
+                    >Calculator</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.methodology_page')}}"
+                    >Methodology</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.about_page')}}"
+                    >About Us</a
+                  >
+                </li>
+              </ul>
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.login')}}"
+                    >Login</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="{{url_for('gd_course_NHH_2025_group3.register')}}"
+                    >Register</a
+                  >
+                </li>
+              </ul>
+              {% endif %}
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      {% block content %} {% endblock %}
+      <div class="push"></div>
+    </div>
+
+    <footer>
+      <h5><a href="#">Take me to the TOP!</a></h5>
+
+      <p>&copy; NHH 2025 - Team 3</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+{% extends "gd_course/NHH_2025_group3/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+
+<Head>
+  <link rel="stylesheet" href="{{url_for('static', filename='/gd_course_NHH_2025_group3/styles/calculator.css')}}">
+  <script type="text/javascript" src="{{url_for('static', filename='/gd_course_NHH_2025_group3/js/fieldChanger.js')}}"></script>
+</Head>
+
+<section class="section_header_calculator">
+  <div class="container">
+
+    <div class="header_calculator">
+      <div class="box">
+        <img src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/Logo_calculator.webp')}}" alt="Logo" />
+      </div>
+      <div class="box">
+        <h1><span class="text-logo"> Carbon App Calculator</span></h1>
+        <p style="text-align:left;">
+          Welcome to your carbon emission calculator.
+        </p>
+        <p style="text-align: left">
+          Please choose your mode of transportation from the seven categories below and enter the number of kilometers to travel.
+          By doing so, you can compare your emissions with other means of transport and see if you have reduced your carbon footprint. If not, you'll know what to do next time!
+        </p>
+        <div class="container_buttons_links_header_calculator">
+          <div class="btn">
+            <a href="{{url_for('gd_course_NHH_2025_group3.methodology_page')}}" class="btn-solid">Methodology</a>
+          </div>
+          <div class="btn">
+            <a href="{{url_for('gd_course_NHH_2025_group3.your_data')}}" class="btn-solid">Your data</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- calculator_new_entry_main -->
+<section class="section_calculator_new_entry_main">
+  <div class="container">
+
+    <section class="new_entry">
+      <div class="container">
+        <div class="box">
+
+        </div>
+        <div class="box">
+          <div class="h1 mb-3" style="text-align: center; color:  #568c63;">
+            <h3>Please, select your mean of conveyance in the boxes below</h3>
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <p class="centered">
+            Please, fill in these sections:
+          </p>
+          <form method="POST" action="">
+            {{ form.csrf_token }}
+            <fieldset class="form-group">
+
+              <div class="form-group">
+                {{ form.method.label(class="form-control-label") }}
+                {% if form.method.errors %}
+                {{ form.method(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                  {% for error in form.method.errors %}
+                  <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+                {% else %}
+                {{ form.method(class="form-control form-control-lg") }}
+                {% endif %}
+              </div>
+
+              <div class="form-group">
+                {{ form.kms.label(class="form-control-label") }}
+                {% if form.kms.errors %}
+                {{ form.kms(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                  {% for error in form.kms.errors %}
+                  <span>{{ error }}</span>
+                  {% endfor %}
+                </div>
+                {% else %}
+                {{ form.kms(class="form-control form-control-lg") }}
+                {% endif %}
+              </div>
+
+              <div class="form-group">
+                {{ form.fuel_type.label(class="form-control-label") }}
+                {% if form.fuel_type.errors %}
+                    {{ form.fuel_type(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback">
+                        {% for error in form.fuel_type.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.fuel_type(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+
+            <div class="form-group" id="passenger-select">
+              {{ form.passengers.label(class="form-control-label") }}
+              {% if form.passengers.errors %}
+                  {{ form.passengers(class="form-control form-control-lg is-invalid") }}
+                  <div class="invalid-feedback">
+                      {% for error in form.passengers.errors %}
+                          <span>{{ error }}</span>
+                      {% endfor %}
+                  </div>
+              {% else %}
+                  {{ form.passengers(class="form-control form-control-lg") }}
+              {% endif %}
+          </div>
+
+            </fieldset>
+            </br>
+            <div class="form-group">
+              {{ form.submit(class="btn_calculator_new_entry_main") }}
+            </div>
+          </form>
+        </div>
+        <div class="box">
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</section>
+
+{% endblock content %}
+

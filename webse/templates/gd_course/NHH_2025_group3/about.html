@@ -1,0 +1,200 @@
+{% extends "gd_course/NHH_2025_group3/layout.html" %} {% block content %}
+
+<head>
+  <link
+    rel="stylesheet"
+    href="{{url_for('static', filename='/gd_course_NHH_2025_group3/styles/about.css')}}"
+  />
+</head>
+
+<div class="container">
+  <h1>- About Us -</h1>
+  <br />
+  <h5>
+    We are a group of students that are interested in transport carbon emission
+    problematics!
+  </h5>
+  <h5>Meet our team:</h5>
+  <br />
+  <div class="row row-cols-1 row-cols-md-3 g-4 mb-4">
+    <div class="col">
+      <div class="card h-100">
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <img
+            src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/hugo.jpeg')}}"
+            class="card-img-top img-cover"
+            alt="dev2"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Hugo Toorenaar</h5>
+          <p class="card-text">
+            Bonjour, I’m Hugo and I come from Toulouse, France. I am an Erasmus
+            student at NHH since August. In my free time, I enjoy running.
+          </p>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <img
+            src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/Uten navn.jpg')}}"
+            class="card-img-top img-cover"
+            alt="dev2"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Marte Elisabeth Kvingedal</h5>
+          <p class="card-text">
+            Hi, my name is Marte. I am a 20-year-old student from Norway
+            currently taking a bachelor in Economics and Business Administration
+            at the Norwegian School of Economics in Bergen.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a
+            href="https://www.linkedin.com/in/marte-kvingedal-858671300/"
+            class="btn linkedin-btn"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <img
+            src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/Jo.jpg')}}"
+            class="card-img-top img-cover"
+            alt="dev2"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Jo Brun Larsen</h5>
+          <p class="card-text">
+            Hello! My name is Jo. I am a 19-year-old student from Norway
+            currently taking a bachelor in Economics and Business Administration
+            at the Norwegian School of Economics in Bergen.
+          </p>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <img
+            src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/kentin.jpeg')}}"
+            class="card-img-top img-cover"
+            alt="dev2"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Kentin Le Men</h5>
+          <p class="card-text">
+            Hi, I'm Kentin LE MEN, I'm 21 and I'm a student from Montpellier in
+            France. I'm actually in exchange at NHH for the semester.
+          </p>
+        </div>
+        <div class="card-footer"></div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <img
+            src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/matteo.jpg')}}"
+            class="card-img-top img-cover"
+            alt="dev2"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Matteo Wolf</h5>
+          <p class="card-text">
+            Hello, my name is Matteo WOLF. I am 21 years old and I come from
+            France. I am currently pursuing a Master 1 at Montpellier Business
+            School, a business school in France. At the moment, I am on an
+            exchange program at NHH in Bergen, Norway. I am also passionate
+            about sports, whether it’s football, weight training, hiking, or
+            running.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a
+            href="https://www.linkedin.com/in/matteo-wolf-968482166/"
+            class="btn linkedin-btn"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/Matteo-Wolf" class="btn github-btn"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <img
+            src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/vojtech.JPG')}}"
+            class="card-img-top img-cover"
+            alt="dev1"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Vojtěch Dejnožka</h5>
+          <p class="card-text">
+            Hi, I'm Vojtěch. I'm a 21-year-old student from Czechia. I'm
+            studying Data Science at the Prague University of Economics and
+            Business, and I'm currently on an exchange at the NHH. In my free
+            time, I enjoy hiking, which I combine with my love for traveling,
+            orienteering, climbing, and board games.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a
+            href="https://www.linkedin.com/in/vojtechdejnozka/"
+            class="btn linkedin-btn"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/VojtechDejnozka" class="btn github-btn"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+    <div class="col">
+      <div class="card h-100">
+        <div class="ratio ratio-1x1 rounded-circle overflow-hidden">
+          <img
+            src="{{url_for('static', filename='/gd_course_NHH_2025_group3/images/Janis_Reboul.jpg')}}"
+            class="card-img-top img-cover"
+            alt="dev2"
+          />
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Janis Reboul</h5>
+          <p class="card-text">
+            Hi, I'm Janis. I'm currently a Skema BS first year master student in
+            Asset Management. By raising awareness through this app I would like
+            to contribute to carbon dioxyde reduction.
+          </p>
+        </div>
+        <div class="card-footer">
+          <a
+            href="https://www.linkedin.com/in/janis-reboul-mtp/"
+            class="btn linkedin-btn"
+            >LinkedIn</a
+          >
+          <a href="https://github.com/JanisReboul34" class="btn github-btn"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
