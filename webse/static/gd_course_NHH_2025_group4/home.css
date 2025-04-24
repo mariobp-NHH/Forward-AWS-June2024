@@ -1,0 +1,250 @@
+/* Colors 
+Home, section 1 (head, background): #A5D6A7 (Sanftes Grün)
+Home, section 1 (head, boxes): #81C784 (Helles Grün)
+Home, section 2 (developers, background): #C8E6C9 (Sehr sanftes Grün)
+Home, section 2 (developers, boxes): #388E3C (Dunkleres Waldgrün)
+ */
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+/* Section header_home */
+.section_header_home {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: white;
+  display: flex;
+  align-items: flex-start; 
+  justify-content: center;
+  padding-top: 60px; 
+}
+
+
+.header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+}
+
+.header_home .box {
+  flex: 1;
+  background: transparent;
+  color: white;
+  margin: 20px 10px;
+  padding: 30px;
+  text-align: center;
+  z-index:2;
+position: relative;
+box-shadow: none;
+border: none;
+
+
+}
+.header_home .box:nth-of-type(1) {
+  flex-grow: 2;
+}
+.header_home .box:nth-of-type(2) {
+  flex-grow: 1;
+}
+.container_buttons_links_header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container_buttons_links_header_home a:hover {
+  color: #81C784; /* Helles Grün beim Hover */
+}
+.btn-primary {
+  background-color: #d8cdc3; /* Hintergrundfarbe */
+  color: white; /* Textfarbe */
+  border: 0px solid #1B4D3E; /* Randfarbe */
+}
+.container_buttons_links_header_home btn {
+  width: 100px;
+  height: 100px;
+  background: #81C784; /* Helles Grün */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-wave-svg {
+  background-color: transparent;
+  display: block;
+  height: 30px;
+  position: relative;
+  width: 100%;
+  transform: scaleY(-1);
+  margin-bottom: -2px;
+}
+.header-wave-path {
+  fill: #d8cdc3;
+}
+.header-wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background-color: transparent;
+}
+
+
+
+/* Section developers */
+.section_developers {
+  background-color: #d8cdc3; /* Sehr sanftes Grün */
+}
+.developers {
+  display: flex;  
+  align-items: start;
+  background: #d8cdc3; /* Sehr sanftes Grün */
+}
+.developers .box {
+  flex: 1;
+  background: #90a897; /* Dunkleres Waldgrün */
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.developers .box:nth-of-type(1) {
+  flex-grow: 4;
+}
+.developers .box:nth-of-type(2) {
+  flex-grow: 4;
+}
+.developers .box:nth-of-type(3) {
+  flex-grow: 4;
+}
+.developers .box2 {
+  flex: 1;
+  background: #90a897; /* Dunkleres Waldgrün */
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.developers .box2:nth-of-type(1) {
+  flex-grow: 4;
+}
+.developers .box2:nth-of-type(2) {
+  flex-grow: 4;
+}
+.developers .box2:nth-of-type(3) {
+  flex-grow: 4;
+  background: #90a897; /* Sehr sanftes Grün */
+}
+.devlopers img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+.img-container {
+  width: 75%;
+  height: 35%;
+  justify-self: center;
+  margin-bottom: 20px;
+}
+
+.img-container img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.section_container_buttons_developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_developers {
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #1B4D3E; /* Dunkleres Waldgrün */
+  border: 0px solid #C8E6C9; /* Sehr sanftes Grün */
+}
+.btn_developers:hover {
+  color: #81C784;  /* Sehr sanftes Grün */
+  text-decoration: none;
+}
+
+
+/* Mobile responsiveness */
+@media (max-width: 768px) { 
+  .header_home {
+    flex-direction: column;
+  } 
+  .developers {
+    flex-direction: column;
+  } 
+  .section_container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.header_home,
+.header-wave {
+  position: relative;
+  z-index: 2;
+}
+
+.header_home .box {
+  background: transparent; /* Remove green background from boxes */
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1;
+ }
+@keyframes slideDownFade {
+  0% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-down {
+  animation: slideDownFade 1s ease-out;
+}
+
+

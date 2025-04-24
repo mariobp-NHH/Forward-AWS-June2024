@@ -1,0 +1,177 @@
+/* Colors */
+/* Wald Thema - Nachhaltigkeit: 
+Navbar (background): #4CAF50 (Grün)
+Navbar (a hover): #388E3C (Dunkleres Grün)
+Navbar (logo): #81C784 (Helles Grün)
+Navbar (a menu): #2C6B2F (Waldgrün)
+*/
+
+/* Google fonts Roboto  */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* CSS utilities */
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  line-height: 1.6;
+}
+.container {
+  margin: auto;
+  max-width: 1320px;
+}
+ul { 
+  list-style: none;
+  font-size: 400;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+h1, h2 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+img {
+  width: 100%;
+}
+/* Navbar  */
+.section_carbon_app_navbar {
+  background-color: #314736; /* Waldgrün */
+}
+.carbon_app_navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 70px;
+  align-items: center;
+  background-color: #314736; /* Waldgrün */
+  padding: 0 0px;
+}
+.carbon_app_navbar a {
+  color: #90a897; /* Dunkleres Waldgrün */
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.carbon_app_navbar a:hover{
+  border-bottom: #2C6B2F 4px solid; /* Waldgrün Hover */
+}
+.carbon_app_navbar ul {
+  display: flex;
+  flex-direction: row;
+}
+.carbon_app_navbar .logo {
+  font-weight: 400;
+}
+.text-logo {
+  color: #90a897; /* Helles Grün für Logo */
+}
+/* Footer  */
+/* Wellen-Design */
+.footer-wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  background-color: #314736;
+}
+
+.footer-wave-svg {
+  display: block;
+  width: 100%;
+  height: 100px;
+}
+
+.footer-wave-path {
+  fill: #d8cdc3;
+}
+.footer-wave-svg {
+  background-color: transparent;
+  display: block;
+  height: 30px;
+  position: relative;
+  top: -1px;
+  width: 100%;
+}
+
+/* Footer-Styling */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #314736; /* Waldgrün */
+  color: white;
+  padding: 20px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px; /* Abstand zwischen den Spalten */
+  text-align: center;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-column a {
+  font-size: 24px;
+  margin: 5px;
+  color: white;
+}
+
+.footer-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #314736;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Media query */
+@media(max-width:768px){
+  .carbon_app_navbar {
+    height: 180px;
+    flex-direction: column;
+  }
+  .carbon_app_navbar a {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+  .carbon_app_navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .carbon_app_navbar a:hover{
+    color: #81C784; /* Helles Grün beim Hover */
+    border-bottom: #2C6B2F 2px solid; /* Dunkleres Waldgrün beim Hover */
+  }
+}
+
