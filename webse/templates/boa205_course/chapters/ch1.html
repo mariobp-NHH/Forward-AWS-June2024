@@ -17,7 +17,7 @@
     <header class="header_css">
         <div class="container">
             <div>
-                <h1>Kapitel 1</h1>
+                <h1>Kapitel 1. Hva er driftsregnskap?</h1>
                 <p class="mb-1">
                 I det kapitel vi skal studer hva er eksternregnskap, skatteregnskap og driftsregnskap. Vi også skal studere hva er 
                 kalkulatorisk kostnader og vi utforske forskjellige eksempler av kalkulatorisk kostnader. 
@@ -28,7 +28,7 @@
                 <br>
                 </p>
                 <div class="material-container">
-                    <!-- Kursmateriell -->
+                    <!-- Kursmateriell 1 -->
                     <div
                     class="material-box-material"
                     data-aos="aos-fade-right"
@@ -49,6 +49,90 @@
                         </div>
                     </div>
 
+                    <!-- Kursmateriell 2 -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 2</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_2_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Kursmateriell 3 -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 3</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_3_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Kursmateriell 4 -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 4</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_4_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Kursmateriell 5 -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 5</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_5_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
                     <!-- Oppgaver -->
                     <div
                     class="material-box-exercises"
@@ -63,7 +147,7 @@
                         <p><strong>Oppgaver</strong></p>
                         <div class="material-buttons-exercises">
                             <a
-                            href="#"
+                            href="#" data-toggle="modal" data-target="#oppgave_Modal"
                             class="btn btn-primary btn-sm"
                             >Lenk</a
                             >
@@ -84,7 +168,7 @@
                         <p><strong>Løsninger</strong></p>
                         <div class="material-buttons-solutions">
                             <a
-                            href="#"
+                            href="#" data-toggle="modal" data-target="#losning_Modal"
                             class="btn btn-primary btn-sm"
                             >Lenk</a
                             >
@@ -176,12 +260,162 @@ alt=""
       <div class="modal-body">
         <iframe 
           id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/kursmateriell_1.pptx', _external=True) }}"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('static', filename='boa205/ch1/kursmateriell_1.pptx') }}" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Kursmateriell_2 Modal -->
+<div class="modal fade" id="kursmateriell_2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/kursmateriell_2.pptx', _external=True) }}"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('static', filename='boa205/ch1/kursmateriell_2.pptx') }}" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Kursmateriell_3 Modal -->
+<div class="modal fade" id="kursmateriell_3_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 3</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/kursmateriell_3.pptx', _external=True) }}"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('static', filename='boa205/ch1/kursmateriell_3.pptx') }}" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Kursmateriell_4 Modal -->
+<div class="modal fade" id="kursmateriell_4_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 4</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/kursmateriell_4.pptx', _external=True) }}"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('static', filename='boa205/ch1/kursmateriell_4.pptx') }}" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Kursmateriell_5 Modal -->
+<div class="modal fade" id="kursmateriell_5_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 5</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/kursmateriell_5.pptx', _external=True) }}"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('static', filename='boa205/ch1/kursmateriell_5.pptx') }}" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave Modal -->
+<div class="modal fade" id="oppgave_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
           src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/oppgave.docx', _external=True) }}"
           width="100%" height="100%" frameborder="0">
         </iframe>
       </div>
       <div class="modal-footer">
         <a href="{{ url_for('static', filename='boa205/ch1/oppgave.docx') }}" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Løsning Modal -->
+<div class="modal fade" id="losning_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Løsning</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/losning.xlsx', _external=True) }}"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('static', filename='boa205/ch1/losning.xlsx') }}" class="btn btn-success" download>
           <i class="fa-solid fa-download"></i> Last ned
         </a>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
