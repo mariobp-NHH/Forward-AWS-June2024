@@ -1,0 +1,222 @@
+/* Section styling */
+.section-chapters {
+  background-color: #2b4359;
+  padding: 30px 0;
+}
+
+.chapters-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center; /* ✅ centers the grid tracks */
+  justify-items: center; /* ✅ centers boxes within each track */
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Individual box */
+.chapters-box {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 250px;
+  min-width: 250px;
+  height: 250px;
+  background: #9cd5c0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.chapters-icon {
+  font-size: 2rem;
+  color: #2b4359;
+}
+
+/* Button container */
+.chapters-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Default button style */
+.chapters-buttons a {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* Default hover effect */
+.chapters-buttons a:hover {
+  background-color: #0056b3;
+  color: #9cd5c0;
+}
+
+/* 🎯 Button hover overrides per box */
+.chapters-box:nth-child() .chapters-buttons a:hover {
+  background-color: #9cd5c0;
+  color: #ffffff;
+}
+
+/* Buttons content, exercises, solutions, video */
+/* Flex container */
+.material-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual box */
+.material-box-material {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 160px;
+  min-width: 160px;
+  height: 130px;
+  background: #9cd5c0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.material-box-exercises {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 160px;
+  min-width: 160px;
+  height: 130px;
+  background: #027b63;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.material-box-solutions {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 160px;
+  min-width: 160px;
+  height: 130px;
+  background: #4a736f;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.material-box-video {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 160px;
+  min-width: 160px;
+  height: 130px;
+  background: #17a2b8;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.material-box-presentation {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 160px;
+  min-width: 160px;
+  height: 130px;
+  background: #0388a6;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.material-icon-material {
+  font-size: 2rem;
+  color: #2b4359;
+}
+
+/* Button container */
+.material-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Default button style */
+.material-buttons a {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* Hover effect */
+.material-buttons-material a:hover {
+  background-color: #0056b3;
+  color: #9cd5c0;
+}
+
+.material-buttons-exercises a:hover {
+  background-color: #0056b3;
+  color: #027b63;
+}
+
+.material-buttons-solutions a:hover {
+  background-color: #0056b3;
+  color: #4a736f;
+}
+
+.material-buttons-video a:hover {
+  background-color: #0056b3;
+  color: #17a2b8;
+}
+
+.material-buttons-presentation a:hover {
+  background-color: #0056b3;
+  color: #0388a6;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .chapters-container {
+    grid-template-columns: 1fr; /* single column layout on mobile */
+  }
+  .material-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
