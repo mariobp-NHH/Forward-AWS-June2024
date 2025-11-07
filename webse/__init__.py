@@ -77,6 +77,7 @@ login_manager.blueprint_login_views = {
     'boa205_course_announcements': 'forward_users.forward_users_login',
     'boa205_course_chats': 'forward_users.forward_users_login',
     'boa205_course_chapters': 'forward_users.forward_users_login',
+    'boa205_course_statistics': 'forward_users.forward_users_login',
     'papers_spot_go': 'forward_users.forward_users_login',
     'se_platform_announcements': 'forward_users.forward_users_login',
 }
@@ -150,6 +151,7 @@ from webse.boa205_course_home.routes import boa205_course
 from webse.boa205_course_announcements.routes import boa205_course_announcements
 from webse.boa205_course_chats.routes import boa205_course_chats
 from webse.boa205_course_chapters.routes import boa205_course_chapters
+from webse.boa205_course_statistics.routes import boa205_course_statistics
 from webse.gender_platform_routes.routes import gender_platform
 from webse.gender_platform_chats.routes import gender_platform_chats
 from webse.gender_platform_questionnaires.routes import gender_platform_questionnaires
@@ -230,6 +232,7 @@ application.register_blueprint(boa205_course)
 application.register_blueprint(boa205_course_announcements)
 application.register_blueprint(boa205_course_chats)
 application.register_blueprint(boa205_course_chapters)
+application.register_blueprint(boa205_course_statistics)
 application.register_blueprint(gender_platform)
 application.register_blueprint(gender_platform_chats)
 application.register_blueprint(gender_platform_questionnaires)
