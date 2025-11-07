@@ -36,24 +36,17 @@
                   <div class="h1 mb-3">
                     <i class="bi bi-bell"></i>
                   </div>
-                  <h3 class="text-center">Kunngjøringer:
+                  <h3 class="text-center"><span class="text-warning"> Announcements: </span>
                   </h3>
-                  <p class="mb-1">
-                        Kurset skal gi innsikt i bruk av ulike modeller for kalkyle,
-                        driftsregnskap og budsjettering i økonomistyringen.
-                        <br>
-                        <br>
-                        Kurset skal videre utvikle evnen til å identifisere relevante inntekter og kostnader
-                        som grunnlag for bedriftsøkonomiske beslutninger.
-                      </p>
                   {% for announcement in announcements.items %}
                       <article class="media content-section">
+                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
                         <div class="media-body">
                           <div class="article-metadata">
-                            <a class="mr-2" href="{{ url_for('boa205_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
+                            <a class="mr-2" href="{{ url_for('gd_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
                             <small class="text-muted">{{ announcement.date_posted.strftime('%Y-%m-%d') }}</small>
                           </div>
-                          <h4><a class="article-title" href="{{ url_for('boa205_course_announcements.announcement', announcement_id=announcement.id) }}">{{ announcement.title }}</a></h4>
+                          <h4><a class="article-title" href="{{ url_for('gd_course_announcements.announcement', announcement_id=announcement.id) }}">{{ announcement.title }}</a></h4>
                           <p class="article-content">{{ announcement.content }}</p>
                         </div>
                       </article>
@@ -61,9 +54,9 @@
                   {% for page_num in announcements.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
                     {% if page_num %}
                       {% if announcements.page == page_num %}
-                        <a class="btn btn-info mb-4" href="{{ url_for('boa205_course.boa205_course_home', page=page_num) }}">{{ page_num }}</a>
+                        <a class="btn btn-info mb-4" href="{{ url_for('gd_course.gd_course_home', page=page_num) }}">{{ page_num }}</a>
                       {% else %}
-                        <a class="btn btn-outline-info mb-4" href="{{ url_for('boa205_course.boa205_course_home', page=page_num) }}">{{ page_num }}</a>
+                        <a class="btn btn-outline-info mb-4" href="{{ url_for('gd_course.gd_course_home', page=page_num) }}">{{ page_num }}</a>
                       {% endif %}
                     {% else %}
                       ...
