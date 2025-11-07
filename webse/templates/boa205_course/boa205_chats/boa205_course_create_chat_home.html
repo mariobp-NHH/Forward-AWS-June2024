@@ -1,0 +1,40 @@
+{% extends "boa205_course/boa205_course_layout.html" %} {% block content %}
+
+<!-- Introduction -->
+<section class="main_chat">
+  <div class="container">
+    <div class="box"></div>
+    <div class="box">
+      <div class="h1 mb-3" style="text-align: center">
+        <i class="bi bi-chat-square-dots"></i>
+      </div>
+      <p style="text-align: center">
+        <strong>Opprett chat (hovedchat):</strong>
+      </p>
+      <p style="text-align: left">
+        Vi bruker denne chatten for å løse eventuelle spørsmål knyttet til
+        emnene som dekkes i kurskapitlene. Chatten er åpen for alle
+        kursdeltakere. Vi bruker regelmessig chatten for å utveksle informasjon
+        og svare på spørsmål om materialet som dekkes i timene.
+        <strong>Jeg oppfordrer alle studenter</strong> til å delta aktivt i
+        chatten og hjelpe hverandre. Jeg vil delta aktivt i chatten for å gjøre
+        kurset mer nyttig for studentene.
+      </p>
+
+      <div class="container_buttons_links_chats">
+        <div class="btn">
+          <a
+            href="{{ url_for('boa205_course_chats.boa205_course_chats_new_main_chat') }}"
+            class="btn btn-primary btn-lg mr-2"
+            ,
+            style="background-color: #007bff"
+            >Opprett chat (hovedchat)</a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="box"></div>
+  </div>
+</section>
+
+{% endblock content %}

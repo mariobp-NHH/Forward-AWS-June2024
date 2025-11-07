@@ -1,0 +1,589 @@
+{% extends "boa205_course/boa205_course_layout.html" %} {% block content %}
+
+<!-- First block of questions: -->
+<!-- *FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY. Query to work out the time difference between each correct answer and the first correct answer in the first entry -->
+<section class="section_chapter2" style="background-color: white">
+      <title>Time between First Entry and First Correct Answer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #004a99;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #d9e9ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY.</h1>
+
+<table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Question Number</th>
+                <th>Result (First Entry)</th>
+                <th>Date First Entry</th>
+                <th>Date First Correct among First Entries</th>
+                <th>Time Difference User Answer and First Correct Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in time_user_first_entry_and_first_correct_call %}
+            <tr>
+                <td>{{ row.user_id }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>
+                    {% if row.question_result == 1 %}
+                        ✅ Correct
+                    {% else %}
+                        ❌ Incorrect
+                    {% endif %}
+                </td>
+                <td>{{ row["Date First Entry"].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>{{ row["First Correct Among First Entries"].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>
+                    {% if row["Time Difference Your Answer and First Correct Answer"] %}
+                        {{ row["Time Difference Your Answer and First Correct Answer"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<br />
+<br />
+
+<!-- *ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY. Query to work out the time difference between each correct answer and the first correct answer in the first entry -->
+<section class="section_chapter2" style="background-color: white">
+      <title>Time between First Entry and First Correct Answer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #004a99;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #d9e9ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY.</h1>
+<table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Question Number</th>
+                <th>Result (First Entry)</th>
+                <th>Date First Entry</th>
+                <th>Date First Correct among First Entries</th>
+                <th>Time Difference User Answer and First Correct Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in all_questions_date_constraint_time_user_first_entry_and_first_correct_call %}
+            <tr>
+                <td>{{ row.user_id }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>
+                    {% if row.question_result == 1 %}
+                        ✅ Correct
+                    {% else %}
+                        ❌ Incorrect
+                    {% endif %}
+                </td>
+                <td>{{ row["Date First Entry"].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>
+                    {% if row["First Correct Entry (This Question)"] %}
+                        {{ row["First Correct Entry (This Question)"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if row["Time Difference vs First Correct"] %}
+                        {{ row["Time Difference vs First Correct"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<br />
+<br />
+
+<!-- *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY. Query to work out the time difference between each correct answer and the first correct answer in the first entry -->
+<section class="section_chapter2" style="background-color: white">
+      <title>Time between First Entry and First Correct Answer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #004a99;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #d9e9ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY.</h1>
+<table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Question Number</th>
+                <th>Result (First Entry)</th>
+                <th>Date First Entry</th>
+                <th>Date First Correct among First Entries</th>
+                <th>Time Difference User Answer and First Correct Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call %}
+            <tr>
+                <td>{{ row.user_id }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>
+                    {% if row.question_result == 1 %}
+                        ✅ Correct
+                    {% else %}
+                        ❌ Incorrect
+                    {% endif %}
+                </td>
+                <td>{{ row["Date First Entry"].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>
+                    {% if row["First Correct Entry (This Question)"] %}
+                        {{ row["First Correct Entry (This Question)"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if row["Time Difference vs First Correct"] %}
+                        {{ row["Time Difference vs First Correct"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<br />
+<br />
+
+
+<!-- Second block of questions -->
+
+<!-- *FIRST ENTRY: FIRST ENTRY PER STUDENT AND AVERAGE FIRST ENTRIES. -->
+<section class="section_chapter2" style="background-color: white">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th,
+    td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background-color: #f5f5f5;
+    }
+  </style>
+  <h1>FIRST ENTRY: FIRST ENTRY PER STUDENT AND AVERAGE FIRST ENTRIES.</h1>
+  <table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Question Number</th>
+        <th>Result (First Entry)</th>
+        <th>Date First Entry</th>
+        <th>Average First Entries</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in first_entry_student_call['entries'] %}
+      <tr>
+        <td>{{ a.user_id }}</td>
+        <td>{{ a.question_num }}</td>
+        <td>{{ a.question_result }}</td>
+        <td>{{ a.date_exercise.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+        <td>{{ "%.2f"|format(first_entry_student_call['mean']) }}</td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="6">No data found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<br />
+<br />
+
+<!-- *FIRST CORRECT ANSWER: DATE AND TIME DIFFERENCE FIRST CORRECT ANSWER. Query to work out the date of the first entry per student, the average of the date of the first entry-->
+<section class="section_chapter2" style="background-color: white">
+      <title>First Entry and Correct Answer Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #004a99;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #d9e9ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>FIRST CORRECT ANSWER: DATE AND TIME DIFFERENCE FIRST CORRECT ANSWER.</h1>
+<table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Question Number</th>
+            <th>Date First Correct Answer</th>
+            <th>Date First Global Correct Answer</th>
+            <th>Time Difference User Answer and First Global Correct Answer</th>
+            <th>Average Difference</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in user_first_entry_and_first_correct_with_global_call %}
+        <tr>
+            <td>{{ row.user_id }}</td>
+            <td>{{ row.question_num }}</td>
+            <td>
+                {% if row["Date First Correct Answer"] %}
+                    {{ row["Date First Correct Answer"].strftime('%Y-%m-%d %H:%M:%S') }}
+                {% else %}-{% endif %}
+            </td>
+            <td>
+                {% if row["Global First Correct Date"] %}
+                    {{ row["Global First Correct Date"].strftime('%Y-%m-%d %H:%M:%S') }}
+                {% else %}-{% endif %}
+            </td>
+            <td>
+                    {% if row["Time Difference Between Global and User First Correct"] %}
+                        {{ row["Time Difference Between Global and User First Correct"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+            <td>
+                    {% if row["Average Time Difference (Global vs Users' First Correct)"] %}
+                        {{ row["Average Time Difference (Global vs Users' First Correct)"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="6">No data found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</section>
+<br />
+<br />
+
+<!-- *ATTEMPTS: ATTEMPTS UNTIL CORRECT. Number of attempts until correct, and average number of attempts -->
+<section class="section_chapter2" style="background-color: white">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th,
+    td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background-color: #f5f5f5;
+    }
+  </style>
+  <h1>ATTEMPTS: ATTEMPTS UNTIL CORRECT</h1>
+  <table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+    <thead>
+        <tr>
+            <th>User ID</th>
+            <th>Question Number</th>
+            <th>Attempts Until Correct</th>
+            <th>Average Attempts (Users Who Succeeded)</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in attempts_until_correct_call %}
+        <tr>
+            <td>{{ row.user_id }}</td>
+            <td>{{ row.question_num }}</td>
+            <td>
+                {% if row['Attempts Until Correct'] %}
+                    {{ row['Attempts Until Correct'] }}
+                {% else %}
+                    –
+                {% endif %}
+            </td>
+            <td>{{ row['Average Attempts (Users Who Succeeded)'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</section>
+<br />
+<br />
+
+<!-- *ALL THE ENTRIES: Query to work out all the entries per student -->
+<section class="section_chapter2" style="background-color: white">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 60%;
+    }
+    th,
+    td {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background-color: #f5f5f5;
+    }
+  </style>
+  <h1>ALL THE ENTRIES</h1>
+  <table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>Question Number</th>
+        <th>Question Answer</th>
+        <th>Question Result</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in all_entries_call_answers %}
+      <tr>
+        <td>{{ a.user_id }}</td>
+        <td>{{ a.question_num }}</td>
+        <td>{{ a.question_str }}</td>
+        <td>{{ a.question_result }}</td>
+        <td>{{ a.date_exercise.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+      </tr>
+      {% else %}
+      <tr>
+        <td colspan="2">No data found.</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+<br />
+<br />
+
+<!-- DATE CONTRAINT -->
+ <!-- *DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY. Query to work out the time difference between each correct answer and the first correct answer in the first entry -->
+<section class="section_chapter2" style="background-color: white">
+      <title>Time between First Entry and First Correct Answer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #004a99;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #d9e9ff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY.</h1>
+
+<table class="table table-striped table-bordered" style="width:80%; margin:auto; text-align:center;">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>Question Number</th>
+                <th>Result (First Entry)</th>
+                <th>Date First Entry</th>
+                <th>Date First Correct among First Entries</th>
+                <th>Time Difference User Answer and First Correct Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in date_constraint_time_user_first_entry_and_first_correct_call %}
+            <tr>
+                <td>{{ row.user_id }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>
+                    {% if row.question_result == 1 %}
+                        ✅ Correct
+                    {% else %}
+                        ❌ Incorrect
+                    {% endif %}
+                </td>
+                <td>{{ row["Date First Entry"].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>{{ row["First Correct Among First Entries"].strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                <td>
+                    {% if row["Time Difference Your Answer and First Correct Answer"] %}
+                        {{ row["Time Difference Your Answer and First Correct Answer"] }}
+                    {% else %}
+                        <span class="none">None</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</section>
+<br />
+<br />
+
+
+
+
+{% endblock content %}

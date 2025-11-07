@@ -1,0 +1,902 @@
+{% extends "boa205_course/boa205_course_layout.html" %}
+{% block content %}
+
+{% if anchor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targetElement = document.getElementById("{{ anchor }}");
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endif %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1>Kapitel 1</h1>
+                <p class="mb-1">
+                I det kapitel vi skal studer hva er eksternregnskap, skatteregnskap og driftsregnskap. Vi også skal studere hva er 
+                kalkulatorisk kostnader og vi utforske forskjellige eksempler av kalkulatorisk kostnader. 
+                <br>
+                <br>
+                - Alle informasjon i det kapitel har vært tatt fra boken Driftsregnskap og budsjettering (Bjørn Solheim og Trond Winther), og fra lysbilder fra kurs BØA205 ved HVL -
+                <br>
+                <br>
+                </p>
+                <div class="material-container">
+                    <!-- Kursmateriell -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 1</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_1_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgaver -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgaver</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Løsninger -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Løsninger</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>  
+                    
+                    <!-- Video -->
+                    <div
+                    class="material-box-video"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <p><strong>Video</strong></p>
+                        <div class="material-buttons-video">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div> 
+
+                    <!-- Presentasjon -->
+                    <div
+                    class="material-box-presentation"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                        </div>
+                        <p><strong>Presentasjon</strong></p>
+                        <div class="material-buttons-presentation">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div> 
+                    
+                </div>
+                </br>
+
+                <div class="list-group", style="padding: 15px 0px;">
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Noen viktige definisjoner</h5>
+                    </div>
+                    <p class="mb-1">
+                        Vi introduserer noen forskjellige definisjoner for å forstå hva driftsregnskap er.
+                    </p>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Kalkulatoriske kostnader</h5>
+                    </div>
+                    <p class="mb-1">
+                        Vi studerer kalkulatoriske kostnader og analyserer ulike typer av slike kostnader.
+                    </p>
+                    </a>
+                </div>
+            </div>
+            <img
+src="{{url_for('static', filename='figures/boa205/ch1/ch1.svg')}}"
+alt=""
+/>
+        </div>
+    </header>
+</section>
+
+
+<!-- Kursmateriell_1 Modal -->
+<div class="modal fade" id="kursmateriell_1_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 1</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src={{ url_for('static', filename='boa205/ch1/oppgave.docx', _external=True) }}"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="{{ url_for('static', filename='boa205/ch1/oppgave.docx') }}" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Noen viktige definisjoner</h1>
+        <p>
+            Vi introduserer noen forskjellige definisjoner for å forstå hva driftsregnskap er.
+        </p>
+        
+        <h2>Hva er eksternregnskap?</h2>
+        <p>
+                Eksternregnskap skal vise bedriftens offisielle resultat og økonomiske situasjon (balanse) i en periode. 
+            <br>
+            <br>
+                Alle bedrifter er <u>pålagt</u> å føre eksternregnskap (finansregnskap)
+            <br>
+            <br>
+                Eksternregnskap er myntet på <u>eksterne</u>: Kunder, banker, investorer etc
+            <br>
+            <br>
+                Eksternregnskap må utformes i samsvar med krav i <u>regnskapsloven</u>
+        </p>
+        <h2>Hva er skatteregnskap? </h2>
+        <p>
+            Skatteregnskap er myntet på <u>skatteetaten</u> og danner utgangspunkt for beregning av bedrifters skatt
+            <br>
+            <br>
+            Alle bedrifter er <u>pålagt</u> å føre skatteregnskap
+            <br>
+            <br>
+            Skatteregnskap må utformes i samsvar med krav i <u>skatteloven</u>
+            <br>
+            <br>
+            Skatteregnskapet kan betraktes som et eksternregnskap hvor enkelte poster må føres i samsvar med skattelovens særregler framfor regnskaps-lovens regler 
+        </p>
+        <h2>Hva er driftsregnskap?</h2>
+        <p>
+            Bedrifter er <u>ikke pålagt</u> å føre driftsregnskap
+            <br>
+            <br>
+            Driftsregnskap er følgelig <u>ikke bundet av lover og krav</u>
+            <br>
+            <br>
+            Driftsregnskapet er myntet på <u>intern bruk</u>
+            <br>
+            <br>
+            Driftsregnskapet brukes bla. til å følge opp økonomien i 
+            bedriftens ulike avdelinger og til bedriftsøkonomiske kalkyler 
+            med det formål å gi <u>bedre økonomistyring</u> i bedriften
+            <br>
+            <br>
+            Driftsregnskapet legger til grunn <u>kalkulatoriske kostnader </u>
+            i den grad de bedriftsøkonomisk korrekte kostnadene avviker 
+            fra kostnadene i ekstern-regnskapet
+
+        </p>
+    </div>
+</section>
+
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+    <div class="container" style="display:block;">
+        <h1>Hva er kalkulatoriske kostnader?</h1>
+        <p>
+            Kalkulatoriske kostnader er kostnadene som blir avregnet med forskjellig 
+            beløp i bedriftens eksternregnskap.
+            <br>
+            <br>
+            De vanligste kalkulatoriske kostnadene er kalkulatoriske avskrivninger, 
+            kalkulatoriske renter, kalkulatorisk eierlønn og kalkulatorisk tap på 
+            fordringer. 
+
+        </p>
+    </div>
+
+    <div class="container">
+
+        <div class="boxa">
+            <p style="text-align: center;"><strong>Eksempel på kalkulatorisk rente</strong> </p>
+            <p style="text-align: left;">
+                En bedrift har bundet kapital på kr 4 millioner. Den har lånt kr 2 millioner 
+                som den betaler renter på. Resten er egenkapital.
+                <br>
+                <br>
+                Den renter som blir ført i <u>finansregnskapet</u>, er den renten som blir betalt 
+                til banken.  Dersom gjeldende rente på gjelden er 8%, blir det årlig 
+                bokført en rente på kr 160 000.
+                <br>
+                <br>
+                Men denne renter <strong>forteller litt om bedriftens rentekostnad</strong>. 
+                Egenkapitalen på kr 2 millioner representer også kapital som en 
+                alternativkostnad, og det kommer av at alternativet hadde vært å 
+                sette pengene i banken. Hadde eierne gjort det, for eksempel fått 5% rente, 
+                kunne få kr 100 000 i året.
+                <br>
+                <br>
+                På grunn av usikkerhet ved forretningsdrift er det naturlig at 
+                kalkulatorisk rente settes noe høyere enn det en kan få i banken. 
+                I denne bedriften ville <u>kalkulatorisk rente</u> ha blitt 0,15 * 40000000= 60000 
+                i løpet av et år.
+            </p>
+            
+
+        </div>
+        <div class="boxa">
+            <p style="text-align: center;"><strong>Eksempel på kalkulatorisk avskrivning</strong> </p>
+            <p style="text-align: left;">
+            En anleggsentreprenør har akkurat kjøpt en ny gravemaskin til kr 3,5 millioner. 
+            Årlig prisstigning på denne typen utstyr har tidligere vært 5% per år. 
+            Det betyr at en tilsvarende gravemaskin vil koste kr 4 467 000 om fem år, og vil de 
+            <u>kalkulatoriske avskrivningene</u> per år bli 4 467 000/5=893 400
+            </p>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="boxa">
+            <p style="text-align: center;"><strong>Eksempel på kalkulatorisk eierlønn</strong> </p>
+            <p style="text-align: left;">
+En student har fått tilbud om å drive en kiosk ved en badestrand i sommerferien. 
+Erfaringsmessig er omsetningen i kiosken på kr 200 000 hver sommer.
+<br>
+<br>
+Varekostnadene er 70% av salgsinntekten, og leie av kiosken fra kommunen er kr 25 000.
+<br>
+<br>
+Studentene kan i stedet jobb i industribedriften med en lønn av kr 55 000. Den alternative lønnen er kalkulatorisk eierlønn. 
+</p>
+        </div>
+        <div class="boxa" style="background: #9cd5c0;">
+            <p style="text-align: center;"> </p>
+
+        </div>
+
+    </div>
+
+    <div class="container" style="display:block;">
+        <p>
+            Basert på eksemplet om kalkulatorisk eierlønn, svar på de neste spørsmålene:
+
+        </p>
+    </div>
+
+    <!-- Questions 1 and 2 -->
+    <div class="container">
+        <div class="box_questions_two">
+                
+        </div>
+        <div class="col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two" style="background: #f2b84b" id="ch1_q1_q2">
+                <form method="POST" action="">
+                    {{ form_boa205_ch1_q1.csrf_token }}
+                        <legend class="border-bottom mb-4">Spørsmål 1:</legend>
+                        <p class="card-text">Hva er økonomisk resultat med o jobbe på kiosken? 
+
+
+                        </p>
+                        <div class="form-group">
+                            {{ form_boa205_ch1_q1.type(class="form-control form-control") }}
+                            <!-- {% if form_boa205_ch1_q1.type.errors %}
+                                {{ form_boa205_ch1_q1.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_boa205_ch1_q1.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                
+                            {% endif %} -->
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_boa205_ch1_q1.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>     
+            </div>
+        </div>
+
+        <div class="col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two" style="background: #f2b84b;">
+                <form method="POST" action="">
+                    {{ form_boa205_ch1_q2.csrf_token }}
+                        <legend class="border-bottom mb-4">Spørsmål 2:</legend>
+                        <p class="card-text">Hvilke leie må ha kommunen for å overbevise studenten å leie kiosken? 
+
+
+                        </p>
+                        <div class="form-group">
+                            {{ form_boa205_ch1_q2.type(class="form-control form-control") }}
+                            <!-- {% if form_boa205_ch1_q2.type.errors %}
+                                {{ form_boa205_ch1_q2.type(class="form-control form-control is-invalid") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form_boa205_ch1_q2.type.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form_boa205_ch1_q2.type(class="form-control form-control") }}
+                            {% endif %} -->
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_boa205_ch1_q2.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>      
+            </div>
+        </div>
+        
+        <div class="box_questions_two">
+                
+        </div>
+    </div>
+
+    <div class="container" style="display:block;">
+        <h1>Kalkulatorisk kostnader og driftsregnskap.</h1>
+        <p>
+            
+        En drosjeeier – Stine Nilsen – har tre biler i virksomhet. Stine kjører selv Taxi 003. 
+        Tallmaterialet nedenfor er utelukkende basert på tall fra eksternregnskapet for året 2009.
+        </p>
+
+        <div class="container">
+            <div class="boa205_table">
+                <div class="box"> 
+                    <table class="table">
+                        <thead class="table-primary">
+                            <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Taxi 001</th>
+                            <th scope="col">Taxi 002</th>
+                            <th scope="col">Taxi 003</th>
+                            <th scope="col">Sum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th scope="row">Inntekter</th>
+                            <td class="text-end">800 000</td>
+                            <td class="text-end">900 000</td>
+                            <td class="text-end">1 000 000</td>
+                            <td class="text-end">2 700 000</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">Kostnader</th>
+                            <td class="text-end"></td>
+                            <td class="text-end"></td>
+                            <td class="text-end"></td>
+                            <td class="text-end"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Drivstoff</th>
+                                <td class="text-end">165 000</td>
+                                <td class="text-end">175 000</td>
+                                <td class="text-end">200 000</td>
+                                <td class="text-end">540 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Lønn til innleide slåfører</th>
+                                <td class="text-end">320 000</td>
+                                <td class="text-end">360 000</td>
+                                <td class="text-end">0</td>
+                                <td class="text-end">680 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Service/reparasjoner</th>
+                                <td class="text-end">45 000</td>
+                                <td class="text-end">50 000</td>
+                                <td class="text-end">65 000</td>
+                                <td class="text-end">160 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Garasjeleie</th>
+                            <td class="text-end">25 000</td>
+                            <td class="text-end">25 000</td>
+                            <td class="text-end">25 000</td>
+                            <td class="text-end">75 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Bilvask</th>
+                            <td class="text-end">10 000</td>
+                            <td class="text-end">10 000</td>
+                            <td class="text-end">10 000</td>
+                            <td class="text-end">30 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Forsikringer</th>
+                            <td class="text-end">55 000</td>
+                            <td class="text-end">55 000</td>
+                            <td class="text-end">55 000</td>
+                            <td class="text-end">165 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Diverse kontingenter/medlemskap</th>
+                                <td class="text-end">5000</td>
+                                <td class="text-end">5000</td>
+                                <td class="text-end">5000</td>
+                                <td class="text-end">15000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Avskrivninger(lineære)</th>
+                                <td class="text-end">100 000</td>
+                                <td class="text-end">100 000</td>
+                                <td class="text-end">100 000</td>
+                                <td class="text-end">300 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Sum kostnader</th>
+                                <td class="text-end">725 000</td>
+                                <td class="text-end">780 000</td>
+                                <td class="text-end">460 000</td>
+                                <td class="text-end">1 965 000</td>
+                            </tr>
+                            
+                            <tr>
+                            <th scope="row" class="fw-normal">Resultat før skatt</th>
+                            <td class="text-end">75 000</td>
+                            <td class="text-end">120 000</td>
+                            <td class="text-end">540 000</td>
+                            <td class="text-end">735 000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <p>
+            Så lenge regnskapet bare er basert på tall fra eksternregnskapet er det alltid viktig å spørre seg om dette viser den reelle lønnsomheten. 
+            Ofte er svaret nei. Tre punkter som er viktige:
+
+            <ol>
+                <li><strong>Eierlønn</strong>: Hvis Stine jobber på oljerelatert, hun betaler kr 700 000 i årsinntekt.</li>
+                <li>
+                    <strong>Renter</strong>: Før pengene fra arveoppgjøret ble brukt til å betale ned bedriftens gjeld, var de plassert til 5% rente helt risikofritt. 
+                    Kapitalbinding i bedriften er til enhver tid kr 1,2 millioner (kr 60 000). 
+                </li>
+                <li>
+                    <strong>Avskrivning</strong>: De bilene som blir benyttet koster kr 520 000 i innkjøp og vil ha en salgsverdi på kr 100 000 etter tre års drift. 
+                    Avskrivningen kan etter dette beregnes slik: (520 000 – 100 000)/3 =140 000
+                </li>
+            </ol>
+
+            Det bør nå settes opp et internt regnskap som tar hensyn til det vi har kommer frem til hva angår renter, avskrivninger og eierlønn. 
+
+        </p>       
+    </div>
+
+    <div class="container" id="table1">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch1_t1.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch1_t1.renter.label(class="form-control-label") }}
+                                {% if form_boa205_ch1_t1.renter.errors %}
+                                    {{ form_boa205_ch1_t1.renter(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.renter.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_boa205_ch1_t1.renter(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch1_t1.eierlonn.label(class="form-control-label") }}
+                                {% if form_boa205_ch1_t1.eierlonn.errors %}
+                                    {{ form_boa205_ch1_t1.eierlonn(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.eierlonn.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_boa205_ch1_t1.eierlonn(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch1_t1.salgsverdi.label(class="form-control-label") }}
+                                {% if form_boa205_ch1_t1.salgsverdi.errors %}
+                                    {{ form_boa205_ch1_t1.salgsverdi(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.salgsverdi.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_boa205_ch1_t1.salgsverdi(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch1_t1.ar.label(class="form-control-label") }}
+                                {% if form_boa205_ch1_t1.ar.errors %}
+                                    {{ form_boa205_ch1_t1.ar(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.ar.errors %}
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form_boa205_ch1_t1.ar(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </div>
+
+
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch1_t1.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <table class="table">
+                        <thead class="table-primary">
+                            <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Taxi 001</th>
+                            <th scope="col">Taxi 002</th>
+                            <th scope="col">Taxi 003</th>
+                            <th scope="col">Sum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <th scope="row">Inntekter</th>
+                            <td class="text-end">800 000</td>
+                            <td class="text-end">900 000</td>
+                            <td class="text-end">1 000 000</td>
+                            <td class="text-end">2 700 000</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">Kostnader</th>
+                            <td class="text-end"></td>
+                            <td class="text-end"></td>
+                            <td class="text-end"></td>
+                            <td class="text-end"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Drivstoff</th>
+                                <td class="text-end">165 000</td>
+                                <td class="text-end">175 000</td>
+                                <td class="text-end">200 000</td>
+                                <td class="text-end">540 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Lønn til innleide slåfører</th>
+                                <td class="text-end">320 000</td>
+                                <td class="text-end">360 000</td>
+                                <td class="text-end">0</td>
+                                <td class="text-end">680 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Service/reparasjoner</th>
+                                <td class="text-end">45 000</td>
+                                <td class="text-end">50 000</td>
+                                <td class="text-end">65 000</td>
+                                <td class="text-end">160 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Garasjeleie</th>
+                            <td class="text-end">25 000</td>
+                            <td class="text-end">25 000</td>
+                            <td class="text-end">25 000</td>
+                            <td class="text-end">75 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Bilvask</th>
+                            <td class="text-end">10 000</td>
+                            <td class="text-end">10 000</td>
+                            <td class="text-end">10 000</td>
+                            <td class="text-end">30 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Forsikringer</th>
+                            <td class="text-end">55 000</td>
+                            <td class="text-end">55 000</td>
+                            <td class="text-end">55 000</td>
+                            <td class="text-end">165 000</td>
+                            </tr>
+                            <tr>
+                                <th scope="row" class="fw-normal">Diverse kontingenter/medlemskap</th>
+                                <td class="text-end">5000</td>
+                                <td class="text-end">5000</td>
+                                <td class="text-end">5000</td>
+                                <td class="text-end">15000</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row" class="fw-normal">Kalkulatoriske avskrvning</th>
+                                <td class="text-end">{{kalkulatoriske_avskrvning}}</td>
+                                <td class="text-end">{{kalkulatoriske_avskrvning}}</td>
+                                <td class="text-end">{{kalkulatoriske_avskrvning}}</td>
+                                <td class="text-end">{{kalkulatoriske_avskrvning_sum}}</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row" class="fw-normal">Kalkulatoriske renter</th>
+                                <td class="text-end">{{kalkulatoriske_renter}}</td>
+                                <td class="text-end">{{kalkulatoriske_renter}}</td>
+                                <td class="text-end">{{kalkulatoriske_renter}}</td>
+                                <td class="text-end">{{kalkulatoriske_renter_sum}}</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row" class="fw-normal">Kalkulatoriske eierlønn</th>
+                                <td class="text-end"></td>
+                                <td class="text-end"></td>
+                                <td class="text-end">{{kalkulatoriske_lonn}}</td>
+                                <td class="text-end">{{kalkulatoriske_lonn}}</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row">Sum kostnader</th>
+                                <td class="text-end">{{sum_kostnader_taxi1}}</td>
+                                <td class="text-end">{{sum_kostnader_taxi2}}</td>
+                                <td class="text-end">{{sum_kostnader_taxi3}}</td>
+                                <td class="text-end">{{sum_kostnader_taxi_sum}}</td>
+                            </tr>
+                            <tr class="table-info">
+                                <th scope="row" class="fw-normal">Driftsresultat</th>
+                                <td class="text-end">{{driftsresultat_taxi1}}</td>
+                                <td class="text-end">{{driftsresultat_taxi2}}</td>
+                                <td class="text-end">{{driftsresultat_taxi3}}</td>
+                                <td class="text-end">{{driftsresultat_taxi_sum}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="display:block;">
+        <p>
+            
+        Kommentarer om kalkulatoriske kostnader:
+
+        <ol>
+            <li>
+                <strong>Kalkulatorisk eierlønn:</strong> Dermed må det inn i lønnsomhetskalkylene for at vi kan sammenligne det ene alternativet med det andre. 
+                Kalkulatorisk eierlønn blir da å betrakte som en alternativkost.
+            </li>
+            <li>
+                <strong>Kalkulatorisk renter:</strong> Renter bli ikke tatt med i det første oppsettet fordi det ikke var bokført noe sted i eksternregnskapet. 
+                Set ut fra et lønnsomhetsperspektiv er det allikevel viktig å få med de renteinntektene som en taper ved å plassere pengene inn i bedriften.
+            </li>
+            <li>
+                <strong>Kalkulatorisk avskrivning:</strong> Når det gjelder virkelige avskrivninger på bilene er de høyere enn det som er bokført i eksternregnskapet. 
+            </li>
+        </ol>
+        Etter dette kan vi sette opp følgende avstemming mellom eksternregnskap og internregnskap:
+        </p>     
+    </div>
+
+    <div class="container">
+        <div class="boa205_table">
+            <div class="box"> 
+                <table class="table">
+                    <thead class="table-primary">
+                        <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Sum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row" class="fw-normal">Resultat i ekternregnskap</th>
+                        <td class="text-end">735 000</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="fw-normal">Avskrivning eksternregnskap</th>
+                            <td class="text-end">300 000</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row" class="fw-normal">Avskrivning i internregnskap</th>
+                            <td class="text-end">-{{kalkulatoriske_avskrvning_sum}}</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row" class="fw-normal">Kalkulatorisk eierlønn</th>
+                            <td class="text-end">-{{kalkulatoriske_lonn}}</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row" class="fw-normal">Kalkulatoriske renter</th>
+                            <td class="text-end">-{{kalkulatoriske_renter_sum}}</td>
+                        </tr>
+                        <tr class="table-info">
+                            <th scope="row">Resultat i internregnskap</th>
+                            <td class="text-end">{{resultat_internregnskap}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions 3 and 4 -->
+    <div class="container">
+        <div class="box_questions_two">
+                
+        </div>
+        <div class="col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two" style="background: #f2b84b; height: 300px;" id="ch1_q3_q4">
+                <form method="POST" action="">
+                    {{ form_boa205_ch1_q3.csrf_token }}
+                        <legend class="border-bottom mb-4">Spørsmål 3:</legend>
+                        <p class="card-text">Hvilken er den driftsresultat hvis renter er 7%? (Resten av parameterne: Eierlønn (kr 700 000); Salgsverdi (kr 100 000); År med avskrivninger (3)). 
+
+
+                        </p>
+                        <div class="form-group">
+                            {{ form_boa205_ch1_q3.type(class="form-control form-control") }}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_boa205_ch1_q3.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>     
+            </div>
+        </div>
+
+        <div class="col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two" style="background: #f2b84b; height: 300px;">
+                <form method="POST" action="">
+                    {{ form_boa205_ch1_q4.csrf_token }}
+                        <legend class="border-bottom mb-4">Spørsmål 4:</legend>
+                        <p class="card-text">Hvilken er den driftsresultat hvis eierlønn er kr 600 000? (Resten av parameterne: Eierlønn (kr 700 000); Salgsverdi (kr 100 000); År med avskrivninger (3)).  
+
+
+                        </p>
+                        <div class="form-group">
+                            {{ form_boa205_ch1_q4.type(class="form-control form-control") }}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_boa205_ch1_q4.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>      
+            </div>
+        </div>
+        
+        <div class="box_questions_two">
+                
+        </div>
+    </div>
+
+    <!-- Questions 3 and 4 -->
+    <div class="container">
+        <div class="box_questions_two">
+                
+        </div>
+        <div class="col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two" style="background: #f2b84b" id="ch1_q5_q6">
+                <form method="POST" action="">
+                    {{ form_boa205_ch1_q5.csrf_token }}
+                        <legend class="border-bottom mb-4">Spørsmål 5:</legend>
+                        <p class="card-text">Hvilken er den driftsresultat hvis salgsverdi er kr 110 000? (Resten av parameterne: Renter (5%); Eierlønn (kr 700 000); År med avskrivninger (3)).
+
+
+                        </p>
+                        <div class="form-group">
+                            {{ form_boa205_ch1_q5.type(class="form-control form-control") }}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_boa205_ch1_q5.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>     
+            </div>
+        </div>
+
+        <div class="col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two" style="background: #f2b84b;">
+                <form method="POST" action="">
+                    {{ form_boa205_ch1_q6.csrf_token }}
+                        <legend class="border-bottom mb-4">Spørsmål 6:</legend>
+                        <p class="card-text">Hvilken er den driftsresultat hvis år med avskrivninger er 5? (Resten av parameterne: Renter (5%); Eierlønn (kr 700 000); Salgsverdi (kr 100 000)).
+
+
+                        </p>
+                        <div class="form-group">
+                            {{ form_boa205_ch1_q6.type(class="form-control form-control") }}
+                        </div>
+                        </br>
+                        <div class="form-group border-bottom pb-3">
+                            {{ form_boa205_ch1_q6.submit(class="btn btn-outline-info")}}
+                        </div>
+                </form>      
+            </div>
+        </div>
+        
+        <div class="box_questions_two">
+                
+        </div>
+    </div>
+    
+
+
+</section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+
+
+{% endblock content %}

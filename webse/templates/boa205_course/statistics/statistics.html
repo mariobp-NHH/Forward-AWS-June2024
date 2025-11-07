@@ -1,0 +1,145 @@
+{% extends "boa205_course/boa205_course_layout.html" %} {% block content %}
+
+<section class="section-statistics-home">
+  <div class="statistics-container-home">
+    <!-- Chapter 1-->
+    <div
+      class="statistics-box-home"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="statistics-icon-home">
+        <i class="fa-solid fa-table"></i>
+      </div>
+      <p>
+        <strong>Statistikk Kapittel 1:</strong>
+        I det kapitel vi skal studer hva er eksternregnskap, skatteregnskap og
+        driftsregnskap.
+      </p>
+      <div class="statistics-buttons-home">
+        <a
+          href="{{ url_for('boa205_course_statistics.statistics_ch1') }}"
+          class="btn btn-primary btn-sm"
+          >Statistikk Kapittel 1</a
+        >
+      </div>
+    </div>
+
+    <!-- Chapter 2-->
+    <div
+      class="statistics-box-home"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="statistics-icon-home">
+        <i class="fa-solid fa-table"></i>
+      </div>
+      <p>
+        <strong>Statistikk Kapittel 2:</strong>
+        ....
+      </p>
+      <div class="statistics-buttons-home">
+        <a href="#" class="btn btn-primary btn-sm">Statistikk Kapittel 2</a>
+      </div>
+    </div>
+
+    <!-- Chapter 3-->
+    <div
+      class="statistics-box-home"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="statistics-icon-home">
+        <i class="fa-solid fa-table"></i>
+      </div>
+      <p>
+        <strong>Statistikk Kapittel 3:</strong>
+        ....
+      </p>
+      <div class="statistics-buttons-home">
+        <a href="#" class="btn btn-primary btn-sm">Statistikk Kapittel 3</a>
+      </div>
+    </div>
+
+    <!-- Chapter 4-->
+    <div
+      class="statistics-box-home"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="statistics-icon-home">
+        <i class="fa-solid fa-table"></i>
+      </div>
+      <p>
+        <strong>Statistikk Kapittel 4:</strong>
+        ...
+      </p>
+      <div class="statistics-buttons-home">
+        <a href="#" class="btn btn-primary btn-sm">Statistikk Kapittel 4</a>
+      </div>
+    </div>
+
+    <!-- Chapter 5-->
+    <div
+      class="statistics-box-home"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="statistics-icon-home">
+        <i class="fa-solid fa-table"></i>
+      </div>
+      <p>
+        <strong>Statistikk Kapittel 5:</strong>
+        ...
+      </p>
+      <div class="statistics-buttons-home">
+        <a href="#" class="btn btn-primary btn-sm">Statistikk Kapittel 5</a>
+      </div>
+    </div>
+
+    <!-- Chapter 6-->
+    <div
+      class="statistics-box-home"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="statistics-icon-home">
+        <i class="fa-solid fa-table"></i>
+      </div>
+      <p>
+        <strong>Statistikk Kapittel 6:</strong>
+        ....
+      </p>
+      <div class="statistics-buttons-home">
+        <a href="#" class="btn btn-primary btn-sm">Statistikk Kapittel 6</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Convert custom data attributes to real AOS attributes
+  document.querySelectorAll("[data-aos='aos-fade-right']").forEach((el) => {
+    el.setAttribute("data-aos", "aos-fade-right");
+  });
+
+  AOS.init({
+    startEvent: "DOMContentLoaded",
+    once: true,
+  });
+</script>
+
+{% endblock content %}
