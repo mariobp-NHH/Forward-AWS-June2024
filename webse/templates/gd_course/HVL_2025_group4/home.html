@@ -1,0 +1,135 @@
+{% extends "gd_course/HVL_2025_group4/layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block custom_css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='/gd_course_HVL_2025_group4/home.css') }}">
+{% endblock %}
+
+{% block content %}
+<section id="home">
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/media/background.mp4') }}" type="video/mp4">
+      Il tuo browser non supporta il tag video.
+    </video>
+  </div>
+
+  <div class="content">
+    <h1>Track your footprint!</h1>
+    <p class="subtitle">THE FUTURE STARTS NOW</p>
+    <div class="button-group">
+      <a href="#meet-section" class="neon-button">Meet our team</a>
+      <a href="{{ url_for('gd_course_HVL_2025_group4.carbon_app_home') }}" class="neon-button">Carbon App</a>
+    </div>
+  </div>
+</section>
+
+<section id="meet-section" class="team-page">
+  <h1 class="team-title">Meet Our Team</h1>
+
+  <div class="team-intro-wrapper">
+    <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Team.jpeg') }}" alt="Our Team" class="team-intro-img">
+    <div class="team-intro">
+      <p>
+        We are a diverse team of five Erasmus students currently studying at Western Norway University of Applied Sciences in Bergen, representing four different countries. Brought together by a shared passion for technology and sustainability, we are developing an innovative app as part of the Green App Development course.
+        Our project combines international perspectives and collaborative spirit to create solutions that support a greener future.</p>
+      </p>
+    </div>
+  </div>
+
+  <div class="team-circle">
+
+    <div class="team-member member5" onclick="toggleExpand(this)">
+      <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Gwen.jpeg') }}" alt="Gwendoline">
+      <h2>Gwendoline Bonami</h2>
+      <p class="short-bio">
+       Business Management.</p>
+
+       <p class="linkedin-link">
+        <a href="https://www.linkedin.com/in/gwendoline-bonami-3b21b4356/" target="_blank"><i class="bi bi-linkedin"></i>&nbsp;LinkedIn</a></p>
+      
+       <i class="bi bi-chevron-double-down"></i></p>
+      <div class="more-info">
+        <p>I'm 20 years old and I come from Brussels, Belgium. I'm in my last year of my Bachelor degree in business management in Leuven. I like to travel and discover new places. I love to play sports especially hockey and padel.</p>
+      </div>
+    </div>
+
+    <div class="team-member member3" onclick="toggleExpand(this)">
+      <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Evann.jpeg') }}" alt="Evann">
+      <h2>Evann Morio</h2>
+      <p class="short-bio">
+       Business Administration.</p>
+
+       <p class="linkedin-link">
+        <a href="https://www.linkedin.com/in/evann-morio-a30255252/" target="_blank"><i class="bi bi-linkedin"></i>&nbsp;LinkedIn</a></p>
+      
+       <i class="bi bi-chevron-double-down"></i></p>
+      <div class="more-info">
+        <p>I'm 21 years old and I come from Quimper, France. I am in my third year of higher education studying business administration. Outside of my studies, I spend my free time playing sports, particularly basketball, where I have coached a team of young boys, as well as fitness, traveling, and going to the movies.</p>
+      </div>
+    </div>
+
+   <div class="team-member member4" onclick="toggleExpand(this)">
+      <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Mathilde.jpeg') }}" alt="Mathilde">
+      <h2>Mathilde Angus</h2>
+      <p class="short-bio">
+      Sustainable Management.</p>
+
+      <p class="linkedin-link">
+        <a href="https://www.linkedin.com/in/mathilde-angus//" target="_blank"><i class="bi bi-linkedin"></i>&nbsp;LinkedIn</a></p>
+      
+      
+      <i class="bi bi-chevron-double-down"></i></p>
+      <div class="more-info">
+        <p>I'm 20 years old and I come from the South of France but study in Lyon. I'm in my last year of Bachelor degree in sustainable management. I enjoy swimming, boating and everything around water</p>
+      </div>
+    </div>
+
+    <div class="team-member member1" onclick="toggleExpand(this)">
+      <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Biagio.jpeg') }}" alt="Biagio">
+      <h2>Biagio Navarin</h2>
+      <p class="short-bio">Business Administration.</p>
+
+      <p class="linkedin-link">
+        <a href="https://www.linkedin.com/in/biagio-navarin-101194390/" target="_blank"><i class="bi bi-linkedin"></i>&nbsp;LinkedIn</a></p>
+      
+        <i class="bi bi-chevron-double-down"></i></p>
+      <div class="more-info">
+        <p>I'm from Padua, Italy. I'm 21 years old and I'm in the final year of my Economics degree, spending this semester at HVL in Bergen. I enjoy football, the gym, and playing music.</p>
+      </div>
+    </div>
+
+    <div class="team-member member2" onclick="toggleExpand(this)">
+      <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Charlotte.jpeg') }}" alt="Charlotte">
+      <h2>Charlotte Wandscher</h2>
+      <p class="short-bio">
+       Int. Business Administration.</p>
+
+       <p class="linkedin-link">
+        <a href="https://www.linkedin.com/in/charlotte-wandscher-7a60a6271/" target="_blank"><i class="bi bi-linkedin"></i>&nbsp;LinkedIn</a></p>
+      
+       <i class="bi bi-chevron-double-down"></i></p>
+      <div class="more-info">
+        <p>I'm 24 years old and I'm from Hamburg. I study International Business Administration at BSP Business and Law School and work in product management at the SPIEGEL Group. In my free time, I enjoy padel, running, and going to the gym.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleExpand(el) {
+  const isOpen = el.classList.contains('expanded');
+  document.querySelectorAll('.team-member').forEach(m => m.classList.remove('expanded'));
+  if (!isOpen) {
+    el.classList.add('expanded');
+    setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'end' }), 600);
+  }
+}
+</script>
+{% endblock %}
+

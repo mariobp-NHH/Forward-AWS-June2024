@@ -1,0 +1,154 @@
+{% extends "gd_course/HVL_2025_group4/layout.html" %} {% block title %}Carbon
+App{% endblock %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='/gd_course_HVL_2025_group4/carbon_app/carbon_app.css') }}"
+/>
+{% endblock %} {% block content %}
+
+<div class="image-background">
+  <img
+    src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/trainbackground.jpg') }}"
+    alt="Background"
+    id="bg-image"
+  />
+  <div class="image-overlay"></div>
+</div>
+
+<div class="carbon-app-container">
+  <h1>Carbon Footprint Calculations</h1>
+  <p class="h3">
+    Follow the steps on the tutorial and calculate your carbon footprint.
+  </p>
+
+  <div class="tutorial-buttons">
+    <div class="tutorial-box" id="openTutorial">
+      <i class="fa-solid fa-book-open"></i> Tutorial
+    </div>
+    <a
+      href="{{ url_for('gd_course_HVL_2025_group4.your_data') }}"
+      class="data-button"
+      ><i class="bi bi-clipboard-data-fill"></i>&nbspYour Data</a
+    >
+  </div>
+
+  <hr class="eco-divider" />
+
+  <div class="features">
+    <ul>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.car_emission') }}"
+          ><i class="fa-solid fa-car"></i>Car Emission</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.bus_emission') }}"
+          ><i class="fa-solid fa-bus"></i>Bus Emission</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.plane_emission') }}"
+          ><i class="bi bi-airplane-fill"></i>Plane Emission</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.train_emission') }}"
+          ><i class="bi bi-train-front-fill"></i>Train Emission</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.scooter_emission') }}"
+          ><i class="bi bi-scooter"></i>Electric Scooter Emission</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.bicycle_emission') }}"
+          ><i class="bi bi-bicycle"></i>Bicycle Emission</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.ferry_emission') }}"
+          ><i class="fa-solid fa-ferry"></i>Ferry Emission</a
+        >
+      </li>
+      <li>
+        <a href="{{ url_for('gd_course_HVL_2025_group4.motorbike_emission') }}"
+          ><i class="fa-solid fa-motorcycle"></i>Motorbike Emission</a
+        >
+      </li>
+    </ul>
+  </div>
+
+  <hr class="eco-divider" />
+</div>
+
+<div class="tutorial-modal" id="tutorialModal">
+  <div class="tutorial-content">
+    <span class="close-btn" id="closeTutorial">&times;</span>
+
+    <div class="tutorial-layout">
+      <div class="iphone-side">
+        <img
+          class="img-iphone"
+          src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/iphone.jpeg') }}"
+          alt="iPhone Mockup"
+        />
+      </div>
+
+      <div class="steps-side">
+        <div class="step">
+          <h3>1. Choose Your Vehicle</h3>
+          <p>Select the type of vehicle you use for commuting to work.</p>
+        </div>
+
+        <div class="step">
+          <h3>2. Enter Your Daily Travel Distance</h3>
+          <p>
+            Enter the total kilometers you travel per day (including both ways),
+            Choose the type of fuel or energy your vehicle uses and indicate the
+            number of days per week you use this vehicle for commuting.
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>3. Repeat for Other Vehicles</h3>
+          <p>
+            If you use multiple vehicles during the week, repeat steps 2 to 4
+            for each one. The total number of days can't exceed 7!
+          </p>
+        </div>
+
+        <div class="step">
+          <h3>4. View Your Data</h3>
+          <p>
+            After saving your entries, you can review them anytime in the “Your
+            Data” section, where you'll see all registered trips along with
+            their calculated CO₂ emissions.
+          </p>
+        </div>
+
+        <a
+          class="try-btn"
+          href="{{ url_for('gd_course_HVL_2025_group4.carbon_app_home') }}"
+          class="try-btn"
+          >Try the Carbon App</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("tutorialModal");
+    const toggleModal = (show) =>
+      (modal.style.display = show ? "flex" : "none");
+
+    document
+      .getElementById("openTutorial")
+      .addEventListener("click", () => toggleModal(true));
+    document
+      .getElementById("closeTutorial")
+      .addEventListener("click", () => toggleModal(false));
+  </script>
+</div>
+
+{% endblock %}

@@ -1,0 +1,117 @@
+{% extends "gd_course/HVL_2025_group4/layout.html" %}
+
+{% block title %}Methodology{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='/gd_course_HVL_2025_group4/methodology.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="hero-video-section">
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/media/methovideo2.mp4') }}" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <div class="hero-content">
+    <h1>Our Methodology</h1>
+    <p class="intro">
+      Welcome to the Methodology page. Here, we explain how our app calculates carbon emissions for different types of transport. Our goal is to make the process transparent and easy to understand, so you always know where the numbers come from.
+      On this page, you will find the formulas we use, details about each transport mode, and the scientific sources behind our calculations.
+      If you want a deeper look, you can download the full methodology paper using the button below.</p>
+   <div class="metho-btn">
+    <a class="paper-btn" href="https://raw.githubusercontent.com/biagionavarin/Midwayconference/1244768ae08b4c0a1e33ae845b6dce08821faa9a/PAPER_%20ACT4EARTH_GREEN%20DIGITALIZATION_GROUP%204.pdf">Full Paper</a>
+    <a href="#formula-section" class="paper-btn">Formulas</a>
+   </div>
+  </div>
+</div>
+
+<div id="formula-section" class="page-wrapper">
+  <div class="page-content">
+    <section class="methodology-section">
+    <h2>General Formulas</h2>
+
+    <div class="formula">
+  <div class="formula-item">
+    <p>Petrol Emissions Formula</p>
+    <img class="img-formula1" src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Petrol.png') }}">
+  </div>
+
+  <div class="formula-item">
+    <p>Grid Emission Factor</p>
+    <img class="img-formula4" src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Grid.png') }}">
+  </div>
+  
+  <div class="formula-item">
+    <p>Diesel Emissions Formula</p>
+    <img class="img-formula2" src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Diesel.png') }}">
+  </div>
+
+  <div class="formula-item">
+    <p>Electric Emissions Formula</p>
+    <img class="img-formula3" src="{{ url_for('static', filename='/gd_course_HVL_2025_group4/images/Electric.png') }}">
+  </div>
+</div>
+
+
+      <div class="extra-sections">
+        <div class="method-box large"><i class="fa-solid fa-car"></i>
+          <p>1. Car</p>
+          A car can pollute through various mechanisms depending on its propulsion method, whether it's petrol, diesel, or electric power.
+          Electric cars have direct CO₂ emissions of zero, as they do not emit exhaust when driving. 
+          The average CO₂ values for petrol and diesel vehicles refer to newly registered cars in Europe, based on the latest EEA benchmarks.</p>
+          Petrol Car: 122 gCO₂/km</p>
+          Diesel Car: 148 gCO₂/km</p>
+          Electric Car: 0 gCO₂/km</div>
+        <div class="method-box large"><i class="fa-solid fa-bus"></i>
+          <p>2. Bus</p>
+          Bus transport is a key mobility mode in cities and regions, with environmental impacts that vary by vehicle type, fuel, and occupancy. 
+          Because buses allow shared travel, emissions per passenger can be much lower when they are well-filled. 
+          We do not differentiate between urban, regional, or intercity buses, as emissions are calculated using mileage and average efficiency. 
+          Although electric and hydrogen buses can greatly reduce CO₂ emissions, our app does not include electric buses due to insufficient reliable data.</p>
+          Diesel Bus : 80g of CO₂/km/passenger</div>
+        <div class="method-box large"><i class="bi bi-airplane-fill"></i>
+        <p>3. Airplane</p>
+        Air travel is one of the most polluting forms of transport in Europe, if not the most polluting. Emissions can vary depending on the type of flight and the technology used, but generally remain high due to high fuel consumption. 
+        Long-journey flights and older aircraft are particularly polluting. Unlike energy innovations in other modes of transport, such as cars, the possibility of creating an electric aircraft is much more complicated due to battery life and boarding capacity.
+        We decided not to differentiate between long-journey, small, and medium-journey flights because we plan to calculate CO₂ emissions based on mileage. For example, some domestic flights are longer than some international flights. Therefore, we calculated an average.</p>
+        Plane : 225g CO₂/km/passenger.</div>
+        <div class="method-box large"><i class="bi bi-train-front-fill"></i>
+        <p>4. Train</p>
+        Emissions for electric trains can vary by country depending on the electricity mix, and are generally lower in countries with a high share of renewables or nuclear power.
+        Diesel trains remain significantly more polluting per passenger-kilometer, although improvements in efficiency have helped reduce average emissions in Europe.</p>
+        Diesel Train: 63 gCO₂/km</p>
+        Electric Train: 5 gCO₂/km</div>
+        <div class="method-box large"><i class="bi bi-scooter"></i>
+        <p>5. Scooter</p>Electric scooters, which have been popular for several years, are growing rapidly in major European cities. 
+        Their emissions are generally low due to being used mostly for short journeys, especially in countries where electricity is based on renewable energy or nuclear power. As a result, CO₂ emissions from electric scooters depend mainly on manufacturing, which accounts for 79% of emissions, and logistics, which includes collection and recharging.</p>
+        Scooter : (60/0.79) → 34g CO₂/km/passenger.</div>
+        <div class="method-box large"><i class="fa-solid fa-ferry"></i>
+        <p>6. Ferry</p>
+        Despite the much lower use of ferries compared to Norway or other Nordic countries, ferries are among the most polluting forms of transport.
+        According to the EEA, ferries can emit 267g of CO₂ equivalent per kilometer. Furthermore, the EEA does not provide any figures for cruise ships, but we can assume that their carbon footprint is similar to that of ferries.</p>
+        Diesel ferry : 267g CO₂/km/passenger.</div>
+        <div class="method-box large"><i class="bi bi-bicycle"></i>
+        <p>7.Walking/Bicycle</p>
+        People travelling on foot do not produce any direct CO₂ emissions, as we do not take into account CO₂ emissions produced by food or personal equipment. 
+        In addition, for direct CO₂ emissions from people travelling by bicycle, these are very low or even zero, as we do not take into account the energy used in manufacturing the bicycle or the energy provided by the food consumed by the cyclist. However, electric bicycles require electricity to operate.</p>
+        Walking : 0 g CO₂/km</p>
+        Traditional bike : 0g CO₂/km</p>
+        Electric bike : 3g CO₂/km</div>
+        <div class="method-box large"><i class="fa-solid fa-motorcycle"></i>
+        <p>8. Motorcycle</p>Motorcycle emissions vary depending on the type of engine and fuel used. Diesel motorcycles remain more polluting per kilometer traveled, while gasoline motorcycles, although slightly less polluting, also contribute significantly to CO₂ emissions and local pollutants. 
+        However, technical improvements and European standards have gradually reduced average emissions (Clairotte et al., 2020).
+        As the difference is not significant, we have decided to take an average of the two types of fuel :</p>
+        Motorcycle diesel/petrol : (89 and 112) → 100 g CO₂/km/passenger.</div>
+      </div>
+    </section>
+  </div>
+
+{% endblock %}
+
+
+
+
