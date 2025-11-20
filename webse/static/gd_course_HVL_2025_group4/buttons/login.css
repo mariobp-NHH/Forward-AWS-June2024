@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Lexend', sans-serif;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  background: url("../images/woods.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #8a958322;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  flex-wrap: wrap;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #ddebd5;
+  font-size: clamp(1rem, 2vw, 2em);
+  font-weight: normal;
+  text-shadow: 0 0 5px #707d5b, 0 0 10px #7d936f;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffffff;
+}
+
+.logout-button {
+  color: #a7bfe9;
+  padding: 6px 12px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  border-radius: 6px;
+  font-weight: normal;
+  text-shadow: 0 0 4px #142976;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.register_section_css {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.register_overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.88);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+
+  width: clamp(220px, 25vw, 340px);
+  padding: clamp(1rem, 2.5vw, 2rem);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+legend {
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+  font-weight: bold;
+  color: #333;
+  margin-bottom: clamp(0.8rem, 1.2vw, 1.2rem);
+}
+
+.form-control-label {
+  font-weight: bold;
+  color: #333;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  text-align: left;
+  width: 100%;
+}
+
+.form-control-lg {
+  width: 90%;
+  padding: clamp(0.45rem, 1vw, 0.7rem);
+  margin-bottom: clamp(0.6rem, 1vw, 0.9rem);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  transition: all 0.25s ease;
+}
+
+.form-control-lg:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+}
+
+.form-check-input {
+  margin-right: 0.4rem;
+}
+
+.form-check-label {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.is-invalid {
+  border-color: #dc3545 !important;
+  background-color: #fff5f5;
+}
+
+.invalid-feedback {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: -0.3rem;
+  margin-bottom: 0.7rem;
+}
+
+.btn-outline-info {
+  width: 100%;
+  padding: clamp(0.5rem, 1vw, 0.7rem);
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: clamp(0.85rem, 1vw, 1rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-outline-info:hover {
+  background-color: #45a049;
+}
+
+.border-top {
+  margin-top: clamp(0.8rem, 1.2vw, 1.2rem);
+  padding-top: clamp(0.6rem, 1vw, 0.8rem);
+  border-top: 1px solid #ccc;
+  width: 100%;
+  text-align: center;
+  font-size: clamp(0.8rem, 0.9vw, 0.95rem);
+  color: #333;
+}
+
+.border-top a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.border-top a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 6px 0;
+  }
+
+  .navbar-menu {
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+
+  .logout-button {
+    position: static;
+    transform: none;
+    font-size: clamp(0.8rem, 2vw, 1em);
+  }
+
+  .register_section_css {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register_section_css {
+    padding-top: 90px;
+  }
+
+  .login-container {
+    width: clamp(200px, 65vw, 280px);
+    padding: clamp(0.8rem, 3vw, 1.2rem);
+  }
+
+  legend {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+  }
+}
