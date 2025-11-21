@@ -66,6 +66,7 @@ login_manager.blueprint_login_views = {
     'gd_course_NHH_2025_group3': 'gd_course_NHH_2025_group3.login',
     'gd_course_NHH_2025_group4': 'gd_course_NHH_2025_group4.login',
     'gd_course_HVL_2025_group4': 'gd_course_HVL_2025_group4.login',
+    'gd_course_HVL_2025_group5': 'gd_course_HVL_2025_group5.login',
     'sbm_course_chats': 'forward_users.forward_users_login',
     'aab_course_business_module': 'forward_users.forward_users_login',
     'aab_course_announcements': 'forward_users.forward_users_login',
@@ -129,6 +130,7 @@ from webse.gd_course_NHH_2025_group2.routes import gd_course_NHH_2025_group2
 from webse.gd_course_NHH_2025_group3.routes import gd_course_NHH_2025_group3
 from webse.gd_course_NHH_2025_group4.routes import gd_course_NHH_2025_group4
 from webse.gd_course_HVL_2025_group4.routes import gd_course_HVL_2025_group4
+from webse.gd_course_HVL_2025_group5.routes import gd_course_HVL_2025_group5
 from webse.sbm_course_home.routes import sbm_course
 from webse.sbm_course_announcements.routes import sbm_course_announcements
 from webse.sbm_course_chats.routes import sbm_course_chats
@@ -200,6 +202,7 @@ application.register_blueprint(gd_course_HVL_2024_group3)
 application.register_blueprint(gd_course_HVL_2024_group4)
 application.register_blueprint(gd_course_HVL_2024_group5)
 application.register_blueprint(gd_course_HVL_2025_group4)
+application.register_blueprint(gd_course_HVL_2025_group5)
 application.register_blueprint(gd_course_NHH_2023_group1)
 application.register_blueprint(gd_course_NHH_2023_group2)
 application.register_blueprint(gd_course_NHH_2023_group3)
@@ -248,4 +251,3 @@ application.register_blueprint(se_platform_announcements)
 create_dash_application2(application)
 create_dash_redispatch(application)
 create_dash_spot_go(application)
-
