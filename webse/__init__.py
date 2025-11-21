@@ -18,7 +18,7 @@ application.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 application.config['SQLALCHEMY_BINDS'] ={'se_course': DBVAR, 'gd_course': DBVAR, 'gender_platform': DBVAR, 'se_platform': DBVAR, 'es_course': DBVAR}
 
-#Email configuration
+#Email configuration 
 application.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 application.config['MAIL_PORT'] = 587
 application.config['MAIL_USE_TLS'] = True
