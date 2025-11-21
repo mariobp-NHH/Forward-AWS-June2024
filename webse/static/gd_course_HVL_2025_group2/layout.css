@@ -1,0 +1,142 @@
+/* Google fonts Roboto  */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap');
+
+
+/* Carbon App logo */
+.text-logo {
+  color: #0f4c3a!important;
+}
+
+
+/* Font imports */
+
+body {
+  font-family: 'Lato', sans-serif !important;
+
+}
+  
+.container {
+  margin: auto;
+  max-width: 1320px;
+}
+ul { 
+  list-style: none;
+  font-size: 400;
+}
+a {
+  color: #0f4c3a;
+  text-decoration: none;
+}
+h1, h2 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+img {
+  width: 100%;
+}
+
+/* Flash Messages */
+.flash-messages-container {
+  margin-top: 80px;
+  position: fixed;
+  z-index: 9999;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Navbar  */
+.section_carbon_app_navbar {
+  background-color: #f5f5f5;
+  
+}
+
+.carbon_app_navbar {
+  display: flex;
+  flex-direction: row;
+  height: 70px;
+  align-items: center;
+  background-color: transparent;
+ 
+}
+.carbon_app_navbar a {
+  color: #0f4c3a;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.carbon_app_navbar a:hover{
+  color: #15803d;
+}
+.carbon_app_navbar ul {
+  display:flex ;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.carbon_app_navbar .logo .logo-link {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+}
+.carbon_app_navbar .logo .logo-link:hover {
+  border-bottom: none;
+}
+
+/* Footer  */
+.section_footer{
+  background-color:white;
+}
+.footer {
+  display:flex ;
+  flex-direction: row;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  background-color: white;
+  padding: 0 0px;
+}
+
+.section_carbon_app_navbar.is-overlay {
+  background: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+
+/* Media query */
+@media(max-width:768px){
+  .carbon_app_navbar {
+    height: 180px;
+    flex-direction: column;
+  }
+  .carbon_app_navbar a {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+  .carbon_app_navbar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .flash-messages-container {
+    top: 90px;          
+    width: 90%;          
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+  }
+
+  }
