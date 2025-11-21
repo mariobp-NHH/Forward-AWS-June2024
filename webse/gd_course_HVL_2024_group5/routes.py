@@ -1,88 +1,94 @@
-from flask import render_template, Blueprint, redirect, flash, url_for, request, session, jsonify
-from webse import db, bcrypt
+from flask import render_template, Blueprint, redirect, flash, url_for, request
+from webse.gd_course_HVL_2024_group5.forms import RegistrationForm, LoginForm, BusForm, CarForm, PlaneForm, FerryForm, MotorbikeForm, BicycleForm, WalkForm, TrainForm 
 from datetime import timedelta, datetime
+from webse import db, bcrypt
 from flask_login import login_required, login_user, current_user, logout_user
 from webse.models import User, EmissionsGD
-from webse.gd_course_HVL_2025_group5.forms import RegistrationForm, LoginForm, BusForm, CarForm, PlaneForm, FerryForm, MotorbikeForm, BicycleForm, WalkForm, TrainForm, ElectricScooterForm
 import json
-import flask 
-from sqlalchemy import cast, Date, func, distinct, and_
+
+gd_course_HVL_2024_group5=Blueprint('gd_course_HVL_2024_group5',__name__)
 
 
-gd_course_HVL_2025_group5=Blueprint('gd_course_HVL_2025_group5',__name__)
 
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/home')
+def home_home():
+    return render_template('gd_course/HVL_2024_group5/home.html', title='home')
 
 #Users routes
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5/register', methods=['GET','POST'])
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/register', methods=['GET','POST'])
 def register():
     form = RegistrationForm()
-    if current_user.is_authenticated:
-        return redirect(url_for('gd_course_HVL_2025_group5.home_home'))
     if form.validate_on_submit():
-        user_hashed_password=bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user=User(username=form.username.data, email=form.email.data, password=user_hashed_password, institution='HVL_2025_group5')
+        user_hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
+        user = User(username=form.username.data, email=form.email.data, password=user_hashed_password, institution='HVL_2024_group5')
         db.session.add(user)
         db.session.commit()
+        login_user(user, remember=True)
         flash('Your account has been created! Now, you are able to login!', 'success')
-        return redirect(url_for('gd_course_HVL_2025_group5.carbon_app_home'))
-    return render_template('gd_course/HVL_2025_group5/users/register.html', title='register', form=form)
-    
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5/login', methods=['GET','POST'])
+        return redirect(url_for('gd_course_HVL_2024_group5.carbon_app_home'))
+    return render_template('gd_course/HVL_2024_group5/users/register.html', title='Register', form=form)
+
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/login', methods=['GET','POST'])
 def login():
   form = LoginForm()
   if current_user.is_authenticated:
-    return redirect(url_for('gd_course_HVL_2025_group5.home_home'))
+        return redirect(url_for('gd_course_HVL_2024_group5.home_home'))
   if form.validate_on_submit():
     user = User.query.filter_by(email=form.email.data).first()
     if user and bcrypt.check_password_hash(user.password, form.password.data):
         login_user(user, remember=form.remember.data)
         next_page = request.args.get('next')
-        flash('You have logged in! Now, you can start to use carbon app!', 'success')
-        return redirect (next_page) if next_page else redirect(url_for('gd_course_HVL_2025_group5.home_home'))
+        flash('You have logged in! Now, you can start to use our Carbon App!', 'success')
+        return redirect(next_page) if next_page else redirect(url_for('gd_course_HVL_2024_group5.home_home'))
     else:
-        flash('Login Unsuccessful. Please check email and password!', 'danger')  
-  return render_template('gd_course/HVL_2025_group5/users/login.html', title='login', form=form)
+        flash('Login Unsuccessful. Please check email and password!', 'danger') 
+  return render_template('gd_course/HVL_2024_group5/users/login.html', title='Login', form=form)
 
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5/logout')
-def logout ():
-   flash('You have logged out!', 'success') 
-   logout_user()
-   return redirect(url_for('gd_course_HVL_2025_group5.home_home'))
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/logout')
+def logout():
+  logout_user()
+  return redirect(url_for('gd_course_HVL_2024_group5.home_home'))
 
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5/home')
-def home_home():
-  return render_template('gd_course/HVL_2025_group5/home.html')
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/profile')
+def user_profile():
+    return render_template('gd_course/HVL_2024_group5/users/user_profile.html')
 
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5/methodology')
+# Methodology
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/methodology')
 def methodology_home():
-  return render_template('gd_course/HVL_2025_group5/methodology.html', title='methodology')
-
-#These are the emissions per passenger and per transport (kg CO2 / km)
-efco2 = {
-    'Bus': {'Electric': 0.00115, 'Diesel': 0.03},
-    'Car': {
-        'Petrol': {'Small': 0.150, 'Medium': 0.198, 'Big': 0.261},
-        'Diesel': {'Small': 0.174, 'Medium': 0.229, 'Big': 0.302},
-        'Electric': {'Small': 0.0045, 'Medium': 0.0059, 'Big': 0.0078}
-    },
-    'Plane': {'Economy': 0.127, 'Economy Premium': 0.155, 'Business': 0.285},
-    'Ferry': {'Diesel': 0.186, 'Electric': 0.084},
-    'Motorbike': {'Petrol': 0.08156},
-    'Electricscooter': {'Electric': 0},
-    'Bicycle': {'No Fossil Fuel': 0},
-    'Walk': {'No Fossil Fuel': 0},
-    'Train': {'Electric': 0.007, 'Diesel': 0.091}
-}
+  return render_template('gd_course/HVL_2024_group5/methodology.html', title='Methodology')
 
 
-#carbon app
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app')
-@login_required
+#Carbon app, main page
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app')
 def carbon_app_home():
-    return render_template('gd_course/HVL_2025_group5/carbon_app/carbon_app.html', title='carbon_app')
+    return render_template('gd_course/HVL_2024_group5/carbon_app/carbon_app.html', title='carbon_app')
+
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry')
+def new_entry():
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry.html', title='new_entry')
+
+
+# Emissions factor per transport in kg per passenger km
+efco2={'Bus':{'Diesel':0.10231,'CNG':0.08,'Petrol':0.10231,'No Fossil Fuel':0},
+    'Car':{'Petrol':0.18592,'Diesel':0.16453,'No Fossil Fuel':0},
+    'Plane':{'Petrol':0.24298},
+    'Ferry':{'Diesel':0.11131, 'CNG':0.1131, 'No Fossil Fuel':0},
+    'Motorbike':{'Petrol':0.09816,'No Fossil Fuel':0},
+    'Scooter':{'No Fossil Fuel':0},
+    'Bicycle':{'No Fossil Fuel':0},
+    'Walk':{'No Fossil Fuel':0}}
+efch4={'Bus':{'Diesel':2e-5,'CNG':2.5e-3,'Petrol':2e-5,'No Fossil Fuel':0},
+    'Car':{'Petrol':3.1e-4,'Diesel':3e-6,'No Fossil Fuel':0},
+    'Plane':{'Petrol':1.1e-4},
+    'Ferry':{'Diesel':3e-5, 'CNG':3e-5,'No Fossil Fuel':0},
+    'Motorbike':{'Petrol':2.1e-3,'No Fossil Fuel':0},
+    'Scooter':{'No Fossil Fuel':0},
+    'Bicycle':{'No Fossil Fuel':0},
+    'Walk':{'No Fossil Fuel':0}}
 
 #New entry bus
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_bus', methods=['GET','POST'])
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_bus', methods=['GET','POST'])
 @login_required
 def new_entry_bus():
     form = BusForm()
@@ -94,56 +100,47 @@ def new_entry_bus():
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
+        ch4 = float(kms) * efch4[transport][fuel]
+        total = co2+ch4
+
         co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
+        ch4 = float("{:.2f}".format(ch4))
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
         db.session.add(emissions)
         db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_bus.html', title='new entry bus', form=form)
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_bus.html', title='new entry bus', form=form)
 
 #New entry car
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_car', methods=['GET','POST'])
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_car', methods=['GET','POST'])
 @login_required
 def new_entry_car():
     form = CarForm()
     if form.validate_on_submit():
         kms = form.kms.data
         fuel = form.fuel_type.data
-        car_size = form.car_size.data
-        transport_key = 'Car'
-
-        co2_factor = efco2[transport_key][fuel][car_size]
-        co2 = float(kms) * co2_factor
-        co2 = float("{:.2f}".format(co2))   
-        transport_label = f"{car_size} Car"
-        emissions = EmissionsGD(kms=kms, transport=transport_key, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
-        db.session.add(emissions)
-        db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_car.html', title='new entry car', form=form)    
-
-#New entry plane
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_plane', methods=['GET','POST'])
-@login_required
-def new_entry_plane():
-    form = PlaneForm()
-    if form.validate_on_submit():
-        kms = form.kms.data
-        fuel = form.fuel_type.data
-        transport = 'Plane'
+        transport = 'Bus'
         # kms = request.form['kms']
         # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
+        ch4 = float(kms) * efch4[transport][fuel]
+        total = co2+ch4
+
         co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
+        ch4 = float("{:.2f}".format(ch4))
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
         db.session.add(emissions)
         db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_plane.html', title='new entry plane', form=form)  
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_car.html', title='new entry car', form=form) 
 
 #New entry ferry
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_ferry', methods=['GET','POST'])
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_ferry', methods=['GET','POST'])
 @login_required
 def new_entry_ferry():
     form = FerryForm()
@@ -151,19 +148,21 @@ def new_entry_ferry():
         kms = form.kms.data
         fuel = form.fuel_type.data
         transport = 'Ferry'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
+        total = co2
+
         co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
         db.session.add(emissions)
         db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_ferry.html', title='new entry ferry', form=form)     
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_ferry.html', title='new entry ferry', form=form)     
 
 #New entry motorbike
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_motorbike', methods=['GET','POST'])
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_motorbike', methods=['GET','POST'])
 @login_required
 def new_entry_motorbike():
     form = MotorbikeForm()
@@ -171,39 +170,21 @@ def new_entry_motorbike():
         kms = form.kms.data
         fuel = form.fuel_type.data
         transport = 'Motorbike'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
 
         co2 = float(kms) * efco2[transport][fuel]
+        total = co2
+
         co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
         db.session.add(emissions)
         db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_motorbike.html', title='new entry motorbike', form=form) 
-
-#New entry bicycle
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_bicycle', methods=['GET','POST'])
-@login_required
-def new_entry_bicycle():
-    form = BicycleForm()
-    if form.validate_on_submit():
-        kms = form.kms.data
-        fuel = form.fuel_type.data
-        transport = 'Bicycle'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
-
-        co2 = float(kms) * efco2[transport][fuel]
-        co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
-        db.session.add(emissions)
-        db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_bicycle.html', title='new entry bicycle', form=form)
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_motorbike.html', title='new entry motorbike', form=form)  
 
 #New entry walk
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_walk', methods=['GET','POST'])
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_walk', methods=['GET','POST'])
 @login_required
 def new_entry_walk():
     form = WalkForm()
@@ -211,19 +192,43 @@ def new_entry_walk():
         kms = form.kms.data
         fuel = form.fuel_type.data
         transport = 'Walk'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
 
-        co2 = float(kms) * efco2[transport][fuel]
+        co2 = float(kms) * efco2[transport]['No Fossil Fuel']  # Bruk 'No Fossil Fuel' som nøkkel
+        total = co2
+
         co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
         db.session.add(emissions)
         db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_walk.html', title='new entry walk', form=form)
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_walk.html', title='new entry walk', form=form) 
 
-#New entry train
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_train', methods=['GET','POST'])
+#New entry plane
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_plane', methods=['GET','POST'])
+@login_required
+def new_entry_plane():
+    form = PlaneForm()
+    if form.validate_on_submit():
+        kms = form.kms.data
+        fuel = form.fuel_type.data
+        transport = 'Plane'
+
+        co2 = float(kms) * efco2[transport][fuel]
+        total = co2
+
+        co2 = float("{:.2f}".format(co2))
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
+        db.session.add(emissions)
+        db.session.commit()
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_plane.html', title='new entry plane', form=form)  
+
+#New entry Train
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_train', methods=['GET','POST'])
 @login_required
 def new_entry_train():
     form = TrainForm()
@@ -231,48 +236,56 @@ def new_entry_train():
         kms = form.kms.data
         fuel = form.fuel_type.data
         transport = 'Train'
+
         co2 = float(kms) * efco2[transport][fuel]
+        total = co2
+
         co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
         db.session.add(emissions)
         db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_train.html', title='new entry train', form=form)
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_train.html', title='new entry Train', form=form)    
 
-#New entry electricscooter
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/new_entry_electricscooter', methods=['GET','POST'])
+#New entry bicycle
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/new_entry_bicycle', methods=['GET','POST'])
 @login_required
-def new_entry_electricscooter():
-    form = ElectricScooterForm()
+def new_entry_bicycle():
+    form = BicycleForm()
     if form.validate_on_submit():
         kms = form.kms.data
         fuel = form.fuel_type.data
-        transport = 'Electricscooter'
-        # kms = request.form['kms']
-        # fuel = request.form['fuel_type']
+        transport = 'Bicycle'
 
-        co2 = float(kms) * efco2[transport][fuel]
+        co2 = float(kms) * efco2[transport]['No Fossil Fuel']  # Bruk 'No Fossil Fuel' som nøkkel
+        total = co2
+
         co2 = float("{:.2f}".format(co2))
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=co2, student='HVL_2025_group5', institution='HVL_2025_group5', year=2025, author=current_user)
+        total = float("{:.2f}".format(total))
+
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='HVL_2024_group5', institution='HVL_2024_group5', year=2024, author=current_user)
         db.session.add(emissions)
         db.session.commit()
-        return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
-    return render_template('gd_course/HVL_2025_group5/carbon_app/new_entry_electricscooter.html', title='new entry electricscooter', form=form)
+        return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
+    return render_template('gd_course/HVL_2024_group5/carbon_app/new_entry_bicycle.html', title='new entry bicycle', form=form)   
+
 
 #Your data
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/your_data')
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/your_data')
 @login_required
 def your_data():
     #Table
     entries = EmissionsGD.query.filter_by(author=current_user). \
         filter(EmissionsGD.date> (datetime.now() - timedelta(days=5))).\
-        filter(EmissionsGD.institution=='HVL_2025_group5').\
+        filter(EmissionsGD.institution=='HVL_2024_group5').\
         order_by(EmissionsGD.date.desc()).order_by(EmissionsGD.transport.asc()).all()
     
     #Emissions by category
     emissions_by_transport = db.session.query(db.func.sum(EmissionsGD.total), EmissionsGD.transport). \
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
-        filter(EmissionsGD.institution=='HVL_2025_group5').\
+        filter(EmissionsGD.institution=='HVL_2024_group5').\
         group_by(EmissionsGD.transport).order_by(EmissionsGD.transport.asc()).all()
     emission_transport = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     first_tuple_elements = []
@@ -287,11 +300,11 @@ def your_data():
     else:
         emission_transport[1]
 
-    # Sum all car variants
-    emission_transport[2] = sum(
-        total or 0 for total, transport in emissions_by_transport
-        if transport and 'Car' in transport
-    )
+    if 'Car' in second_tuple_elements:
+        index_car = second_tuple_elements.index('Car')
+        emission_transport[2]=first_tuple_elements[index_car]
+    else:
+        emission_transport[2]
 
     if 'Ferry' in second_tuple_elements:
         index_ferry = second_tuple_elements.index('Ferry')
@@ -310,16 +323,11 @@ def your_data():
         emission_transport[5]=first_tuple_elements[index_plane]
     else:
         emission_transport[5]
-    if 'Train' in second_tuple_elements:
-        index_train = second_tuple_elements.index('Train')
-        emission_transport[6]=first_tuple_elements[index_train]
-    else:
-        emission_transport[6]
 
     #Kilometers by category
     kms_by_transport = db.session.query(db.func.sum(EmissionsGD.kms), EmissionsGD.transport). \
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
-        filter(EmissionsGD.institution=='HVL_2025_group5').\
+        filter(EmissionsGD.institution=='HVL_2024_group5').\
         group_by(EmissionsGD.transport).order_by(EmissionsGD.transport.asc()).all()
     kms_transport = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     first_tuple_elements = []
@@ -340,11 +348,11 @@ def your_data():
     else:
         kms_transport[1]
 
-    # Sum all car variants into a single Car total for kms
-    kms_transport[2] = sum(
-        total or 0 for total, transport in kms_by_transport
-        if transport and 'Car' in transport
-    )
+    if 'Car' in second_tuple_elements:
+        index_car = second_tuple_elements.index('Car')
+        kms_transport[2]=first_tuple_elements[index_car]
+    else:
+        kms_transport[2]
 
     if 'Ferry' in second_tuple_elements:
         index_ferry = second_tuple_elements.index('Ferry')
@@ -364,27 +372,28 @@ def your_data():
     else:
         kms_transport[5]
 
-    kms_transport[6] = sum(
-        total or 0 for total, transport in kms_by_transport
-        if transport and 'Train' in transport
-    )
-
     if 'Scooter' in second_tuple_elements:
         index_scooter = second_tuple_elements.index('Scooter')
-        kms_transport[7]=first_tuple_elements[index_scooter]
+        kms_transport[6]=first_tuple_elements[index_scooter]
     else:
-        kms_transport[7]     
+        kms_transport[6]     
 
     if 'Walk' in second_tuple_elements:
         index_walk = second_tuple_elements.index('Walk')
-        kms_transport[8]=first_tuple_elements[index_walk]
+        kms_transport[7]=first_tuple_elements[index_walk]
     else:
-        kms_transport[8]    
+        kms_transport[7]
+
+    if 'Train' in second_tuple_elements:
+        index_train = second_tuple_elements.index('Train')
+        kms_transport[8]=first_tuple_elements[index_train]
+    else:
+        kms_transport[8]
 
     #Emissions by date (individual)
     emissions_by_date = db.session.query(db.func.sum(EmissionsGD.total), EmissionsGD.date). \
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
-        filter(EmissionsGD.institution=='HVL_2025_group5').\
+        filter(EmissionsGD.institution=='HVL_2024_group5').\
         group_by(EmissionsGD.date).order_by(EmissionsGD.date.asc()).all()
     over_time_emissions = []
     dates_label = []
@@ -395,7 +404,7 @@ def your_data():
     #Kms by date (individual)
     kms_by_date = db.session.query(db.func.sum(EmissionsGD.kms), EmissionsGD.date). \
         filter(EmissionsGD.date > (datetime.now() - timedelta(days=5))).filter_by(author=current_user). \
-        filter(EmissionsGD.institution=='HVL_2025_group5').\
+        filter(EmissionsGD.institution=='HVL_2024_group5').\
         group_by(EmissionsGD.date).order_by(EmissionsGD.date.asc()).all()
     over_time_kms = []
     dates_label = []
@@ -404,23 +413,20 @@ def your_data():
         over_time_kms.append(total)      
 
 
-    return render_template('gd_course/HVL_2025_group5/carbon_app/your_data.html', title='your_data', entries=entries,
-        emissions_by_transport_python_dic=emissions_by_transport,     
-        emission_transport_python_list=emission_transport,             
+    return render_template('gd_course/HVL_2024_group5/carbon_app/your_data.html', title='your_data', entries=entries,         
         emissions_by_transport=json.dumps(emission_transport),
         kms_by_transport=json.dumps(kms_transport),
         over_time_emissions=json.dumps(over_time_emissions),
         over_time_kms=json.dumps(over_time_kms),
         dates_label=json.dumps(dates_label))
+    
 
 #Delete emission
-@gd_course_HVL_2025_group5.route('/green_digitalization_course/HVL/2025/group5//carbon_app/delete-emission/<int:entry_id>')
+@gd_course_HVL_2024_group5.route('/green_digitalization_course/HVL/2024/group5/carbon_app/delete-emission/<int:entry_id>')
 def delete_emission(entry_id):
     entry = EmissionsGD.query.get_or_404(int(entry_id))
     db.session.delete(entry)
     db.session.commit()
     flash("Entry deleted", "success")
-    return redirect(url_for('gd_course_HVL_2025_group5.your_data'))
+    return redirect(url_for('gd_course_HVL_2024_group5.your_data'))
     
-  
-
