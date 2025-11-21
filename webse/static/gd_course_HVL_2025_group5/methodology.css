@@ -1,0 +1,106 @@
+/* Colors 
+Methodology, section 1 (header, background): #2a4359
+Methodology, section 1 (header, boxes): #6da6a6
+Methodology, section 2 (methodology, background): #466fa6
+Methodology, section 2 (methodology, boxes): #8badd9
+*/
+
+/* Utilities  */
+p {
+  margin: 10px 0;
+  font-size: 18px;
+  max-width: 85ch;
+}
+h4 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 8px;
+}
+ol {
+  font-size: 18px;
+  list-style-position: inside;
+  margin: 0 auto;
+  text-align: center;
+}
+/* Section header */
+.section_header_methodology {
+  background-color:#f5f5f5;
+}
+.header {
+  display: flex;  
+  align-items: start;
+  background: #f5f5f5;
+}
+.header .box {
+  flex: 1;
+  background: #f5f5f5;
+  color: #2a4359;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;  
+}
+.header .box:nth-of-type(1) {
+  flex-grow:2;
+}
+.header .box:nth-of-type(2) {
+  flex-grow:1;
+}
+.container_buttons_links_header {
+  margin-top: 60px;  
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.container_buttons_links_header a:hover {
+  color: #ff5a00;
+}
+.methodology {
+  display: flex;  
+  align-items: flex-start;
+  background: #fff;
+  margin-top: 60px;  
+  justify-content: center;
+  text-align: center;
+}
+.methodology.methodology-center {
+  display: block;
+  margin: 60px auto 0;
+  text-align: center;
+}
+/* Table with two columns */
+.methodology .box_table2 {
+  flex: 1;
+  background: #ff5a00;
+  color: black;
+  border-radius: 10px;
+  margin: 10px 10px 10px 10px;
+  padding: 15px 15px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.methodology .box_table2:nth-of-type(1) {
+  flex-grow:1;
+  background: #ff5a00;
+}
+.methodology .box_table2:nth-of-type(2) {
+  flex-grow:1;
+  background: #ff5a00;
+}
+
+
+@media (max-width:768px) { 
+  .header {
+    flex-direction: column;
+  } 
+  .methodology {
+    flex-direction: column;
+  } 
+}
