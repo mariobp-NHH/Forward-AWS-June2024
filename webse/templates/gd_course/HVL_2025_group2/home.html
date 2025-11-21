@@ -1,0 +1,119 @@
+{% extends "gd_course/HVL_2025_group2/layout.html" %} {% block content %}
+
+<!-- Bildet + Hero section -->
+<section
+  class="section_header_home"
+  style="background: url('{{ url_for('static', filename='icons/foggyforrest.jpg') }}') center center / cover no-repeat;"
+>
+  <div class="hero_overlay">
+    <div class="container hero_content">
+      <h1><span class="highlight">Foot</span>Print</h1>
+      <p>
+        A modern platform to calculate and understand the carbon footprint of
+        different vehicles. Empowering a cleaner, greener, and smarter future
+        for transportation.
+      </p>
+      <div class="hero_buttons">
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group2.register') }}"
+          class="btn_primary"
+          >Get Started</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group2.login') }}"
+          class="btn_secondary"
+          >Login</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Info kort -->
+<section class="info_cards_container">
+  <!-- What We Do -->
+  <div class="we_do_card">
+    <h3>What We Do</h3>
+    <p>
+      We help individuals and organizations assess, visualize, and reduce their
+      carbon emissions through data-driven analysis and user-friendly digital
+      tools.
+    </p>
+  </div>
+
+  <!-- What’s Your Impact -->
+  <div class="impact_card">
+    <h3>What’s Your Impact?</h3>
+    <p>
+      Discover how your travel habits influence carbon emissions. Join us in the
+      journey toward sustainability — every kilometer counts.
+    </p>
+    <a
+      href="{{ url_for('gd_course_HVL_2025_group2.carbon_app_home') }}"
+      class="link_action"
+      >Calculate Emissions</a
+    >
+  </div>
+</section>
+
+<div class="custom-shape-divider-top-1759939526">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+      class="shape-fill"
+    ></path>
+  </svg>
+</div>
+
+<!-- EXPLORE MORE / Navigasjonsbokser -->
+
+<section class="explore_section">
+  <div class="container text-center">
+    <h2 class="developers_title">Explore More</h2>
+    <p class="developers_intro">Explore our methodology and meet our team.</p>
+
+    <div class="explore_cards">
+      <a href="#" class="explore_card">
+        <i class="fa-solid fa-globe"></i>
+        <h3>(Coming Soon)</h3>
+      </a>
+
+      <a
+        href="{{url_for('gd_course_HVL_2025_group2.methodology_home')}}"
+        class="explore_card"
+      >
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Methodology</h3>
+      </a>
+
+      <a
+        href="{{url_for('gd_course_HVL_2025_group2.about_us_home')}}"
+        class="explore_card"
+      >
+        <i class="fa-solid fa-people-group"></i>
+        <h3>About Us</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="custom-shape-divider-bottom-1759941253">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+  >
+    <path
+      d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+      class="shape-fill"
+    ></path>
+  </svg>
+</div>
+
+{% endblock content %}
