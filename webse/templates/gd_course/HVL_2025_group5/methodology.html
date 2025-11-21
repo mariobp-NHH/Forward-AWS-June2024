@@ -1,0 +1,257 @@
+{% extends "gd_course/HVL_2025_group5/layout.html" %} 
+{% block content %}
+  
+<!-- Header -->
+<section class="section_header_methodology">
+    <div class="container">
+  
+      <div class="header">
+        <div class="box"> 
+          <h1 style="font-size:55px; text-align:left;"><span class="text-logo"> Methodology</span></h1>
+          <p style="text-align:left;">
+            Welcome to the heart of how VestTrack works! Here we will break down the process behind our carbon footprint calculator and the data that powers it. Our foundation is built on trusted sources like "Fremtiden i våre hender", "SSB" and more. To get a better understanding, head over to our paper linked below.
+            <br>Ready to dive deeper?</br>
+            </p> 
+          <div class="container_buttons_links_header">
+            <div class="btn">
+              <a href="{{ url_for('static', filename='/gd_course_HVL_2025_group5/icons/Methodology.pdf') }}" class="btn btn-primary btn-lg mr-2", style="background-color:#ff5a00; border-color: #ff5a00;">Paper</a>
+            </div>
+            <div class="btn">
+                <a href="{{url_for('gd_course_HVL_2025_group5.carbon_app_home')}}" class="btn btn-primary btn-lg mr-2", style="background-color:#ff5a00; border-color: #ff5a00;">Carbon App</a>
+            </div>
+        </div>
+    </div>
+</section> 
+
+<!-- Methodology -->
+<section class="section_body_methodology">
+    <div class="container">
+        <div class="methodology methodology-center">
+            <h1 style="text-align:center;"> Our Formulas</h1>
+        </div>
+
+<!--Enumerated list (table with two columns)-->
+        <div class="methodology"> 
+            <div class="box_table2" style="height:300px;">
+                <ol start="1">
+                    <li>
+                        <h4>General Formula</h4>
+                            \[ CO_2=d * {ef \over p} \]
+                        <p>\(CO_2\) = Carbon emission in grams</p>
+                        <p> d = Distance traveled in kilometers</p>
+                        <p> ef = emission factor (grams of \(CO_2\) per km)</p>
+                        <p> p = number of passengers</p>
+                    </li>
+                </ol>                        
+            </div>
+            <div class="box_table2" style="height:300px;">
+                <ol start="2">
+                    <li>
+                        <h4>Electrical Formula</h4>
+                            \[ Ef=x*Ec\]
+                        <p> Ef = Emission factor in grams of \(CO_2\) per km</p>
+                        <p> x = the distance traveled in kilometers</p>
+                        <p> ec = emission factor in grams of \(CO_2\) per km </p>
+                    </li>
+                </ol>
+            </div>  
+        </div>
+       
+      
+<!-- Numbers -->
+ <div class="methodology methodology-center">
+            <h1 style="text-align:center;"> Our Numbers</h1>
+        </div>
+
+
+<!-- Cars -->
+<div class="methodology">
+        <ol start="1">
+            <li>
+                <h4>Cars</h4>
+                <p class="text-left">
+                    For cars, emissions were calculated per vehicle per kilometre rather than per passenger, as this method was considered to provide a more accurate representation of the total \(CO_2\) emissions. To get better results, we further differentiated between large, medium and small vehicles and by fuel type, including diesel, petrol, and electric cars.
+                </p>
+                
+<!-- Car Emission Table -->
+<table style="
+    width:100%;
+    border-collapse: collapse;
+    margin-top:20px;
+    background-color:#fffefe;
+    color:rgb(0, 0, 0);
+    text-align:center;">
+
+    <thead>
+        <tr>
+            <th style="border:1px solid #444; padding:10px;">
+                Emission per car per kilometer (g)
+            </th>
+            <th style="border:1px solid #444; padding:10px;">Small</th>
+            <th style="border:1px solid #444; padding:10px;">Medium</th>
+            <th style="border:1px solid #444; padding:10px;">Big</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border:1px solid #444; padding:10px;">Petrol</td>
+            <td style="border:1px solid #444; padding:10px;">150</td>
+            <td style="border:1px solid #444; padding:10px;">198</td>
+            <td style="border:1px solid #444; padding:10px;">261</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #444; padding:10px;">Diesel</td>
+            <td style="border:1px solid #444; padding:10px;">174</td>
+            <td style="border:1px solid #444; padding:10px;">229</td>
+            <td style="border:1px solid #444; padding:10px;">302</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #444; padding:10px;">Electric Nordics</td>
+            <td style="border:1px solid #444; padding:10px;">45</td>
+            <td style="border:1px solid #444; padding:10px;">59</td>
+            <td style="border:1px solid #444; padding:10px;">78</td>
+        </tr>
+    </tbody>
+</table>
+
+            </li>
+        </ol>
+    </div>
+
+
+<!-- Bus -->
+<div class="methodology">
+        <ol start="2">
+            <li>
+                <h4>Bus</h4>
+                <p class="text-left">
+                 For diesel: "Framtiden i våre hender" have calculated that buses running on diesel emit 30g 
+                <br> \(CO_2\) / passenger-kilometer here in Norway. 
+                <br>For electrical: we calculate emissions using g \(CO_2\) / km = kWh / km * g \(CO_2\) / kWh. 
+                <br> An electric bus uses 1.7 kWh / km, and Norwegian electricity emits 18.9 g \(CO_2\) / kWh. 
+                <br> So the bus emits: 1.7 * 18.9 = 32.13 g \(CO_2\) per km. To get emissions per passenger, we divide by the average of 28 passengers: 32.13 / 28 = 1.15 g \(CO_2\) per person-km.
+                </p>
+            </li>
+        </ol>
+</div>
+
+
+<!-- Train -->
+<div class="methodology">
+        <ol start="3">
+            <li>
+                <h4>Train</h4>
+                <p class="text-left">
+                    Trains in Norway, Sweden, and Finland emit about 7 g \(CO_2\) per passenger-km, compared to the European average of 26 g \(CO_2\)/km. Since this app is designed as an extension of Skyss, we use the Norwegian value of 7 g \(CO_2\) per passenger-km for electric trains. For diesel trains, we apply a general emission factor of 91 g \(CO_2\) per km.</p>
+            </li>
+        </ol>
+    </div>
+
+
+<!-- Ferry -->
+<div class="methodology">
+        <ol start="4">
+            <li>
+                <h4>Ferry</h4>
+                <p class="text-left">
+                    Ferry emissions are given as total \(CO_2\) per kilometre, so we convert them to emissions per passenger using an estimated average of 25 passengers per trip. For electric ferries, this results in an average of 84 g \(CO_2\) per person-kilometre. 
+                    <p> For diesel ferries, we use the emission factor from Fremtiden i våre hender, where the average is 186 g \(CO_2\) per person-kilometre. </p>          
+            </li>
+        </ol>
+    </div>
+
+
+<!-- Airplane -->
+<div class="methodology">
+        <ol start="5">
+            <li>
+                <h4>Plane</h4>
+                <p class="text-left">
+                Consumers can choose between different travel classes. This helps raise awareness of how small choices can contribute to reducing \(CO_2\) emissions.</p>
+
+<!-- Plane Emission Table -->
+<table style="
+    width:100%;
+    border-collapse: collapse;
+    margin-top:20px;
+    background-color:#fffefe;
+    color:rgb(0, 0, 0);
+    text-align:center;">
+
+    <thead>
+        <tr>
+            <th style="border:1px solid #444; padding:10px;">
+                Flight per- person kilometers (g)
+            </th>
+            <th style="border:1px solid #444; padding:10px;">\(CO_2\)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td style="border:1px solid #444; padding:10px;">Economy</td>
+            <td style="border:1px solid #444; padding:10px;">127</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #444; padding:10px;">Economy permium</td>
+            <td style="border:1px solid #444; padding:10px;">155</td>
+        </tr>
+        <tr>
+            <td style="border:1px solid #444; padding:10px;">Business</td>
+            <td style="border:1px solid #444; padding:10px;">285</td>
+        </tr>
+    </tbody>
+</table>
+            </li>
+        </ol>
+    </div>
+
+
+ <!-- Motorbike -->
+<div class="methodology">
+        <ol start="6">
+            <li>
+                <h4>Motorbike</h4>
+                <p class="text-left">
+                    Our motorbike calculations are based on data from SSB and show that the avarege motorbike emits approximately 81,5g of \(CO_2\) per kilometer. </p>
+            </li>
+        </ol>
+    </div>
+
+ <!-- Electrical scooter -->
+<div class="methodology">
+        <ol start="7">
+            <li>
+                <h4>Electrical Scooter</h4>
+                <p class="text-left">
+                    Electric scooters actually emit about 35 g \(CO_2\) per person-km, mainly due to production. Still, we set their emissions to 0 in the app to stay consistent with the other transport modes. </p>
+            </li>
+        </ol>
+    </div>
+    
+ <!-- Walk -->
+<div class="methodology">
+        <ol start="8">
+            <li>
+                <h4>Walk</h4>
+                <p class="text-left"> 
+                    Walking produces 0 g \(CO_2\), making it a completely emission free way to travel. It's the most sustainable choice.
+            </li>
+        </ol>
+    </div>
+
+
+     <!-- Bicycle -->
+<div class="methodology">
+        <ol start="9">
+            <li>
+                <h4>Bicycle</h4>
+                <p class="text-left"> 
+                    Cycling produces 0 g \(CO_2\), making it a clean and sustainable option. It’s an efficient, eco-friendly way to travel.
+            </li>
+        </ol>
+    </div>
+
+
+</div>
+</section>
+{% endblock content %}

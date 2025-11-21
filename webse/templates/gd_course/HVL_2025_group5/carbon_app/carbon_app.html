@@ -1,0 +1,117 @@
+{% extends "gd_course/HVL_2025_group5/layout.html" %} {% block content %}
+
+<section class="carbon-app-hero">
+  <div class="container carbon-app-hero__inner">
+    <div class="carbon-app-hero__copy">
+      <h1 class="carbon-app-hero__title">Carbon App Calculator</h1>
+      <p class="carbon-app-hero__subtitle">
+        Our calculator is built on trusted data from sources like "SSB",
+        "fremtiden i våre hender" and more. We combine reliabale statistics with
+        proven environmental formulas to give you an accurate and evidence based
+        \(CO_2\) estimates for your daily travel.
+      </p>
+      <div class="carbon-app-hero__actions">
+        {% if current_user.is_authenticated %}
+        <a
+          class="carbon-app-hero__cta carbon-app-hero__cta--primary"
+          href="{{ url_for('gd_course_HVL_2025_group5.your_data') }}"
+        >
+          <i class="fa-solid fa-chart-column"></i>
+          See your data
+        </a>
+        {% else %}
+        <a
+          class="carbon-app-hero__cta carbon-app-hero__cta--primary"
+          href="{{ url_for('gd_course_HVL_2025_group5.login') }}"
+        >
+          <i class="fa-solid fa-chart-column"></i>
+          Login to save your data
+        </a>
+        {% endif %}
+        <a
+          class="carbon-app-hero__cta carbon-app-hero__cta--link"
+          href="{{ url_for('gd_course_HVL_2025_group5.methodology_home') }}"
+        >
+          Methodology
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="carbon-app-panel">
+      <h3 class="carbon-app-panel__title">Add an entry :</h3>
+      <div class="carbon-app-panel__grid">
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_bus') }}"
+        >
+          <i class="fa-solid fa-bus"></i>
+          <span>Bus</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_car') }}"
+        >
+          <i class="fa-solid fa-car"></i>
+          <span>Car</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_plane') }}"
+        >
+          <i class="fa-solid fa-plane"></i>
+          <span>Plane</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_ferry') }}"
+        >
+          <i class="fa-solid fa-ship"></i>
+          <span>Ferry</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_motorbike') }}"
+        >
+          <i class="fa-solid fa-motorcycle"></i>
+          <span>Motorbike</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_bicycle') }}"
+        >
+          <i class="fa-solid fa-bicycle"></i>
+          <span>Bicycle</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_walk') }}"
+        >
+          <i class="fa-solid fa-person-walking"></i>
+          <span>Walk</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_electricscooter') }}"
+        >
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2025_group5/icons/electric_scooter2.jpg') }}"
+            alt=""
+            aria-hidden="true"
+            class="carbon-app-panel__icon_scooter"
+          />
+          <span>E-scooter</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_train') }}"
+        >
+          <i class="fa-solid fa-train"></i>
+          <span>Train</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

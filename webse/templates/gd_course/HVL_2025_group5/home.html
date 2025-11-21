@@ -1,0 +1,158 @@
+{% extends "gd_course/HVL_2025_group5/layout.html" %} 
+{% block content %}
+
+<!-- Header -->
+<section class="section_header_home" style="--hero-img: url('{{ url_for('static', filename='/gd_course_HVL_2025_group5/icons/naturebybanen.jpg.jpg') }}');">
+  <div class="header_home">
+    <div class="box"> 
+      {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">
+                      {{ message }}
+                  </div> 
+              {% endfor %}
+          {% endif %}
+      {% endwith %}
+      <script>
+        setTimeout(function () {
+          var flashes = document.querySelectorAll('.alert');
+          flashes.forEach((flash) => flash.remove());
+        }, 5000);
+      </script>
+
+      <h1 style="font-size:50px;"><span class="text-logo"><i class="fa-solid fa-earth-americas"></i> Welcome to VestTrack</span></h1>
+      <p>Your journey to a sustainable future begins here</p>
+
+      <div class="container_buttons_links_header_home">
+        <div class="btn">
+          {% if current_user.is_authenticated %}
+          <a href="{{ url_for('gd_course_HVL_2025_group5.carbon_app_home') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#ff5a00; border-color: #ff5a00;">Let's get started</a>
+          {% else %}
+          <a href="{{ url_for('gd_course_HVL_2025_group5.login') }}" class="btn btn-primary btn-lg mr-2" style="background-color:#ff5a00; border-color: #ff5a00;">Let's get started</a>
+          {% endif %}
+        </div>
+      </div>  
+    </div>
+  </div>
+</section> 
+
+<!-- Mission Box Section -->
+<section class="section_message scroll-animate">
+  <div class="container">
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center;">Our Mission</h1>
+      <div class="mission_textbox">
+        <p>
+          At VestTrack, we believe every small action matters.  
+          Our mission is to inspire individuals and communities to make meaningful, sustainable choices  
+          that reduce carbon emissions and protect the planet for future generations.
+        </p>
+  </div> 
+</section>
+
+
+<!-- Developers -->
+<section class="section_developers">
+  <div class="container">
+    <div class="developers" style="display:block;">
+      <h1 style="text-align:center;"> Meet our team</h1>
+      <div class="ourteam_text">
+        <p>
+          Our team consists of seven students from Western Norway University of Applied Sciences, four of whom are local Norwegian students, while the remaining three are international exchange students from Finland, Germany, and the Netherlands. This makes us a diverse group of young people of different ages, cultures, and native languages, something we see as a great advantage.
+          Our differences make us more diverse and adaptable, giving us a variety of perspectives on how to solve the challenges we face along the way. With different levels of experience in Python and coding, we divided the work to build on our individual strengths, while also ensuring that we could learn from and benefit from each other’s knowledge.
+        </p>      
+    </div>
+
+    <div class="developers">
+        <div class="box">
+          <img src="{{url_for('static', filename='/gd_course_HVL_2025_group5/icons/josef.jpg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h3>Josef Leininger</h3>
+          <p> Hi, im Josef from Munich in Germany. Im at HVL for one Semester studying the course green digitalization and app developement. In our group i was responsible for the business model of our app and helping with coding. See my LinkedIn for more info
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/josef-leininger-539281218"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>
+        <div class="box">
+          <img src="{{url_for('static', filename='/gd_course_HVL_2025_group5/icons/leevi.jpg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h3>Leevi Pihlaja</h3>
+          <p>  Hi, im Leevi from Seinäjoki in Finland. Im at HVL for one semester studying the course green digitalization and app development. In our group im doing coding. See my LinkedIN for more info.
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/leevi-pihlaja-0583952b5/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>           
+        <div class="box">
+          <img src="{{url_for('static', filename='/gd_course_HVL_2025_group5/icons/philip.jpg')}}" alt="" style="border-radius: 50%; width:200px;">
+          <h3>Philip van Bommel</h3>
+          <p>  Hi i'm Philip from Lieshout in the Netherlands. I’m spending one semester at HVL, where I’m studying Green Digitalization and App Development. In our group project, I was responsible for coding the carbon application. You can find more information on my LinkedIn profile.
+          </p>
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/philip-van-bommel-a64971256/"  target="_blank">LinkedIn</a>
+          </div> 
+        </div>     
+    </div>
+
+    <div class="developers">
+      <div class="box2">
+        <img src="{{url_for('static', filename='/gd_course_HVL_2025_group5/icons/quan.jpg')}}" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Quan Cao Ngyuyen</h3>
+        <p> Hi, I’m Quan Cao Nguyen, a 20-year-old born and raised in Bergen. I’m currently a second-year student in Economics and Business Administration at the Western Norway University of Applied Sciences. In my free time, I enjoy working out and playing football. For this project, I’m responsible for coding the carbon application, where I’m focusing on improving my coding skills and creating something meaningful. You can find more information on my LinkedIn profile
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/quan-nguyen-02718134b/"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      <div class="box2">
+        <img src="{{url_for('static', filename='/gd_course_HVL_2025_group5/icons/olai.jpg')}}" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Olai Frøyen</h3>
+        <p>  Hello, I’m Olai Frøyen, a second-year student in Economics and Business Administration at the Western Norway University of Applied Sciences. I bring experience from different industries, including bakery production, sports retail, farm work, and fitness instruction. I’m hardworking, reliable, and easy to collaborate with. I enjoy contributing to a team where we combine different strengths to create something meaningful. For this project, I’m especially focused on bringing structure, clear communication, and a practical mindset to the team
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/olai-fr%C3%B8yen-a18a41383/"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      </div>            
+    
+          <div class="developers">
+      <div class="box2">
+        <img src="{{url_for('static', filename='/gd_course_HVL_2025_group5/icons/carl.jpg')}}" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Carl August Lygre-Wiencke</h3>
+        <p>  Hi! I'm Carl August from Bergen, Norway. I am a second-year student in Economics and Business Administration at HVL (Western Norway University of applied sciences). I have experience within B2C sales and i'm currently working with investment funds. In my free time i like to play football and workout. For this project I'm responsible for the methodology and bringing clear structure to the group. I'm also focusing on improving my knowledge and coding skills. See my LinkedIn for more.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="https://www.linkedin.com/in/carl-august-lygre-wiencke-2377021b5/"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      <div class="box2">
+        <img src="{{url_for('static', filename='/gd_course_HVL_2025_group5/icons/sander.jpg')}}" alt="" style="border-radius: 50%; width:200px;">
+        <h3>Sander Mogen Alexandersen</h3>
+        <p>  Hi, my name is Sander, and I am from Oslo, Norway. I am currently a second-year student in Economics and Business Administration at the Western Norway University of Applied Sciences. For this project, my main focus is on developing the methodology section of the paper and contributing to ensuring that the teamwork process runs as smoothly and efficiently as possible.
+        </p>
+        <div class="section_container_buttons_developers">
+          <a class="btn_developers" href="#"  target="_blank">LinkedIn</a>
+        </div> 
+      </div>
+      </div>             
+
+
+  <script>
+  const observer = new IntersectionObserver(entries =>
+    entries.forEach(e => e.isIntersecting && e.target.classList.add('show'))
+  );
+  document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+</script>
+
+  </div>          
+</section>
+        
+{% endblock content %}
+
+
+
+
+
+
+
+

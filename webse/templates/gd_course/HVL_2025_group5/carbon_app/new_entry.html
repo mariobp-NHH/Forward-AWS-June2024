@@ -1,0 +1,84 @@
+{% extends "gd_course/HVL_2025_group5/layout.html" %} {% block content %}
+
+<section class="carbon-app-panel-section">
+  <div class="container">
+    <div class="carbon-app-panel carbon-app-panel--standalone">
+      <h1 class="carbon-app-panel__heading">Create a new entry</h1>
+      <p class="carbon-app-panel__description">
+        Select the mode of transport you want to log.
+      </p>
+      <div class="carbon-app-panel__grid">
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_bus') }}"
+        >
+          <i class="fa-solid fa-bus"></i>
+          <span>Bus</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_car') }}"
+        >
+          <i class="fa-solid fa-car"></i>
+          <span>Car</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_plane') }}"
+        >
+          <i class="fa-solid fa-plane"></i>
+          <span>Plane</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_ferry') }}"
+        >
+          <i class="fa-solid fa-ship"></i>
+          <span>Ferry</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_motorbike') }}"
+        >
+          <i class="fa-solid fa-motorcycle"></i>
+          <span>Motorbike</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_bicycle') }}"
+        >
+          <i class="fa-solid fa-bicycle"></i>
+          <span>Bicycle</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_walk') }}"
+        >
+          <i class="fa-solid fa-person-walking"></i>
+          <span>Walk</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_train') }}"
+        >
+          <i class="fa-solid fa-train"></i>
+          <span>Train</span>
+        </a>
+        <a
+          class="carbon-app-panel__tile"
+          href="{{ url_for('gd_course_HVL_2025_group5.new_entry_electricscooter') }}"
+        >
+          <img
+            src="{{ url_for('static', filename='/gd_course_HVL_2025_group5/icons/electric_scooter.svg') }}"
+            alt=""
+            aria-hidden="true"
+            class="carbon-app-panel__icon"
+          />
+          <span>E-scooter</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
