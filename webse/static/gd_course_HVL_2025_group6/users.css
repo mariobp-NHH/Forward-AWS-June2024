@@ -1,0 +1,13 @@
+.register_section_css {
+  padding: 40px
+}
+
+  .register_section_css .container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  }
+  
+.register_section_css .box {
+    width: 400px;
+}

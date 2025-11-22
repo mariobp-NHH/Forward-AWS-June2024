@@ -1,0 +1,138 @@
+/* Paper */
+.btn_paper {
+    background-color: #0e76a8;
+    color: rgb(240, 222, 193);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;   
+}
+
+/* Hover-Effekt */
+.btn_paper:hover {
+    transform: scale(1.05) translateY(-8px);
+    background-color: rgb(240, 222, 193);
+    color: #0e76a8;
+    font-weight: 700;
+}
+
+/* Button-new-entry */
+.btn_entry {
+    background-color: #0f2935;
+    color: rgb(240, 222, 193);
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* TRANSPORT CARDS (boxes with pictures of the transport means */
+
+/* Transport-Grid*/
+.transport-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* Transport-Cards*/
+.transport-card {
+    background-color: rgba(24, 31, 25, 0.8);
+    padding: 20px;
+    border-radius: 16px;
+    width: 400px;
+    min-height: 200px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+  }
+
+.transport-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.2);
+  cursor:pointer;
+}
+
+.transport-card i {
+    color: rgb(240, 222, 193);
+    font-size: 6rem;        
+    margin-bottom: 15px;
+}
+
+.transport-card i + i {
+  margin-left: 30px;
+}
+
+/* Calculator CARDS (calculator and methodology card) */
+
+.calculator-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+}
+
+.calculator-card {
+  background-color: #181f19;
+  color: rgb(240, 222, 193);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 200px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/*Table */
+.table_main {
+  padding: 20px;
+}
+
+.table_main .box {
+  padding: 15px;
+}
+
+/*Container for the graphs */
+.two_emissions_graphs {
+  display: flex;
+  background: #c5c8d9;
+  }  
+
+.two_emissions_graphs .container {
+  display: flex;
+  background: #567241;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.two_emissions_graphs .container .box {
+  flex: 1;
+  background: #c5c8d9;
+  border-radius: 2px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+}  
+
+/*Media Queries*/
+
+@media (max-width:768px) { 
+
+  .calculator-grid {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .table_main .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+}
+
