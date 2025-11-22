@@ -1,0 +1,63 @@
+{% extends "gd_course/HVL_2025_group6/layout.html" %}
+{% block content %}
+
+<div class="calculator-grid">
+<!-- Calculator Card -->
+<div class="calculator-card">
+    <p><strong>Walk/Bike Calculator</strong></p>
+    <p>Please, enter the number of kilometers.</p>
+
+    <form method="POST" action="">
+      {{ form.csrf_token }}
+      <fieldset class="form-group">
+
+        <div class="form-group">
+          {{ form.kms.label(class="form-control-label") }}
+          {% if form.kms.errors %}
+            {{ form.kms(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.kms.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ form.kms(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+
+        <div class="form-group">
+          {{ form.fuel_type.label(class="form-control-label") }}
+          {% if form.fuel_type.errors %}
+            {{ form.fuel_type(class="form-control form-control-lg is-invalid") }}
+            <div class="invalid-feedback">
+              {% for error in form.fuel_type.errors %}
+                <span>{{ error }}</span>
+              {% endfor %}
+            </div>
+          {% else %}
+            {{ form.fuel_type(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+
+      </fieldset>
+
+      <div class="form-group mt-2">
+        {{ form.submit(class="btn_carbon_app_new_entry_main") }}
+      </div>
+    </form>
+  </div>
+
+
+  <!-- Methodology Card -->
+  <div class="calculator-card">
+    <p><strong>Methodology</strong></p>
+    <p>
+     Zero emission, 100% freedom. 
+    Walking and cycling produce obviously <strong>0 g CO₂/pkm</strong> and are the cleanest ways to move. 
+     </p><strong> Tip from MR. Eco: They’re not only good for the planet but also for your health. Sometimes the greenest route is simply the one you take on your own two feet.</strong>
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}

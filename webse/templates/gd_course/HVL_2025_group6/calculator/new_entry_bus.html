@@ -1,0 +1,60 @@
+{% extends "gd_course/HVL_2025_group6/layout.html" %} {% block content %}
+
+<div class="calculator-grid">
+  <!-- Calculator Card -->
+  <div class="calculator-card">
+    <p><strong>Bus Calculator</strong></p>
+    <p>Please, enter the number of kilometers.</p>
+
+    <form method="POST" action="">
+      {{ form.csrf_token }}
+      <fieldset class="form-group">
+        <div class="form-group">
+          {{ form.kms.label(class="form-control-label") }} {% if form.kms.errors
+          %} {{ form.kms(class="form-control form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.kms.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.kms(class="form-control form-control-lg") }} {%
+          endif %}
+        </div>
+
+        <div class="form-group">
+          {{ form.fuel_type.label(class="form-control-label") }} {% if
+          form.fuel_type.errors %} {{ form.fuel_type(class="form-control
+          form-control-lg is-invalid") }}
+          <div class="invalid-feedback">
+            {% for error in form.fuel_type.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+          {% else %} {{ form.fuel_type(class="form-control form-control-lg") }}
+          {% endif %}
+        </div>
+      </fieldset>
+
+      <div class="form-group mt-2">
+        {{ form.submit(class="btn_carbon_app_new_entry_main") }}
+      </div>
+    </form>
+  </div>
+
+  <!-- Methodology Card -->
+  <div class="calculator-card">
+    <p><strong>Methodology</strong></p>
+    <p>
+      Buses carry many people at once, which keeps emissions per person low. A
+      typical diesel bus produces around <strong>30 g CO₂/pkm</strong>.
+    </p>
+    <p>
+      <strong
+        >Tip from MR. Eco: Choosing public transport is one of the easiest ways
+        to reduce your footprint without changing your routine!</strong
+      >
+    </p>
+  </div>
+</div>
+
+{% endblock %}
