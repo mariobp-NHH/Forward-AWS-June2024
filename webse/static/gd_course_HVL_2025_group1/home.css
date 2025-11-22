@@ -1,0 +1,140 @@
+/* Fargepalett:
+Kvit: #fff (bakgrunn)
+Dark green: #173B33 (teksten og strek tekst)
+Light green: #EAFFE5 (Bakgrunn)
+*/
+
+/* Section hero-video (Header) */
+.hero-video{ position: relative; width: 100%; }
+.hero-video video{
+  display: block;
+  width: 100%;
+  height: auto;          
+  object-fit: cover; 
+  background: transparent;  
+}
+
+/* Section Value Proposition */
+.valuepropositions {
+  background-color: #EAFFE5;
+  margin: 0 auto; 
+  padding: 180px 0 0;   /* topp 180px, høyre 0, bunn 0, venstre 0 */
+}
+.vp-title {
+  font-size: 55px;
+  padding: 0 0 20px; /* topp 0, høyre 0, bunn 20px, venstre 0 */
+}
+.vp-text {
+  text-align:left;
+}
+.vp-subtext {
+  text-align: left;
+}
+
+/* Section developers */
+.section_developers {
+  background-color:#EAFFE5;
+  padding: 40px;
+}
+.developers {
+  display: flex;  
+  align-items: start;
+  background: #EAFFE5;
+  padding: 10px;
+}
+.developers .box {
+  flex: 1;
+  background: #ffffff;
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.developers .box:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box:nth-of-type(3) {
+  flex-grow:4;
+}
+.developers .box2 {
+  flex: 1;
+  background: #ffffff;
+  color: black;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align:center;
+  align-items: center;
+  justify-content: center;
+}
+.developers .box2:nth-of-type(1) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(2) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(3) {
+  flex-grow:4;
+}
+.developers .box2:nth-of-type(4) {
+  flex-grow:4;
+}
+
+/* Knappane under bilda */
+.section_container_buttons_developers { /* Knappane under bilda */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+  padding: 0px 0px;
+  margin: 0px 0px;
+}
+.btn_developers { /* Knappane under bilda */
+  padding: 10px 10px;
+  margin: 10px 10px 10px 10px; 
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  background-color: #49736f;
+  border: 2px solid  #49736f;
+}
+.btn_developers:hover { /* Knappane under bilda */
+  color: #49736f;
+  background-color: #EAFFE5;
+  border: 2px solid #EAFFE5;
+  text-decoration: none;
+}
+
+/*Info bildet (mann holder telefon)*/
+
+.info { position: relative; }
+.info-bilde {
+  width: 100%;
+  object-fit: contain;
+  display: block;
+  background:#EAFFE5;
+}
+
+
+@media (max-width:768px) { 
+  .header_home {
+    flex-direction: column;
+  } 
+  .developers {
+    flex-direction: column;
+  } 
+  .section_container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
