@@ -1,0 +1,153 @@
+{% extends "gd_course/HVL_2025_group1/layout.html" %}
+{% block content %}
+
+<!-- Header -->
+<section class="hero-video">
+  <video
+    autoplay
+    muted
+    loop
+    playsinline>
+    <source src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/homevideo.mp4') }}" type="video/mp4">
+  </video>
+
+</section>
+
+<!--Value Proposition-->
+<section class="valuepropositions">
+  <div class="container">
+    <div class="info"> 
+      <h1 class="vp-title">
+        <span class="text-logo">Did you know...</span>
+      </h1>
+        <p class="vp-text">
+            Norway must reduce its carbon emission by 55% by 2030. To achieve this YOU have to lower your emission by 3,6 ton spread over five years from now. That means a maximum emission of 720 kg per year, and 14kg each week. Our calculator can be used for “what-if planning”, helping you explore which transport choices lead to the lowest emissions. This way you can help reduce Norway's emission by 2030 with 55%. 
+        </p>
+        <p class="vp-subtext">
+            We are GreenMile - From awareness to action. Measure today. Change tomorrow. 
+        </p>
+      </div>
+    </div>
+</section>
+
+<!-- Bildet med litt info om appen -->
+<section class="info">
+  <div class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div> 
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+  <img
+    src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/info.png') }}"
+    alt="Forsidebilete"
+    class="info-bilde">
+  </div>
+
+</section>
+
+<!-- Developers -->
+<section class="section_developers">
+  <div class="container">
+    <h2>Meet our team</h2>
+
+<div class="developers">
+        <div class="box">
+          <h3>Thea Veivåg</h3>
+          <p>Business Administration at<br>HVL, Bergen</p>
+          <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/thealouiseveivog.jpg') }}" alt="" style="border-radius: 50%; width:200px;">
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" 
+            href="https://www.linkedin.com/in/thea-louise-veivåg-1a15b02b3/"  target="_blank">Linkedin</a>
+          </div> 
+        </div>
+        <div class="box">
+          <h3>Henrikke Hopland</h3>
+          <p>Business Administration at<br>HVL, Bergen</p>
+          <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/henrikkehopland.jpg') }}" alt="" style="border-radius: 50%; width:200px;">
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" 
+            href="https://www.linkedin.com/in/henrikke-hopland-615b0a1a0/"  target="_blank">Linkedin</a>
+          </div> 
+        </div>           
+        <div class="box">
+          <h3>Nora Hjelle</h3>
+          <p>Business Administration at<br>HVL, Bergen</p>
+          <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/nora.jpg') }}" alt="" style="border-radius: 50%; width:200px;">
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" 
+            href="https://www.linkedin.com/in/nora-hjelle-aambø-51b971387/"  target="_blank">Linkedin</a>
+          </div> 
+        </div>     
+    </div>
+
+<div class="developers">
+        <div class="box2">
+          <h3>Emma Sørbo</h3>
+          <p>Business Administration at<br>HVL, Bergen</p>
+          <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/emma.jpg') }}" alt="" style="border-radius: 50%; width:200px;">
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" href="https://www.linkedin.com/in/emma-dahl-s%C3%B8rbo-1a3b52388?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"  target="_blank">Linkedin</a>
+          </div> 
+        </div>
+        <div class="box2">
+          <h3>Kajsa Austbø</h3>
+          <p>Business Administration at<br>HVL, Bergen</p>
+          <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/kajsa.jpg') }}" alt="" style="border-radius: 50%; width:200px;">
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" 
+            href="https://www.linkedin.com/in/kajsa-austbø-098953356/"  target="_blank">Linkedin</a>
+          </div> 
+        </div>           
+        <div class="box2">
+          <h3>Maria Olsen</h3>
+          <p>Business Administration at<br>HVL, Bergen</p>
+          <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/maria.jpg') }}" alt="" style="border-radius: 50%; width:200px;">
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" 
+            href="https://www.linkedin.com/in/maria-pernille-olsen-173797291/"  target="_blank">Linkedin</a>
+          </div> 
+        </div>   
+        <div class="box2">
+          <h3>Muriel Blok</h3>
+          <p>Naval Engineering at<br>NHL Stenden Leeuwarden</p>
+          <img src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/icons/muriel.png') }}" alt="" style="border-radius: 50%; width:200px;">
+          <div class="section_container_buttons_developers">
+            <a class="btn_developers" 
+            href="https://www.linkedin.com/in/muri%C3%ABl-blok-9a8800309?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"  target="_blank">Linkedin</a>
+          </div> 
+        </div>   
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

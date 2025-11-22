@@ -1,0 +1,271 @@
+{% extends "gd_course/HVL_2025_group1/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section>
+  <div class="container">
+    <br />
+    <h1 style="text-align: center">Your data:</h1>
+  </div>
+</section>
+
+<!-- Table Section -->
+<section class="table_main">
+  <div class="container">
+    <div class="box"></div>
+
+    <div class="box">
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %} {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %} {% endif %} {% endwith %}
+
+      <table class="table">
+        <thead class="thead-dark">
+          <tr style="text-align: center">
+            <th scope="col">User</th>
+            <th scope="col">Date</th>
+            <th scope="col">Kilometres</th>
+            <th scope="col">Transport</th>
+            <th scope="col">Fuel</th>
+            <th scope="col">Passengers</th>
+            <th scope="col">Co2</th>
+            <th scope="col">Co2/passenger</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in entries %}
+          <tr style="text-align: center">
+            <th scope="row">{{ current_user.username }}</th>
+            <td>{{ entry.date.strftime("%m-%d-%Y") }}</td>
+            <td>{{ entry.kms }}</td>
+            <td>{{ entry.transport }}</td>
+            <td>{{ entry.fuel }}</td>
+            <td>{{ entry.total }}</td>
+            <td>{{ entry.co2 }}</td>
+            {# total CO₂ #}
+            <td>{{ entry.ch4 }}</td>
+            {# CO₂ per passenger #}
+            <td>
+              <a
+                href="{{ url_for('gd_course_HVL_2025_group1.delete_emission', entry_id = entry.id) }}"
+                class="btn btn-outline-danger btn-sm"
+              >
+                Delete
+              </a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="box"></div>
+  </div>
+</section>
+
+<!-- New Entry Section -->
+<section class="main_menu">
+  <div class="container">
+    <div class="box"></div>
+
+    <div class="box">
+      <div class="container_buttons_links_main_menu">
+        <div class="btn">
+          <a
+            href="{{ url_for('gd_course_HVL_2025_group1.carbon_app_home') }}"
+            class="btn_carbon_app_new_entry_main"
+          >
+            <i class="fa-solid fa-plus" style="color: #173b33"></i> New Entry
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="box"></div>
+  </div>
+</section>
+
+<!-- Graphs Section -->
+<section class="two_emissions_graphs">
+  <div class="container">
+    <div class="box" style="display: flex; justify-content: center">
+      <canvas id="emissions_by_transport" width="350" height="200"></canvas>
+    </div>
+    <div class="box" style="display: flex; justify-content: center">
+      <canvas id="over_time_emissions" width="350" height="200"></canvas>
+    </div>
+    <div class="box" style="display: flex; justify-content: center">
+      <canvas id="kms_by_transport" width="350" height="200"></canvas>
+    </div>
+    <div class="box" style="display: flex; justify-content: center">
+      <canvas id="over_time_kms" width="350" height="200"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- JS for charts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+<script>
+    // Data fra Flask (rekkefølge må matche transport_order i routes.py):
+    // ['Bus', 'Car', 'Train', 'Bybanen', 'Scooter', 'Ferry', 'Plane', 'Walk']
+    const emission_transport_data = {{ emissions_by_transport | tojson }};
+    const over_time_emissions     = {{ over_time_emissions   | tojson }};
+    const kms_transport_data      = {{ kms_by_transport      | tojson }};
+    const over_time_kms           = {{ over_time_kms         | tojson }};
+    const labels                  = {{ dates_label           | tojson }};
+
+    console.log("emission_transport_data:", emission_transport_data);
+    console.log("kms_transport_data:", kms_transport_data);
+
+    // Labels til pie charts – må matche emission_transport_data/kms_transport_data
+    const transportLabels = [
+      'Bus',
+      'Car',
+      'Train',
+      'Bybanen',
+      'Scooter',
+      'Ferry',
+      'Plane',
+      'Walk'
+    ];
+
+    // -----------------------------
+    // Hjelpefunksjoner for grafer
+    // -----------------------------
+
+  /* Paiene*/
+    function createPieChart(canvasId, labels, data, titleText) {
+      const ctx = document.getElementById(canvasId).getContext("2d");
+      return new Chart(ctx, {
+        type: 'pie',
+        data: {
+          labels: labels,
+          datasets: [{
+            data: data,
+            backgroundColor: [
+              '#9ac2be', '#f2e3b6', '#f2c299',
+              '#f2935c', '#5fd9cd', '#f2d95c',
+              '#f2b84b', '#f27979'  // 8 farger til 8 transports
+            ],
+            borderWidth: 1,
+            hoverBorderColor: "black",
+            hoverBorderWidth: 2,
+            hoverBackgroundColor: '#568c63',
+            pointHoverRadius: 5
+          }]
+        },
+        options: {
+          title: {
+            display: true,
+            text: titleText,
+            fontColor: "black",
+            fontSize: 18
+          },
+          legend: {
+            position: "right",
+            labels: {
+              fontColor: "black",
+              fontSize: 11
+            },
+            display: true
+          }
+        }
+      });
+    }
+
+    /*Linjene*/
+    function createLineChart(canvasId, labels, data, color, titleText, yLabel, yMax = null) {
+      const ctx = document.getElementById(canvasId).getContext("2d");
+      return new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: labels,
+          datasets: [{
+            label: titleText,
+            data: data,
+            fill: false,
+            borderColor: color,
+            lineTension: 0.1
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: (function () {
+                const base = { min: 0 };
+                if (yMax !== null) {
+                  base.max = yMax;
+                }
+                return base;
+              })(),
+              scaleLabel: {
+                display: true,
+                labelString: yLabel
+              }
+            }],
+            xAxes: [{
+              ticks: {
+                autoSkip: true,
+                maxTicksLimit: 7
+              }
+            }]
+          },
+          title: {
+            display: true,
+            text: titleText,
+            fontColor: "black",
+            fontSize: 18
+          },
+          legend: {
+            labels: {
+              fontColor: "black"
+            }
+          }
+        }
+      });
+    }
+
+    // -----------------------------
+    // Lage grafene med hjelpefunksjonene
+    // -----------------------------
+
+    // 1) Emissions by transport (pie) – last 7 days
+    createPieChart(
+      "emissions_by_transport",
+      transportLabels,
+      emission_transport_data,
+      "Emissions by type of transport (last 7 days)"
+    );
+
+    // 2) Emissions over time (line) – max 14 kg
+    createLineChart(
+      "over_time_emissions",
+      labels,
+      over_time_emissions,
+      "#568c63",
+      "Individual Emissions (last 7 days)",
+      "kg CO₂-eq",
+      14
+    );
+
+    // 3) Kilometers by transport (pie) – last 7 days
+    createPieChart(
+      "kms_by_transport",
+      transportLabels,
+      kms_transport_data,
+      "Kilometers by type of transport (last 7 days)"
+    );
+
+    // 4) Kilometers over time (line) – last 7 days
+    createLineChart(
+      "over_time_kms",
+      labels,
+      over_time_kms,
+      "#568c63",
+      "Individual Kilometers (last 7 days)",
+      "km"
+    );
+</script>
+
+{% endblock content %}

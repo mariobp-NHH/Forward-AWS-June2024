@@ -1,0 +1,58 @@
+{% extends "gd_course/HVL_2025_group1/layout.html" %} {% block content %}
+
+<section class="section_carbon_app_new_entry_main">
+  <div class="carbon_app_new_entry_main">
+    <div class="box"></div>
+
+    <div class="box">
+      <h2>Choose Transport Type</h2>
+
+      <div class="section_container_buttons_carbon_app_new_entry_main">
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_bus') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Bus</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_car') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Car</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_train') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Train</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_bybanen') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Bybanen</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_scooter') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Scooter</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_ferry') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Ferry</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_plane') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Plane</a
+        >
+        <a
+          href="{{ url_for('gd_course_HVL_2025_group1.new_entry_walk') }}"
+          class="btn_carbon_app_new_entry_main"
+          >Walk</a
+        >
+      </div>
+    </div>
+
+    <div class="box"></div>
+  </div>
+</section>
+
+{% endblock content %}

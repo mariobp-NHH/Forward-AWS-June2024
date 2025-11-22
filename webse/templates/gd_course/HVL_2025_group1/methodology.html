@@ -1,0 +1,287 @@
+{% extends "gd_course/HVL_2025_group1/layout.html" %} {% block content %}
+<!-- Video av "Methodoldy" -->
+<section class="metho_video">
+  <video autoplay muted loop playsinline>
+    <source
+      src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/video/methodology.mp4') }}"
+      type="video/mp4"
+    />
+  </video>
+</section>
+<!-- Methodology body -->
+<section class="section_body_methodology">
+  <div class="container">
+    <p>
+      Here, we pull back the curtain and show you how our CO₂ calculator works.
+      At its core, the app relies on trusted data sources such as Framtiden i
+      våre hender, Statistics Norway (SSB) and Bybanen. By combining these
+      sources, we ensure that every calculation is reliable, transparent, and
+      customized to the most common transport choices for students in Bergen.
+      While our academic paper goes into full detail, we present a simplified
+      version of the methodology here. Using collected data and clear formulas,
+      the app estimates carbon emissions from different modes of transport.
+    </p>
+    <p>
+      The goal? To help you understand the environmental impact of your daily
+      travel and make it easier to choose greener options. Click the buttons
+      below to explore our full methodology paper, or jump straight to the
+      Carbon App to try the calculator yourself.
+    </p>
+    <div class="container_buttons_links_header">
+      <div class="btn">
+        <a
+          href="#"
+          data-toggle="modal"
+          data-target="#paper_Modal"
+          class="btn btn-primary btn-lg mr-2"
+          style="background-color: #173b33; border: 2px solid #49736f"
+          >Paper</a
+        >
+      </div>
+      <div class="btn">
+        <a
+          href="{{url_for('gd_course_HVL_2025_group1.carbon_app_home')}}"
+          class="btn btn-primary btn-lg mr-2"
+          style="background-color: #173b33; border: 2px solid #49736f"
+          >Carbon App</a
+        >
+      </div>
+    </div>
+    <!-- Modal for Paper -->
+    <div
+      class="modal fade"
+      id="paper_Modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl" style="max-width: 90vw; height: 90vh">
+        <div
+          class="modal-content"
+          style="height: 100%; border-radius: 12px; overflow: hidden"
+        >
+          <div
+            class="modal-header"
+            style="background-color: #173b33; color: white"
+          >
+            <h5 class="modal-title" id="exampleModalLabel">Paper</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-dismiss="modal"
+              aria-label="Close"
+              style="filter: invert(1)"
+            ></button>
+          </div>
+          <div class="modal-body p-0" style="height: calc(100% - 100px)">
+            <iframe
+              id="paper_frame"
+              src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/docs/Essay.pdf') }}"
+              width="100%"
+              height="100%"
+              style="border: none"
+            ></iframe>
+          </div>
+          <div class="modal-footer" style="background-color: #f8f9fa">
+            <a
+              href="{{ url_for('static', filename='/gd_course_HVL_2025_group1/docs/Essay.pdf') }}"
+              class="btn btn-success"
+              download
+            >
+              <i class="fa-solid fa-download"></i> Last ned
+            </a>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Lukk
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Overskriften -->
+    <div class="methodology" style="flex-direction: column">
+      <h3 style="text-align: left">Our formulas</h3>
+      <p style="text-align: left">How We Calculate Emissions:</p>
+    </div>
+    <!-- 1 kollonene -->
+    <div class="methodology">
+      <div class="box_table2 card">
+        <h4>The General Formula:</h4>
+        <p class="text-left">
+          <br />
+          \[CO₂ = d * ef\]
+        </p>
+        <h5>Where:</h5>
+        <ul style="text-align: left">
+          <li>CO₂ = carbon emissions in gCO₂/km</li>
+          <li>d = the distance traveled in kilometers</li>
+          <li>ef = the emission factor in gCO₂/km per passenger</li>
+        </ul>
+      </div>
+      <div class="box_table2 card">
+        <h4>The General Formula: Electric Vehicles</h4>
+        <p class="text-left">
+          <br />
+          \[Ef = x * Ec\]
+        </p>
+        <h5>Where:</h5>
+        <ul style="text-align: left">
+          <li>Ef = carbon emissions in gCO₂/km</li>
+          <li>d = the distance traveled in kilometers</li>
+          <li>ec = the emission factor in gCO₂/km per passenger</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Overskrift 2-->
+    <div class="methodology" style="flex-direction: column">
+      <h3 style="text-align: left">Our numbers</h3>
+      <p style="text-align: left">The Data Behind the Calculations:</p>
+    </div>
+
+    <!-- 3 kollonne -->
+    <div class="methodology">
+      <div class="box_table2 card">
+        <ol start="1">
+          <li>
+            <h4>Airplane</h4>
+            <p class="text-left">
+              Air travel is the most carbon-intensive mode of transport.
+              Emission levels vary by travel class (Helle, 2025):
+            </p>
+            <ul>
+              <li>Economy: <strong>127 g CO₂/pkm</strong></li>
+              <li>Premium: <strong>155 g CO₂/pkm</strong></li>
+              <li>Business: <strong>284 g CO₂/pkm</strong></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+      <div class="box_table2 card">
+        <ol start="2">
+          <li>
+            <h4>Train</h4>
+            <p class="text-left">
+              Rail travel is one of the most sustainable transport options.
+              Emission levels vary by train type (VY, 2023; Helle, 2025):
+            </p>
+            <ul>
+              <li>Diesel trains: <strong>91 g CO₂/pkm</strong></li>
+              <li>Nordic electric: <strong>10 g CO₂/pkm</strong></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <!-- 4 kollonne -->
+    <div class="methodology">
+      <div class="box_table2 card">
+        <ol start="3">
+          <li>
+            <h4>ByBanen</h4>
+            <p class="text-left">
+              Light rail travel in Bergen is a low-carbon option (Bybanen AS,
+              2023; Skyss, 2024):
+            </p>
+            <ul>
+              <li>Average emissions: <strong>4 g CO₂/pkm</strong></li>
+            </ul>
+            <p class="text-left">
+              We calculated this value based on an average trip length of 9 km
+              and total passenger kilometers per year.
+            </p>
+          </li>
+        </ol>
+      </div>
+      <div class="box_table2 card">
+        <ol start="4">
+          <li>
+            <h4>Car</h4>
+            <p class="text-left">
+              First, we find the total CO₂. Then we show the climate impact per
+              person by dividing by the number of passengers you select:
+              <br />
+              \[CO₂ = d * ef / passengers\]
+            </p>
+            <ul>
+              <li>Diesel (campervan) <strong>149 g CO₂/pkm</strong></li>
+              <li>Diesel (big) <strong>101 g CO₂/pkm</strong></li>
+              <li>Diesel (medium) <strong>76 g CO₂/pkm</strong></li>
+              <li>Gasoline (small): <strong>50 g CO₂/pkm</strong></li>
+              <li>Electric (big): <strong>26 g CO₂/pkm</strong></li>
+              <li>Electric (medium): <strong>20 g CO₂/pkm</strong></li>
+              <li>Electric (small): <strong>15 g CO₂/pkm</strong></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 5 kollonne -->
+    <div class="methodology">
+      <div class="box_table2 card">
+        <ol start="5">
+          <li>
+            <h4>Electric Scooter</h4>
+            <p class="text-left">
+              Electric scooters are a convenient and low-carbon option for short
+              trips in Bergen (Spencer, 2021):
+            </p>
+            <ul>
+              <li>Life-cycle emissions: 29 g CO₂/pkm</li>
+            </ul>
+            <p class="text-left">
+              The total life-cycle CO₂ emissions are low, we therefore use
+              <strong>0 g CO₂/pkm</strong> in our calculations.
+            </p>
+          </li>
+        </ol>
+      </div>
+      <div class="box_table2 card">
+        <ol start="6">
+          <li>
+            <h4>Ferry</h4>
+            <p class="text-left">
+              Ferries are an important part of Norway's transport system (Helle,
+              2025):
+            </p>
+            <ul>
+              <li>
+                Conventional heavy-fuel ferries: <strong>186 g CO₂/pkm</strong>
+              </li>
+            </ul>
+            <p class="text-left">
+              Passenger figures exclude cars, which add about
+              <strong>377 g CO₂/km</strong>
+            </p>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- 6 kollonne -->
+    <div class="methodology">
+      <div class="box_table1 card">
+        <ol start="7">
+          <li>
+            <h4>Bus</h4>
+            <p class="text-left">
+              Buses are a common transport option for students in urban and
+              regional areas (Helle, 2025; Vy, 2023):
+            </p>
+            <ul>
+              <li>Diesel buses: <strong>30 g CO₂/pkm</strong></li>
+              <li>Biodiesel buses: <strong>14 g CO₂/pkm </strong></li>
+              <li>Electric buses: <strong>13 g CO₂/pkm</strong></li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

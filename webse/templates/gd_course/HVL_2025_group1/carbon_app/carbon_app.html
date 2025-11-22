@@ -1,0 +1,62 @@
+{% extends "gd_course/HVL_2025_group1/layout.html" %} {% block content %}
+
+<!-- Header -->
+
+<section class="carb_video">
+  <video autoplay muted loop playsinline>
+    <source
+      src="{{ url_for('static', filename='/gd_course_HVL_2025_group1/video/carbonapp.mp4') }}"
+      type="video/mp4"
+    />
+  </video>
+</section>
+
+<section class="section_header_carbon_app">
+  <div class="container">
+    <div class="header_carbon_app">
+      <div class="box">
+        <h1>How to use the app:</h1>
+        <ol style="text-align: left; color: #173b33">
+          <li>Create a new entry</li>
+          <li>Select transport type (Choose Car, Bus, Train, Flight, etc)</li>
+          <li>
+            Add trip details (Enter the kilometers -> Select the fuel type)
+          </li>
+          <li>Submit</li>
+          <li>See your emissions</li>
+        </ol>
+        <div class="container_buttons_links_header_carbon_app">
+          <div class="btn">
+            <a
+              href="{{url_for('gd_course_HVL_2025_group1.methodology_home')}}"
+              class="btn btn-primary btn-lg mr-2"
+              ,
+              style="background-color: #173b33; border: 2px solid #49736f"
+              >Methodology</a
+            >
+          </div>
+          <div class="btn">
+            <a
+              href="{{url_for('gd_course_HVL_2025_group1.new_entry')}}"
+              class="btn btn-primary btn-lg mr-2"
+              ,
+              style="background-color: #173b33; border: 2px solid #49736f"
+              >New entry</a
+            >
+          </div>
+          <div class="btn">
+            <a
+              href="{{url_for('gd_course_HVL_2025_group1.your_data')}}"
+              class="btn btn-primary btn-lg mr-2"
+              ,
+              style="background-color: #173b33; border: 2px solid #49736f"
+              >Your data</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
