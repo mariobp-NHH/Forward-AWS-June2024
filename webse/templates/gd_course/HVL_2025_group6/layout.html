@@ -33,40 +33,7 @@
 <!-- Navbar-->
 
 <body>
-  <section class="section_navbar">
-    <div class="navbar">
-      <div class="logo">
-      <span class="text-logo"><i class="fa-solid fa-user-secret"></i></span>
-      <span class="logo-text">MR. EC</span>
-      <span class="text-logo-o"><i class="fa-solid fa-magnifying-glass"></i></span>
-    </div>
-        {% if current_user.is_authenticated %}
-    <nav>
-      <ul>
-        <li><a href="{{ url_for('gd_course_HVL_2025_group6.home_home') }}">Home</a></li>
-        <li><a href="{{ url_for('gd_course_HVL_2025_group6.calculator_home') }}">Calculator</a></li>
-        <li><a href="{{ url_for('gd_course_HVL_2025_group6.your_data') }}">Your data</a></li>
-        <li><a href="{{ url_for('gd_course_HVL_2025_group6.aboutus_home') }}">About Us</a></li>
-        <li><a href="{{url_for('gd_course_HVL_2025_group6.logout')}}">Logout</a> </li>
-      </ul>
-    </nav>
-
-          {% else %}
-  <nav>
-      <ul>
-        <li><a href="{{ url_for('gd_course_HVL_2025_group6.home_home') }}">Home</a></li>
-        <li><a href="{{ url_for('gd_course_HVL_2025_group6.calculator_home') }}">Calculator</a></li>
-        <li><a href="{{ url_for('gd_course_HVL_2025_group6.aboutus_home') }}">About Us</a></li>
-        <li><a href="{{url_for('gd_course_HVL_2025_group6.login')}}">Login</a> </li>
-        <li> <a href="{{url_for('gd_course_HVL_2025_group6.register')}}">Register</a> </li>
-      </ul>
-    </nav>
-    {% endif %}
-     </div>
-  </div>
-</section>
-
-
+  
 <!-- Body of the webside-->
 <main>
     {% block content %}
@@ -74,15 +41,5 @@
 </main>
 
 <!-- Footer-->
-<section class="section_footer">
-  <div class="footer">
-  <div class="logo">
-      <span class="logo-text">MR. EC</span>
-      <span class="text-logo-o"><i class="fa-solid fa-magnifying-glass"></i></span>
-        <a href="#">
-                  <i class="fa-solid fa-circle-up" style="color: #568c63"></i>
-                </a>
-    </div>
-  </div>
-</section>
+
 
