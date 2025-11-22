@@ -1,0 +1,119 @@
+/* Fargepalett:
+Kvit: #fff (bakgrunn)
+Dark green: #173B33 (teksten og strek tekst)
+Light green: #EAFFE5 (Bakgrunn)
+*/
+
+/* CSS */
+body { /* bakgrunn på heile nettsida*/
+  background: #EAFFE5;
+}
+
+html,body{ 
+font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+color: #EAFFE5;
+}
+
+h2{
+font-size: 40px;
+font-weight: 700;
+color: #254b43;
+}
+
+h3{
+font-size: 25px;
+font-weight: 700;
+color: #254b43;
+text-align:left;
+}
+
+p{
+font-size: 5px;
+color: #173B33;
+}
+
+
+/* NAVBAR */
+.section_carbon_app_navbar {
+  background-color:#ffffff;
+}
+.carbon_app_navbar { /* Bak navna (liten rute) */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0 0px;
+}
+.carbon_app_navbar a { /* Skriften */
+  color: #173B33;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.carbon_app_navbar a:hover{  /* Pilen under navna */
+  border-bottom: #173B33 4px solid;
+}
+.carbon_app_navbar ul { /* ul = listinga */
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.logo-img{  /* logoen (ligger i mappa icon) */
+  height: 40px;   
+  width: auto;
+  display: block;
+  
+}
+
+/* FOOTER = Nederst på nettsida */
+.section_footer{
+  background-color:#EAFFE5;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 70px;
+  align-items: center;
+  background-color: #EAFFE5;
+  padding: 0 0px;
+}
+.footer a { /* Skriften */
+  color: #173B33;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+.footer ul { /* for å liste navna vedisden av kvarandre */
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.footer a:hover{  /* Pilen under navna */
+  border-bottom: #173B33 4px solid;
+}
+
+
+/* Media query */
+@media(max-width:768px){
+  .carbon_app_navbar {
+    height: 180px;
+    flex-direction: column;
+  }
+  .carbon_app_navbar a {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+  .carbon_app_navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .carbon_app_navbar a:hover{
+    color: #568c63;
+    border-bottom: #173B33 2px solid;
+  }
+}

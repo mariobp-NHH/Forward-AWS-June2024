@@ -1,0 +1,169 @@
+
+/* page header */
+.page-header {
+  width: 100%;
+  padding: 22px 16px;
+  text-align: center;
+  position: relative;
+  z-index: 7;
+}
+.page-header * {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.page-title {
+  margin: 10px 0;
+  font-size: 40px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: #173B33;
+}
+.page-tagline {
+  margin: 0;
+  font-size: 30px;
+  color: #173B33;
+  opacity: 0.95;
+}
+
+/* register */
+.register_section_css {
+    background: #EAFFE5;
+    position: relative;
+    z-index: 5;
+    overflow: hidden
+  }
+  
+  .register_section_css .container {
+    display: flex;
+    background: #EAFFE5;
+    align-items: start;
+    justify-content: space-between;
+  }
+  
+  /*color=dark*/
+  .register_section_css .container .box {
+    flex: 1;
+    background: #fff;
+    color: #fff;
+    border-radius: 2px;
+    margin: 20px 10px;
+    padding: 15px 20px;
+    text-align:center;
+    position: relative;
+    z-index: 6;
+  }
+  
+  .register_section_css .container  .box:nth-of-type(1) {
+    flex-grow:1;
+    background: #9fa7bf;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align:left;
+  }
+  
+  .register_section_css .container  .box:nth-of-type(2) {
+    flex-grow:3;
+    background: #173B33;
+    color: #fff;
+    border-radius: 10px;
+    margin: 20px 10px 40px 10px;
+    padding: 15px 20px;
+    text-align:center;
+  }
+  
+  .register_section_css .container  .box:nth-of-type(3) {
+    flex-grow:1;
+    background: #9fa7bf;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    text-align:left;
+  }
+
+@media (max-width: 520px) {
+  .page-title { font-size: 22px; }
+  .page-header { padding: 18px 12px; }
+}
+
+/* Falling leaves background */
+.falling-leaves {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.leaf {
+    position: absolute;
+    top: -5%;
+    width: 60px; 
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%237BA982' d='M32 4c-4 8-12 10-16 10 4 6 2 12 0 16 4 0 10 2 12 4-2 4-2 10 0 12 2-2 8-4 12-4 0 4 2 10 4 12 2-2 4-8 4-12 4 0 10-2 12-4-2-4-2-10 0-16-4 0-12-2-16-10-2-2-4-2-6 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    transform-origin: center;
+    will-change: transform;
+    animation-name: leaf-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* Position & timing for 10 leaves */
+.leaf:nth-child(1) { left: 5%;  animation-duration: 10s; animation-delay: 0s; }
+.leaf:nth-child(2) { left: 15%; animation-duration: 12s; animation-delay: 1s; }
+.leaf:nth-child(3) { left: 25%; animation-duration: 11s; animation-delay: 2s; }
+.leaf:nth-child(4) { left: 35%; animation-duration: 13s; animation-delay: 3s; }
+.leaf:nth-child(5) { left: 45%; animation-duration: 9s;  animation-delay: 1.5s; }
+.leaf:nth-child(6) { left: 55%; animation-duration: 14s; animation-delay: 0.5s; }
+.leaf:nth-child(7) { left: 65%; animation-duration: 12s; animation-delay: 2.5s; }
+.leaf:nth-child(8) { left: 75%; animation-duration: 10s; animation-delay: 3.5s; }
+.leaf:nth-child(9) { left: 85%; animation-duration: 13s; animation-delay: 1.2s; }
+.leaf:nth-child(10){ left: 95%; animation-duration: 11s; animation-delay: 2.8s; }
+
+@keyframes leaf-fall {
+    0% {
+        transform: translateY(-10%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(50vh) rotate(45deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(90deg);
+    }
+}
+
+/* Transport icons background */
+.transport-icons-background {
+    position: absolute;
+    top: 150px;  
+    left: 0;
+    width: 100%;
+    height: 600px; 
+    pointer-events: none;
+    z-index: 10;
+}
+.transport-icons-background i {
+    position: absolute;
+    font-size: 90px;  
+    opacity: 0.15;
+    color: #173B33;
+}
+
+/* Icons positions */
+/* Left side */
+.transport-icons-background i:nth-child(1) { left: 19.5%; top: 10%; transform: rotate(-10deg); }
+.transport-icons-background i:nth-child(2) { left: 12%; top: 38%; transform: rotate(10deg); }
+.transport-icons-background i:nth-child(3) { left: 19%; top: 67%; transform: rotate(-10deg); }
+
+/* Right side */
+.transport-icons-background i:nth-child(4) { right: 20%; top: 10%; transform: rotate(10deg); }
+.transport-icons-background i:nth-child(5) { right: 13%; top: 38%; transform: rotate(-10deg); }
+.transport-icons-background i:nth-child(6) { right: 18%; top: 66%; transform: rotate(10deg); }
