@@ -87,9 +87,9 @@
   // Emissions
   // Emissions
   let emission_transport_data = JSON.parse(
-    "{{ emissions_by_transport | safe }}"
+    '{{ emissions_by_transport | safe }}'
   );
-  let transport_labels = JSON.parse("{{ transport_labels | safe }}");
+  let transport_labels = JSON.parse('{{ transport_labels | safe }}');
   Chart.scaleService.updateScaleDefaults("linear", {
     ticks: {
       min: 0,
@@ -237,3 +237,4 @@
   });
 </script>
 {% endblock content %}
+
