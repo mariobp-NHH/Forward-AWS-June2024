@@ -147,8 +147,8 @@
     }
   );
 
-  over_time_emissions = JSON.parse("{{over_time_emissions | safe}}");
-  labels = JSON.parse("{{ dates_label  | safe}}");
+  over_time_emissions = JSON.parse('{{over_time_emissions | safe}}');
+  labels = JSON.parse('{{ dates_label  | safe}}');
 
   new Chart(document.getElementById("over_time_emissions"), {
     type: "line",
@@ -169,8 +169,8 @@
 
   // PIE CHART — Kilometers by Transport
 
-  let kms_transport_data = JSON.parse("{{ kms_by_transport | safe }}");
-  let kms_transport_labels = JSON.parse("{{ kms_labels | safe }}");
+  let kms_transport_data = JSON.parse('{{ kms_by_transport | safe }}');
+  let kms_transport_labels = JSON.parse('{{ kms_labels | safe }}');
 
   new Chart(document.getElementById("kms_by_transport"), {
     type: "pie",
@@ -210,7 +210,7 @@
     },
   });
 
-  kms_data = JSON.parse("{{ kms_over_time | safe }}");
+  kms_data = JSON.parse('{{ kms_over_time | safe }}');
 
   new Chart(document.getElementById("kms_over_time_chart"), {
     type: "line",
