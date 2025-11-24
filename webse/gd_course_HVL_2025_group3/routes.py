@@ -22,7 +22,7 @@ def register():
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! Now, you are able to login!', 'success')
-        return redirect(url_for('gd_course_HVL_2025_group3.carbon_app_home'))
+        return redirect(url_for('gd_course_HVL_2025_group3.calculator_home'))
     return render_template('gd_course/HVL_2025_group3/register.html', title='register', form=form)
     
 @gd_course_HVL_2025_group3.route('/green_digitalization_course/HVL/2025/group3/login', methods=['GET','POST'])
