@@ -734,6 +734,17 @@
   text-align: center;
 } */
 
+.table-responsive-mobile {
+  width: 100%;
+  overflow-x: auto; /* enables horizontal scroll */
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive-mobile table1 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 @media (max-width: 768px) {
   .section_container_buttons_chapters {
     display: flex;
@@ -779,5 +790,15 @@
   }
   #instructionsModalInstructions1 {
     max-width: 325px;
+  }
+  .table-responsive-mobile table th,
+  .table-responsive-mobile table td {
+    font-size: 12px; /* smaller text */
+    padding: 6px 8px; /* reduce padding */
+    white-space: nowrap; /* prevents text from breaking badly */
+  }
+
+  .table-responsive-mobile::-webkit-scrollbar {
+    height: 6px;
   }
 }
