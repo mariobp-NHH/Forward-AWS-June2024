@@ -406,43 +406,45 @@
   <div class="container">
     <div class="statistics_css">
       <div class="box" style="background-color: #4a736f">
-        <table class="table table_custom_table_canvas">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col" class="align-top">Bruker</th>
-              <th scope="col" class="align-top">Spørsmålsnummer</th>
-              <th scope="col" class="align-top">Dato første riktige svar</th>
-              <th scope="col" class="align-top">Dato global første korrekt</th>
-              <th scope="col" class="align-top">
-                Tidsforskjell vs. global første korrekthet
-              </th>
-              <th scope="col" class="align-top">
-                Gjennomsnittlig tidsforskjell (alle brukere)
-              </th>
-              <th scope="col" class="align-top">Lenkeøvelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for row in
-            current_user_all_questions_first_and_global_correct_avg_call %}
-            <tr>
-              <td>{{ current_user.username }}</td>
-              <td>{{ row.question_num }}</td>
-              <td>{{ row["Date First Correct Answer"] }}</td>
-              <td>{{ row["Global First Correct Date"] }}</td>
-              <td>{{ row["Time Difference vs Global First Correct"] }}</td>
-              <td>{{ row["Average Time Difference (All Users)"] }}</td>
-              <td>
-                <a
-                  href="{{ url_for('boa205_course_chapters.boa205_course_chapters_ch1') }}"
-                  class="btn btn-outline-warning btn-sm"
-                  >Lenk</a
-                >
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+        <div class="table-responsive-wrapper">
+          <table class="table table_custom_table_canvas">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="align-top">Bruker</th>
+                <th scope="col" class="align-top">Spørsmålsnummer</th>
+                <th scope="col" class="align-top">Dato første riktige svar</th>
+                <th scope="col" class="align-top">Dato global første korrekt</th>
+                <th scope="col" class="align-top">
+                  Tidsforskjell vs. global første korrekthet
+                </th>
+                <th scope="col" class="align-top">
+                  Gjennomsnittlig tidsforskjell (alle brukere)
+                </th>
+                <th scope="col" class="align-top">Lenkeøvelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in
+              current_user_all_questions_first_and_global_correct_avg_call %}
+              <tr>
+                <td>{{ current_user.username }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>{{ row["Date First Correct Answer"] }}</td>
+                <td>{{ row["Global First Correct Date"] }}</td>
+                <td>{{ row["Time Difference vs Global First Correct"] }}</td>
+                <td>{{ row["Average Time Difference (All Users)"] }}</td>
+                <td>
+                  <a
+                    href="{{ url_for('boa205_course_chapters.boa205_course_chapters_ch1') }}"
+                    class="btn btn-outline-warning btn-sm mobile-adjust-btn"
+                    >Lenk</a
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="box" style="background-color: #4a736f">
         <canvas id="avg_per_question_chart" style="height: 200px"></canvas>
