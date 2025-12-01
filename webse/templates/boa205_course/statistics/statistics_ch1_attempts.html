@@ -1,514 +1,284 @@
-{% extends "boa205_course/boa205_course_layout.html" %} {% block content %}
+/* Statistics home page */
+/* Section styling */
+.section-statistics-home {
+  background-color: #2b4359;
+  padding: 30px 0;
+}
 
-<section class="section-statistics">
-  <div class="stats-container">
-    <!-- Første innmelding – Tid –< -->
-    <div
-      class="stats-box"
-      data-aos="aos-fade-right"
-      data-aos-duration="2000"
-      data-aos-delay="200"
-      data-aos-once="true"
-    >
-      <div class="stats-icon">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
-      </div>
-      <p><strong>Første innmelding – Tid –</strong></p>
-      <div class="stats-buttons">
-        <a
-          href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_first_entry_time_week')
-                  }}"
-          class="btn btn-primary btn-sm"
-          >Uke kapittel</a
-        >
-        <a
-          href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_first_entry_time_year')
-                  }}"
-          class="btn btn-primary btn-sm"
-          >År</a
-        >
-        <a
-          href="#"
-          class="btn btn-primary btn-sm"
-          data-toggle="modal"
-          data-target="#instructionsModalInstructions1"
-          >Hjelp</a
-        >
-      </div>
-    </div>
+.statistics-container-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center; /* ✅ centers the grid tracks */
+  justify-items: center; /* ✅ centers boxes within each track */
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
 
-    <!-- Første innmelding – Gjennomsnitt – -->
-    <div
-      class="stats-box"
-      data-aos="aos-fade-right"
-      data-aos-duration="2000"
-      data-aos-delay="400"
-      data-aos-once="true"
-    >
-      <div class="stats-icon">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
-      </div>
-      <p><strong>Første innmelding – Gjennomsnitt –</strong></p>
-      <div class="stats-buttons">
-        <a
-          href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_first_entry_average_week')
-                  }}"
-          class="btn btn-primary btn-sm"
-          >Uke kapittel</a
-        >
-        <a
-          href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_first_entry_average_year')
-                  }}"
-          class="btn btn-primary btn-sm"
-          >År</a
-        >
-        <a
-          href="#"
-          class="btn btn-primary btn-sm"
-          data-toggle="modal"
-          data-target="#instructionsModalInstructions2"
-          >Hjelp</a
-        >
-      </div>
-    </div>
+/* Individual box */
+.statistics-box-home {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 250px;
+  min-width: 250px;
+  height: 250px;
+  background: #027b63;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-    <!-- Første riktige svar -->
-    <div
-      class="stats-box"
-      data-aos="aos-fade-right"
-      data-aos-duration="2000"
-      data-aos-delay="600"
-      data-aos-once="true"
-    >
-      <div class="stats-icon">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
-      </div>
-      <p><strong>Første riktige svar</strong></p>
-      <div class="stats-buttons">
-        <a
-          href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_first_answer_week')
-                  }}"
-          class="btn btn-primary btn-sm"
-          >Uke kapittel</a
-        >
-        <a
-          href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_first_answer_year')
-                  }}"
-          class="btn btn-primary btn-sm"
-          >År</a
-        >
-        <a
-          href="#"
-          class="btn btn-primary btn-sm"
-          data-toggle="modal"
-          data-target="#instructionsModalInstructions3"
-          >Hjelp</a
-        >
-      </div>
-    </div>
-    
+/* Icon styling */
+.statistics-icon-home {
+  font-size: 2rem;
+  color: #2b4359;
+}
 
-    <!-- Forsøk til riktig -->
-    <div
-      class="stats-box"
-      data-aos="aos-fade-right"
-      data-aos-duration="2000"
-      data-aos-delay="800"
-      data-aos-once="true"
-    >
-      <div class="stats-icon">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
-      </div>
-      <p><strong>Forsøk til riktig</strong></p>
-      <div class="stats-buttons">
-        <a href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_attempts_week')
-                  }}" class="btn btn-primary btn-sm">Uke kapittel</a>
-        <a href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_attempts_year')
-                  }}" class="btn btn-primary btn-sm">År</a>
-        <a
-          href="#"
-          class="btn btn-primary btn-sm"
-          data-toggle="modal"
-          data-target="#instructionsModalInstructions4"
-          >Hjelp</a
-        >
-      </div>
-    </div>      
-        
-    <!-- Siste svar -->
-    <div
-      class="stats-box"
-      data-aos="aos-fade-right"
-      data-aos-duration="2000"
-      data-aos-delay="800"
-      data-aos-once="true"
-    >
-      <div class="stats-icon">
-        <i class="fa-solid fa-magnifying-glass-chart"></i>
-      </div>
-      <p><strong>Siste svar</strong></p>
-      <div class="stats-buttons">
-        <a href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_last_entry_week')
-                  }}"
-                  class="btn btn-primary btn-sm">Uke kapittel</a>
-        <a href="{{
-                    url_for('boa205_course_statistics.statistics_ch1_last_entry_year')
-                  }}"
-                  class="btn btn-primary btn-sm">År</a>
-        <a
-          href="#"
-          class="btn btn-primary btn-sm"
-          data-toggle="modal"
-          data-target="#instructionsModalInstructions5"
-          >Hjelp</a
-        >
-      </div>
-    </div>
-    
-  </div>
-</section>
+/* Button container */
+.statistics-buttons-home {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-<!-- Modal Instructions1 -->
-<div class="modal" id="instructionsModalInstructions1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+/* Default button style */
+.statistics-buttons-home a {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
 
-      <div class="modal-header">
-        <h5 class="modal-title", style="color:black">Første forsøk – Tid –</h5>
-      </div>
+/* Default hover effect */
+.statistics-buttons-home a:hover {
+  background-color: #0056b3;
+  color: #027b63;
+}
 
-      <div class="modal-body", style="color:black">
-        <p>
-          Her finner du riktige og gale svar for det første forsøket du har gjort på hvert spørsmål.
-          <br>
-          Du ser også tidsforskjellen mellom ditt første forsøk og det første riktige svaret blant alle de første forsøkene fra ALLE STUDENTENE.
-          Hvis du er den første som svarer riktig på et spørsmål, er tidsforskjellen 00:00:00.
-          Hvis du ikke svarte riktig på spørsmålet i første forsøk, er tidsforskjellen None.
-          <br>
-          Du har to valg.
-            <ol>
-                <li>
-                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
-                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
-                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
-                </li>
-                </br>
-                <li>
-                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
-                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
-                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
-                </li>
-            </ol>
-        </p>
-      </div>
+/* 🎯 Button hover overrides per box */
+.statistics-box-home:nth-child() .statistics-buttons-home a:hover {
+  background-color: #027b63;
+  color: #ffffff;
+}
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
-      </div>
+/* CSS statistics chapters */
+/* Section styling */
+.section-statistics {
+  background-color: #2b4359;
+  padding: 30px 0;
+}
 
-    </div>
-  </div>
-</div>
+/* Flex container */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-<!-- Modal Instructions2 -->
-<div class="modal" id="instructionsModalInstructions2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+/* Individual box */
+.stats-box {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 200px;
+  min-width: 200px;
+  height: 200px;
+  background: #9cd5c0;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-      <div class="modal-header">
-        <h5 class="modal-title", style="color:black">Første forsøket – Gjennomsnitt –</h5>
-      </div>
+/* 🎨 Box color overrides */
+.stats-box:nth-child(2) {
+  background-color: #027b63;
+}
 
-      <div class="modal-body", style="color:black">
-        <p>
-          Her finner du riktige og gale svar for det første forsøket du har gjort på hvert spørsmål.
-          <br>
-          Du ser også gjennomsnittet av riktige svar på første forsøk for ALLE studentene. 
-          Hvis gjennomsnittet er 0, betyr det at ALLE studentene har svart feil på det spørsmålet. 
-          Hvis gjennomsnittet er 1, betyr det at ALLE studentene har svart riktig på det spørsmålet.
-          <br>
-          Du har to valg.
-            <ol>
-                <li>
-                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
-                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
-                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
-                </li>
-                </br>
-                <li>
-                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
-                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
-                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
-                </li>
-            </ol>
+.stats-box:nth-child(3) {
+  background-color: #4a736f;
+}
 
-        </p>
-      </div>
+.stats-box:nth-child(4) {
+  background-color: #17a2b8;
+}
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
-      </div>
+.stats-box:nth-child(5) {
+  background-color: #0388a6;
+}
 
-    </div>
-  </div>
-</div>
+/* Icon styling */
+.stats-icon {
+  font-size: 2rem;
+  color: #2b4359;
+}
 
-<!-- Modal Instructions3 -->
-<div class="modal" id="instructionsModalInstructions3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+/* Button container */
+.stats-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-      <div class="modal-header">
-        <h5 class="modal-title", style="color:black">Første riktige svar</h5>
-      </div>
+/* Default button style */
+.stats-buttons a {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
 
-      <div class="modal-body", style="color:black">
-        <p>
-          Her finner du tidsforskjellen mellom ditt første riktige svar på hvert spørsmål og 
-          tidspunktet for det første riktige svaret globalt.
-          Hvis du aldri har svart riktig på et spørsmål, vil Dato for første riktige svar og Tidsforskjell vs. global 
-          første korrekthet være None.
-          <br>
-          Du ser også den gjennomsnittlige tidsforskjellen mellom det første riktige svaret for ALLE studentene på hvert spørsmål og tidspunktet for det første riktige svaret globalt.
-          <br>
-          Du har to valg.
-            <ol>
-                <li>
-                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
-                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
-                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
-                </li>
-                </br>
-                <li>
-                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
-                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
-                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
-                </li>
-            </ol>
+/* Default hover effect */
+.stats-buttons a:hover {
+  background-color: #0056b3;
+  color: #9cd5c0;
+}
 
-        </p>
-      </div>
+/* 🎯 Button hover overrides per box */
+.stats-box:nth-child(1) .stats-buttons a:hover {
+  background-color: #9cd5c0;
+  color: #ffffff;
+}
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
-      </div>
+/* 🎯 Button hover overrides per box */
+.stats-box:nth-child(2) .stats-buttons a:hover {
+  background-color: #027b63;
+  color: #ffffff;
+}
 
-    </div>
-  </div>
-</div>
+.stats-box:nth-child(3) .stats-buttons a:hover {
+  background-color: #4a736f;
+  color: #ffffff;
+}
 
-<!-- Modal Instructions4 -->
-<div class="modal" id="instructionsModalInstructions4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+.stats-box:nth-child(4) .stats-buttons a:hover {
+  background-color: #17a2b8;
+  color: #ffffff;
+}
 
-      <div class="modal-header">
-        <h5 class="modal-title", style="color:black">Forsøk til riktig</h5>
-      </div>
+.stats-box:nth-child(5) .stats-buttons a:hover {
+  background-color: #0388a6;
+  color: #ffffff;
+}
 
-      <div class="modal-body", style="color:black">
-        <p>
-          Her finner du antall forsøk du brukte før du svarte riktig på hvert spørsmål. 
-          Tallet 1 betyr at du svarte riktig på spørsmålet på første forsøk.
-          <br>
-          Du ser også det gjennomsnittlige antallet forsøk før riktig svar for ALLE studentene på hvert spørsmål.
-          Tallet 1 betyr at alle studentene svarte riktig på spørsmålet på første forsøk.
-          <br>
-          Du har to valg.
-            <ol>
-                <li>
-                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
-                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
-                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
-                </li>
-                </br>
-                <li>
-                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
-                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
-                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
-                </li>
-            </ol>
-        </p>
-      </div>
+/* Table and Canvas */
+/* Container statistics */
+.section_statistics_table_canvas .container {
+  background-color: #2b4359;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.section_statistics_table_canvas .container .statistics_css {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.section_statistics_table_canvas .container .statistics_css .box {
+  flex: 1;
+  background: #9cd5c0;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.6);
+  padding: 15px 20px;
+}
+.section_statistics_table_canvas
+  .container
+  .statistics_css
+  .box:nth-of-type(1) {
+  flex-grow: 3;
+  background: #9cd5c0;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+}
+.section_statistics_table_canvas
+  .container
+  .statistics_css
+  .box:nth-of-type(2) {
+  flex-grow: 1;
+  background: #9cd5c0;
+  color: #fff;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+}
+/* Customize table transparency */
+.table_custom_table_canvas {
+  --bs-table-bg: transparent !important;
+}
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
-      </div>
+/* 🧭 Custom AOS animation to avoid Bootstrap conflict */
+[data-aos="aos-fade-right"] {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition-property: transform, opacity;
+}
 
-    </div>
-  </div>
-</div> 
+[data-aos="aos-fade-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
 
-<!-- Modal Instructions5 -->
-<div class="modal" id="instructionsModalInstructions5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
+.modal-backdrop {
+  z-index: 1050 !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
 
-      <div class="modal-header">
-        <h5 class="modal-title", style="color:black">Siste svar</h5>
-      </div>
+.modal {
+  z-index: 1060 !important;
+}
 
-      <div class="modal-body", style="color:black">
-        <p>
-          Her finner du riktige og gale svar for det siste forsøket du har gjort på hvert spørsmål.
-          <br>
-          Du har to valg.
-            <ol>
-                <li>
-                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
-                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
-                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
-                </li>
-                </br>
-                <li>
-                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
-                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
-                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
-                </li>
-            </ol>
-        </p>
-      </div>
+/* Make the table responsive in mobile phones */
+/* Make table scroll instead of breaking layout */
+.table-responsive-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
 
-      <div class="modal-footer">
-        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
-      </div>
+/* Responsive layout */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  /* .section_statistics_table_canvas .container .statistics_css {
+    flex-direction: column;
+    text-align: center;
+  } */
+  .statistics-container-home {
+    grid-template-columns: 1fr; /* single column layout on mobile */
+  }
 
-    </div>
-  </div>
-</div>
+  .section_statistics_table_canvas .container .statistics_css {
+    flex-direction: column;
+    width: 100%;
+  }
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  // Convert custom data attributes to real AOS attributes
-  document.querySelectorAll("[data-aos='aos-fade-right']").forEach((el) => {
-    el.setAttribute("data-aos", "aos-fade-right");
-  });
-
-  AOS.init({
-    startEvent: 'DOMContentLoaded',
-    once: true
-  });
-</script>
-
-<section
-  class="section_statistics_table_canvas"
-  style="background-color: #2b4359"
->
-  <div class="container">
-    <div class="statistics_css">
-      <div class="box" style="background-color: #17a2b8">
-        <table class="table table_custom_table_canvas">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col" class="align-top">Bruker</th>
-              <th scope="col" class="align-top">Spørsmålsnummer</th>
-              <th scope="col" class="align-top">Forsøk til riktig</th>
-              <th scope="col" class="align-top">Gjennomsnittlig antall forsøk til riktig</th>
-              <th scope="col" class="align-top">Lenkeøvelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for row in attempts_vs_average_chart_time_range_call %}
-            
-          <tr>
-              <td>{{ current_user.username }}</td>
-              <td>{{ row.question_num }}</td>
-              <td>
-                {{row["Attempts Current User"]}}
-              </td>
-              <td>{{ row["Average Attempts (All Users)"] }}</td>
-              <td>
-                <a
-                  href="{{ url_for('boa205_course_chapters.boa205_course_chapters_ch1') }}"
-                  class="btn btn-outline-warning btn-sm"
-                  >Lenk</a
-                >
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-      </div>
-      <div class="box" style="background-color: #17a2b8">
-        <canvas id="attempts_chart" style="height: 200px"></canvas>
-      </div>
-    </div>
-  </div>
-</section>
-
-{% block javascript2 %}
-
-
-<script>
-  const ctx = document.getElementById("attempts_chart").getContext("2d");
-
-  new Chart(ctx, {
-      type: "bar",
-      data: {
-          labels: {{ chart_labels|tojson }},
-          datasets: [{
-              label: "Gjennomsnittlig riktige svar per spørsmål",
-              data: {{ chart_values|tojson }},
-              backgroundColor: [
-                  "#007bff", "#17a2b8", "#28a745", "#ffc107", "#fd7e14", "#dc3545"
-              ],
-              borderColor: "#000000",
-              borderWidth: 2
-          }]
-      },
-      options: {
-          plugins: {
-              title: {
-                  display: true,
-                  text: "Gjennomsnittlig antall forsøk til riktig",
-                  color: "#000000",
-                  font: { size: 15, weight: "bold" }
-              },
-              legend: { display: false }
-          },
-          scales: {
-              y: {
-                  beginAtZero: true,
-                  max: 4,
-                  ticks: {
-                      color: "#000000",
-                      font: { size: 15, weight: "bold" }
-                  },
-                  title: {
-                      display: true,
-                      text: "Gjennomsnittlig",
-                      color: "#000000",
-                      font: { size: 10, weight: "bold" }
-                  },
-                  grid: { color: "rgba(0,0,0,0.2)" }
-              },
-              x: {
-                  ticks: {
-                      color: "#000000",
-                      font: { size: 10, weight: "bold" }
-                  },
-                  title: {
-                      display: true,
-                      text: "Spørsmål",
-                      color: "#000000",
-                      font: { size: 10, weight: "bold" }
-                  },
-                  grid: { color: "rgba(0,0,0,0.1)" }
-              }
-          }
-      }
-  });
-</script>
-
-{% endblock%}
-
-{% endblock content %}
+  .section_statistics_table_canvas .container .statistics_css .box {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
