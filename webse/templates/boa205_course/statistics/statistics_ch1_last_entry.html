@@ -406,43 +406,45 @@
   <div class="container">
     <div class="statistics_css">
       <div class="box" style="background-color: #0388a6">
-        <table class="table table_custom_table_canvas">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col" class="align-top">Bruker</th>
-              <th scope="col" class="align-top">Spørsmålsnummer</th>
-              <th scope="col" class="align-top">Resultat (første påmelding)</th>
-              <th scope="col" class="align-top">Dato for første oppføring</th>
-              <th scope="col" class="align-top">Lenkeøvelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for row in
-            current_user_all_questions_last_entry_correct_incorrect_call
-            %}
-            <tr>
-              <td>{{ current_user.username }}</td>
-              <td>{{ row.question_num }}</td>
-              <td>
-                {% if row.question_result == 1 %} ✅ Correct {% else %} ❌
-                Incorrect {% endif %}
-              </td>
-              <td>
-                {{ row["Date Last Entry"].strftime('%Y-%m-%d %H:%M:%S') }}
-              </td>
-              <td>
-                <a
-                  href="{{
-                    url_for('boa205_course_chapters.boa205_course_chapters_ch1')
-                  }}"
-                  class="btn btn-outline-warning btn-sm"
-                  >Lenk</a
-                >
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+        <div class="table-responsive-wrapper">
+          <table class="table table_custom_table_canvas">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="align-top">Bruker</th>
+                <th scope="col" class="align-top">Spørsmålsnummer</th>
+                <th scope="col" class="align-top">Resultat (første påmelding)</th>
+                <th scope="col" class="align-top">Dato for første oppføring</th>
+                <th scope="col" class="align-top">Lenkeøvelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in
+              current_user_all_questions_last_entry_correct_incorrect_call
+              %}
+              <tr>
+                <td>{{ current_user.username }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>
+                  {% if row.question_result == 1 %} ✅ Correct {% else %} ❌
+                  Incorrect {% endif %}
+                </td>
+                <td>
+                  {{ row["Date Last Entry"].strftime('%Y-%m-%d %H:%M:%S') }}
+                </td>
+                <td>
+                  <a
+                    href="{{
+                      url_for('boa205_course_chapters.boa205_course_chapters_ch1')
+                    }}"
+                    class="btn btn-outline-warning btn-sm mobile-adjust-btn"
+                    >Lenk</a
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="box" style="background-color: #0388a6">
         <canvas id="correct_vs_incorrect"></canvas>
