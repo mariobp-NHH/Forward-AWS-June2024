@@ -250,17 +250,35 @@
   z-index: 1060 !important;
 }
 
+/* Make the table responsive in mobile phones */
+/* Make table scroll instead of breaking layout */
+.table-responsive-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .stats-container {
     flex-direction: column;
     align-items: center;
   }
-  .section_statistics_table_canvas .container .statistics_css {
+  /* .section_statistics_table_canvas .container .statistics_css {
     flex-direction: column;
     text-align: center;
-  }
+  } */
   .statistics-container-home {
     grid-template-columns: 1fr; /* single column layout on mobile */
+  }
+
+  .section_statistics_table_canvas .container .statistics_css {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .section_statistics_table_canvas .container .statistics_css .box {
+    width: 100%;
+    margin: 10px 0;
   }
 }
