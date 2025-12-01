@@ -264,10 +264,14 @@
     flex-direction: column;
     align-items: center;
   }
-  /* .section_statistics_table_canvas .container .statistics_css {
-    flex-direction: column;
-    text-align: center;
-  } */
+  .table_custom_table_canvas {
+    font-size: 12px; /* or any size you prefer */
+  }
+
+  .table_custom_table_canvas th,
+  .table_custom_table_canvas td {
+    padding: 4px 6px; /* optional: reduce padding too */
+  }
   .statistics-container-home {
     grid-template-columns: 1fr; /* single column layout on mobile */
   }
@@ -280,5 +284,9 @@
   .section_statistics_table_canvas .container .statistics_css .box {
     width: 100%;
     margin: 10px 0;
+  }
+  .mobile-adjust-btn {
+    font-size: 12px;
+    padding: 4px 10px;
   }
 }
