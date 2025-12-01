@@ -406,37 +406,39 @@
   <div class="container">
     <div class="statistics_css">
       <div class="box" style="background-color: #027b63">
-        <table class="table table_custom_table_canvas">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col" class="align-top">Bruker</th>
-              <th scope="col" class="align-top">Spørsmålsnummer</th>
-              <th scope="col" class="align-top">Resultat (første påmelding)</th>
-              <th scope="col" class="align-top">Gjennomsnittlig riktig</th>
-              <th scope="col" class="align-top">Lenkeøvelse</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for row in current_user_all_questions_first_entry_average_call %}
-            <tr>
-              <td>{{ current_user.username }}</td>
-              <td>{{ row.question_num }}</td>
-              <td>
-                {% if row.question_result == 1 %} ✅ Correct {% else %} ❌
-                Incorrect {% endif %}
-              </td>
-              <td>{{ row.mean_per_question }}</td>
-              <td>
-                <a
-                  href="{{ url_for('boa205_course_chapters.boa205_course_chapters_ch1') }}"
-                  class="btn btn-outline-warning btn-sm"
-                  >Lenk</a
-                >
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
+        <div class="table-responsive-wrapper">
+          <table class="table table_custom_table_canvas">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="align-top">Bruker</th>
+                <th scope="col" class="align-top">Spørsmålsnummer</th>
+                <th scope="col" class="align-top">Resultat (første påmelding)</th>
+                <th scope="col" class="align-top">Gjennomsnittlig riktig</th>
+                <th scope="col" class="align-top">Lenkeøvelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in current_user_all_questions_first_entry_average_call %}
+              <tr>
+                <td>{{ current_user.username }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>
+                  {% if row.question_result == 1 %} ✅ Correct {% else %} ❌
+                  Incorrect {% endif %}
+                </td>
+                <td>{{ row.mean_per_question }}</td>
+                <td>
+                  <a
+                    href="{{ url_for('boa205_course_chapters.boa205_course_chapters_ch1') }}"
+                    class="btn btn-outline-warning btn-sm mobile-adjust-btn"
+                    >Lenk</a
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="box" style="background-color: #027b63">
         <canvas id="avg_per_question_chart" style="height: 200px"></canvas>
