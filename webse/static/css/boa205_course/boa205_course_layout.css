@@ -97,6 +97,7 @@ Rojo: #F26934
   color: #000000;
   margin: 0px 0px;
   padding: 10px;
+  z-index: 9999; /* very high to be above everything */
 }
 
 .menu_right {
@@ -132,6 +133,8 @@ Rojo: #F26934
 .hamburger {
   display: none;
   cursor: pointer;
+  position: relative; /* or fixed if you want it to stay visible */
+  z-index: 10000; /* higher than nav so clickable */
 }
 
 .bar {
