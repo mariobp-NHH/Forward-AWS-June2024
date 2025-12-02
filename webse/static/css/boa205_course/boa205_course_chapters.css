@@ -36,18 +36,6 @@
 }
 /*End header*/
 
-/*Container buttons section header*/
-.container_buttons_links_header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.container_buttons_links_header a:hover {
-  color: #789091;
-}
-/*End container buttons section header*/
-
 /* section_1 */
 .section_1 {
   margin: 0 auto;
@@ -99,53 +87,7 @@
   padding: 15px 20px;
   text-align: left;
 }
-.section_1 .container .box_two {
-  flex: 1;
-  background: #4a736f;
-  color: black;
-  border-radius: 5px;
-  margin: 20px 0px;
-  padding: 15px 0px;
-  text-align: center;
-}
-.section_1 .container .box_two:nth-of-type(1) {
-  background: #17a2b8; /* rt5-5: #17a2b8  */
-  flex-grow: 1;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align: left;
-}
-.section_1 .container .box_two:nth-of-type(2) {
-  background: #17a2b8;
-  flex-grow: 1;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align: left;
-}
-.section_1 .container .box_three {
-  flex: 1;
-  background: #4a736f;
-  color: #000000;
-  border-radius: 5px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align: center;
-}
-.section_1 .container .box_three:nth-of-type(1) {
-  background: #4a736f;
-  flex-grow: 1;
-  text-align: left;
-}
-.section_1 .container .box_three:nth-of-type(2) {
-  background: #17a2b8;
-  flex-grow: 6;
-  padding: 15px 20px;
-}
-.section_1 .container .box_three:nth-of-type(3) {
-  background: #4a736f;
-  flex-grow: 1;
-  padding: 15px 20px;
-}
+
 /*Container buttons section section_1a*/
 .container_buttons_links_section_1a {
   display: flex;
@@ -254,109 +196,8 @@
   padding: 15px 20px;
   text-align: left;
 }
-.section_2 .container .box_two {
-  flex: 1;
-  background: #027b63;
-  color: black;
-  border-radius: 5px;
-  margin: 20px 0px;
-  padding: 15px 0px;
-  text-align: center;
-}
-.section_2 .container .box_two:nth-of-type(1) {
-  background: #027b63;
-  flex-grow: 1;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align: left;
-}
-.section_2 .container .box_two:nth-of-type(2) {
-  background: #027b63;
-  flex-grow: 1;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align: left;
-}
-.section_2 .container .box_three {
-  flex: 1;
-  background: #9cd5c0;
-  color: #000000;
-  border-radius: 5px;
-  margin: 20px 10px;
-  padding: 15px 20px;
-  text-align: center;
-}
-.section_2 .container .box_three:nth-of-type(1) {
-  background: #9cd5c0;
-  flex-grow: 1;
-  text-align: left;
-}
-.section_2 .container .box_three:nth-of-type(2) {
-  background: #027b63;
-  flex-grow: 6;
-  padding: 15px 20px;
-}
-.section_2 .container .box_three:nth-of-type(3) {
-  background: #9cd5c0;
-  flex-grow: 1;
-  padding: 15px 20px;
-}
-/*Container buttons section section_2a*/
-.container_buttons_links_section_2a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.container_buttons_links_section_2a a:hover {
-  color: #027b63;
-}
-/*End container buttons section section_2a*/
-/*Container buttons section section_2b*/
-.container_buttons_links_section_2b {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.container_buttons_links_section_2b a:hover {
-  color: #9cd5c0;
-}
-/*End container buttons section section_2b*/
-/* btn-section2 */
-.btn-section2 {
-  padding: 10px 10px;
-  margin: 10px 10px 10px 10px;
-  color: #000000;
-  border-radius: 5px;
-  text-decoration: none;
-  background-color: #9cd5c0;
-  border: 2px solid #027b63;
-}
-.btn-section2:hover {
-  color: #000000;
-  background-color: #027b63;
-  border: 2px solid #027b63;
-}
-/* End btn-section2 */
-/* btn-section2_box */
-.btn-section2_box {
-  padding: 10px 10px;
-  margin: 10px 10px 10px 10px;
-  color: #000000;
-  border-radius: 5px;
-  text-decoration: none;
-  background-color: #027b63;
-  border: 2px solid #9cd5c0;
-}
-.btn-section2_box:hover {
-  color: #000000;
-  background-color: #9cd5c0;
-  border: 2px solid #9cd5c0;
-}
-/* End btn-section2_box */
-/* End section_2 */
 
+/* Questions */
 .section_2 .container .col .box_questions_two {
   flex: 1;
   background: #9cd5c0;
@@ -676,10 +517,8 @@
 .section_2 .container .boa205_table {
   /* max-width: 1320px; */
   background: #9cd5c0;
-  display: flex;
+  display: block;
   width: 100%;
-  align-items: center;
-  justify-content: center;
 }
 .section_2 .container .boa205_table .box {
   flex: 1;
@@ -706,43 +545,71 @@
   padding: 10px 10px;
   text-align: center;
 }
-/* .section_km_fuel_css .box:nth-of-type(1) {
-  flex-grow: 1;
-  background: #9ac7a9;
-  color: #343a40;
-  border-radius: 10px;
-  margin: 10px 10px;
-  padding: 10px 10px;
-  text-align: center;
-}
-.section_km_fuel_css .box:nth-of-type(2) {
-  flex-grow: 1;
-  background: #9ac7a9;
-  color: #343a40;
-  border-radius: 10px;
-  margin: 10px 10px;
-  padding: 10px 10px;
-  text-align: center;
-}
-.section_km_fuel_css .box:nth-of-type(3) {
-  flex-grow: 1;
-  background: #9ac7a9;
-  color: #343a40;
-  border-radius: 10px;
-  margin: 10px 10px;
-  padding: 10px 10px;
-  text-align: center;
-} */
 
 .table-responsive-mobile {
   width: 100%;
-  overflow-x: auto; /* enables horizontal scroll */
+  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  border-radius: 8px;
+  background: white;
+  padding-bottom: 5px;
 }
 
-.table-responsive-mobile table1 {
+.table-responsive-mobile table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px; /* prevents column overlap on small screens */
+}
+
+/* Wrapper for questions section */
+.questions-section {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Empty columns to center the middle two columns on desktop */
+.col-spacer {
+  flex: 1;
+}
+
+/* Columns that contain each question */
+.question-col {
+  flex: 3;
+  min-width: 280px;
+  display: flex;
+}
+
+/* Yellow box styling */
+.question-box {
+  background: #f2b84b;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  min-height: 300px; /* box grows if needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Inputs inside questions */
+.question-input {
+  font-size: 16px; /* normal on desktop */
+}
+
+/* Ensure question boxes use your background color */
+.box_questions_two,
+.question-box {
+  background: #f2b84b !important; /* force the color */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Default input style */
+.question-input {
+  font-size: 16px; /* normal desktop size */
 }
 
 @media (max-width: 768px) {
@@ -791,14 +658,104 @@
   #instructionsModalInstructions1 {
     max-width: 325px;
   }
+  /* Reduce font size on phones */
   .table-responsive-mobile table th,
   .table-responsive-mobile table td {
-    font-size: 12px; /* smaller text */
-    padding: 6px 8px; /* reduce padding */
-    white-space: nowrap; /* prevents text from breaking badly */
+    font-size: 12px;
+    padding: 6px 8px;
+    white-space: nowrap;
   }
 
-  .table-responsive-mobile::-webkit-scrollbar {
-    height: 6px;
+  .boa205_table_button {
+    flex-direction: column;
+    align-items: center; /* centers children */
+    justify-content: center;
+  }
+
+  /* Center each input box */
+  .boa205_table_button .box {
+    width: 100%;
+    max-width: 350px; /* adjust as you prefer */
+    margin: 8px auto; /* auto = centered */
+    text-align: center;
+  }
+
+  /* Make the labels + inputs scale nicely */
+  .boa205_table_button .box label {
+    font-size: 12px;
+  }
+
+  .boa205_table_button .box input {
+    font-size: 12px !important;
+  }
+
+  /* Center the submit button too */
+  .form-group {
+    text-align: center;
+  }
+
+  .form-group .btn {
+    width: 100%;
+    max-width: 250px;
+  }
+  /* Override Bootstrap's .form-control-lg on phones */
+  .form-control-lg {
+    font-size: 12px !important;
+    padding: 4px 8px !important; /* optional: reduces input height */
+  }
+  .btn-lg {
+    font-size: 12px !important;
+    padding: 4px 8px !important; /* optional: reduces input height */
+  }
+  .questions-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .col-spacer {
+    display: none; /* remove empty columns */
+  }
+
+  .question-col {
+    width: 100%;
+  }
+
+  /* Smaller minimum height for compact mobile view */
+  .question-box {
+    min-height: 220px;
+  }
+
+  /* Ensure text stays readable and doesn’t overflow */
+  .question-box p,
+  .question-box legend {
+    font-size: 14px;
+  }
+
+  /* Input size on phones */
+  .question-input {
+    font-size: 12px !important;
+    height: 32px;
+    padding: 4px 8px;
+  }
+
+  /* Submit button aligns and sizes correctly */
+  .question-box .btn {
+    width: 100%;
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+  .question-input {
+    font-size: 12px !important;
+    padding: 6px 10px; /* optional: better mobile spacing */
+  }
+
+  /* Make the legend smaller too if you like */
+  .question-box legend {
+    font-size: 16px;
+  }
+
+  /* Reduce paragraph font if needed */
+  .question-box p {
+    font-size: 14px;
   }
 }
