@@ -240,7 +240,10 @@
     </footer>
 
     <!--Menu JavaScript-->
-    <script src="static/forward_home_main.js"></script>
+    <script
+      src="{{ url_for('static', filename='forward_home_main.js') }}"
+      defer
+    ></script>
 
     <!-- To use  highlightjs.org and type code inside HTML -->
     <script src="/path/to/highlight.min.js"></script>
