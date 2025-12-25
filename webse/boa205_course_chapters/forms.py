@@ -99,4 +99,167 @@ class TableForm_boa205_ch1_t1(FlaskForm):
                                  '4'),
                                  ('5',
                                  '5')])
+    submit = SubmitField('Send inn')
+
+#Chapter 2
+class ModulsForm_boa205_ch2_q1(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('lønn til ansatte som jobber direkte med produksjonen',
+                                 'lønn til ansatte som jobber direkte med produksjonen'),
+                                ('generelle kostnader i husleie',
+                                 'generelle kostnader i husleie'),
+                                ('spesifikk frakt knyttet til materialer for ett produkt',
+                                 'spesifikk frakt knyttet til materialer for ett produkt')])
+    submit = SubmitField('Send inn')  
+
+class ModulsForm_boa205_ch2_q2(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('trevirke for møbler, stål for sykler, eller gummi for dekk',
+                                 'trevirke for møbler, stål for sykler, eller gummi for dekk'),
+                                ('generelle kampanjer om markedsføring og salg',
+                                 'generelle kampanjer om markedsføring og salg'),
+                                ('renter, avskrivninger',
+                                 'renter, avskrivninger')])
     submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2_q3(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('800 kr per time',
+                                 '800 kr per time'),
+                                ('875 kr per time',
+                                 '875 kr per time'),
+                                ('900 kr per time',
+                                 '900 kr per time')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2_q4(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('selvkostmetoden tar hensyn til alle direkte kostnader',
+                                 'selvkostmetoden tar hensyn til alle direkte kostnader'),
+                                ('selvkostmetoden tar hensyn til alle faste kostnader',
+                                 'selvkostmetoden tar hensyn til alle faste kostnader'),
+                                ('selvkostmetoden tar hensyn til alle direkte og indirekte kostnader',
+                                 'selvkostmetoden tar hensyn til alle direkte og indirekte kostnader')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2_q5(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-37000',
+                                 '-37000'),
+                                ('-35000',
+                                 '-35000'),
+                                ('-30000',
+                                 '-30000')])
+    submit = SubmitField('Send inn')  
+
+class ModulsForm_boa205_ch2_q6(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-11000',
+                                 '-11000'),
+                                ('-10000',
+                                 '-10000'),
+                                ('-5000',
+                                 '-5000')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2_q7(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-5000',
+                                 '-5000'),
+                                ('-4500',
+                                 '-4500'),
+                                ('-4000',
+                                 '-4000')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2_q8(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-8000',
+                                 '-8000'),
+                                ('-7000',
+                                 '-7000'),
+                                ('-6000',
+                                 '-6000')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2_q9(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('73700000',
+                                 '73700000'),
+                                ('74000000',
+                                 '74000000'),
+                                ('74300000',
+                                 '74300000')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2_q10(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('73000000',
+                                 '73000000'),
+                                ('74800000',
+                                 '74800000'),
+                                ('75000000',
+                                 '75000000')])
+    submit = SubmitField('Send inn') 
+
+class TableForm_boa205_ch2_t1(FlaskForm):
+    direkte_material_normal= SelectField("Direkte Material Normal",
+                       choices=[('250000',
+                                 'kr 250 000'),
+                                ('300000',
+                                 'kr 300 000'),
+                                ('350000',
+                                 'kr 350 000')])
+    faste_material_budsjett = SelectField("Faste Material Budsjett",
+                       choices=[('20000',
+                                 'kr 20 000'),
+                                ('25000',
+                                 'kr 25 000'),
+                                 ('30000',
+                                 'kr 30 000')])
+    indirekte_materialkostnader_faste_normalsatser = SelectField("Indirekte Materialkostnader Faste Normalsatser",
+                       choices=[('0.06',
+                                 '6%'),
+                                ('0.08',
+                                 '8%'),
+                                 ('0.1',
+                                 '10%')])
+    indirekte_tilvirkningskostnader_faste_normalsatser = SelectField("Indirekte Tilvirkningskostnader Faste Normalsatser",
+                       choices=[('0.18',
+                                 '18%'),
+                                ('0.2',
+                                 '20%'),
+                                 ('0.22',
+                                 '22%')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ch2_t2(FlaskForm):
+    lagerreduksjon_selv= SelectField("Lagerreduksjon Selvkostmetoden",
+                       choices=[('800000',
+                                 'kr 800 000'),
+                                ('850000',
+                                 'kr 850 000'),
+                                ('900000',
+                                 'kr 900 000')])
+    ferdigvaren_selv = SelectField("Ferdigvaren Selvkostmetoden",
+                       choices=[('1400000',
+                                 'kr 1 400 000'),
+                                ('1500000',
+                                 'kr 1 500 000'),
+                                 ('1600000',
+                                 'kr 1 600 000')])
+    lagerreduksjon_bidra= SelectField("Lagerreduksjon Bidragsmetoden",
+                       choices=[('650000',
+                                 'kr 650 000'),
+                                ('670000',
+                                 'kr 670 000'),
+                                ('700000',
+                                 'kr 700 000')])
+    ferdigvaren_bidra = SelectField("Ferdigvaren Bidragsmetoden",
+                       choices=[('900000',
+                                 'kr 900 000'),
+                                ('1000000',
+                                 'kr 1 000 000'),
+                                 ('1100000',
+                                 'kr 1 100 000')])
+    submit = SubmitField('Send inn')
