@@ -63,9 +63,9 @@
   text-align: left;
 }
 .section_1 .container .box:nth-of-type(2) {
-  background: #4a736f;
-  flex-grow: 2;
-  padding: 15px 20px;
+  background: #17a2b8;
+  flex-grow: 1;
+  text-align: left;
 }
 .section_1 .container .boxa {
   flex: 1;
@@ -86,6 +86,37 @@
   flex-grow: 1;
   padding: 15px 20px;
   text-align: left;
+}
+
+/* Box a with image */
+.section_1 .container .box_img {
+  flex: 1;
+  background: #17a2b8;
+  color: black;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px 0px;
+}
+
+.section_1 .container .box_img:nth-of-type(1) {
+  background: #17a2b8;
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.section_1 .container .box_img:nth-of-type(2) {
+  background: #17a2b8;
+  padding: 15px 20px;
+
+  /* 🔑 THIS is the fix */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_1 .container .box_img img {
+  max-width: 100%;
+  height: auto;
 }
 
 /*Container buttons section section_1a*/
@@ -195,6 +226,37 @@
   flex-grow: 1;
   padding: 15px 20px;
   text-align: left;
+}
+
+/* Box a with image */
+.section_2 .container .box_img {
+  flex: 1;
+  background: #9cd5c0;
+  color: black;
+  border-radius: 5px;
+  margin: 20px 10px;
+  padding: 15px 0px;
+}
+
+.section_2 .container .box_img:nth-of-type(1) {
+  background: #027b63;
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.section_2 .container .box_img:nth-of-type(2) {
+  background: #027b63;
+  padding: 15px 20px;
+
+  /* 🔑 THIS is the fix */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section_2 .container .box_img img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Questions */
