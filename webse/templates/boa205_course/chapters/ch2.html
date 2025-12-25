@@ -1,0 +1,2276 @@
+{% extends "boa205_course/boa205_course_layout.html" %}
+{% block content %}
+
+{% if anchor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targetElement = document.getElementById("{{ anchor }}");
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endif %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1>Kapitel 2. Hva er normalkostregnskap?</h1>
+                <p class="mb-1">
+                I det kapitel vi skal studer hva er normalkostregnskapet. 
+                Vi skal studer hva er selvskostmetoden og avviksanalyse. 
+                Vi studer hva er bidragsmetoden. Endelig vi studer hva er beholdningsendringer.
+                <br>
+                <br>
+                - Alle informasjon i det kapitel har vært tatt fra boken Driftsregnskap og budsjettering (Bjørn Solheim og Trond Winther), og fra lysbilder fra kurs BØA205 ved HVL -
+                <br>
+                <br>
+                </p>
+                <div class="material-container">
+                    <!-- Kursmateriell 1 -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 1</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_1_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Kursmateriell 2 -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 2</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_2_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 1a -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Oppgave 1a</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#oppgave_1a_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 1b -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 1b</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#oppgave_1b_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2a -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 2a</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#oppgave_2a_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2b -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 2b</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_2b_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 3 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 3</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_3_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 4 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 4</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_4_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 5a -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 5a</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_5a_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 5b -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 5b</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_5b_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 6 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 6</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_6_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 7 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 7</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_7_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 8 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 8</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_8_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Løsninger -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Løsninger</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#losning_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>  
+                    
+                    <!-- Video -->
+                    <div
+                    class="material-box-video"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <p><strong>Video</strong></p>
+                        <div class="material-buttons-video">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div> 
+
+                    <!-- Presentasjon -->
+                    <div
+                    class="material-box-presentation"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                        </div>
+                        <p><strong>Presentasjon</strong></p>
+                        <div class="material-buttons-presentation">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div> 
+                    
+                </div>
+                </br>
+
+                <div class="list-group", style="padding: 15px 0px;">
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Litt oppfriskning fra kapitel 3</h5>
+                    </div>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Normalkostregnskapet</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Avviksanalyse</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Eksempel normalkostregnskap om selvkostmetoden og avviksanalyse</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Beholdningsendringer og virkninger på resultat</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Eksempel om beholdningsendringer</h5>
+                      </div>
+                    </a>
+                </div>
+            </div>
+            <img
+src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/ch2.svg"
+alt=""
+/>
+        </div>
+    </header>
+</section>
+
+
+<!-- Kursmateriell_1 Modal -->
+<div class="modal fade" id="kursmateriell_1_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 1</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_1_1.pptx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_1_1.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Kursmateriell_2 Modal -->
+<div class="modal fade" id="kursmateriell_2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+            id="paper_frame"
+            src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_1.pptx"
+            width="100%" 
+            height="100%" 
+            frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_1.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 1a Modal -->
+<div class="modal fade" id="oppgave_1a_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1a</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_1_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_1_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 1b Modal -->
+<div class="modal fade" id="oppgave_1b_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1b</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_1_3.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_1_3.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2a Modal -->
+<div class="modal fade" id="oppgave_1a_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2a</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_2_1.docs"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_2_1.docs" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2b Modal -->
+<div class="modal fade" id="oppgave_1b_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2b</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_2_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_2_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 3 Modal -->
+<div class="modal fade" id="oppgave_3_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 3</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 4 Modal -->
+<div class="modal fade" id="oppgave_4_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 4</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_1.docx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_1.docx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 5a Modal -->
+<div class="modal fade" id="oppgave_5a_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 5a</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 5b Modal -->
+<div class="modal fade" id="oppgave_5b_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 5b</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_3.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_3.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 6 Modal -->
+<div class="modal fade" id="oppgave_6_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 6</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_1.docx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_1.docx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 7 Modal -->
+<div class="modal fade" id="oppgave_7_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 7</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 8 Modal -->
+<div class="modal fade" id="oppgave_8_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 8</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_3.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_3.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Løsning Modal -->
+<div class="modal fade" id="losning_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Løsning</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=#"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Litt oppfriskning fra kapitel 3</h1>
+    </div>
+        
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Direkte kostnader</strong> </p>
+            <p style="text-align: left;">
+                <strong>Direkte kostnader</strong> er utgifter som kan kobles direkte og økonomisk forsvarlig til produksjonen av 
+                én spesifikk vare, tjeneste eller prosjekt, som for eksempel råmaterialer (stoff, mel) 
+                og direkte lønn til de som lager varen; de varierer med produksjonsvolumet og er enklere 
+                å spore enn indirekte kostnader (som husleie). 
+                <br>
+                <br>
+                <strong>Eksempler på direkte kostnader:</strong>
+                <ul>
+                    <li><strong>Materialer:</strong> Trevirke for møbler, stål for sykler, eller gummi for dekk.</li>
+                    <li><strong>Direkte lønn:</strong> Lønn til ansatte som jobber direkte med produksjonen.</li>
+                    <li><strong>Frakt:</strong> Spesifikk frakt knyttet til materialer for ett produkt. </li>
+                </ul>
+
+                <strong>Hvorfor er de viktige?</strong>
+                <ul>
+                    <li><strong>Prissetting:</strong> Hjelper med å beregne nøyaktig hva det koster å produsere én enhet.</li>
+                    <li><strong>Lønnsomhet:</strong> Viser direkte bidrag til lønnsomheten for hvert enkelt produkt.</li>
+                    <li><strong>Kalkyler:</strong> Danner grunnlaget for selvkostkalkyler, i motsetning til indirekte kostnader (f.eks. husleie) som fordeles. </li>
+                </ul>
+                <strong>Kort sagt:</strong> Direkte kostnader er de «forbruksvarene» og arbeidstimene som går rett inn i det 
+                ferdige produktet. 
+
+            </p>
+
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Indirekte kostnader</strong> </p>
+            <p style="text-align: left;">
+            <strong>Indirekte kostnader</strong> er utgifter som er nødvendige for å drive en bedrift, 
+            men som ikke kan knyttes direkte til produksjonen av et spesifikt produkt eller en tjeneste, 
+            ofte kalt felleskostnader eller overhead. De støtter hele virksomheten og inkluderer typisk husleie, 
+            strøm, administrasjonslønn (HR, regnskap), IT, forsikringer, og markedsføring, og må fordeles på 
+            produktene for nøyaktig kostnadskalkyle. 
+            <br>
+            <br>
+            <strong>Kjennetegn ved indirekte kostnader</strong>
+            <ul>
+                <li>Ikke direkte sporbare: Kan ikke enkelt spores til ett enkelt produkt, i 
+                    motsetning til direkte kostnader (f.eks. råmaterialer).</li>
+                <li>Støtter hele driften: Dekker fellesfunksjoner som administrasjon, salg, og vedlikehold.</li>   
+                <li>Må fordeles: Må allokeres på ulike produkter eller avdelinger for å få et fullstendig kostnadsbilde. </li>
+            </ul>
+
+            <strong>Eksempler på indirekte kostnader</strong>
+            <ul>
+                <li>Lokaler: Husleie, oppvarming, strøm til kontor/fabrikk.</li>
+                <li>Lønn: Lønn til ledelse, HR, regnskap, IT-avdeling, og vaktmestere.</li>
+                <li>Administrative utgifter: Forsikringer, kontorrekvisita, telefon, internett, og programvare.</li>
+                <li>Markedsføring og salg: Generelle kampanjer.</li>
+                <li>Andre: Renter, avskrivninger. </li>
+            </ul>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Hva er kostnadsfordeling?</strong> </p>
+            <p style="text-align: left;">
+              <strong>Kostnadsfordeling</strong> er prosessen med å tildele <strong>indirekte kostnader</strong> (som lønn til administrasjon, husleie, strøm) 
+              til spesifikke produkter, avdelinger, prosjekter eller kostnadsobjekter.
+
+              <strong>Hvorfor er det viktig?</strong>
+              <ul>
+                <li><strong>Nøyaktig prisberegning:</strong> Sørger for at prisen på et produkt dekker alle kostnader, ikke bare de direkte.</li>
+                <li><strong>Bedre beslutningstaking:</strong> Gir innsikt i hvilke avdelinger, produkter eller tjenester som er mest (eller minst) lønnsomme.</li>
+                <li><strong>Kontroll:</strong> Hjelper bedrifter med å identifisere kostnadsdrivere og finne områder for effektivisering.</li>
+              </ul>
+            </p>
+
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Kostnadsfordeling: Hva er tilleggssats?</strong> </p>
+            <p style="text-align: left;">
+              En <strong>tilleggssats</strong> er en kalkulert sats (enten et kronebeløp eller en prosentsats) som brukes for å 
+              beregne hvor stor del av de <strong>indirekte kostnadene</strong> (kostnader som ikke direkte kan knyttes til 
+              ett spesifikt produkt, f.eks. husleie, strøm til fabrikken, eller administrasjonslønn) 
+              som skal belastes et bestemt produkt eller en tjeneste. 
+
+              <ul>
+                <li><strong>Formål:</strong> Å fordele indirekte kostnader på en mest mulig nøyaktig måte basert 
+                  på en relevant fordelingsnøkkel (f.eks. antall arbeidstimer, antall maskintimer, eller mengde materialer).</li>
+                <li><strong>Beregning:</strong> Formelen er typisk: (Totale indirekte kostnader) / (Total mengde fordelingsnøkkel). </li>
+              </ul>
+            </p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Kostnadsfordeling: Hva er normalsats?</strong> </p>
+            <p style="text-align: left;">
+            En <strong>normalsats</strong> er en form for tilleggssats som er fastsatt på forhånd (budsjettert) 
+            basert på normal eller budsjettert aktivitet over en periode. Den brukes i 
+            såkalt normalkalkulasjon. 
+            <ul>
+              <li><strong>Formål:</strong> Å unngå at produktkostnadene svinger kraftig fra måned til måned på grunn av sesongvariasjoner 
+                eller midlertidige endringer i 
+                aktivitetsnivået. Ved å bruke en "normal" sats, får man mer stabile og forutsigbare produktkostnader.</li>
+            </ul>
+            </p>
+
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Kostnadsfordeling: Hvilken er forskjellen mellom tilleggssats og normalsats?</strong> </p>
+            <p style="text-align: left;">
+              <strong>Kort forklart:</strong>
+              <ul>
+                <li><strong>Normalsats:</strong> Kostnaden for direkte ressurser (materialer, arbeid).</li>
+                <li><strong>Tilleggssats: </strong>Beregnet tillegg for indirekte kostnader (fellesutgifter) som legges oppå normalsatsen. </li>
+              </ul>
+
+              <strong>Eksempel:</strong>
+              <ul>
+                <li><strong>Normalsats (direkte):</strong> En håndverker koster 600 kr i timen (lønn + sosiale kostnader).</li>
+                <li><strong>Tilleggssats (indirekte):</strong> Bedriften legger til 20% (tilleggssats) for å dekke administrasjon, husleie, etc..</li>
+                <li><strong>Total sats:</strong> 600 kr (normalsats) + 120 kr (20% tillegg) = 720 kr per time.</li>
+              </ul>
+
+            </p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Driftsregnskap: Hva er bidgrasmetoden?</strong> </p>
+            <p style="text-align: left;">
+            
+            <strong>Bidragsmetoden</strong> er en prisings- og kalkulasjonsmetode som brukes når markedsprisen er 
+            gitt (f.eks. pga. konkurranse). Metoden fokuserer på dekningsbidraget, 
+            som er salgsprisen minus de variable kostnadene (innkjøpspris, direkte kostnader), og dette overskuddet skal dekke faste kostnader (husleie, lønn) og gi fortjeneste. Den hjelper bedrifter å vurdere om et salg er lønnsomt på kort sikt (prisen må dekke variable kostnader), og på lang sikt (alle kostnader må dekkes). 
+            
+            <strong>Hvordan det fungerer.</strong>
+            <ol>
+              <li><strong>Utgangspunkt:</strong> Markedsprisen (prisen kunden er villig til å betale, eller konkurrentenes pris).</li>
+              <li><strong>Trekk fra variable kostnader:</strong> Trekk fra kostnader som endrer seg med salget (f.eks. innkjøp av varer, frakt).</li>
+              <li><strong>Resultat = Dekningsbidrag (DB):</strong> Det som er igjen, bidrar til å dekke faste kostnader og gi fortjeneste.</li>
+              <li><strong>Lønnsomhetsvurdering:</strong></li>
+              <ol type="a">
+                <li><strong>Kort sikt:</strong> Prisen må være høyere enn de variable kostnadene (DB > 0) for 
+                  at det skal være verdt å selge, selv om det ikke dekker faste kostnader.</li>
+                <li><strong>Lang sikt:</strong> Summen av dekningsbidragene fra alle produkter må 
+                    dekke de faste kostnadene og gi overskudd for at bedriften skal være lønnsom.</li>
+              </ol>
+            </ol>
+
+            <strong>Eksempel</strong>
+            <ul>
+              <li>Produkt A: Innkjøpspris 100 kr (variabel), Salgspris (uten mva) 150 kr.</li>
+              <li>Dekningsbidrag: 150 kr (salgspris) - 100 kr (variabel) = 50 kr.</li>
+              <li>De 50 kronene bidrar til å dekke husleie, strøm, lønn osv., og til fortjeneste. </li>
+            </ul>
+
+            <strong>Hvorfor bruke metoden?</strong>
+            <ul>
+              <li>Markedsbasert prising: Ideell når prisen bestemmes av markedet, ikke bedriften.</li>
+              <li>Beslutningsstøtte: Hjelper med å avgjøre om man skal selge et produkt, selv om det ikke 
+                dekker alle kostnader alene (f.eks. i perioder med ledig kapasitet).</li>
+              <li>
+                  Forskjellen fra selvkostmetoden: Bidragsmetoden ser på produkter individuelt for å se deres bidrag, 
+                  mens selvkostmetoden fordeler alle (faste og variable) kostnader på hvert produkt.
+              </li>
+            </ul>
+            </p>
+
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Driftsregnskap: Hva er selvkostmetoden?</strong> </p>
+            <p style="text-align: left;">
+              
+              Selvkostmetoden er en kalkulasjonsmetode for å finne totalprisen for et produkt eller en tjeneste ved 
+              å summere <strong>alle direkte og indirekte kostnader</strong> (råvarer, arbeid, strøm, husleie etc.) 
+              samt en fortjeneste, slik at prisen dekker alt og gir overskudd. 
+              Metoden brukes for å sikre at prissettingen er lønnsom og dekker alle utgifter, fra innkjøp til 
+              ferdig produkt, i motsetning til bidragsmetoden som kun ser på variable kostnader. 
+              
+              <strong>Hovedkomponenter i en selvkostkalkyle:</strong>
+
+              <ul>
+                <li><strong>Innkjøpspris/Direkte kostnader:</strong> Selve prisen for varen, pluss frakt, toll og andre direkte utgifter.</li>
+                <li><strong>Indirekte kostnader:</strong> Faste og variable kostnader som er nødvendige for drift, men ikke knyttet til ett enkelt produkt, som husleie, strøm, rengjøring, lønn til administrasjon. Disse fordeles på produktene.
+              </li>
+                <li><strong>Fortjeneste:</strong> Et påslag (prosentvis) som legges til kostnadene for å sikre lønnsomhet.</li>
+                <li><strong>Merverdiavgift (MVA):</strong> Legges ofte til slutt for å få den endelige salgsprisen kunden betaler. </li>
+              </ul>
+
+              <strong>Hvorfor bruke selvkostmetoden?</strong>
+
+              <ul>
+                <li><strong>Sikkerhet:</strong> Gir trygghet for at alle kostnader er dekket, spesielt i bransjer med mange ulike kostnadstyper.
+              </li>
+                <li><strong>Prissetting:</strong> Sikrer at salgsprisen er satt ut fra en full kostnadsbase, noe som er viktig for lønnsomheten.
+              </li>
+                <li><strong>Totaloversikt:</strong> Gir en komplett oversikt over kostnadene knyttet til produksjon, fra A til Å.
+                </li>
+              </ul>
+
+              
+
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Questions 1 and 2 -->
+    <div class="container questions-section">
+
+        <div class="col-spacer"></div>
+
+        <!-- Question 1 -->
+        <div id="ch2_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q1.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 1:</legend>
+
+                    <p class="card-text">
+                        Hvilken av de neste kostnadene er ikke en direkte kostnad? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q1.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q1.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="ch2_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q2.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 2:</legend>
+
+                    <p class="card-text">
+                        Hvilken av de neste kostnadene er ikke en indirekte kostnad? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q2.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q2.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-spacer"></div>
+
+    </div>
+
+    <!-- Questions 3 and 4 -->
+    <div class="container questions-section">
+
+        <div class="col-spacer"></div>
+
+        <!-- Question 3 -->
+        <div id="ch2_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q3.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 3:</legend>
+
+                    <p class="card-text">
+                        Normalsatsen (direkte) er 700 kr per time. Tilleggssatsen (indirekte) er 25 %. 
+                        Hva er den totale satsen? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q3.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q3.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="ch2_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q4.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 4:</legend>
+
+                    <p class="card-text">
+                        Hvilken av de følgende setningene er riktig? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q4.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q4.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-spacer"></div>
+
+    </div>
+        
+</section>
+
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+    <div class="container" style="display:block;">
+        <h1>Normalkostregnskapet</h1>
+        <h2>Budsjett – Innkalkulert - Virkelig</h2>
+        <p>
+            <strong>Budsjett:</strong> Før en periode tar til kan man sette opp et budsjett for en normal periode som viser de inntekter, direkte og indirekte kostnader som man kan påregne gitt en normal aktivitet i bedriften
+            
+            <strong>Innkalkulert, virkelig: </strong>
+            <ul>
+              <li>I løpet av perioden registrerer man virkelige inntekter og virkelige direkte kostnader fortløpende i driftsregnskapet,</li>
+              <li>mens indirekte kostnader må innkalkuleres før endelig driftsregnskap er avsluttet.</li>
+            </ul>
+   
+        </p>
+        <h2>Normalkostregnskap</h2>
+        <p>
+          Et såkalt normalkostregnskap baserer seg på:
+          <ul>
+            <li>Virkelige salgsinntekter og virkelige direkte kostnader som registreres fortløpende i driftsregnskapet</li>
+            <li>Innkalkulerte indirekte kostnader baseres på normalsatser (jfr. kap 3):</li>
+              \[ \text{Nomalsats}=  \dfrac{\text{Budsjettert normal indirekte kostnad}}{\text{Budsjettert normalt fordelingsgrunnlag}}  \] 
+          </ul>
+          
+          som multipliseres med virkelig aktivitet som gir oss normalkost:
+            \[ \text{Normalkost}=\text{Normalstas} \cdot \text{Virkelig aktivitet}  \] 
+        </p>
+        <h2>Hva er normalsatser?</h2>
+        <p>
+          "Normalsatser" (eller normaltilldelningssatser) brukes i bedriftsøkonomi for å 
+          fordele <strong>indirekte kostnader</strong> (som husleie, administrasjon, strøm) på 
+          produkter eller tjenester basert på en forventet aktivitetsnivå, slik at man får en jevn kostnad per enhet.
+          
+          <strong>I bedriftsøkonomi (Kalkulasjon):</strong>
+
+          <ul>
+            <li>Hva det er: En budsjettert tilleggssats (i kroner eller prosent) for indirekte kostnader.</li>
+            <li>Hensikt: Å fordele felles kostnader (som ikke er direkte knyttet til én vare) på de 
+          produktene som skaper disse kostnadene, basert på et normalt produksjons- eller aktivitetsnivå.</li>
+          <li>(*) Eksempel: En fabrikk budsjetterer med 100 000 kr i husleie for året <strong>(indirekte kostnad)</strong> og 
+          forventer å produsere 10 000 timer. Da blir normalsatsen 10 kr per produksjonstime (100 000 kr / 10 000 timer).</li>
+          </ul>
+        </p>
+    </div>
+
+    <div class="container">
+
+        <div class="box_img">
+            <h2 style="text-align: center;">Normalkalkulasjon indirekte kostnader </h2>
+            <p style="text-align: left;"> 
+              Normalkalkulasjon av <strong>indirekte kostnader</strong> innebærer at alle indirekte kostnader, 
+              faste så vel som variable, vil variere med den virkelige aktiviteten
+              <ul>
+                <li>En normalsats kan betraktes som en kalkulert normal enhetskostnad </li>
+                <li>Ved normalkalkulasjon antar man at enhetskostnaden er konstant og 
+              uavhengig av aktivitet / produksjon – dermed vokser <strong>indirekte kostnader </strong>
+              proporsjonalt med aktiviteten / produksjonen</li>
+              </ul>
+              (*) Det betyr at man i normalkostregnskapet i realiteten behandler også faste kostnader som om de var variable
+
+            </p>
+        </div>
+        <div class="box_img">
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/k2_1.svg" alt=""/>
+        </div>
+
+    </div>
+
+    <div class="container" style="display:block;">
+        <h2>Selvkostmetoden – Bidragsmetoden</h2>
+        <p>
+          Et normalkostregnskap etter <strong>bidragsmetoden</strong> inkluderer kun <strong>variable kostnader</strong>, dvs.:
+          <ul>
+            <li>Direkte kostnader</li>
+            <li>Innkalkulerte indirekte variable kostnader</li>
+          </ul>
+          og får fram <strong>dekningsbidraget</strong>
+          <br>
+          <br>
+          Et normalkostregnskap etter <strong>selvkostmetoden</strong> inkluderer både <strong>variable og faste kostnader</strong>, dvs.:
+          <ul>
+            <li>Direkte kostnader</li>
+            <li>Innkalkulerte indirekte variable kostnader</li>
+            <li>Innkalkulerte indirekte faste kostnader  </li>
+          </ul>
+          og får fram kalkulert resultat, såkalt <strong>produktresultat</strong>
+        </p> 
+    </div>
+
+    <div class="container">
+
+        <div class="box_img">
+            <h2 style="text-align: center;">Hva er dekningsdifferanse?  </h2>
+            <p style="text-align: left;"> 
+              Når driftsregnskapet er endelig avsluttet får man fram virkelige indirekte kostnader – 
+              som kan avvike fra de innkalkulerte
+
+              Avvik mellom en innkalkulert indirekte kostnad og den virkelige indirekte kostnaden kaller 
+              vi for en dekningsdifferanse:
+                \[ \text{Dekningsdifferanse}=\text{Innkalkulert}-\text{Virkelig} \] 
+              
+              Dersom:
+                <ul>
+                  <li>Innkalkulerte \( > \) Virkelige: Overdekning, dvs. innkalkulerte vil mer enn dekke inn de virkelige</li>
+                  <li>Innkalkulerte \(\leq \) Virkelige: Underdekning, dvs. innkalkulerte vil ikke dekke inn de virkelige fullt ut</li>
+                </ul>
+            </p>
+        </div>
+        <div class="box_img">
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/k2_2.svg" alt=""/>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="box_img">
+            <h2 style="text-align: center;">Produktresultat - Produksjonsresultat</h2>
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/k2_6.svg" alt=""/>
+        </div>
+        <div class="box_img" style="background-color: #9cd5c0;">
+            
+        </div>
+
+    </div>
+
+    
+
+
+</section>
+
+<!-- Section 3 -->
+<section class="section_1" id="section3">
+    <div class="container" style="display:block;">
+        <h1>Avviksanalyse</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="box_img">
+            <h2 style="text-align: center;">Volumavvik faste indirekte kostnader </h2>
+            <p style="text-align: left;"> 
+              Normalkalkulasjon innebærer at innkalkulerte faste kostnader vokser proporsjonalt med virkelig aktivitet, dvs. 
+              behandles som om det er en variabel kostnad:
+
+               \[ \text{Normalkost fast kostnad} = \text{Normalsats} \cdot \text{Virkelig aktivitet} \]
+              
+            Budsjetterte faste kostnader er derimot en fast kostnad basert på en gitt budsjettert normal aktivitet:
+
+              \begin{aligned}
+                \text{Normalbudsjett fast kostnad}
+                &= \text{Normalsats} \cdot \\
+                &\quad \text{Budsjettert normal aktivitet}
+                \end{aligned}
+
+            Det betyr at det vil kunne oppstå et avvik mellom innkalkulerte og budsjetterte faste 
+            indirekte kostnader som følge av at virkelig aktivitet (volum) avviker fra budsjettert normal aktivitet (volum):
+              \begin{aligned}
+                \text{Volumavvik}
+                &= \text{Normalsats} \cdot \\
+                &\quad (\text{Virkelig aktivitet} – \text{Budsjettert normal aktivitet})
+              \end{aligned}
+            </p>
+        </div>
+        <div class="box_img">
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/k2_3.svg" alt=""/>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="box_img">
+            <h2 style="text-align: center;">Intet volumavvik variable indirekte kostnader  </h2>
+            <p style="text-align: left;"> 
+              Normalkalkulasjon innebærer at innkalkulerte variable kostnader vokser proporsjonalt med virkelig aktivitet idet:
+              \[ \text{Normalkost variabel kostnad} = \text{Normalsats} \cdot \text{Virkelig aktivitet } \]
+                
+              Når det gjelder budsjettet for variable indirekte kostnader så er det vanlig å legge til grunn såkalt fleksibelt 
+              budsjett, dvs. at man budsjetterer med en gitt variabel enhetskostnad (= Normalsats) 
+              som innebærer at budsjettert variabel kostnad vokser proporsjonalt med virkelig aktivitet:
+
+                \[ \text{Normalbudsjett variabel kostnad} = \text{Normalsats} \cdot \text{Virkelig aktivitet } \]
+
+              Det betyr at med fleksibelt budsjett for variable indirekte kostnader så vil det ikke kunne oppstå et avvik mellom innkalkulerte og budsjetterte variable indirekte
+
+            </p>
+        </div>
+        <div class="box_img">
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/k2_4.svg" alt=""/>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="box_img">
+            <h2 style="text-align: center;">Forbruksavvik indirekte kostnader  </h2>
+            <p style="text-align: left;"> 
+              Ettersom de virkelige indirekte kostnadene kan avvike fra de budsjetterte indirekte kostnadene så kan det oppstå et forbruksavvik:
+                \[ \text{ Forbruksavvik} = \text{Budsjetterte} - \text{Virkelige } \]
+              Forbruksavvik kan oppstå for både variable og faste indirekte kostnader og kan skyldes:
+              <ul>
+                <li>Det er forbrukt større eller mindre mengder av produksjonsfaktorene enn forutsatt</li>
+                <li>Prisendringer på produksjonsfaktorene </li>
+                <li>Den indirekte variable kostnadsstrukturen er ikke lineær slik som antatt</li>
+                <li>Det har funnet sted en substitusjon mellom de variable og faste indirekte kostnadene i perioden</li>
+              </ul>
+              
+            </p>
+        </div>
+        <div class="box_img">
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/k2_5.svg" alt=""/>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Section 4 -->
+<section class="section_2" id="section4">
+    <div class="container" style="display:block;">
+        <h1>Eksempel normalkostregnskap om selvkostmetoden og avviksanalyse</h1>
+    </div>
+
+    <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+        <div class="container" id="table1">
+            <div class="boa205_table">
+                <div class="box"> 
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+                        <form method="POST" action="">
+                            {{ form_boa205_ch2_t1.csrf_token }}
+                            <div class="boa205_table_button">
+                                <div class="box">
+                                    {{ form_boa205_ch2_t1.direkte_material_normal.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t1.direkte_material_normal(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2_t1.faste_material_budsjett.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t1.faste_material_budsjett(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2_t1.indirekte_materialkostnader_faste_normalsatser.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t1.indirekte_materialkostnader_faste_normalsatser(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2_t1.indirekte_tilvirkningskostnader_faste_normalsatser.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t1.indirekte_tilvirkningskostnader_faste_normalsatser(class="form-control form-control-lg") }}
+                                </div>
+                            </div>
+
+
+                            </br>
+                            <div class="form-group">
+                                {{ form_boa205_ch2_t1.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                            </div>
+                        </form> 
+                        <br>
+                        <br>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Salgsinntekt</th>
+                                      <td class="text-end">kr 900000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte material</th>
+                                        <td class="text-end">kr {{direkte_material_normal}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte lønn</th>
+                                        <td class="text-end">kr 110000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Faste material budsjett</th>
+                                      <td class="text-end">kr {{faste_material_budsjett}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Faste tilvirkning budsjett</th>
+                                        <td class="text-end">kr 25000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Faste administrasjon budsjett</th>
+                                        <td class="text-end">kr 38000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="text-end">Faste</th>
+                                    <th scope="col" class="text-end">Variable</th>
+                                    <th scope="col" class="text-end">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">Indirekte materialkostnader</th>
+                                    <td class="text-end">{{indirekte_materialkostnader_faste_normalsatser}}</td>
+                                    <td class="text-end">0.1</td>
+                                    <td class="text-end">0.18</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte tilvirkningskostnader</th>
+                                        <td class="text-end">{{indirekte_tilvirkningskostnader_faste_normalsatser}}</td>
+                                        <td class="text-end">0.4</td>
+                                        <td class="text-end">0.6</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte salg og adm</th>
+                                        <td class="text-end">0.05</td>
+                                        <td class="text-end">0.05</td>
+                                        <td class="text-end">0.1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="text-end">Satser</th>
+                                    <th scope="col" class="text-end">Normal</th>
+                                    <th scope="col" class="text-end">Virkelig</th>
+                                    <th scope="col" class="text-end">Dekningsdiff</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">Salgsinntekter</th>
+                                    <td class="text-end"></td>
+                                    <td class="text-end">{{salgsinntekt_normal}}</td>
+                                    <td class="text-end">{{salgsinntekt_normal}}</td>
+                                    <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte Material</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{direkte_material_normal}}</td>
+                                        <td class="text-end">{{direkte_material_normal}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte Lønn</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{direkte_lonn_normal}}</td>
+                                        <td class="text-end">{{direkte_lonn_normal}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable materialkostnader</th>
+                                        <td class="text-end">{{indirekte_materialkostnader_variable_normalsatser}}</td>
+                                        <td class="text-end">{{IVMn}}</td>
+                                        <td class="text-end">40000</td>
+                                        <td class="text-end">{{IVMD}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte faste materialkostnader</th>
+                                    <td class="text-end">{{indirekte_materialkostnader_faste_normalsatser}}</td>
+                                    <td class="text-end">{{IFMn}}</td>
+                                    <td class="text-end">30000</td>
+                                    <td class="text-end">{{IFMD}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable tilvirkningskostnader</th>
+                                    <td class="text-end">{{indirekte_tilvirkningskostnader_variable_normalsatser}}</td>
+                                    <td class="text-end">{{IVTn}}</td>
+                                    <td class="text-end">55000</td>
+                                    <td class="text-end">{{IVTD}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte faste tilvirkningskostnader</th>
+                                    <td class="text-end">{{indirekte_tilvirkningskostnader_faste_normalsatser}}</td>
+                                    <td class="text-end">{{IFTn}}</td>
+                                    <td class="text-end">20000</td>
+                                    <td class="text-end">{{IFTD}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tilvirkningskost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{Tn}}</td>
+                                        <td class="text-end">{{Tv}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable kostnader salg og adm</th>
+                                        <td class="text-end">{{indirekte_administrasjon_variable_normalsatser}}</td>
+                                        <td class="text-end">{{IVAn}}</td>
+                                        <td class="text-end">35000</td>
+                                        <td class="text-end">{{IVAD}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte  faste kostnader salg og adm</th>
+                                        <td class="text-end">{{indirekte_administrasjon_faste_normalsatser}}</td>
+                                        <td class="text-end">{{IFAn}}</td>
+                                        <td class="text-end">30000</td>
+                                        <td class="text-end">{{IFAD}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Selvkost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{selvkost_n}}</td>
+                                        <td class="text-end">{{selvkost_v}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Produktresultat</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{produktresultat_n}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Dekningsdifferanser</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{dekningsdifferanser}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{dekningsdifferanser}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Produksjonsresultat</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{produksjonresultat_n}}</td>
+                                        <td class="text-end">{{produksjonresultat_v}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <p><strong>Avviksanalyse. Materialavdelingen. Variable</strong></p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col" class="text-end">1</th>
+                                    <th scope="col" class="text-end">2</th>
+                                    <th scope="col" class="text-end">3</th>
+                                    <th scope="col" class="text-end">Volumavvik</th>
+                                    <th scope="col" class="text-end">Forbrukeravvik</th>
+                                    <th scope="col" class="text-end">Totalavvik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Innkalkulert</th>
+                                      <td class="text-end" class="fw-normal">Fleksibelt budsjett</td>
+                                      <td class="text-end" class="fw-normal">Virkelig</td>
+                                      <td class="text-end" class="fw-normal">1-2</td>
+                                      <td class="text-end" class="fw-normal">2-3</td>
+                                      <td class="text-end" class="fw-normal">1-3</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">{{IVMn}}</th>
+                                      <td class="text-end" class="fw-normal">{{IVMn}}</td>
+                                      <td class="text-end" class="fw-normal">40000</td>
+                                      <td class="text-end" class="fw-normal">-</td>
+                                      <td class="text-end" class="fw-normal">{{forbruk_avvik_m_v}}</td>
+                                      <td class="text-end" class="fw-normal">{{forbruk_avvik_m_v}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <p><strong>Avviksanalyse. Materialavdelingen. Faste</strong></p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col" class="text-end">1</th>
+                                    <th scope="col" class="text-end">2</th>
+                                    <th scope="col" class="text-end">3</th>
+                                    <th scope="col" class="text-end">Volumavvik</th>
+                                    <th scope="col" class="text-end">Forbrukeravvik</th>
+                                    <th scope="col" class="text-end">Totalavvik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Innkalkulert</th>
+                                      <td class="text-end" class="fw-normal">Budsjett</td>
+                                      <td class="text-end" class="fw-normal">Virkelig</td>
+                                      <td class="text-end" class="fw-normal">1-2</td>
+                                      <td class="text-end" class="fw-normal">2-3</td>
+                                      <td class="text-end" class="fw-normal">1-3</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">{{IFMn}}</th>
+                                      <td class="text-end" class="fw-normal">{{faste_material_budsjett}}</td>
+                                      <td class="text-end" class="fw-normal">30000</td>
+                                      <td class="text-end" class="fw-normal">{{volumn_avvik_m_f}}</td>
+                                      <td class="text-end" class="fw-normal">{{forbruk_avvik_m_f}}</td>
+                                      <td class="text-end" class="fw-normal">{{total_avvik_m_f}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions 5 and 6 -->
+    <div class="container questions-section">
+
+        <div class="col-spacer"></div>
+
+        <!-- Question 5 -->
+        <div id="ch2_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q5.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 5:</legend>
+
+                    <p class="card-text">
+                        Når direkte materialkostnad er kr 300 000, fast materialbudsjett er kr 25 000, indirekte materialkostnader (faste normalsatser) er 8 %, 
+                        og indirekte tilvirkningskostnader (faste normalsatser) er 20 %, hva er den totale dekningsdifferansen? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q5.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q5.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div id="ch2_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q6.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 6:</legend>
+
+                    <p class="card-text">
+                        Når direkte materialkostnad er kr 300 000, fast materialbudsjett er kr 25 000, indirekte materialkostnader (faste normalsatser) er 8 %, 
+                        og indirekte tilvirkningskostnader (faste normalsatser) er 20 %, hva er den variable materialavdelingen forbrukeavviken?
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q6.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q6.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-spacer"></div>
+
+    </div>
+
+    <!-- Questions 7 and 8 -->
+    <div class="container questions-section">
+
+        <div class="col-spacer"></div>
+
+        <!-- Question 7 -->
+        <div id="ch2_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q7.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 7:</legend>
+
+                    <p class="card-text">
+                        Når direkte materialkostnad er kr 300 000, fast materialbudsjett er kr 25 000, indirekte materialkostnader (faste normalsatser) er 8 %, 
+                        og indirekte tilvirkningskostnader (faste normalsatser) er 20 %, hva er den faste materialavdelingen forbrukeavviken? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q7.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q7.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Question 8 -->
+        <div id="ch2_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q8.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 8:</legend>
+
+                    <p class="card-text">
+                        Når direkte materialkostnad er kr 300 000, fast materialbudsjett er kr 25 000, indirekte materialkostnader (faste normalsatser) er 8 %, 
+                        og indirekte tilvirkningskostnader (faste normalsatser) er 20 %, hva er den faste materialavdelingen forbrukeavviken? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q8.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q8.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-spacer"></div>
+
+    </div>
+
+</section>
+
+<!-- Section 5 -->
+<section class="section_1" id="section5">
+    <div class="container" style="display:block;">
+        <h1>Beholdningsendringer og virkninger på resultat</h1>
+    </div>
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Varer i arbeid og Ferdigvarer</strong> </p>
+            <p style="text-align: left;">
+                Varer i arbeid (VIA) - Produkter som er kommet i forskjellige ferdigstillings-grader ved de enkelte bearbeidings-steder 
+                ved utløpet av en periode
+                <br>
+                <br>
+                Dvs. produkter man har påbegynt å bearbeide, men som ikke er ferdig tilvirket 
+                <br>
+                <br>
+                Ferdigvarer (FV) - Produkter som er ferdig tilvirket men ikke solgt
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Økning i varelagre i Normalkostregnskapet </strong> </p>
+            <p style="text-align: left;">
+            Skal driftsregnskapet vise korrekt resultat må kostnadene knyttet til å produsere produktene henføres til den perioden 
+            produktene selges og salgsinntektene oppstår
+            <br>
+            <br>
+            Beholdningsøkning av VIA og FV innebærer at bedriften har pådratt seg kostnader i 
+            perioden knyttet til å bearbeide og ferdigstille produkter hvis salgsinntekter først 
+            vil oppstå i en seinere periode - derfor bør disse kostnadene ikke belastes i perioden, 
+            men henføres til en seinere periode hvor varene selges og salgsinntekten oppstår 
+            <br>
+            <br>
+            Beholdningsøkning av VIA  og FV føres derfor til fradrag i kostnaden
+            </p>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Reduksjon av varelagre i Normalkostregnskapet </strong> </p>
+            <p style="text-align: left;">
+                Beholdningsreduksjon av VIA og FV innebærer derimot at bedriften selger produkter 
+                som bedriften på et tidligere tidspunkt har pådratt seg kostnader knyttet til å bearbeide og 
+                ferdigstille - derfor bør disse kostnadene belastes i perioden på tross av at varene er bearbeidet 
+                og tilvirket i tidligere periode(r)
+                <br>
+                <br>
+                Beholdningsreduksjon av VIA og FV føres derfor som tillegg til kostnaden
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Varelagre: Selvkost- vs bidragsmetoden</strong> </p>
+            <p style="text-align: left;">
+              I selvkostmetoden vurderes beholdningsendringen til tilvirkningskost. Dvs. både faste og variable kostnader
+              <br>
+              <br>
+              I bidragsmetoden vurderes beholdningen til tilvirkningsmerkost. Dvs. kun variable kostnader
+              <br>
+              <br>
+              Fordi tilvirkningskost er større enn tilvirkningsmerkost vil 
+              endringer i varelagre gi større utslag ved bruk av selvkostmetoden enn ved bruk av bidragsmetoden 
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Section 6 -->
+<section class="section_2" id="section4">
+    <div class="container" style="display:block;">
+        <h1>Eksempel: Beholdningsendringer</h1>
+    </div>
+    <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+        <div class="container" id="table2">
+            <div class="boa205_table">
+                <div class="box"> 
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+                        <form method="POST" action="">
+                            {{ form_boa205_ch2_t2.csrf_token }}
+                            <div class="boa205_table_button">
+                                <div class="box">
+                                    {{ form_boa205_ch2_t2.lagerreduksjon_selv.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t2.lagerreduksjon_selv(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2_t2.ferdigvaren_selv.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t2.ferdigvaren_selv(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2_t2.lagerreduksjon_bidra.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t2.lagerreduksjon_bidra(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2_t2.ferdigvaren_bidra.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2_t2.ferdigvaren_bidra(class="form-control form-control-lg") }}
+                                </div>
+                            </div>
+
+
+                            </br>
+                            <div class="form-group">
+                                {{ form_boa205_ch2_t2.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                            </div>
+                        </form> 
+                        <br>
+                        <br>
+                        <p><strong>Virkelige kostnaden:</strong></p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Salgsinntekt</th>
+                                      <td class="text-end">kr 81000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte material</th>
+                                        <td class="text-end">kr 17000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte lønn</th>
+                                        <td class="text-end">kr 27000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable kostnader materialavdelingen</th>
+                                        <td class="text-end">kr 1000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte faste kostnader materialavdelingen</th>
+                                        <td class="text-end">kr 2500000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable kostnader tilvirkningsavdelingen</th>
+                                        <td class="text-end">kr 8000000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte faste kostnader tilvirkningsavdelingen</th>
+                                        <td class="text-end">kr 11500000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte faste kostnader administrasjon</th>
+                                        <td class="text-end">kr 6850000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="text-end">Faste</th>
+                                    <th scope="col" class="text-end">Variable</th>
+                                    <th scope="col" class="text-end">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">Indirekte materialkostnader</th>
+                                    <td class="text-end">0.05</td>
+                                    <td class="text-end">0.15</td>
+                                    <td class="text-end">0.2</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte tilvirkningskostnader</th>
+                                        <td class="text-end">0.3</td>
+                                        <td class="text-end">0.45</td>
+                                        <td class="text-end">0.75</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte salg og adm</th>
+                                        <td class="text-end">0</td>
+                                        <td class="text-end">0.1</td>
+                                        <td class="text-end">0.1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <p><strong>Selvkostmetoden</strong></p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="text-end">Satser</th>
+                                    <th scope="col" class="text-end">Kalkulert</th>
+                                    <th scope="col" class="text-end">Virkelig</th>
+                                    <th scope="col" class="text-end">Dekningsdiff</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">Salgsinntekter</th>
+                                    <td class="text-end"></td>
+                                    <td class="text-end">{{salgsinntekt_normal}}</td>
+                                    <td class="text-end">{{salgsinntekt_normal}}</td>
+                                    <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte Material</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{direkte_material_normal}}</td>
+                                        <td class="text-end">{{direkte_material_normal}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte Lønn</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{direkte_lonn_normal}}</td>
+                                        <td class="text-end">{{direkte_lonn_normal}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte materialkostnader</th>
+                                        <td class="text-end">{{indirekte_materialkostnader_totale_normalsatser}}</td>
+                                        <td class="text-end">{{ITMs}}</td>
+                                        <td class="text-end">3500000</td>
+                                        <td class="text-end">{{DM_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte tilvirkningskostnader</th>
+                                        <td class="text-end">{{indirekte_tilvirkningskostnader_totale_normalsatser}}</td>
+                                        <td class="text-end">{{ITTs}}</td>
+                                        <td class="text-end">19500000</td>
+                                        <td class="text-end">{{DT_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Periods Tilvirkningskost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{Ts}}</td>
+                                        <td class="text-end">{{Tv}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Beholdningsendring varer i arbeid</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{lagerreduksjon_selv}}</td>
+                                        <td class="text-end">{{lagerreduksjon_selv}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tilvirkningskost ferdigvarer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{T_ferdiger_s}}</td>
+                                        <td class="text-end">{{T_ferdiger_v}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Beholdningsendring ferdigvarer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">-{{ferdigvaren_selv}}</td>
+                                        <td class="text-end">-{{ferdigvaren_selv}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tilvirkningskost salgte varer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{T_salgte_s}}</td>
+                                        <td class="text-end">{{T_salgte_v}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte kostnader salg og adm</th>
+                                        <td class="text-end">{{indirekte_administrasjon_totale_normalsatser}}</td>
+                                        <td class="text-end">{{ITAs}}</td>
+                                        <td class="text-end">6850000</td>
+                                        <td class="text-end">{{DA_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Selvkost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{selvkost_s}}</td>
+                                        <td class="text-end">{{selvkost_v}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Produktresultat</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{produktresultat_s}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Dekningsdifferanser</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{D_s}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{D_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Produksjonsresultat</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{produksjonresultat_s}}</td>
+                                        <td class="text-end">{{produksjonresultat_v}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <p><strong>Bidragsmetoden</strong></p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="text-end">Satser</th>
+                                    <th scope="col" class="text-end">Kalkulert</th>
+                                    <th scope="col" class="text-end">Virkelig</th>
+                                    <th scope="col" class="text-end">Dekningsdiff</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <th scope="row">Salgsinntekter</th>
+                                    <td class="text-end"></td>
+                                    <td class="text-end">{{salgsinntekt_normal}}</td>
+                                    <td class="text-end">{{salgsinntekt_normal}}</td>
+                                    <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte Material</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{direkte_material_normal}}</td>
+                                        <td class="text-end">{{direkte_material_normal}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Direkte Lønn</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{direkte_lonn_normal}}</td>
+                                        <td class="text-end">{{direkte_lonn_normal}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable materialkostnader</th>
+                                        <td class="text-end">{{indirekte_materialkostnader_variable_normalsatser}}</td>
+                                        <td class="text-end">{{IVMb}}</td>
+                                        <td class="text-end">1000000</td>
+                                        <td class="text-end">{{DVM_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable tilvirkningskostnader</th>
+                                        <td class="text-end">{{indirekte_tilvirkningskostnader_variable_normalsatser}}</td>
+                                        <td class="text-end">{{IVTb}}</td>
+                                        <td class="text-end">8000000</td>
+                                        <td class="text-end">{{DVT_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tilvirkningskost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{Tb}}</td>
+                                        <td class="text-end">{{T_v_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Beholdningsendring varer i arbeid</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{lagerreduksjon_bidra}}</td>
+                                        <td class="text-end">{{lagerreduksjon_bidra}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tilvirkningskost ferdigvarer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{T_ferdiger_b}}</td>
+                                        <td class="text-end">{{T_ferdiger_v_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Beholdningsendring ferdigvarer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">-{{ferdigvaren_bidra}}</td>
+                                        <td class="text-end">-{{ferdigvaren_bidra}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Tilvirkningskost salgte varer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{T_salgte_b}}</td>
+                                        <td class="text-end">{{T_salgte_v_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte variable kostnader salg og adm</th>
+                                        <td class="text-end">{{indirekte_administrasjon_variable_normalsatser}}</td>
+                                        <td class="text-end">{{IVAb}}</td>
+                                        <td class="text-end">0</td>
+                                        <td class="text-end">{{DVA_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Salgmerkost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{salgmerkost_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Kalkulert dekningsbidrag</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{kalkulert_dekningsbidra_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Sum Dekningsdifferanser</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{sumDV_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{sumDV_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Virkelig dekningsbidrag</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{virkelig_dekningsbidrag_b}}</td>
+                                        <td class="text-end">{{virkelig_dekningsbidrag_v_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Faste kostnader materialavdelingen</th>
+                                        <td class="text-end">{{indirekte_materialkostnader_faste_normalsatser}}</td>
+                                        <td class="text-end">{{IFM_b}}</td>
+                                        <td class="text-end">2500000</td>
+                                        <td class="text-end">{{DFM}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Faste kostnader materialavdelingen</th>
+                                        <td class="text-end">{{indirekte_tilvirkningskostnader_faste_normalsatser}}</td>
+                                        <td class="text-end">{{IFT_b}}</td>
+                                        <td class="text-end">11500000</td>
+                                        <td class="text-end">{{DFT}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Faste kostander administrasjonsavdelinga</th>
+                                        <td class="text-end">{{indirekte_administrasjon_faste_normalsatser}}</td>
+                                        <td class="text-end">{{IFA_b}}</td>
+                                        <td class="text-end">6850000</td>
+                                        <td class="text-end">{{DFA}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Avvik faste kostnader</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{sumDF_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{sumDF_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Produksjonsresultat</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{produktresultat_b}}</td>
+                                        <td class="text-end">{{produktresultat_v_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions 9 and 10 -->
+    <div class="container questions-section">
+
+        <div class="col-spacer"></div>
+
+        <!-- Question 9 -->
+        <div id="ch2_q9_q10" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q9.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 9:</legend>
+
+                    <p class="card-text">
+                        Når lagerreduksjon i selvkostmetoden er kr 850 000, ferdigvarer i selvkostmetoden er kr 1 500 000, lagerreduksjon i bidragsmetoden 
+                        er kr 670 000, og ferdigvarer i bidragsmetoden er kr 1 000 000, hva er den kalkulerte selvkosten i selvkostmetoden? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q9.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q9.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Question 10 -->
+        <div id="ch2_q9_q10" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2_q10.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 10:</legend>
+
+                    <p class="card-text">
+                        Når lagerreduksjon i selvkostmetoden er kr 850 000, ferdigvarer i selvkostmetoden er kr 1 500 000, lagerreduksjon i bidragsmetoden er kr 670 000, 
+                        og ferdigvarer i bidragsmetoden er kr 1 000 000, hva er den kalkulerte produksjonsresultat i bidragsmetoden? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2_q10.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2_q10.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-spacer"></div>
+
+    </div>
+</section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+
+
+{% endblock content %}
