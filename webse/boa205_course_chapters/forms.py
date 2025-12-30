@@ -263,3 +263,98 @@ class TableForm_boa205_ch2_t2(FlaskForm):
                                  ('1100000',
                                  'kr 1 100 000')])
     submit = SubmitField('Send inn')
+
+""" Chapter 2b """
+class ModulsForm_boa205_ch2b_q1(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('desember',
+                                 'desember'),
+                                ('januar',
+                                 'januar'),
+                                ('begge måneder',
+                                 'begge måneder')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2b_q2(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('desember',
+                                 'desember'),
+                                ('januar',
+                                 'januar'),
+                                ('begge måneder',
+                                 'begge måneder')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2b_q3(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('januar',
+                                 'januar'),
+                                ('februar',
+                                 'februar'),
+                                ('begge måneder',
+                                 'begge måneder')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2b_q4(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-17629',
+                                 '-17629'),
+                                ('-17567',
+                                 '-17567'),
+                                ('-17490',
+                                 '-17490')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2b_q5(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('2000',
+                                 '2000'),
+                                ('2500',
+                                 '2500'),
+                                ('3000',
+                                 '3000')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch2b_q6(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-5650',
+                                 '-5650'),
+                                ('-5335',
+                                 '-5335'),
+                                ('-5220',
+                                 '-5220')])
+    submit = SubmitField('Send inn') 
+
+class TableForm_boa205_ch2b_t1(FlaskForm):
+    endring_varer_i_arbeid_102= SelectField("Endring varer i arbeid ordre 102",
+                       choices=[('7000',
+                                 'kr 7000'),
+                                ('7430',
+                                 'kr 7430'),
+                                ('7800',
+                                 'kr 7800')])
+    endring_ferdige_varer_101 = SelectField("Endring ferdige varer ordre 101",
+                       choices=[('105000',
+                                 'kr 105 000'),
+                                ('109500',
+                                 'kr 109 500'),
+                                 ('110000',
+                                 'kr 110 000')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ch2b_t2(FlaskForm):
+    endring_varer_i_arbeid_102= SelectField("Endring varer i arbeid ordre 102",
+                       choices=[('5500',
+                                 'kr 5500'),
+                                ('6035',
+                                 'kr 6035'),
+                                ('6500',
+                                 'kr 6500')])
+    endring_ferdige_varer_101 = SelectField("Endring ferdige varer ordre 101",
+                       choices=[('85000',
+                                 'kr 85 000'),
+                                ('88900',
+                                 'kr 88 900'),
+                                 ('95000',
+                                 'kr 95 000')])
+    submit = SubmitField('Send inn')
