@@ -24,20 +24,20 @@ from webse.boa205_course_statistics.test import (time_user_first_entry_and_first
 
 """ Information about the dates for each chapter """
 START_DATE_TEST = datetime(2025, 1, 1)
-END_DATE_TEST = datetime(2025, 12, 30)
+END_DATE_TEST = datetime(2026, 12, 30)
 START_CHAPTER1 = datetime(2025, 10, 1)
-END_CHAPTER1 = datetime(2025, 10, 30)
+END_CHAPTER1 = datetime(2026, 10, 30)
 
 """ Chapter 2a """
 START_CHAPTER2a = datetime(2025, 10, 1)
-END_CHAPTER2a = datetime(2025, 10, 30)
+END_CHAPTER2a = datetime(2026, 12, 30)
 
 """ Chapter 2a """
 START_CHAPTER2b = datetime(2025, 10, 1)
-END_CHAPTER2b = datetime(2025, 10, 30)
+END_CHAPTER2b = datetime(2026, 12, 31)
 
 START_DATE_DELETE = datetime(2025, 9, 25)
-END_DATE_DELETE = datetime(2025, 11, 29)
+END_DATE_DELETE = datetime(2025, 12, 31)
 
 """ Only to test """
 @boa205_course_statistics.route('/boa205_course/statistics_test_web', methods=['GET', 'POST'])
@@ -117,8 +117,8 @@ def statistics_test_web():
 @boa205_course_statistics.route('/boa205_course/delete_entries_web')
 @login_required
 def delete_entries_web():
-    title_mo_delete = 'boa205_ch1'
-    title_ch_delete = 'Kapitel 1. Hva er et driftsregnskap?'
+    title_mo_delete = 'boa205_ch2b'
+    title_ch_delete = 'Kapitel 2b. Hva er normalkostregnskap?'
     start_date_delete = START_DATE_DELETE
     end_date_delete = END_DATE_DELETE
 
@@ -768,3 +768,4 @@ def statistics_ch2b_last_entry_year():
     return render_template('boa205_course/statistics/ch2b/statistics_ch2b_last_entry.html', 
             current_user_all_questions_last_entry_correct_incorrect_call=current_user_all_questions_last_entry_correct_incorrect_call,
             correct=correct, incorrect=incorrect)
+
