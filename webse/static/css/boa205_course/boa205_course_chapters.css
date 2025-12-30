@@ -88,6 +88,39 @@
   text-align: left;
 }
 
+/* Table */
+.section_1 .container .boa205_table {
+  /* max-width: 1320px; */
+  background: #4a736f;
+  display: block;
+  width: 100%;
+}
+.section_1 .container .boa205_table .box {
+  flex: 1;
+  background: #6da6a6;
+  color: #343a40;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+/* Table buttons */
+.section_1 .container .boa205_table_button {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+.section_1 .container .boa205_table_button .box {
+  flex: 1;
+  background: #9fa7bf;
+  color: #343a40;
+  border-radius: 10px;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  text-align: center;
+}
+
 /* Box a with image */
 .section_1 .container .box_img {
   flex: 1;
