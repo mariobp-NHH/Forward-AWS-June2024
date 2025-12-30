@@ -8,13 +8,18 @@ from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch1_q1, ModulsF
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch2_q1, ModulsForm_boa205_ch2_q2, ModulsForm_boa205_ch2_q3, ModulsForm_boa205_ch2_q4, TableForm_boa205_ch2_t1, TableForm_boa205_ch2_t2
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch2_q5, ModulsForm_boa205_ch2_q6, ModulsForm_boa205_ch2_q7, ModulsForm_boa205_ch2_q8, ModulsForm_boa205_ch2_q9, ModulsForm_boa205_ch2_q10
 
+""" chapter 2b """
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch2b_q1, ModulsForm_boa205_ch2b_q2, ModulsForm_boa205_ch2b_q3, ModulsForm_boa205_ch2b_q4
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch2b_q5, ModulsForm_boa205_ch2b_q6, TableForm_boa205_ch2b_t1, TableForm_boa205_ch2b_t2
 
+""" Functions """
+""" chapter 2a """
 from webse.boa205_course_chapters.functions import normal, virkelig, dekningsdiff, produksjonresultat_normal, avvik, produktresultat_selv, virkelig_selv, dekningsdiff_produksjonresultat_selv
 from webse.boa205_course_chapters.functions import produktresultat_bidra
+""" chapter 2b """
+from webse.boa205_course_chapters.functions import ch2a_selv,ch2a_bidra
 
 boa205_course_chapters= Blueprint('boa205_course_chapters', __name__)
-
-
 
 #Chapter 1
 @boa205_course_chapters.route('/boa205_course/kapitel1', methods=['GET', 'POST'])
@@ -279,8 +284,8 @@ def boa205_course_chapters_ch1():
                            form_boa205_ch1_q5=form_boa205_ch1_q5, form_boa205_ch1_q6=form_boa205_ch1_q6,
                            form_boa205_ch1_t1=form_boa205_ch1_t1, legend='Variabler')
 
-#Chapter 2
-@boa205_course_chapters.route('/boa205_course/kapitel2', methods=['GET', 'POST'])
+#Chapter 2a
+@boa205_course_chapters.route('/boa205_course/kapitel2a', methods=['GET', 'POST'])
 @login_required
 def boa205_course_chapters_ch2():
     form_boa205_ch2_q1 = ModulsForm_boa205_ch2_q1()
@@ -690,3 +695,232 @@ def boa205_course_chapters_ch2():
                            form_boa205_ch2_q7=form_boa205_ch2_q7, form_boa205_ch2_q8=form_boa205_ch2_q8,
                            form_boa205_ch2_q9=form_boa205_ch2_q9, form_boa205_ch2_q10=form_boa205_ch2_q10,
                            form_boa205_ch2_t1=form_boa205_ch2_t1, form_boa205_ch2_t2=form_boa205_ch2_t2, legend='Variabler')
+
+#Chapter 2b
+@boa205_course_chapters.route('/boa205_course/kapitel2b', methods=['GET', 'POST'])
+@login_required
+def boa205_course_chapters_ch2b():
+    form_boa205_ch2b_q1 = ModulsForm_boa205_ch2b_q1()
+    form_boa205_ch2b_q2 = ModulsForm_boa205_ch2b_q2()
+    form_boa205_ch2b_q3 = ModulsForm_boa205_ch2b_q3()
+    form_boa205_ch2b_q4 = ModulsForm_boa205_ch2b_q4()
+    form_boa205_ch2b_q5 = ModulsForm_boa205_ch2b_q5()
+    form_boa205_ch2b_q6 = ModulsForm_boa205_ch2b_q6()
+    form_boa205_ch2b_t1=TableForm_boa205_ch2b_t1()
+    form_boa205_ch2b_t2=TableForm_boa205_ch2b_t2()
+
+    if form_boa205_ch2b_q1.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch2b_q1.type.data, author=current_user)
+        if moduls.question_str == 'januar':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch2b'
+        moduls.title_ch = 'Kapitel 2b. Hva er normalkostregnskap?'
+        moduls.question_num = 1
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch2b'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2',
+                           form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+                           form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+                           form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+                           form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, 
+                           legend='Variabler', anchor="ch2b_q1_q2")
+    
+    if form_boa205_ch2b_q2.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch2b_q2.type.data, author=current_user)
+        if moduls.question_str == 'januar':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch2b'
+        moduls.title_ch = 'Kapitel 2b. Hva er normalkostregnskap?'
+        moduls.question_num = 2
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch2b'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2',
+                           form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+                           form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+                           form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+                           form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, 
+                           legend='Variabler', anchor="ch2b_q1_q2")
+    
+    if form_boa205_ch2b_q3.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch2b_q3.type.data, author=current_user)
+        if moduls.question_str == 'februar':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch2b'
+        moduls.title_ch = 'Kapitel 2b. Hva er normalkostregnskap?'
+        moduls.question_num = 3
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch2b'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2',
+                           form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+                           form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+                           form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+                           form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, 
+                           legend='Variabler', anchor="ch2b_q1_q2")
+    
+    if form_boa205_ch2b_q4.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch2b_q4.type.data, author=current_user)
+        if moduls.question_str == '-17629':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch2b'
+        moduls.title_ch = 'Kapitel 2b. Hva er normalkostregnskap?'
+        moduls.question_num = 4
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch2b'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2',
+                           form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+                           form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+                           form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+                           form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, 
+                           legend='Variabler', anchor="ch2b_q1_q2")
+    
+    if form_boa205_ch2b_q5.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch2b_q5.type.data, author=current_user)
+        if moduls.question_str == '2500':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch2b'
+        moduls.title_ch = 'Kapitel 2b. Hva er normalkostregnskap?'
+        moduls.question_num = 5
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch2b'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2',
+                           form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+                           form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+                           form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+                           form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, 
+                           legend='Variabler', anchor="ch2b_q1_q2")
+    
+    if form_boa205_ch2b_q6.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch2b_q6.type.data, author=current_user)
+        if moduls.question_str == '-5335':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch2b'
+        moduls.title_ch = 'Kapitel 2b. Hva er normalkostregnskap?'
+        moduls.question_num = 6
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch2b'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2',
+                           form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+                           form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+                           form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+                           form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, 
+                           legend='Variabler', anchor="ch2b_q1_q2")
+
+    if form_boa205_ch2b_t1.validate_on_submit():
+        """ Variables """
+        endring_varer_i_arbeid_102_selv = form_boa205_ch2b_t1.endring_varer_i_arbeid_102.data
+        endring_ferdige_varer_101_selv = form_boa205_ch2b_t1.endring_ferdige_varer_101.data
+
+        (im_102_s,im_103_s,im_104_s,im_sum_s,dm_s,il1_102_s,il1_103_s,il1_104_s,il1_sum_s,dl1_s,il2_102_s,il2_103_s,il2_104_s,il2_sum_s,
+           dl2_s,kalkulert_tilv_102_s,kalkulert_tilv_103_s,kalkulert_tilv_104_s,kalkulert_tilv_sum_s,
+           kalkulert_tilv_ferdig_102_s,kalkulert_tilv_ferdig_103_s,kalkulert_tilv_ferdig_104_s,kalkulert_tilv_ferdig_sum_s,
+           kalkulert_tilv_ferdig_virkelige_s,endring_ferdige_varer_s,
+           kalkulert_tilv_solgte_101_s,kalkulert_tilv_solgte_102_s,kalkulert_tilv_solgte_103_s,
+           kalkulert_tilv_solgte_104_s,kalkulert_tilv_solgte_sum_s,kalkulert_tilv_solgte_virkelige_s,
+           salgs_adm_101_s,salgs_adm_102_s,salgs_adm_103_s,salgs_adm_104_s,salgs_adm_sum_s,d_salgs_adm_s,
+           kalkulert_selvkost_101_s,kalkulert_selvkost_102_s,kalkulert_selvkost_103_s,
+           kalkulert_selvkost_104_s,kalkulert_selvkost_sum_s,kalkulert_selvkost_virkelige_s,
+           produktresultat_101_s,produktresultat_102_s,produktresultat_103_s,produktresultat_104_s,
+           produktresultat_sum_s,d_sum_s,produksjonresultat_s,produksjonresultat_virkelige_s) = ch2a_selv(endring_varer_i_arbeid_102_selv, endring_ferdige_varer_101_selv)
+
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2', 
+            form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+            form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+            form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+            form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2,legend='Variabler',anchor="table1",
+            endring_varer_i_arbeid_102_selv=endring_varer_i_arbeid_102_selv, endring_ferdige_varer_101_selv=endring_ferdige_varer_101_selv,
+            im_102_s=im_102_s,im_103_s=im_103_s,im_104_s=im_104_s,im_sum_s=im_sum_s,dm_s=dm_s,il1_102_s=il1_102_s,
+            il1_103_s=il1_103_s,il1_104_s=il1_104_s,il1_sum_s=il1_sum_s,dl1_s=dl1_s,il2_102_s=il2_102_s,il2_103_s=il2_103_s,
+            il2_104_s=il2_104_s,il2_sum_s=il2_sum_s,dl2_s=dl2_s,kalkulert_tilv_102_s=kalkulert_tilv_102_s,
+            kalkulert_tilv_103_s=kalkulert_tilv_103_s,kalkulert_tilv_104_s=kalkulert_tilv_104_s,kalkulert_tilv_sum_s=kalkulert_tilv_sum_s,
+            kalkulert_tilv_ferdig_102_s=kalkulert_tilv_ferdig_102_s,kalkulert_tilv_ferdig_103_s=kalkulert_tilv_ferdig_103_s,
+            kalkulert_tilv_ferdig_104_s=kalkulert_tilv_ferdig_104_s,kalkulert_tilv_ferdig_sum_s=kalkulert_tilv_ferdig_sum_s,
+            kalkulert_tilv_ferdig_virkelige_s=kalkulert_tilv_ferdig_virkelige_s,endring_ferdige_varer_s=endring_ferdige_varer_s,
+            kalkulert_tilv_solgte_101_s=kalkulert_tilv_solgte_101_s,kalkulert_tilv_solgte_102_s=kalkulert_tilv_solgte_102_s,
+            kalkulert_tilv_solgte_103_s=kalkulert_tilv_solgte_103_s,kalkulert_tilv_solgte_104_s=kalkulert_tilv_solgte_104_s,
+            kalkulert_tilv_solgte_sum_s=kalkulert_tilv_solgte_sum_s,kalkulert_tilv_solgte_virkelige_s=kalkulert_tilv_solgte_virkelige_s,
+            salgs_adm_101_s=salgs_adm_101_s,salgs_adm_102_s=salgs_adm_102_s,salgs_adm_103_s=salgs_adm_103_s,
+            salgs_adm_104_s=salgs_adm_104_s,salgs_adm_sum_s=salgs_adm_sum_s,d_salgs_adm_s=d_salgs_adm_s,
+            kalkulert_selvkost_101_s=kalkulert_selvkost_101_s,kalkulert_selvkost_102_s=kalkulert_selvkost_102_s,
+            kalkulert_selvkost_103_s=kalkulert_selvkost_103_s,kalkulert_selvkost_104_s=kalkulert_selvkost_104_s,
+            kalkulert_selvkost_sum_s=kalkulert_selvkost_sum_s,kalkulert_selvkost_virkelige_s=kalkulert_selvkost_virkelige_s,
+            produktresultat_101_s=produktresultat_101_s,produktresultat_102_s=produktresultat_102_s,
+            produktresultat_103_s=produktresultat_103_s,produktresultat_104_s=produktresultat_104_s,
+            produktresultat_sum_s=produktresultat_sum_s,d_sum_s=d_sum_s,produksjonresultat_s=produksjonresultat_s,
+            produksjonresultat_virkelige_s=produksjonresultat_virkelige_s)
+    
+    if form_boa205_ch2b_t2.validate_on_submit():
+        """ Variables """
+        endring_varer_i_arbeid_102_bidra = form_boa205_ch2b_t2.endring_varer_i_arbeid_102.data
+        endring_ferdige_varer_101_bidra = form_boa205_ch2b_t2.endring_ferdige_varer_101.data
+
+        (im_102_b,im_103_b,im_104_b,im_sum_b,dm_b,il1_102_b,il1_103_b,il1_104_b,il1_sum_b,dl1_b,il2_102_b,il2_103_b,il2_104_b,il2_sum_b,
+           dl2_b,kalkulert_tilv_102_b,kalkulert_tilv_103_b,kalkulert_tilv_104_b,kalkulert_tilv_sum_b,
+           kalkulert_tilv_ferdig_102_b,kalkulert_tilv_ferdig_103_b,kalkulert_tilv_ferdig_104_b,kalkulert_tilv_ferdig_sum_b,
+           kalkulert_tilv_ferdig_virkelige_b,endring_ferdige_varer_b,
+           kalkulert_tilv_solgte_101_b,kalkulert_tilv_solgte_102_b,kalkulert_tilv_solgte_103_b,
+           kalkulert_tilv_solgte_104_b,kalkulert_tilv_solgte_sum_b,kalkulert_tilv_solgte_virkelige_b,
+           merkost_solgte_varer_101_b,merkost_solgte_varer_102_b,merkost_solgte_varer_103_b,merkost_solgte_varer_104_b,
+           merkost_solgte_varer_sum_b,merkost_solgte_varer_virkelige_b,
+           kalkulert_dekningsbidrag_101_b,
+           kalkulert_dekningsbidrag_102_b,kalkulert_dekningsbidrag_103_b,kalkulert_dekningsbidrag_104_b,
+           kalkulert_dekningsbidrag_sum_b,d_total_b,
+           virkelig_dekningsbidrag_b,virkelig_dekningsbidrag_virkelige_b,
+           produksjonresultat_virkelige_b)=ch2a_bidra(endring_varer_i_arbeid_102_bidra, endring_ferdige_varer_101_bidra)
+
+        
+        return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2', 
+            form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+            form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+            form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+            form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, legend='Variabler',anchor="table2",
+            endring_varer_i_arbeid_102_bidra=endring_varer_i_arbeid_102_bidra, endring_ferdige_varer_101_bidra=endring_ferdige_varer_101_bidra,
+            im_102_b=im_102_b,im_103_b=im_103_b,im_104_b=im_104_b,im_sum_b=im_sum_b,dm_b=dm_b,il1_102_b=il1_102_b,
+            il1_103_b=il1_103_b,il1_104_b=il1_104_b,il1_sum_b=il1_sum_b,dl1_b=dl1_b,il2_102_b=il2_102_b,
+            il2_103_b=il2_103_b,il2_104_b=il2_104_b,il2_sum_b=il2_sum_b,
+            dl2_b=dl2_b,kalkulert_tilv_102_b=kalkulert_tilv_102_b,kalkulert_tilv_103_b=kalkulert_tilv_103_b,kalkulert_tilv_104_b=kalkulert_tilv_104_b,
+            kalkulert_tilv_sum_b=kalkulert_tilv_sum_b,
+            kalkulert_tilv_ferdig_102_b=kalkulert_tilv_ferdig_102_b,kalkulert_tilv_ferdig_103_b=kalkulert_tilv_ferdig_103_b,
+            kalkulert_tilv_ferdig_104_b=kalkulert_tilv_ferdig_104_b,kalkulert_tilv_ferdig_sum_b=kalkulert_tilv_ferdig_sum_b,
+            kalkulert_tilv_ferdig_virkelige_b=kalkulert_tilv_ferdig_virkelige_b,endring_ferdige_varer_b=endring_ferdige_varer_b,
+            kalkulert_tilv_solgte_101_b=kalkulert_tilv_solgte_101_b,kalkulert_tilv_solgte_102_b=kalkulert_tilv_solgte_102_b,
+            kalkulert_tilv_solgte_103_b=kalkulert_tilv_solgte_103_b,
+            kalkulert_tilv_solgte_104_b=kalkulert_tilv_solgte_104_b,kalkulert_tilv_solgte_sum_b=kalkulert_tilv_solgte_sum_b,
+            kalkulert_tilv_solgte_virkelige_b=kalkulert_tilv_solgte_virkelige_b, merkost_solgte_varer_101_b=merkost_solgte_varer_101_b,
+            merkost_solgte_varer_102_b=merkost_solgte_varer_102_b,merkost_solgte_varer_103_b=merkost_solgte_varer_103_b,
+            merkost_solgte_varer_104_b=merkost_solgte_varer_104_b,merkost_solgte_varer_sum_b=merkost_solgte_varer_sum_b,
+            merkost_solgte_varer_virkelige_b=merkost_solgte_varer_virkelige_b,kalkulert_dekningsbidrag_101_b=kalkulert_dekningsbidrag_101_b,
+            kalkulert_dekningsbidrag_102_b=kalkulert_dekningsbidrag_102_b,kalkulert_dekningsbidrag_103_b=kalkulert_dekningsbidrag_103_b,
+            kalkulert_dekningsbidrag_104_b=kalkulert_dekningsbidrag_104_b,kalkulert_dekningsbidrag_sum_b=kalkulert_dekningsbidrag_sum_b,
+            d_total_b=d_total_b,virkelig_dekningsbidrag_b=virkelig_dekningsbidrag_b,
+            virkelig_dekningsbidrag_virkelige_b=virkelig_dekningsbidrag_virkelige_b,produksjonresultat_virkelige_b=produksjonresultat_virkelige_b)
+
+
+    return render_template('boa205_course/chapters/ch2b.html', title='BØA205 Økonomistyring, kapittel 2',
+            form_boa205_ch2b_q1=form_boa205_ch2b_q1, form_boa205_ch2b_q2=form_boa205_ch2b_q2,
+            form_boa205_ch2b_q3=form_boa205_ch2b_q3, form_boa205_ch2b_q4=form_boa205_ch2b_q4,
+            form_boa205_ch2b_q5=form_boa205_ch2b_q5, form_boa205_ch2b_q6=form_boa205_ch2b_q6,
+            form_boa205_ch2b_t1=form_boa205_ch2b_t1, form_boa205_ch2b_t2=form_boa205_ch2b_t2, legend='Variabler')
