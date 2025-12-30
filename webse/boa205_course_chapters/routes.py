@@ -731,7 +731,7 @@ def boa205_course_chapters_ch2b():
     
     if form_boa205_ch2b_q2.validate_on_submit():
         moduls = ModulsGD(question_str=form_boa205_ch2b_q2.type.data, author=current_user)
-        if moduls.question_str == 'januar':
+        if moduls.question_str == 'bare januar':
             moduls.question_result = 1
         else:
             moduls.question_result = 0
