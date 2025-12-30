@@ -277,12 +277,12 @@ class ModulsForm_boa205_ch2b_q1(FlaskForm):
 
 class ModulsForm_boa205_ch2b_q2(FlaskForm):
     type = SelectField('Type', validators=[DataRequired()],
-                       choices=[('desember',
-                                 'desember'),
-                                ('januar',
-                                 'januar'),
-                                ('begge måneder',
-                                 'begge måneder')])
+                       choices=[('bare desember',
+                                 'bare desember'),
+                                ('bare januar',
+                                 'bare januar'),
+                                ('begge to måneder',
+                                 'begge to måneder')])
     submit = SubmitField('Send inn') 
 
 class ModulsForm_boa205_ch2b_q3(FlaskForm):
