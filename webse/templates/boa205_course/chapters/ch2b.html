@@ -1,0 +1,1497 @@
+{% extends "boa205_course/boa205_course_layout.html" %}
+{% block content %}
+
+{% if anchor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targetElement = document.getElementById("{{ anchor }}");
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endif %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1>Kapitel 2b. Hva er normalkostregnskap?</h1>
+                <p class="mb-1">
+                I det kapitel vi skal studer hva er normalkostregnskapet. 
+                Vi skal studer hva er selvskostmetoden og avviksanalyse. 
+                Vi studer hva er bidragsmetoden. Endelig vi studer hva er beholdningsendringer.
+                <br>
+                <br>
+                - Alle informasjon i det kapitel har vært tatt fra boken Driftsregnskap og budsjettering (Bjørn Solheim og Trond Winther), og fra lysbilder fra kurs BØA205 ved HVL -
+                <br>
+                <br>
+                </p>
+                <div class="material-container">
+                    
+
+                    <!-- Kursmateriell 2 -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell 2</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_2_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    
+                    <!-- Oppgave 3 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 3</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_3_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 4 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 4</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_4_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 5a -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 5a</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_5a_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 5b -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 5b</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_5b_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 6 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 6</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_6_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 7 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 7</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_7_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 8 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Oppgave 8</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave_8_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Løsninger -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Løsninger</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#losning_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>  
+                    
+                    <!-- Video -->
+                    <div
+                    class="material-box-video"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-video"></i>
+                        </div>
+                        <p><strong>Video</strong></p>
+                        <div class="material-buttons-video">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div> 
+
+                    <!-- Presentasjon -->
+                    <div
+                    class="material-box-presentation"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                        </div>
+                        <p><strong>Presentasjon</strong></p>
+                        <div class="material-buttons-presentation">
+                            <a
+                            href="#"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div> 
+                    
+                </div>
+                </br>
+
+                <div class="list-group", style="padding: 15px 0px;">
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Litt oppfriskning fra kapitel 2a</h5>
+                    </div>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Case ordrebasert normalkostregnskap: Selvkostmetoden</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Case ordrebasert normalkostregnskap: Bidragsmetoden</h5>
+                      </div>
+                    </a>
+                </div>
+            </div>
+            <img
+src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/ch2.svg"
+alt=""
+/>
+        </div>
+    </header>
+</section>
+
+<!-- Kursmateriell_2 Modal -->
+<div class="modal fade" id="kursmateriell_2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+            id="paper_frame"
+            src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_1.pptx"
+            width="100%" 
+            height="100%" 
+            frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_1.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Oppgave 3 Modal -->
+<div class="modal fade" id="oppgave_3_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 3</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_3_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 4 Modal -->
+<div class="modal fade" id="oppgave_4_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 4</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_1.docx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_1.docx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 5a Modal -->
+<div class="modal fade" id="oppgave_5a_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 5a</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 5b Modal -->
+<div class="modal fade" id="oppgave_5b_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 5b</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_3.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_4_3.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 6 Modal -->
+<div class="modal fade" id="oppgave_6_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 6</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_1.docx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_1.docx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 7 Modal -->
+<div class="modal fade" id="oppgave_7_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 7</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_2.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_2.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 8 Modal -->
+<div class="modal fade" id="oppgave_8_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 8</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_3.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/material/kursmateriell_5_3.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Løsning Modal -->
+<div class="modal fade" id="losning_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Løsning</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=#"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Litt oppfriskning fra kapitel 2a</h1>
+    </div>
+        
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Litt oppfriskning 1</strong> </p>
+            <p style="text-align: left;">
+                I normalkostregnskapet føres virkelige salgsinntekter og virkelige direkte kostnader, 
+                mens <strong>indirekte kostnader</strong> innkalkuleres basert på normalsatser
+                <ul>
+                  <li><strong>Normalsats</strong> baseres på (budsjett for) en normal periode (normalbudsjett)</li>
+                </ul>
+                
+                Det kan oppstå avvik mellom innkalkulerte indirekte kostnader (normalkost) 
+                og virkelige indirekte kostnader. Dette kalles for <strong>dekningsdifferenser</strong>
+                <ul>
+                  <li>Overdekning hvis innkalkulerte > virkelig</li>
+                  <li>underdekning hvis innkalkulerte < virkelig</li>
+                </ul>
+
+                Dekningsdifferanser kan splittes i 
+                <ul>
+                  <li><strong>forbruksavvik</strong> (= budsjettert – virkelig )</li>
+                  <li>og <strong>volumavvik</strong> (= innkalkulert – budsjettert)</li>
+                </ul>
+                For <strong></strong>indirekte variable oppstår det intet volumavvik ved bruk av fleksibelt budsjett
+            </p>
+
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Litt oppfriskning 2</strong> </p>
+            <p style="text-align: left;">
+              For å komme fram til korrekt resultat / dekningsbidrag skal økning i <strong>varelagre trekkes ifra</strong>, 
+              mens reduksjon i <strong>varelagre skal legges til</strong>
+              <ul>
+                <li><strong>Varelagre</strong> vurderes til høyere kostnad ved selvkostmetoden enn bidragsmetoden</li>
+                <li><strong>Økning i varelagre</strong> fører til større fratrekk i kostnaden ved selvkost- enn ved bidrags-metoden – 
+                det trekker i retning av at selvkostmetoden gir best resultat</li>
+                <li>
+                  <strong>Reduksjon i varelagre</strong> fører til større tillegg i kostnaden ved selvkost- enn ved bidrags-metoden – 
+                  det trekker i retning av at bidragsmetoden gir best resultat
+                </li>
+              </ul>
+            </p>
+        </div>
+    </div>
+ 
+</section>
+
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+    <div class="container" style="display:block;">
+        <h1>Case ordrebasert normalkostregnskap: Selvkostmetoden</h1>
+    </div>
+
+    <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+        <div class="container" id="table1">
+            <div class="boa205_table">
+                <div class="box"> 
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+                        <form method="POST" action="">
+                            {{ form_boa205_ch2b_t1.csrf_token }}
+                            <div class="boa205_table_button">
+                                <div class="box">
+                                    {{ form_boa205_ch2b_t1.endring_varer_i_arbeid_102.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2b_t1.endring_varer_i_arbeid_102(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2b_t1.endring_ferdige_varer_101.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2b_t1.endring_ferdige_varer_101(class="form-control form-control-lg") }}
+                                </div>
+                            </div>
+                            </br>
+                            <div class="form-group">
+                                {{ form_boa205_ch2b_t1.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                            </div>
+                        </form> 
+                        <br>
+                        <br>
+
+                        <p>For et normalår er det budsjettert med følgende kostnadforbruk</p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col">Direkte / Indirekte kostader</th>
+                                    <th scope="col" class="text-end">Faste</th>
+                                    <th scope="col" class="text-end">Variable</th>
+                                    <th scope="col" class="text-end">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <th scope="row">Direkte kostader</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Budsjettert direkte materailforbrukt</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">kr 1 600 000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Budsjettert direkte lønn tilvirkningsavdeling 1</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">kr 900 000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Budsjettert direkte lønn tilvirkningsavdeling 2</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">kr 800 000</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Indirekte materialkostnader</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Materialforvaltningsavdeling</th>
+                                        <td class="text-end">kr 160 000</td>
+                                        <td class="text-end">kr 80 000</td>
+                                        <td class="text-end">kr 240 000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdeling 1</th>
+                                        <td class="text-end">kr 270 000</td>
+                                        <td class="text-end">kr 180 000</td>
+                                        <td class="text-end">kr 450 000</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdeling 2</th>
+                                        <td class="text-end">kr 440 000</td>
+                                        <td class="text-end">kr 440 000</td>
+                                        <td class="text-end">kr 880 000</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Tilvirkningskost</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">kr 4 870 000</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Salgs og administrasjon</th>
+                                      <td class="text-end">kr 479 000</td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">kr 479 000</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row">Selvkost</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">kr 5 349 000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <br>
+                        <p>Normalsatser:</p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col">Normalsatser</th>
+                                    <th scope="col" class="text-end">Faste</th>
+                                    <th scope="col" class="text-end">Variable</th>
+                                    <th scope="col" class="text-end">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <th scope="row">Materialforvaltningsavdeling</th>
+                                      <td class="text-end">160/1600=0.1</td>
+                                      <td class="text-end">80/1600=0.05</td>
+                                      <td class="text-end">0.15</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Tilvirkningsavdeling 1</th>
+                                      <td class="text-end">270/900=0.3</td>
+                                      <td class="text-end">180/900=0.2</td>
+                                      <td class="text-end">0.5</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdeling 2</th>
+                                        <td class="text-end">440/800=0.55</td>
+                                        <td class="text-end">440/800=0.55</td>
+                                        <td class="text-end">1.1</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Salgs og adm. avdeling</th>
+                                        <td class="text-end">479/4870=0.098</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">0.098</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <p>Per 1 januar har bedriften arbeidet med de fire ordrene</p>
+                        <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch2/figures/k2a.svg" alt=""/>
+                        <br>
+                        <br>
+                        <p>I neste tabell vises alle konstantene for både normalkost or virkelige kost. Resten av informasjonen i tabellen er variabler</p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                      <th scope="col" class="text-end"></th>
+                                      <th scope="col" class="text-end">Normalkost ordre 101</th>
+                                      <th scope="col" class="text-end">Normalkost ordre 102</th>
+                                      <th scope="col" class="text-end">Normalkost ordre 103</th>
+                                      <th scope="col" class="text-end">Normalkost ordre 104</th>
+                                      <th scope="col" class="text-end">Normalkost Sum</th>
+                                      <th scope="col" class="text-end align-top">Virkelig</th>
+                                      <th scope="col" class="text-end align-top">Dekningsdiff</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                      <td class="text-end">150000</td>
+                                      <td class="text-end">290000</td>
+                                      <td class="text-end">130000</td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">570000</td>
+                                      <td class="text-end">570000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Direkte Material</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">70000</td>
+                                      <td class="text-end">45000</td>
+                                      <td class="text-end">20000</td>
+                                      <td class="text-end">135000</td>
+                                      <td class="text-end">135000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Direkte Lønn tilv avd 1</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">60000</td>
+                                      <td class="text-end">25000</td>
+                                      <td class="text-end">11000</td>
+                                      <td class="text-end">96000</td>
+                                      <td class="text-end">96000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Direkte Lønn tilv avd 2</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">55000</td>
+                                      <td class="text-end">18000</td>
+                                      <td class="text-end">8000</td>
+                                      <td class="text-end">81000</td>
+                                      <td class="text-end">81000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indirekte tilv kostader</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Materialforvaltningsavdeling 15%</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{im_102_s}}</td>
+                                        <td class="text-end">{{im_103_s}}</td>
+                                        <td class="text-end">{{im_104_s}}</td>
+                                        <td class="text-end">{{im_sum_s}}</td>
+                                        <td class="text-end">20000</td>
+                                        <td class="text-end">{{dm_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdeling 1  50 %</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{il1_102_s}}</td>
+                                        <td class="text-end">{{il1_103_s}}</td>
+                                        <td class="text-end">{{il1_104_s}}</td>
+                                        <td class="text-end">{{il1_sum_s}}</td>
+                                        <td class="text-end">50000</td>
+                                        <td class="text-end">{{dl1_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdeling 2 110 %</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{il2_102_s}}</td>
+                                        <td class="text-end">{{il2_103_s}}</td>
+                                        <td class="text-end">{{il2_104_s}}</td>
+                                        <td class="text-end">{{il2_sum_s}}</td>
+                                        <td class="text-end">50000</td>
+                                        <td class="text-end">{{dl2_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalkulert tilvirkningskost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{kalkulert_tilv_102_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_103_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_104_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_sum_s}}</td>
+                                        <td class="text-end">477000</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Endring varer i arbeid</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end bg-danger text-black">{{endring_varer_i_arbeid_102_selv}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{endring_varer_i_arbeid_102_selv}}</td>
+                                        <td class="text-end">{{endring_varer_i_arbeid_102_selv}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalk. tilv.kost ferdigprod. varer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_102_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_103_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_104_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_sum_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_virkelige_s}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Endring ferdige varer</th>
+                                        <td class="text-end bg-danger text-black">{{endring_ferdige_varer_101_selv}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end bg-info text-black">-{{kalkulert_tilv_ferdig_104_s}}</td>
+                                        <td class="text-end">{{endring_ferdige_varer_s}}</td>
+                                        <td class="text-end">{{endring_ferdige_varer_s}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalkulert tilv.kost solgte varer</th>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_101_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_102_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_103_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_104_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_sum_s}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_virkelige_s}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Salgs og adm. Avdeling 10 %</th>
+                                        <td class="text-end">{{salgs_adm_101_s}}</td>
+                                        <td class="text-end">{{salgs_adm_102_s}}</td>
+                                        <td class="text-end">{{salgs_adm_103_s}}</td>
+                                        <td class="text-end">{{salgs_adm_104_s}}</td>
+                                        <td class="text-end">{{salgs_adm_sum_s}}</td>
+                                        <td class="text-end">50000</td>
+                                        <td class="text-end">{{d_salgs_adm_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalkulert selvkost solgte varer</th>
+                                        <td class="text-end">{{kalkulert_selvkost_101_s}}</td>
+                                        <td class="text-end">{{kalkulert_selvkost_102_s}}</td>
+                                        <td class="text-end">{{kalkulert_selvkost_103_s}}</td>
+                                        <td class="text-end">{{kalkulert_selvkost_104_s}}</td>
+                                        <td class="text-end">{{kalkulert_selvkost_sum_s}}</td>
+                                        <td class="text-end">{{kalkulert_selvkost_virkelige_s}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Produktresultat</th>
+                                        <td class="text-end">{{produktresultat_101_s}}</td>
+                                        <td class="text-end">{{produktresultat_102_s}}</td>
+                                        <td class="text-end">{{produktresultat_103_s}}</td>
+                                        <td class="text-end">{{produktresultat_104_s}}</td>
+                                        <td class="text-end">{{produktresultat_sum_s}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Dekningsdifferanser</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{d_sum_s}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{d_sum_s}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Produksjonsresultrat</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{produksjonresultat_s}}</td>
+                                        <td class="text-end">{{produksjonresultat_virkelige_s}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" style="display:block;">
+        <p><strong>Kommentarer til ordreregnskapet</strong></p>
+        <ul>
+          <li>Ordre 1 er ferdig tilvirket per 1.1 og dermed vil de 
+            påløpte kostandene bli belastet i perioden (FV). Ordren er solgt med positivt resultat </li>
+          <li>Ordre 2 er per 1.1 påbegynt men ikke ferdig tilvirket. 
+          Ferdigstilles og dermed må VIA legges til på kostnadssiden. Ordren gir et negativt resultat</li>
+          <li>Ordre 3 påbegynnes og ferdigstilles i perioden. Dermed ingen påvirkning av FV og VIA</li>
+          <li>Ordre 4 påbegynnes og ferdigstilles, men blir ikke solgt. Siden vi må sammenstille 
+            inntekter og kostnader i perioden, overfører vi tilvirkningskosten (FV) til balansen. Kostnaden kommer dermed ikke med i driftsregnskapet for denne måneden
+          </li>
+        </ul>
+        <!-- Questions 1 and 2 -->
+        <div class="container questions-section">
+
+            <div class="col-spacer"></div>
+
+            <!-- Question 1 -->
+            <div id="ch2b_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+                <div class="box_questions_two question-box">
+                    <form method="POST" action="">
+                        {{ form_boa205_ch2b_q1.csrf_token }}
+
+                        <legend class="border-bottom mb-3">Spørsmål 1:</legend>
+
+                        <p class="card-text">
+                            Ordre 101 ble produsert i desember, men solgt i januar. 
+                            Med selvkostmetoden, hvilken måned skal kostnadene føres i?  
+                        </p>
+
+                        <div class="form-group mt-2">
+                            {{ form_boa205_ch2b_q1.type(class="form-control question-input") }}
+                        </div>
+
+                        <div class="form-group border-bottom pb-3 mt-3 text-center">
+                            {{ form_boa205_ch2b_q1.submit(class="btn btn-outline-info") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div id="ch2b_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+                <div class="box_questions_two question-box">
+                    <form method="POST" action="">
+                        {{ form_boa205_ch2b_q2.csrf_token }}
+
+                        <legend class="border-bottom mb-3">Spørsmål 2:</legend>
+
+                        <p class="card-text">
+                            Ordre 102 ble produsert delvis i desember og delvis i januar, 
+                            men solgt i januar. Med selvkostmetoden, hvilken måned skal kostnadene føres i?  
+                        </p>
+
+                        <div class="form-group mt-2">
+                            {{ form_boa205_ch2b_q2.type(class="form-control question-input") }}
+                        </div>
+
+                        <div class="form-group border-bottom pb-3 mt-3 text-center">
+                            {{ form_boa205_ch2b_q2.submit(class="btn btn-outline-info") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-spacer"></div>
+
+        </div>
+
+        <!-- Questions 3 and 4 -->
+        <div class="container questions-section">
+
+            <div class="col-spacer"></div>
+
+            <!-- Question 3 -->
+            <div id="ch2b_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+                <div class="box_questions_two question-box">
+                    <form method="POST" action="">
+                        {{ form_boa205_ch2b_q3.csrf_token }}
+
+                        <legend class="border-bottom mb-3">Spørsmål 3:</legend>
+
+                        <p class="card-text">
+                            Ordre 104 ble produsert i januar, men vil bli solgt i februar. 
+                            Med selvkostmetoden, hvilken måned skal kostnadene føres i? 
+                        </p>
+
+                        <div class="form-group mt-2">
+                            {{ form_boa205_ch2b_q3.type(class="form-control question-input") }}
+                        </div>
+
+                        <div class="form-group border-bottom pb-3 mt-3 text-center">
+                            {{ form_boa205_ch2b_q3.submit(class="btn btn-outline-info") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div id="ch2b_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+                <div class="box_questions_two question-box">
+                    <form method="POST" action="">
+                        {{ form_boa205_ch2b_q4.csrf_token }}
+
+                        <legend class="border-bottom mb-3">Spørsmål 4:</legend>
+
+                        <p class="card-text">
+                            Med selvkostmetoden, når endring i varer i arbeid for ordre 102 er kr 7 430 
+                            og endring i ferdige varer for ordre 101 er kr 109 500, 
+                            hva er produksjonsresultatet ved normalkost?  
+                        </p>
+
+                        <div class="form-group mt-2">
+                            {{ form_boa205_ch2b_q4.type(class="form-control question-input") }}
+                        </div>
+
+                        <div class="form-group border-bottom pb-3 mt-3 text-center">
+                            {{ form_boa205_ch2b_q4.submit(class="btn btn-outline-info") }}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-spacer"></div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Section 3 -->
+<section class="section_1" id="section3" >
+    <div class="container" style="display:block;" >
+        <h1>Case ordrebasert normalkostregnskap: Bidragsmetoden</h1>
+    </div>
+
+    <div class="table-responsive-mobile" style="background-color: #4a736f;">
+        <div class="container" id="table2">
+            <div class="boa205_table">
+                <div class="box"> 
+                    <legend class="border-bottom mb-4">{{ legend }}</legend>
+                        <form method="POST" action="">
+                            {{ form_boa205_ch2b_t2.csrf_token }}
+                            <div class="boa205_table_button">
+                                <div class="box">
+                                    {{ form_boa205_ch2b_t2.endring_varer_i_arbeid_102.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2b_t2.endring_varer_i_arbeid_102(class="form-control form-control-lg") }}
+                                </div>
+                                <div class="box">
+                                    {{ form_boa205_ch2b_t2.endring_ferdige_varer_101.label(class="form-control-label") }}
+                                    {{ form_boa205_ch2b_t2.endring_ferdige_varer_101(class="form-control form-control-lg") }}
+                                </div>
+                            </div>
+                            </br>
+                            <div class="form-group">
+                                {{ form_boa205_ch2b_t2.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                            </div>
+                        </form> 
+                        <br>
+                        <br>
+                        <p>I neste tabell vises alle konstantene for både normalkost or virkelige kost. Resten av informasjonen i tabellen er variabler</p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                      <th scope="col" class="text-end"></th>
+                                      <th scope="col" class="text-end">Normalkost ordre 101</th>
+                                      <th scope="col" class="text-end">Normalkost ordre 102</th>
+                                      <th scope="col" class="text-end">Normalkost ordre 103</th>
+                                      <th scope="col" class="text-end">Normalkost ordre 104</th>
+                                      <th scope="col" class="text-end">Normalkost Sum</th>
+                                      <th scope="col" class="text-end align-top">Virkelig</th>
+                                      <th scope="col" class="text-end align-top">Dekningsdiff</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                      <td class="text-end">150000</td>
+                                      <td class="text-end">290000</td>
+                                      <td class="text-end">130000</td>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">570000</td>
+                                      <td class="text-end">570000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Direkte Material</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">70000</td>
+                                      <td class="text-end">45000</td>
+                                      <td class="text-end">20000</td>
+                                      <td class="text-end">135000</td>
+                                      <td class="text-end">135000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Direkte Lønn tilv avd 1</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">60000</td>
+                                      <td class="text-end">25000</td>
+                                      <td class="text-end">11000</td>
+                                      <td class="text-end">96000</td>
+                                      <td class="text-end">96000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Direkte Lønn tilv avd 2</th>
+                                      <td class="text-end"></td>
+                                      <td class="text-end">55000</td>
+                                      <td class="text-end">18000</td>
+                                      <td class="text-end">8000</td>
+                                      <td class="text-end">81000</td>
+                                      <td class="text-end">81000</td>
+                                      <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Indir. variable tilvirkningskostnader</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Materialforvaltningsavdeling 5%</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{im_102_b}}</td>
+                                        <td class="text-end">{{im_103_b}}</td>
+                                        <td class="text-end">{{im_104_b}}</td>
+                                        <td class="text-end">{{im_sum_b}}</td>
+                                        <td class="text-end">8000</td>
+                                        <td class="text-end">{{dm_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdeling 1  20%</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{il1_102_b}}</td>
+                                        <td class="text-end">{{il1_103_b}}</td>
+                                        <td class="text-end">{{il1_104_b}}</td>
+                                        <td class="text-end">{{il1_sum_b}}</td>
+                                        <td class="text-end">20000</td>
+                                        <td class="text-end">{{dl1_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdeling 2 55%</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{il2_102_b}}</td>
+                                        <td class="text-end">{{il2_103_b}}</td>
+                                        <td class="text-end">{{il2_104_b}}</td>
+                                        <td class="text-end">{{il2_sum_b}}</td>
+                                        <td class="text-end">40000</td>
+                                        <td class="text-end">{{dl2_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalkulert tilvirkningskost</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{kalkulert_tilv_102_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_103_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_104_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_sum_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Endring varer i arbeid</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end bg-danger text-black">{{endring_varer_i_arbeid_102_bidra}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{endring_varer_i_arbeid_102_bidra}}</td>
+                                        <td class="text-end">{{endring_varer_i_arbeid_102_bidra}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalk. tilv.kost ferdigprod. varer</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_102_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_103_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_104_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_ferdig_sum_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Endring ferdige varer</th>
+                                        <td class="text-end bg-danger text-black">{{endring_ferdige_varer_101_bidra}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end bg-info text-black">-{{kalkulert_tilv_ferdig_104_b}}</td>
+                                        <td class="text-end">{{endring_ferdige_varer_b}}</td>
+                                        <td class="text-end">{{endring_ferdige_varer_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalkulert tilv.kost solgte varer</th>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_101_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_102_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_103_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_104_b}}</td>
+                                        <td class="text-end">{{kalkulert_tilv_solgte_sum_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Salgs og adm. avdeling 0%</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Merkost solgte varer</th>
+                                        <td class="text-end">{{merkost_solgte_varer_101_b}}</td>
+                                        <td class="text-end">{{merkost_solgte_varer_102_b}}</td>
+                                        <td class="text-end">{{merkost_solgte_varer_103_b}}</td>
+                                        <td class="text-end">{{merkost_solgte_varer_104_b}}</td>
+                                        <td class="text-end">{{merkost_solgte_varer_sum_b}}</td>
+                                        <td class="text-end">{{merkost_solgte_varer_virkelige_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Kalkulert dekningsbidrag</th>
+                                        <td class="text-end">{{kalkulert_dekningsbidrag_101_b}}</td>
+                                        <td class="text-end">{{kalkulert_dekningsbidrag_102_b}}</td>
+                                        <td class="text-end">{{kalkulert_dekningsbidrag_103_b}}</td>
+                                        <td class="text-end">{{kalkulert_dekningsbidrag_104_b}}</td>
+                                        <td class="text-end">{{kalkulert_dekningsbidrag_sum_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Dekningsdifferanser</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{d_total_b}}</td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{d_total_b}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Virkelig dekningsbidrag</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{virkelig_dekningsbidrag_b}}</td>
+                                        <td class="text-end">{{virkelig_dekningsbidrag_virkelige_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Faste kostnader</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Materialavdelingen</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">12000</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdelingen 1</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">30000</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Tilvirkningsavdelingen 2</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">55000</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Salgs. og adm. avd.</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">50000</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Produksjonsresultat</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">{{produksjonresultat_virkelige_b}}</td>
+                                        <td class="text-end"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <p>Forskjell i resultat mellom bidrags- og selvkostmetoden:</p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Resultat bidragsmetoden</th>
+                                      <td class="text-end">kr -5335</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Resultat selvkostmetoden</th>
+                                        <td class="text-end">kr -17630</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Differanse (i favør av bidragsmetoden)</th>
+                                        <td class="text-end">kr 12 295</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <p>Kan forklares med forskjell i varelagervurdering:</p>
+                        <div class="table-responsive-mobile">
+                            <table class="table table-striped table-sm">
+                                <thead class="table-primary">
+                                    <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col" class="text-end">Selvkostmetoden</th>
+                                    <th scope="col" class="text-end">Bidragsmetoden</th>
+                                    <th scope="col" class="text-end">Differanse</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Endring kostnadssiden varer i arbeid</th>
+                                      <td class="text-end">7430</td>
+                                      <td class="text-end">6035</td>
+                                      <td class="text-end">1395</td>
+                                    </tr>
+                                    <tr>
+                                      <th scope="row" class="fw-normal">Endring kostnadssiden ferdigvarer</th>
+                                      <td class="text-end">53200</td>
+                                      <td class="text-end">42300</td>
+                                      <td class="text-end">10900</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row" class="fw-normal">Sum</th>
+                                        <td class="text-end"></td>
+                                        <td class="text-end"></td>
+                                        <td class="text-end">12295</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Questions 5 and 6 -->
+    <div class="container questions-section">
+
+        <div class="col-spacer"></div>
+
+        <!-- Question 5 -->
+        <div id="ch2b_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2b_q5.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 5:</legend>
+
+                    <p class="card-text">
+                        Med bidragsmetoden, når endring i varer i arbeid for ordre 102 er kr 6 035 og 
+                        endring i ferdige varer for ordre 101 er kr 88 900, hva er dekningsdifferansen? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2b_q5.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2b_q5.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <!-- Question 6 -->
+        <div id="ch2b_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+            <div class="box_questions_two question-box">
+                <form method="POST" action="">
+                    {{ form_boa205_ch2b_q6.csrf_token }}
+
+                    <legend class="border-bottom mb-3">Spørsmål 6:</legend>
+
+                    <p class="card-text">
+                        Med bidragsmetoden, når endring i varer i arbeid for ordre 102 er kr 6 035 
+                        og endring i ferdige varer for ordre 101 er kr 88 900, hva er produksjonsresultatet? 
+                    </p>
+
+                    <div class="form-group mt-2">
+                        {{ form_boa205_ch2b_q6.type(class="form-control question-input") }}
+                    </div>
+
+                    <div class="form-group border-bottom pb-3 mt-3 text-center">
+                        {{ form_boa205_ch2b_q6.submit(class="btn btn-outline-info") }}
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-spacer"></div>
+
+    </div>
+
+
+</section>
+
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+
+
+{% endblock content %}
