@@ -36,18 +36,9 @@
                   <div class="h1 mb-3">
                     <i class="bi bi-bell"></i>
                   </div>
-                  <h3 class="text-center">Kunngjøringer:
-                  </h3>
-                  <p class="mb-1">
-                        Kurset skal gi innsikt i bruk av ulike modeller for kalkyle,
-                        driftsregnskap og budsjettering i økonomistyringen.
-                        <br>
-                        <br>
-                        Kurset skal videre utvikle evnen til å identifisere relevante inntekter og kostnader
-                        som grunnlag for bedriftsøkonomiske beslutninger.
-                      </p>
                   {% for announcement in announcements.items %}
                       <article class="media content-section">
+                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
                         <div class="media-body">
                           <div class="article-metadata">
                             <a class="mr-2" href="{{ url_for('boa205_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
