@@ -231,3 +231,121 @@ def ch2a_bidra(endring_varer_i_arbeid_102, endring_ferdige_varer_101):
            kalkulert_dekningsbidrag_102_b,kalkulert_dekningsbidrag_103_b,kalkulert_dekningsbidrag_104_b,
            kalkulert_dekningsbidrag_sum_b,d_total_b,virkelig_dekningsbidrag_b,virkelig_dekningsbidrag_virkelige_b,
            produksjonresultat_virkelige_b)
+
+""" Chapter 3 """
+def ch3_materialregnskap(pris_beholdning_1_januar,pris_innkjop_material_i_januar):
+    beholdning_material_01_januar_kost= int(500*float(pris_beholdning_1_januar))
+    innkjøp_material_i_januar_kost=int(700*float(pris_innkjop_material_i_januar))
+    beholdning_material_31_januar_kost=int(600*float(pris_innkjop_material_i_januar))
+    virkelig_forbruk_pris=round((int(500*float(pris_beholdning_1_januar))+int(100*float(pris_innkjop_material_i_januar)))/600,2)
+    virkelig_forbruk_kost=int(600*virkelig_forbruk_pris)
+    standard_kostnader=int(float(pris_beholdning_1_januar)*580)
+    virkelig_forbruk= int(float(pris_beholdning_1_januar)*600)
+    virkelig_kostnader= int(float(virkelig_forbruk_pris)*600)
+    mengdeavvik=standard_kostnader-virkelig_forbruk
+    prisavvik=virkelig_forbruk-virkelig_kostnader
+    totalavvik=mengdeavvik+prisavvik
+    return(beholdning_material_01_januar_kost,innkjøp_material_i_januar_kost,beholdning_material_31_januar_kost,
+           virkelig_forbruk_pris,virkelig_forbruk_kost,standard_kostnader,virkelig_forbruk,virkelig_kostnader,
+           mengdeavvik,prisavvik,totalavvik)
+
+def ch3_lonnregnskap(standard_lonn, virkelig_timer):
+    virkelig_lonn=round(float(264690/int(virkelig_timer)),2)
+    standard_kostnader=870*int(standard_lonn)
+    virkelig_forbruk=int(standard_lonn)*int(virkelig_timer)
+    virkelige_kostnader=int(virkelig_lonn*int(virkelig_timer))
+    tidsavvik=standard_kostnader-virkelig_forbruk
+    lønnssatsavvik=virkelig_forbruk-virkelige_kostnader
+    totalavvik=-(tidsavvik+lønnssatsavvik)
+    lønnssatsavvik_komentar=-lønnssatsavvik
+    return(virkelig_lonn,standard_kostnader,virkelig_forbruk,virkelige_kostnader,tidsavvik,lønnssatsavvik,totalavvik,lønnssatsavvik_komentar)
+
+def ch3_standard_selv_table(sat_faste_indirekte_tilv,sat_variable_indirekte_tilv,sat_faste_administrasjon):
+    kost_faste_indirekte_tilv=int(3*int(sat_faste_indirekte_tilv))
+    kost_variable_indirekte_tilv=int(3*int(sat_variable_indirekte_tilv))
+    tilv_per_enhet=int(100+900+kost_faste_indirekte_tilv+kost_variable_indirekte_tilv)
+    sat_faste_administrasjon=int(sat_faste_administrasjon)
+    selvkost_enhet=tilv_per_enhet+sat_faste_administrasjon
+    tilv_per_enhet_bidra=int(100+900+kost_variable_indirekte_tilv)
+    return(kost_faste_indirekte_tilv,kost_variable_indirekte_tilv,tilv_per_enhet,sat_faste_administrasjon,
+           selvkost_enhet,tilv_per_enhet_bidra)
+
+def ch3_selvksot_table(sat_faste_indirekte_tilv,sat_variable_indirekte_tilv,sat_faste_administrasjon):
+    (kost_faste_indirekte_tilv,kost_variable_indirekte_tilv,tilv_per_enhet,sat_faste_administrasjon,
+           selvkost_enhet,tilv_per_enhet_bidra)=ch3_standard_selv_table(sat_faste_indirekte_tilv,sat_variable_indirekte_tilv,sat_faste_administrasjon)
+    indirekte_tilv_sat_s=int(sat_faste_indirekte_tilv)+int(sat_variable_indirekte_tilv)
+    indirekte_tilv_kost_s=int(870*indirekte_tilv_sat_s)
+    indirekte_tilv_avvik_s=-(45100-indirekte_tilv_kost_s)
+    periodens_tilvirkningskostnad_s=29000+261000+indirekte_tilv_kost_s
+    endring_ferdige_varer_s=int(20*int(tilv_per_enhet))
+    tilv_solgte_s=periodens_tilvirkningskostnad_s-endring_ferdige_varer_s
+    tilv_solgte_virkelig_s=339932-endring_ferdige_varer_s
+    admin_s=270*int(sat_faste_administrasjon)
+    admin_avvik_s=admin_s-31000
+    selvkost_solgte_s=tilv_solgte_s+admin_s
+    selvkost_solgte_bidra_s=tilv_solgte_virkelig_s+31000
+    produktresultat_s=349500-selvkost_solgte_s
+    avvik_total_s=indirekte_tilv_avvik_s+admin_avvik_s
+    produksjonsresultat_s=produktresultat_s-4832+avvik_total_s
+    produksjonsresultat_bidra_s=349500-selvkost_solgte_bidra_s
+    return(indirekte_tilv_sat_s,indirekte_tilv_kost_s,indirekte_tilv_avvik_s,periodens_tilvirkningskostnad_s,endring_ferdige_varer_s,
+           tilv_solgte_s,tilv_solgte_virkelig_s,admin_s,admin_avvik_s,selvkost_solgte_s,
+           selvkost_solgte_bidra_s,produktresultat_s,avvik_total_s,produksjonsresultat_s,produksjonsresultat_bidra_s)
+
+def ch3_bidrakost_table(sat_faste_indirekte_tilv,sat_variable_indirekte_tilv,sat_faste_administrasjon):
+    (kost_faste_indirekte_tilv,kost_variable_indirekte_tilv,tilv_per_enhet,sat_faste_administrasjon,
+           selvkost_enhet,tilv_per_enhet_bidra)=ch3_standard_selv_table(sat_faste_indirekte_tilv,sat_variable_indirekte_tilv,sat_faste_administrasjon)
+    indirekte_tilv_kost_b=int(870*int(sat_variable_indirekte_tilv))
+    indirekte_tilv_avvik_b=(indirekte_tilv_kost_b-17600)
+    periodens_tilvirkningskostnad_b=29000+261000+indirekte_tilv_kost_b
+    endring_ferdige_varer_b=int(20*int(tilv_per_enhet_bidra))
+    tilv_solgte_b=periodens_tilvirkningskostnad_b-endring_ferdige_varer_b
+    tilv_solgte_virkelig_b=312432-endring_ferdige_varer_b
+    kalkulert_DB_b=349500-tilv_solgte_b
+    virkelig_dekningsbidrag_b=kalkulert_DB_b-4832+indirekte_tilv_avvik_b
+    virkelig_dekningsbidrag_virkelige_b=349500-tilv_solgte_virkelig_b
+    faste_admin_b=300*int(sat_faste_administrasjon)
+    avvik_faste_admin_b=faste_admin_b-31000
+    avvik_faste_sum_b=-500+avvik_faste_admin_b
+    produksjonsresultat_b=virkelig_dekningsbidrag_b-27000-faste_admin_b+avvik_faste_sum_b
+    produksjonsresultat_virkelige_b=virkelig_dekningsbidrag_virkelige_b-27500-31000
+    return(indirekte_tilv_kost_b,indirekte_tilv_avvik_b,periodens_tilvirkningskostnad_b,
+           endring_ferdige_varer_b,tilv_solgte_b,tilv_solgte_virkelig_b,kalkulert_DB_b,
+           virkelig_dekningsbidrag_b,virkelig_dekningsbidrag_virkelige_b,faste_admin_b,
+           avvik_faste_admin_b,avvik_faste_sum_b,produksjonsresultat_b,produksjonsresultat_virkelige_b)
+
+def ch3_differanse_table(sat_faste_indirekte_tilv,sat_variable_indirekte_tilv,sat_faste_administrasjon):
+    (indirekte_tilv_sat_s,indirekte_tilv_kost_s,indirekte_tilv_avvik_s,periodens_tilvirkningskostnad_s,endring_ferdige_varer_s,
+    tilv_solgte_s,tilv_solgte_virkelig_s,admin_s,admin_avvik_s,selvkost_solgte_s,
+    selvkost_solgte_bidra_s,produktresultat_s,avvik_total_s,
+    produksjonsresultat_s,produksjonsresultat_bidra_s)=ch3_selvksot_table(sat_faste_indirekte_tilv,
+            sat_variable_indirekte_tilv,sat_faste_administrasjon)
+
+    (indirekte_tilv_kost_b,indirekte_tilv_avvik_b,periodens_tilvirkningskostnad_b,
+    endring_ferdige_varer_b,tilv_solgte_b,tilv_solgte_virkelig_b,kalkulert_DB_b,
+    virkelig_dekningsbidrag_b,virkelig_dekningsbidrag_virkelige_b,faste_admin_b,
+    avvik_faste_admin_b,avvik_faste_sum_b,produksjonsresultat_b,
+    produksjonsresultat_virkelige_b)=ch3_bidrakost_table(sat_faste_indirekte_tilv,
+            sat_variable_indirekte_tilv,sat_faste_administrasjon)
+    
+    differanse1=produksjonsresultat_s-produksjonsresultat_b
+    differanse2=endring_ferdige_varer_s-endring_ferdige_varer_b
+    return(differanse1,differanse2)
+
+
+def ch3_virkelige_t4(sat_faste_indirekte_tilv_t4,sat_variable_indirekte_tilv_t4,sat_faste_administrasjon_t4):
+    standard_kostnad_var=(290*3)*int(sat_variable_indirekte_tilv_t4)
+    effektivitets_avvik=standard_kostnad_var-17300
+    forbruksavvik_var=17300-17600
+    totalt_avvik_var=standard_kostnad_var-17600
+    standard_kostnad_faste=(290*3)*int(sat_faste_indirekte_tilv_t4)
+    volumavvik_faste=standard_kostnad_faste-27000
+    forbruksavvik_faste=27000-27500
+    totalt_avvik_faste=standard_kostnad_faste-27500
+    standard_kostnad_admin=(270)*int(sat_faste_administrasjon_t4)
+    volumavvik_admin=standard_kostnad_admin-30000
+    forbruksavvik_admin=30000-31000
+    totalt_avvik_admin=standard_kostnad_admin-31000
+    return(standard_kostnad_var,effektivitets_avvik,forbruksavvik_var,totalt_avvik_var,
+        standard_kostnad_faste,volumavvik_faste,forbruksavvik_faste,totalt_avvik_faste,
+        standard_kostnad_admin,volumavvik_admin,forbruksavvik_admin,totalt_avvik_admin)
