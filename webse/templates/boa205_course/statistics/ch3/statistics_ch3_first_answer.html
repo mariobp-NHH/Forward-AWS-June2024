@@ -1,0 +1,543 @@
+{% extends "boa205_course/boa205_course_layout.html" %} {% block content %}
+
+<section class="section-statistics">
+  <div class="stats-container">
+    <!-- Første innmelding – Tid –< -->
+    <div
+      class="stats-box"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="stats-icon">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+      </div>
+      <p><strong>Første innmelding – Tid –</strong></p>
+      <div class="stats-buttons">
+        <a
+          href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_first_entry_time_week')
+                  }}"
+          class="btn btn-primary btn-sm"
+          >Uke kapittel</a
+        >
+        <a
+          href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_first_entry_time_year')
+                  }}"
+          class="btn btn-primary btn-sm"
+          >År</a
+        >
+        <a
+          href="#"
+          class="btn btn-primary btn-sm"
+          data-toggle="modal"
+          data-target="#instructionsModalInstructions1"
+          >Hjelp</a
+        >
+      </div>
+    </div>
+
+    <!-- Første innmelding – Gjennomsnitt – -->
+    <div
+      class="stats-box"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="400"
+      data-aos-once="true"
+    >
+      <div class="stats-icon">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+      </div>
+      <p><strong>Første innmelding – Gjennomsnitt –</strong></p>
+      <div class="stats-buttons">
+        <a
+          href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_first_entry_average_week')
+                  }}"
+          class="btn btn-primary btn-sm"
+          >Uke kapittel</a
+        >
+        <a
+          href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_first_entry_average_year')
+                  }}"
+          class="btn btn-primary btn-sm"
+          >År</a
+        >
+        <a
+          href="#"
+          class="btn btn-primary btn-sm"
+          data-toggle="modal"
+          data-target="#instructionsModalInstructions2"
+          >Hjelp</a
+        >
+      </div>
+    </div>
+
+    <!-- Første riktige svar -->
+    <div
+      class="stats-box"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="600"
+      data-aos-once="true"
+    >
+      <div class="stats-icon">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+      </div>
+      <p><strong>Første riktige svar</strong></p>
+      <div class="stats-buttons">
+        <a
+          href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_first_answer_week')
+                  }}"
+          class="btn btn-primary btn-sm"
+          >Uke kapittel</a
+        >
+        <a
+          href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_first_answer_year')
+                  }}"
+          class="btn btn-primary btn-sm"
+          >År</a
+        >
+        <a
+          href="#"
+          class="btn btn-primary btn-sm"
+          data-toggle="modal"
+          data-target="#instructionsModalInstructions3"
+          >Hjelp</a
+        >
+      </div>
+    </div>
+    
+
+    <!-- Forsøk til riktig -->
+    <div
+      class="stats-box"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="800"
+      data-aos-once="true"
+    >
+      <div class="stats-icon">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+      </div>
+      <p><strong>Forsøk til riktig</strong></p>
+      <div class="stats-buttons">
+        <a href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_attempts_week')
+                  }}" class="btn btn-primary btn-sm">Uke kapittel</a>
+        <a href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_attempts_year')
+                  }}" class="btn btn-primary btn-sm">År</a>
+        <a
+          href="#"
+          class="btn btn-primary btn-sm"
+          data-toggle="modal"
+          data-target="#instructionsModalInstructions4"
+          >Hjelp</a
+        >
+      </div>
+    </div>      
+        
+    <!-- Siste svar -->
+    <div
+      class="stats-box"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="800"
+      data-aos-once="true"
+    >
+      <div class="stats-icon">
+        <i class="fa-solid fa-magnifying-glass-chart"></i>
+      </div>
+      <p><strong>Siste svar</strong></p>
+      <div class="stats-buttons">
+        <a href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_last_entry_week')
+                  }}"
+                  class="btn btn-primary btn-sm">Uke kapittel</a>
+        <a href="{{
+                    url_for('boa205_course_statistics.statistics_ch3_last_entry_year')
+                  }}"
+                  class="btn btn-primary btn-sm">År</a>
+        <a
+          href="#"
+          class="btn btn-primary btn-sm"
+          data-toggle="modal"
+          data-target="#instructionsModalInstructions5"
+          >Hjelp</a
+        >
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+<!-- Modal Instructions1 -->
+<div class="modal" id="instructionsModalInstructions1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title", style="color:black">Første forsøk – Tid –</h5>
+      </div>
+
+      <div class="modal-body", style="color:black">
+        <p>
+          Her finner du riktige og gale svar for det første forsøket du har gjort på hvert spørsmål.
+          <br>
+          Du ser også tidsforskjellen mellom ditt første forsøk og det første riktige svaret blant alle de første forsøkene fra ALLE STUDENTENE.
+          Hvis du er den første som svarer riktig på et spørsmål, er tidsforskjellen 00:00:00.
+          Hvis du ikke svarte riktig på spørsmålet i første forsøk, er tidsforskjellen None.
+          <br>
+          Du har to valg.
+            <ol>
+                <li>
+                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
+                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
+                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
+                </li>
+                </br>
+                <li>
+                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
+                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
+                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
+                </li>
+            </ol>
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Instructions2 -->
+<div class="modal" id="instructionsModalInstructions2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title", style="color:black">Første forsøket – Gjennomsnitt –</h5>
+      </div>
+
+      <div class="modal-body", style="color:black">
+        <p>
+          Her finner du riktige og gale svar for det første forsøket du har gjort på hvert spørsmål.
+          <br>
+          Du ser også gjennomsnittet av riktige svar på første forsøk for ALLE studentene. 
+          Hvis gjennomsnittet er 0, betyr det at ALLE studentene har svart feil på det spørsmålet. 
+          Hvis gjennomsnittet er 1, betyr det at ALLE studentene har svart riktig på det spørsmålet.
+          <br>
+          Du har to valg.
+            <ol>
+                <li>
+                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
+                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
+                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
+                </li>
+                </br>
+                <li>
+                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
+                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
+                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
+                </li>
+            </ol>
+
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Instructions3 -->
+<div class="modal" id="instructionsModalInstructions3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title", style="color:black">Første riktige svar</h5>
+      </div>
+
+      <div class="modal-body", style="color:black">
+        <p>
+          Her finner du tidsforskjellen mellom ditt første riktige svar på hvert spørsmål og 
+          tidspunktet for det første riktige svaret globalt.
+          Hvis du aldri har svart riktig på et spørsmål, vil Dato for første riktige svar og Tidsforskjell vs. global 
+          første korrekthet være None.
+          <br>
+          Du ser også den gjennomsnittlige tidsforskjellen mellom det første riktige svaret for ALLE studentene på hvert spørsmål og tidspunktet for det første riktige svaret globalt.
+          <br>
+          Du har to valg.
+            <ol>
+                <li>
+                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
+                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
+                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
+                </li>
+                </br>
+                <li>
+                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
+                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
+                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
+                </li>
+            </ol>
+
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal Instructions4 -->
+<div class="modal" id="instructionsModalInstructions4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title", style="color:black">Forsøk til riktig</h5>
+      </div>
+
+      <div class="modal-body", style="color:black">
+        <p>
+          Her finner du antall forsøk du brukte før du svarte riktig på hvert spørsmål. 
+          Tallet 1 betyr at du svarte riktig på spørsmålet på første forsøk.
+          <br>
+          Du ser også det gjennomsnittlige antallet forsøk før riktig svar for ALLE studentene på hvert spørsmål.
+          Tallet 1 betyr at alle studentene svarte riktig på spørsmålet på første forsøk.
+          <br>
+          Du har to valg.
+            <ol>
+                <li>
+                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
+                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
+                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
+                </li>
+                </br>
+                <li>
+                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
+                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
+                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
+                </li>
+            </ol>
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
+      </div>
+
+    </div>
+  </div>
+</div> 
+
+<!-- Modal Instructions5 -->
+<div class="modal" id="instructionsModalInstructions5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title", style="color:black">Siste svar</h5>
+      </div>
+
+      <div class="modal-body", style="color:black">
+        <p>
+          Her finner du riktige og gale svar for det siste forsøket du har gjort på hvert spørsmål.
+          <br>
+          Du har to valg.
+            <ol>
+                <li>
+                    <strong>Kapittel:</strong>  Du ser statistikken for uken da dette kapittelet ble undervist. 
+                    Dette gir deg informasjon om prestasjonene dine i løpet av akkurat den uken. 
+                    Denne informasjonen kan være mer presis, siden du da kan motivere deg til å holde deg «på ballen» og følge kurset kapittel for kapittel.
+                </li>
+                </br>
+                <li>
+                    <strong>År:</strong> Du ser statistikken for hele året da dette kapittelet ble undervist. 
+                    Det betyr at du får informasjon om alle datoene du har svart på spørsmål i kapittelet. 
+                    Denne informasjonen kan være mer «støyende», siden du kan svare på spørsmålene når som helst i løpet av året.
+                </li>
+            </ol>
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-lg mr-2", style="background-color=#6c757d;" data-dismiss="modal">Lukke</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Convert custom data attributes to real AOS attributes
+  document.querySelectorAll("[data-aos='aos-fade-right']").forEach((el) => {
+    el.setAttribute("data-aos", "aos-fade-right");
+  });
+
+  AOS.init({
+    startEvent: 'DOMContentLoaded',
+    once: true
+  });
+</script>
+
+<section
+  class="section_statistics_table_canvas"
+  style="background-color: #2b4359"
+>
+  <div class="container">
+    <div class="statistics_css">
+      <div class="box" style="background-color: #4a736f">
+        <div class="table-responsive-wrapper">
+          <table class="table table_custom_table_canvas">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col" class="align-top">Bruker</th>
+                <th scope="col" class="align-top">Spørsmålsnummer</th>
+                <th scope="col" class="align-top">Dato første riktige svar</th>
+                <th scope="col" class="align-top">Dato global første korrekt</th>
+                <th scope="col" class="align-top">
+                  Tidsforskjell vs. global første korrekthet
+                </th>
+                <th scope="col" class="align-top">
+                  Gjennomsnittlig tidsforskjell (alle brukere)
+                </th>
+                <th scope="col" class="align-top">Lenkeøvelse</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in
+              current_user_all_questions_first_and_global_correct_avg_call %}
+              <tr>
+                <td>{{ current_user.username }}</td>
+                <td>{{ row.question_num }}</td>
+                <td>{{ row["Date First Correct Answer"] }}</td>
+                <td>{{ row["Global First Correct Date"] }}</td>
+                <td>{{ row["Time Difference vs Global First Correct"] }}</td>
+                <td>{{ row["Average Time Difference (All Users)"] }}</td>
+                <td>
+                  <a
+                    href="{{ url_for('boa205_course_chapters.boa205_course_chapters_ch3') }}"
+                    class="btn btn-outline-warning btn-sm mobile-adjust-btn"
+                    >Lenk</a
+                  >
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="box" style="background-color: #4a736f">
+        <canvas id="avg_per_question_chart" style="height: 200px"></canvas>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% block javascript2 %}
+<canvas id="avg_per_question_chart"></canvas>
+
+<script>
+  const ctx = document.getElementById("avg_per_question_chart").getContext("2d");
+
+  // Get your chart data from Flask context
+  const labels = {{ chart_labels|tojson }};
+  const values = {{ chart_values|tojson }}; // values in minutes
+
+  // Determine if we should display in hours or days
+  const maxMinutes = Math.max(...values.map(v => v || 0));
+  const useDays = maxMinutes >= 1440; // switch to days if any value ≥ 1 day
+
+  // Convert units
+  const convertedValues = useDays
+    ? values.map(v => (v || 0) / 1440)  // to days
+    : values.map(v => (v || 0) / 60);   // to hours
+
+  // Define axis label and max value
+  const yLabel = useDays ? "Gjennomsnittlig (dager)" : "Gjennomsnittlig (timer)";
+  const tickSuffix = useDays ? " dager" : " timer";
+  const suggestedMax = useDays ? 7 : Math.max(...convertedValues) * 1.2; // cap days at 7
+
+  new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: labels,
+      datasets: [{
+        label: "Gjennomsnittlig tidsforskjell (alle brukere)",
+        data: convertedValues,
+        backgroundColor: [
+          "#007bff", "#17a2b8", "#28a745", "#ffc107", "#fd7e14", "#dc3545"
+        ],
+        borderColor: "#000000",
+        borderWidth: 2
+      }]
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: "Gjennomsnittlig tidsforskjell (alle brukere)",
+          color: "#000000",
+          font: { size: 18, weight: "bold" }
+        },
+        legend: { display: false }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMax: suggestedMax,
+          ticks: {
+            color: "#000000",
+            font: { size: 12, weight: "bold" },
+            callback: function(value) {
+              return value.toFixed(1) + tickSuffix;
+            }
+          },
+          title: {
+            display: true,
+            text: yLabel,
+            color: "#000000",
+            font: { size: 12, weight: "bold" }
+          },
+          grid: { color: "rgba(0,0,0,0.3)" }
+        },
+        x: {
+          ticks: {
+            color: "#000000",
+            font: { size: 13, weight: "bold" }
+          },
+          title: {
+            display: true,
+            text: "Spørsmål",
+            color: "#000000",
+            font: { size: 12, weight: "bold" }
+          },
+          grid: { color: "rgba(0,0,0,0.15)" }
+        }
+      }
+    }
+  });
+</script>
+
+{% endblock%}
+
+{% endblock content %}
