@@ -37,6 +37,7 @@
                   </div>
                   {% for announcement in announcements.items %}
                       <article class="media content-section">
+                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
                         <div class="media-body">
                           <div class="article-metadata">
                             <a class="mr-2" href="{{ url_for('boa205_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
