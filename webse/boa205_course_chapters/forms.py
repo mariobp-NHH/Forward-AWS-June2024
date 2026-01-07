@@ -358,3 +358,186 @@ class TableForm_boa205_ch2b_t2(FlaskForm):
                                  ('95000',
                                  'kr 95 000')])
     submit = SubmitField('Send inn')
+
+""" Chapter 3 """
+class TableForm_boa205_ch3_t1(FlaskForm):
+    pris_beholdning_1_januar= SelectField("Pris beholdning material 01 januar",
+                       choices=[('49',
+                                 'kr/ltr 49'),
+                                ('50',
+                                 'kr/ltr 50'),
+                                ('51',
+                                 'kr/ltr 51')])
+    pris_innkjop_material_i_januar = SelectField("Pris innkjøp material i januar",
+                       choices=[('51',
+                                 'kr/ltr 51'),
+                                ('51.43',
+                                 'kr/ltr 51.43'),
+                                 ('52',
+                                 'kr/ltr 52')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ch3_t2(FlaskForm):
+    standard_lonn= SelectField("Standard lønn i januar",
+                       choices=[('298',
+                                 '298 kr/t'),
+                                ('300',
+                                 '300 kr/t'),
+                                ('302',
+                                 '302 kr/t')])
+    virkelig_timer = SelectField("Virkelige timer i januar",
+                       choices=[('862',
+                                 '862 timer'),
+                                ('865',
+                                 '865 time'),
+                                 ('868',
+                                 '868 timer')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ch3_t3(FlaskForm):
+    sat_faste_indirekte_tilv= SelectField("Standardsats faste indirekte tilvirk kost",
+                       choices=[('28',
+                                 '28 kr'),
+                                ('30',
+                                 '30 kr'),
+                                ('32',
+                                 '32 kr')])
+    sat_variable_indirekte_tilv= SelectField("Standardsats variable indirekte tilvirk kost",
+                       choices=[('18',
+                                 '18 kr'),
+                                ('20',
+                                 '20 kr'),
+                                ('22',
+                                 '22 kr')])
+    sat_faste_administrasjon= SelectField("Standardsats faste administrasjonkostnader",
+                       choices=[('98',
+                                 '98 kr'),
+                                ('100',
+                                 '100 kr'),
+                                ('102',
+                                 '102 kr')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ch3_t4(FlaskForm):
+    sat_faste_indirekte_tilv_t4= SelectField("Standardsats faste indirekte tilvirk kost",
+                       choices=[('28',
+                                 '28 kr'),
+                                ('30',
+                                 '30 kr'),
+                                ('32',
+                                 '32 kr')])
+    sat_variable_indirekte_tilv_t4= SelectField("Standardsats variable indirekte tilvirk kost",
+                       choices=[('18',
+                                 '18 kr'),
+                                ('20',
+                                 '20 kr'),
+                                ('22',
+                                 '22 kr')])
+    sat_faste_administrasjon_t4= SelectField("Standardsats faste administrasjonkostnader",
+                       choices=[('98',
+                                 '98 kr'),
+                                ('100',
+                                 '100 kr'),
+                                ('102',
+                                 '102 kr')])
+    submit_t4 = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch3_q1(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-1000',
+                                 '-1000'),
+                                ('-980',
+                                 '-980'),
+                                ('-940',
+                                 '-940')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch3_q2(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-106',
+                                 '-106'),
+                                ('-104',
+                                 '-104'),
+                                ('-102',
+                                 '-102')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch3_q3(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('2010',
+                                 '2010'),
+                                ('2250',
+                                 '2250'),
+                                ('2400',
+                                 '2400')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch3_q4(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-6085',
+                                 '-6085'),
+                                ('-6050',
+                                 '-6050'),
+                                ('-6025',
+                                 '-6025')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch3_q5(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('1688',
+                                 '1688'),
+                                ('1698',
+                                 '1698'),
+                                ('1705',
+                                 '1705')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch3_q6(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-240',
+                                 '-240'),
+                                ('-235',
+                                 '-235'),
+                                ('-232',
+                                 '-232')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch3_q7(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-23550',
+                                 '-23550'),
+                                ('-23120',
+                                 '-23120'),
+                                ('-23050',
+                                 '-23050')])
+    submit = SubmitField('Send inn') 
+
+class ModulsForm_boa205_ch3_q8(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-21200',
+                                 '-21200'),
+                                ('-21150',
+                                 '-21150'),
+                                ('-21045',
+                                 '-21045')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch3_q9(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-305',
+                                 '-305'),
+                                ('-300',
+                                 '-300'),
+                                ('-297',
+                                 '-297')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch3_q10(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-4000',
+                                 '-4000'),
+                                ('-3995',
+                                 '-3995'),
+                                ('-3992',
+                                 '-3992')])
+    submit = SubmitField('Send inn')
