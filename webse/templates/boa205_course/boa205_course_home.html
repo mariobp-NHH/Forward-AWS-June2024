@@ -30,7 +30,6 @@
                         Kurset skal videre utvikle evnen til å identifisere relevante inntekter og kostnader
                         som grunnlag for bedriftsøkonomiske beslutninger.
                       </p>
-
                 </div>
                 <div class="box">
                   <div class="h1 mb-3">
@@ -38,7 +37,6 @@
                   </div>
                   {% for announcement in announcements.items %}
                       <article class="media content-section">
-                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
                         <div class="media-body">
                           <div class="article-metadata">
                             <a class="mr-2" href="{{ url_for('boa205_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
@@ -138,7 +136,7 @@
           </div>
         </div>
 
-        <!-- Chapter 4-->
+        <!-- Chapter 3-->
         <div
           class="chapters-box"
           data-aos="aos-fade-right"
@@ -149,14 +147,15 @@
           <div class="chapters-icon">
             <i class="fa-solid fa-receipt"></i>
           </div>
-          <p><strong>Kapittel 4:</strong>
-            ...
+          <p><strong>Kapittel 3:</strong>
+            I det kapitel vi skal studer hva er standardkostregnskap; standardkostkalkulasjon; material- og lønnsregnskap; 
+            standardkostregnskapet
           </p>
           <div class="chapters-buttons">
             <a 
-              href="#"
+              href="{{ url_for('boa205_course_chapters.boa205_course_chapters_ch3') }}"
               class="btn btn-primary btn-sm"
-              >Kapittel 4</a
+              >Kapittel 3</a
             >
           </div>
         </div>
