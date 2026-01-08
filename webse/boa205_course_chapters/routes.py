@@ -1301,3 +1301,15 @@ def boa205_course_chapters_ch3():
         form_boa205_ch3_q5=form_boa205_ch3_q5, form_boa205_ch3_q6=form_boa205_ch3_q6,
         form_boa205_ch3_q7=form_boa205_ch3_q7, form_boa205_ch3_q8=form_boa205_ch3_q8,
         form_boa205_ch3_q9=form_boa205_ch3_q9, form_boa205_ch3_q10=form_boa205_ch3_q10)
+
+#Chapter 3 extra exercise
+@boa205_course_chapters.route('/boa205_course/kapitel3/ekstra', methods=['GET', 'POST'])
+@login_required
+def boa205_course_chapters_ch3_extra():
+    return render_template('boa205_course/chapters/ch3_extra.html', title='BØA205 Økonomistyring, kapittel 3, ekstra')
+
+#Arbeidskrav1
+@boa205_course_chapters.route('/boa205_course/arbeidskrav1', methods=['GET', 'POST'])
+@login_required
+def boa205_course_chapters_arbeidskrav1():
+    return render_template('boa205_course/chapters/arbeidskrav1.html', title='BØA205 Økonomistyring, arbeidskrav1')
