@@ -68,6 +68,36 @@
   color: #ffffff;
 }
 
+/* Button container Arbeidskrav */
+.chapters-buttons-arbeid {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Default button style */
+.chapters-buttons-arbeid a {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* Default hover effect */
+.chapters-buttons-arbeid a:hover {
+  background-color: #0056b3;
+  color: #f2b84b;
+}
+
+/* 🎯 Button hover overrides per box */
+.chapters-box:nth-child() .chapters-buttons-arbeid a:hover {
+  background-color: #f2b84b;
+  color: #ffffff;
+}
+
 /* Buttons content, exercises, solutions, video */
 /* Flex container */
 .material-container {
