@@ -25,23 +25,23 @@ from webse.boa205_course_statistics.test import (time_user_first_entry_and_first
 """ Information about the dates for each chapter """
 START_DATE_TEST = datetime(2025, 1, 1)
 END_DATE_TEST = datetime(2026, 12, 30)
-START_CHAPTER1 = datetime(2026, 01, 10)
-END_CHAPTER1 = datetime(2026, 01, 18)
+START_CHAPTER1 = datetime(2026, 1, 10)
+END_CHAPTER1 = datetime(2026, 1, 18)
 
 """ Chapter 2a """
-START_CHAPTER2a = datetime(2026, 01, 16)
-END_CHAPTER2a = datetime(2026, 01, 25)
+START_CHAPTER2a = datetime(2026, 1, 16)
+END_CHAPTER2a = datetime(2026, 1, 25)
 
 """ Chapter 2a """
-START_CHAPTER2b = datetime(2026, 01, 23)
-END_CHAPTER2b = datetime(2026, 02, 01)
+START_CHAPTER2b = datetime(2026, 1, 23)
+END_CHAPTER2b = datetime(2026, 2, 1)
 
 START_DATE_DELETE = datetime(2025, 9, 25)
 END_DATE_DELETE = datetime(2025, 12, 31)
 
 """ Chapter 3 """
-START_CHAPTER3 = datetime(2026, 01, 31)
-END_CHAPTER3 = datetime(2026, 02, 08)
+START_CHAPTER3 = datetime(2026, 1, 31)
+END_CHAPTER3 = datetime(2026, 2, 8)
 
 """ Only to test """
 @boa205_course_statistics.route('/boa205_course/statistics_test_web', methods=['GET', 'POST'])
