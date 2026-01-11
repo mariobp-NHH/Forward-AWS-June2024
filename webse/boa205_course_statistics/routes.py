@@ -29,18 +29,18 @@ START_CHAPTER1 = datetime(2026, 01, 10)
 END_CHAPTER1 = datetime(2026, 01, 18)
 
 """ Chapter 2a """
-START_CHAPTER2a = datetime(2025, 01, 16)
+START_CHAPTER2a = datetime(2026, 01, 16)
 END_CHAPTER2a = datetime(2026, 01, 25)
 
 """ Chapter 2a """
-START_CHAPTER2b = datetime(2025, 01, 23)
+START_CHAPTER2b = datetime(2026, 01, 23)
 END_CHAPTER2b = datetime(2026, 02, 01)
 
 START_DATE_DELETE = datetime(2025, 9, 25)
 END_DATE_DELETE = datetime(2025, 12, 31)
 
 """ Chapter 3 """
-START_CHAPTER3 = datetime(2025, 01, 31)
+START_CHAPTER3 = datetime(2026, 01, 31)
 END_CHAPTER3 = datetime(2026, 02, 08)
 
 """ Only to test """
