@@ -48,7 +48,7 @@ def boa205_course_chapters_ch1():
             filter(ModulsGD.title_ch == 'Kapitel 1. Hva er et driftsregnskap?'). \
             filter(ModulsGD.question_num == 1).count()
         moduls = ModulsGD(question_str=form_boa205_ch1_q1.type.data, author=current_user)
-        if moduls.question_str == 'kr 20 000':
+        if moduls.question_str == 'kr -20 000':
             moduls.question_result = 1
         else:
             moduls.question_result = 0
