@@ -35,7 +35,7 @@
                   </h3>
                   {% for announcement in announcements.items %}
                       <article class="media content-section">
-                        <img class="rounded-circle account-img" src="data:image/jpeg;base64,{{ func(announcement.author.image_file) }}">
+
                         <div class="media-body">
                           <div class="article-metadata">
                             <a class="mr-2" href="{{ url_for('gd_course_announcements.user_announcements', username=announcement.author.username) }}">{{ announcement.author.username }}</a>
@@ -305,7 +305,7 @@
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
           <div class="accordion-body">
-<!--           <p><u>Assignment at NHH.</u>
+          <p><u>Assignment at NHH.</u>
           <br>
           <br>
           <strong>Portfolio in groups of 6-7 students</strong> consisting of the following parts:
@@ -323,11 +323,11 @@
           <br>
           <br>
           An assessment in FOR19 will not be organised in the the non-teaching semester.
-          As of autumn 2023, only mandatory bachelor courses with an individual assessment will have an assessment
+          As of autumn 2026, only mandatory bachelor courses with an individual assessment will have an assessment
           in the non-teaching semester. This only applies to students with a valid course approval.
           The retake options that apply at all times are decided by the dean for the bachelor program and will
           be published in the course description.
-          </p> -->
+          </p>
           <p>
           <u>Assignment at HVL.</u>
           <br>
@@ -472,7 +472,7 @@
           </ul>
           </p> -->
           <p>
-          <u>At HVL</u>
+          <u>At HVL and NHH</u>
           <br>
           <br>
           We will cover one chapter per week.
@@ -480,21 +480,21 @@
           <br>
           The <strong>key dates </strong>for the course are the next ones (We could have one extra week for a lecture on digital marketing. In that case the final exam could be moved to December 1):
           <ul>
-            <li>Chapter 1: 18 August.</li>
-            <li>Chapter 2: 25 August.</li>
-            <li>Chapter 3: 1 September.</li>
-            <li>Chapter 4: 8 September.</li>
-            <li>Chapter 5: 15 September.</li>
-            <li>Chapter 6: 22 September. </li>
-            <li>Chapter 7: 29 September.</li>
-            <li>Chapter 8: 6 Octover.</li>
-            <li>Midway conference: 13 Octover.</li>
-            <li>Chapter 9: 20 Octover.</li>
-            <li>Chapter 10: 27 Octover.</li>
-            <li>Chapter 11: 3 November.</li>
-            <li>Chapters 12: 10 November.</li>
-            <li>Chapters 13: 17 November.</li>
-            <li>Final conference (exam): 24 November</li>
+            <li>Chapter 1: 14 January.</li>
+            <li>Chapter 2: 21 January.</li>
+            <li>Chapter 3: 28 January.</li>
+            <li>Chapter 4: 04 February.</li>
+            <li>Chapter 5: 11 February.</li>
+            <li>Chapter 6: 18 February. </li>
+            <li>Chapter 7: 25 February.</li>
+            <li>Chapter 8: 04 March.</li>
+            <li>Midway conference: 11 March.</li>
+            <li>Chapter 9: 18 March.</li>
+            <li>Chapter 10: 25 March.</li>
+            <li>Chapter 11: 01 April. This date can change based on Easter. We will fix this the first lecture.</li>
+            <li>Chapters 12: 08 April. This date can change based on Easter. We will fix this the first lecture.</li>
+            <li>Chapters 13: 15 April. This date can change based on Easter. We will fix this the first lecture.</li>
+            <li>Final conference (exam): 29 April</li>
           </ul>
           </p>
           <!-- <p>
@@ -532,7 +532,11 @@
           <div class="accordion-body">
           <!-- <p>At <strong>HVL</strong>, the lectures are on Tuesdays (10.15-12.00) in J204 (36), and Wednesdays (08.15-10.00) in Aud D426. -->
             At <strong>HVL</strong>,
-            the lectures are on Mondays (12.15–16.00) in E121.
+            the lectures are on Wednesdays (08.15–11.00).
+          <br>
+          <br>
+          At <strong>NHH</strong>,
+            the lectures are on Wednesdays (12.15–15.00).
           <br>
           <br>
           Each chapter has its own <strong>webpage</strong>. To make the course more effective, and to facilitate the learning process, each chapter has its
@@ -572,7 +576,7 @@
           <div class="accordion-body">
           <p>
             If any student/group needs help, please let me know, and we will meet to solve any problem/doubt that you might have.
-            You can ask me for a tutorial during the lectures or drop me a line by using Canvas or my email (mario.paz@nhh.no).
+            You can ask me for a tutorial during the lectures or drop me a line by using Canvas or my email (mario.paz@hvl.no), (mario.paz@nhh.no).
             <br>
             <br>
             If you cannot meet physically, please drop me a line, and we set an appointment at a different time, or by using Zoom (https://nhh.zoom.us/j/6343089435)
@@ -582,4 +586,5 @@
       </div>
     </div>
   </section>
+
 {% endblock content %}
