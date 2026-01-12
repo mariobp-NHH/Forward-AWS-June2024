@@ -240,6 +240,12 @@
   color: #0388a6;
 }
 
+/* Random number css */
+.random-number {
+  font-size: 2.2rem; /* adjust as you like */
+  font-weight: 600; /* optional: makes it stand out */
+}
+
 /* Responsive layout */
 @media (max-width: 768px) {
   .chapters-container {
