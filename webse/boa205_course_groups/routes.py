@@ -11,7 +11,7 @@ boa205_course_groups= Blueprint('boa205_course_groups', __name__)
 @login_required
 def boa205_course_groups_home():
     import random
-    n = 10
+    n = 15
     x = random.randint(1, n) 
     return render_template('boa205_course/groups/groups.html', title='BØA205 Økonomistyring, grupper',
         random_number=x)
