@@ -1,0 +1,1602 @@
+{% extends "boa205_course/boa205_course_layout.html" %}
+{% block content %}
+
+{% if anchor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targetElement = document.getElementById("{{ anchor }}");
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endif %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1>Kapitel 4. Salgets resultatavvik</h1>
+                <p class="mb-1">
+                I det kapitel vi skal studer hva er resultatavvik, kostnadsavvik og salgets resultatavvik.
+                Vi studerer også fordeler og ulemper ved standardkost. Pensum: Kapittel 6 i Driftsregnskap og budsjettering
+                <br>
+                <strong>Instruksjoner:</strong>
+                <ul>
+                    <li>Kapittel 4: Kapittel 6 i Driftsregnskap og budsjettering.</li>
+                    <li>Les kursmateriellet. I forelesningene skal dere gjøre oppgave 1. Løsningen til oppgave 1 ligger på 
+                      nettsiden. I forelesningene skal dere også gjøre oppgave 1 og 2 i 
+                      kursmateriellet. Løsningene til disse oppgavene ligger på nettsiden.</li>
+                      <li>Hjemmeoppgaven er oppgave 2. Løsningen til oppgave 2 ligger på nettsiden.</li>
+                </ul>
+                - Alle informasjon i det kapitel har vært tatt fra kursmateriellet og boken Driftsregnskap og budsjettering (Bjørn Solheim og Trond Winther), og fra lysbilder fra kurs BØA205 ved HVL -
+                <br>
+                <br>
+                </p>
+                <div class="material-container">
+                    
+
+                    <!-- Kursmateriell  -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Kursmateriell. Løsning  -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kurs. Løsning</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave1_losning2_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    
+                    <!-- Oppgave 1. Mål -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp1. Mål</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave1_mal_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 1. Løsning 1 -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Opp1. Løsning1</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave1_losning1_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Oppgave 2 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp2</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2. Mål -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp2. Mål</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_mal_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2. Løsning -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Opp2. Løsning</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_losning_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>  
+                    
+                </div>
+                </br>
+
+                <div class="list-group", style="padding: 15px 0px;">
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Resultatavvik: Kostnadsavvik og salgets resultatavvik</h5>
+                    </div>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Eksempel fra læreboken</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Fordeler og ulemper ved standardkost</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Salgets resultatavvik. Oppgave 1</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Salgets resultatavvik. Oppgave 2</h5>
+                      </div>
+                    </a>
+                </div>
+            </div>
+            <img
+src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/figures/ch4.svg"
+alt=""
+/>
+        </div>
+    </header>
+</section>
+
+<!-- Kursmateriell Modal -->
+<div class="modal fade" id="kursmateriell_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+            id="paper_frame"
+            src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/kursmateriell.pptx"
+            width="100%" 
+            height="100%" 
+            frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/kursmateriell.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Oppgave 1. Mål. Modal -->
+<div class="modal fade" id="oppgave1_mal_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Mål</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppage1_mal.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppage1_mal.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 1. Løsning 1. Modal -->
+<div class="modal fade" id="oppgave1_losning1_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Løsning 1</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave1_losning1.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave1_losning1.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 1. Løsning 2. Modal -->
+<div class="modal fade" id="oppgave1_losning2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Løsning 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave1_losning2.pptx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave1_losning2.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Modal -->
+<div class="modal fade" id="oppgave2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave2.docx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave2.docx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Mål. Modal -->
+<div class="modal fade" id="oppgave2_mal_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2. Mål</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave2_mal.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave2_mal.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Løsning. Modal -->
+<div class="modal fade" id="oppgave2_losning_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2. Løsning</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave2_losning.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch4/material/oppgave2_losning.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Resultatavvik</h1>
+    </div>
+    
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Resultatavvik (kostnadsavvik)</strong> </p>
+            <p style="text-align: left;">
+                Avvik mellom virkelig og budsjettert resultat kalles 
+                for resultatavvik: Resultatavvik = Virkelig resultat – Budsjettert resultat 
+                <br>
+                Resultatavvik kan oppstå pga.:
+                <ul>
+                  <li>Forskjeller mellom virkelige og budsjetterte salgsinntekter</li>
+                  <li>Forskjeller mellom virkelige og budsjetterte kostnader</li>
+                </ul>
+                I kapittel 5 fokuseres det utelukkende på <strong>kostnader og kostnadsavvik</strong> som kilde til resultatavvik
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Resultatavvik (salgets resultatavvik)</strong> </p>
+            <p style="text-align: left;">
+              I kapittel 6 skifter vi fokus over på utelukkende <strong>inntekter og 
+              inntektsavvik</strong> som kilde til resultatavvik. Derfor kalles dette for <strong>salgets resultatavvik</strong> 
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Salgets resultatavvik</strong> </p>
+            <p style="text-align: left;">
+                Fordi <strong>fokuserer på avvik på inntektssiden</strong> antar vi:
+                <ul>
+                  <li>Virkelig variabel enhetskost = Budsjettert variabel enhetskost</li>
+                  <li>Virkelig fast kostnad = Budsjettert fast kostnad</li>
+                </ul>
+                På de kommende foilene bruker vi følgende <strong>begrep/notasjon</strong>:
+                <ul>
+                  <li><strong>DBv</strong>= Virkelig dekningsbidrag per enhet= Virkelig produktpris – Variabel enhetskost</li>
+                  <li><strong>DBb</strong>= Budsjettert dekningsbidrag per enhet= Budsjettert produktpris – Variabel enhetskost</li>
+                  <li><strong>Xv</strong>= Virkelig salgsmengde</li>
+                  <li><strong>Xb</strong>= Budsjettert salgsmengde</li>
+                  <li><strong>FK</strong>= Fast kostnad</li>
+                  <li><strong>VEK</strong>= Variabel enhetskost </li>
+                </ul>
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Salgets resultatavvik</strong> </p>
+            <p style="text-align: left;">
+              <strong>Salgets resultatavvik</strong>=Virkelig resultat - Budsjettert resultat
+              <br>
+              <strong>Salgets resultatavvik</strong>=(DBv∙Xv-FK)-(DBb∙Xb-FK)=(DBv∙Xv)-(DBb∙Xb)
+              <br>
+              Dvs. resultatavviket kan skrives som differansen mellom virkelig 
+              og budsjettert dekningsbidrag under forutsetning om at virkelig fast kostnad er 
+              lik budsjettert fast kostnad 
+            </p>
+            <p style="text-align: center;"><strong>Salgets resultatavvik</strong> </p>
+            <p style="text-align: left;">
+              <strong>Salgets resultatavvik</strong>=(DBv∙Xv)-(DBb∙Xb)
+              <br>
+              <strong>Salgets resultatavvik</strong>=(DBv∙Xv)<span style="color:red;">-(DBb∙Xv)</span><span style="color:blue;">+(DBb∙Xv)</span>-(DBb∙Xb)
+              <br>
+              <strong>Salgets resultatavvik</strong>=((DBv-DBb)∙Xv)+((Xv-Xb)∙DBb)
+              <br>
+              Dvs. resultatavviket kan splittes i to avvik:
+              <ul>
+                <li>Salgsprisavvik = (Virkelig DB – Budsjettert DB)∙Virkelig mengde</li>
+                <li>Salgsvolumavvik = (Virkelig mengde – Budsjettert mengde)∙Budsjettert DB </li>
+              </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Salgsprisavvik og Salgsvolumavvik</strong> </p>
+            <p style="text-align: left;">
+              Forutsatt at virkelig variabel enhetskost er lik budsjettert variabel enhetskost (VEK):
+              <br>
+              <strong>Salgsprisavvik</strong>=(DBv-DBb)∙Xv
+              <br>
+              <strong>Salgsprisavvik</strong>=((Virkelig pris-VEK)-(Budsjettert pris-VEK))∙Xv
+              <br>
+              <strong>Salgsprisavvik</strong>=(Virkelig pris-Budsjettert pris)∙Xv
+              <br>
+              Dvs. salgsprisavviket kan alternativt uttrykkes ved:
+              <br>
+              <strong>Salgsprisavvik</strong>=(Virkelig pris – Budsjettert pris)∙Virkelig mengde
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Salgsprisavvik og Salgsvolumavvik</strong> </p>
+            <p style="text-align: left;">
+              Oppsummert:
+              <br>
+	            <strong>Salgets resultatavvik</strong>= Virkelig resultat – Budsjettert resultat
+              <br>
+              Kan altså splittes i to avvik:
+              <ul>
+                <li>
+                  <strong>Salgsprisavvik</strong>= (Virkelig pris – Budsjettert pris)∙Virkelig mengde
+                  <br>
+                  <strong>Salgsprisavvik</strong>= (Virkelig DB – Budsjettert DB)∙Virkelig mengde
+                </li>
+                <li><strong>Salgsvolumavvik</strong>= (Virkelig mengde – Budsjettert mengde)∙Budsjettert DB </li>
+              </ul>
+            </p>
+        </div>
+    </div>
+ 
+</section>
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+  <div class="container" style="display:block;">
+    <h2>Eksempel fra læreboken</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+    <div class="container" id="table1">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch4_t1.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch4_t1.budsjettert_pris_produkt_alfa.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t1.budsjettert_pris_produkt_alfa(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t1.budsjettert_pris_produkt_omega.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t1.budsjettert_pris_produkt_omega(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t1.virkelig_salg_i_enheter_alfa.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t1.virkelig_salg_i_enheter_alfa(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t1.virkelig_salg_i_enheter_omega.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t1.virkelig_salg_i_enheter_omega(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch4_t1.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      En bedrift selger to produkter, Alfa og Omega, med slike <strong>priser</strong>, 
+                      <strong>variable enhetskostnader</strong> og <strong>dekningsbidrag</strong> (per enhet):
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Alfa</th>
+                                <th scope="col" class="text-end">Produkt Omega</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Pris</th>
+                                  <td class="text-end">{{budsjettert_pris_produkt_alfa}}</td>
+                                  <td class="text-end">{{budsjettert_pris_produkt_omega}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Variable kostnad per enhet</th>
+                                  <td class="text-end">4</td>
+                                  <td class="text-end">6</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dekningsbidrag</th>
+                                  <td class="text-end">4</td>
+                                  <td class="text-end">6</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <strong>Budsjett</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Alfa</th>
+                                <th scope="col" class="text-end">Produkt Omega</th>
+                                <th scope="col" class="text-end">Totalt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salg i enheter</th>
+                                  <td class="text-end">5000</td>
+                                  <td class="text-end">8000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Inntekter</th>
+                                  <td class="text-end">{{budsjettert_pris_produkt_alfa}}∙5000={{inntekter_alfa}}</td>
+                                  <td class="text-end">{{budsjettert_pris_produkt_omega}}∙8000={{inntekter_omega}}</td>
+                                  <td class="text-end">{{inntekter_totalt}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Variable kostnader</th>
+                                  <td class="text-end">4∙5000=20000</td>
+                                  <td class="text-end">6∙8000=48000</td>
+                                  <td class="text-end">68000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dekningsbidrag</th>
+                                  <td class="text-end">4∙5000=20000</td>
+                                  <td class="text-end">6∙8000=48000</td>
+                                  <td class="text-end">68000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <strong>Virkelige regnskapstall</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Alfa</th>
+                                <th scope="col" class="text-end">Produkt Omega</th>
+                                <th scope="col" class="text-end">Totalt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salg i enheter</th>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_alfa}}</td>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_omega}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Inntekter=(virkelig pris∙mengde)</th>
+                                  <td class="text-end">49200</td>
+                                  <td class="text-end">84000</td>
+                                  <td class="text-end">133200</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Variable kostnader=(kalkyletall∙mengde)</th>
+                                  <td class="text-end">24000</td>
+                                  <td class="text-end">42000</td>
+                                  <td class="text-end">66000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Virkelig dekningsbidrag</th>
+                                  <td class="text-end">25200</td>
+                                  <td class="text-end">42000</td>
+                                  <td class="text-end">67200</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Virkelig pris</th>
+                                  <td class="text-end">49200/{{virkelig_salg_i_enheter_alfa}}={{virkelige_pris_alfa}}</td>
+                                  <td class="text-end">84000/{{virkelig_salg_i_enheter_omega}}={{virkelige_pris_omega}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Virkelig dekningsbidrag (DB) per enhet</th>
+                                  <td class="text-end">25200/{{virkelig_salg_i_enheter_alfa}}={{virkelige_DB_alfa}}</td>
+                                  <td class="text-end">42000/{{virkelig_salg_i_enheter_omega}}={{virkelige_DB_omega}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      1. Salgsprisavvik basert på budsjettert og virkelig <strong>salgspris</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Produkt</th>
+                                <th scope="col" class="text-end">Virkelig pris</th>
+                                <th scope="col" class="text-end">Budsjettert pris</th>
+                                <th scope="col" class="text-end">Virkelig mengde</th>
+                                <th scope="col" class="text-end">Salgsprisavvik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Alfa</th>
+                                  <td class="text-end">{{virkelige_pris_alfa}}</td>
+                                  <td class="text-end">{{budsjettert_pris_produkt_alfa}}</td>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_alfa}}</td>
+                                  <td class="text-end">({{virkelige_pris_alfa}}-{{budsjettert_pris_produkt_alfa}})∙{{virkelig_salg_i_enheter_alfa}}={{salgsprisavvik_alfa}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Omega</th>
+                                  <td class="text-end">{{virkelige_pris_omega}}</td>
+                                  <td class="text-end">{{budsjettert_pris_produkt_omega}}</td>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_omega}}</td>
+                                  <td class="text-end">({{virkelige_pris_omega}}-{{budsjettert_pris_produkt_omega}})∙{{virkelig_salg_i_enheter_omega}}={{salgsprisavvik_omega}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Total avvik</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{salgsprisavvik_total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      2. Salgsprisavvik basert på budsjettert og virkelig <strong>dekningsbidrag</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Produkt</th>
+                                <th scope="col" class="text-end">Virkelig DB</th>
+                                <th scope="col" class="text-end">Budsjettert DB</th>
+                                <th scope="col" class="text-end">Virkelig mengde</th>
+                                <th scope="col" class="text-end">Salgsprisavvik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Alfa</th>
+                                  <td class="text-end">{{virkelige_DB_alfa}}</td>
+                                  <td class="text-end">4</td>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_alfa}}</td>
+                                  <td class="text-end">({{virkelige_DB_alfa}}-4)∙{{virkelig_salg_i_enheter_alfa}}={{deknigsbidragavvik_alfa}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Omega</th>
+                                  <td class="text-end">{{virkelige_DB_omega}}</td>
+                                  <td class="text-end">6</td>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_omega}}</td>
+                                  <td class="text-end">({{virkelige_DB_omega}}-6)∙{{virkelig_salg_i_enheter_omega}}={{deknigsbidragavvik_omega}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Total avvik</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{deknigsbidragavvik_total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      3. <strong>Volumavvik</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Produkt</th>
+                                <th scope="col" class="text-end">Virkelig mengde</th>
+                                <th scope="col" class="text-end">Budsjettert mengde</th>
+                                <th scope="col" class="text-end">Budsjettert DB</th>
+                                <th scope="col" class="text-end">Volumavvik</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Alfa</th>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_alfa}}</td>
+                                  <td class="text-end">5000</td>
+                                  <td class="text-end">4</td>
+                                  <td class="text-end">({{virkelig_salg_i_enheter_alfa}}-5000)∙4={{volumavvik_alfa}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Omega</th>
+                                  <td class="text-end">{{virkelig_salg_i_enheter_omega}}</td>
+                                  <td class="text-end">8000</td>
+                                  <td class="text-end">6</td>
+                                  <td class="text-end">({{virkelig_salg_i_enheter_omega}}-8000)∙6={{volumavvik_omega}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Total avvik</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{volumavvik_total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      4. <strong>Salgets resultatavvik</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Alfa</th>
+                                <th scope="col" class="text-end">Omega</th>
+                                <th scope="col" class="text-end">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Prisavvik</th>
+                                  <td class="text-end">{{salgsprisavvik_alfa}}</td>
+                                  <td class="text-end">{{salgsprisavvik_omega}}</td>
+                                  <td class="text-end">{{salgsprisavvik_total}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsvolumavvik</th>
+                                  <td class="text-end">{{volumavvik_alfa}}</td>
+                                  <td class="text-end">{{volumavvik_omega}}</td>
+                                  <td class="text-end">{{volumavvik_total}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgets resultatavvik</th>
+                                  <td class="text-end">{{salgets_resultatavvik_alfa}}</td>
+                                  <td class="text-end">{{salgets_resultatavvik_omega}}</td>
+                                  <td class="text-end">{{salgets_resultatavvik_total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Questions 1 and 2 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 1 -->
+      <div id="ch4_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q1.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 1:</legend>
+
+                  <p class="card-text">
+                      Når den budsjetterte prisen for produkt alfa er 7 kr, den budsjetterte prisen for produkt omega er 13 kr, 
+                      det faktiske salget i enheter av alfa er 6 050, og det faktiske salget i 
+                      enheter av omega er 7 000, hva er volumavviket for omega?  
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q1.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q1.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="ch4_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q2.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 2:</legend>
+
+                  <p class="card-text">
+                      Når den budsjetterte prisen for produkt alfa er 7 kr, 
+                      den budsjetterte prisen for produkt omega er 13 kr, det faktiske salget i 
+                      enheter av alfa er 6 050, og det faktiske salget i enheter av omega er 7 000, 
+                      hva er dekningsbidrag salgsprisavviket for alfa?   
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q2.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q2.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div>  
+
+  <!-- Questions 3 and 4 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 3 -->
+      <div id="ch4_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q3.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 3:</legend>
+
+                  <p class="card-text">
+                      Når den budsjetterte prisen for produkt alfa er 7 kr, den budsjetterte prisen for produkt 
+                      omega er 13 kr, det faktiske salget i enheter av alfa er 6 050, og det 
+                      faktiske salget i enheter av omega er 7 000, hva er virkelig priset for alfa?  
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q3.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q3.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div id="ch4_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q4.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 4:</legend>
+
+                  <p class="card-text">
+                      Når den budsjetterte prisen for produkt alfa er 7 kr, 
+                      den budsjetterte prisen for produkt omega er 13 kr, det faktiske salget i 
+                      enheter av alfa er 6 050, og det faktiske salget i enheter av omega er 7 000, 
+                      hva er total salgets resultatavvik?   
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q4.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q4.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div>  
+
+  <div class="container" style="display:block;">
+    <p align="left">
+    <strong>Fleksibelt budsjett:</strong>
+    <ul>
+      <li>Et fleksibelt budsjett er et budsjett som viser periodens budsjetterte inntekter, 
+        kostnader og resultat ved de virkelige salgs- og tilvirkningsvolum.
+        <br>
+        Mao. det opprinnelige (statiske) budsjettet korrigert for virkelig salgsvolum (aktivitetsnivå)
+      </li>
+      <li>
+        Det fleksible budsjettet avviker fra standardkostregnskapet på ett område: 
+        I det fleksible budsjettet bruker vi budsjetterte priser i stedet for virkelige oppnådde priser
+      </li>
+      <li>
+        Salgsprisavviket blir derfor det samme som i standardkostregnskapet
+      </li>
+      <li>
+        Men fordi vi i det fleksible budsjettet baserer oss på virkelig salgsvolum 
+        eksisterer det ikke et salgsvolumavvik
+        <br>
+        Mao. oppstår det kun volumavvik ved bruk av statisk budsjett
+      </li>
+    </ul>
+  </p>
+  </div>
+</section>
+
+<!-- Section 3 -->
+<section class="section_1" id="section3">
+  <div class="container" style="display:block;">
+    <h2>Fordeler og ulemper ved standardkost</h2>
+  </div>
+  <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Fordeler</strong> </p>
+            <p style="text-align: left;">
+                Kostnadsstandardene:
+                <ul>
+                  <li>Fokuserer på produktivitet og økonomi</li>
+                  <li>Muliggjør ledelse ved avviksfokusering</li>
+                  <li>Forenkler utarbeidelsen av driftsregnskapet</li>
+                  <li>Forenkler budsjettarbeidet</li>
+                  <li>Relativt rimelig å vedlikeholde og vedlikeholdsarbeidet er konkurransefremmende</li>
+                </ul>
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Ulemper</strong> </p>
+            <p style="text-align: left;">
+              <ul>
+                <li>Ofte ensidig fokus på de negative avvikene</li>
+                <li>Overdreven avviksfokusering kan overskygge at andre og grunnleggende forhold i 
+                  virksomheten er i endring</li>
+              </ul>
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4 -->
+<section class="section_2" id="section4">
+  <div class="container" style="display:block;">
+    <h2>Salgets resultatavvik. Oppgave 1</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+    <div class="container" id="table2">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch4_t2.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch4_t2.budsjettert_pris_tex.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t2.budsjettert_pris_tex(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t2.budsjettert_pris_mex.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t2.budsjettert_pris_mex(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t2.budsjettert_DB_tex.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t2.budsjettert_DB_tex(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t2.budsjettert_DB_mex.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t2.budsjettert_DB_mex(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch4_t2.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      Bedriften TESXMEX produserer produktene Tex og Mex. <strong>Budsjettert</strong> opplysninger for disse produktene er:
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Tex</th>
+                                <th scope="col" class="text-end">Produkt Mex</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Pris</th>
+                                  <td class="text-end">{{budsjettert_pris_tex}}</td>
+                                  <td class="text-end">{{budsjettert_pris_mex}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Variable kostnader</th>
+                                  <td class="text-end">60</td>
+                                  <td class="text-end">25</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dekningsbidrag</th>
+                                  <td class="text-end">{{budsjettert_DB_tex}}</td>
+                                  <td class="text-end">{{budsjettert_DB_mex}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      Oversikten over <strong>antall solgte enheter, virkelige og budsjetterte enheter</strong> 
+                      er visst i tabellen nedenfor.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Budsjett Tex</th>
+                                <th scope="col" class="text-end">Virkelig Tex</th>
+                                <th scope="col" class="text-end">Budsjett Mex</th>
+                                <th scope="col" class="text-end">Virkelig Mex</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsmengde</th>
+                                  <td class="text-end">3000</td>
+                                  <td class="text-end">2800</td>
+                                  <td class="text-end">1600</td>
+                                  <td class="text-end">2400</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Enhetspris</th>
+                                  <td class="text-end">{{budsjettert_pris_tex}}</td>
+                                  <td class="text-end">85</td>
+                                  <td class="text-end">{{budsjettert_pris_mex}}</td>
+                                  <td class="text-end">55</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <strong>Prisavvik, volumnavvik, salgests resultatavvik</strong> 
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Tex</th>
+                                <th scope="col" class="text-end">Mex</th>
+                                <th scope="col" class="text-end">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Prisavvik</th>
+                                  <td class="text-end">(85-{{budsjettert_pris_tex}})∙2800={{prisavvik_tex}}</td>
+                                  <td class="text-end">(85-{{budsjettert_pris_mex}})∙2800={{prisavvik_mex}}</td>
+                                  <td class="text-end">{{prisavvik_total}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Volumavvik</th>
+                                  <td class="text-end">(2800-3000)∙{{budsjettert_DB_tex}}={{volumavvik_tex}}</td>
+                                  <td class="text-end">(2400-1600)∙{{budsjettert_DB_mex}}={{volumavvik_mex}}</td>
+                                  <td class="text-end">{{volumavvik_total}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgets resultatavvik</th>
+                                  <td class="text-end">{{salgets_resultatavvik_tex}}</td>
+                                  <td class="text-end">{{salgets_resultatavvik_mex}}</td>
+                                  <td class="text-end">{{salgets_resultatavvik_total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      Hvor:
+                      <ul align="left">
+                        <li><strong>Prisavvik</strong>= (virkelig pris - budsjettert pris)∙virkelig mengde</li>
+                        <li><strong>Volumavvik</strong>= (Virkelig mengde - budsjettert mengde)∙budsjettert dekningsbidrag</li>
+                        <li><strong>Salgets resultatavvik</strong>= Prisavvik+Volumavvik</li>
+                      </ul>
+                    </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Questions 5 and 6 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 5 -->
+      <div id="ch4_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q5.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 5:</legend>
+
+                  <p class="card-text">
+                      Når den budsjetterte prisen for produkt Tex er 90 kr og den budsjetterte prisen for produkt 
+                      Mex er 55 kr, dekningsbidraget for Tex er 35 kr og dekningsbidraget for 
+                      Mex er 25 kr, hva er det totale salgsresultatavviket?  
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q5.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q5.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div id="ch4_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q6.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 6:</legend>
+
+                  <p class="card-text">
+                      Når den budsjetterte prisen for produkt Tex er 90 kr og den budsjetterte prisen for 
+                      produkt Mex er 55 kr, dekningsbidraget for Tex er 35 kr og 
+                      dekningsbidraget for Mex er 25 kr, hva er det totale volumavviket?    
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q6.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q6.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+</section>
+
+<!-- Section 5 -->
+<section class="section_1" id="section5">
+  <div class="container" style="display:block;">
+    <h2>Salgets resultatavvik. Oppgave 2</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #4a736f;">
+    <div class="container" id="table3">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch4_t3.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch4_t3.virkelig_salgsvolum_3031.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t3.virkelig_salgsvolum_3031(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t3.virkelig_salgsvolum_3032.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t3.virkelig_salgsvolum_3032(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t3.db_3031.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t3.db_3031(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch4_t3.db_3032.label(class="form-control-label") }}
+                                {{ form_boa205_ch4_t3.db_3032(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch4_t3.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      Rema 3030 selger to ulike produkt: 3031 og 3032. Følgende data finnes om salget:
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Virkelig</th>
+                                <th scope="col" class="text-end">Budsjett</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekt 3031</th>
+                                  <td class="text-end">189 000</td>
+                                  <td class="text-end">220 000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekt 3032</th>
+                                  <td class="text-end">318 750</td>
+                                  <td class="text-end">260 000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Total salgsinntekt</th>
+                                  <td class="text-end">507 750</td>
+                                  <td class="text-end">480 000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsvolum 3031</th>
+                                  <td class="text-end">{{virkelig_salgsvolum_3031}} enheter</td>
+                                  <td class="text-end">200 enheter</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsvolum 3032</th>
+                                  <td class="text-end">{{virkelig_salgsvolum_3032}} enheter</td>
+                                  <td class="text-end">200 enheter</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dekningsbidrag 3031</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{db_3031}} kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dekningsbidrag 3032</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{db_3032}} kr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      1. Beregn <strong>virkelig og budsjettert pris</strong> for produkt 3031 og 3032 
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Virkelig pris 3031</th>
+                                  <td class="text-end">189 000/ {{virkelig_salgsvolum_3031}}={{virkelig_pris_3031}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Virkelig pris 3032</th>
+                                  <td class="text-end">318 750/ {{virkelig_salgsvolum_3032}}={{virkelig_pris_3032}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjettert pris 3031</th>
+                                  <td class="text-end">220 000/200=1100</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjettert pris 3032</th>
+                                  <td class="text-end">260 000/200=1300</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      2. Beregn <strong>salgsprisavvik</strong> for produktene
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Produkt</th>
+                                <th scope="col" class="text-end">Virkelig pris (1)</th>
+                                <th scope="col" class="text-end">Budsjett pris (2)</th>
+                                <th scope="col" class="text-end">Virkleig mengde (3)</th>
+                                <th scope="col" class="text-end">Salgsprisavvik=(1-2)∙3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produkt 3031</th>
+                                  <td class="text-end">{{virkelig_pris_3031}}</td>
+                                  <td class="text-end">1100</td>
+                                  <td class="text-end">{{virkelig_salgsvolum_3031}}</td>
+                                  <td class="text-end">({{virkelig_pris_3031}}-1100)∙{{virkelig_salgsvolum_3031}}={{salgsprisavvik_3031}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produkt 3032</th>
+                                  <td class="text-end">{{virkelig_pris_3032}}</td>
+                                  <td class="text-end">1100</td>
+                                  <td class="text-end">{{virkelig_salgsvolum_3032}}</td>
+                                  <td class="text-end">({{virkelig_pris_3032}}-1100)∙{{virkelig_salgsvolum_3032}}={{salgsprisavvik_3032}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      3. Beregn <strong>volumavvik</strong> for produktene
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Produkt</th>
+                                <th scope="col" class="text-end">Virkelig mengde (1)</th>
+                                <th scope="col" class="text-end">Budsjettert mengde (2)</th>
+                                <th scope="col" class="text-end">Budsjettert dekningsbidrag (3)</th>
+                                <th scope="col" class="text-end">Volumsavvik=(1-2)∙3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produkt 3031</th>
+                                  <td class="text-end">{{virkelig_salgsvolum_3031}}</td>
+                                  <td class="text-end">200</td>
+                                  <td class="text-end">{{db_3031}}</td>
+                                  <td class="text-end">({{virkelig_salgsvolum_3031}}-200)∙{{db_3031}}={{volumavvik_3031}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produkt 3032</th>
+                                  <td class="text-end">{{virkelig_salgsvolum_3032}}</td>
+                                  <td class="text-end">200</td>
+                                  <td class="text-end">{{db_3032}}</td>
+                                  <td class="text-end">({{virkelig_salgsvolum_3032}}-200)∙{{db_3032}}={{volumavvik_3032}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      4. Beregn <strong>salgets resultatavvik</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt 3031</th>
+                                <th scope="col" class="text-end">Produkt 3032</th>
+                                <th scope="col" class="text-end">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Prisavvik</th>
+                                  <td class="text-end">{{salgsprisavvik_3031}}</td>
+                                  <td class="text-end">{{salgsprisavvik_3032}}</td>
+                                  <td class="text-end">{{salgsprisavvik_total}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsvolumavvik</th>
+                                  <td class="text-end">{{volumavvik_3031}}</td>
+                                  <td class="text-end">{{volumavvik_3032}}</td>
+                                  <td class="text-end">{{volumavvik_total}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgets resultatavvik</th>
+                                  <td class="text-end">{{salgets_3031}}</td>
+                                  <td class="text-end">{{salgets_3032}}</td>
+                                  <td class="text-end">{{salgets_total}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Questions 7 and 8 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 7 -->
+      <div id="ch4_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q7.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 7:</legend>
+
+                  <p class="card-text">
+                      Når det virkelige salgsvolumet for produkt 3031 er 190 enheter og det virkelige salgsvolumet for produkt 
+                      3032 er 240 enheter, dekningsbidraget for produkt 3031 er 175 kr og dekningsbidraget 
+                      for produkt 3032 er 193 kr, hva er volumavviket for produkt 3031?   
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q7.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q7.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div id="ch4_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q8.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 8:</legend>
+
+                  <p class="card-text">
+                      Når det virkelige salgsvolumet for produkt 3031 er 190 enheter og det 
+                      virkelige salgsvolumet for produkt 3032 er 240 enheter, dekningsbidraget for 
+                      produkt 3031 er 175 kr og dekningsbidraget for produkt 3032 er 193 kr, 
+                      hva er salgsprisavviket for produkt 3032?     
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q8.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q8.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+
+  <!-- Questions 9 and 10 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 9 -->
+      <div id="ch4_q9_q10" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q9.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 9:</legend>
+
+                  <p class="card-text">
+                      Når det virkelige salgsvolumet for produkt 3031 er 190 enheter og 
+                      det virkelige salgsvolumet for produkt 3032 er 240 enheter, dekningsbidraget 
+                      for produkt 3031 er 175 kr og dekningsbidraget for produkt 3032 er 193 kr, 
+                      hva er salgets resultats avviket for produkt 3032?   
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q9.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q9.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 10 -->
+      <div id="ch4_q9_q10" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch4_q10.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 10:</legend>
+
+                  <p class="card-text">
+                      Når det virkelige salgsvolumet for produkt 3031 er 190 enheter og det virkelige 
+                      salgsvolumet for produkt 3032 er 240 enheter, dekningsbidraget for produkt 3031 er 
+                      175 kr og dekningsbidraget for produkt 3032 er 193 kr, 
+                      hva er total salgets resultats avviket?      
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch4_q10.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch4_q10.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+</section>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+
+
+{% endblock content %}
