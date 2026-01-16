@@ -349,3 +349,89 @@ def ch3_virkelige_t4(sat_faste_indirekte_tilv_t4,sat_variable_indirekte_tilv_t4,
     return(standard_kostnad_var,effektivitets_avvik,forbruksavvik_var,totalt_avvik_var,
         standard_kostnad_faste,volumavvik_faste,forbruksavvik_faste,totalt_avvik_faste,
         standard_kostnad_admin,volumavvik_admin,forbruksavvik_admin,totalt_avvik_admin)
+
+""" Chapter 4 """
+def ch4_t1_budsjett(budsjettert_pris_produkt_alfa,budsjettert_pris_produkt_omega):
+    inntekter_alfa=5000*int(budsjettert_pris_produkt_alfa)
+    inntekter_omega=8000*int(budsjettert_pris_produkt_omega)
+    inntekter_totalt=inntekter_alfa+inntekter_omega
+    return(inntekter_alfa,inntekter_omega,inntekter_totalt)
+
+def ch4_t1_virkelige(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega):
+    virkelige_pris_alfa=round(49200/int(virkelig_salg_i_enheter_alfa),1)
+    virkelige_pris_omega=round(84000/int(virkelig_salg_i_enheter_omega),1)
+    virkelige_DB_alfa=round(25200/int(virkelig_salg_i_enheter_alfa),1)
+    virkelige_DB_omega=round(42000/int(virkelig_salg_i_enheter_omega),1)
+    return(virkelige_pris_alfa,virkelige_pris_omega,virkelige_DB_alfa,virkelige_DB_omega)
+
+def ch4_t1_salgspris(budsjettert_pris_produkt_alfa,budsjettert_pris_produkt_omega,
+    virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega):
+    (virkelige_pris_alfa,virkelige_pris_omega,virkelige_DB_alfa,virkelige_DB_omega)=ch4_t1_virkelige(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+    salgsprisavvik_alfa=int((virkelige_pris_alfa-int(budsjettert_pris_produkt_alfa))*int(virkelig_salg_i_enheter_alfa))
+    salgsprisavvik_omega=int((virkelige_pris_omega-int(budsjettert_pris_produkt_omega))*int(virkelig_salg_i_enheter_omega))
+    salgsprisavvik_total=salgsprisavvik_alfa+salgsprisavvik_omega
+    return(salgsprisavvik_alfa,salgsprisavvik_omega,salgsprisavvik_total)
+
+def ch4_t1_deknigsbidrag(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega):
+    (virkelige_pris_alfa,virkelige_pris_omega,
+     virkelige_DB_alfa,virkelige_DB_omega)=ch4_t1_virkelige(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+    deknigsbidragavvik_alfa=int((virkelige_DB_alfa-4)*int(virkelig_salg_i_enheter_alfa))
+    deknigsbidragavvik_omega=int((virkelige_DB_omega-6)*int(virkelig_salg_i_enheter_omega))
+    deknigsbidragavvik_total=deknigsbidragavvik_alfa+deknigsbidragavvik_omega
+    return(deknigsbidragavvik_alfa,deknigsbidragavvik_omega,deknigsbidragavvik_total)
+
+def ch4_t1_volumavvik(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega):
+    volumavvik_alfa=(int(virkelig_salg_i_enheter_alfa)-5000)*4
+    volumavvik_omega=(int(virkelig_salg_i_enheter_omega)-8000)*6
+    volumavvik_total=volumavvik_alfa+volumavvik_omega
+    return(volumavvik_alfa,volumavvik_omega,volumavvik_total)
+
+def ch4_t1_resultatavvik(budsjettert_pris_produkt_alfa,budsjettert_pris_produkt_omega,
+    virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega):
+    (salgsprisavvik_alfa,salgsprisavvik_omega,
+     salgsprisavvik_total)=ch4_t1_salgspris(budsjettert_pris_produkt_alfa,budsjettert_pris_produkt_omega,
+    virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+    (volumavvik_alfa,volumavvik_omega,volumavvik_total)=ch4_t1_volumavvik(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+    salgets_resultatavvik_alfa=salgsprisavvik_alfa+volumavvik_alfa
+    salgets_resultatavvik_omega=salgsprisavvik_omega+volumavvik_omega
+    salgets_resultatavvik_total=salgets_resultatavvik_alfa+salgets_resultatavvik_omega
+    return(salgets_resultatavvik_alfa,salgets_resultatavvik_omega,salgets_resultatavvik_total)
+
+def ch4_t2_resultatavvik(budsjettert_pris_tex,budsjettert_pris_mex,budsjettert_DB_tex,budsjettert_DB_mex):
+    prisavvik_tex=(85-int(budsjettert_pris_tex))*2800
+    prisavvik_mex=(55-int(budsjettert_pris_mex))*2400
+    prisavvik_total=prisavvik_tex+prisavvik_mex
+    volumavvik_tex=(2800-3000)*int(budsjettert_DB_tex)
+    volumavvik_mex=(2400-1600)*int(budsjettert_DB_mex)
+    volumavvik_total=volumavvik_tex+volumavvik_mex
+    salgets_resultatavvik_tex=prisavvik_tex+volumavvik_tex
+    salgets_resultatavvik_mex=prisavvik_mex+volumavvik_mex
+    salgets_resultatavvik_total=salgets_resultatavvik_tex+salgets_resultatavvik_mex
+    return(prisavvik_tex,prisavvik_mex,prisavvik_total,volumavvik_tex,volumavvik_mex,
+           volumavvik_total,salgets_resultatavvik_tex,salgets_resultatavvik_mex,salgets_resultatavvik_total)
+
+def ch4_t3_virkelig_budsjettert(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032):
+    virkelig_pris_3031=int(189000/int(virkelig_salgsvolum_3031))
+    virkelig_pris_3032=int(318750/int(virkelig_salgsvolum_3032))
+    return(virkelig_pris_3031,virkelig_pris_3032)
+
+def ch4_t3_salgsprisavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032):
+    (virkelig_pris_3031,virkelig_pris_3032)=ch4_t3_virkelig_budsjettert(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032)
+    salgsprisavvik_3031=round((virkelig_pris_3031-1100)*int(virkelig_salgsvolum_3031),2)
+    salgsprisavvik_3032=round((virkelig_pris_3032-1300)*int(virkelig_salgsvolum_3032),2)
+    salgsprisavvik_total=salgsprisavvik_3031+salgsprisavvik_3032
+    return(salgsprisavvik_3031,salgsprisavvik_3032,salgsprisavvik_total)
+
+def ch4_t3_volumsavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032,db_3031,db_3032):
+    volumavvik_3031=round((int(virkelig_salgsvolum_3031)-200)*int(db_3031),2)
+    volumavvik_3032=round((int(virkelig_salgsvolum_3032)-200)*int(db_3032),2)
+    volumavvik_total=volumavvik_3031+volumavvik_3032
+    return(volumavvik_3031,volumavvik_3032,volumavvik_total)
+
+def ch4_t3_salgetsavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032,db_3031,db_3032):
+    (salgsprisavvik_3031,salgsprisavvik_3032,salgsprisavvik_total)=ch4_t3_salgsprisavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032)
+    (volumavvik_3031,volumavvik_3032,volumavvik_total)=ch4_t3_volumsavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032,db_3031,db_3032)
+    salgets_3031=salgsprisavvik_3031+volumavvik_3031
+    salgets_3032=salgsprisavvik_3032+volumavvik_3032
+    salgets_total=salgets_3031+salgets_3032
+    return(salgets_3031,salgets_3032,salgets_total)
