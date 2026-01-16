@@ -4,6 +4,8 @@ from webse.models import User, ChatGD, ModulsGD
 from flask_login import login_user, current_user, logout_user, login_required
 from webse.forward_users.utils import read_image
 
+boa205_course_chapters= Blueprint('boa205_course_chapters', __name__)
+
 """ Forms """
 """ chapter 1 """
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch1_q1, ModulsForm_boa205_ch1_q2, ModulsForm_boa205_ch1_q3, ModulsForm_boa205_ch1_q4, ModulsForm_boa205_ch1_q5, ModulsForm_boa205_ch1_q6,TableForm_boa205_ch1_t1
@@ -17,6 +19,11 @@ from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch2b_q5, Moduls
 from webse.boa205_course_chapters.forms import TableForm_boa205_ch3_t1, TableForm_boa205_ch3_t2,TableForm_boa205_ch3_t3,TableForm_boa205_ch3_t4, ModulsForm_boa205_ch3_q1
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch3_q2, ModulsForm_boa205_ch3_q3, ModulsForm_boa205_ch3_q4, ModulsForm_boa205_ch3_q5, ModulsForm_boa205_ch3_q6
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch3_q7, ModulsForm_boa205_ch3_q8, ModulsForm_boa205_ch3_q9, ModulsForm_boa205_ch3_q10
+""" chapter 4 """
+from webse.boa205_course_chapters.forms import TableForm_boa205_ch4_t1,TableForm_boa205_ch4_t2,TableForm_boa205_ch4_t3
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch4_q1,ModulsForm_boa205_ch4_q2,ModulsForm_boa205_ch4_q3,ModulsForm_boa205_ch4_q4
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch4_q5,ModulsForm_boa205_ch4_q6,ModulsForm_boa205_ch4_q7,ModulsForm_boa205_ch4_q8
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch4_q9,ModulsForm_boa205_ch4_q10
 
 """ Functions """
 """ chapter 2a """
@@ -27,9 +34,10 @@ from webse.boa205_course_chapters.functions import ch2a_selv,ch2a_bidra
 """ chapter 3 """
 from webse.boa205_course_chapters.functions import ch3_materialregnskap, ch3_lonnregnskap, ch3_standard_selv_table,ch3_selvksot_table,ch3_bidrakost_table,ch3_differanse_table
 from webse.boa205_course_chapters.functions import ch3_virkelige_t4
-
-boa205_course_chapters= Blueprint('boa205_course_chapters', __name__)
-
+""" Chapter 4 """
+from webse.boa205_course_chapters.functions import ch4_t1_budsjett, ch4_t1_virkelige, ch4_t1_salgspris,ch4_t1_deknigsbidrag
+from webse.boa205_course_chapters.functions import ch4_t1_volumavvik,ch4_t1_resultatavvik,ch4_t2_resultatavvik
+from webse.boa205_course_chapters.functions import ch4_t3_virkelig_budsjettert,ch4_t3_salgsprisavvik,ch4_t3_volumsavvik,ch4_t3_salgetsavvik
 #Chapter 1
 @boa205_course_chapters.route('/boa205_course/kapitel1', methods=['GET', 'POST'])
 @login_required
@@ -48,7 +56,7 @@ def boa205_course_chapters_ch1():
             filter(ModulsGD.title_ch == 'Kapitel 1. Hva er et driftsregnskap?'). \
             filter(ModulsGD.question_num == 1).count()
         moduls = ModulsGD(question_str=form_boa205_ch1_q1.type.data, author=current_user)
-        if moduls.question_str == 'kr -20 000':
+        if moduls.question_str == 'kr 20 000':
             moduls.question_result = 1
         else:
             moduls.question_result = 0
@@ -1313,3 +1321,352 @@ def boa205_course_chapters_ch3_extra():
 @login_required
 def boa205_course_chapters_arbeidskrav1():
     return render_template('boa205_course/chapters/arbeidskrav1.html', title='BØA205 Økonomistyring, arbeidskrav1')
+
+#Chapter 4
+@boa205_course_chapters.route('/boa205_course/kapitel4', methods=['GET', 'POST'])
+@login_required
+def boa205_course_chapters_ch4():
+    form_boa205_ch4_t1=TableForm_boa205_ch4_t1()
+    form_boa205_ch4_t2=TableForm_boa205_ch4_t2()
+    form_boa205_ch4_t3=TableForm_boa205_ch4_t3()
+    form_boa205_ch4_q1 = ModulsForm_boa205_ch4_q1()
+    form_boa205_ch4_q2 = ModulsForm_boa205_ch4_q2()
+    form_boa205_ch4_q3 = ModulsForm_boa205_ch4_q3()
+    form_boa205_ch4_q4 = ModulsForm_boa205_ch4_q4()
+    form_boa205_ch4_q5 = ModulsForm_boa205_ch4_q5()
+    form_boa205_ch4_q6 = ModulsForm_boa205_ch4_q6()
+    form_boa205_ch4_q7 = ModulsForm_boa205_ch4_q7()
+    form_boa205_ch4_q8 = ModulsForm_boa205_ch4_q8()
+    form_boa205_ch4_q9 = ModulsForm_boa205_ch4_q9()
+    form_boa205_ch4_q10 = ModulsForm_boa205_ch4_q10()
+
+    if form_boa205_ch4_t1.validate_on_submit():
+        """ Variables """
+        budsjettert_pris_produkt_alfa = form_boa205_ch4_t1.budsjettert_pris_produkt_alfa.data
+        budsjettert_pris_produkt_omega = form_boa205_ch4_t1.budsjettert_pris_produkt_omega.data
+        virkelig_salg_i_enheter_alfa = form_boa205_ch4_t1.virkelig_salg_i_enheter_alfa.data
+        virkelig_salg_i_enheter_omega = form_boa205_ch4_t1.virkelig_salg_i_enheter_omega.data
+
+        (inntekter_alfa,inntekter_omega,inntekter_totalt)=ch4_t1_budsjett(budsjettert_pris_produkt_alfa,budsjettert_pris_produkt_omega)
+
+        (virkelige_pris_alfa,virkelige_pris_omega,virkelige_DB_alfa,
+         virkelige_DB_omega)=ch4_t1_virkelige(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+        
+        (salgsprisavvik_alfa,salgsprisavvik_omega,salgsprisavvik_total)=ch4_t1_salgspris(budsjettert_pris_produkt_alfa,budsjettert_pris_produkt_omega,
+                                                                    virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+
+        (deknigsbidragavvik_alfa,deknigsbidragavvik_omega,
+         deknigsbidragavvik_total)=ch4_t1_deknigsbidrag(virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+        
+        (volumavvik_alfa,volumavvik_omega,volumavvik_total)=ch4_t1_volumavvik(virkelig_salg_i_enheter_alfa,
+            virkelig_salg_i_enheter_omega)
+        
+        (salgets_resultatavvik_alfa,salgets_resultatavvik_omega,
+         salgets_resultatavvik_total)=ch4_t1_resultatavvik(budsjettert_pris_produkt_alfa,budsjettert_pris_produkt_omega,
+            virkelig_salg_i_enheter_alfa,virkelig_salg_i_enheter_omega)
+
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="table1",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10,
+        budsjettert_pris_produkt_alfa=budsjettert_pris_produkt_alfa,
+        budsjettert_pris_produkt_omega=budsjettert_pris_produkt_omega,
+        virkelig_salg_i_enheter_alfa=virkelig_salg_i_enheter_alfa,
+        virkelig_salg_i_enheter_omega=virkelig_salg_i_enheter_omega,
+        inntekter_alfa=inntekter_alfa,inntekter_omega=inntekter_omega,inntekter_totalt=inntekter_totalt,
+        virkelige_pris_alfa=virkelige_pris_alfa,virkelige_pris_omega=virkelige_pris_omega,
+        virkelige_DB_alfa=virkelige_DB_alfa,virkelige_DB_omega=virkelige_DB_omega,
+        salgsprisavvik_alfa=salgsprisavvik_alfa,salgsprisavvik_omega=salgsprisavvik_omega,
+        salgsprisavvik_total=salgsprisavvik_total,deknigsbidragavvik_alfa=deknigsbidragavvik_alfa,
+        deknigsbidragavvik_omega=deknigsbidragavvik_omega,deknigsbidragavvik_total=deknigsbidragavvik_total,
+        volumavvik_alfa=volumavvik_alfa,volumavvik_omega=volumavvik_omega,volumavvik_total=volumavvik_total,
+        salgets_resultatavvik_alfa=salgets_resultatavvik_alfa,salgets_resultatavvik_omega=salgets_resultatavvik_omega,
+        salgets_resultatavvik_total=salgets_resultatavvik_total)
+    
+    if form_boa205_ch4_t2.validate_on_submit():
+        """ Variables """
+        budsjettert_pris_tex = form_boa205_ch4_t2.budsjettert_pris_tex.data
+        budsjettert_pris_mex = form_boa205_ch4_t2.budsjettert_pris_mex.data
+        budsjettert_DB_tex = form_boa205_ch4_t2.budsjettert_DB_tex.data
+        budsjettert_DB_mex = form_boa205_ch4_t2.budsjettert_DB_mex.data
+
+        (prisavvik_tex,prisavvik_mex,prisavvik_total,volumavvik_tex,volumavvik_mex,
+           volumavvik_total,salgets_resultatavvik_tex,salgets_resultatavvik_mex,
+           salgets_resultatavvik_total)=ch4_t2_resultatavvik(budsjettert_pris_tex,budsjettert_pris_mex,
+           budsjettert_DB_tex,budsjettert_DB_mex)
+        
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="table2",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10,
+        budsjettert_pris_tex=budsjettert_pris_tex, budsjettert_pris_mex=budsjettert_pris_mex,
+        budsjettert_DB_tex=budsjettert_DB_tex, budsjettert_DB_mex=budsjettert_DB_mex,
+        prisavvik_tex=prisavvik_tex,prisavvik_mex=prisavvik_mex,prisavvik_total=prisavvik_total,
+        volumavvik_tex=volumavvik_tex,volumavvik_mex=volumavvik_mex,volumavvik_total=volumavvik_total,
+        salgets_resultatavvik_tex=salgets_resultatavvik_tex,salgets_resultatavvik_mex=salgets_resultatavvik_mex,
+        salgets_resultatavvik_total=salgets_resultatavvik_total)
+    
+    if form_boa205_ch4_t3.validate_on_submit():
+        """ Variables """
+        virkelig_salgsvolum_3031 = form_boa205_ch4_t3.virkelig_salgsvolum_3031.data
+        virkelig_salgsvolum_3032 = form_boa205_ch4_t3.virkelig_salgsvolum_3032.data
+        db_3031 = form_boa205_ch4_t3.db_3031.data
+        db_3032 = form_boa205_ch4_t3.db_3032.data
+
+        (virkelig_pris_3031,virkelig_pris_3032)=ch4_t3_virkelig_budsjettert(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032)
+        (salgsprisavvik_3031,salgsprisavvik_3032,salgsprisavvik_total)=ch4_t3_salgsprisavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032)
+        (volumavvik_3031,volumavvik_3032,volumavvik_total)=ch4_t3_volumsavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032,db_3031,db_3032)
+        (salgets_3031,salgets_3032,salgets_total)=ch4_t3_salgetsavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032,db_3031,db_3032)
+
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="table3",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10,
+        virkelig_salgsvolum_3031=virkelig_salgsvolum_3031, virkelig_salgsvolum_3032=virkelig_salgsvolum_3032,
+        db_3031=db_3031,db_3032=db_3032,virkelig_pris_3031=virkelig_pris_3031,virkelig_pris_3032=virkelig_pris_3032,
+        salgsprisavvik_3031=salgsprisavvik_3031,salgsprisavvik_3032=salgsprisavvik_3032,salgsprisavvik_total=salgsprisavvik_total,
+        volumavvik_3031=volumavvik_3031,volumavvik_3032=volumavvik_3032,volumavvik_total=volumavvik_total,
+        salgets_3031=salgets_3031,salgets_3032=salgets_3032,salgets_total=salgets_total)
+
+    
+    if form_boa205_ch4_q1.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q1.type.data, author=current_user)
+        if moduls.question_str == '-6000':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 1
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q1_q2",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q2.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q2.type.data, author=current_user)
+        if moduls.question_str == '6654':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 2
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q1_q2",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q3.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q3.type.data, author=current_user)
+        if moduls.question_str == '8.1':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 3
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q3_q4",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q4.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q4.type.data, author=current_user)
+        if moduls.question_str == '-2146':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 4
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q3_q4",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q5.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q5.type.data, author=current_user)
+        if moduls.question_str == '-1000':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 5
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q5_q6",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q6.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q6.type.data, author=current_user)
+        if moduls.question_str == '13000':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 6
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q5_q6",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q7.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q7.type.data, author=current_user)
+        if moduls.question_str == '-1750':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 7
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q7_q8",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q8.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q8.type.data, author=current_user)
+        if moduls.question_str == '6720':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 8
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q7_q8",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+        
+    if form_boa205_ch4_q9.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q9.type.data, author=current_user)
+        if moduls.question_str == '14440':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 9
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q9_q10",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+    
+    if form_boa205_ch4_q10.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch4_q10.type.data, author=current_user)
+        if moduls.question_str == '-7450':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch4'
+        moduls.title_ch = 'Kapitel 4. Salgets resultatavvik'
+        moduls.question_num = 10
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch4'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',anchor="ch4_q9_q10",
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+
+    return render_template('boa205_course/chapters/ch4.html', title='BØA205 Økonomistyring, kapittel 4',
+        form_boa205_ch4_t1=form_boa205_ch4_t1, form_boa205_ch4_t2=form_boa205_ch4_t2, 
+        form_boa205_ch4_t3=form_boa205_ch4_t3, legend='Variabler',
+        form_boa205_ch4_q1=form_boa205_ch4_q1, form_boa205_ch4_q2=form_boa205_ch4_q2,
+        form_boa205_ch4_q3=form_boa205_ch4_q3, form_boa205_ch4_q4=form_boa205_ch4_q4,
+        form_boa205_ch4_q5=form_boa205_ch4_q5, form_boa205_ch4_q6=form_boa205_ch4_q6,
+        form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
+        form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
+
