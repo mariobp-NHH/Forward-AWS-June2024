@@ -20,28 +20,31 @@ from webse.boa205_course_statistics.test import (time_user_first_entry_and_first
     user_first_entry_and_first_correct_with_global, attempts_until_correct, all_entries,
     date_constraint_time_user_first_entry_and_first_correct,  all_questions_date_constraint_time_user_first_entry_and_first_correct)
 
-
+""" Delete """
+START_DATE_DELETE = datetime(2025, 9, 25)
+END_DATE_DELETE = datetime(2025, 12, 31)
 
 """ Information about the dates for each chapter """
 START_DATE_TEST = datetime(2025, 1, 1)
 END_DATE_TEST = datetime(2026, 12, 30)
-START_CHAPTER1 = datetime(2026, 1, 10)
-END_CHAPTER1 = datetime(2026, 1, 18)
+START_CHAPTER1 = datetime(2025, 10, 1)
+END_CHAPTER1 = datetime(2026, 10, 30)
 
 """ Chapter 2a """
-START_CHAPTER2a = datetime(2026, 1, 16)
-END_CHAPTER2a = datetime(2026, 1, 25)
+START_CHAPTER2a = datetime(2025, 1, 12)
+END_CHAPTER2a = datetime(2026, 1, 22)
 
-""" Chapter 2a """
-START_CHAPTER2b = datetime(2026, 1, 23)
-END_CHAPTER2b = datetime(2026, 2, 1)
-
-START_DATE_DELETE = datetime(2025, 9, 25)
-END_DATE_DELETE = datetime(2025, 12, 31)
+""" Chapter 2b """
+START_CHAPTER2b = datetime(2026, 1, 19)
+END_CHAPTER2b = datetime(2026, 1, 29)
 
 """ Chapter 3 """
-START_CHAPTER3 = datetime(2026, 1, 31)
-END_CHAPTER3 = datetime(2026, 2, 8)
+START_CHAPTER3 = datetime(2026, 1, 26)
+END_CHAPTER3 = datetime(2026, 2, 5)
+
+""" Chapter 4 """
+START_CHAPTER4 = datetime(2025, 2, 2)
+END_CHAPTER4 = datetime(2026, 2, 12)
 
 """ Only to test """
 @boa205_course_statistics.route('/boa205_course/statistics_test_web', methods=['GET', 'POST'])
@@ -979,6 +982,215 @@ def statistics_ch3_last_entry_year():
         )
     
     return render_template('boa205_course/statistics/ch3/statistics_ch3_last_entry.html', 
+            current_user_all_questions_last_entry_correct_incorrect_call=current_user_all_questions_last_entry_correct_incorrect_call,
+            correct=correct, incorrect=incorrect)
+
+""" Chapter 4 """
+@boa205_course_statistics.route('/boa205_course/statistics/ch4', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4():
+    return render_template('boa205_course/statistics/ch4/statistics_ch4.html')
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY """
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/first_entry_time_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_first_entry_time_week():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_CHAPTER4
+    end_date_test=END_CHAPTER4
+
+    """ *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY: Query to work out the time difference between each correct answer and the first correct answer in the first entry """
+    current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call, correct, incorrect=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_new(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_first_entry_time.html', 
+                           current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call,
+                           correct=correct, incorrect=incorrect)
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/first_entry_time_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_first_entry_time_year():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    """ *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY: Query to work out the time difference between each correct answer and the first correct answer in the first entry """
+    current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call, correct, incorrect=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_new(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_first_entry_time.html', 
+                           current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call,
+                           correct=correct, incorrect=incorrect)
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: FIRST ENTRY PER STUDENT AND AVERAGE FIRST ENTRIES. """
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/first_entry_average_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_first_entry_average_week():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_CHAPTER4
+    end_date_test=END_CHAPTER4
+
+    table_data, chart_data=current_user_all_questions_first_entry_average(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_first_entry_average.html', 
+                           current_user_all_questions_first_entry_average_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/first_entry_average_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_first_entry_average_year():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    table_data, chart_data=current_user_all_questions_first_entry_average(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_first_entry_average.html', 
+                           current_user_all_questions_first_entry_average_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST CORRECT ANSWER: DATE AND TIME DIFFERENCE FIRST CORRECT ANSWER """
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/first_answer_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_first_answer_week():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_CHAPTER4
+    end_date_test=END_CHAPTER4
+
+    table_data, chart_data=current_user_all_questions_first_and_global_correct_avg(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_first_answer.html', 
+                           current_user_all_questions_first_and_global_correct_avg_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/first_answer_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_first_answer_year():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    table_data, chart_data=current_user_all_questions_first_and_global_correct_avg(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_first_answer.html', 
+                           current_user_all_questions_first_and_global_correct_avg_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. ATTEMPTS UNTIL CORRECT. """
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/attempts_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_attempts_week():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_CHAPTER4
+    end_date_test=END_CHAPTER4
+
+    attempts_vs_average_chart_time_range_call, chart_data=attempts_vs_average_chart_time_range(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_attempts.html', 
+            attempts_vs_average_chart_time_range_call=attempts_vs_average_chart_time_range_call,
+            chart_labels=chart_data["labels"],
+            chart_values=chart_data["values"])
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/attempts_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_attempts_year():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    attempts_vs_average_chart_time_range_call, chart_data=attempts_vs_average_chart_time_range(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_attempts.html', 
+            attempts_vs_average_chart_time_range_call=attempts_vs_average_chart_time_range_call,
+            chart_labels=chart_data["labels"],
+            chart_values=chart_data["values"])
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. LAST ENTRY"""
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/last_entry_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_last_entry_week():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_CHAPTER4
+    end_date_test=END_CHAPTER4
+
+    current_user_all_questions_last_entry_correct_incorrect_call, correct, incorrect, chart=current_user_all_questions_last_entry_correct_incorrect(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_last_entry.html', 
+            current_user_all_questions_last_entry_correct_incorrect_call=current_user_all_questions_last_entry_correct_incorrect_call,
+            correct=correct, incorrect=incorrect)
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch4/last_entry_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch4_last_entry_year():
+    title_mo_test='boa205_ch4'
+    title_ch_test='Kapitel 4. Salgets resultatavvik'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    current_user_all_questions_last_entry_correct_incorrect_call, correct, incorrect, chart=current_user_all_questions_last_entry_correct_incorrect(
+            title_mo='boa205_ch4',
+            title_ch='Kapitel 4. Salgets resultatavvik',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch4/statistics_ch4_last_entry.html', 
             current_user_all_questions_last_entry_correct_incorrect_call=current_user_all_questions_last_entry_correct_incorrect_call,
             correct=correct, incorrect=incorrect)
 
