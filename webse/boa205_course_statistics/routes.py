@@ -31,7 +31,7 @@ START_CHAPTER1 = datetime(2025, 10, 1)
 END_CHAPTER1 = datetime(2026, 10, 30)
 
 """ Chapter 2a """
-START_CHAPTER2a = datetime(2025, 1, 12)
+START_CHAPTER2a = datetime(2026, 1, 12)
 END_CHAPTER2a = datetime(2026, 1, 22)
 
 """ Chapter 2b """
@@ -43,7 +43,7 @@ START_CHAPTER3 = datetime(2026, 1, 26)
 END_CHAPTER3 = datetime(2026, 2, 5)
 
 """ Chapter 4 """
-START_CHAPTER4 = datetime(2025, 2, 2)
+START_CHAPTER4 = datetime(2026, 2, 2)
 END_CHAPTER4 = datetime(2026, 2, 12)
 
 """ Only to test """
