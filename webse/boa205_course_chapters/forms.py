@@ -541,3 +541,197 @@ class ModulsForm_boa205_ch3_q10(FlaskForm):
                                 ('-3992',
                                  '-3992')])
     submit = SubmitField('Send inn')
+
+""" Chapter 4 """
+class TableForm_boa205_ch4_t1(FlaskForm):
+    budsjettert_pris_produkt_alfa= SelectField("Budsjettert pris produkt alfa",
+                       choices=[('7',
+                                 '7 kr'),
+                                ('8',
+                                 '8 kr'),
+                                ('9',
+                                 '9 kr')])
+    budsjettert_pris_produkt_omega= SelectField("Budsjettert pris produkt omega",
+                       choices=[('11',
+                                 '11 kr'),
+                                ('12',
+                                 '12 kr'),
+                                ('13',
+                                 '13 kr')])
+    virkelig_salg_i_enheter_alfa= SelectField("Virkelig salg i enheter alfa",
+                       choices=[('5950',
+                                 '5950'),
+                                ('6000',
+                                 '6000'),
+                                ('6050',
+                                 '6050')])
+    virkelig_salg_i_enheter_omega= SelectField("Virkelig salg i enheter omega",
+                       choices=[('6950',
+                                 '6950'),
+                                ('7000',
+                                 '7000'),
+                                ('7050',
+                                 '7050')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ch4_t2(FlaskForm):
+    budsjettert_pris_tex= SelectField("Budsjettert pris produkt Tex",
+                       choices=[('85',
+                                 '85 kr'),
+                                ('90',
+                                 '90 kr'),
+                                ('95',
+                                 '95 kr')])
+    budsjettert_pris_mex= SelectField("Budsjettert pris produkt Mex",
+                       choices=[('45',
+                                 '45 kr'),
+                                ('50',
+                                 '50 kr'),
+                                ('55',
+                                 '55 kr')])
+    budsjettert_DB_tex= SelectField("Dekningsbidrag produkt Tex",
+                       choices=[('25',
+                                 '25 kr'),
+                                ('30',
+                                 '30 kr'),
+                                ('35',
+                                 '35 kr')])
+    budsjettert_DB_mex= SelectField("Dekningsbidrag produkt Mex",
+                       choices=[('20',
+                                 '20 kr'),
+                                ('25',
+                                 '25 kr'),
+                                ('30',
+                                 '30 kr')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ch4_t3(FlaskForm):
+    virkelig_salgsvolum_3031= SelectField("Virkelig salgsvolum 3031",
+                       choices=[('170',
+                                 '170 enheter'),
+                                ('180',
+                                 '180 enheter'),
+                                ('190',
+                                 '190 enheter')])
+    virkelig_salgsvolum_3032= SelectField("Virkelig salgsvolum 3032",
+                       choices=[('240',
+                                 '240 enheter'),
+                                ('250',
+                                 '250 enheter'),
+                                ('260',
+                                 '260 enheter')])
+    db_3031= SelectField("Dekningsbidrag produkt 3031",
+                       choices=[('164',
+                                 '164 kr'),
+                                ('169',
+                                 '169 kr'),
+                                ('175',
+                                 '175 kr')])
+    db_3032= SelectField("Dekningsbidrag produkt 3032",
+                       choices=[('179',
+                                 '179 kr'),
+                                ('186',
+                                 '186 kr'),
+                                ('193',
+                                 '193 kr')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q1(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-6000',
+                                 '-6000'),
+                                ('-5800',
+                                 '-5800'),
+                                ('-5700',
+                                 '-5700')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q2(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('6690',
+                                 '6690'),
+                                ('6654',
+                                 '6654'),
+                                ('6648',
+                                 '6648')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q3(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('8.5',
+                                 '8.5'),
+                                ('8.32',
+                                 '8.32'),
+                                ('8.1',
+                                 '8.1')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q4(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-2200',
+                                 '-2200'),
+                                ('-2146',
+                                 '-2146'),
+                                ('-2034',
+                                 '-2034')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q5(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-1050',
+                                 '-1050'),
+                                ('-1026',
+                                 '-1026'),
+                                ('-1000',
+                                 '-1000')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q6(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('13050',
+                                 '13050'),
+                                ('13000',
+                                 '13000'),
+                                ('12995',
+                                 '12995')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q7(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-1769',
+                                 '-1769'),
+                                ('-1755',
+                                 '-1755'),
+                                ('-1750',
+                                 '-1750')]) 
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q8(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('6720',
+                                 '6720'),
+                                ('6725',
+                                 '6725'),
+                                ('6726',
+                                 '6726')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q9(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('14395',
+                                 '14395'),
+                                ('14440',
+                                 '14440'),
+                                ('14447',
+                                 '14447')])
+    submit = SubmitField('Send inn')
+
+class ModulsForm_boa205_ch4_q10(FlaskForm):
+    type = SelectField('Type', validators=[DataRequired()],
+                       choices=[('-7497',
+                                 '-7497'),
+                                ('-7478',
+                                 '-7478'),
+                                ('-7450',
+                                 '-7450')])
+    submit = SubmitField('Send inn')
