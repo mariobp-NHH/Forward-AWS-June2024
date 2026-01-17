@@ -31,20 +31,40 @@ START_CHAPTER1 = datetime(2025, 10, 1)
 END_CHAPTER1 = datetime(2026, 10, 30)
 
 """ Chapter 2a """
-START_CHAPTER2a = datetime(2026, 1, 12)
-END_CHAPTER2a = datetime(2026, 1, 22)
+START_CHAPTER2a = datetime(2026, 1, 17)
+END_CHAPTER2a = datetime(2026, 2, 4)
 
 """ Chapter 2b """
-START_CHAPTER2b = datetime(2026, 1, 19)
-END_CHAPTER2b = datetime(2026, 1, 29)
+START_CHAPTER2b = datetime(2026, 1, 31)
+END_CHAPTER2b = datetime(2026, 2, 11)
 
 """ Chapter 3 """
-START_CHAPTER3 = datetime(2026, 1, 26)
-END_CHAPTER3 = datetime(2026, 2, 5)
+START_CHAPTER3 = datetime(2026, 2, 7)
+END_CHAPTER3 = datetime(2026, 3, 18)
 
 """ Chapter 4 """
-START_CHAPTER4 = datetime(2026, 2, 2)
-END_CHAPTER4 = datetime(2026, 2, 12)
+START_CHAPTER4 = datetime(2026, 2, 21)
+END_CHAPTER4 = datetime(2026, 3, 4)
+
+""" Chapter 5 """
+START_CHAPTER5 = datetime(2026, 2, 28)
+END_CHAPTER5 = datetime(2026, 3, 11)
+
+""" Chapter 6 """
+START_CHAPTER6 = datetime(2026, 3, 7)
+END_CHAPTER6 = datetime(2026, 3, 25)
+
+""" Chapter 7 """
+START_CHAPTER7 = datetime(2026, 3, 21)
+END_CHAPTER7 = datetime(2026, 4, 8)
+
+""" Chapter 8 """
+START_CHAPTER8 = datetime(2026, 4, 11)
+END_CHAPTER8 = datetime(2026, 4, 22)
+
+""" Chapter 9 """
+START_CHAPTER9 = datetime(2026, 4, 18)
+END_CHAPTER9 = datetime(2026, 4, 29)
 
 """ Only to test """
 @boa205_course_statistics.route('/boa205_course/statistics_test_web', methods=['GET', 'POST'])
