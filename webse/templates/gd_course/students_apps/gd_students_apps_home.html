@@ -3,7 +3,43 @@
 <!-- Section chats HVL   -->
 <section class="section_chatsHVL" style="background-color: #9fa7bf">
   <div class="container">
-    <div class="column column1">
+    <div
+      class="column column1"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
+      <div class="column column1 box">
+        <div class="h1 mb-3" style="text-align: center">
+          <i class="bi bi-lightbulb"></i>
+        </div>
+        <p style="text-align: center">
+          <strong>Apps 2026</strong>
+        </p>
+        <div class="container_buttons_links_chatsHVL">
+          <div class="btn">
+            <a
+              href="{{ url_for('gd_course_students_apps.gd_students_apps_home_2026') }}"
+              class="btn btn-primary btn-sm mr-2"
+              ,
+              style="background-color: #007bff"
+              >Apps</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="column column1 box" style="background-color: #9fa7bf"></div> -->
+    </div>
+
+    <div
+      class="column column2"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
       <div class="column column1 box">
         <div class="h1 mb-3" style="text-align: center">
           <i class="bi bi-lightbulb"></i>
@@ -26,8 +62,16 @@
 
       <!-- <div class="column column1 box" style="background-color: #9fa7bf"></div> -->
     </div>
+  </div>
 
-    <div class="column column2">
+  <div class="container">
+    <div
+      class="column column1"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
       <div class="column column1 box">
         <div class="h1 mb-3" style="text-align: center">
           <i class="bi bi-lightbulb"></i>
@@ -50,9 +94,14 @@
 
       <!-- <div class="column column1 box" style="background-color: #9fa7bf"></div> -->
     </div>
-  </div>
-  <div class="container">
-    <div class="column column1">
+
+    <div
+      class="column column2"
+      data-aos="aos-fade-right"
+      data-aos-duration="2000"
+      data-aos-delay="200"
+      data-aos-once="true"
+    >
       <div class="column column1 box">
         <div class="h1 mb-3" style="text-align: center">
           <i class="bi bi-lightbulb"></i>
@@ -76,30 +125,32 @@
       <div class="column column1 box" style="background-color: #9fa7bf"></div>
     </div>
 
-    <div class="column column2">
+    <!-- <div class="column column2">
       <div class="column column1 box" style="background-color: #9fa7bf">
         <div class="h1 mb-3" style="text-align: center">
-          <!-- <i class="bi bi-lightbulb"></i> -->
         </div>
         <p style="text-align: center">
-          <!-- <strong>Apps ....</strong> -->
         </p>
         <div class="container_buttons_links_chatsHVL">
-          <!-- <div class="btn">
-            <a
-              href="#"
-              class="btn btn-primary btn-sm mr-2"
-              ,
-              style="background-color: #007bff"
-              >Apps</a
-            >
-          </div> -->
         </div>
       </div>
 
       <div class="column column1 box" style="background-color: #9fa7bf"></div>
-    </div>
+    </div> -->
   </div>
 </section>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  // Convert custom data attributes to real AOS attributes
+  document.querySelectorAll("[data-aos='aos-fade-right']").forEach((el) => {
+    el.setAttribute("data-aos", "aos-fade-right");
+  });
+
+  AOS.init({
+    startEvent: "DOMContentLoaded",
+    once: true,
+  });
+</script>
 
 {% endblock content %}
