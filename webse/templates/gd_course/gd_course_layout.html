@@ -1,5 +1,22 @@
 <html>
   <head>
+    <!-- Start AOS effect -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/css/gd_course/aos.css') }}"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- End AOS effect -->
+
+    <!-- Start groups css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='/css/gd_course/groups.css') }}"
+    />
+    <!-- End groups css -->
+
     <!--Import Google Roboto style:-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -129,6 +146,9 @@
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
+
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     {% if title %}
     <title>Forward - {{ title }}</title>
