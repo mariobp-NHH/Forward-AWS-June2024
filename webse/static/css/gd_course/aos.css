@@ -1,0 +1,11 @@
+/* 🧭 Custom AOS animation to avoid Bootstrap conflict */
+[data-aos="aos-fade-right"] {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition-property: transform, opacity;
+}
+
+[data-aos="aos-fade-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}

@@ -1,0 +1,69 @@
+/* Section styling */
+.section-groupsGD {
+  background-color: #c5c8d9;
+  padding: 30px 0;
+}
+
+.groupsGD-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 30px;
+  justify-content: center; /* ✅ centers the grid tracks */
+  justify-items: center; /* ✅ centers boxes within each track */
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+}
+
+/* Individual box */
+.groupsGD-box {
+  flex: 1 1 200px; /* responsive width */
+  max-width: 370px;
+  min-width: 370px;
+  height: 370px;
+  background: #49736f;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon styling */
+.groupsGD-icon {
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Button container */
+.groupsGD-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Default button style */
+.groupsGD-buttons a {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+/* Default hover effect */
+.groupsGD-buttons a:hover {
+  background-color: #0056b3;
+  color: #49736f;
+}
+
+/* 🎯 Button hover overrides per box */
+.groupsGD-box:nth-child() .groupsGD-buttons a:hover {
+  background-color: #49736f;
+  color: #ffffff;
+}
