@@ -10,6 +10,10 @@ gd_course_students_apps= Blueprint('gd_course_students_apps', __name__)
 def gd_students_apps_home():
     return render_template('gd_course/students_apps/gd_students_apps_home.html', title='Students Apps Home')
 
+@gd_course_students_apps.route('/green_digitalization_course/gd_students_apps/2026')
+def gd_students_apps_home_2026():
+    return render_template('gd_course/students_apps/gd_students_apps_home_2026.html', title='Students Apps Home 2026')
+
 @gd_course_students_apps.route('/green_digitalization_course/gd_students_apps/2025')
 def gd_students_apps_home_2025():
     return render_template('gd_course/students_apps/gd_students_apps_home_2025.html', title='Students Apps Home 2025')
