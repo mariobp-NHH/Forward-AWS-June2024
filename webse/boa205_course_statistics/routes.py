@@ -48,7 +48,7 @@ END_CHAPTER4 = datetime(2026, 3, 4)
 
 """ Chapter 5 """
 START_CHAPTER5 = datetime(2026, 2, 28)
-END_CHAPTER5 = datetime(2026, 3, 11)
+END_CHAPTER5 = datetime(2026, 3, 16)
 
 """ Chapter 6 """
 START_CHAPTER6 = datetime(2026, 3, 7)
@@ -1211,6 +1211,215 @@ def statistics_ch4_last_entry_year():
         )
     
     return render_template('boa205_course/statistics/ch4/statistics_ch4_last_entry.html', 
+            current_user_all_questions_last_entry_correct_incorrect_call=current_user_all_questions_last_entry_correct_incorrect_call,
+            correct=correct, incorrect=incorrect)
+
+""" Chapter 5 """
+@boa205_course_statistics.route('/boa205_course/statistics/ch5', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5():
+    return render_template('boa205_course/statistics/ch5/statistics_ch5.html')
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY """
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/first_entry_time_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_first_entry_time_week():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_CHAPTER5
+    end_date_test=END_CHAPTER5
+
+    """ *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY: Query to work out the time difference between each correct answer and the first correct answer in the first entry """
+    current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call, correct, incorrect=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_new(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_first_entry_time.html', 
+                           current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call,
+                           correct=correct, incorrect=incorrect)
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/first_entry_time_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_first_entry_time_year():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    """ *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: DATE AND TIME DIFFERENCE FIRST CORRECT ENTRY: Query to work out the time difference between each correct answer and the first correct answer in the first entry """
+    current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call, correct, incorrect=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_new(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_first_entry_time.html', 
+                           current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call=current_user_all_questions_time_user_first_entry_and_first_correct_per_question_call,
+                           correct=correct, incorrect=incorrect)
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST ENTRY: FIRST ENTRY PER STUDENT AND AVERAGE FIRST ENTRIES. """
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/first_entry_average_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_first_entry_average_week():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_CHAPTER5
+    end_date_test=END_CHAPTER5
+
+    table_data, chart_data=current_user_all_questions_first_entry_average(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_first_entry_average.html', 
+                           current_user_all_questions_first_entry_average_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/first_entry_average_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_first_entry_average_year():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    table_data, chart_data=current_user_all_questions_first_entry_average(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_first_entry_average.html', 
+                           current_user_all_questions_first_entry_average_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. FIRST CORRECT ANSWER: DATE AND TIME DIFFERENCE FIRST CORRECT ANSWER """
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/first_answer_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_first_answer_week():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_CHAPTER5
+    end_date_test=END_CHAPTER5
+
+    table_data, chart_data=current_user_all_questions_first_and_global_correct_avg(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_first_answer.html', 
+                           current_user_all_questions_first_and_global_correct_avg_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/first_answer_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_first_answer_year():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    table_data, chart_data=current_user_all_questions_first_and_global_correct_avg(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_first_answer.html', 
+                           current_user_all_questions_first_and_global_correct_avg_call=table_data,
+        chart_labels=chart_data["labels"],
+        chart_values=chart_data["values"])
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. ATTEMPTS UNTIL CORRECT. """
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/attempts_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_attempts_week():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_CHAPTER5
+    end_date_test=END_CHAPTER5
+
+    attempts_vs_average_chart_time_range_call, chart_data=attempts_vs_average_chart_time_range(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_attempts.html', 
+            attempts_vs_average_chart_time_range_call=attempts_vs_average_chart_time_range_call,
+            chart_labels=chart_data["labels"],
+            chart_values=chart_data["values"])
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/attempts_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_attempts_year():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    attempts_vs_average_chart_time_range_call, chart_data=attempts_vs_average_chart_time_range(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_attempts.html', 
+            attempts_vs_average_chart_time_range_call=attempts_vs_average_chart_time_range_call,
+            chart_labels=chart_data["labels"],
+            chart_values=chart_data["values"])
+
+""" *CURRENT USER. ALL QUESTIONS. DATE CONSTRAINT. LAST ENTRY"""
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/last_entry_week', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_last_entry_week():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_CHAPTER5
+    end_date_test=END_CHAPTER5
+
+    current_user_all_questions_last_entry_correct_incorrect_call, correct, incorrect, chart=current_user_all_questions_last_entry_correct_incorrect(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_last_entry.html', 
+            current_user_all_questions_last_entry_correct_incorrect_call=current_user_all_questions_last_entry_correct_incorrect_call,
+            correct=correct, incorrect=incorrect)
+
+@boa205_course_statistics.route('/boa205_course/statistics/ch5/last_entry_year', methods=['GET', 'POST'])
+@login_required
+def statistics_ch5_last_entry_year():
+    title_mo_test='boa205_ch5'
+    title_ch_test='Kapitel 5. Aktivitetsbasert kalkulasjon'
+    start_date_test=START_DATE_TEST
+    end_date_test=END_DATE_TEST
+
+    current_user_all_questions_last_entry_correct_incorrect_call, correct, incorrect, chart=current_user_all_questions_last_entry_correct_incorrect(
+            title_mo='boa205_ch5',
+            title_ch='Kapitel 5. Aktivitetsbasert kalkulasjon',
+            start_date=start_date_test,
+            end_date=end_date_test
+        )
+    
+    return render_template('boa205_course/statistics/ch5/statistics_ch5_last_entry.html', 
             current_user_all_questions_last_entry_correct_incorrect_call=current_user_all_questions_last_entry_correct_incorrect_call,
             correct=correct, incorrect=incorrect)
 
