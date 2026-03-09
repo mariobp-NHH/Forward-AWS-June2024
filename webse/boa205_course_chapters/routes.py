@@ -24,6 +24,10 @@ from webse.boa205_course_chapters.forms import TableForm_boa205_ch4_t1,TableForm
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch4_q1,ModulsForm_boa205_ch4_q2,ModulsForm_boa205_ch4_q3,ModulsForm_boa205_ch4_q4
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch4_q5,ModulsForm_boa205_ch4_q6,ModulsForm_boa205_ch4_q7,ModulsForm_boa205_ch4_q8
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch4_q9,ModulsForm_boa205_ch4_q10
+""" chapter 5 """
+from webse.boa205_course_chapters.forms import TableForm_boa205_ch5_t1, TableForm_boa205_ch5_t2, ModulsForm_boa205_ch5_q1, ModulsForm_boa205_ch5_q2
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch5_q3, ModulsForm_boa205_ch5_q4, ModulsForm_boa205_ch5_q5
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch5_q6, ModulsForm_boa205_ch5_q7, ModulsForm_boa205_ch5_q8
 
 """ Functions """
 """ chapter 2a """
@@ -38,6 +42,11 @@ from webse.boa205_course_chapters.functions import ch3_virkelige_t4
 from webse.boa205_course_chapters.functions import ch4_t1_budsjett, ch4_t1_virkelige, ch4_t1_salgspris,ch4_t1_deknigsbidrag
 from webse.boa205_course_chapters.functions import ch4_t1_volumavvik,ch4_t1_resultatavvik,ch4_t2_resultatavvik
 from webse.boa205_course_chapters.functions import ch4_t3_virkelig_budsjettert,ch4_t3_salgsprisavvik,ch4_t3_volumsavvik,ch4_t3_salgetsavvik
+""" Chapter 5 """
+from webse.boa205_course_chapters.functions import ch5_t1_direkte_lonn, ch5_t1_direkte_arbeidstimer, ch5_t1_tilleggssatsen
+from webse.boa205_course_chapters.functions import ch5_t1_kost_tradisjonell, ch5_t1_kost_ABC, ch5_t1_sammenlign
+from webse.boa205_course_chapters.functions import ch5_t2_enheter_totalt, ch5_t2_enhetskostnad
+
 #Chapter 1
 @boa205_course_chapters.route('/boa205_course/kapitel1', methods=['GET', 'POST'])
 @login_required
@@ -1670,3 +1679,287 @@ def boa205_course_chapters_ch4():
         form_boa205_ch4_q7=form_boa205_ch4_q7, form_boa205_ch4_q8=form_boa205_ch4_q8,
         form_boa205_ch4_q9=form_boa205_ch4_q9, form_boa205_ch4_q10=form_boa205_ch4_q10)
 
+#Chapter 5
+@boa205_course_chapters.route('/boa205_course/kapitel5', methods=['GET', 'POST'])
+@login_required
+def boa205_course_chapters_ch5():
+    form_boa205_ch5_t1=TableForm_boa205_ch5_t1()
+    form_boa205_ch5_t2=TableForm_boa205_ch5_t2()
+    form_boa205_ch5_q1 = ModulsForm_boa205_ch5_q1()
+    form_boa205_ch5_q2 = ModulsForm_boa205_ch5_q2()
+    form_boa205_ch5_q3 = ModulsForm_boa205_ch5_q3()
+    form_boa205_ch5_q4 = ModulsForm_boa205_ch5_q4()
+    form_boa205_ch5_q5 = ModulsForm_boa205_ch5_q5()
+    form_boa205_ch5_q6 = ModulsForm_boa205_ch5_q6()
+    form_boa205_ch5_q7 = ModulsForm_boa205_ch5_q7()
+    form_boa205_ch5_q8 = ModulsForm_boa205_ch5_q8()
+
+    if form_boa205_ch5_t1.validate_on_submit():
+        """ Variables """
+        enheter_alfa = form_boa205_ch5_t1.enheter_alfa.data
+        enheter_beta = form_boa205_ch5_t1.enheter_beta.data
+        timer_alfa = form_boa205_ch5_t1.timer_alfa.data
+        timer_beta = form_boa205_ch5_t1.timer_beta.data
+
+        (direkte_lonn_alfa,direkte_lonn_beta)=ch5_t1_direkte_lonn(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+        
+        (direkte_arbeidstimer_alfa,direkte_arbeidstimer_beta,
+         direkte_arbeidstimer_totalt)=ch5_t1_direkte_arbeidstimer(enheter_alfa, enheter_beta, 
+        timer_alfa, timer_beta)
+
+        (tilleggssatsen_indirekte_lonn,tilleggssatsen_indirekte_lonn_tekst)=ch5_t1_tilleggssatsen(enheter_alfa, enheter_beta, timer_alfa, timer_beta)
+
+        (kost_tradisjonell_indirekte_tilv_kostnad_alfa, kost_tradisjonell_indirekte_tilv_kostnad_beta,
+        kost_tradisjonell_enhetkost_alfa, kost_tradisjonell_enhetkost_beta)=ch5_t1_kost_tradisjonell(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+
+        (kost_ABC_indirekte_lonn_alfa,kost_ABC_indirekte_lonn_beta,
+        kost_ABC_alfa,kost_ABC_beta,kost_ABC_indirekte_alfa,
+        kost_ABC_indirekte_beta,kost_ABC_enhetskost_alfa,kost_ABC_enhetskost_beta)=ch5_t1_kost_ABC(enheter_alfa, enheter_beta, 
+        timer_alfa, timer_beta)
+
+        (sammenlign_differese_alfa,sammenlign_differese_beta,sammenlign_totalt_alfa,
+        sammenlign_totalt_beta)=ch5_t1_sammenlign(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="table1",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8,
+        direkte_lonn_alfa=direkte_lonn_alfa, direkte_lonn_beta=direkte_lonn_beta,
+        timer_alfa=timer_alfa, timer_beta=timer_beta,enheter_alfa=enheter_alfa, enheter_beta=enheter_beta,
+        direkte_arbeidstimer_alfa=direkte_arbeidstimer_alfa, direkte_arbeidstimer_beta=direkte_arbeidstimer_beta,
+        direkte_arbeidstimer_totalt=direkte_arbeidstimer_totalt,
+        tilleggssatsen_indirekte_lonn=tilleggssatsen_indirekte_lonn,
+        kost_tradisjonell_indirekte_tilv_kostnad_alfa=kost_tradisjonell_indirekte_tilv_kostnad_alfa, 
+        kost_tradisjonell_indirekte_tilv_kostnad_beta=kost_tradisjonell_indirekte_tilv_kostnad_beta,
+        kost_tradisjonell_enhetkost_alfa=kost_tradisjonell_enhetkost_alfa,
+        kost_tradisjonell_enhetkost_beta=kost_tradisjonell_enhetkost_beta,
+        kost_ABC_indirekte_lonn_alfa=kost_ABC_indirekte_lonn_alfa,
+        kost_ABC_indirekte_lonn_beta=kost_ABC_indirekte_lonn_beta,
+        kost_ABC_alfa=kost_ABC_alfa,kost_ABC_beta=kost_ABC_beta,
+        kost_ABC_indirekte_alfa=kost_ABC_indirekte_alfa,
+        kost_ABC_indirekte_beta=kost_ABC_indirekte_beta,
+        kost_ABC_enhetskost_alfa=kost_ABC_enhetskost_alfa,
+        kost_ABC_enhetskost_beta=kost_ABC_enhetskost_beta,
+        sammenlign_differese_alfa=sammenlign_differese_alfa,
+        sammenlign_differese_beta=sammenlign_differese_beta,
+        sammenlign_totalt_alfa=sammenlign_totalt_alfa,
+        sammenlign_totalt_beta=sammenlign_totalt_beta,
+        tilleggssatsen_indirekte_lonn_tekst=tilleggssatsen_indirekte_lonn_tekst)
+    
+    if form_boa205_ch5_t2.validate_on_submit():
+        """ Variables """
+        enheter_a = form_boa205_ch5_t2.enheter_a.data
+        enheter_b = form_boa205_ch5_t2.enheter_b.data
+        timer_a = form_boa205_ch5_t2.timer_a.data
+        timer_b = form_boa205_ch5_t2.timer_b.data
+
+        enheter_totalt=ch5_t2_enheter_totalt(enheter_a, enheter_b, timer_a, timer_b)
+
+        (maskinering_aktivitet_a,maskinering_kostnad_a,
+        sum_indirekte_kostnad_a,indirekte_kostnader_per_enhet_a, enhetskostnad_a,
+        maskinering_aktivitet_b,maskinering_kostnad_b,
+        sum_indirekte_kostnad_b,indirekte_kostnader_per_enhet_b, 
+        enhetskostnad_b)=ch5_t2_enhetskostnad(enheter_a, enheter_b, timer_a, timer_b)
+
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+            form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+            legend='Variabler',anchor="table2",
+            form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+            form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+            form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+            form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8,
+            enheter_a=enheter_a, enheter_b=enheter_b,
+            timer_a=timer_a, timer_b=timer_b,
+            enheter_totalt=enheter_totalt,
+            maskinering_aktivitet_a=maskinering_aktivitet_a,
+            maskinering_kostnad_a=maskinering_kostnad_a,
+            sum_indirekte_kostnad_a=sum_indirekte_kostnad_a,
+            indirekte_kostnader_per_enhet_a=indirekte_kostnader_per_enhet_a, 
+            enhetskostnad_a=enhetskostnad_a,
+            maskinering_aktivitet_b=maskinering_aktivitet_b,
+            maskinering_kostnad_b=maskinering_kostnad_b,
+            sum_indirekte_kostnad_b=sum_indirekte_kostnad_b,
+            indirekte_kostnader_per_enhet_b=indirekte_kostnader_per_enhet_b, 
+            enhetskostnad_b=enhetskostnad_b)
+    
+    if form_boa205_ch5_q1.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q1.type.data, author=current_user)
+        if moduls.question_str == '3752000':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 1
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q1_q2",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+    
+    if form_boa205_ch5_q2.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q2.type.data, author=current_user)
+        if moduls.question_str == '3790':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 2
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q1_q2",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+    
+    if form_boa205_ch5_q3.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q3.type.data, author=current_user)
+        if moduls.question_str == '3607':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 3
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q3_q4",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+    
+    if form_boa205_ch5_q4.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q4.type.data, author=current_user)
+        if moduls.question_str == '5393':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 4
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q3_q4",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+    
+    if form_boa205_ch5_q5.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q5.type.data, author=current_user)
+        if moduls.question_str == '27392000':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 5
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q5_q6",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+    
+    if form_boa205_ch5_q6.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q6.type.data, author=current_user)
+        if moduls.question_str == '3113.8':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 6
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q5_q6",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+    
+    if form_boa205_ch5_q7.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q7.type.data, author=current_user)
+        if moduls.question_str == '935.1':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 7
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q7_q8",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+
+    if form_boa205_ch5_q8.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch5_q8.type.data, author=current_user)
+        if moduls.question_str == '3652.8':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch5'
+        moduls.title_ch = 'Kapitel 5. Aktivitetsbasert kalkulasjon'
+        moduls.question_num = 8
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch5'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+        legend='Variabler',anchor="ch5_q7_q8",
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+
+    return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
+          legend='Variabler',
+        form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
+        form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
+        form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
+        form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
