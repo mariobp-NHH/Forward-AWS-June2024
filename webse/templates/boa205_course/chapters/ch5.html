@@ -1,0 +1,1609 @@
+{% extends "boa205_course/boa205_course_layout.html" %}
+{% block content %}
+
+{% if anchor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targetElement = document.getElementById("{{ anchor }}");
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endif %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1>Kapitel 5. Aktivitetsbasert kalkulasjon</h1>
+                <p class="mb-1">
+                I dette kapittelet studerer vi hva <strong>aktivitetsbasert kalkulasjon</strong> er, og hvorfor vi må bruke det.
+                <br>
+                <strong>Instruksjoner:</strong>
+                <ul>
+                    <li>Kapittel 5: Kapittel 7 i Driftsregnskap og budsjettering</li>
+                </ul>
+                - Alle informasjon i det kapitel har vært tatt fra kursmateriellet og boken Driftsregnskap og budsjettering (Bjørn Solheim og Trond Winther), og fra lysbilder fra kurs BØA205 ved HVL -
+                <br>
+                <br>
+                </p>
+                <div class="material-container">
+                    
+
+                    <!-- Kursmateriell  -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+    
+                    <!-- Oppgave 1. Mål -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp1. Mål</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave1_mal_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 1. Løsning 1 -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Opp1. Løsning1</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave1_losning1_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp2</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2. Mål -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp2. Mål</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_mal_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2. Løsning -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Opp2. Løsning</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_losning_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>  
+                    
+                </div>
+                </br>
+
+                <div class="list-group", style="padding: 15px 0px;">
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Hvorfor aktivitetsbasert kalkulasjon?</h5>
+                    </div>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Hva er aktivitetsbasert kalkulasjon (ABC)?</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Oppgave 1. Aktivitetsbasert kalkulasjon</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Oppgave 2</h5>
+                      </div>
+                    </a>
+                </div>
+            </div>
+            <img
+src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/figures/ch5.svg"
+alt=""
+/>
+        </div>
+    </header>
+</section>
+
+<!-- Kursmateriell Modal -->
+<div class="modal fade" id="kursmateriell_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+            id="paper_frame"
+            src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/kursmateriell.pptx"
+            width="100%" 
+            height="100%" 
+            frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/kursmateriell.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Oppgave 1. Mål. Modal -->
+<div class="modal fade" id="oppgave1_mal_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Mål</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave1_mal.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave1_mal.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 1. Løsning 1. Modal -->
+<div class="modal fade" id="oppgave1_losning1_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Løsning 1</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave1_losning.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave1_losning.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 1. Løsning 2. Modal -->
+<div class="modal fade" id="oppgave1_losning2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Løsning 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave1_losning2.pptx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave1_losning2.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Modal -->
+<div class="modal fade" id="oppgave2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave2.docx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave2.docx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Mål. Modal -->
+<div class="modal fade" id="oppgave2_mal_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2. Mål</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave2_mal.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave2_mal.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Løsning. Modal -->
+<div class="modal fade" id="oppgave2_losning_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2. Løsning</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave2_losning.xlsx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch5/material/oppgave2_losning.xlsx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Hvorfor aktivitetsbasert kalkulasjon?</h1>
+    </div>
+    
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Tradisjonell kalkulasjon</strong> </p>
+            <p style="text-align: left;">
+              <ul>
+                <li>Direkte kostnader føres direkte på produktene / 
+                  ordrene i drifts-regnskapet
+                <br>
+                <br>
+                Eks: Direkte lønn ifm. tilvirkning, eksempelvis kr 50 000,- for 
+                produktet Standard og kr 100 000,- for produktet Spesial
+                </li>
+                <br>
+                <li>
+                  Indirekte kostnader fordeles på produktene / ordrene basert 
+                  på kalkulasjon basert på tilleggssatser og aktivitetsmål
+                  <br>
+                  <br>
+                  Eks: Indirekte kostnader i tilvirkningsavdeling = 50% av 
+                  direkte lønn – her er satsen 50% mens aktivitetsmålet 
+                  er direkte lønn
+                  <br>
+                  <br>
+                  Eks: Indirekte kostnad tilvirkning er 50% ∙ 50 000,- kr = 25 000,- kr 
+                  for produktet Standard og 50% ∙ 100 000,- kr = 50 000,- kr 
+                  for produktet Spesial 
+                </li>
+              </ul>
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Et problem med tradisjonell kalkulasjon</strong> </p>
+            <p style="text-align: left;">
+              <li>
+              I standard kalkulasjon brukes samme tilleggssats for alle produkter, dvs. 
+              underforstått antar man at alle produkter medfører <strong>samme belastning</strong> av 
+              indirekte kostnader
+            <br>
+            <br>
+              Eks: 1 time brukt på å produsere produktet Standard antas å ha samme 
+              belastning av indirekte kostnad som 1 time brukt på å produsere produktet 
+              Spesial
+            </li>
+            <br>
+            <li>
+              Dette innebærer at indirekte kostnader <strong>«smøres jevnt utover»</strong> på 
+              produktene uten hensyn til om produktene bør ha samme belastning av 
+              indirekte kostnader eller ei 
+              <br>
+              <br>
+              Eks: Selv om det å planlegge og sette i drift en stor serie av produktet 
+              Standard krever lite ressurser (per produsert enhet) mens det å 
+              planlegge og sette i drift en liten serie av produktet Spesial 
+              krever mye ressurser (per produsert enhet) så vil de to produktene 
+              belastes med like store indirekte kostnader per direkte lønnskrone (50%)
+            </li>
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Et problem med tradisjonell kalkulasjon</strong> </p>
+            <p style="text-align: left;">
+            <ul>
+              <li>
+                Standard kalkulasjon kan således innebære en <strong>«kryss-subsidiering»</strong> 
+                mellom produkter
+                <br>
+                <br>
+                Eks: Produktet Standard vil bli overbelastet med indirekte 
+                kostnader mens produktet Spesial blir belastet for lite 
+              </li>
+              <br>
+              <li>
+                Med andre ord: Forbruket av indirekte kostnader varierer i 
+                stor grad med andre faktorer enn de mer volumorienterte aktivitetsmålene
+              </li>
+              <br>
+              <li>
+                I så fall vil man kunne treffe gale beslutninger 
+                som følge av <strong>feilaktige kalkyler</strong>
+                <br>
+                <br>
+                Eks: <strong>Produktet Standard framstår som mindre lønnsomt enn det egentlig er</strong>, 
+                mens 
+                <strong>produktet Spesial framstår som mer lønnsomt enn det egentlig er</strong>
+              </li>
+              <br>
+              <li>
+              Dette er et særlig stort problem dersom andelen indirekte kostnader er stor
+              </li>
+            </ul>
+            </p>
+        </div>
+        <div class="box" style="background-color: #4a736f;">
+            <p style="text-align: center;"><strong></strong> </p>
+            <p style="text-align: left;">
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+  <div class="container" style="display:block;">
+    <h2>Hva er aktivitetsbasert kalkulasjon (ABC)?</h2>
+  </div>
+  <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Hva er aktivitetsbasert kalkulasjon (ABC)?</strong> </p>
+            <p style="text-align: left;">
+              Aktivitetsbasert kalkulasjon eller ABC (Activity Based Costing) er et 
+              alternativ til tradisjonell 
+              kalkulasjon som baserer kalkulasjonen på de <strong>verdiskapende 
+              aktivitetene som foregår i bedriften og som medfører kostnader</strong>.
+            </p>
+            <p style="text-align: center;"><strong>De grunnleggende elementene i ABC</strong> </p>
+            <p style="text-align: left;">
+              <ul>
+                <li>
+                  ABC beskriver ressursbruken i form av <strong>aktiviteter</strong>.
+                  Med aktiviteter menes avgrensede, gjentatte arbeidsoppgaver
+                </li>
+                <br>
+                <li>
+                  ABC fokuserer på hvilke faktorer som driver kostnadene i virksomheten, 
+                  såkalte <strong>kostnadsdrivere</strong>
+                  Kostnadsdrivere kan være mer enn <strong>produksjonsvolumet</strong> eller andre 
+                  <strong>volumbaserte 
+                  faktorer (arbeidstimer, maskintimer)</strong>	
+                </li>
+                <br>
+                <li>
+                  ABC vektlegger at <strong>kompleksitet driver kostnadene</strong>
+                  <br>
+                  Det koster å produsere mange produkter fordi det krever økt planlegging, 
+                  koordineringsarbeid, innkjøp, lagerhold, osv. 
+                </li>
+              </ul>
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Kostnadsvariasjon</strong> </p>
+            <p style="text-align: left;">
+              I ABC er det vanlig å anta at <strong>kostnadene per periode varierer med</strong>:
+              <ul>
+                <li>
+                  Antallet produksjonsenheter
+                </li>
+                <li>
+                  Antallet produksjonsserier
+                </li>
+                <li>
+                  Antallet produkter 
+                </li>
+              </ul>
+            </p>
+            <p style="text-align: center;"><strong>Kalkyleobjekt</strong> </p>
+            <p style="text-align: left;">
+              <ul>
+                <li>Et <strong>kalkyleobjekt</strong> er det vi ønsker å beregne eller måle kostnaden for:
+                <br>
+                Et produkt, et prosjekt, en tjeneste, en avdeling, distribusjonskanalen, 
+                en kunde, en kundegruppe, et marked eller et program.
+                </li>
+                <br>
+                <li>
+                  Alle kalkyleobjekter har det til felles at de <strong>forbruker ressurser som 
+                  gir opphav til kostnader</strong>
+                </li>
+              </ul>
+            </p>
+        </div>
+  </div>
+
+  <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Kostnadstilordning i ABC</strong> </p>
+            <p style="text-align: left;">
+              <ul>
+                <li>
+                  Det er vanlig å benytte <strong>frekvensbaserte kostnadsdrivere</strong>, hvor antallet 
+                  ganger en aktivitet gjentas benevnes <strong>aktivitetsfrekvens</strong>
+                </li>
+                <br>
+                <li>
+                  Tilleggssatsene i ABC kalles for <strong>aktivitetssats</strong> eller kostnad per kostnads-driverenhet og 
+                  beregnes slik:
+                  <br>
+                  <br>
+                  Kostnad pr kostnadsdriverenhet=(Aktivitetens kostnader)/aktivitetsfrekvens
+                </li>
+                <li>
+                  <strong>Kostnadene til et bestemt kalkyleobjekt</strong> beregnes som følger:
+                  <br>
+                  <br>
+                  Kostnad kalkuleobjekt=Kostand pr driver * Kalkyleobjektets aktivitets forbruk
+                </li>
+              </ul>
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Fordeler og ulemper ved ABC</strong> </p>
+            <p style="text-align: left;">
+              <strong>Fordeler:</strong>
+              <ol>
+                <li>
+                  Det benyttes normalt mange fordelingsnøkler og fordelingsgrunnlag 
+                  for de indirekte kostnadene
+                </li>
+                <li>
+                  Det benyttes andre typer fordelingsnøkler som bedre beskriver hva som 
+                  er årsaken til dimensjoneringene av virksomhetens aktiviteter 
+                </li>
+                <li>
+                  Får økt innsikt i hvor kostnadene oppstår i organisasjonen
+                </li>
+                <li>
+                  Økt fokus på kapasitetsutnyttelse
+                </li>
+              </ol>
+              <br>
+              <strong>Ulemper</strong>
+              <ol>
+                <li>
+                  Ofte høye målekostnader for å utarbeide gode kalkyler
+                </li>
+                <li>
+                  Faste kostnader kan ikke gjøres variable selv om de fordeles iht. kostnadsdrivere
+                </li>
+                <li>
+                  Retorikken er sterk og kan virke mot sin hensikt
+                </li>
+              </ol>
+            </p>
+        </div>
+  </div>
+</section>
+
+<!-- Section 3 -->
+<section class="section_1" id="section1">
+  <div class="container" style="display:block;">
+    <h2>Oppgave 1. Aktivitetsbasert kalkulasjon</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #4a736f;">
+    <div class="container" id="table1">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch5_t1.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch5_t1.enheter_alfa.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t1.enheter_alfa(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch5_t1.enheter_beta.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t1.enheter_beta(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch5_t1.timer_alfa.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t1.timer_alfa(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch5_t1.timer_beta.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t1.timer_beta(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch5_t1.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      As ABC-industrier tilvirker og selger to produkter, Alfa og Beta. Årlig salg er 
+                      {{enheter_alfa}} enheter Alfa og {{enheter_beta}} enheter Beta.
+                      <br>
+                      <br>
+                      Bedriften har kommet fram til følgende forbruk av direkte materialer og dirkte lønn:
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Alfa</th>
+                                <th scope="col" class="text-end">Produkt Beta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte materialer</th>
+                                  <td class="text-end">700</td>
+                                  <td class="text-end">480</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">({{timer_alfa}} t à kr 300) = {{direkte_lonn_alfa}}</td>
+                                  <td class="text-end">({{timer_beta}} t à kr 300) = {{direkte_lonn_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum direkte kostnader</th>
+                                  <td class="text-end">3700</td>
+                                  <td class="text-end">2880</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      De indirekte tilvirkningskostnadene beløper seg til kr 2240000 årlig.
+                    </p>
+                    <p align="left">
+                      1. Hvor mange <strong>direkte arbeidstimer</strong> går det med til å produsere Alfa og Beta?
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Produkt</th>
+                                <th scope="col" class="text-end">Antall</th>
+                                <th scope="col" class="text-end">Time forbruk per enhet</th>
+                                <th scope="col" class="text-end">Time forbruk totalt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Alfa</th>
+                                  <td class="text-end">{{enheter_alfa}}</td>
+                                  <td class="text-end">{{timer_alfa}}</td>
+                                  <td class="text-end">{{direkte_arbeidstimer_alfa}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Beta</th>
+                                  <td class="text-end">{{enheter_beta}}</td>
+                                  <td class="text-end">{{timer_beta}}</td>
+                                  <td class="text-end">{{direkte_arbeidstimer_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Arbeidstime totalt</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{direkte_arbeidstimer_totalt}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      2. Beregn <strong>tilleggssatsen</strong> for de indirekte kostnadene.
+                      <br>
+                      Tilleggssats=Indirekte kostnad/Timer=
+                      2240000 kr/{{direkte_arbeidstimer_totalt}} t=
+                      {{tilleggssatsen_indirekte_lonn_tekst}} kr/time
+                    </p>
+                    <p align="left">
+                      3. Beregn <strong>enhetskostnadene</strong> for hvert produkt etter 
+                      <strong>tradisjonell metode</strong>.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Alfa</th>
+                                <th scope="col" class="text-end">Produkt Beta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte materialer</th>
+                                  <td class="text-end">700</td>
+                                  <td class="text-end">480</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">({{timer_alfa}} t à kr 300) = {{direkte_lonn_alfa}}</td>
+                                  <td class="text-end">({{timer_beta}} t à kr 300) = {{direkte_lonn_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte tilvirkningskostnad</th>
+                                  <td class="text-end">(22400000 / {{direkte_arbeidstimer_totalt}}) * {{timer_alfa}} = {{kost_tradisjonell_indirekte_tilv_kostnad_alfa}}</td>
+                                  <td class="text-end">(22400000 / {{direkte_arbeidstimer_totalt}}) * {{timer_beta}} = {{kost_tradisjonell_indirekte_tilv_kostnad_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Enhetskostnader</th>
+                                  <td class="text-end">{{kost_tradisjonell_enhetkost_alfa}}</td>
+                                  <td class="text-end">{{kost_tradisjonell_enhetkost_beta}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      Selskapets tilvirknings er organisert i seks aktivitetssteder, som spesifisert 
+                      nedenfor.
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Aktivitetssted</th>
+                                <th scope="col">Kostnadsdriver</th>
+                                <th scope="col" class="text-end">Kostnader</th>
+                                <th scope="col" class="text-end">Alfa</th>
+                                <th scope="col" class="text-end">Beta</th>
+                                <th scope="col" class="text-end">Total</th>
+                                <th scope="col" class="text-end">Pr. aktivitets enhet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte lønn</th>
+                                  <td>Dir. arbeidstimer</td>
+                                  <td class="text-end">2240000 kr</td>
+                                  <td class="text-end">{{enheter_alfa}} enhet * {{timer_alfa}} t/enhet = {{direkte_arbeidstimer_alfa}}</td>
+                                  <td class="text-end">{{enheter_beta}} enhet * {{timer_beta}} t/enhet = {{direkte_arbeidstimer_beta}}</td>
+                                  <td class="text-end">{{direkte_arbeidstimer_totalt}} t</td>
+                                  <td class="text-end">2240000 kr / {{direkte_arbeidstimer_totalt}} t = {{tilleggssatsen_indirekte_lonn}} kr/t</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Maskinomstilling</th>
+                                  <td>Antall omstillinger</td>
+                                  <td class="text-end">4200000</td>
+                                  <td class="text-end">6000</td>
+                                  <td class="text-end">9000</td>
+                                  <td class="text-end">15000</td>
+                                  <td class="text-end">280</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kvalitetsavd</th>
+                                  <td>Antall inspeksjoner</td>
+                                  <td class="text-end">4480000</td>
+                                  <td class="text-end">13000</td>
+                                  <td class="text-end">7000</td>
+                                  <td class="text-end">20000</td>
+                                  <td class="text-end">224</td>                                
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produksjonsplanlegging</th>
+                                  <td>Antall ordrer</td>
+                                  <td class="text-end">1960000</td>
+                                  <td class="text-end">300</td>
+                                  <td class="text-end">700</td>
+                                  <td class="text-end">1000</td>
+                                  <td class="text-end">1960</td>                                
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Materialhåndtering</th>
+                                  <td>Antall material</td>
+                                  <td class="text-end">2520000</td>
+                                  <td class="text-end">600</td>
+                                  <td class="text-end">2400</td>
+                                  <td class="text-end">3000</td>
+                                  <td class="text-end">840</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Maskinavdeling</th>
+                                  <td>Antall maskintimer</td>
+                                  <td class="text-end">7000000</td>
+                                  <td class="text-end">42000</td>
+                                  <td class="text-end">98000</td>
+                                  <td class="text-end">140000</td>
+                                  <td class="text-end">50</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      4. Beregn <strong>enhetskostnadene</strong> for hvert produkt etter 
+                      <strong>ABC</strong>.
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Aktivitetssted</th>
+                                <th scope="col">Kostnadsdriver</th>
+                                <th scope="col" class="text-end">Kostnad per aktivitet Alfa</th>
+                                <th scope="col" class="text-end">Kostnad Alfa</th>
+                                <th scope="col" class="text-end">Kostnad per aktivitet Beta</th>
+                                <th scope="col" class="text-end">Kostnad Beta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte lønn</th>
+                                  <td>Dir. arbeidstimer</td>
+                                  <td class="text-end">{{enheter_alfa}} enhet * {{timer_alfa}} t/enhet * {{tilleggssatsen_indirekte_lonn}} kr/t</td>
+                                  <td class="text-end">{{kost_ABC_indirekte_lonn_alfa}} kr</td>
+                                  <td class="text-end">{{enheter_beta}} enhet * {{timer_beta}} t/enhet * {{tilleggssatsen_indirekte_lonn}} kr/t</td>
+                                  <td class="text-end">{{kost_ABC_indirekte_lonn_beta}} kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Maskinomstilling</th>
+                                  <td>Antall omstillinger</td>
+                                  <td class="text-end">6000 * 280</td>
+                                  <td class="text-end">168000</td>
+                                  <td class="text-end">9000 * 280</td>
+                                  <td class="text-end">2520000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kvalitetsavd</th>
+                                  <td>Antall inspeksjoner</td>
+                                  <td class="text-end">13000 * 224</td>
+                                  <td class="text-end">2912000</td>
+                                  <td class="text-end">7000 * 224</td>
+                                  <td class="text-end">1568000</td>                                
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produksjonsplanlegging</th>
+                                  <td>Antall ordrer</td>
+                                  <td class="text-end">300 * 1960</td>
+                                  <td class="text-end">588000</td>
+                                  <td class="text-end">700 * 1960</td>
+                                  <td class="text-end">1372000</td>                                
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Materialhåndtering</th>
+                                  <td>Antall material</td>
+                                  <td class="text-end">600 * 840</td>
+                                  <td class="text-end">504 000</td>
+                                  <td class="text-end">2400 * 840</td>
+                                  <td class="text-end">2016000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Maskinavdeling</th>
+                                  <td>Antall maskintimer</td>
+                                  <td class="text-end">42000 * 50</td>
+                                  <td class="text-end">2100000</td>
+                                  <td class="text-end">98000 * 50</td>
+                                  <td class="text-end">4900000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum indirekte kostnader</th>
+                                  <td></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{kost_ABC_alfa}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{kost_ABC_beta}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <strong>Alfa indirekte kostnader per enhet</strong> = 
+                      {{kost_ABC_alfa}} kr/ {{enheter_alfa}} enhet = {{kost_ABC_indirekte_alfa}} kr/enhet
+                      <br>
+                      <strong>Beta indirekte kostnader per enhet</strong> = 
+                      {{kost_ABC_beta}} kr/ {{enheter_beta}} enhet = {{kost_ABC_indirekte_beta}} kr/enhet
+                      <br>
+                      <br>
+                      <strong>Enhetskostnader ABC</strong>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Alfa</th>
+                                <th scope="col" class="text-end">Produkt Beta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte materialer</th>
+                                  <td class="text-end">700</td>
+                                  <td class="text-end">480</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">({{timer_alfa}} t à kr 300) = {{direkte_lonn_alfa}}</td>
+                                  <td class="text-end">({{timer_beta}} t à kr 300) = {{direkte_lonn_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader</th>
+                                  <td class="text-end">{{kost_ABC_indirekte_alfa}}</td>
+                                  <td class="text-end">{{kost_ABC_indirekte_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Enhetskostnader ABC</th>
+                                  <td class="text-end">{{kost_ABC_enhetskost_alfa}}</td>
+                                  <td class="text-end">{{kost_ABC_enhetskost_beta}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      5. Sammenlign kalkylene du fant i oppgabe 3 og oppgave 4. 
+                      Beregn eventuell <strong>kryssubsideiering</strong> mellom produktene.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt Alfa</th>
+                                <th scope="col" class="text-end">Produkt Beta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Enhetskostnader ifølge ABC</th>
+                                  <td class="text-end">{{kost_ABC_enhetskost_alfa}}</td>
+                                  <td class="text-end">{{kost_ABC_enhetskost_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Enhetskostnader ifølge selvkost</th>
+                                  <td class="text-end">{{kost_tradisjonell_enhetkost_alfa}}</td>
+                                  <td class="text-end">{{kost_tradisjonell_enhetkost_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Differanse per enhet</th>
+                                  <td class="text-end">{{sammenlign_differese_alfa}}</td>
+                                  <td class="text-end">{{sammenlign_differese_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall enheter</th>
+                                  <td class="text-end">{{enheter_alfa}}</td>
+                                  <td class="text-end">{{enheter_beta}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Totalt</th>
+                                  <td class="text-end">{{sammenlign_totalt_alfa}}</td>
+                                  <td class="text-end">{{sammenlign_totalt_beta}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      Dvs. tradisjonall kalkulasjon innebærer at det er en <strong>"kryss-subisedier"</strong>
+                      fra Alfa og Beta av {{sammenlign_totalt_alfa}}.
+                      <br>
+                      <br>
+                      <strong>Merk:</strong> Forskjellen i den totale kryssubsidien skyldes avrundingen av tallene. 
+                      For spørsmålene bruker vi den totale kryssubsidien til produktet Alfa som referanse.
+                    </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Questions 1 and 2 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 1 -->
+      <div id="ch5_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q1.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 1:</legend>
+
+                  <p class="card-text">
+                      Når det årlige salget av enheter av Alfa er 4 000, det årlige salget av enheter av Beta er 20 000, 
+                      Alfa krever 10 timer per enhet og Beta krever 8 timer per enhet, 
+                      hva er kryssubsidieringen fra Alfa til Beta?  
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q1.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q1.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="ch5_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q2.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 2:</legend>
+
+                  <p class="card-text">
+                      Når det årlige salget av Alfa er 4 100 enheter og det årlige salget av Beta er 20 000 enheter, 
+                      Alfa krever 9 timer per enhet og Beta krever 8 timer per enhet, hva er 
+                      enhetskostnaden for produkt Beta etter den tradisjonelle metoden?    
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q2.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q2.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div>  
+
+  <!-- Questions 3 and 4 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 3 -->
+      <div id="ch5_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q3.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 3:</legend>
+
+                  <p class="card-text">
+                      Når det årlige salget av Alfa er 4 100 enheter og det årlige salget av Beta er 19 500 enheter, Alfa krever 
+                      9 timer per enhet og Beta krever 8 timer per enhet, 
+                      hva er enhetskostnaden for produkt Beta etter ABC-metoden?  
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q3.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q3.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div id="ch5_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q4.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 4:</legend>
+
+                  <p class="card-text">
+                      Når det årlige salget av Alfa er 4 100 enheter og det årlige salget av Beta er 19 500 enheter, Alfa krever 9 
+                      timer per enhet og Beta krever 9 timer per enhet, 
+                      hva er enhetskostnaden for produkt Alfa etter ABC-metoden?    
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q4.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q4.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+ 
+</section>
+
+<!-- Section 4 -->
+<section class="section_2" id="section2">
+  <div class="container" style="display:block;">
+    <h2>Oppgave 2</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+    <div class="container" id="table2">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch5_t2.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch5_t2.enheter_a.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t2.enheter_a(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch5_t2.enheter_b.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t2.enheter_b(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch5_t2.timer_a.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t2.timer_a(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch5_t2.timer_b.label(class="form-control-label") }}
+                                {{ form_boa205_ch5_t2.timer_b(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch5_t2.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      Vi har følgende data for bedriften AX AS <strong>tilvirkningskostnader</strong>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt A</th>
+                                <th scope="col" class="text-end">Produkt B</th>
+                                <th scope="col" class="text-end">Totalt</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Enheter (eller Salg, eller Produksjons)</th>
+                                  <td class="text-end">{{enheter_a}}</td>
+                                  <td class="text-end">{{enheter_b}}</td>
+                                  <td class="text-end">{{enheter_totalt}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end">200 kr/enhet</td>
+                                  <td class="text-end">250 kr/enhet</td>
+                                  <td class="text-end">16500000 kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte arbeidstimer</th>
+                                  <td class="text-end">3 timer/enhet</td>
+                                  <td class="text-end">360 timer/enhet</td>
+                                  <td class="text-end">36720000 timer</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">450 kr/enhet</td>
+                                  <td class="text-end">360 kr/enhet</td>
+                                  <td class="text-end">36720000 kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte maskintimer</th>
+                                  <td class="text-end">5 timer/enhet</td>
+                                  <td class="text-end">7 timer/enhet</td>
+                                  <td class="text-end">414000 timer</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall serier</th>
+                                  <td class="text-end">10</td>
+                                  <td class="text-end">30</td>
+                                  <td class="text-end">40</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall kundeleveranser</th>
+                                  <td class="text-end">600</td>
+                                  <td class="text-end">400</td>
+                                  <td class="text-end">1000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall varemottak</th>
+                                  <td class="text-end">150</td>
+                                  <td class="text-end">100</td>
+                                  <td class="text-end">250</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                     <strong>Indirekte kostnader</strong>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Indirekte kostnader</th>
+                                <th scope="col" class="text-end">Totalt</th>
+                                <th scope="col" class="text-end">Kostnadsdriver ved ABC</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Maskinering</th>
+                                  <td class="text-end">24000000 kr</td>
+                                  <td class="text-end">Antall maskintimer</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Omstilling maskiner</th>
+                                  <td class="text-end">4480000 kr</td>
+                                  <td class="text-end">Antall serier</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Pakking/forsendelse</th>
+                                  <td class="text-end">2660000 kr</td>
+                                  <td class="text-end">Antall kundeleveranser</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varemottak</th>
+                                  <td class="text-end">2480000 kr</td>
+                                  <td class="text-end">Antall varemottak</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum indirekte kostnader</th>
+                                  <td class="text-end">33620000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                     1. Beregn <strong>tilleggssatsene</strong> for de ulike driverne
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Aktivitet (sted)</th>
+                                <th scope="col" class="text-end">Kostnadsdriver</th>
+                                <th scope="col" class="text-end">Kostnad</th>
+                                <th scope="col" class="text-end">Aktivitet</th>
+                                <th scope="col" class="text-end">Pr aktivitetsenhet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Maskinering</th>
+                                  <td class="text-end">Antall maskin timer</td>
+                                  <td class="text-end">24000000</td>
+                                  <td class="text-end">414000</td>
+                                  <td class="text-end">57.97</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Omstilling</th>
+                                  <td class="text-end">Antall serier</td>
+                                  <td class="text-end">4480000</td>
+                                  <td class="text-end">40</td>
+                                  <td class="text-end">112000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Pakking/forsendelse</th>
+                                  <td class="text-end">Antall kundeleveranser</td>
+                                  <td class="text-end">2660000</td>
+                                  <td class="text-end">1000</td>
+                                  <td class="text-end">2660</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varemottak</th>
+                                  <td class="text-end">Antall varemottak</td>
+                                  <td class="text-end">2480000</td>
+                                  <td class="text-end">250</td>
+                                  <td class="text-end">9920</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum indirekte kostnader</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">31140000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                     2. Sett opp <strong>kalkyler</strong> for de to produktene basert på <strong>ABC</strong>.
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Aktivitet (sted)</th>
+                                <th scope="col" class="text-end">Aktivitet A</th>
+                                <th scope="col" class="text-end">Kr per aktivitet A</th>
+                                <th scope="col" class="text-end">Kostnad A</th>
+                                <th scope="col" class="text-end">Aktivitet B</th>
+                                <th scope="col" class="text-end">Kr per aktivitet B</th>
+                                <th scope="col" class="text-end">Kostnad B</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Maskinering</th>
+                                  <td class="text-end">{{maskinering_aktivitet_a}}</td>
+                                  <td class="text-end">57.97</td>
+                                  <td class="text-end">{{maskinering_kostnad_a}}</td>
+                                  <td class="text-end">{{maskinering_aktivitet_b}}</td>
+                                  <td class="text-end">57.97</td>
+                                  <td class="text-end">{{maskinering_kostnad_b}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Omstilling</th>
+                                  <td class="text-end">10</td>
+                                  <td class="text-end">112000</td>
+                                  <td class="text-end">1120000</td>
+                                  <td class="text-end">30</td>
+                                  <td class="text-end">112000</td>
+                                  <td class="text-end">3360000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Pakking/forsendelse</th>
+                                  <td class="text-end">600</td>
+                                  <td class="text-end">2660</td>
+                                  <td class="text-end">1596000</td>
+                                  <td class="text-end">400</td>
+                                  <td class="text-end">2660</td>
+                                  <td class="text-end">1064000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varemottak</th>
+                                  <td class="text-end">150</td>
+                                  <td class="text-end">9920</td>
+                                  <td class="text-end">1488000</td>
+                                  <td class="text-end">100</td>
+                                  <td class="text-end">9920</td>
+                                  <td class="text-end">992000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum indirekte kostnader</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{sum_indirekte_kostnad_a}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{sum_indirekte_kostnad_b}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader per enhet</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{sum_indirekte_kostnad_a}}/{{enheter_a}}={{indirekte_kostnader_per_enhet_a}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{sum_indirekte_kostnad_b}}/{{enheter_b}}={{indirekte_kostnader_per_enhet_b}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Produkt A</th>
+                                <th scope="col" class="text-end">Produkt B</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end">200 kr/enhet</td>
+                                  <td class="text-end">250 kr/enhet</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">450 kr/enhet</td>
+                                  <td class="text-end">360 kr/enhet</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader</th>
+                                  <td class="text-end">{{indirekte_kostnader_per_enhet_a}} kr/enhet</td>
+                                  <td class="text-end">{{indirekte_kostnader_per_enhet_b}} kr/enhet</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Enhetskostnad</th>
+                                  <td class="text-end">{{enhetskostnad_a}} kr/enhet</td>
+                                  <td class="text-end">{{enhetskostnad_b}} kr/enhet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Questions 5 and 6 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 5 -->
+      <div id="ch5_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q5.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 5:</legend>
+
+                  <p class="card-text">
+                      Når salget av produkt A er 80 000 enheter og salget av produkt B er 2 000 enheter, 
+                      A krever 5 timer per enhet og B krever 7 timer per enhet, hva er 
+                      summen av indirekte kostnader for produkt A? 
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q5.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q5.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div id="ch5_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q6.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 6:</legend>
+
+                  <p class="card-text">
+                      Når salget av produkt A er 79 000 enheter og salget av produkt B er 2 000 enheter, A krever 4 
+                      timer per enhet og B krever 7 timer per enhet, hva er 
+                      indirekte kostnader per enhet for produkt B?     
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q6.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q6.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+
+  <!-- Questions 7 and 8 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 7 -->
+      <div id="ch5_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q7.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 7:</legend>
+
+                  <p class="card-text">
+                      Når salget av produkt A er 79 000 enheter og salget av produkt B er 1 900 enheter, 
+                      A krever 4 timer per enhet og B krever 8 timer per enhet,
+                      hva er enhetskostnaden for produkt A?    
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q7.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q7.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div id="ch5_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch5_q8.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 8:</legend>
+
+                  <p class="card-text">
+                      Når salget av produkt A er 81 000 enheter og salget av produkt B er 2 100 enheter, 
+                      A krever 5 timer per enhet og B krever 8 timer per enhet, 
+                      hva er enhetskostnaden for produkt B?      
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch5_q8.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch5_q8.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+
+
+</section>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+
+
+{% endblock content %}
