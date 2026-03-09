@@ -435,3 +435,148 @@ def ch4_t3_salgetsavvik(virkelig_salgsvolum_3031,virkelig_salgsvolum_3032,db_303
     salgets_3032=salgsprisavvik_3032+volumavvik_3032
     salgets_total=salgets_3031+salgets_3032
     return(salgets_3031,salgets_3032,salgets_total)
+
+""" Chapter 5 """
+""" def ch5_t1_direkte_lonn(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    direkte_lonn_alfa=int(timer_alfa)*300
+    direkte_lonn_beta=int(timer_beta)*300
+    return(direkte_lonn_alfa,direkte_lonn_beta)
+
+def ch5_t1_direkte_arbeidstimer(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    direkte_arbeidstimer_alfa=int(enheter_alfa)*int(timer_alfa)
+    direkte_arbeidstimer_beta=int(enheter_beta)*int(timer_beta)
+    direkte_arbeidstimer_totalt=direkte_arbeidstimer_alfa+direkte_arbeidstimer_beta
+    return(direkte_arbeidstimer_alfa,direkte_arbeidstimer_beta,direkte_arbeidstimer_totalt)
+
+def ch5_t1_tilleggssatsen(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    (direkte_arbeidstimer_alfa,direkte_arbeidstimer_beta,
+    direkte_arbeidstimer_totalt)=ch5_t1_direkte_arbeidstimer(enheter_alfa, enheter_beta, 
+    timer_alfa, timer_beta)
+    tilleggssatsen_indirekte_lonn=round(2240000/direkte_arbeidstimer_totalt,1)
+    return tilleggssatsen_indirekte_lonn
+
+def ch5_t1_kost_tradisjonell(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    (direkte_lonn_alfa,direkte_lonn_beta)=ch5_t1_direkte_lonn(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+    tilleggssatsen_indirekte_lonn=ch5_t1_tilleggssatsen(enheter_alfa, enheter_beta, 
+        timer_alfa, timer_beta)
+    kost_tradisjonell_indirekte_tilv_kostnad_alfa=tilleggssatsen_indirekte_lonn*int(timer_alfa)*10
+    kost_tradisjonell_indirekte_tilv_kostnad_beta=tilleggssatsen_indirekte_lonn*int(timer_beta)*10
+    kost_tradisjonell_enhetkost_alfa=700+direkte_lonn_alfa+kost_tradisjonell_indirekte_tilv_kostnad_alfa
+    kost_tradisjonell_enhetkost_beta=480+direkte_lonn_beta+kost_tradisjonell_indirekte_tilv_kostnad_beta
+    return(kost_tradisjonell_indirekte_tilv_kostnad_alfa, kost_tradisjonell_indirekte_tilv_kostnad_beta,
+        kost_tradisjonell_enhetkost_alfa, kost_tradisjonell_enhetkost_beta)
+
+def ch5_t1_kost_ABC(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    tilleggssatsen_indirekte_lonn=ch5_t1_tilleggssatsen(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+    kost_ABC_indirekte_lonn_alfa=int(int(enheter_alfa)*int(timer_alfa)*tilleggssatsen_indirekte_lonn)
+    kost_ABC_indirekte_lonn_beta=int(int(enheter_beta)*int(timer_beta)*tilleggssatsen_indirekte_lonn)
+    kost_ABC_alfa=kost_ABC_indirekte_lonn_alfa+1680000+2912000+588000+504000+2100000
+    kost_ABC_beta=kost_ABC_indirekte_lonn_beta+2520000+1568000+1372000+2016000+4900000
+    kost_ABC_indirekte_alfa=round(kost_ABC_alfa/int(enheter_alfa),1)
+    kost_ABC_indirekte_beta=round(kost_ABC_beta/int(enheter_beta),1)
+    kost_ABC_enhetskost_alfa=700+(300*int(timer_alfa))+kost_ABC_indirekte_alfa
+    kost_ABC_enhetskost_beta=480+(300*int(timer_beta))+kost_ABC_indirekte_beta
+    return(kost_ABC_indirekte_lonn_alfa,kost_ABC_indirekte_lonn_beta,
+           kost_ABC_alfa,kost_ABC_beta,kost_ABC_indirekte_alfa,
+           kost_ABC_indirekte_beta,kost_ABC_enhetskost_alfa,kost_ABC_enhetskost_beta)
+
+def ch5_t1_sammenlign(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    (kost_ABC_indirekte_lonn_alfa,kost_ABC_indirekte_lonn_beta,
+           kost_ABC_alfa,kost_ABC_beta,kost_ABC_indirekte_alfa,
+           kost_ABC_indirekte_beta,kost_ABC_enhetskost_alfa,kost_ABC_enhetskost_beta)=ch5_t1_kost_ABC(enheter_alfa,
+        enheter_beta, timer_alfa, timer_beta)
+    (kost_tradisjonell_indirekte_tilv_kostnad_alfa, kost_tradisjonell_indirekte_tilv_kostnad_beta,
+        kost_tradisjonell_enhetkost_alfa, 
+        kost_tradisjonell_enhetkost_beta)=ch5_t1_kost_tradisjonell(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+    sammenlign_differese_alfa=round(kost_ABC_enhetskost_alfa-kost_tradisjonell_enhetkost_alfa,1)
+    sammenlign_differese_beta=round(kost_ABC_enhetskost_beta-kost_tradisjonell_enhetkost_beta,1)
+    sammenlign_totalt_alfa=round(sammenlign_differese_alfa*int(enheter_alfa),1)
+    sammenlign_totalt_beta=round(sammenlign_differese_beta*int(enheter_beta),1)
+    return(sammenlign_differese_alfa,sammenlign_differese_beta,sammenlign_totalt_alfa,
+        sammenlign_totalt_beta)
+ """
+
+def ch5_t1_direkte_lonn(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    direkte_lonn_alfa=round(float(int(timer_alfa)*300),3)
+    direkte_lonn_beta=round(float(int(timer_beta)*300),3)
+    return(direkte_lonn_alfa,direkte_lonn_beta)
+
+def ch5_t1_direkte_arbeidstimer(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    direkte_arbeidstimer_alfa=round(float(int(enheter_alfa)*int(timer_alfa)),3)
+    direkte_arbeidstimer_beta=round(float(int(enheter_beta)*int(timer_beta)),3)
+    direkte_arbeidstimer_totalt=round(float(direkte_arbeidstimer_alfa+direkte_arbeidstimer_beta),3)
+    return(direkte_arbeidstimer_alfa,direkte_arbeidstimer_beta,direkte_arbeidstimer_totalt)
+
+def ch5_t1_tilleggssatsen(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    (direkte_arbeidstimer_alfa,direkte_arbeidstimer_beta,
+    direkte_arbeidstimer_totalt)=ch5_t1_direkte_arbeidstimer(enheter_alfa, enheter_beta, 
+    timer_alfa, timer_beta)
+    tilleggssatsen_indirekte_lonn=round(float(2240000/direkte_arbeidstimer_totalt),3)
+    tilleggssatsen_indirekte_lonn_tekst=tilleggssatsen_indirekte_lonn*10
+    return (tilleggssatsen_indirekte_lonn,tilleggssatsen_indirekte_lonn_tekst)
+
+def ch5_t1_kost_tradisjonell(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    (direkte_lonn_alfa,direkte_lonn_beta)=ch5_t1_direkte_lonn(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+    (tilleggssatsen_indirekte_lonn,tilleggssatsen_indirekte_lonn_tekst)=ch5_t1_tilleggssatsen(enheter_alfa, enheter_beta, 
+        timer_alfa, timer_beta)
+    kost_tradisjonell_indirekte_tilv_kostnad_alfa=round(float(tilleggssatsen_indirekte_lonn*int(timer_alfa)*10),3)
+    kost_tradisjonell_indirekte_tilv_kostnad_beta=round(float(tilleggssatsen_indirekte_lonn*int(timer_beta)*10),3)
+    kost_tradisjonell_enhetkost_alfa=round(float(700+direkte_lonn_alfa+kost_tradisjonell_indirekte_tilv_kostnad_alfa),3)
+    kost_tradisjonell_enhetkost_beta=round(float(480+direkte_lonn_beta+kost_tradisjonell_indirekte_tilv_kostnad_beta),3)
+    return(kost_tradisjonell_indirekte_tilv_kostnad_alfa, kost_tradisjonell_indirekte_tilv_kostnad_beta,
+        kost_tradisjonell_enhetkost_alfa, kost_tradisjonell_enhetkost_beta)
+
+def ch5_t1_kost_ABC(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    (tilleggssatsen_indirekte_lonn,tilleggssatsen_indirekte_lonn_tekst)=ch5_t1_tilleggssatsen(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+    kost_ABC_indirekte_lonn_alfa=round(float(int(enheter_alfa)*int(timer_alfa)*tilleggssatsen_indirekte_lonn),3)
+    kost_ABC_indirekte_lonn_beta=round(float(int(enheter_beta)*int(timer_beta)*tilleggssatsen_indirekte_lonn),3)
+    kost_ABC_alfa=round(float(kost_ABC_indirekte_lonn_alfa+1680000+2912000+588000+504000+2100000),3)
+    kost_ABC_beta=round(float(kost_ABC_indirekte_lonn_beta+2520000+1568000+1372000+2016000+4900000),3)
+    kost_ABC_indirekte_alfa=round(float(kost_ABC_alfa/int(enheter_alfa)),3)
+    kost_ABC_indirekte_beta=round(float(kost_ABC_beta/int(enheter_beta)),3)
+    kost_ABC_enhetskost_alfa=round(float(700+(300*int(timer_alfa))+kost_ABC_indirekte_alfa),3)
+    kost_ABC_enhetskost_beta=round(float(480+(300*int(timer_beta))+kost_ABC_indirekte_beta),3)
+    return(kost_ABC_indirekte_lonn_alfa,kost_ABC_indirekte_lonn_beta,
+           kost_ABC_alfa,kost_ABC_beta,kost_ABC_indirekte_alfa,
+           kost_ABC_indirekte_beta,kost_ABC_enhetskost_alfa,kost_ABC_enhetskost_beta)
+
+def ch5_t1_sammenlign(enheter_alfa, enheter_beta, timer_alfa, timer_beta):
+    (kost_ABC_indirekte_lonn_alfa,kost_ABC_indirekte_lonn_beta,
+           kost_ABC_alfa,kost_ABC_beta,kost_ABC_indirekte_alfa,
+           kost_ABC_indirekte_beta,kost_ABC_enhetskost_alfa,kost_ABC_enhetskost_beta)=ch5_t1_kost_ABC(enheter_alfa,
+        enheter_beta, timer_alfa, timer_beta)
+    (kost_tradisjonell_indirekte_tilv_kostnad_alfa, kost_tradisjonell_indirekte_tilv_kostnad_beta,
+        kost_tradisjonell_enhetkost_alfa, 
+        kost_tradisjonell_enhetkost_beta)=ch5_t1_kost_tradisjonell(enheter_alfa, 
+        enheter_beta, timer_alfa, timer_beta)
+    sammenlign_differese_alfa=round(float(kost_ABC_enhetskost_alfa-kost_tradisjonell_enhetkost_alfa),3)
+    sammenlign_differese_beta=round(float(kost_ABC_enhetskost_beta-kost_tradisjonell_enhetkost_beta),3)
+    sammenlign_totalt_alfa=round(float(sammenlign_differese_alfa*int(enheter_alfa)),3)
+    sammenlign_totalt_beta=round(float(sammenlign_differese_beta*int(enheter_beta)),3)
+    return(sammenlign_differese_alfa,sammenlign_differese_beta,sammenlign_totalt_alfa,
+        sammenlign_totalt_beta)
+
+def ch5_t2_enheter_totalt(enheter_a, enheter_b, timer_a, timer_b):
+    enheter_totalt=int(enheter_a)+int(enheter_b)
+    return enheter_totalt
+
+def ch5_t2_enhetskostnad(enheter_a, enheter_b, timer_a, timer_b):
+    maskinering_aktivitet_a=round(int(enheter_a)*int(timer_a),1)
+    maskinering_kostnad_a=round((maskinering_aktivitet_a*57.97),1)
+    sum_indirekte_kostnad_a=round(maskinering_kostnad_a+1120000+1596000+1488000,1)
+    indirekte_kostnader_per_enhet_a=round(sum_indirekte_kostnad_a/int(enheter_a),1)
+    enhetskostnad_a=round(200+450+indirekte_kostnader_per_enhet_a,1)
+    maskinering_aktivitet_b=round(int(enheter_b)*int(timer_b),1)
+    maskinering_kostnad_b=round((maskinering_aktivitet_b*57.97),1)
+    sum_indirekte_kostnad_b=round(maskinering_kostnad_b+3360000+1064000+992000,1)
+    indirekte_kostnader_per_enhet_b=round(sum_indirekte_kostnad_b/int(enheter_b),1)
+    enhetskostnad_b=round(250+360+indirekte_kostnader_per_enhet_b,1)
+    return(maskinering_aktivitet_a,maskinering_kostnad_a,
+        sum_indirekte_kostnad_a,indirekte_kostnader_per_enhet_a, enhetskostnad_a,
+        maskinering_aktivitet_b,maskinering_kostnad_b,
+        sum_indirekte_kostnad_b,indirekte_kostnader_per_enhet_b, enhetskostnad_b)
