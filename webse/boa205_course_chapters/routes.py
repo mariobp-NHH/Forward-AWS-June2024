@@ -28,6 +28,10 @@ from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch4_q9,ModulsFo
 from webse.boa205_course_chapters.forms import TableForm_boa205_ch5_t1, TableForm_boa205_ch5_t2, ModulsForm_boa205_ch5_q1, ModulsForm_boa205_ch5_q2
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch5_q3, ModulsForm_boa205_ch5_q4, ModulsForm_boa205_ch5_q5
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch5_q6, ModulsForm_boa205_ch5_q7, ModulsForm_boa205_ch5_q8
+""" chapter 6 """
+from webse.boa205_course_chapters.forms import TableForm_boa205_ch6_t1, TableForm_boa205_ch6_t2, ModulsForm_boa205_ch6_q1, ModulsForm_boa205_ch6_q2
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch6_q3, ModulsForm_boa205_ch6_q4, ModulsForm_boa205_ch6_q5
+from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch6_q6, ModulsForm_boa205_ch6_q7, ModulsForm_boa205_ch6_q8
 
 """ Functions """
 """ chapter 2a """
@@ -46,6 +50,10 @@ from webse.boa205_course_chapters.functions import ch4_t3_virkelig_budsjettert,c
 from webse.boa205_course_chapters.functions import ch5_t1_direkte_lonn, ch5_t1_direkte_arbeidstimer, ch5_t1_tilleggssatsen
 from webse.boa205_course_chapters.functions import ch5_t1_kost_tradisjonell, ch5_t1_kost_ABC, ch5_t1_sammenlign
 from webse.boa205_course_chapters.functions import ch5_t2_enheter_totalt, ch5_t2_enhetskostnad
+""" Chapter 6 """
+from webse.boa205_course_chapters.functions import ch6_t1_foregaende_ar, ch6_t1_maned_budsjett, ch6_t1_likviditetsbudsjett
+from webse.boa205_course_chapters.functions import ch6_t2_budsjett_2020, ch6_t2_maned_2020, ch6_t2_utbetal_2020
+from webse.boa205_course_chapters.functions import ch6_t2_lik_2020, ch6_t2_pavirke
 
 #Chapter 1
 @boa205_course_chapters.route('/boa205_course/kapitel1', methods=['GET', 'POST'])
@@ -1927,7 +1935,7 @@ def boa205_course_chapters_ch5():
         moduls.question_section = 'boa205_ch5'       
         db.session.add(moduls)
         db.session.commit()
-        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 5',
+        return render_template('boa205_course/chapters/ch5.html', title='BØA205 Økonomistyring, kapittel 6',
         form_boa205_ch5_t1=form_boa205_ch5_t1, form_boa205_ch5_t2=form_boa205_ch5_t2,
         legend='Variabler',anchor="ch5_q7_q8",
         form_boa205_ch5_q1=form_boa205_ch5_q1, form_boa205_ch5_q2=form_boa205_ch5_q2,
@@ -1963,3 +1971,375 @@ def boa205_course_chapters_ch5():
         form_boa205_ch5_q3=form_boa205_ch5_q3, form_boa205_ch5_q4=form_boa205_ch5_q4,
         form_boa205_ch5_q5=form_boa205_ch5_q5, form_boa205_ch5_q6=form_boa205_ch5_q6,
         form_boa205_ch5_q7=form_boa205_ch5_q7, form_boa205_ch5_q8=form_boa205_ch5_q8)
+
+@boa205_course_chapters.route('/boa205_course/kapitel6', methods=['GET', 'POST'])
+@login_required
+def boa205_course_chapters_ch6():
+    form_boa205_ch6_t1=TableForm_boa205_ch6_t1()
+    form_boa205_ch6_t2=TableForm_boa205_ch6_t2()
+    form_boa205_ch6_q1 = ModulsForm_boa205_ch6_q1()
+    form_boa205_ch6_q2 = ModulsForm_boa205_ch6_q2()
+    form_boa205_ch6_q3 = ModulsForm_boa205_ch6_q3()
+    form_boa205_ch6_q4 = ModulsForm_boa205_ch6_q4()
+    form_boa205_ch6_q5 = ModulsForm_boa205_ch6_q5()
+    form_boa205_ch6_q6 = ModulsForm_boa205_ch6_q6()
+    form_boa205_ch6_q7 = ModulsForm_boa205_ch6_q7()
+    form_boa205_ch6_q8 = ModulsForm_boa205_ch6_q8()
+
+    if form_boa205_ch6_t1.validate_on_submit():
+        """ Variables """
+        husleie_21 = form_boa205_ch6_t1.husleie_21.data
+        husleie_okning_22 = form_boa205_ch6_t1.husleie_okning_22.data
+        bilkostnader_21 = form_boa205_ch6_t1.bilkostnader_21.data
+        bilkostnader_okning_22 = form_boa205_ch6_t1.bilkostnader_okning_22.data
+
+        (fa_husleie_percentage_21,fa_husleie_endring,fa_husleie_22,fa_husleie_percentage_22,
+        fa_bilkostnader_percentage_21,fa_bilkostnader_endring,fa_bilkostnader_22,fa_bilkostnader_percentage_22,
+        fa_sum_drift_21,fa_sum_drift_percentage_21,fa_sum_drift_22,fa_sum_drift_percentage_22,
+        fa_driftresultat_21,fa_driftresultat_percentage_21,fa_driftresultat_22,fa_driftresultat_percentage_22,
+        fa_resultat_21,
+        fa_resultat_percentage_21,fa_resultat_22,fa_resultat_percentage_22)=ch6_t1_foregaende_ar(husleie_21, 
+            husleie_okning_22, bilkostnader_21, bilkostnader_okning_22)
+        
+        (mb_husleie_maned,mb_husleie_kvartal,mb_bilkostnader_maned,mb_bilkostnader_kvartal,
+        mb_sum_drift_januar,mb_sum_drift_februar,mb_sum_drift_mars,mb_sum_drift_kvartal,
+        mb_driftsresultat_januar,mb_driftsresultat_februar,mb_driftsresultat_mars,mb_driftsresultat_kvartal,
+        mb_resultat_januar,mb_resultat_februar,mb_resultat_mars,
+        mb_resultat_kvartal)=ch6_t1_maned_budsjett(husleie_21, husleie_okning_22, 
+            bilkostnader_21, bilkostnader_okning_22)
+        
+        (l_husleie_maned,l_husleie_kvartal,l_bilkostnader_maned,l_bilkostnader_kvartal,
+        l_sum_utbetalinger_januar,l_sum_utbetalinger_februar,l_sum_utbetalinger_mars, 
+        l_sum_utbetalinger_kvartal,l_inn_ut_januar,l_inn_ut_februar,l_inn_ut_mars,
+        l_inn_ut_kvartal,
+        l_lik_reserveUB_januar,l_lik_reserveUB_februar,l_lik_reserveUB_mars,
+        l_lik_reserveIB_februar,l_lik_reserveIB_mars)=ch6_t1_likviditetsbudsjett(husleie_21, husleie_okning_22, 
+        bilkostnader_21, bilkostnader_okning_22)
+
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="table1",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8,
+        husleie_21=husleie_21, husleie_okning_22=husleie_okning_22,
+        bilkostnader_21=bilkostnader_21, bilkostnader_okning_22=bilkostnader_okning_22,
+        fa_husleie_percentage_21=fa_husleie_percentage_21,
+        fa_husleie_endring=fa_husleie_endring,
+        fa_husleie_22=fa_husleie_22,fa_husleie_percentage_22=fa_husleie_percentage_22,
+        fa_bilkostnader_percentage_21=fa_bilkostnader_percentage_21,
+        fa_bilkostnader_endring=fa_bilkostnader_endring,
+        fa_bilkostnader_22=fa_bilkostnader_22,
+        fa_bilkostnader_percentage_22=fa_bilkostnader_percentage_22,
+        fa_sum_drift_21=fa_sum_drift_21,fa_sum_drift_percentage_21=fa_sum_drift_percentage_21,
+        fa_sum_drift_22=fa_sum_drift_22,fa_sum_drift_percentage_22=fa_sum_drift_percentage_22,
+        fa_driftresultat_21=fa_driftresultat_21,
+        fa_driftresultat_percentage_21=fa_driftresultat_percentage_21,
+        fa_driftresultat_22=fa_driftresultat_22,
+        fa_driftresultat_percentage_22=fa_driftresultat_percentage_22,
+        fa_resultat_21=fa_resultat_21,fa_resultat_percentage_21=fa_resultat_percentage_21,
+        fa_resultat_22=fa_resultat_22,fa_resultat_percentage_22=fa_resultat_percentage_22,
+        mb_husleie_maned=mb_husleie_maned,mb_husleie_kvartal=mb_husleie_kvartal,
+        mb_bilkostnader_maned=mb_bilkostnader_maned,mb_bilkostnader_kvartal=mb_bilkostnader_kvartal,
+        mb_sum_drift_januar=mb_sum_drift_januar,mb_sum_drift_februar=mb_sum_drift_februar,
+        mb_sum_drift_mars=mb_sum_drift_mars,mb_sum_drift_kvartal=mb_sum_drift_kvartal,
+        mb_driftsresultat_januar=mb_driftsresultat_januar,
+        mb_driftsresultat_februar=mb_driftsresultat_februar,
+        mb_driftsresultat_mars=mb_driftsresultat_mars,
+        mb_driftsresultat_kvartal=mb_driftsresultat_kvartal,
+        mb_resultat_januar=mb_resultat_januar,mb_resultat_februar=mb_resultat_februar,
+        mb_resultat_mars=mb_resultat_mars,mb_resultat_kvartal=mb_resultat_kvartal,
+        l_husleie_maned=l_husleie_maned,l_husleie_kvartal=l_husleie_kvartal,
+        l_bilkostnader_maned=l_bilkostnader_maned,
+        l_bilkostnader_kvartal=l_bilkostnader_kvartal,
+        l_sum_utbetalinger_januar=l_sum_utbetalinger_januar,
+        l_sum_utbetalinger_februar=l_sum_utbetalinger_februar,
+        l_sum_utbetalinger_mars=l_sum_utbetalinger_mars, 
+        l_sum_utbetalinger_kvartal=l_sum_utbetalinger_kvartal,
+        l_inn_ut_januar=l_inn_ut_januar,l_inn_ut_februar=l_inn_ut_februar,
+        l_inn_ut_mars=l_inn_ut_mars, l_inn_ut_kvartal=l_inn_ut_kvartal,
+        l_lik_reserveUB_januar=l_lik_reserveUB_januar,
+        l_lik_reserveUB_februar=l_lik_reserveUB_februar,
+        l_lik_reserveUB_mars=l_lik_reserveUB_mars,
+        l_lik_reserveIB_februar=l_lik_reserveIB_februar,
+        l_lik_reserveIB_mars=l_lik_reserveIB_mars)
+    
+    if form_boa205_ch6_t2.validate_on_submit():
+        """ Variables """
+        varekostnad_19= form_boa205_ch6_t2.varekostnad_19.data
+        varekostnad_okning_20= form_boa205_ch6_t2.varekostnad_okning_20.data
+        lonn_19= form_boa205_ch6_t2.lonn_19.data
+        lonn_okning_20= form_boa205_ch6_t2.lonn_okning_20.data
+
+        (b_20_varekostnad_percentage_2019,b_20_varekostnad_2020,
+        b_20_lonn_percentage_2019,b_20_lonn_2020,b_20_lonn_percentage_2020,
+        b_20_sum_kostnader_2019,b_20_sum_kostnader_percentage_2019,
+        b_20_sum_kostnader_2020,b_20_sum_kostnader_percentage_2020,b_20_drit_2019,
+        b_20_drit_percentage_2019,b_20_drit_2020,b_20_drit_percentage_2020,
+        b_20_resultat_2019,b_20_drit__percentage_2019,b_20_resultat_2020,
+        b_20_drit__percentage_2020)=ch6_t2_budsjett_2020(varekostnad_19, varekostnad_okning_20, 
+        lonn_19, lonn_okning_20)
+
+        (m_20_varkostnad_maned,m_20_varkostnad_kvartal,
+        m_20_lonn_maned,m_20_lonn_kvartal,m_20_sum_kostnader_maned,
+        m_20_sum_kostnader_kvartal,m_20_drit_maned,m_20_drit_kvartal,
+        m_20_resultat_maned,m_20_resultat_kvartal)=ch6_t2_maned_2020(varekostnad_19, 
+        varekostnad_okning_20, lonn_19, lonn_okning_20)
+
+        (u_20_mva_maned,u_20_mva_kvartal,u_20_vare_maned,u_20_vare_kvartal,
+        u_20_kjop_maned,u_20_sum_utbetal_januar,
+        u_20_totalt_utbetal_kvartal)=ch6_t2_utbetal_2020(varekostnad_19, 
+        varekostnad_okning_20, lonn_19, lonn_okning_20)
+
+        (lik_20_lonn_januar,lik_20_lonn_sum, lik_20_sum_utbetaling_januar,
+        lik_20_sum_utbetaling_februar,lik_20_sum_utbetaling_mars,lik_20_sum_utbetaling_sum,
+        lik_20_inn_ut_januar,lik_20_inn_ut_februar,lik_20_inn_ut_mars,
+        lik_20_inn_ut_sum,lik_20_UB_januar,lik_20_UB_februar,
+        lik_20_UB_mars)=ch6_t2_lik_2020(varekostnad_19, varekostnad_okning_20, 
+        lonn_19, lonn_okning_20)
+
+        (p_varekostnad_maned,p_varekjop_maned,p_mva,
+        p_kjop_maned,p_sum_utbetaling_februar,p_sum_utbetaling_mars,
+        p_sum_utbetaling_UB,p_total_utbetaling,p_lik)=ch6_t2_pavirke(varekostnad_19, 
+        varekostnad_okning_20, lonn_19, lonn_okning_20)
+
+
+        return render_template('boa205_course/chapters/ch6.html', 
+        title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="table2",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8,
+        varekostnad_19=varekostnad_19,varekostnad_okning_20=varekostnad_okning_20,
+        lonn_19=lonn_19, lonn_okning_20=lonn_okning_20,
+        b_20_varekostnad_percentage_2019=b_20_varekostnad_percentage_2019,
+        b_20_varekostnad_2020=b_20_varekostnad_2020,
+        b_20_lonn_percentage_2019=b_20_lonn_percentage_2019,
+        b_20_lonn_2020=b_20_lonn_2020,
+        b_20_lonn_percentage_2020=b_20_lonn_percentage_2020,
+        b_20_sum_kostnader_2019=b_20_sum_kostnader_2019,
+        b_20_sum_kostnader_percentage_2019=b_20_sum_kostnader_percentage_2019,
+        b_20_sum_kostnader_2020=b_20_sum_kostnader_2020,
+        b_20_sum_kostnader_percentage_2020=b_20_sum_kostnader_percentage_2020,
+        b_20_drit_2019=b_20_drit_2019,
+        b_20_drit_percentage_2019=b_20_drit_percentage_2019,
+        b_20_drit_2020=b_20_drit_2020,b_20_drit_percentage_2020=b_20_drit_percentage_2020,
+        b_20_resultat_2019=b_20_resultat_2019,
+        b_20_drit__percentage_2019=b_20_drit__percentage_2019,
+        b_20_resultat_2020=b_20_resultat_2020,
+        b_20_drit__percentage_2020=b_20_drit__percentage_2020,
+        m_20_varkostnad_maned=m_20_varkostnad_maned,
+        m_20_varkostnad_kvartal=m_20_varkostnad_kvartal,
+        m_20_lonn_maned=m_20_lonn_maned,
+        m_20_lonn_kvartal=m_20_lonn_kvartal,
+        m_20_sum_kostnader_maned=m_20_sum_kostnader_maned,
+        m_20_sum_kostnader_kvartal=m_20_sum_kostnader_kvartal,
+        m_20_drit_maned=m_20_drit_maned,m_20_drit_kvartal=m_20_drit_kvartal,
+        m_20_resultat_maned=m_20_resultat_maned,
+        m_20_resultat_kvartal=m_20_resultat_kvartal,
+        u_20_mva_maned=u_20_mva_maned,
+        u_20_mva_kvartal=u_20_mva_kvartal,
+        u_20_vare_maned=u_20_vare_maned,
+        u_20_vare_kvartal=u_20_vare_kvartal,
+        u_20_kjop_maned=u_20_kjop_maned,
+        u_20_sum_utbetal_januar=u_20_sum_utbetal_januar,
+        u_20_totalt_utbetal_kvartal=u_20_totalt_utbetal_kvartal,
+        lik_20_lonn_januar=lik_20_lonn_januar,
+        lik_20_lonn_sum=lik_20_lonn_sum, 
+        lik_20_sum_utbetaling_januar=lik_20_sum_utbetaling_januar,
+        lik_20_sum_utbetaling_februar=lik_20_sum_utbetaling_februar,
+        lik_20_sum_utbetaling_mars=lik_20_sum_utbetaling_mars,
+        lik_20_sum_utbetaling_sum=lik_20_sum_utbetaling_sum,
+        lik_20_inn_ut_januar=lik_20_inn_ut_januar,
+        lik_20_inn_ut_februar=lik_20_inn_ut_februar,
+        lik_20_inn_ut_mars=lik_20_inn_ut_mars,
+        lik_20_inn_ut_sum=lik_20_inn_ut_sum,
+        lik_20_UB_januar=lik_20_UB_januar,
+        lik_20_UB_februar=lik_20_UB_februar,
+        lik_20_UB_mars=lik_20_UB_mars,
+        p_varekostnad_maned=p_varekostnad_maned,
+        p_varekjop_maned=p_varekjop_maned,p_mva=p_mva,
+        p_kjop_maned=p_kjop_maned,
+        p_sum_utbetaling_februar=p_sum_utbetaling_februar,
+        p_sum_utbetaling_mars=p_sum_utbetaling_mars,
+        p_sum_utbetaling_UB=p_sum_utbetaling_UB,
+        p_total_utbetaling=p_total_utbetaling,p_lik=p_lik)
+        
+    
+    if form_boa205_ch6_q1.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q1.type.data, author=current_user)
+        if moduls.question_str == '1.22':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 1
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 5',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q1_q2",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+    
+    if form_boa205_ch6_q2.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q2.type.data, author=current_user)
+        if moduls.question_str == '855032':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 2
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q1_q2",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+    
+    if form_boa205_ch6_q3.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q3.type.data, author=current_user)
+        if moduls.question_str == '8664.2':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 3
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q3_q4",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+    
+    if form_boa205_ch6_q4.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q4.type.data, author=current_user)
+        if moduls.question_str == '-56960':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 4
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q3_q4",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+    
+    if form_boa205_ch6_q5.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q5.type.data, author=current_user)
+        if moduls.question_str == '1605684':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 5
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q5_q6",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+    
+    if form_boa205_ch6_q6.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q6.type.data, author=current_user)
+        if moduls.question_str == '179687.5':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 6
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q5_q6",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+    
+    if form_boa205_ch6_q7.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q7.type.data, author=current_user)
+        if moduls.question_str == '683666.1':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 7
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q7_q8",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+    
+    if form_boa205_ch6_q8.validate_on_submit():
+        moduls = ModulsGD(question_str=form_boa205_ch6_q8.type.data, author=current_user)
+        if moduls.question_str == '523437.6':
+            moduls.question_result = 1
+        else:
+            moduls.question_result = 0
+        moduls.title_mo = 'boa205_ch6'
+        moduls.title_ch = 'Kapitel 6. Budsjettering'
+        moduls.question_num = 8
+        moduls.question_option = 50 
+        moduls.question_section = 'boa205_ch6'       
+        db.session.add(moduls)
+        db.session.commit()
+        return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        legend='Variabler',anchor="ch6_q7_q8",
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
+
+    return render_template('boa205_course/chapters/ch6.html', title='BØA205 Økonomistyring, kapittel 6',
+        form_boa205_ch6_t1=form_boa205_ch6_t1, form_boa205_ch6_t2=form_boa205_ch6_t2,
+        form_boa205_ch6_q1=form_boa205_ch6_q1, form_boa205_ch6_q2=form_boa205_ch6_q2,
+        form_boa205_ch6_q3=form_boa205_ch6_q3, form_boa205_ch6_q4=form_boa205_ch6_q4,
+        form_boa205_ch6_q5=form_boa205_ch6_q5, form_boa205_ch6_q6=form_boa205_ch6_q6,
+        form_boa205_ch6_q7=form_boa205_ch6_q7, form_boa205_ch6_q8=form_boa205_ch6_q8)
