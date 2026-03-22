@@ -1,0 +1,2552 @@
+{% extends "boa205_course/boa205_course_layout.html" %}
+{% block content %}
+
+{% if anchor %}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const targetElement = document.getElementById("{{ anchor }}");
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+{% endif %}
+
+<!-- Header -->
+<section xmlns="http://www.w3.org/1999/html">
+    <header class="header_css">
+        <div class="container">
+            <div>
+                <h1>Kapitel 6. Budsjettering</h1>
+                <p class="mb-1">
+                I dette kapittelet studerer vi hva budsjettering er 
+                og hvorfor det er nyttig. Vi utfyller kapittelet med to oppgaver.
+                <br>
+                <strong>Instruksjoner:</strong>
+                <ul>
+                    <li>Kapittel 6: Kapittel 8 i Driftsregnskap og budsjettering.</li>
+                </ul>
+                - Alle informasjon i det kapitel har vært tatt fra kursmateriellet og boken Driftsregnskap og budsjettering (Bjørn Solheim og Trond Winther), og fra lysbilder fra kurs BØA205 ved HVL -
+                <br>
+                <br>
+                </p>
+                <div class="material-container">
+                    
+
+                    <!-- Kursmateriell  -->
+                    <div
+                    class="material-box-material"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file"></i>
+                        </div>
+                        <p><strong>Kursmateriell</strong></p>
+                        <div class="material-buttons-material">
+                            <a
+                            href="#"  data-toggle="modal" data-target="#kursmateriell_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+    
+                    <!-- Oppgave 1. Mål -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp1. Mål</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave1_mal_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 1. Løsning 1 -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Opp1. Løsning1</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave1_losning1_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp2</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2. Mål -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp2. Mål</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_mal_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 2. Løsning -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Opp2. Løsning</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave2_losning_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 3 -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp3</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave3_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 3. Mål -->
+                    <div
+                    class="material-box-exercises"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <p><strong>Opp3. Mål</strong></p>
+                        <div class="material-buttons-exercises">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave3_mal_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Oppgave 3. Løsning -->
+                    <div
+                    class="material-box-solutions"
+                    data-aos="aos-fade-right"
+                    data-aos-duration="2000"
+                    data-aos-delay="200"
+                    data-aos-once="true"
+                    >
+                        <div class="material-icon-material">
+                            <i class="fa-solid fa-file-contract"></i>
+                        </div>
+                        <p><strong>Opp3. Løsning</strong></p>
+                        <div class="material-buttons-solutions">
+                            <a
+                            href="#" data-toggle="modal" data-target="#oppgave3_losning_Modal"
+                            class="btn btn-primary btn-sm"
+                            >Lenk</a
+                            >
+                        </div>
+                    </div>
+                    
+                </div>
+                </br>
+
+                <div class="list-group", style="padding: 15px 0px;">
+                    <a  class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">Budsjettering: Hva og hvorfor?</h5>
+                    </div>
+
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Oppgave 1 + kommentarer</h5>
+                      </div>
+                    </a>
+                    <a class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">Oppgave 2. Oppgave Grønn AS</h5>
+                      </div>
+                    </a>
+                </div>
+            </div>
+            <img
+src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/figures/ch6.svg"
+alt=""
+/>
+        </div>
+    </header>
+</section>
+
+<!-- Kursmateriell Modal -->
+<div class="modal fade" id="kursmateriell_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Kursmateriell</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+            id="paper_frame"
+            src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/kursmateriell.pptx"
+            width="100%" 
+            height="100%" 
+            frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/kursmateriell.pptx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Oppgave 1. Mål. Modal -->
+<div class="modal fade" id="oppgave1_mal_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Mål</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave1_mal.xls"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave1_mal.xls" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 1. Løsning . Modal -->
+<div class="modal fade" id="oppgave1_losning1_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 1. Løsning 1</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave1_losning.xls"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave1_losning.xls" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Oppgave 2. Modal -->
+<div class="modal fade" id="oppgave2_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave2.docx"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave2.docx" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Mål. Modal -->
+<div class="modal fade" id="oppgave2_mal_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2. Mål</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave2_mal.xls"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave2_mal.xls" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 2. Løsning. Modal -->
+<div class="modal fade" id="oppgave2_losning_Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" style="height: 80%;">
+    <div class="modal-content" style="height:100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 2. Løsning</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <iframe 
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave2_losning.xls"
+          width="100%" height="100%" frameborder="0">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave2_losning.xls" class="btn btn-success" download>
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Lukk</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 3. Modal -->
+<div
+  class="modal fade"
+  id="oppgave3_Modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" style="height: 80%">
+    <div class="modal-content" style="height: 100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 3</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <iframe
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave3.docx"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        >
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a
+          href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave3.docx"
+          class="btn btn-success"
+          download
+        >
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Lukk
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 3. Mål. Modal -->
+<div
+  class="modal fade"
+  id="oppgave3_mal_Modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" style="height: 80%">
+    <div class="modal-content" style="height: 100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 3. Mål</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <iframe
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave3_mal.xlsx"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        >
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a
+          href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave3_mal.xlsx"
+          class="btn btn-success"
+          download
+        >
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Lukk
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Oppgave 3. Løsning. Modal -->
+<div
+  class="modal fade"
+  id="oppgave3_losning_Modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" style="height: 80%">
+    <div class="modal-content" style="height: 100%">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oppgave 3. Løsning</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <iframe
+          id="paper_frame"
+          src="https://view.officeapps.live.com/op/embed.aspx?src=https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave3_losning.xlsx"
+          width="100%"
+          height="100%"
+          frameborder="0"
+        >
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <a
+          href="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/material/oppgave3_losning.xlsx"
+          class="btn btn-success"
+          download
+        >
+          <i class="fa-solid fa-download"></i> Last ned
+        </a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Lukk
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Budsjettering: Hva og hvorfor?</h1>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Hva er et budsjett?</strong> </p>
+            <p style="text-align: left;">
+              <ul>
+                <li>
+                  Strategiske planer er langsiktige planer for en virksomhet
+                  <br>
+                  Eksempelvis hvilke produkter man skal tilby i hvilke markeder i årene som kommer, 
+                  hvilke investeringer man skal foreta etc
+                </li>
+                <li>
+                Operative planer er mer kortsiktige planer for virksomheten som skal bidra til 
+                å realisere de strategiske planene
+                </li>
+                <li>
+                  Et <strong>budsjett</strong> er en tallfesting av forventede økonomiske konsekvenser av å følge 
+                  planene, og representerer regnskapsmessige mål for virksomheten i 
+                  den kommende budsjettperioden
+                </li>
+                <li>
+                  Planer og budsjett må følges opp for å se om en har nådd målene som en har satt seg, 
+                  eventuelt hvilke korrigerende tiltak en må foreta hvis ikke 
+                </li>
+              </ul>
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Hvorfor budsjett?</strong> </p>
+            <p style="text-align: left;">
+              <ul>
+                <li>
+                  Uten budsjetter blir det uklare ansvarsforhold i organisasjonen
+                  <br>
+                  Uten klare ansvarsforhold blir det vanskelig å vite hvilke mål den 
+                  enkelte er ansvarlig for å oppnå
+                </li>
+                <li>
+                  Budsjetter virker motiverende
+                </li>
+                <li>
+                  Budsjettprosessen er i seg selv viktig 
+                  <br>
+                  I en budsjettprosess involveres mange ansatte 
+                  – både ledere og underordnede – og alle kan komme med viktige innspill. 
+                  Dette tvinger alle til å tenke gjennom dagens situasjon og hvilke muligheter 
+                  en ser for seg i fremtiden
+                </li>
+              </ul>
+            </p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Budsjett prosessen</strong> </p>
+            <p style="text-align: left;">
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/figures/ch6_section1a.svg" alt=""/>
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Hovedtyper budsjett</strong> </p>
+            <p style="text-align: left;">
+            <ul>
+              <li>
+                <strong>Resultatbudsjett</strong> - viser forventede inntekter, kostnader og 
+                resultat for en gitt periode
+              </li>
+              <li>
+                <strong>Likviditetsbudsjett</strong> - viser forventede innbetalinger og utbetalinger 
+                og dermed likviditetssituasjonen for en gitt periode
+              </li>
+              <li>
+                <strong>Balansebudsjett</strong> - viser forventede eiendeler og gjeld/egenkapital på et gitt tidspunkt
+              </li>
+              <li>
+                <strong>Vi skal fokusere på resultat- og likviditetsbudsjett!</strong>
+              </li>
+            </ul>       
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box">
+            <p style="text-align: center;"><strong>Budsjetteringsmetoder</strong> </p>
+            <p style="text-align: left;">
+            <ul>
+              <li>
+                Nullbasebudsjettering - går ut på å budsjettere helt 
+                uavhengig av hva tidligere regnskapstall og tidligere 
+                aktiviteter tilsier.
+              </li>
+              <li>
+                <strong>Nedbrytningsmetoden</strong> - går ut på at ansvarlige avdelingsledere 
+                (eller andre) lager budsjett for sitt område og deretter rapporterer 
+                dette videre til økonomiavdelingen som setter delbudsjettene inn i 
+                et større budsjett-dokument. 
+              </li>
+              <li>
+                <strong>Inkrementell budsjettering</strong> - baserer seg på tidligere regnskapstall for deretter 
+                å justere for forventede endringer i kommende periode. 
+                <br>
+                <strong>Justering for prisstigning</strong>, forventninger om endret aktivitet og andre 
+                eksterne forhold. 
+              </li>
+              <li>
+                <strong>Vi skal fokusere på inkrementell budsjettering!</strong>
+              </li>
+            </ul>    
+            </p>
+        </div>
+        <div class="box">
+            <p style="text-align: center;"><strong>Gangen i budsjettarbeidet: Inkrementell budsjettering</strong> </p>
+            <p style="text-align: left;">
+            <img src="https://forward-static.s3.eu-north-1.amazonaws.com/boa205_course/ch6/figures/ch6_section1b.svg" alt=""/>
+            </p>
+        </div>
+    </div>
+ 
+</section>
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+  <div class="container" style="display:block;">
+    <h2>Oppgave 1 + kommentarer</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+    <div class="container" id="table1">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch6_t1.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch6_t1.husleie_21.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t1.husleie_21(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch6_t1.husleie_okning_22.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t1.husleie_okning_22(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch6_t1.bilkostnader_21.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t1.bilkostnader_21(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch6_t1.bilkostnader_okning_22.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t1.bilkostnader_okning_22(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch6_t1.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      
+                      <br>
+                      <ol class="ol-table">
+                        <li>Basert på resultatregnskap i år 20x1, 
+                        kalkuler <strong>budsjettforutsetninger resultatbudsjett</strong>.
+                        Budsjettforutsetninger for Resultatbudsjett 20x2 (Budsjettforutsetninger 1):
+                        <ol align="left">
+                          <li>
+                            Samme solgte mengde som i 20x1, men forutsetter 5% prisøkning
+                          </li>
+                          <li>
+                            35 % bruttofortjeneste
+                          </li>
+                          <li>
+                            3 % lønnsøkning
+                          </li>
+                          <li>
+                            Arbeidsgiveravgift 14,1 %
+                          </li>
+                          <li>
+                            Økt husleie kr {{husleie_okning_22}} per mnd.
+                          </li>
+                          <li>
+                            2 % økning i Andre driftskostnader (ADK)
+                          </li>
+                          <li>
+                            Investering i ny varebil øker bilkostnadene med kr {{bilkostnader_okning_22}} og avskrivningene med kr 20 000
+                          </li>
+                          <li>
+                            Økning i rentekostnad på 1,5 %
+                          </li>
+                        </ol>
+                        </li>
+                      </ol>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Regnskap 20x1 (kr)</th>
+                                <th scope="col" class="text-end">Regnskap 20x1 (%)</th>
+                                <th scope="col" class="text-end">Endring</th>
+                                <th scope="col" class="text-end">Regnskap 20x2 (kr)</th>
+                                <th scope="col" class="text-end">Regnskap 20x2 (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                  <td class="text-end">10350000</td>
+                                  <td class="text-end">100%</td>
+                                  <td class="text-end">(fra punkt 1.1) 5%</td>
+                                  <td class="text-end">(10350000*105%)=10867500</td>
+                                  <td class="text-end">100%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad</th>
+                                  <td class="text-end">6350000</td>
+                                  <td class="text-end">61.4%</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">7063875</td>
+                                  <td class="text-end">(fra punkt 1.2) 65%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn</th>
+                                  <td class="text-end">2300000</td>
+                                  <td class="text-end">22.2%</td>
+                                  <td class="text-end">(fra punkt 1.3) 3%</td>
+                                  <td class="text-end">(230000*103%) 2369000</td>
+                                  <td class="text-end">21.8%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Ferielønn</th>
+                                  <td class="text-end">276000</td>
+                                  <td class="text-end">2.7%</td>
+                                  <td class="text-end">(fra punkt 1.3) 3%</td>
+                                  <td class="text-end">(276000*103%) 284280</td>
+                                  <td class="text-end">2.6%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Arbeidsgiveravgift (14.1%)</th>
+                                  <td class="text-end">363216</td>
+                                  <td class="text-end">3.5%</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 1.4) 374112</td>
+                                  <td class="text-end">34%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Husleie</th>
+                                  <td class="text-end">{{husleie_21}}</td>
+                                  <td class="text-end">{{fa_husleie_percentage_21}}%</td>
+                                  <td class="text-end">(fra punkt 1.5) {{fa_husleie_endring}}</td>
+                                  <td class="text-end">{{fa_husleie_22}}</td>
+                                  <td class="text-end">{{fa_husleie_percentage_22}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">ADK</th>
+                                  <td class="text-end">68300</td>
+                                  <td class="text-end">0.7%</td>
+                                  <td class="text-end">(fra punkt 1.6) 2%</td>
+                                  <td class="text-end">(68300*102)= 69666</td>
+                                  <td class="text-end">0.6%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Bilkostnader</th>
+                                  <td class="text-end">{{bilkostnader_21}}</td>
+                                  <td class="text-end">{{fa_bilkostnader_percentage_21}}%</td>
+                                  <td class="text-end">(fra punkt 1.7) {{fa_bilkostnader_endring}}</td>
+                                  <td class="text-end">{{fa_bilkostnader_22}}</td>
+                                  <td class="text-end">{{fa_bilkostnader_percentage_22}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avskrivninger</th>
+                                  <td class="text-end">120000</td>
+                                  <td class="text-end">1.2%</td>
+                                  <td class="text-end">(fra punkt 1.7) 20000</td>
+                                  <td class="text-end">(120000+20000)=140000</td>
+                                  <td class="text-end">1.3%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum drifts kostnader</th>
+                                  <td class="text-end">{{fa_sum_drift_21}}</td>
+                                  <td class="text-end">{{fa_sum_drift_percentage_21}}%</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{fa_sum_drift_22}}</td>
+                                  <td class="text-end">{{fa_sum_drift_percentage_22}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Driftsresultat</th>
+                                  <td class="text-end">{{fa_driftresultat_21}}</td>
+                                  <td class="text-end">{{fa_driftresultat_percentage_21}}%</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{fa_driftresultat_22}}</td>
+                                  <td class="text-end">{{fa_driftresultat_percentage_22}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Rentekostnader</th>
+                                  <td class="text-end">28500</td>
+                                  <td class="text-end">0.3%</td>
+                                  <td class="text-end">(fra punkt 1.8) 1.5%</td>
+                                  <td class="text-end">(28500*101.5%)=28927</td>
+                                  <td class="text-end">0.3%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Resultat før skattekostnad</th>
+                                  <td class="text-end">{{fa_resultat_21}}</td>
+                                  <td class="text-end">{{fa_resultat_percentage_21}}%</td>
+                                  <td class="text-end">.</td>
+                                  <td class="text-end">{{fa_resultat_22}}</td>
+                                  <td class="text-end">{{fa_resultat_percentage_22}}%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                     <ol class="ol-table start-2">
+                      <li>
+                        <strong>Månedsfordett budsjett</strong>. Fordelingsnøkler.
+                      </li>
+                    </ol>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">1 kvartal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fordeling salg varekostnad</th>
+                                  <td class="text-end">8%</td>
+                                  <td class="text-end">7.5%</td>
+                                  <td class="text-end">9%</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fordeling øvrige kostnader</th>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                  <td class="text-end">(10867500*8%)=869400</td>
+                                  <td class="text-end">(10867500*7.5%)=815063</td>
+                                  <td class="text-end">(10867500*9%)=978075</td>
+                                  <td class="text-end">2662538</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad</th>
+                                  <td class="text-end">(7063875*8%)=565110</td>
+                                  <td class="text-end">(7063875*7.5%)=529791</td>
+                                  <td class="text-end">(7063875*9%)=635749</td>
+                                  <td class="text-end">1730649</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn</th>
+                                  <td class="text-end">(2369000/12)=197417</td>
+                                  <td class="text-end">(2369000/12)=197417</td>
+                                  <td class="text-end">(2369000/12)=197417</td>
+                                  <td class="text-end">592230</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Feriepenger</th>
+                                  <td class="text-end">(284280/12)=23690</td>
+                                  <td class="text-end">(284280/12)=23690</td>
+                                  <td class="text-end">(284280/12)=23690</td>
+                                  <td class="text-end">71070</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Arbeidsgiveravgift</th>
+                                  <td class="text-end">(374112/12)=31176</td>
+                                  <td class="text-end">(374112/12)=31176</td>
+                                  <td class="text-end">(374112/12)=31176</td>
+                                  <td class="text-end">93528</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Husleie</th>
+                                  <td class="text-end">({{fa_husleie_22}}/12)={{mb_husleie_maned}}</td>
+                                  <td class="text-end">({{fa_husleie_22}}/12)={{mb_husleie_maned}}</td>
+                                  <td class="text-end">({{fa_husleie_22}}/12)={{mb_husleie_maned}}</td>
+                                  <td class="text-end">{{mb_husleie_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Andre driftskostnader (umva) (ADK umva)</th>
+                                  <td class="text-end">(69660/12)=5806</td>
+                                  <td class="text-end">(69660/12)=5806</td>
+                                  <td class="text-end">(69660/12)=5806</td>
+                                  <td class="text-end">17417</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Bilkostnader</th>
+                                  <td class="text-end">({{fa_bilkostnader_22}}/12)={{mb_bilkostnader_maned}}</td>
+                                  <td class="text-end">({{fa_bilkostnader_22}}/12)={{mb_bilkostnader_maned}}</td>
+                                  <td class="text-end">({{fa_bilkostnader_22}}/12)={{mb_bilkostnader_maned}}</td>
+                                  <td class="text-end">{{mb_bilkostnader_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avskrivninger</th>
+                                  <td class="text-end">(140000/12)=11667</td>
+                                  <td class="text-end">(140000/12)=11667</td>
+                                  <td class="text-end">(140000/12)=11667</td>
+                                  <td class="text-end">35000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum driftskostnader</th>
+                                  <td class="text-end">{{mb_sum_drift_januar}}</td>
+                                  <td class="text-end">{{mb_sum_drift_februar}}</td>
+                                  <td class="text-end">{{mb_sum_drift_mars}}</td>
+                                  <td class="text-end">{{mb_sum_drift_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Driftsresultat</th>
+                                  <td class="text-end">{{mb_driftsresultat_januar}}</td>
+                                  <td class="text-end">{{mb_driftsresultat_februar}}</td>
+                                  <td class="text-end">{{mb_driftsresultat_mars}}</td>
+                                  <td class="text-end">{{mb_driftsresultat_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Rentekostnader</th>
+                                  <td class="text-end">(28927/12)=2411</td>
+                                  <td class="text-end">(28927/12)=2411</td>
+                                  <td class="text-end">(28927/12)=2411</td>
+                                  <td class="text-end">7232</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Resultat før skattekostnad</th>
+                                  <td class="text-end">{{mb_resultat_januar}}</td>
+                                  <td class="text-end">{{mb_resultat_februar}}</td>
+                                  <td class="text-end">{{mb_resultat_mars}}</td>
+                                  <td class="text-end">{{mb_resultat_kvartal}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <ol class="ol-table start-3">
+                        <li>
+                          <strong>Månedsforditt likviditetsbudsjett</strong>. Noen forutsetninger 
+                          for likviditetsbudsjettet (Budsjettforutsetninger 2):
+                          <ol>
+                            <li>Alt kjøp og salg er mva-pliktig (25%)</li>
+                            <li>30% av salget er kontant, resten (70%) er per 30 dager kreditt</li>
+                            <li>
+                              Alt varekjøp er per 45 dager kreditt
+                            </li>
+                            <li>
+                              Kundefordringene per 1/1-20X2 (IB) forventes å være kr 780 000
+                            </li>
+                            <li>
+                              Leverandørgjelden per 1/1 20x2 forventes å være kr 1 045 000, 
+                              hvor kr 690 000,-forfaller til betaling i januar og resten i februar
+                            </li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">1 kvartal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekt umva</th>
+                                  <td class="text-end">869400</td>
+                                  <td class="text-end">815063</td>
+                                  <td class="text-end">978075</td>
+                                  <td class="text-end">2662537</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">(fra punkt 2.1) +25% merverdiavgift</th>
+                                  <td class="text-end">217350</td>
+                                  <td class="text-end">203765</td>
+                                  <td class="text-end">244518</td>
+                                  <td class="text-end">665634</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">= Salgsinntekt mmva</th>
+                                  <td class="text-end">108675</td>
+                                  <td class="text-end">1018827</td>
+                                  <td class="text-end">1222593</td>
+                                  <td class="text-end">3328171</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">(fra punkt 2.2) Kontantsalg (30 %)</th>
+                                  <td class="text-end">326025</td>
+                                  <td class="text-end">305648</td>
+                                  <td class="text-end">366777</td>
+                                  <td class="text-end">998451</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">(fra punkt 2.2) Kreditsalg (30 %)</th>
+                                  <td class="text-end">760725</td>
+                                  <td class="text-end">713178</td>
+                                  <td class="text-end">855815</td>
+                                  <td class="text-end">2329719</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <strong>Innbetalingsbusjett kunder</strong>.
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">kredittsalg med mva</th>
+                                <th scope="col" class="text-end">Innbetales i Januar</th>
+                                <th scope="col" class="text-end">Innbetales i Februar</th>
+                                <th scope="col" class="text-end">Innbetales i Mars</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kundefordringer per 1/1</th>
+                                  <td class="text-end">(fra punkt 2.4) 780000</td>
+                                  <td class="text-end">780000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kredittsalg januar</th>
+                                  <td class="text-end">(fra punkt 2.3) 760725</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">760725</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kredittsalg februar</th>
+                                  <td class="text-end">713178</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">713178</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kredittsalg mars (UB Kundefordringer)</th>
+                                  <td class="text-end">855815</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Innbetalinger fra kredittsalget</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">780000</td>
+                                  <td class="text-end">760725</td>
+                                  <td class="text-end">713178</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kontantsalg pr mnd</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">326025</td>
+                                  <td class="text-end">305648</td>
+                                  <td class="text-end">366777</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum innbetalinger</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">1106025</td>
+                                  <td class="text-end">1066373</td>
+                                  <td class="text-end">1079955</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <strong>Varekjøpsbudsjett</strong>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">1 kvartal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad</th>
+                                  <td class="text-end">565110</td>
+                                  <td class="text-end">329791</td>
+                                  <td class="text-end">635749</td>
+                                  <td class="text-end">1730649</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">25% mva</th>
+                                  <td class="text-end">141278</td>
+                                  <td class="text-end">132448</td>
+                                  <td class="text-end">158937</td>
+                                  <td class="text-end">432662</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekjø med mva</th>
+                                  <td class="text-end">706388</td>
+                                  <td class="text-end">662238</td>
+                                  <td class="text-end">794686</td>
+                                  <td class="text-end">2163312</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <strong>Utbetalingsbusjett Leverandører</strong>.
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Utbetalings budsjett</th>
+                                <th scope="col" class="text-end">Varekjøp</th>
+                                <th scope="col" class="text-end">Utbetales i Januar</th>
+                                <th scope="col" class="text-end">Utbetales i Februar</th>
+                                <th scope="col" class="text-end">Utbetales i Mars</th>
+                                <th scope="col" class="text-end">UB</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Leverandørgjeld per 1/1</th>
+                                  <td class="text-end">(fra punkt 2.5) 1045000</td>
+                                  <td class="text-end">(fra punkt 2.5) 690000</td>
+                                  <td class="text-end">(fra punkt 2.5) 355000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i Januar</th>
+                                  <td class="text-end">706388</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 2.3) 353194</td>
+                                  <td class="text-end">(fra punkt 2.3) 353194</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i Februar</th>
+                                  <td class="text-end">662238</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">331119</td>
+                                  <td class="text-end">331119</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i Mars</th>
+                                  <td class="text-end">794686</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">794686</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum utbetaling</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">690000</td>
+                                  <td class="text-end">708194</td>
+                                  <td class="text-end">684313</td>
+                                  <td class="text-end">1125805</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <ol class="ol-table start-4">
+                        <li>
+                          <strong>Budsjettforutsetninger Likviditetsbudsjett forts</strong>
+                          Ytterligere forutsetninger for likviditetsbudsjett 
+                          (forts. Budsjettforutsetninger 2):
+                          <ol>
+                            <li>
+                              Det kjøpes ny varebil i januar til kr 215 000,- inkl. mva. 
+                              Det blir i den anledning tatt opp et lån på kr 50 000 i januar ifm. kjøp av en ny varebil 
+                            </li>
+                            <li>
+                              Lønn, bilkostnader, ADK og husleie utbetales samme 
+                              måned som kostnaden påløper. Bilkostnader og ADK er 
+                              merverdiavgiftspliktige.
+                            </li>
+                            <li>
+                              Arbeidsgiveravgift for november og desember (6. termin 20x1) er kr 65 350 og skal 
+                              betales 15.01. Avgiften for 1. termin 20X2 (januar og februar) betales 15.03. 
+                            </li>
+                            <li>
+                              Det skal betales renter og avdrag på lån den 10.02 med til sammen kr 32 000.
+                            </li>
+                            <li>
+                              Skyldig mva. for 6. termin er kr 165 000 og skal betales 10.02.
+                            </li>
+                            <li>
+                              Beholdningen av betalingsmidler per 1/1 beregnet til kr 50 000.
+                            </li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">Sum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Innbetalinger</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fra kunder</th>
+                                  <td class="text-end">1106025</td>
+                                  <td class="text-end">1066373</td>
+                                  <td class="text-end">1079958</td>
+                                  <td class="text-end">3252357</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Låneopptak</th>
+                                  <td class="text-end">(fra punkt 4.1) 50000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum innbetalinger</th>
+                                  <td class="text-end">1156025</td>
+                                  <td class="text-end">1066373</td>
+                                  <td class="text-end">1079958</td>
+                                  <td class="text-end">3302357</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Utbetalinger</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Til leverandører</th>
+                                  <td class="text-end">690000</td>
+                                  <td class="text-end">708194</td>
+                                  <td class="text-end">684313</td>
+                                  <td class="text-end">2082507</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn</th>
+                                  <td class="text-end">197417</td>
+                                  <td class="text-end">197417</td>
+                                  <td class="text-end">197417</td>
+                                  <td class="text-end">592250</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Arbeidsgiveravgift</th>
+                                  <td class="text-end">(fra punkt 4.3) 65350</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 4.3) 55672</td>
+                                  <td class="text-end">121022</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Husleie</th>
+                                  <td class="text-end">{{l_husleie_maned}}</td>
+                                  <td class="text-end">{{l_husleie_maned}}</td>
+                                  <td class="text-end">{{l_husleie_maned}}</td>
+                                  <td class="text-end">{{l_husleie_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Andre driftskostnader + mva</th>
+                                  <td class="text-end">(fra punkt 4.2)</td>
+                                  <td class="text-end">7257</td>
+                                  <td class="text-end">7257</td>
+                                  <td class="text-end">21771</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Bilkostnader + mva</th>
+                                  <td class="text-end">{{l_bilkostnader_maned}}</td>
+                                  <td class="text-end">{{l_bilkostnader_maned}}</td>
+                                  <td class="text-end">{{l_bilkostnader_maned}}</td>
+                                  <td class="text-end">{{l_bilkostnader_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Renter og avdrag</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 4.4) 32000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">32000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">MVA</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 4.5) 165000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">165000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp varebil</th>
+                                  <td class="text-end">(fra punkt 4.1) 215000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">215000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum utbetalinger</th>
+                                  <td class="text-end">{{l_sum_utbetalinger_januar}}</td>
+                                  <td class="text-end">{{l_sum_utbetalinger_februar}}</td>
+                                  <td class="text-end">{{l_sum_utbetalinger_mars}}</td>
+                                  <td class="text-end">{{l_sum_utbetalinger_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Innbetalinger - Utbetalinger</th>
+                                  <td class="text-end">{{l_inn_ut_januar}}</td>
+                                  <td class="text-end">{{l_inn_ut_februar}}</td>
+                                  <td class="text-end">{{l_inn_ut_mars}}</td>
+                                  <td class="text-end">{{l_inn_ut_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Likviditetreserve IB</th>
+                                  <td class="text-end">50000</td>
+                                  <td class="text-end">{{l_lik_reserveIB_februar}}</td>
+                                  <td class="text-end">{{l_lik_reserveIB_mars}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Likviditetreserve UB</th>
+                                  <td class="text-end">{{l_lik_reserveUB_januar}}</td>
+                                  <td class="text-end">{{l_lik_reserveUB_februar}}</td>
+                                  <td class="text-end">{{l_lik_reserveUB_mars}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <!-- Questions 1 and 2 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 1 -->
+      <div id="ch6_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q1.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 1:</legend>
+
+                  <p class="card-text">
+                      Når husleien i 20x1 er 121 000 kr og økningen i husleie i 20x2 er 1 000 kr 
+                      per måned, bilkostnadene i 20x1 er 80 000 kr og økningen i bilkostnader 
+                      i 20x2 er 30 000 kr, hva er resultatet i regnskapet for 20x2 (i %)?   
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q1.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q1.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div id="ch6_q1_q2" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q2.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 2:</legend>
+
+                  <p class="card-text">
+                      Når husleien i 20x1 er 121 000 kr og økningen i husleien i 20x2 er 1 000 kr 
+                      per måned, bilkostnadene i 20x1 er 79 000 kr og økningen i bilkostnadene 
+                      i 20x2 er 30 000 kr, hva er summen av driftskostnader i januar i 
+                      den månedsfordelte budsjetttabellen?     
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q2.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q2.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div>  
+
+  <!-- Questions 3 and 4 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 3 -->
+      <div id="ch6_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q3.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 3:</legend>
+
+                  <p class="card-text">
+                      Når husleien i 20x1 er 121 000 kr og økningen i husleien i 20x2 er 900 kr per 
+                      måned, bilkostnadene i 20x1 er 79 000 kr og økningen i bilkostnadene i 
+                      20x2 er 30 000 kr, hva er likviditetsreserven UB i januar?   
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q3.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q3.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div id="ch6_q3_q4" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q4.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 4:</legend>
+
+                  <p class="card-text">
+                      Når husleien i 20x1 er 121 000 kr og økningen i 
+                      husleien i 20x2 er 900 kr per måned, bilkostnadene i 20x1 er 79 000 kr 
+                      og økningen i bilkostnadene i 20x2 er 29 000 kr, 
+                      hva er likviditetsreserven IB i mars?    
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q4.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q4.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+</section>
+
+<!-- Section 3 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+    <h2>Oppgave 2. Oppgave Grønn AS</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #4a736f;">
+    <div class="container" id="table2">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ch6_t2.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ch6_t2.varekostnad_19.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t2.varekostnad_19(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch6_t2.varekostnad_okning_20.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t2.varekostnad_okning_20(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch6_t2.lonn_19.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t2.lonn_19(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ch6_t2.lonn_okning_20.label(class="form-control-label") }}
+                                {{ form_boa205_ch6_t2.lonn_okning_20(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ch6_t2.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      Resultatregnskapet for Grønn AS 2019 er gitt nedfor. 
+                      Dette danner grunnlaget for budsjettarbeidet 2020.
+                      <br>
+                      <ol class="ol-table">
+                        <li>Utarbeid et <strong>resultatbudsjett for 2020</strong>. Du får opplyst 
+                      følgende informasjon som er relevant for budsjettarbeidet:
+                        <ol align="left">
+                          <li>
+                          All omsetning er mva.-pliktig (25 %)
+                        </li>
+                        <li>
+                          Omsetning forventes å øke med 15 % i 2020. Omsetning skjer jevnt i 
+                          løpet av året
+                        </li>
+                        <li>
+                          Varekostanden utgjør 40 % av omsetningen. Bransjenormen tilsier {{varekostnad_okning_20}} % 
+                          som blir et viktig mål for 2020.
+                        </li>
+                        <li>
+                          Lønnskostanden forventes å øke med {{lonn_okning_20}} % i 2020
+                        </li>
+                        <li>
+                          Andre driftskostander utgjør i dag 10 % av omsetningen og det er 
+                          et mål at denne kan reduserers til 5 % neste år
+                        </li>
+                        <li>
+                          Husleiekontrakten tilsier 8 % økt husleie 2020
+                        </li>
+                        <li>
+                          Avskrivinger og rentekostander forventes å utgjøre samme beløp i 
+                          2020 som i 2019
+                        </li>
+                        </ol>
+                        </li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Regnskap 2019 (kr)</th>
+                                <th scope="col" class="text-end">Regnskap 2019 (%)</th>
+                                <th scope="col" class="text-end">Regnskap 2020 (kr)</th>
+                                <th scope="col" class="text-end">Regnskap 2020 (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                  <td class="text-end">5000000</td>
+                                  <td class="text-end">100%</td>
+                                  <td class="text-end">(fra punkt 1.2) 5750000</td>
+                                  <td class="text-end">100%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad</th>
+                                  <td class="text-end">{{varekostnad_19}}</td>
+                                  <td class="text-end">{{b_20_varekostnad_percentage_2019}}%</td>
+                                  <td class="text-end">(fra punkt 1.3) {{b_20_varekostnad_2020}}</td>
+                                  <td class="text-end">{{varekostnad_okning_20}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn</th>
+                                  <td class="text-end">{{lonn_19}}</td>
+                                  <td class="text-end">{{b_20_lonn_percentage_2019}}%</td>
+                                  <td class="text-end">(fra punkt 1.4) {{b_20_lonn_2020}}</td>
+                                  <td class="text-end">{{b_20_lonn_percentage_2020}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Feriepenger</th>
+                                  <td class="text-end">120000</td>
+                                  <td class="text-end">2.4%</td>
+                                  <td class="text-end">126000</td>
+                                  <td class="text-end">2.2%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Arbeidsgiveravgift</th>
+                                  <td class="text-end">157920</td>
+                                  <td class="text-end">3.2%</td>
+                                  <td class="text-end">165816</td>
+                                  <td class="text-end">2.9%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Husleie</th>
+                                  <td class="text-end">500000</td>
+                                  <td class="text-end">10%</td>
+                                  <td class="text-end">(fra punkt 1.6) 54000</td>
+                                  <td class="text-end">9.4%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">ADK</th>
+                                  <td class="text-end">500000</td>
+                                  <td class="text-end">10%</td>
+                                  <td class="text-end">(fra punkt 1.5) 287500</td>
+                                  <td class="text-end">5%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avskrivinger</th>
+                                  <td class="text-end">150000</td>
+                                  <td class="text-end">3%</td>
+                                  <td class="text-end">150000</td>
+                                  <td class="text-end">2.6%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum driftskostander</th>
+                                  <td class="text-end">{{b_20_sum_kostnader_2019}}</td>
+                                  <td class="text-end">{{b_20_sum_kostnader_percentage_2019}}%</td>
+                                  <td class="text-end">{{b_20_sum_kostnader_2020}}</td>
+                                  <td class="text-end">{{b_20_sum_kostnader_percentage_2020}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Driftsresultat</th>
+                                  <td class="text-end">{{b_20_drit_2019}}</td>
+                                  <td class="text-end">{{b_20_drit_percentage_2019}}%</td>
+                                  <td class="text-end">{{b_20_drit_2020}}</td>
+                                  <td class="text-end">{{b_20_drit_percentage_2020}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Rentekostnader</th>
+                                  <td class="text-end">100000</td>
+                                  <td class="text-end">2%</td>
+                                  <td class="text-end">(fra punkt 1.7) 100000</td>
+                                  <td class="text-end">1.7%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Resultat før skattekostnad</th>
+                                  <td class="text-end">{{b_20_resultat_2019}}</td>
+                                  <td class="text-end">{{b_20_drit__percentage_2019}}%</td>
+                                  <td class="text-end">{{b_20_resultat_2020}}</td>
+                                  <td class="text-end">{{b_20_drit__percentage_2020}}%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      2. Utarbeid et <strong>månedlig resultatbudsjett for 1.kvartal 2020</strong>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">1 kvartal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fordeling salg / varekostnad</th>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fordeling kostnad</th>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end">1/12</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                  <td class="text-end">479167</td>
+                                  <td class="text-end">479167</td>
+                                  <td class="text-end">479167</td>
+                                  <td class="text-end">1437500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad</th>
+                                  <td class="text-end">{{m_20_varkostnad_maned}}</td>
+                                  <td class="text-end">{{m_20_varkostnad_maned}}</td>
+                                  <td class="text-end">{{m_20_varkostnad_maned}}</td>
+                                  <td class="text-end">{{m_20_varkostnad_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn</th>
+                                  <td class="text-end">{{m_20_lonn_maned}}</td>
+                                  <td class="text-end">{{m_20_lonn_maned}}</td>
+                                  <td class="text-end">{{m_20_lonn_maned}}</td>
+                                  <td class="text-end">{{m_20_lonn_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Feriepenger</th>
+                                  <td class="text-end">10500</td>
+                                  <td class="text-end">10500</td>
+                                  <td class="text-end">10500</td>
+                                  <td class="text-end">31500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Arbeidsgiveravgift</th>
+                                  <td class="text-end">13818</td>
+                                  <td class="text-end">13818</td>
+                                  <td class="text-end">13818</td>
+                                  <td class="text-end">41454</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Husleie</th>
+                                  <td class="text-end">45000</td>
+                                  <td class="text-end">45000</td>
+                                  <td class="text-end">45000</td>
+                                  <td class="text-end">135000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">ADK</th>
+                                  <td class="text-end">23958</td>
+                                  <td class="text-end">23958</td>
+                                  <td class="text-end">23958</td>
+                                  <td class="text-end">71875</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avskrivinger</th>
+                                  <td class="text-end">12500</td>
+                                  <td class="text-end">12500</td>
+                                  <td class="text-end">12500</td>
+                                  <td class="text-end">37500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum driftskostnader</th>
+                                  <td class="text-end">{{m_20_sum_kostnader_maned}}</td>
+                                  <td class="text-end">{{m_20_sum_kostnader_maned}}</td>
+                                  <td class="text-end">{{m_20_sum_kostnader_maned}}</td>
+                                  <td class="text-end">{{m_20_sum_kostnader_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Driftsresultat</th>
+                                  <td class="text-end">{{m_20_drit_maned}}</td>
+                                  <td class="text-end">{{m_20_drit_maned}}</td>
+                                  <td class="text-end">{{m_20_drit_maned}}</td>
+                                  <td class="text-end">{{m_20_drit_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Rentekostnader</th>
+                                  <td class="text-end">8333</td>
+                                  <td class="text-end">8333</td>
+                                  <td class="text-end">8333</td>
+                                  <td class="text-end">25000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Resultat før skattekostnad</th>
+                                  <td class="text-end">{{m_20_resultat_maned}}</td>
+                                  <td class="text-end">{{m_20_resultat_maned}}</td>
+                                  <td class="text-end">{{m_20_resultat_maned}}</td>
+                                  <td class="text-end">{{m_20_resultat_kvartal}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <ol class="ol-table start-3">
+                        <li>
+                          Lag et <strong>innbetalingsbudsjett og et utbetalingsbudsjett</strong> 
+                          for 1.kvartal
+                          <br>
+                          Grønn AS vil også sette opp et likviditetsbudsjett for 2020. 
+                          Til likviditetsbudsjettet får du opplyst følgende:
+                          <br>
+                          <ol>
+                            <li>
+                              Av totalsalget blir 10 % betalt kontant og 90 % 
+                              er på kreditt. Kreditt tida er 15 dager.
+                            </li>
+                            <li>
+                              Kundefordringer per 31.desember er kredittsalget i desember 2019.
+                            </li>
+                            <li>
+                              Leverandørgjelda pr 31.desember 2019 er kr 300 000. 
+                              Alt varekjøpet i 2019 er per 30 dager. Etter 1.janaur 2020 er 
+                              betingelsen endra til betaling per 15 dager. 
+                            </li>
+                            <li>
+                              I desember ble det betalt ut forskudd på lønn med kr 15 000. 
+                              Denne skal tilbakebetales i januar.
+                            </li>
+                            <li>
+                              Skyldig arbeidsgiveravgift for november og desember 2019 er 47 000.
+                            </li>
+                            <li>
+                              Skyldig merverdiavgift for november og desember 2019 er kr 208 000
+                            </li>
+                            <li>
+                              Det skal foretas investeringer for kr 200 000 + mva i januar
+                            </li>
+                            <li>
+                              Andre driftskostnader betales med likt beløp hver mnd. + mva
+                            </li>
+                            <li>
+                              Husleie betales på slutten av hvert kvartal
+                            </li>
+                            <li>
+                              Det skal betales skatt med kr 33 000 i februar
+                            </li>
+                            <li>
+                              Avdrag og renter skal betales med kr 450 000 i mars
+                            </li>
+                            <li>
+                              Regnskapet for 2019 viser at likviditetsreserven utgjør kr 850 000.
+                            </li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Salgsbudsjett</th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">1 kvartal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekt umva</th>
+                                  <td class="text-end">479167</td>
+                                  <td class="text-end">479167</td>
+                                  <td class="text-end">479167</td>
+                                  <td class="text-end">1437500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">+25 % mva</th>
+                                  <td class="text-end">119792</td>
+                                  <td class="text-end">119792</td>
+                                  <td class="text-end">119792</td>
+                                  <td class="text-end">359375</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">= Salgsinntekt mmva</th>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">1796875</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kontantsalg 10%</th>
+                                  <td class="text-end">(fra punkt 3.1) 59896</td>
+                                  <td class="text-end">59896</td>
+                                  <td class="text-end">59896</td>
+                                  <td class="text-end">179688</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kreditsalg 90%</th>
+                                  <td class="text-end">(fra punkt 3.1) 539065</td>
+                                  <td class="text-end">539065</td>
+                                  <td class="text-end">539065</td>
+                                  <td class="text-end">1617188</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      Salg i desember mmva = (5000000/12)*1.25=520833.
+                      <br>
+                      Kreditsalg i desember=520833*0.9=468750.
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Innbetalingsbusjett</th>
+                                <th scope="col" class="text-end">Kredittsalg</th>
+                                <th scope="col" class="text-end">Innbetales i Januar</th>
+                                <th scope="col" class="text-end">Innbetales i Februar</th>
+                                <th scope="col" class="text-end">Innbetales i Mars</th>
+                                <th scope="col" class="text-end">IB</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kundefordringer per 1/1</th>
+                                  <td class="text-end">234375</td>
+                                  <td class="text-end">234375</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kreditsalg i januar</th>
+                                  <td class="text-end">539063</td>
+                                  <td class="text-end">269531</td>
+                                  <td class="text-end">269531</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kreditsalg i februar</th>
+                                  <td class="text-end">539063</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">269531</td>
+                                  <td class="text-end">269531</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kreditsalg i mars</th>
+                                  <td class="text-end">539063</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">269531</td>
+                                  <td class="text-end">269531</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Innbetaling fra kredittsalg</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">503906</td>
+                                  <td class="text-end">539063</td>
+                                  <td class="text-end">539063</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kontantsalg</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">59896</td>
+                                  <td class="text-end">59896</td>
+                                  <td class="text-end">59896</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum innbetalinger</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">563802</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Varekjøpsbudsjett</th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">1 kvartal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad</th>
+                                  <td class="text-end">{{m_20_varkostnad_maned}}</td>
+                                  <td class="text-end">{{m_20_varkostnad_maned}}</td>
+                                  <td class="text-end">{{m_20_varkostnad_maned}}</td>
+                                  <td class="text-end">{{m_20_varkostnad_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">25% mva</th>
+                                  <td class="text-end">{{u_20_mva_maned}}</td>
+                                  <td class="text-end">{{u_20_mva_maned}}</td>
+                                  <td class="text-end">{{u_20_mva_maned}}</td>
+                                  <td class="text-end">{{u_20_mva_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekjøp med mva</th>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">{{u_20_vare_kvartal}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Utbetalingsbusjett</th>
+                                <th scope="col" class="text-end">Varekjøp</th>
+                                <th scope="col" class="text-end">Utbetales i Januar</th>
+                                <th scope="col" class="text-end">Utbetales i Februar</th>
+                                <th scope="col" class="text-end">Utbetales i Mars</th>
+                                <th scope="col" class="text-end">UB</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Leverandørgjeld per 1/1</th>
+                                  <td class="text-end">(fra punkt 3.3) 300000</td>
+                                  <td class="text-end">(fra punkt 3.3) 300000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i januar</th>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">(fra punkt 3.3) {{u_20_kjop_maned}}</td>
+                                  <td class="text-end">(fra punkt 3.3) {{u_20_kjop_maned}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i februar</th>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{u_20_kjop_maned}}</td>
+                                  <td class="text-end">{{u_20_kjop_maned}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i mars</th>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{u_20_kjop_maned}}</td>
+                                  <td class="text-end">{{u_20_kjop_maned}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum utbetaling</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{u_20_sum_utbetal_januar}}</td>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">{{u_20_kjop_maned}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <ol class="ol-table start-4">
+                        <li>
+                          Sett opp et <strong>likviditetsbudsjett</strong> for 1.kvartal 2020
+                        </li>
+                      </ol>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">.</th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                <th scope="col" class="text-end">Sum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Innbetalinger</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fra kunder</th>
+                                  <td class="text-end">563802</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">1761719</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Låneopptak</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum innbetalinger</th>
+                                  <td class="text-end">563802</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">598958</td>
+                                  <td class="text-end">1761719</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Utbetalinger</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Til leverandøren</th>
+                                  <td class="text-end">{{u_20_sum_utbetal_januar}}</td>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">{{u_20_vare_maned}}</td>
+                                  <td class="text-end">{{u_20_totalt_utbetal_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn</th>
+                                  <td class="text-end">(fra punkt 3.4) {{lik_20_lonn_januar}}</td>
+                                  <td class="text-end">{{m_20_lonn_maned}}</td>
+                                  <td class="text-end">{{m_20_lonn_maned}}</td>
+                                  <td class="text-end">{{lik_20_lonn_sum}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Arbeidsgiveravgift</th>
+                                  <td class="text-end">(fra punkt 3.5) 47000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">22560</td>
+                                  <td class="text-end">69560</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Husleie</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3.9) 135000</td>
+                                  <td class="text-end">135000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Andre driftskostander + mva</th>
+                                  <td class="text-end">(fra punkt 3.8) 29948</td>
+                                  <td class="text-end">29948</td>
+                                  <td class="text-end">29948</td>
+                                  <td class="text-end">89844</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Renter og avdrag</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3.12) 450000</td>
+                                  <td class="text-end">450000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Skattbetaling</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3.11) 33000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">MVA</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3.6) 208000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">208000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp varebil</th>
+                                  <td class="text-end">(fra punkt 3.7) 250000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">250000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum utbetalinger</th>
+                                  <td class="text-end">{{lik_20_sum_utbetaling_januar}}</td>
+                                  <td class="text-end">{{lik_20_sum_utbetaling_februar}}</td>
+                                  <td class="text-end">{{lik_20_sum_utbetaling_mars}}</td>
+                                  <td class="text-end">{{lik_20_sum_utbetaling_sum}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Innbetalinger -  Utbetalinger</th>
+                                  <td class="text-end">{{lik_20_inn_ut_januar}}</td>
+                                  <td class="text-end">{{lik_20_inn_ut_februar}}</td>
+                                  <td class="text-end">{{lik_20_inn_ut_mars}}</td>
+                                  <td class="text-end">{{lik_20_inn_ut_sum}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Likviditetreserve IB</th>
+                                  <td class="text-end">(fra punkt 3.13) 850000</td>
+                                  <td class="text-end">{{lik_20_UB_januar}}</td>
+                                  <td class="text-end">{{lik_20_UB_februar}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Likviditetreserve UB</th>
+                                  <td class="text-end">{{lik_20_UB_januar}}</td>
+                                  <td class="text-end">{{lik_20_UB_februar}}</td>
+                                  <td class="text-end">{{lik_20_UB_mars}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <ol class="ol-table start-5">
+                        <li>
+                          Hvordan opplysningen ned påvirke likviditetsreserven ved utgangen av mars?
+                          <ol>
+                            <li>
+                              Bedriften vurderer å redusere lagerbeholdningen med kr 15 000 per mnd. 
+                            </li>
+                            <li>
+                              Dei vil også forhandle fra å betale leverandøren per 45 dager.
+                            </li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Varekjøpsbudsjett</th>
+                                <th scope="col" class="text-end">Januar</th>
+                                <th scope="col" class="text-end">Februar</th>
+                                <th scope="col" class="text-end">Mars</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad</th>
+                                  <td class="text-end">{{p_varekostnad_maned}}</td>
+                                  <td class="text-end">{{p_varekostnad_maned}}</td>
+                                  <td class="text-end">{{p_varekostnad_maned}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Beholdningsending</th>
+                                  <td class="text-end">-15000</td>
+                                  <td class="text-end">-15000</td>
+                                  <td class="text-end">-15000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekjøp</th>
+                                  <td class="text-end">{{p_varekjop_maned}}</td>
+                                  <td class="text-end">{{p_varekjop_maned}}</td>
+                                  <td class="text-end">{{p_varekjop_maned}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">MVA</th>
+                                  <td class="text-end">{{p_mva}}</td>
+                                  <td class="text-end">{{p_mva}}</td>
+                                  <td class="text-end">{{p_mva}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Utbetalingsbusjett</th>
+                                <th scope="col" class="text-end">Varekjøp</th>
+                                <th scope="col" class="text-end">Utbetales i Januar</th>
+                                <th scope="col" class="text-end">Utbetales i Februar</th>
+                                <th scope="col" class="text-end">Utbetales i Mars</th>
+                                <th scope="col" class="text-end">UB</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Leverandørgjeld per 1/1</th>
+                                  <td class="text-end">(fra punkt 3.3) 300000</td>
+                                  <td class="text-end">(fra punkt 3.3) 300000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i januar</th>
+                                  <td class="text-end">{{p_mva}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{p_kjop_maned}}</td>
+                                  <td class="text-end">{{p_kjop_maned}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i februar</th>
+                                  <td class="text-end">{{p_mva}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{p_kjop_maned}}</td>
+                                  <td class="text-end">{{p_kjop_maned}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kjøp i mars</th>
+                                  <td class="text-end">{{p_mva}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{p_mva}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum utbetaling</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">300000</td>
+                                  <td class="text-end">{{p_sum_utbetaling_februar}}</td>
+                                  <td class="text-end">{{p_sum_utbetaling_mars}}</td>
+                                  <td class="text-end">{{p_sum_utbetaling_UB}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">kr</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Total utbetaling opprinnelig 1 kvart</th>
+                                  <td class="text-end">{{u_20_totalt_utbetal_kvartal}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Total ny utbetaling opprinnelig 1 kvart</th>
+                                  <td class="text-end">{{p_total_utbetaling}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Likviditetsvurdering</th>
+                                  <td class="text-end">{{p_lik}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      Likviditeten vil bli forbedret med {{p_lik}}.
+                    </p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Questions 5 and 6 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 5 -->
+      <div id="ch6_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q5.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 5:</legend>
+
+                  <p class="card-text">
+                      Når varekostnaden i 2019 er 2 000 000 kr og varekostnaden i 
+                      2020 øker med 30 %, lønnskostnaden i 2019 er 1 000 000 kr 
+                      og økningen i lønn i 2020 er 5 %, hva er resultat før skattekostnad 
+                      i regnskapet for 2020 (kr)?  
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q5.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q5.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 6 -->
+      <div id="ch6_q5_q6" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q6.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 6:</legend>
+
+                  <p class="card-text">
+                      Når varekostnaden i 2019 er 2 000 000 kr og varekostnaden i 2020 øker 
+                      med 30 %, lønnskostnaden i 2019 er 1 000 000 kr og økningen i 
+                      lønn i 2020 er 6 %, hva er varekjøp inkludert merverdiavgift i januar?      
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q6.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q6.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+
+  <!-- Questions 7 and 8 -->
+  <div class="container questions-section">
+
+      <div class="col-spacer"></div>
+
+      <!-- Question 7 -->
+      <div id="ch6_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q7.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 7:</legend>
+
+                  <p class="card-text">
+                      Når varekostnaden i 2019 er 2 100 000 kr og varekostnaden i 2020 
+                      øker med 30 %, lønnskostnaden i 2019 er 1 000 000 kr og økningen i 
+                      lønn i 2020 er 6 %, hva er likviditetsreserve ved utgangen av februar?     
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q7.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q7.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <!-- Question 8 -->
+      <div id="ch6_q7_q8" class="col question-col" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="400" data-aos-once="true">
+          <div class="box_questions_two question-box">
+              <form method="POST" action="">
+                  {{ form_boa205_ch6_q8.csrf_token }}
+
+                  <legend class="border-bottom mb-3">Spørsmål 8:</legend>
+
+                  <p class="card-text">
+                      Når varekostnaden i 2019 er 2 100 000 kr og varekostnaden i 2020 
+                      øker med 28 %, lønnskostnaden i 2019 er 1 000 000 kr 
+                      og økningen i lønn i 2020 er 6 %, hva er total ny utbetaling 
+                      opprinnelig i 1. kvartal?      
+                  </p>
+
+                  <div class="form-group mt-2">
+                      {{ form_boa205_ch6_q8.type(class="form-control question-input") }}
+                  </div>
+
+                  <div class="form-group border-bottom pb-3 mt-3 text-center">
+                      {{ form_boa205_ch6_q8.submit(class="btn btn-outline-info") }}
+                  </div>
+
+              </form>
+          </div>
+      </div>
+
+      <div class="col-spacer"></div>
+
+  </div> 
+ 
+</section>
+
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+
+
+
+
+{% endblock content %}
