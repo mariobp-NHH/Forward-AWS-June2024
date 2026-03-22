@@ -1,0 +1,40 @@
+.ol-table {
+  counter-reset: item;
+  padding-left: 0;
+  text-align: left;
+}
+
+.ol-table li {
+  display: block;
+  text-align: left;
+}
+
+.ol-table li:before {
+  content: counters(item, ".") ". ";
+  counter-increment: item;
+}
+
+/* Nested lists reset */
+.ol-table ol {
+  counter-reset: item;
+}
+
+/* Custom starting points */
+.ol-table.start-2 {
+  counter-reset: item 1;
+}
+
+/* Custom starting points */
+.ol-table.start-3 {
+  counter-reset: item 2;
+}
+
+/* Custom starting points */
+.ol-table.start-4 {
+  counter-reset: item 3;
+}
+
+/* Custom starting points */
+.ol-table.start-5 {
+  counter-reset: item 4;
+}
