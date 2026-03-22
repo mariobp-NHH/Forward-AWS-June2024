@@ -580,3 +580,232 @@ def ch5_t2_enhetskostnad(enheter_a, enheter_b, timer_a, timer_b):
         sum_indirekte_kostnad_a,indirekte_kostnader_per_enhet_a, enhetskostnad_a,
         maskinering_aktivitet_b,maskinering_kostnad_b,
         sum_indirekte_kostnad_b,indirekte_kostnader_per_enhet_b, enhetskostnad_b)
+
+def ch6_t1_foregaende_ar(husleie_21, husleie_okning_22, bilkostnader_21, bilkostnader_okning_22):
+    fa_husleie_percentage_21=round(int(husleie_21)*100/10350000,2)
+    fa_husleie_endring=(int(husleie_okning_22)*12)
+    fa_husleie_22=int(husleie_21)+fa_husleie_endring
+    fa_husleie_percentage_22=round(fa_husleie_22*100/10867500,2)
+
+    fa_bilkostnader_percentage_21=round(int(bilkostnader_21)*100/10350000,2)
+    fa_bilkostnader_endring=int(bilkostnader_okning_22)
+    fa_bilkostnader_22=int(bilkostnader_21)+fa_bilkostnader_endring
+    fa_bilkostnader_percentage_22=round(fa_bilkostnader_22*100/10867500,2)
+
+    fa_sum_drift_21=6350000+2300000+276000+363216+int(husleie_21)+68300+int(bilkostnader_21)+120000
+    fa_sum_drift_percentage_21=round(fa_sum_drift_21*100/10350000)
+    fa_sum_drift_22=7063875+2369000+284280+374112+int(fa_husleie_22)+69666+int(fa_bilkostnader_22)+140000
+    fa_sum_drift_percentage_22=round(fa_sum_drift_22*100/10867500)
+    
+    fa_driftresultat_21=10350000-fa_sum_drift_21
+    fa_driftresultat_percentage_21=round(fa_driftresultat_21*100/10350000,1)
+    fa_driftresultat_22=10867500-fa_sum_drift_22
+    fa_driftresultat_percentage_22=round(fa_driftresultat_22*100/10867500,1)
+
+    fa_resultat_21=fa_driftresultat_21-28500
+    fa_resultat_percentage_21=round(fa_resultat_21*100/10350000,1)
+    fa_resultat_22=fa_driftresultat_22-28927
+    fa_resultat_percentage_22=round(fa_resultat_22*100/10867500,1)
+    return(fa_husleie_percentage_21,fa_husleie_endring,fa_husleie_22,fa_husleie_percentage_22,
+        fa_bilkostnader_percentage_21,fa_bilkostnader_endring,fa_bilkostnader_22,fa_bilkostnader_percentage_22,
+        fa_sum_drift_21,fa_sum_drift_percentage_21,fa_sum_drift_22,fa_sum_drift_percentage_22,
+        fa_driftresultat_21,fa_driftresultat_percentage_21,fa_driftresultat_22,fa_driftresultat_percentage_22,
+        fa_resultat_21,fa_resultat_percentage_21,fa_resultat_22,fa_resultat_percentage_22)
+
+def ch6_t1_maned_budsjett(husleie_21, husleie_okning_22, bilkostnader_21, bilkostnader_okning_22):
+    (fa_husleie_percentage_21,fa_husleie_endring,fa_husleie_22,fa_husleie_percentage_22,
+    fa_bilkostnader_percentage_21,fa_bilkostnader_endring,fa_bilkostnader_22,fa_bilkostnader_percentage_22,
+    fa_sum_drift_21,fa_sum_drift_percentage_21,fa_sum_drift_22,fa_sum_drift_percentage_22,
+    fa_driftresultat_21,fa_driftresultat_percentage_21,fa_driftresultat_22,fa_driftresultat_percentage_22,
+    fa_resultat_21,fa_resultat_percentage_21,fa_resultat_22,
+    fa_resultat_percentage_22)=ch6_t1_foregaende_ar(husleie_21, husleie_okning_22, 
+    bilkostnader_21, bilkostnader_okning_22)
+
+    mb_husleie_maned=round(fa_husleie_22/12)
+    mb_husleie_kvartal=round(mb_husleie_maned*3)
+
+    mb_bilkostnader_maned=round(fa_bilkostnader_22/12)
+    mb_bilkostnader_kvartal=round(mb_bilkostnader_maned*3)
+
+    mb_sum_drift_januar=565110+197417+23690+31176+mb_husleie_maned+5806+mb_bilkostnader_maned+11667
+    mb_sum_drift_februar=529791+197417+23690+31176+mb_husleie_maned+5806+mb_bilkostnader_maned+11667
+    mb_sum_drift_mars=635749+197417+23690+31176+mb_husleie_maned+5806+mb_bilkostnader_maned+11667
+    mb_sum_drift_kvartal=mb_sum_drift_januar+mb_sum_drift_februar+mb_sum_drift_mars
+
+    mb_driftsresultat_januar=869400-mb_sum_drift_januar
+    mb_driftsresultat_februar=815063-mb_sum_drift_februar
+    mb_driftsresultat_mars=978075-mb_sum_drift_mars
+    mb_driftsresultat_kvartal=mb_driftsresultat_januar+mb_driftsresultat_februar+mb_driftsresultat_mars
+
+    mb_resultat_januar=mb_driftsresultat_januar-2411
+    mb_resultat_februar=mb_driftsresultat_februar-2411
+    mb_resultat_mars=mb_driftsresultat_mars-2411
+    mb_resultat_kvartal=mb_resultat_januar+mb_resultat_februar+mb_resultat_mars
+    return(mb_husleie_maned,mb_husleie_kvartal,mb_bilkostnader_maned,mb_bilkostnader_kvartal,
+        mb_sum_drift_januar,mb_sum_drift_februar,mb_sum_drift_mars,mb_sum_drift_kvartal,
+        mb_driftsresultat_januar,mb_driftsresultat_februar,mb_driftsresultat_mars,mb_driftsresultat_kvartal,
+        mb_resultat_januar,mb_resultat_februar,mb_resultat_mars,mb_resultat_kvartal)
+
+def ch6_t1_likviditetsbudsjett(husleie_21, husleie_okning_22, bilkostnader_21, bilkostnader_okning_22):
+
+    (mb_husleie_maned,mb_husleie_kvartal,mb_bilkostnader_maned,mb_bilkostnader_kvartal,
+    mb_sum_drift_januar,mb_sum_drift_februar,mb_sum_drift_mars,mb_sum_drift_kvartal,
+    mb_driftsresultat_januar,mb_driftsresultat_februar,mb_driftsresultat_mars,mb_driftsresultat_kvartal,
+    mb_resultat_januar,mb_resultat_februar,mb_resultat_mars,
+    mb_resultat_kvartal)=ch6_t1_maned_budsjett(husleie_21, husleie_okning_22, 
+    bilkostnader_21, bilkostnader_okning_22)
+
+    l_husleie_maned=mb_husleie_maned
+    l_husleie_kvartal=mb_husleie_kvartal
+
+    l_bilkostnader_maned=round(mb_bilkostnader_maned*(1.25),1)
+    l_bilkostnader_kvartal=round(mb_bilkostnader_kvartal*(1.25),1)
+
+    l_sum_utbetalinger_januar=690000+197417+65350+l_husleie_maned+7257+l_bilkostnader_maned+215000
+    l_sum_utbetalinger_februar=708194+197417+l_husleie_maned+7257+l_bilkostnader_maned+32000+165000
+    l_sum_utbetalinger_mars=684313+197417+55672+l_husleie_maned+7257+l_bilkostnader_maned
+    l_sum_utbetalinger_kvartal=round(l_sum_utbetalinger_januar+l_sum_utbetalinger_februar+l_sum_utbetalinger_mars,1)
+
+    l_inn_ut_januar=round(1156025-l_sum_utbetalinger_januar,1)
+    l_inn_ut_februar=round(1066373-l_sum_utbetalinger_februar,1)
+    l_inn_ut_mars=round(1079958-l_sum_utbetalinger_mars,1)
+    l_inn_ut_kvartal=round(l_inn_ut_januar+l_inn_ut_februar+l_inn_ut_mars,1)
+
+    l_lik_reserveUB_januar=round(50000+l_inn_ut_januar,1)
+    l_lik_reserveIB_februar=round(l_lik_reserveUB_januar,1)
+    l_lik_reserveUB_februar=round(l_lik_reserveIB_februar+l_inn_ut_februar,1)
+    l_lik_reserveIB_mars=round(l_lik_reserveUB_februar,1)
+    l_lik_reserveUB_mars=round(l_lik_reserveIB_mars+l_inn_ut_mars,1)
+
+    return(l_husleie_maned,l_husleie_kvartal,l_bilkostnader_maned,l_bilkostnader_kvartal,
+        l_sum_utbetalinger_januar,l_sum_utbetalinger_februar,l_sum_utbetalinger_mars, 
+        l_sum_utbetalinger_kvartal,l_inn_ut_januar,l_inn_ut_februar,l_inn_ut_mars,l_inn_ut_kvartal,
+        l_lik_reserveUB_januar,l_lik_reserveUB_februar,l_lik_reserveUB_mars,
+        l_lik_reserveIB_februar,l_lik_reserveIB_mars)
+
+def ch6_t2_budsjett_2020(varekostnad_19, varekostnad_okning_20, lonn_19, lonn_okning_20):
+    b_20_varekostnad_percentage_2019=round(int(varekostnad_19)*100/5000000,1)
+    b_20_varekostnad_2020=round(5750000*int(varekostnad_okning_20)/100,1)
+    b_20_lonn_percentage_2019=round(int(lonn_19)*100/5000000,1)
+    b_20_lonn_2020=round(int(lonn_19)*(1+(int(lonn_okning_20)/100)),1)
+    b_20_lonn_percentage_2020=round(b_20_lonn_2020*100/5750000,1)
+    b_20_sum_kostnader_2019=round(int(varekostnad_19)+int(lonn_19)+120000+157920+500000+500000+150000,1)
+    b_20_sum_kostnader_percentage_2019=round(b_20_sum_kostnader_2019*100/5000000,1)
+    b_20_sum_kostnader_2020=round(b_20_varekostnad_2020+b_20_lonn_2020+126000+165816+540000+287500+150000,1)
+    b_20_sum_kostnader_percentage_2020=round(b_20_sum_kostnader_2020*100/5750000,1)
+    b_20_drit_2019=round(5000000-b_20_sum_kostnader_2019,1)
+    b_20_drit_percentage_2019=round(b_20_drit_2019*100/5000000,1)
+    b_20_drit_2020=round(5750000-b_20_sum_kostnader_2020,1)
+    b_20_drit_percentage_2020=round(b_20_drit_2020*100/5750000,1)
+    b_20_resultat_2019=round(b_20_drit_2019-100000,1)
+    b_20_drit__percentage_2019=round(b_20_drit_2019*100/5000000)
+    b_20_resultat_2020=round(b_20_drit_2020-100000,1)
+    b_20_drit__percentage_2020=round(b_20_drit_2020*100/5750000)
+    return(b_20_varekostnad_percentage_2019,b_20_varekostnad_2020,
+    b_20_lonn_percentage_2019,b_20_lonn_2020,b_20_lonn_percentage_2020,
+    b_20_sum_kostnader_2019,b_20_sum_kostnader_percentage_2019,
+    b_20_sum_kostnader_2020,b_20_sum_kostnader_percentage_2020,b_20_drit_2019,
+    b_20_drit_percentage_2019,b_20_drit_2020,b_20_drit_percentage_2020,
+    b_20_resultat_2019,b_20_drit__percentage_2019,b_20_resultat_2020,b_20_drit__percentage_2020)
+
+def ch6_t2_maned_2020(varekostnad_19, varekostnad_okning_20, lonn_19, lonn_okning_20):
+    (b_20_varekostnad_percentage_2019,b_20_varekostnad_2020,
+    b_20_lonn_percentage_2019,b_20_lonn_2020,b_20_lonn_percentage_2020,
+    b_20_sum_kostnader_2019,b_20_sum_kostnader_percentage_2019,
+    b_20_sum_kostnader_2020,b_20_sum_kostnader_percentage_2020,b_20_drit_2019,
+    b_20_drit_percentage_2019,b_20_drit_2020,b_20_drit_percentage_2020,
+    b_20_resultat_2019,b_20_drit__percentage_2019,b_20_resultat_2020,
+    b_20_drit__percentage_2020)=ch6_t2_budsjett_2020(varekostnad_19, 
+    varekostnad_okning_20, lonn_19, lonn_okning_20)
+
+    m_20_varkostnad_maned=round(b_20_varekostnad_2020/12,1)
+    m_20_varkostnad_kvartal=round(m_20_varkostnad_maned*3,1)
+    m_20_lonn_maned=round(b_20_lonn_2020/12,1)
+    m_20_lonn_kvartal=round(m_20_lonn_maned*3,1)
+    m_20_sum_kostnader_maned=round(b_20_sum_kostnader_2020/12,1)
+    m_20_sum_kostnader_kvartal=round(m_20_sum_kostnader_maned*3,1)
+    m_20_drit_maned=round(b_20_drit_2020/12,1)
+    m_20_drit_kvartal=round(m_20_drit_maned*3,1)
+    m_20_resultat_maned=round(b_20_resultat_2020/12,1)
+    m_20_resultat_kvartal=round(m_20_resultat_maned*3,1)
+    return(m_20_varkostnad_maned,m_20_varkostnad_kvartal,
+    m_20_lonn_maned,m_20_lonn_kvartal,m_20_sum_kostnader_maned,
+    m_20_sum_kostnader_kvartal,m_20_drit_maned,m_20_drit_kvartal,
+    m_20_resultat_maned,m_20_resultat_kvartal)
+
+def ch6_t2_utbetal_2020(varekostnad_19, varekostnad_okning_20, lonn_19, lonn_okning_20):
+    (m_20_varkostnad_maned,m_20_varkostnad_kvartal,
+    m_20_lonn_maned,m_20_lonn_kvartal,m_20_sum_kostnader_maned,
+    m_20_sum_kostnader_kvartal,m_20_drit_maned,m_20_drit_kvartal,
+    m_20_resultat_maned,m_20_resultat_kvartal)=ch6_t2_maned_2020(varekostnad_19, 
+    varekostnad_okning_20, lonn_19, lonn_okning_20)
+
+    u_20_mva_maned=round(m_20_varkostnad_maned*0.25,1)
+    u_20_mva_kvartal=round(u_20_mva_maned*3,1)
+    u_20_vare_maned=round(m_20_varkostnad_maned+u_20_mva_maned,1)
+    u_20_vare_kvartal=round(u_20_vare_maned*3,2)
+    u_20_kjop_maned=round(u_20_vare_maned/2,1)
+    u_20_sum_utbetal_januar=300000+u_20_kjop_maned
+    u_20_totalt_utbetal_kvartal=u_20_sum_utbetal_januar+(2*u_20_vare_maned)
+    return(u_20_mva_maned,u_20_mva_kvartal,u_20_vare_maned,u_20_vare_kvartal,
+    u_20_kjop_maned,u_20_sum_utbetal_januar,u_20_totalt_utbetal_kvartal)
+
+def ch6_t2_lik_2020(varekostnad_19, varekostnad_okning_20, lonn_19, lonn_okning_20):
+
+    (m_20_varkostnad_maned,m_20_varkostnad_kvartal,
+    m_20_lonn_maned,m_20_lonn_kvartal,m_20_sum_kostnader_maned,
+    m_20_sum_kostnader_kvartal,m_20_drit_maned,m_20_drit_kvartal,
+    m_20_resultat_maned,m_20_resultat_kvartal)=ch6_t2_maned_2020(varekostnad_19, 
+    varekostnad_okning_20, lonn_19, lonn_okning_20)
+
+    (u_20_mva_maned,u_20_mva_kvartal,u_20_vare_maned,u_20_vare_kvartal,
+    u_20_kjop_maned,u_20_sum_utbetal_januar,
+    u_20_totalt_utbetal_kvartal)=ch6_t2_utbetal_2020(varekostnad_19, 
+    varekostnad_okning_20, lonn_19, lonn_okning_20)
+
+    lik_20_lonn_januar=round(m_20_lonn_maned-15000,1)
+    lik_20_lonn_sum=round(lik_20_lonn_januar+(m_20_lonn_maned*2),1)
+    lik_20_sum_utbetaling_januar=(u_20_sum_utbetal_januar+lik_20_lonn_januar+
+                    47000+29948+250000)
+    lik_20_sum_utbetaling_februar=(u_20_vare_maned+m_20_lonn_maned+29948+33000+208000)
+    lik_20_sum_utbetaling_mars=(u_20_vare_maned+m_20_lonn_maned+22560+135000+29948+450000)
+    lik_20_sum_utbetaling_sum=(u_20_totalt_utbetal_kvartal+lik_20_lonn_sum+
+        69560+135000+89844+450000+208000+250000)
+    lik_20_inn_ut_januar=round(563802-lik_20_sum_utbetaling_januar,1)
+    lik_20_inn_ut_februar=round(598958-lik_20_sum_utbetaling_februar,1)
+    lik_20_inn_ut_mars=round(598958-lik_20_sum_utbetaling_mars,1)
+    lik_20_inn_ut_sum=round(1761719-lik_20_sum_utbetaling_sum,1)
+    lik_20_UB_januar=round(850000+lik_20_inn_ut_januar,1)
+    lik_20_UB_februar=round(lik_20_UB_januar+lik_20_inn_ut_februar,1)
+    lik_20_UB_mars=round(lik_20_UB_februar+lik_20_inn_ut_mars,1)
+    return(lik_20_lonn_januar,lik_20_lonn_sum, lik_20_sum_utbetaling_januar,
+    lik_20_sum_utbetaling_februar,lik_20_sum_utbetaling_mars,lik_20_sum_utbetaling_sum,
+    lik_20_inn_ut_januar,lik_20_inn_ut_februar,lik_20_inn_ut_mars,
+    lik_20_inn_ut_sum,lik_20_UB_januar,lik_20_UB_februar,lik_20_UB_mars)
+
+def ch6_t2_pavirke(varekostnad_19, varekostnad_okning_20, lonn_19, lonn_okning_20):
+
+    (m_20_varkostnad_maned,m_20_varkostnad_kvartal,
+    m_20_lonn_maned,m_20_lonn_kvartal,m_20_sum_kostnader_maned,
+    m_20_sum_kostnader_kvartal,m_20_drit_maned,m_20_drit_kvartal,
+    m_20_resultat_maned,m_20_resultat_kvartal)=ch6_t2_maned_2020(varekostnad_19, 
+        varekostnad_okning_20, lonn_19, lonn_okning_20)
+    
+    (u_20_mva_maned,u_20_mva_kvartal,u_20_vare_maned,u_20_vare_kvartal,
+    u_20_kjop_maned,u_20_sum_utbetal_januar,
+    u_20_totalt_utbetal_kvartal)=ch6_t2_utbetal_2020(varekostnad_19, 
+        varekostnad_okning_20, lonn_19, lonn_okning_20)
+    
+    p_varekostnad_maned=m_20_varkostnad_maned
+    p_varekjop_maned=round(p_varekostnad_maned-15000,1)
+    p_mva=round(1.25*p_varekjop_maned,1)
+    p_kjop_maned=round(p_mva/2,1)
+    p_sum_utbetaling_februar=round(p_kjop_maned,1)
+    p_sum_utbetaling_mars=round(p_kjop_maned*2,1)
+    p_sum_utbetaling_UB=round(p_kjop_maned+p_mva,1)
+    p_total_utbetaling=round(300000+p_sum_utbetaling_februar+p_sum_utbetaling_mars,1)
+    p_lik=round(u_20_totalt_utbetal_kvartal-p_total_utbetaling,1)
+    return(p_varekostnad_maned,p_varekjop_maned,p_mva,
+    p_kjop_maned,p_sum_utbetaling_februar,p_sum_utbetaling_mars,
+    p_sum_utbetaling_UB,p_total_utbetaling,p_lik)
+
