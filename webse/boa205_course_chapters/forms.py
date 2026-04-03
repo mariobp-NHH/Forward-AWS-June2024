@@ -1021,3 +1021,129 @@ class TableForm_boa205_ch6_t2(FlaskForm):
                                 ('6',
                                  '6 %')])
     submit = SubmitField('Send inn')
+
+""" Arbeidkrav 1 """
+class TableForm_boa205_ak1_t1(FlaskForm):
+    fakturpris= SelectField("Fakturpris (kr)",
+                       choices=[('27500',
+                                 '27500 kr'),
+                                ('28000',
+                                 '28000 kr'),
+                                ('28500',
+                                 '28500 kr')])
+    indirekte_kostnader= SelectField("Indirekte kostnader (%)",
+                       choices=[('38',
+                                 '38 %'),
+                                ('40',
+                                 '40 %'),
+                                ('42',
+                                 '42 %')])
+    fortjeneste= SelectField("Fortjeneste (%)",
+                       choices=[('18',
+                                 '18 %'),
+                                ('20',
+                                 '20 %'),
+                                ('22',
+                                 '22 %')])
+    konkurrent= SelectField("Priser konkurrent (kr)",
+                       choices=[('2800',
+                                 '2800 kr'),
+                                ('2940',
+                                 '2940 kr'),
+                                ('3100',
+                                 '3100 kr')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ak1_t2(FlaskForm):
+    materiale= SelectField("Materiale februar (kr)",
+                       choices=[('164000',
+                                 '164000 kr'),
+                                ('165000',
+                                 '165000 kr'),
+                                ('166000',
+                                 '166000 kr')])
+    lonn= SelectField("Lønn februar (kr)",
+                       choices=[('80000',
+                                 '80000 kr'),
+                                ('81000',
+                                 '81000 kr'),
+                                ('82000',
+                                 '82000 kr')])
+    arbeid= SelectField("Varer i arbeid 28.02 (kr)",
+                       choices=[('34000',
+                                 '34000 kr'),
+                                ('35000',
+                                 '35000 kr'),
+                                ('36000',
+                                 '36000 kr')])
+    ferdig= SelectField("Ferdig varer 28.02 (kr)",
+                       choices=[('54000',
+                                 '54000 kr'),
+                                ('55000',
+                                 '55000 kr'),
+                                ('56000',
+                                 '56000 kr')])
+    submit = SubmitField('Send inn')
+
+class TableForm_boa205_ak1_t3(FlaskForm):
+    kjop= SelectField("Indirekte kostnader - Innkjøpsavdeling (kr) -",
+                       choices=[('5400000',
+                                 '5400000 kr'),
+                                ('5500000',
+                                 '5500000 kr'),
+                                ('5600000',
+                                 '5600000 kr')])
+    produksjon= SelectField("Indirekte kostnader - Produksjonsavdeling (kr) -",
+                       choices=[('3400000',
+                                 '3400000 kr'),
+                                ('3500000',
+                                 '3500000 kr'),
+                                ('3600000',
+                                 '3600000 kr')])
+    dm_240= SelectField("Direkte material - Ordre 240 (kr) -",
+                       choices=[('1100000',
+                                 '1100000 kr'),
+                                ('1200000',
+                                 '1200000 kr'),
+                                ('1300000',
+                                 '1300000 kr')])
+    dm_241= SelectField("Direkte material - Ordre 241 (kr) -",
+                       choices=[('550000',
+                                 '550000 kr'),
+                                ('560000',
+                                 '560000 kr'),
+                                ('570000',
+                                 '570000 kr')])
+    submit = SubmitField('Send inn')
+
+
+class TableForm_boa205_ak1_t4(FlaskForm):
+    var_adm= SelectField("Indirekte variable administrasjon kostnader (kr/enhet)",
+                       choices=[('90',
+                                 '90 kr/enhet'),
+                                ('95',
+                                 '95 kr/enhet'),
+                                ('100',
+                                 '100 kr/enhet')])
+    enhet= SelectField("Antall produserte og solgte enheter (enheter)",
+                       choices=[('1000',
+                                 '1000 enheter'),
+                                ('1070',
+                                 '1070 enheter'),
+                                ('1140',
+                                 '1140 enheter')])
+    faste_til= SelectField("Faste kostnader tilvirkningsavdelingen (kr)",
+                       choices=[('200000',
+                                 '200000 kr'),
+                                ('205000',
+                                 '205000 kr'),
+                                ('210000',
+                                 '210000 kr')])
+    faste_adm= SelectField("Faste kostnader administrasjonsavdelingen (kr)",
+                       choices=[('170000',
+                                 '170000 kr'),
+                                ('175000',
+                                 '175000 kr'),
+                                ('180000',
+                                 '180000 kr')])
+    submit = SubmitField('Send inn')
