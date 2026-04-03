@@ -32,6 +32,8 @@ from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch5_q6, ModulsF
 from webse.boa205_course_chapters.forms import TableForm_boa205_ch6_t1, TableForm_boa205_ch6_t2, ModulsForm_boa205_ch6_q1, ModulsForm_boa205_ch6_q2
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch6_q3, ModulsForm_boa205_ch6_q4, ModulsForm_boa205_ch6_q5
 from webse.boa205_course_chapters.forms import ModulsForm_boa205_ch6_q6, ModulsForm_boa205_ch6_q7, ModulsForm_boa205_ch6_q8
+""" Arbeidkrav 1 """
+from webse.boa205_course_chapters.forms import TableForm_boa205_ak1_t1, TableForm_boa205_ak1_t2,TableForm_boa205_ak1_t3,TableForm_boa205_ak1_t4
 
 """ Functions """
 """ chapter 2a """
@@ -54,6 +56,8 @@ from webse.boa205_course_chapters.functions import ch5_t2_enheter_totalt, ch5_t2
 from webse.boa205_course_chapters.functions import ch6_t1_foregaende_ar, ch6_t1_maned_budsjett, ch6_t1_likviditetsbudsjett
 from webse.boa205_course_chapters.functions import ch6_t2_budsjett_2020, ch6_t2_maned_2020, ch6_t2_utbetal_2020
 from webse.boa205_course_chapters.functions import ch6_t2_lik_2020, ch6_t2_pavirke
+""" Arbeidkrav1 """
+from webse.boa205_course_chapters.functions import ak1_t1,ak1_t2,ak1_t3,ak1_t4
 
 #Chapter 1
 @boa205_course_chapters.route('/boa205_course/kapitel1', methods=['GET', 'POST'])
@@ -1337,7 +1341,212 @@ def boa205_course_chapters_ch3_extra():
 @boa205_course_chapters.route('/boa205_course/arbeidskrav1', methods=['GET', 'POST'])
 @login_required
 def boa205_course_chapters_arbeidskrav1():
-    return render_template('boa205_course/chapters/arbeidskrav1.html', title='BØA205 Økonomistyring, arbeidskrav1')
+    form_boa205_ak1_t1=TableForm_boa205_ak1_t1() 
+    form_boa205_ak1_t2=TableForm_boa205_ak1_t2() 
+    form_boa205_ak1_t3=TableForm_boa205_ak1_t3()
+    form_boa205_ak1_t4=TableForm_boa205_ak1_t4()
+
+    if form_boa205_ak1_t1.validate_on_submit():
+        """ Variables """
+        fakturpris = form_boa205_ak1_t1.fakturpris.data
+        indirekte_kostnader = form_boa205_ak1_t1.indirekte_kostnader.data
+        fortjeneste = form_boa205_ak1_t1.fortjeneste.data
+        konkurrent = form_boa205_ak1_t1.konkurrent.data
+
+        (fakturpris_sett,intakskost_hele,intakskost_sett,faste_hele,
+        faste_sett,selvkost_hele,selvkost_sett,fortjeneste_hele,
+        fortjeneste_sett,salgspris_hele,salgspris_sett,mva_hele,
+        mva_sett,salgspris_mva_hele,salgspris_mva_sett,
+        avanse,avanse_persent,pris_konkurrent,ny_forjeneste,
+        ny_forjeneste_persent)=ak1_t1(fakturpris, 
+        indirekte_kostnader, fortjeneste, konkurrent)
+
+        return render_template('boa205_course/chapters/arbeidskrav1.html', 
+        title='BØA205 Økonomistyring, arbeidskrav1',
+        form_boa205_ak1_t1=form_boa205_ak1_t1, 
+        form_boa205_ak1_t2=form_boa205_ak1_t2, 
+        form_boa205_ak1_t3=form_boa205_ak1_t3,
+        form_boa205_ak1_t4=form_boa205_ak1_t4,legend='Variabler',anchor="table1",
+        fakturpris=fakturpris, indirekte_kostnader=indirekte_kostnader,
+        fortjeneste=fortjeneste, konkurrent=konkurrent,
+        fakturpris_sett=fakturpris_sett,
+        intakskost_hele=intakskost_hele,
+        intakskost_sett=intakskost_sett,faste_hele=faste_hele,
+        faste_sett=faste_sett,selvkost_hele=selvkost_hele,
+        selvkost_sett=selvkost_sett,fortjeneste_hele=fortjeneste_hele,
+        fortjeneste_sett=fortjeneste_sett,salgspris_hele=salgspris_hele,
+        salgspris_sett=salgspris_sett,mva_hele=mva_hele,
+        mva_sett=mva_sett,salgspris_mva_hele=salgspris_mva_hele,
+        salgspris_mva_sett=salgspris_mva_sett,
+        avanse=avanse,avanse_persent=avanse_persent,
+        pris_konkurrent=pris_konkurrent,ny_forjeneste=ny_forjeneste,
+        ny_forjeneste_persent=ny_forjeneste_persent)
+    
+    if form_boa205_ak1_t2.validate_on_submit():
+        """ Variables """
+        materiale = form_boa205_ak1_t2.materiale.data
+        lonn = form_boa205_ak1_t2.lonn.data
+        arbeid = form_boa205_ak1_t2.arbeid.data
+        ferdig = form_boa205_ak1_t2.ferdig.data
+
+        (endring_arbeid,endring_ferdig,endring_arbeid_table,
+        endring_ferdig_table,indirekte_material,
+        dekning_indirekte_material,indirekte_lonn,
+        dekning_indirekte_lonn,periodens_tilv_kal,periodens_tilv_virk,
+        tilv_ferdig_kal,tilv_ferdig_virk,tilv_solgte_kal,
+        tilv_solgte_virk,indirekte_adm_kal,indirekte_adm_virk,
+        dekning_indirekte_adm,selvkost_kal,selvkost_virk,
+        produkt_resultat_kal,dekning,produksjonresultat_kal,
+        produksjonresultat_virk)=ak1_t2(materiale,lonn,arbeid,ferdig)
+
+        return render_template('boa205_course/chapters/arbeidskrav1.html', 
+        title='BØA205 Økonomistyring, arbeidskrav1',
+        form_boa205_ak1_t1=form_boa205_ak1_t1, 
+        form_boa205_ak1_t2=form_boa205_ak1_t2,
+        form_boa205_ak1_t3=form_boa205_ak1_t3, 
+        form_boa205_ak1_t4=form_boa205_ak1_t4,legend='Variabler',anchor="table2",
+        materiale=materiale,lonn=lonn,arbeid=arbeid,ferdig=ferdig,
+        endring_arbeid=endring_arbeid,
+        endring_ferdig=endring_ferdig,
+        endring_arbeid_table=endring_arbeid_table,
+        endring_ferdig_table=endring_ferdig_table,
+        indirekte_material=indirekte_material,
+        dekning_indirekte_material=dekning_indirekte_material,
+        indirekte_lonn=indirekte_lonn,
+        dekning_indirekte_lonn=dekning_indirekte_lonn,
+        periodens_tilv_kal=periodens_tilv_kal,
+        periodens_tilv_virk=periodens_tilv_virk,
+        tilv_ferdig_kal=tilv_ferdig_kal,
+        tilv_ferdig_virk=tilv_ferdig_virk,
+        tilv_solgte_kal=tilv_solgte_kal,
+        tilv_solgte_virk=tilv_solgte_virk,
+        indirekte_adm_kal=indirekte_adm_kal,
+        indirekte_adm_virk=indirekte_adm_virk,
+        dekning_indirekte_adm=dekning_indirekte_adm,
+        selvkost_kal=selvkost_kal,
+        selvkost_virk=selvkost_virk,
+        produkt_resultat_kal=produkt_resultat_kal,
+        dekning=dekning,
+        produksjonresultat_kal=produksjonresultat_kal,
+        produksjonresultat_virk=produksjonresultat_virk)
+    
+    if form_boa205_ak1_t3.validate_on_submit():
+        """ Variables """
+        kjop = form_boa205_ak1_t3.kjop.data
+        produksjon = form_boa205_ak1_t3.produksjon.data
+        dm_240 = form_boa205_ak1_t3.dm_240.data
+        dm_241 = form_boa205_ak1_t3.dm_241.data
+
+        (kjop_sat,produksjon_sat,tilvkost_a,adm_sat,
+        selvkost_a,indirek_mat_240,indirek_mat_241,
+        tilvkost_240,tilvkost_241,
+        av_kjop_241,av_kjop_242,av_kjop_243,
+        av_kjop_sum,av_kjop_dek,
+        av_produksjon_241,av_produksjon_242,av_produksjon_243,
+        av_produksjon_sum,av_produksjon_dek,
+        til_perioden_241,til_perioden_242,
+        til_perioden_243,til_perioden_sum,
+        til_ferd_241,til_ferd_242,til_ferd_243,
+        til_ferd_sum,til_ferd_virk,
+        behold_fv_242,behold_fv_sum,
+        til_solgte_sum,til_solgte_virk,
+        indirekt_adm_240,indirekt_adm_241,indirekt_adm_243,
+        indirekt_adm_sum,indirekt_adm_dek,
+        selv_240,selv_241,selv_243,selv_sum,selv_virk,
+        resul_240,resul_241,resul_243,resul_sum,sum_dek,
+        resultat_sum,resultat_virk)=ak1_t3(kjop,produksjon,dm_240,dm_241)
+
+        return render_template('boa205_course/chapters/arbeidskrav1.html', 
+        title='BØA205 Økonomistyring, arbeidskrav1',
+        form_boa205_ak1_t1=form_boa205_ak1_t1, 
+        form_boa205_ak1_t2=form_boa205_ak1_t2, 
+        form_boa205_ak1_t3=form_boa205_ak1_t3,
+        form_boa205_ak1_t4=form_boa205_ak1_t4,legend='Variabler',anchor="table3",
+        kjop=kjop, produksjon=produksjon,dm_240=dm_240, dm_241=dm_241,
+        kjop_sat=kjop_sat,
+        produksjon_sat=produksjon_sat,
+        tilvkost_a=tilvkost_a,
+        adm_sat=adm_sat,
+        selvkost_a=selvkost_a,
+        indirek_mat_240=indirek_mat_240,
+        indirek_mat_241=indirek_mat_241,
+        tilvkost_240=tilvkost_240,
+        tilvkost_241=tilvkost_241,
+        av_kjop_241=av_kjop_241,
+        av_kjop_242=av_kjop_242,
+        av_kjop_243=av_kjop_243,
+        av_kjop_sum=av_kjop_sum,
+        av_kjop_dek=av_kjop_dek,
+        av_produksjon_241=av_produksjon_241,
+        av_produksjon_242=av_produksjon_242,
+        av_produksjon_243=av_produksjon_243,
+        av_produksjon_sum=av_produksjon_sum,
+        av_produksjon_dek=av_produksjon_dek,
+        til_perioden_241=til_perioden_241,
+        til_perioden_242=til_perioden_242,
+        til_perioden_243=til_perioden_243,
+        til_perioden_sum=til_perioden_sum,
+        til_ferd_241=til_ferd_241,
+        til_ferd_242=til_ferd_242,
+        til_ferd_243=til_ferd_243,
+        til_ferd_sum=til_ferd_sum,
+        til_ferd_virk=til_ferd_virk,
+        behold_fv_242=behold_fv_242,
+        behold_fv_sum=behold_fv_sum,
+        til_solgte_sum=til_solgte_sum,
+        til_solgte_virk=til_solgte_virk,
+        indirekt_adm_240=indirekt_adm_240,
+        indirekt_adm_241=indirekt_adm_241,
+        indirekt_adm_243=indirekt_adm_243,
+        indirekt_adm_sum=indirekt_adm_sum,
+        indirekt_adm_dek=indirekt_adm_dek,
+        selv_240=selv_240,
+        selv_241=selv_241,
+        selv_243=selv_243,
+        selv_sum=selv_sum,
+        selv_virk=selv_virk,
+        resul_240=resul_240,
+        resul_241=resul_241,
+        resul_243=resul_243,
+        resul_sum=resul_sum,
+        sum_dek=sum_dek,
+        resultat_sum=resultat_sum,
+        resultat_virk=resultat_virk)
+    
+    if form_boa205_ak1_t4.validate_on_submit():
+        """ Variables """
+        var_adm = form_boa205_ak1_t4.var_adm.data
+        enhet = form_boa205_ak1_t4.enhet.data
+        faste_til = form_boa205_ak1_t4.faste_til.data
+        faste_adm = form_boa205_ak1_t4.faste_adm.data
+
+        (ts,iv_admin,minkost,kal_dek,
+        vir_dek,vir_dek_vir,
+        fast_til_dek,fast_adm_dek,
+        fore,fast_avvik,produk_std,produk_vir,
+        ls_ts,one_two,one_three)=ak1_t4(var_adm,enhet,faste_til,faste_adm)
+
+        return render_template('boa205_course/chapters/arbeidskrav1.html', 
+        title='BØA205 Økonomistyring, arbeidskrav1',
+        form_boa205_ak1_t1=form_boa205_ak1_t1, 
+        form_boa205_ak1_t2=form_boa205_ak1_t2, 
+        form_boa205_ak1_t3=form_boa205_ak1_t3,
+        form_boa205_ak1_t4=form_boa205_ak1_t4,
+        legend='Variabler',anchor="table4",
+        var_adm=var_adm,enhet=enhet,faste_til=faste_til,faste_adm=faste_adm,
+        ts=ts, iv_admin=iv_admin,minkost=minkost,kal_dek=kal_dek,
+        vir_dek=vir_dek,vir_dek_vir=vir_dek_vir,
+        fast_til_dek=fast_til_dek,fast_adm_dek=fast_adm_dek,
+        fore=fore,fast_avvik=fast_avvik,
+        produk_std=produk_std,produk_vir=produk_vir,
+        ls_ts=ls_ts,one_two=one_two,one_three=one_three)
+
+    return render_template('boa205_course/chapters/arbeidskrav1.html', 
+        title='BØA205 Økonomistyring, arbeidskrav1',
+        form_boa205_ak1_t1=form_boa205_ak1_t1,
+        form_boa205_ak1_t2=form_boa205_ak1_t2,
+        form_boa205_ak1_t3=form_boa205_ak1_t3,
+        form_boa205_ak1_t4=form_boa205_ak1_t4)
 
 #Chapter 4
 @boa205_course_chapters.route('/boa205_course/kapitel4', methods=['GET', 'POST'])
