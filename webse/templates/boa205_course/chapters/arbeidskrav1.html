@@ -173,6 +173,1670 @@ alt=""
   </div>
 </div>
 
+<!-- Section 1 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Oppgave 1</h1>
+    </div>
+
+    <div class="table-responsive-mobile" style="background-color: #4a736f;">
+    <div class="container" id="table1">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ak1_t1.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ak1_t1.fakturpris.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t1.fakturpris(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t1.indirekte_kostnader.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t1.indirekte_kostnader(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t1.fortjeneste.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t1.fortjeneste(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t1.konkurrent.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t1.konkurrent(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ak1_t1.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      GTX AS kjøper inn sagbenker fra utlandet.
+                      <br>
+                      <ol class="ol-table">
+                        <li>
+                          I februar kjøpte de inn 20 sagbenker. 
+                        </li>
+                        <li>
+                          Ifølge fakturaen var innkjøpsprisen for alle sagene kr {{fakturpris}}. 
+                        </li>
+                        <li>
+                          Transport og forsikring for hele ordren kom på kr 2 000. 
+                        </li>
+                        <li>
+                          GTX kalkulerer med {{indirekte_kostnader}}% tillegg for faste indirekte kostnader og 
+                          kalkulerer med {{fortjeneste}}% fortjeneste på sine produkt. 
+                        </li>
+                        <li>
+                          Merverdiavgift (mva.) er 25 %.
+                        </li>
+                      </ol>
+                    </p>
+                    <p align="left">
+                      Inndata:
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fakturpris</th>
+                                  <td class="text-end">(fra punkt 2) {{fakturpris}} kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Frakt of forsikring</th>
+                                  <td class="text-end">(fra punkt 3) 2000 kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader</th>
+                                  <td class="text-end">(fra punkt 4) {{indirekte_kostnader}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fortjeneste</th>
+                                  <td class="text-end">(fra punkt 4) {{fortjeneste}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall</th>
+                                  <td class="text-end">(fra punkt 1) 20</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Mva</th>
+                                  <td class="text-end">(fra punkt 5) 25%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      a. Hva blir selvkost for hele partiet?
+                      <br>
+                      b. Hva blir selvkost per sagbenk?
+                      <br>
+                      c. Hva blir salgsinntekten inklusive mva. for hele partiet sagbenker?
+                      <br>
+                      d. Hva blir salgspris inklusive mva. per sagbenk?
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Hele partiet</th>
+                                <th scope="col" class="text-end">Per sett</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fakturpris</th>
+                                  <td class="text-end">(fra punkt 1) {{fakturpris}}</td>
+                                  <td class="text-end">(fra punkt 1 og 2) {{fakturpris}}/20={{fakturpris_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Frakt og forsikring</th>
+                                  <td class="text-end">2000</td>
+                                  <td class="text-end">100</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Inntakskost</th>
+                                  <td class="text-end">{{intakskost_hele}}</td>
+                                  <td class="text-end">{{intakskost_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Faste indirekte kostnader</th>
+                                  <td class="text-end">(fra punkt 4) {{intakskost_hele}}*{{indirekte_kostnader}}%={{faste_hele}}</td>
+                                  <td class="text-end">{{intakskost_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Selvkost (a og b)</th>
+                                  <td class="text-end">{{selvkost_hele}}</td>
+                                  <td class="text-end">{{selvkost_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Fortjeneste</th>
+                                  <td class="text-end">(fra punkt 1) {{selvkost_hele}}*{{fortjeneste}}%={{fortjeneste_hele}}</td>
+                                  <td class="text-end">{{fortjeneste_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgspris</th>
+                                  <td class="text-end">{{salgspris_hele}}</td>
+                                  <td class="text-end">{{salgspris_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Mva</th>
+                                  <td class="text-end">(fra punkt 5) {{salgspris_hele}}*25%={{mva_hele}}</td>
+                                  <td class="text-end">{{mva_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgspris inkludert mva (c og d)</th>
+                                  <td class="text-end">{{salgspris_mva_hele}}</td>
+                                  <td class="text-end">{{salgspris_mva_sett}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      e. Hva blir avansen i kroner for hele partiet sagbenker?
+                      <br>
+                      f. Hva blir avansen i prosent (%) for sagbenker?
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgspris</th>
+                                  <td class="text-end">{{salgspris_hele}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varekostnad (inntakskost)</th>
+                                  <td class="text-end">{{intakskost_hele}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avanse i kroner (e)</th>
+                                  <td class="text-end">{{salgspris_hele}}-{{intakskost_hele}}={{avanse}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avanse i % av inntakskost (f)</th>
+                                  <td class="text-end">{{avanse_persent}}%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      <ol class="ol-table start-6">
+                        <li>
+                          En stor konkurrent i markedet tar kr {{konkurrent}} 
+                          inklusiv mva. for tilsvarende sagbenker.
+                        </li>
+                      </ol>
+                    </p>
+                    <p align="left">
+                      g. Hva er prisen til konkurrenten uten mva.?
+                      <br>
+                      h. Hva blir fortjenesten til GTX AS 
+                      i kroner og prosent dersom man tar samme pris som konkurrenten?
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Prisen konkurrent eks mva (g)</th>
+                                  <td class="text-end">(fra punkter 5 og 6) {{konkurrent}}/1.25={{pris_konkurrent}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Ny pris GTX</th>
+                                  <td class="text-end">{{pris_konkurrent}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Selvkost</th>
+                                  <td class="text-end">{{selvkost_sett}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Ny fortjeneste (h)</th>
+                                  <td class="text-end">{{pris_konkurrent}}-{{selvkost_sett}}={{ny_forjeneste}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Ny fortjeneste i persent (h)</th>
+                                  <td class="text-end">{{ny_forjeneste}}/{{selvkost_sett}}={{ny_forjeneste_persent}}%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+            </div>        
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2 -->
+<section class="section_2" id="section2">
+  <div class="container" style="display:block;">
+    <h2>Oppgave 2</h2>
+  </div>
+
+  <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+    <div class="container" id="table2">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ak1_t2.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ak1_t2.materiale.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t2.materiale(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t2.lonn.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t2.lonn(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t2.arbeid.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t2.arbeid(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t2.ferdig.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t2.ferdig(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ak1_t2.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      Industribedriften Balder As har utarbeidet følgende budsjett over kostnaden for 2020
+                      <br>
+                      a. Hva er budsjetterte <strong>tilvirkningskost</strong> for bedriften?
+                      <br>
+                      b. Hva er budsjettert <strong>selvkost</strong> for bedriften?
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Budsjett (normalår)</th>
+                                <th scope="col" class="text-end">Totalt</th>
+                                <th scope="col" class="text-end">Faste</th>
+                                <th scope="col" class="text-end">Variable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte materiale</th>
+                                  <td class="text-end">1800000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">900000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader (Materialavdelingen)</th>
+                                  <td class="text-end">135000</td>
+                                  <td class="text-end">90000</td>
+                                  <td class="text-end">45000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader (Tilvirkningsavdelingen)</th>
+                                  <td class="text-end">540000</td>
+                                  <td class="text-end">450000</td>
+                                  <td class="text-end">90000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tilvirkningkost (a)</th>
+                                  <td class="text-end">3375000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader (Salgs og administrasjonsavdelingen)</th>
+                                  <td class="text-end">405000</td>
+                                  <td class="text-end">405000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Selvkost (b)</th>
+                                  <td class="text-end">3780000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      c. Beregn <strong>tilleggssatsene</strong> for hver av kostnadsstedene 
+                      på grunnlag av budsjett, både totale og splittet i faste og variable.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Tileggssatser</th>
+                                <th scope="col" class="text-end">Totalt</th>
+                                <th scope="col" class="text-end">Faste</th>
+                                <th scope="col" class="text-end">Variable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Materialavdeling</th>
+                                  <td class="text-end">135000/1800000=7.5%</td>
+                                  <td class="text-end">900000/1800000=5%</td>
+                                  <td class="text-end">45000/1800000=2.5%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tilvirkningsavdeling</th>
+                                  <td class="text-end">60%</td>
+                                  <td class="text-end">50%</td>
+                                  <td class="text-end">10%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgs og administrasjonsavdeling</th>
+                                  <td class="text-end">12%</td>
+                                  <td class="text-end">12%</td>
+                                  <td class="text-end">0%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      For februar foreligger det følgende regnskapstall:
+                      <ol align="left">
+                        <li>
+                          Virkelige kostnader:
+                          <ul>
+                            <li>
+                              Virkelige kostnader (Direkte materiale): {{materiale}}
+                            </li>
+                            <li>
+                              Virkelige kostnader (Direkte lønn): {{lonn}}
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          Indirekte kostnader:
+                          <ul>
+                            <li>
+                              Indirekte kostander (Faste materialavdelingen): 7750
+                            </li>
+                            <li>
+                              Indirekte kostander (Variable materialavdelingen): 4350
+                            </li>
+                            <li>
+                              Indirekte kostander (Faste tilvirkningsavdelingen): 37500
+                            </li>
+                            <li>
+                              Indirekte kostander (Variable tilvirkningsavdelingen): 8950
+                            </li>
+                            <li>
+                              Indirekte kostander (Faste salgs- og administrasjonsavdeling): 37500
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          Salgsinntekte (eks mva): 350000
+                        </li>
+                        <li>
+                          Varebeholdning:
+                          <ul>
+                            <li>
+                              Varebeholdning (Varer i arbeid 01.02): 12000
+                            </li>
+                            <li>
+                              Varebeholdning (Varer i arbeid 28.02): {{arbeid}}
+                            </li>
+                            <li>
+                              Varebeholdning (Ferdig varer 01.02): 68000
+                            </li>
+                            <li>
+                              Varebeholdning (Ferdig varer 28.02): {{ferdig}}
+                            </li>
+                          </ul>
+                        </li>
+                      </ol>
+                    </p>
+                    <p align="left">
+                      d. Beregn endringer i varebeholdning <strong>varer i arbeid (VIA)</strong> 
+                      og <strong>ferdigvarer (FV)</strong>.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varer i arbeid 28.02</th>
+                                  <td class="text-end">(fra punkt 4) {{arbeid}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Varer i arbeid 01.02</th>
+                                  <td class="text-end">(fra punkt 4) 12000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Endring varer i arbeid</th>
+                                  <td class="text-end">{{arbeid}}-12000={{endring_arbeid}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Ferdig varer 28.02</th>
+                                  <td class="text-end">(fra punkt 4) {{ferdig}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Ferdig varer 01.02</th>
+                                  <td class="text-end">(fra punkt 4) 68000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Endring ferdig varer</th>
+                                  <td class="text-end">{{ferdig}}-68000={{endring_ferdig}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      e. Utarbeid <strong>driftsregnskap</strong> for februar 2020 etter selvkostmetoden.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Selvkostregnskap</th>
+                                <th scope="col" class="text-end">Sats</th>
+                                <th scope="col" class="text-end">Kalkulert</th>
+                                <th scope="col" class="text-end">Virkelig</th>
+                                <th scope="col" class="text-end">Dekningsdifferanse</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">350000</td>
+                                  <td class="text-end">350000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 1) {{materiale}}</td>
+                                  <td class="text-end">(fra punkt 1) {{materiale}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 1) {{lonn}}</td>
+                                  <td class="text-end">(fra punkt 1) {{lonn}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader materialavdeling</th>
+                                  <td class="text-end">(fra punkt c) 7.5%</td>
+                                  <td class="text-end">(fra punkt 1 og c) {{materiale}}*7.5%={{indirekte_material}}</td>
+                                  <td class="text-end">(fra punkt 2) 7750+4350=12100</td>
+                                  <td class="text-end">{{indirekte_material}}-12100={{dekning_indirekte_material}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader tilvirkningsavdelingen</th>
+                                  <td class="text-end">(fra punkt c) 60%</td>
+                                  <td class="text-end">(fra punkt 1 og c) {{lonn}}*60%={{indirekte_lonn}}</td>
+                                  <td class="text-end">(fra punkt 2) 37500+8950=46450</td>
+                                  <td class="text-end">{{indirekte_lonn}}-46450={{dekning_indirekte_lonn}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Periodens tilvirkningskost</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{periodens_tilv_kal}}</td>
+                                  <td class="text-end">{{periodens_tilv_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Beholdningsendring varer i arbeid</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt d) {{endring_arbeid_table}}</td>
+                                  <td class="text-end">(fra punkt d) {{endring_arbeid_table}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tilvirkningkost ferdigvarer</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{tilv_ferdig_kal}}</td>
+                                  <td class="text-end">{{tilv_ferdig_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Beholdningsendring ferdigvarer</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt d) {{endring_ferdig_table}}</td>
+                                  <td class="text-end">(fra punkt d) {{endring_ferdig_table}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tilvirkningkost solgte varer</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{tilv_solgte_kal}}</td>
+                                  <td class="text-end">{{tilv_solgte_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader administrasjonsavdeling</th>
+                                  <td class="text-end">(fra punkt c) 12%</td>
+                                  <td class="text-end">{{tilv_solgte_kal}}*12%={{indirekte_adm_kal}}</td>
+                                  <td class="text-end">(fra punkt 2) 39500</td>
+                                  <td class="text-end">{{indirekte_adm_kal}}-39500={{dekning_indirekte_adm}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Selvkost</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{selvkost_kal}}</td>
+                                  <td class="text-end">{{selvkost_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produkt resultat</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">350000-{{selvkost_kal}}={{produkt_resultat_kal}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dekningsdifferanse</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{dekning}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{dekning}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produksjonresultat</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{produksjonresultat_kal}}</td>
+                                  <td class="text-end">{{produksjonresultat_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      f. Forklar hva som menes med budsjetterte faste 
+                      indirekte kostnader og beregn budsjetterte faste indirekte kostander.
+                      <ul align="left">
+                        <li>
+                          Budsjetterte (norm) kostander er et utrykk for hvor mye kostanden burde ha 
+                          vert ut frå den aktuelle aktiviteten i avdelingen 
+                        </li>
+                        <li>
+                          Siden de faste indirekte kostandene IKKJE variere med aktiviteten 
+                          finner vi budsjetterte kostander ved å ta utgangspunkt i 
+                          normalårets faste kostander . (I dette tilfell delt på 12)
+                        </li>
+                      </ul>
+                    </p>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjetterte faste kostander materialavdeling</th>
+                                  <td class="text-end">90000/12=7500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjetterte faste kostander Tilv. Avdeling</th>
+                                  <td class="text-end">450000/12=37500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjetterte faste kostander S/A</th>
+                                  <td class="text-end">405000/12=33750</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Section 3 -->
+<section class="section_1" id="section1">
+    <div class="container" style="display:block;">
+        <h1>Oppgave 3</h1>
+    </div>
+
+    <div class="table-responsive-mobile" style="background-color: #4a736f;">
+    <div class="container" id="table3">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ak1_t3.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ak1_t3.kjop.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t3.kjop(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t3.produksjon.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t3.produksjon(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t3.dm_240.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t3.dm_240(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t3.dm_241.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t3.dm_241(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ak1_t3.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      Entreprenøren Tindetopp AS tar på seg store og små oppdrag innenfor bygge bransjen. 
+                      De holder til i Øvre Årdal hvor mye av aktiviteten deres foregår. 
+                      Tindetopp AS fører prosjekt-regnskap for alle sine byggeoppdrag. 
+                      Kundene er både private og offentlige aktører. 
+                      I perioder med mye arbeid leier Tindetopp AS inn arbeidskraft fra 
+                      Polen og Tsjekkia. Driftsregnskapet deres utarbeides etter 
+                      normalkostmetoden.
+                      <br>
+                      <ol class="ol-table">
+                        <li>For et <strong>normalår</strong> hvor det er samsvar mellom produksjon og salg er det 
+                          budsjettert med følgende kostnadsforbruk:</li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Budsjetterte indirekte kostnader</th>
+                                <th scope="col" class="text-end">Sum</th>
+                                <th scope="col" class="text-end">Faste</th>
+                                <th scope="col" class="text-end">Variable</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">innkjøpsavdeling</th>
+                                  <td class="text-end">{{kjop}}</td>
+                                  <td class="text-end">2300000</td>
+                                  <td class="text-end">3200000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produksjonsavdeling</th>
+                                  <td class="text-end">{{produksjon}}</td>
+                                  <td class="text-end">2300000</td>
+                                  <td class="text-end">1200000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgs og administrasjonsavdeling</th>
+                                  <td class="text-end">6550000</td>
+                                  <td class="text-end">6550000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjetterte direkte kostnader</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end">55000000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn produksjonsavdeling</th>
+                                  <td class="text-end">67000000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjetterte timer</th>
+                                  <td class="text-end">175000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <p align="left">
+                      a. Beregn bedriftens <strong>normalsatser</strong>. Det er kun nødvendig 
+                      å beregne normalsatsene for sum indirekte kostnader.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Kostnader</th>
+                                <th scope="col" class="text-end">Normalsatser</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end">(fra punkt 1) 55000000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">(fra punkt 1) 67000000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader - innkjøpsavdeling -</th>
+                                  <td class="text-end">(fra punkt 1) {{kjop}}</td>
+                                  <td class="text-end">{{kjop}}/55000000={{kjop_sat}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader - produksjonsavdeling -</th>
+                                  <td class="text-end">(fra punkt 1) {{produksjon}}</td>
+                                  <td class="text-end">{{produksjon}}/175000={{produksjon_sat}}kr/timer</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tilvirkningkost</th>
+                                  <td class="text-end">(fra punkt 1) {{tilvkost_a}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader salgs og administrasjonsavdeling</th>
+                                  <td class="text-end">(fra punkt 1) 6550000</td>
+                                  <td class="text-end">6550000/{{tilvkost_a}}={{adm_sat}}%</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Selvkost</th>
+                                  <td class="text-end">(fra punkt 1) {{selvkost_a}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjetterte timer</th>
+                                  <td class="text-end">(fra punkt 1) 175000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <ol class="ol-table start-2">
+                        <li>
+                          Du skal nå se nærmere på prosjekt i perioden januar 2020.
+                          Informasjon om prosjektene:
+                          <ol>
+                            <li>
+                               Ordre nr. 240 var ferdig tilvirket per 01.01 og solgt i januar 202.
+                            </li>
+                            <li>
+                              Ordre nr. 241 er per 01.01 påbegynt, men ikke ferdig tilvirket. 
+                              Den er ferdig produsert i løpet av januar og solgt.
+                            </li>
+                            <li>
+                              Ordre nr. 242 og 243 påbegynnes og ferdigstilles i januar. 
+                              Kun ordre 243 er solgt.
+                            </li>
+                          </ol>
+                        </li>
+                        <li>
+                          Direkte kostnader er ifølge materialrekvisisjoner og arbeidssedler i januar:
+                        </li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Ordre nr</th>
+                                <th scope="col" class="text-end">241</th>
+                                <th scope="col" class="text-end">242</th>
+                                <th scope="col" class="text-end">243</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end">1200000</td>
+                                  <td class="text-end">300000</td>
+                                  <td class="text-end">2300000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn i produksjonsavdeling</th>
+                                  <td class="text-end">650000</td>
+                                  <td class="text-end">235000</td>
+                                  <td class="text-end">1750000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall medgåtte timer</th>
+                                  <td class="text-end">1083</td>
+                                  <td class="text-end">392</td>
+                                  <td class="text-end">2917</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <ol class="ol-table start-4">
+                        <li>
+                          Vi har følgende opplysninger om påløpte direkte kostnader per 01.01:
+                        </li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Ordre nr</th>
+                                <th scope="col" class="text-end">240</th>
+                                <th scope="col" class="text-end">241</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end">{{dm_240}}</td>
+                                  <td class="text-end">{{dm_241}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn i produksjonsavdeling</th>
+                                  <td class="text-end">750000</td>
+                                  <td class="text-end">490000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall medgåtte timer</th>
+                                  <td class="text-end">1250</td>
+                                  <td class="text-end">817</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <ol class="ol-table start-5">
+                        <li>
+                          <strong>Virkelig</strong> forbruk av indirekte kostnader i januar er 
+                          ifølge kostnadsfordelingen:
+                        </li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">kostnadssteder</th>
+                                <th scope="col" class="text-end">Sum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Innkjøpsavdeling</th>
+                                  <td class="text-end">400000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produksjonsavdeling</th>
+                                  <td class="text-end">75000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgs og administrasjonsavdeling</th>
+                                  <td class="text-end">390000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <ol class="ol-table start-6">
+                        <li>
+                          <strong>Salgsinntektene</strong> er:
+                        </li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Ordre nr</th>
+                                <th scope="col" class="text-end">240</th>
+                                <th scope="col" class="text-end">241</th>
+                                <th scope="col" class="text-end">243</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                  <td class="text-end">2000000</td>
+                                  <td class="text-end">4200000</td>
+                                  <td class="text-end">4800000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      b. Utarbeid <strong>varelagervurdering for ordre 240 og 241</strong>.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">varelagervurdering</th>
+                                <th scope="col" class="text-end">240</th>
+                                <th scope="col" class="text-end">241</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte materialer</th>
+                                  <td class="text-end">(fra punkt 4) {{dm_240}}</td>
+                                  <td class="text-end">(fra punkt 4) {{dm_241}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn T1</th>
+                                  <td class="text-end">(fra punkt 4) 750000</td>
+                                  <td class="text-end">(fra punkt 4) 490000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte tilvirkningskostnader</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Materialforvaltning</th>
+                                  <td class="text-end">(fra punkter a og 4) {{dm_240}}*{{kjop_sat}}%={{indirek_mat_240}}</td>
+                                  <td class="text-end">(fra punkter a og 4) {{dm_241}}*{{kjop_sat}}%={{indirek_mat_241}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Produksjonsavdeling</th>
+                                  <td class="text-end">1250*20=25000</td>
+                                  <td class="text-end">817*20=16340</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tilvirkningskost</th>
+                                  <td class="text-end">{{tilvkost_240}}</td>
+                                  <td class="text-end">{{tilvkost_241}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      c. Utarbeid <strong>driftsregnskapet for januar 2020</strong> etter <strong>selvkostmetoden</strong>. 
+                      Driftsregnskapet skal spesifiseres for hver enkelt ordre. 
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Beskrivelse</th>
+                                <th scope="col" class="text-end">% eller t/kr</th>
+                                <th scope="col" class="text-end">240 (kr)</th>
+                                <th scope="col" class="text-end">241 (kr)</th>
+                                <th scope="col" class="text-end">242 (kr)</th>
+                                <th scope="col" class="text-end">243 (kr)</th>
+                                <th scope="col" class="text-end">Normal kost - Sum (kr) -</th>
+                                <th scope="col" class="text-end">Virkelig (kr)</th>
+                                <th scope="col" class="text-end">Dekningsdifferanse (kr)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 6) 2000000</td>
+                                  <td class="text-end">(fra punkt 6) 4200000</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 6) 4800000</td>
+                                  <td class="text-end">11000000</td>
+                                  <td class="text-end">11000000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte material</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3) 1200000</td>
+                                  <td class="text-end">(fra punkt 3) 300000</td>
+                                  <td class="text-end">(fra punkt 3) 2300000</td>
+                                  <td class="text-end">3800000</td>
+                                  <td class="text-end">3800000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn produksjonsavdeling</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3) 650000</td>
+                                  <td class="text-end">(fra punkt 3) 235000</td>
+                                  <td class="text-end">(fra punkt 3) 175000</td>
+                                  <td class="text-end">2635000</td>
+                                  <td class="text-end">2635000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Indirekte tilvirkningskostnader</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avdeling: innkjøpsavdeling</th>
+                                  <td class="text-end">(fra punkt a) {{kjop_sat}}%</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt a og 3) {{av_kjop_241}}</td>
+                                  <td class="text-end">(fra punkt a og 3) {{av_kjop_242}}</td>
+                                  <td class="text-end">(fra punkt a og 3) {{av_kjop_243}}</td>
+                                  <td class="text-end">{{av_kjop_sum}}</td>
+                                  <td class="text-end">(fra punkt 5) 400000</td>
+                                  <td class="text-end">{{av_kjop_dek}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avdeling: produksjonsavdeling</th>
+                                  <td class="text-end">(fra punkt a) {{produksjon_sat}}t/kr</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt a og 2) {{av_produksjon_241}}</td>
+                                  <td class="text-end">(fra punkt a og 2) {{av_produksjon_242}}</td>
+                                  <td class="text-end">(fra punkt a og 2) {{av_produksjon_243}}</td>
+                                  <td class="text-end">{{av_produksjon_sum}}</td>
+                                  <td class="text-end">(fra punkt 5) 75000</td>
+                                  <td class="text-end">{{av_produksjon_dek}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Tilvirkningkost i perioden</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{til_perioden_241}}</td>
+                                  <td class="text-end">{{til_perioden_242}}</td>
+                                  <td class="text-end">{{til_perioden_243}}</td>
+                                  <td class="text-end">{{til_perioden_sum}}</td>
+                                  <td class="text-end">6910000</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Beholdningsendringer VIA</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkter b og 2.2) {{tilvkost_241}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{tilvkost_241}}</td>
+                                  <td class="text-end">{{tilvkost_241}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Tilvirkningkost ferdige varer</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{til_ferd_241}}</td>
+                                  <td class="text-end">{{til_ferd_242}}</td>
+                                  <td class="text-end">{{til_ferd_243}}</td>
+                                  <td class="text-end">{{til_ferd_sum}}</td>
+                                  <td class="text-end">{{til_ferd_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Beholdningsendringer FV</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{tilvkost_240}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 2.3) {{behold_fv_242}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{behold_fv_sum}}</td>
+                                  <td class="text-end">{{behold_fv_sum}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Tilvirkningkost solgte varer</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{tilvkost_240}}</td>
+                                  <td class="text-end">{{til_ferd_241}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{til_ferd_243}}</td>
+                                  <td class="text-end">{{til_solgte_sum}}</td>
+                                  <td class="text-end">{{til_solgte_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte kostnader salgs og administrasjonsavdeling</th>
+                                  <td class="text-end">(fra punkt a) {{adm_sat}}%</td>
+                                  <td class="text-end">{{tilvkost_240}}*{{adm_sat}}%={{indirekt_adm_240}}</td>
+                                  <td class="text-end">{{indirekt_adm_241}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{indirekt_adm_243}}</td>
+                                  <td class="text-end">{{indirekt_adm_sum}}</td>
+                                  <td class="text-end">(fra punkt 5) 390000</td>
+                                  <td class="text-end">{{indirekt_adm_dek}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Selvkost</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{selv_240}}</td>
+                                  <td class="text-end">{{selv_241}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{selv_243}}</td>
+                                  <td class="text-end">{{selv_sum}}</td>
+                                  <td class="text-end">{{selv_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Produktresultat</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{resul_240}}</td>
+                                  <td class="text-end">{{resul_241}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{resul_243}}</td>
+                                  <td class="text-end">{{resul_sum}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Sum dekningsdifferanser</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{sum_dek}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{sum_dek}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Produksjonresultat</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{resultat_sum}}</td>
+                                  <td class="text-end">{{resultat_virk}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      d. <strong>Kommenter</strong> kort regnskapet (Disse kommentarene gjelder kun for den neste 
+                      parameterne.
+                      Indirekte kostnader, innkjøpsavdeling (kr): 5500000 kr; 
+                      Indirekte kostnader, produksjonsavdeling (kr): 3500000 kr;
+                      Direkte material, ordre 240 (kr): 1200000 kr;
+                      Direkte material, ordre 241 (kr): 560000 kr.)
+                      <br>
+                      <br>
+                      Dekningsdifferansane frå normalkostreknskapet og verkeleg resultat, 
+                      var samla sett ganske lavt. Noko som kan tyde på at bedrifta er realistisk og 
+                      har eit godt innarbeida budsjett. Ein ser at bedrifta har 
+                      berekna 20 000 kr for lite i indirekte tilverknadskost i innkjøpsavdelinga, 
+                      dette kan skuldast for mykje bruk av indirekte produksjonsfaktorar eller
+                      prisavvik frå det som er forutsatt. I produksjonsavdelinga
+                      har bedrifta berekna 7 913 kr for mykje i normalkostsum i 
+                      forhold til virkeleg kostnad. Dette kan skuldast til dømes skuldast at 
+                      bedrifta har nytta mindre arbeiskraft enn normalt. Når det gjeld 
+                      indirekte kostnadar i sals og administrasjonsavdelinga, har 
+                      bedrifta berekna 87 367 kr meir, dette kan også skuldast t.d. 
+                      mindre bruk av arbeidkraft enn normalt. Samla sett er dekningsdifferansen positiv, 
+                      dvs. at bedrifta har berekna høgare indirekte kostnadar enn verkelege kostnadar. 
+                      Dette skuldast nok at denne perioden hadde eit mindre aktivitetsnivå enn 
+                      ein normalperiode.
+                      <br>
+                      <br>
+                      Ein kan også til slutt sjå på prosjekt nr 240, som ikkje er lønsam. 
+                      Ved riktig bruk av budsjett før prosjektstart bør ein så godt som 
+                      mogleg prøve å unngå prosjekt som gjev underskot, og prioritere 
+                      prosjekt med god lønsemd slik som prosjekt nr 241. 
+                      Likevel har bedrifta eit godt resultat.
+                      <br>
+                      <br>
+                      e. Bedriften vurderer å føre driftsregnskapet etter <strong>bidragsmetoden</strong>. 
+                      Forklar hvordan dette vil påvirke produksjonsresultatet. 
+                      Svaret skal begrunnes verbalt (du skal ikke sette opp regnskapet 
+                      etter bidragsmetoden).
+                      <br>
+                      <br>
+                      Dersom bedrifta vel å føre driftsreknskapet etter bidragsmetoden vil dette 
+                      føre til forskjellar i normalkostreknskapen. Desse forskjellane skuldast forskjell 
+                      i kalkyleformene. I bidragsmetoden nyttar ein kun dei indirekte variable kostnadane, 
+                      medan ein i selvkostmetoden har med både dei faste og variable indirekte kostnadane.
+                      Når ein reknar normalkostrekneskapen etter selvkostmtoden vil ein komme fram til 
+                      produktresultat og produksjonsresultat, medan ein etter bidragsmetoden kjem fram 
+                      til dekningsbidrag og tilslutt produskjonsresultat når ein trekker irå alle faste 
+                      kostnadar. 
+                      <br>
+                      <br>
+                      Dersom bedrifta hadde ført driftsreknskapet etter bidragsmetoden istaden for 
+                      selvkostmetoden ville nok resultatet blitt noko betre. Den einaste grunnen til 
+                      dette er ulik vurdering av varebehaldninga, ved bruk av selvkostmetoden legg ein 
+                      til meir kostnadar (både faste og variable) enn ein gjer i bidragsmetoden som kun 
+                      legg til variable. Og når en har netto reduksjoner i varebeholdningene slik at 
+                      en skal legge til beholdningsendringene vil et mindre kostnadstillegg ved 
+                      bidragsmetoden enn ved selvkostmetoden gi et bedre resultat ved bidrags- 
+                      enn ved selvkostmetoden. Det er dog viktig å merke seg at dei faste kostnadane 
+                      like fullt er ein kostnad for verksemda sett under eitt.
+                    </p>
+            </div>        
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4 -->
+<section class="section_2" id="section4">
+    <div class="container" style="display:block;">
+        <h1>Oppgave 4</h1>
+    </div>
+
+    <div class="table-responsive-mobile" style="background-color: #9cd5c0;">
+    <div class="container" id="table4">
+        <div class="boa205_table">
+            <div class="box"> 
+                <legend class="border-bottom mb-4">{{ legend }}</legend>
+                    <form method="POST" action="">
+                        {{ form_boa205_ak1_t4.csrf_token }}
+                        <div class="boa205_table_button">
+                            <div class="box">
+                                {{ form_boa205_ak1_t4.var_adm.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t4.var_adm(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t4.enhet.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t4.enhet(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t4.faste_til.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t4.faste_til(class="form-control form-control-lg") }}
+                            </div>
+                            <div class="box">
+                                {{ form_boa205_ak1_t4.faste_adm.label(class="form-control-label") }}
+                                {{ form_boa205_ak1_t4.faste_adm(class="form-control form-control-lg") }}
+                            </div>
+                        </div>
+                        </br>
+                        <div class="form-group">
+                            {{ form_boa205_ak1_t4.submit(class="btn btn-primary btn-lg mr-2", style="background-color=#007bff;") }}
+                        </div>
+                    </form> 
+                    <br>
+                    <br>
+                    <p align="left">
+                      <ol class="ol-table">
+                        <li>Miljø Industri AS tilvirker et spesielt oppbevaringsskap. 
+                          Fremstillingen er basert på gjenvunnet mikroplast. Bedriften har en 
+                          tilvirkningsavdeling. Oppbevaringsskapet har følgende kalkyle:
+                        </li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte materialer</th>
+                                  <td class="text-end">600 kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">1000 kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte variable tilvirkningskostnader</th>
+                                  <td class="text-end">75 kr</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Budsjettert pris pr enhet</th>
+                                  <td class="text-end">2150 kr</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <ol class="ol-table start-2">
+                        <li>
+                          For 2021 bruker bedriften en standardpris pr kg materiell på kr 150. 
+                          Standard lønnssats er kr 400 pr time. Indirekte variable kostnader 
+                          tilv. innkalkuleres med kr 30 pr direkte time. 
+                          <strong>Indirekte variable kostnader salgs og administrasjon 
+                          er kr {{var_adm}} per solgte oppbevaringsskap.</strong>
+                        </li>
+                        <li>
+                          De <strong>faste kostnadene</strong> pr mnd er budsjettert til:
+                          <strong>Tilvirkningsavdelingen</strong> kr {{faste_til}}; 
+                          <strong>Salgs- og administrasjonsavdelingen</strong>:	kr {{faste_adm}}.
+                        </li>
+                        <li>
+                          I <strong>februar</strong> var det budsjettert med en 
+                          produksjon og et salg av 1 000 oppbevaringsskap.
+                        </li>
+                        <li>
+                          I <strong>slutten av mars</strong> forelå de endelige regnskapstallene 
+                          for <strong>februar</strong>:
+                        </li>
+                      </ol>
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekter:</th>
+                                  <td class="text-end">2300500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall produserte enheter</th>
+                                  <td class="text-end">{{enhet}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Antall solgte enheter</th>
+                                  <td class="text-end">{{enhet}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte materialer</th>
+                                  <td class="text-end">655000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">1034775</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte variable tilvirkningskostnader</th>
+                                  <td class="text-end">75750</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte variable salgs- og adm kostnader</th>
+                                  <td class="text-end">101650</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Faste tilvirkningskostnader</th>
+                                  <td class="text-end">201500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Faste salg- og adm kostnader</th>
+                                  <td class="text-end">184000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      <ol class="ol-table start-6">
+                        <li>
+                          <strong>Virkelig mengde</strong> er 4300 kg og 
+                          <strong>virkelig lønn</strong> er 405 kr/t.
+                        </li>
+                      </ol>
+                    </p>
+                    <p align="left">
+                      a. Vis at det i normalmåneden er forutsatt et forbruk på 
+                      4 kg materialer og 2,5 timer i produksjonen 
+                      ved tilvirkning av et oppbevaringsskap.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Kilo pr enhet</th>
+                                  <td class="text-end">(fra punkter 1 og 2) 160/150= 4 kg</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Timer pr enhet</th>
+                                  <td class="text-end">(fra punkter 1 og 2) 1000/400= 2.5 timer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                      b. Beregn <strong>standard mengde</strong> og 
+                      <strong>standard tid</strong> for februar 2021.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Standard mengde (Ms)</th>
+                                  <td class="text-end">(fra punkter a og 5) 1070*4=4280 kg</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Standard tid (Ts)</th>
+                                  <td class="text-end">(fra punkter a og 5) {{ts}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                     c. Før <strong>standardkostregnskapet</strong> for februar etter bidragsmetoden 
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col"></th>
+                                <th scope="col" class="text-end">Mengde</th>
+                                <th scope="col" class="text-end">Sats</th>
+                                <th scope="col" class="text-end">Standard kost</th>
+                                <th scope="col" class="text-end">Virkelig</th>
+                                <th scope="col" class="text-end">Avvik og DD</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Salgsinntekt</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 5) 2300500</td>
+                                  <td class="text-end">(fra punkt 5) 2300500</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dirkete materialer</th>
+                                  <td class="text-end">(fra punkt b) 4280 kg</td>
+                                  <td class="text-end">(fra punkt 2) 150 kr/kg</td>
+                                  <td class="text-end">642000</td>
+                                  <td class="text-end">(fra punkt 5) 655000</td>
+                                  <td class="text-end">Avvik -130000</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Direkte lønn</th>
+                                  <td class="text-end">(fra punkt b) 2675 timer</td>
+                                  <td class="text-end">(fra punkt 2) 400 kr/time</td>
+                                  <td class="text-end">1070000</td>
+                                  <td class="text-end">(fra punkt 5) 1034975</td>
+                                  <td class="text-end">Avvik 35225</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avvik direkte kostnader</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">22225</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte variable tilv kostnader</th>
+                                  <td class="text-end">(fra punkt b) 2675 timer</td>
+                                  <td class="text-end">(fra punkt 2) 30 kr/time</td>
+                                  <td class="text-end">80250</td>
+                                  <td class="text-end">(fra punkt 5) 75750</td>
+                                  <td class="text-end">DD 4500</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tilvirkningsmerkost</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">1792250</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Indirekte variable kostnad salg og administrasjon</th>
+                                  <td class="text-end">(fra punkt 5) {{enhet}}</td>
+                                  <td class="text-end">(fra punkt 2) {{var_adm}} kr/enhet</td>
+                                  <td class="text-end">{{iv_admin}}</td>
+                                  <td class="text-end">{{iv_admin}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Minimumskost</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{minkost}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Kalkulert dekningsbidrag</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{kal_dek}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Dekningsdifferenser</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">4500</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Avvik direkte kostnader</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">22225</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Virkelig dekningsbidrag</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{vir_dek}}</td>
+                                  <td class="text-end">{{vir_dek_vir}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Faste kostnader tilvirkning</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3) {{faste_til}}</td>
+                                  <td class="text-end">(fra punkt 5) 201500</td>
+                                  <td class="text-end">Avvik {{fast_til_dek}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"> Faste kostnader salgs og administrasjon</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">(fra punkt 3) {{faste_adm}}</td>
+                                  <td class="text-end">(fra punkt 5) 184000</td>
+                                  <td class="text-end">Avvik {{fast_adm_dek}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Foreløpig resultat</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{fore}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">+/-Avvik faste kostnad</th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{fast_avvik}}</td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{fast_avvik}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal"><strong>Produksjonsresultat</strong></th>
+                                  <td class="text-end"></td>
+                                  <td class="text-end"></td>
+                                  <td class="text-end">{{produk_std}}</td>
+                                  <td class="text-end">{{produk_vir}}</td>
+                                  <td class="text-end"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                     d. Sett opp <strong>lønnsregnskapet</strong> for februar. Kommenter avvikene.
+                    </p>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn standard (Ls)</th>
+                                  <td class="text-end">(fra punkt 2) 400</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Lønn virkelig (Lv)</th>
+                                  <td class="text-end">(fra punkt 6) 405</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Ts</th>
+                                  <td class="text-end">(fra punkt b) {{ts}}</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row" class="fw-normal">Tv</th>
+                                  <td class="text-end">(fra punkter c og 6) 1034775/405=2555</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br>
+                    <div class="table-responsive-mobile">
+                        <table class="table table-striped table-sm">
+                            <thead class="table-primary">
+                                <tr>
+                                <th scope="col">Standardkostnader (Ls*Ts) (1)</th>
+                                <th scope="col" class="text-end">Virkelig kostander vuderdert til Ls (Ls*Tv) (2)</th>
+                                <th scope="col" class="text-end">Virkelige kostander (lv*Tv) (3)</th>
+                                <th scope="col" class="text-end">Tidsavvik (1-2)</th>
+                                <th scope="col" class="text-end">Lønnsatsavvik (2-3)</th>
+                                <th scope="col" class="text-end">Totalavvik (1-3)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                  <th scope="row" class="fw-normal">{{ls_ts}}</th>
+                                  <td class="text-end">1022000</td>
+                                  <td class="text-end">1034775</td>
+                                  <td class="text-end">{{one_two}}</td>
+                                  <td class="text-end">-12775</td>
+                                  <td class="text-end">{{one_three}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p align="left">
+                     Tolkning:
+                     <ul align="left">
+                      <li>
+                        Brukt kortere tid enn forutsatt (mer erfarne medarbeidere?)
+                      </li>
+                      <li>
+                        Høyere timelønn enn forutsatt. Mer erfarne arbeidere har i snitt høyere lønn.
+                      </li>
+                      <li>
+                        Noe sykemeldinger, noen må ha jobbet mer overtid.
+                      </li>
+                     </ul>
+                    </p>
+            </div>        
+        </div>
+    </div>
+  </div>
+ 
+</section>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
