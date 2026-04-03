@@ -38,3 +38,13 @@
 .ol-table.start-5 {
   counter-reset: item 4;
 }
+
+/* Custom starting points */
+.ol-table.start-6 {
+  counter-reset: item 5;
+}
+
+/* Custom starting points */
+.ol-table.start-7 {
+  counter-reset: item 6;
+}
