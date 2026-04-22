@@ -1,0 +1,281 @@
+
+.register_section_css {
+  --bg: #ece7de;
+  --card-light: linear-gradient(135deg, #f6f1e9 0%, #efe7dc 100%);
+  --card-dark: linear-gradient(135deg, #376921 0%, #1d3a53 100%);
+  --text-dark: #4b8f2e;
+  --text-soft: #52635d;
+  --white-soft: #edf3f1;
+  --primary: #4b8f2e;
+  --primary-hover: #5fb43b;
+  --border: rgba(23, 51, 48, 0.14);
+
+  background-color: var(--bg);
+  padding: 56px 0 80px 0;
+}
+
+.register_section_css .register-wrap {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+
+.register_section_css .register-card {
+  background: var(--card-light);
+  border-radius: 28px;
+  padding: 36px 34px;
+  box-shadow: 0 16px 34px rgba(24, 40, 38, 0.08);
+  min-height: 560px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.register_section_css .register-logo {
+  background: var(--card-dark);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 0 18px 40px rgba(24, 40, 38, 0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 560px;
+}
+
+
+.register_section_css .logo-bubble {
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.18);
+}
+
+.register_section_css .logo-bubble img {
+  width: 110%;
+  height: 110%;
+  object-fit: contain;
+  display: block;
+}
+
+
+.register_section_css legend {
+  margin: -10px 0 10px 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  font-size: 56px;
+  line-height: 1.30;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-dark);
+}
+
+
+.register_section_css .form-control-label {
+  display: none;
+}
+
+.register_section_css .form-group {
+  margin-bottom: 14px;
+}
+
+
+.register_section_css .form-control {
+  width: 100%;
+  box-sizing: border-box;
+  height: 52px;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fffdfa;
+  color: var(--text-dark);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.register_section_css .form-control::placeholder {
+  color: #73857f;
+}
+
+.register_section_css .form-control:focus {
+  border-color: #2f6b60;
+  box-shadow: 0 0 0 3px rgba(47, 107, 96, 0.12);
+}
+
+.register_section_css .is-invalid {
+  border-color: #c94b4b !important;
+  box-shadow: 0 0 0 3px rgba(201, 75, 75, 0.10);
+}
+
+
+.register_section_css .invalid-feedback {
+  margin-top: 6px;
+  color: #a03434;
+  font-size: 14px;
+}
+
+
+.register_section_css .form-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0 20px 0;
+}
+
+.register_section_css .form-check-input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+
+.register_section_css .form-check-label {
+  margin: 0;
+  font-size: 16px;
+  color: #31423d;
+}
+
+
+.register_section_css .register-btn {
+  width: 100%;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.08s ease;
+  box-shadow: none;
+}
+
+.register_section_css .register-btn:hover {
+  background-color: var(--primary-hover);
+  box-shadow: none;
+  filter: none;
+}
+
+.register_section_css .register-btn:active {
+  transform: translateY(1px);
+}
+
+
+.register_section_css .register-footer {
+  margin-top: 18px;
+  padding-top: 18px !important;
+  border-top: 1px solid rgba(23, 51, 48, 0.08) !important;
+}
+
+.register_section_css .register-footer small {
+  font-size: 15px;
+  color: #44544f;
+}
+
+.register_section_css .register-footer a {
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register_section_css .register-footer a:hover {
+  text-decoration: underline;
+}
+
+
+.register_section_css .alert {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.register_section_css .alert-success {
+  background-color: #dff2e4;
+  color: #215a34;
+}
+
+.register_section_css .alert-danger {
+  background-color: #f7dede;
+  color: #7b2d2d;
+}
+
+.register_section_css .alert-warning {
+  background-color: #f8eed0;
+  color: #7a5a00;
+}
+
+.register_section_css .alert-info {
+  background-color: #dcecf8;
+  color: #285a7a;
+}
+
+
+.register_section_css .border-bottom {
+  border-bottom: none !important;
+}
+
+.register_section_css .mb-4 {
+  margin-bottom: 0 !important;
+}
+
+.register_section_css .border-top {
+  border-top: none;
+}
+
+.register_section_css .pt-3 {
+  padding-top: 0 !important;
+}
+
+
+@media (max-width: 1000px) {
+  .register_section_css .register-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .register_section_css .register-card,
+  .register_section_css .register-logo {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .register_section_css {
+    padding: 20px 0 80px 0;
+  }
+
+  .register_section_css .register-wrap {
+    width: 92%;
+    gap: 20px;
+  }
+
+  .register_section_css .register-card,
+  .register_section_css .register-logo {
+    padding: 26px 22px;
+    border-radius: 22px;
+  }
+
+  .register_section_css legend {
+    font-size: 40px;
+  }
+
+  .register_section_css .logo-bubble {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+
