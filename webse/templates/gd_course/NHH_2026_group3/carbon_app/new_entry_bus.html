@@ -1,0 +1,95 @@
+{% extends "gd_course/NHH_2026_group3/layout.html" %}
+{% block content %}
+
+<section class="new_entry">
+  <div class="container">
+      <div class="box">
+
+      </div>
+
+      <div class="box">   
+        <div class="h1 mb-3" style="text-align: center;">
+          <i class="fa-solid fa-bus"></i>
+        </div>
+        <h3>Bus</h3>
+        <p>
+          <ol style="text-align: left;">
+            <li>
+              Please, enter the number of kilometers.
+            </li>
+            <li>
+              Please, select the type of fuel
+            </li>
+          </ol>
+        </p>
+          <form method="POST" action="">
+              {{ form.csrf_token }}
+              <fieldset class="form-group">
+
+                <div class="form-group">
+                    {{ form.kms.label(class="form-control-label") }}
+                    {% if form.kms.errors %}
+                        {{ form.kms(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.kms.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.kms(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.fuel_type.label(class="form-control-label") }}
+                    {% if form.fuel_type.errors %}
+                        {{ form.fuel_type(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.fuel_type.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.fuel_type(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+
+              </fieldset>
+              </br>
+              <div class="form-group">
+                {{ form.submit(class="btn_carbon_app_new_entry_main") }}
+              </div>
+          </form>
+      </div>
+
+      <div class="box">
+        <h3>Our Methodology</h3>
+        <p style="text-align: left;">
+         Buses are a common form of public transport used in cities and between towns. Because many passengers share the same vehicle, emissions per person are often lower compared to private transport.
+        </p>
+
+        <p style="text-align: left;">
+          <strong>Using the formula:</strong>
+          <br>
+          \(CO_{2} = \text{Distance travelled} \cdot \text{Emissions per kilometers}\)
+        </p>
+
+       <p style="text-align: left;">
+          <strong>Emission factors:</strong>
+          <br>
+          Diesel: 0.025 kg/km per passenger
+          <br>
+          Biodiesel: 0.007 kg/km per passenger
+          <br>
+          <br>
+          <br>
+          <a href="{{ url_for('static', filename='pdfs/our_paper.pdf') }}#page=8" class="btn-ghost" target="_blank">
+            Our Methodology Paper
+           </a>
+        </p>
+      </div>
+  </div>
+</section> 
+
+{% endblock content %}
+

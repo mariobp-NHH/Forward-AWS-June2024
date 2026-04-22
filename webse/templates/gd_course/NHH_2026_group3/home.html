@@ -1,0 +1,152 @@
+{% extends "gd_course/NHH_2026_group3/layout.html" %}
+{% block content %}
+
+<section class="hero-section">
+  <div class="hero-layer">
+    <div class="hero-inner">
+    
+      <h1>Every trip matters <br> <br> </h1>
+      </p>
+          <div class="hero-actions">
+          {% if current_user.is_authenticated %}
+              <a href="{{ url_for('gd_course_NHH_2026_group3.carbon_app_home') }}" class="btn-main">Explore now</a>
+          {% else %}
+              <a href="{{ url_for('gd_course_NHH_2026_group3.register') }}" class="btn-main">Explore now</a>
+          {% endif %}
+              <a href="#about-us" class="btn-ghost">Meet the team</a>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="intro-panel-section">
+  <div class="intro-panel">
+    <div class="intro-panel-left">
+      <p class="section-tag">Our mission:</p>
+      <h2>Make sustainability easier to understand</h2>
+    </div>
+
+    <div class="intro-panel-right">
+      <p>
+        CarbonTrack helps users see how daily travel choices shape their carbon
+        footprint. The goal is to make sustainability feel clearer, more visual
+        and easier to improve.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about-us">
+  <div class="about-header">
+    <h2>The team behind CarbonTrack</h2>
+  </div>
+
+<div class="team-grid">
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group3/pictures/Elias.jpeg" alt="Elias Kyte">
+      <h3>Elias Kyte</h3>
+
+      <div class="profile-info">
+        <span>20 years old • Bergen</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/elias-kyte-612b91268/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group3/pictures/Trond.jpeg" alt="Trond Heløe">
+       <h3>Trond Heløe</h3>
+
+      <div class="profile-info">
+        <span>21 years old • Oslo</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/trond-heidenreich-hel%C3%B8e-604a61255/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group3/pictures/Filip.png" alt="Filip Odgaard Dimcevski">
+      <h3>Filip Odgaard Dimcevski</h3>
+
+      <div class="profile-info">
+        <span>20 years old • Bergen</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/filip-dimcevski-3a3887382/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group3/pictures/Sarah.jpeg" alt="Sarah Hess">
+      <h3>Sarah Hess</h3>
+
+      <div class="profile-info">
+        <span>21 years old • Vienna</span>
+        <span>Student at WU Vienna</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/sarah-he%C3%9F-613b37297/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group3/pictures/Victor.jpeg" alt="Victor Rande">
+      <h3>Victor Rande</h3>
+
+      <div class="profile-info">
+        <span>21 years old • Oslo</span>
+        <span>Student at NHH</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/victor-rande-7708ab358/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="profile-card">
+    <div class="profile-top"></div>
+    <div class="profile-content">
+      <img src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group3/pictures/Loic.jpg" alt="Loic Maleck">
+      <h3>Loic Maleck</h3>
+
+      <div class="profile-info">
+        <span>20 years old • Germany</span>
+        <span>Student at WU Vienna</span>
+      </div>
+
+      <a href="https://www.linkedin.com/in/lo%C3%AFc-maleck-404a52296/" target="_blank" class="profile-btn">LinkedIn</a>
+    </div>
+  </div>
+
+</div>
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
