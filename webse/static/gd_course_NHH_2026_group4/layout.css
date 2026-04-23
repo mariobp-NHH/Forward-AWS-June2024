@@ -1,0 +1,287 @@
+/* ============================================
+   LAYOUT STYLES (layout.html)
+   
+   This is the BASE stylesheet loaded on every
+   page. It controls elements that appear on
+   ALL pages: the navbar, the footer, and
+   global CSS resets.
+   
+   Page-specific styles live in their own files:
+   - home.css        → Home page
+   - methodology.css → Methodology page
+   - carbon_app.css  → Calculator + Dashboard
+   
+   Color palette (site-wide):
+   - #14532d  Darkest green (logo text, nav links)
+   - #1b4332  Deep green (hover states)
+   - #2d6a4f  Medium green (buttons)
+   - #e8e6df  Light beige (navbar, footer, backgrounds)
+   - #cdc3b7  Medium beige (cards, containers)
+   ============================================ */
+
+
+/* ============================================
+   1. CSS RESET & GLOBAL DEFAULTS
+   Applied to every element on every page.
+   ============================================ */
+
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+/* Reset default browser spacing */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #fff;
+  line-height: 1.6;
+}
+
+/* Site-wide content container (max 1320px, centered) */
+.container {
+  margin: auto;
+  max-width: 1320px;
+}
+
+/* Remove bullet points from all lists */
+ul {
+  list-style: none;
+}
+
+/* Default link styling */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Default heading weight */
+h1, h2 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Default paragraph styling */
+p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* Make images responsive by default */
+img {
+  width: 100%;
+}
+
+
+/* ============================================
+   2. NAVBAR
+   Horizontal bar at the top of every page.
+   Contains: logo (left), nav links (center),
+   and logout/login button (right).
+   ============================================ */
+
+/* Navbar section background */
+.section_carbon_app_navbar {
+  background-color: #e8e6df;
+}
+
+/* Main navbar flex container */
+.carbon_app_navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 70px;
+  align-items: center;
+  background-color: #e8e6df;
+}
+
+/* Nav element inside navbar (holds center + right link groups) */
+.carbon_app_navbar nav {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* All navbar links */
+.carbon_app_navbar a {
+  color: #14532d;
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/* Underline effect on hover */
+.carbon_app_navbar a:hover {
+  border-bottom: #14532d 4px solid;
+}
+
+/* Navbar link lists (horizontal row) */
+.carbon_app_navbar ul {
+  display: flex;
+  flex-direction: row;
+}
+
+/* --- Logo --- */
+
+/* Logo container */
+.carbon_app_navbar .logo {
+  color: white;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Arial';
+}
+
+/* Logo link (no underline, no hover border) */
+.carbon_app_navbar .logo a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: inherit;
+}
+
+.carbon_app_navbar .logo a:hover {
+  border-bottom: none !important;
+  color: white;
+}
+
+/* --- Nav link groups --- */
+
+/* Center links (Home, Methodology, Calculator) */
+.nav-center {
+  justify-content: center;
+  flex: 1;
+}
+
+/* Right links (Logout/Login button) */
+.nav-right {
+  justify-content: flex-end;
+}
+
+/* Green text used in the logo ("Green" in "GreenRoute") */
+.text-logo {
+  color: #14532d;
+}
+
+/* --- Logout / Login button --- */
+
+.logout-btn {
+  background-color: #e8e6df;
+  color: #ffffff;
+  border: 2px solid #14532d;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background-color: #14532d;
+  color: #ffffff;
+}
+
+
+/* ============================================
+   3. FOOTER
+   Horizontal bar at the bottom of every page.
+   Three sections: brand name (left), scroll-up
+   arrow (center), and nav links (right).
+   ============================================ */
+
+/* Footer section background */
+.section_footer {
+  background-color: #e8e6df;
+}
+
+/* Footer flex container */
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  height: 60px;
+}
+
+/* "GreenRoute © 2026" text on the left */
+.footer_left {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Scroll-up arrow in the center */
+.footer_center a {
+  padding: 0;
+  margin: 0;
+}
+
+.footer_center a:hover {
+  border-bottom: none;
+}
+
+/* Arrow lift effect on hover */
+.footer_center a:hover i {
+  transform: translateY(-3px);
+  color: #1b4332 !important;
+}
+
+/* Navigation links on the right (Home, Methodology, Calculator) */
+.footer_links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer_links a {
+  color: #14532d;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  padding: 0;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.footer_links a:hover {
+  color: #1b4332;
+  text-decoration: none;
+  border-bottom: #14532d 4px solid;
+}
+
+
+/* ============================================
+   4. RESPONSIVE
+   Adjustments for tablets and phones.
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Stack navbar vertically */
+  .carbon_app_navbar {
+    height: 180px;
+    flex-direction: column;
+  }
+
+  /* Smaller nav links on mobile */
+  .carbon_app_navbar a {
+    font-size: 15px;
+    padding: 5px 20px;
+  }
+
+  /* Stack nav links vertically */
+  .carbon_app_navbar ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Thinner underline on mobile hover */
+  .carbon_app_navbar a:hover {
+    color: #14532d;
+    border-bottom: #14532d 2px solid;
+  }
+}

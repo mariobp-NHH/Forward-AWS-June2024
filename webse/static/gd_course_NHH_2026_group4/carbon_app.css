@@ -1,0 +1,534 @@
+/* ============================================
+   CARBON APP STYLES
+   
+   This file controls the styling for all
+   Carbon App pages:
+   - carbon_app.html    → Calculator main page (transport cards)
+   - new_entry_*.html   → Entry forms (bus, car, plane, etc.)
+   - your_data.html     → Dashboard (charts + table)
+   
+   Pages that also use styles from this file:
+   - login.html / register.html use classes
+     from home.css (.login-page, .login-container)
+   
+   Color palette:
+   - #e8e6df  Light beige (page backgrounds)
+   - #cdc3b7  Medium beige (cards, form boxes)
+   - #14532d  Dark green (text, accents)
+   - #2d6a4f  Medium green (buttons)
+   - #1b4332  Darkest green (button hover)
+   - #c0b5a5  Dark beige (card hover)
+   - #d97706  Amber (warning nudge border)
+   - #7c3e00  Dark amber (warning nudge text)
+   ============================================ */
+
+/* ============================================
+   1. GLOBAL UTILITIES
+   Overrides for paragraphs and headings
+   on Carbon App pages.
+   ============================================ */
+
+p {
+  margin: 10px 0;
+  font-size: 18px;
+  text-align: left;
+}
+
+h4 {
+  font-size: 18px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Green text class (used in dashboard title) */
+.text-logo {
+  color: #14532d;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Arial";
+}
+
+/* ============================================
+   2. CALCULATOR MAIN PAGE (carbon_app.html)
+   The page where users pick a transport mode.
+   Has: title, 3-step instructions, two buttons
+   (Methodology + Dashboard), and 8 transport cards.
+   ============================================ */
+
+/* --- 2a. Header section (title + instructions + buttons) --- */
+
+/* Beige background section */
+.section_header_carbon_app {
+  background-color: #e8e6df;
+  padding: 40px 0;
+}
+
+/* Flex container centering the content box */
+.header_carbon_app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+/* Content box (holds title, steps, buttons) */
+.header_carbon_app .box {
+  flex: 1;
+  max-width: 900px;
+  background: transparent;
+  color: #14532d;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+}
+
+/* "How to use GreenRoute in 3 steps:" subtitle */
+.carbon_app_subtitle {
+  color: #14532d;
+  font-size: 22px;
+  font-weight: 700;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Beige box containing the numbered steps */
+.carbon_app_instructions {
+  background: #cdc3b7;
+  color: #14532d;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* The ordered list inside the instructions box */
+.carbon_app_steps {
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto 20px;
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #14532d;
+}
+
+.carbon_app_steps li {
+  margin-bottom: 6px;
+}
+
+/* Container for Methodology + Dashboard buttons */
+.container_buttons_links_header_carbon_app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* --- 2b. Transport cards grid --- */
+/* 8 clickable cards (Bicycle, Walk, Bus, Car, 
+   Plane, Train, Ferry, Motorbike).
+   Each card is an <a> tag linking to the 
+   corresponding new_entry_*.html form. */
+
+/* Section background */
+.section_carbon_app_new_entry_main {
+  background-color: #e8e6df;
+  padding-bottom: 40px;
+}
+
+/* Flex container wrapping all 8 cards */
+.carbon_app_new_entry_main {
+  display: flex;
+  align-items: stretch;
+  background: transparent;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Each clickable transport card
+   flex: 0 calc(25% - 12px) = exactly 4 per row */
+.carbon_app_new_entry_main .box {
+  flex: 0 calc(25% - 12px);
+  background: #cdc3b7;
+  color: #14532d;
+  border-radius: 12px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  min-height: 240px;
+}
+
+/* Card hover: lift + darken + shadow */
+.carbon_app_new_entry_main .box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(20, 83, 45, 0.25);
+  background-color: #c0b5a5;
+  text-decoration: none;
+  color: #14532d;
+}
+
+/* Transport name inside card (e.g. "Bus") */
+.carbon_app_new_entry_main .box h3 {
+  margin: 8px 0;
+  color: #14532d;
+}
+
+/* Description text inside card */
+.carbon_app_new_entry_main .box p {
+  text-align: center;
+  margin-bottom: 0;
+  color: #14532d;
+}
+
+/* ============================================
+   3. ENTRY FORMS (new_entry_*.html)
+   Individual form pages for each transport mode.
+   Each page has: nudge banner, form fields,
+   and Back + Submit buttons.
+   ============================================ */
+
+/* --- 3a. Full-page centered layout --- */
+/* The form sits inside a 3-column layout:
+   empty | form card | empty
+   This centers the form on the page. */
+
+.new_entry {
+  display: flex;
+  background: #e8e6df;
+  min-height: calc(100vh - 80px);
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* --- 3b. Submit button (green) --- */
+
+.btn_carbon_app_new_entry_main {
+  display: inline-block;
+  padding: 10px 22px;
+  margin: 10px;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #2d6a4f;
+  border: 2px solid #2d6a4f;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn_carbon_app_new_entry_main:hover {
+  color: #fff;
+  background-color: #14532d;
+  border-color: #14532d;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(20, 83, 45, 0.25);
+}
+
+/* --- 3c. Back button (sits next to Submit) --- */
+
+.btn_carbon_app_back {
+  display: inline-block;
+  padding: 10px 22px;
+  margin: 10px;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #2d6a4f;
+  border: 2px solid #2d6a4f;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn_carbon_app_back:hover {
+  color: white;
+  background-color: #14532d;
+  border-color: #14532d;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(20, 83, 45, 0.25);
+}
+
+/* --- 3d. Nudge banners (behavioral design) ---
+   Shown above the form to prompt reflection
+   before the user logs a trip.
+   Two variants:
+   - positive (green border): eco-friendly modes
+   - warning (amber border): high-emission modes */
+
+.nudge_banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  margin: 16px 0;
+  border-radius: 10px;
+  text-align: left;
+  border-left: 4px solid;
+}
+
+/* Green variant (bus, train, bicycle, walk) */
+.nudge_banner_positive {
+  background: rgba(255, 255, 255, 0.5);
+  border-left-color: #14532d;
+  color: #1b4332;
+}
+
+/* Amber variant (car, plane, ferry, motorbike) */
+.nudge_banner_warning {
+  background: rgba(255, 255, 255, 0.5);
+  border-left-color: #d97706;
+  color: #7c3e00;
+}
+
+/* Emoji icon inside the nudge banner */
+.nudge_icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Nudge banner title ("Before you log this trip...") */
+.nudge_content h4 {
+  margin: 0 0 4px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: inherit;
+  text-align: left;
+}
+
+/* Nudge banner comparison text */
+.nudge_content p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: inherit;
+}
+
+/* Bold text inside nudge (e.g. "10x more CO2") */
+.nudge_content strong {
+  color: inherit;
+  font-weight: 700;
+}
+
+/* ============================================
+   4. DASHBOARD (your_data.html)
+   Shows: title, "New Entry" button, 4 charts
+   (2 pie + 2 line), and a data table.
+   ============================================ */
+
+/* --- 4a. Dashboard header (title + subtitle + button) --- */
+
+/* Section background */
+.section_dashboard_nav {
+  background: #e8e6df;
+  padding: 30px 0;
+}
+
+/* Stacks title, subtitle, and button vertically */
+.dashboard_nav_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* "Your Carbon Dashboard" title */
+.dashboard_title {
+  color: #14532d;
+  font-size: 62px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 0 0 18px 0;
+  text-align: center;
+}
+
+/* "Showing data from the last 5 days" subtitle */
+.dashboard_subtitle {
+  color: #555;
+  font-size: 18px;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+/* --- 4b. Big "New Entry" button --- */
+
+.big_entry_btn {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  padding: 24px 40px;
+  background-color: #2d6a4f;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  border-radius: 14px;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(20, 83, 45, 0.2);
+}
+
+.big_entry_btn:hover {
+  background-color: #1b4332;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(20, 83, 45, 0.3);
+}
+
+/* --- 4c. Charts (two side-by-side per row) --- */
+
+.two_emissions_graphs {
+  display: flex;
+  background: #e8e6df;
+}
+
+.two_emissions_graphs .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Each chart box (beige card with shadow) */
+.two_emissions_graphs .container .box {
+  flex: 1;
+  background: #cdc3b7;
+  border-radius: 12px;
+  margin: 20px 0;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* --- 4d. Table heading --- */
+
+.table_title {
+  text-align: center;
+  color: #14532d;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* ============================================
+   5. SHARED 3-COLUMN LAYOUT
+   Pattern: empty | content | empty
+   Centers a content card on screen.
+   Used by: .new_entry (forms), .table_main 
+   (data table), .main_menu (dashboard header)
+   ============================================ */
+
+/* All three sections share the same background */
+.new_entry,
+.table_main,
+.main_menu {
+  display: flex;
+  background: #e8e6df;
+}
+
+/* 3-column flex container */
+.new_entry .container,
+.table_main .container,
+.main_menu .container {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  background: transparent;
+}
+
+/* Columns 1 and 3: invisible spacers */
+.new_entry .container .box,
+.table_main .container .box,
+.main_menu .container .box {
+  flex: 1;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+}
+
+/* Column 2: the visible beige content card */
+.new_entry .container .box:nth-of-type(2),
+.table_main .container .box:nth-of-type(2),
+.main_menu .container .box:nth-of-type(2) {
+  flex-grow: 6;
+  max-width: 450px;
+  background: #cdc3b7;
+  color: #14532d;
+  border-radius: 12px;
+  margin: 20px 10px;
+  padding: 20px 22px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Table needs full width (no max-width cap) */
+.table_main .container .box:nth-of-type(2) {
+  max-width: none;
+}
+
+/* ============================================
+   6. MISC COMPONENTS
+   Small reusable pieces used across
+   multiple Carbon App pages.
+   ============================================ */
+
+/* Button container on old-style card layouts */
+.section_container_buttons_carbon_app_new_entry_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Button container on dashboard main menu */
+.container_buttons_links_main_menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* ============================================
+   7. RESPONSIVE
+   Adjustments for tablets and phones.
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Stack header and cards vertically */
+  .header_carbon_app,
+  .carbon_app_new_entry_main {
+    flex-direction: column;
+  }
+
+  /* Stack all 3-column layouts vertically */
+  .new_entry .container,
+  .table_main .container,
+  .main_menu .container,
+  .two_emissions_graphs .container {
+    flex-direction: column;
+    padding: 10px;
+    text-align: center;
+  }
+}

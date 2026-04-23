@@ -1,0 +1,393 @@
+/* ============================================
+   HOME PAGE STYLES
+   
+   This file controls the styling for the
+   Home page (home.html).
+   
+   Page structure:
+   1. Hero section (full-screen with background image)
+      - GreenRoute title
+      - Three taglines
+      - Register / Login buttons (if not logged in)
+   2. About Us section
+      - Title + description paragraph
+      - Developer cards (2 rows of 3)
+      - LinkedIn buttons
+   3. Group photo section (background image)
+   4. Login / Register pages
+   5. Flash messages (success/info alerts)
+
+   Color palette:
+   - #14532d  Darkest green (title text, labels)
+   - #2d6a4f  Medium green (buttons)
+   - #1b4332  Deep green (button hover, headings)
+   - #e8e6df  Light beige (section backgrounds)
+   - #cdc3b7  Medium beige (developer cards, login box)
+   ============================================ */
+
+/* ============================================
+   1. GLOBAL UTILITIES
+   ============================================ */
+
+p {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* ============================================
+   2. HERO SECTION
+   Full-viewport section with background image,
+   semi-transparent overlay, title, taglines,
+   and login/register buttons.
+   ============================================ */
+
+/* Hero container with background image + overlay
+   Note: the background image is set here, NOT inline
+   in the HTML. If you change the image filename,
+   update the url() path below. */
+.section_header_home {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(205, 195, 183, 0.4) 0%,
+      rgba(217, 209, 196, 0.4) 100%
+    ),
+    url("https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/FOR19HOMEPAGE.jpeg")
+      center/cover no-repeat;
+  padding: 40px 0 60px;
+  min-height: calc(105vh - 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Flex container inside the hero */
+.header_home {
+  display: flex;
+  align-items: start;
+}
+
+/* The box holding all hero content */
+.header_home .box {
+  flex: 1;
+  flex-grow: 2;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Hero title ("GreenRoute") --- */
+.home-title {
+  font-size: 140px;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* The green "GreenRoute" text inside the title */
+.home-title .text-logo {
+  color: #14532d;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Reusable green text class (used across multiple pages) */
+.text-logo {
+  color: #14532d;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Arial";
+}
+
+/* --- Hero taglines --- */
+/* Three short lines below the title:
+   "Track your transport emissions."
+   "Compare your options."
+   "Travel greener." */
+.home_tagline {
+  color: #e8e6df;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  margin: 6px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.5px;
+}
+
+/* --- Hero buttons container (Register / Login) --- */
+.container_buttons_links_header_home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Green hero buttons */
+.home_btn {
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-size: 22px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.home_btn:hover {
+  background-color: #1b4332;
+  border-color: #1b4332;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(27, 67, 50, 0.25);
+  text-decoration: none;
+}
+
+/* ============================================
+   3. ABOUT US SECTION
+   Contains the "About Us" title, description
+   paragraph, and two rows of developer cards
+   with photos and LinkedIn buttons.
+   ============================================ */
+
+/* Section background */
+.section_developers {
+  background-color: #e8e6df;
+}
+
+/* "About Us" title */
+.about_us_title {
+  font-size: 62px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 18px;
+  font-family: "Arial", sans-serif;
+}
+
+/* Description paragraph below the title */
+.about_us_text {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #1b4332;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Developer cards layout --- */
+
+/* Flex container for each row of 3 cards */
+.developers {
+  display: flex;
+  align-items: start;
+  background: #e8e6df;
+}
+
+/* Developer card (row 1 uses .box, row 2 uses .box2)
+   Both are styled identically */
+.developers .box,
+.developers .box2 {
+  flex: 1;
+  flex-grow: 4;
+  background: #cdc3b7;
+  color: #1b4332;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 15px 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center the name and title text inside cards */
+.developers .box h3,
+.developers .box2 h3,
+.developers .box p,
+.developers .box2 p {
+  text-align: center;
+}
+
+/* --- LinkedIn buttons --- */
+
+/* Container for the LinkedIn button inside each card */
+.section_container_buttons_developers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+/* Green LinkedIn button */
+.btn_developers {
+  padding: 10px 20px;
+  margin: 10px;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  background-color: #2d6a4f;
+  border: 2px solid #2d6a4f;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn_developers:hover {
+  color: #fff;
+  background-color: #1b4332;
+  border-color: #1b4332;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(27, 67, 50, 0.25);
+}
+
+/* ============================================
+   4. GROUP PHOTO SECTION
+   Full-width background image of the team,
+   displayed at the bottom of the home page.
+   The image path is set in the url() below.
+   ============================================ */
+
+.img_of_the_group {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(205, 195, 183, 0.5) 0%,
+      rgba(217, 209, 196, 0.5) 100%
+    ),
+    url("https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/grp-img-FOR19.jpg")
+      center/cover no-repeat;
+  padding: 40px 0 60px;
+  min-height: calc(50vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* ============================================
+   5. LOGIN / REGISTER PAGES
+   Shared styling for both the login and
+   register forms. These pages use the same
+   layout.html but different form content.
+   ============================================ */
+
+/* Full-page beige background */
+.login-page {
+  background-color: #e8e6df;
+  min-height: 100vh;
+  padding: 60px 0;
+}
+
+/* Centered card containing the form */
+.login-container {
+  background-color: #cdc3b7;
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Form title (e.g. "Login", "Register") */
+.login-container h1 {
+  color: #14532d;
+  font-family: "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+/* Form field labels */
+.login-container label {
+  color: #14532d;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* Submit button on login/register forms */
+.login-container .btn-primary {
+  background-color: #2d6a4f;
+  border-color: #2d6a4f;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+.login-container .btn-primary:hover {
+  background-color: #1b4332;
+  border-color: #1b4332;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(27, 67, 50, 0.25);
+}
+
+/* Links inside the form (e.g. "Don't have an account? Register") */
+.login-container a {
+  color: #2d6a4f;
+  font-weight: 600;
+}
+
+.login-container a:hover {
+  color: #1b4332;
+  text-decoration: underline;
+  border-bottom: none;
+}
+
+/* ============================================
+   6. FLASH MESSAGES
+   Styled alerts shown after login, register,
+   or other actions (e.g. "Login successful").
+   Uses Bootstrap alert classes with custom colors.
+   ============================================ */
+
+/* Info alerts (blue category) */
+.alert-info {
+  background-color: #cdc3b7;
+  border-color: #cdc3b7;
+  color: #14532d;
+}
+
+/* Success alerts (green category) */
+.alert-success {
+  background-color: #14532d;
+  border-color: #cdc3b7;
+  color: #cdc3b7;
+}
+
+/* ============================================
+   7. RESPONSIVE
+   Adjustments for tablets and phones.
+   ============================================ */
+
+@media (max-width: 768px) {
+  /* Stack hero content vertically */
+  .header_home {
+    flex-direction: column;
+  }
+
+  /* Shrink the title on mobile */
+  .home-title {
+    font-size: 50px;
+  }
+
+  /* Stack developer cards vertically */
+  .developers {
+    flex-direction: column;
+  }
+
+  /* Stack LinkedIn buttons vertically */
+  .section_container_buttons_developers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
