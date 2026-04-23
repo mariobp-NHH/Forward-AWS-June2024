@@ -1,0 +1,66 @@
+{% extends "gd_course/NHH_2026_group2/layout.html" %} {% block content %}
+
+<section class="section_header_home">
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source
+      src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group2/cc87dbd7-a00a-41b5-8768-2ac640d25fd7.mp4"
+      type="video/mp4"
+    />
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1><span class="text-logo">SeaScope</span></h1>
+    <p>
+      A modern platform to calculate and understand the carbon footprint of
+      seafood transport.
+    </p>
+    <div class="hero-buttons">
+      {% if current_user.is_authenticated %}
+      <a
+        href="{{ url_for('gd_course_NHH_2026_group2.carbon_app_home') }}"
+        class="btn-hero-primary"
+        >Go to Carbon App</a
+      >
+      {% else %}
+      <a
+        href="{{ url_for('gd_course_NHH_2026_group2.register') }}"
+        class="btn-hero-primary"
+        >Get Started</a
+      >
+      <a
+        href="{{ url_for('gd_course_NHH_2026_group2.login') }}"
+        class="btn-hero-secondary"
+        >Login</a
+      >
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section_features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>What We Do</h3>
+        <p>
+          We help seafood producers and exporters assess, visualize, and reduce
+          their transport emissions through data-driven analysis.
+        </p>
+      </div>
+      <div class="feature-card feature-card-dark">
+        <h3>What's Your Impact?</h3>
+        <p>
+          Discover how your transport choices influence carbon emissions. Every
+          route and kilogram counts.
+        </p>
+        <a
+          href="{{ url_for('gd_course_NHH_2026_group2.carbon_app_home') }}"
+          class="feature-link"
+          >Calculate Emissions →</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
