@@ -1,0 +1,199 @@
+{% extends "gd_course/NHH_2026_group4/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section class="section_header_home">
+  <div class="container">
+    <div class="header_home">
+      <div class="box">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if
+        messages %} {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %} {% endif %} {% endwith %}
+
+        <h1 class="home-title"><span class="text-logo">GreenRoute</span></h1>
+        <p class="home_tagline">Track your transport emissions.</p>
+        <p class="home_tagline">Compare your options.</p>
+        <p class="home_tagline">Travel greener.</p>
+
+        {% if current_user.is_authenticated %}
+        <!-- nothing because user is login -->
+        {% else %}
+        <!-- the buttons to login and register if not logged in -->
+        <div class="container_buttons_links_header_home">
+          <a
+            href="{{url_for('gd_course_NHH_2026_group4.register')}}"
+            class="home_btn"
+            >Register</a
+          >
+          <a
+            href="{{url_for('gd_course_NHH_2026_group4.login')}}"
+            class="home_btn"
+            >Login</a
+          >
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Students case -->
+<section class="section_developers">
+  <div class="container">
+    <br />
+    <div class="developers" style="display: block">
+      <h1 class="about_us_title"><span class="text-logo">About Us</span></h1>
+      <p class="about_us_text">
+        The development of GreenRoute has been carried out by a team of six
+        students from the Norwegian School of Economics. The group includes
+        students from Norway, Switzerland, France, and Spain, bringing together
+        perspectives shaped by different cultural backgrounds. This
+        international composition has helped us approach the project with a
+        broader understanding of the challenges related to sustainable mobility.
+      </p>
+    </div>
+
+    <div class="developers">
+      <div class="box">
+        <img
+          src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/AMALIE_FOR19.jpg"
+          alt=""
+          style="
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          "
+        />
+        <h3>Amalie</h3>
+        <p>NHH Student</p>
+        <div class="section_container_buttons_developers">
+          <a
+            class="btn_developers"
+            href="https://www.linkedin.com/in/amalie-kathea-kristensen-547581388/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+      <div class="box">
+        <img
+          src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/MATHEA_FOR19.jpg"
+          alt=""
+          style="
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          "
+        />
+        <h3>Mathea</h3>
+        <p>NHH Student</p>
+        <div class="section_container_buttons_developers">
+          <a
+            class="btn_developers"
+            href="https://www.linkedin.com/in/mathea-indahl-933a88234/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+      <div class="box">
+        <img
+          src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/PAULE_FOR19.jpg"
+          alt=""
+          style="
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          "
+        />
+        <h3>Paule</h3>
+        <p>Bilbao Student</p>
+        <div class="section_container_buttons_developers">
+          <a
+            class="btn_developers"
+            href="https://www.linkedin.com/in/paule-uribarri-lauzirika/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class="developers">
+      <div class="box2">
+        <img
+          src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/IGNACIO_FOR19.jpg"
+          alt=""
+          style="
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          "
+        />
+        <h3>Ignacio</h3>
+        <p>Bilbao Student</p>
+        <div class="section_container_buttons_developers">
+          <a
+            class="btn_developers"
+            href="https://www.linkedin.com/in/ignaciouriarte/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+      <div class="box2">
+        <img
+          src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/ELIAS_FOR19.jpg"
+          alt=""
+          style="
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          "
+        />
+        <h3>Elias</h3>
+        <p>Toulouse School of Management Student</p>
+        <div class="section_container_buttons_developers">
+          <a
+            class="btn_developers"
+            href="https://www.linkedin.com/in/elias-chmani-198226277/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+      <div class="box2">
+        <img
+          src="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/MAXIME_FOR19.jpg"
+          alt=""
+          style="
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+          "
+        />
+        <h3>Maxime</h3>
+        <p>HEC Lausanne Student</p>
+        <div class="section_container_buttons_developers">
+          <a
+            class="btn_developers"
+            href="https://www.linkedin.com/in/maxime-pigueller-704439221/"
+            target="_blank"
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- this is a section that allows the image of teh group to appear at the end > url for the picture is in CSS code -->
+<section class="img_of_the_group"></section>
+
+{% endblock content %}

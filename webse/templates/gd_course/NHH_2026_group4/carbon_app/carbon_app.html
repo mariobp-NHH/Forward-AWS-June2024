@@ -1,0 +1,89 @@
+{% extends "gd_course/NHH_2026_group4/layout.html" %}
+{% block content %}
+
+    <!-- Header -->
+    <section class="section_header_carbon_app">
+        <div class="container">
+    
+        <div class="header_carbon_app">
+          <div class="box"> 
+            <h1 style="font-size:55px;"><span class="text-logo"> Carbon App Calculator</span></h1>
+            <p class="carbon_app_subtitle">How to use GreenRoute in 3 steps:</p>
+            <div class="carbon_app_instructions">
+              <ol class="carbon_app_steps">
+                <li>Pick your transport mode from the cards below.</li>
+                <li>Enter your distance, fuel type, and hit submit.</li>
+                <li>Check your dashboard to see your emissions over time.</li>
+              </ol>
+            </div>
+          <div class="container_buttons_links_header_carbon_app">
+            <a href="{{url_for('gd_course_NHH_2026_group4.methodology_home')}}" class="home_btn">Methodology</a>
+            <a href="{{url_for('gd_course_NHH_2026_group4.your_data')}}" class="home_btn"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+          </div>  
+        </div>
+      </section>
+
+      <!-- this is the section with all of the boxes that allow users to enter their transportation data -->
+    <section class="section_carbon_app_new_entry_main"> 
+    <div class="container"> 
+  
+    <div class="carbon_app_new_entry_main" style="display:block;">
+      <br>
+      <h3 style="text-align:center;">Please, select your mean of conveyance in the boxes below</h3>     
+    </div> 
+
+    <!-- those are the boxes code below (the individual code for the transport mode are in their own html file) -->
+      <div class="carbon_app_new_entry_main">
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_bicycle')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-bicycle"></i></div>
+          <h3>Bicycle</h3>
+          <p>Please, enter your kilometers by using the bicycle.</p>
+        </a>
+
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_walk')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-person-walking"></i></div>
+          <h3>Walk</h3>
+          <p>Please, enter your kilometers by walking.</p>
+        </a>
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_bus')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-bus"></i></div>
+          <h3>Bus</h3>
+          <p>Please, enter your kilometers by using the bus.</p>
+        </a>
+
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_car')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-car"></i></div>
+          <h3>Car</h3>
+          <p>Please, enter your kilometers by using the car.</p>
+        </a>
+
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_plane')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-plane"></i></div>
+          <h3>Plane</h3>
+          <p>Please, enter your kilometers by using the plane.</p>
+        </a>
+
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_train')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-train"></i></div>
+          <h3>Train</h3>
+          <p>Please, enter your kilometers by using the train.</p>
+        </a>
+
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_ferry')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-ship"></i></div>
+          <h3>Ferry</h3>
+          <p>Please, enter your kilometers by using the ferry.</p>
+        </a>
+
+        <a class="box" href="{{url_for('gd_course_NHH_2026_group4.new_entry_motorbike')}}">
+          <div class="h1 mb-3"><i class="fa-solid fa-motorcycle"></i></div>
+          <h3>Motorbike</h3>
+          <p>Please, enter your kilometers by using the motorcycle.</p>
+        </a>
+      </div>
+    
+      </div>          
+    </section>
+       
+
+{% endblock content %}

@@ -1,0 +1,520 @@
+{% extends "gd_course/NHH_2026_group4/layout.html" %} {% block content %}
+
+<!-- Header -->
+<section class="section_header_methodology">
+  <div class="container">
+    <div class="header">
+      <div class="box">
+        <h1 class="methodology_title">
+          <span class="text-logo">Methodology</span>
+        </h1>
+        <p class="methodology_subtitle">
+          Learn how we calculate your emissions, explore the science behind our
+          numbers, and discover how small nudges at the right moment can shift
+          the way you travel.
+        </p>
+        <div class="container_buttons_links_header">
+          <!-- button to the GreenRoute Termpaper -->
+          <div class="btn">
+            <a
+              href="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group4/icons/GreenRoute.final.pdf"
+              target="_blank"
+              class="btn btn-primary btn-lg mr-2 methodology_btn"
+            >
+              GreenRoute Termpaper
+            </a>
+          </div>
+          <div class="btn">
+            <a
+              href="{{url_for('gd_course_NHH_2026_group4.carbon_app_home')}}"
+              class="btn btn-primary btn-lg mr-2 methodology_btn"
+              ><i class="fa-solid fa-calculator"></i> Calculator</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Methodology Body -->
+<section class="section_body_methodology">
+  <div class="container">
+    <!-- Intro Card -->
+    <div class="method_card">
+      <h2 class="card_title">Our Scientific Approach</h2>
+      <p>
+        GreenRoute's methodology is grounded in recognized scientific and
+        institutional sources. The <strong>IPCC</strong> defines how greenhouse
+        gas emissions can be estimated by combining <em>activity data</em> with
+        appropriate <em>emission factors</em>. In parallel, the
+        <strong>UK Department for Energy Security and Net Zero (DESNZ)</strong>
+        publishes standardized conversion factors that make it possible to
+        compare emissions across transport categories in a consistent way.
+      </p>
+      <p>
+        We combine both references to estimate transport related carbon
+        emissions through a simple but transparent framework: trip distance
+        multiplied by a mode specific emission factor, adjusted for vehicle
+        type, fuel source, and where relevant the number of passengers.
+      </p>
+    </div>
+
+    <!-- Core Formulas Card -->
+    <div class="method_card">
+      <h2 class="card_title">Core Formulas</h2>
+      <p>
+        Following the IPCC's distance based indicator approach, GreenRoute uses
+        two main formulas depending on whether the transport is private or
+        collective.
+      </p>
+
+      <div class="formula_grid">
+        <div class="formula_block">
+          <h4>Private vehicles</h4>
+          <p class="formula_label">Cars, motorbikes</p>
+          <div class="formula_math">
+            \[ CO_{2e} \text{ per passenger} = \frac{d \times ef}{p} \]
+          </div>
+          <ul class="formula_vars">
+            <li><strong>d</strong> : distance travelled (km)</li>
+            <li><strong>ef</strong> : emission factor (kg CO₂e / km)</li>
+            <li><strong>p</strong> : passengers sharing the ride</li>
+          </ul>
+        </div>
+
+        <div class="formula_block">
+          <h4>Collective transport</h4>
+          <p class="formula_label">Bus, train, ferry, plane</p>
+          <div class="formula_math">\[ CO_{2e} = d \times ef \]</div>
+          <p class="formula_note">
+            For collective modes, the emission factor is already expressed on a
+            per passenger kilometer basis (following DESNZ average occupancy
+            assumptions), so no division by passengers is needed.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Transport Modes -->
+    <div class="method_card">
+      <h2 class="card_title">Emission Factors by Transport Mode</h2>
+      <p>
+        Each mode has its own set of emission factors depending on fuel or
+        energy source. The numbers below are what GreenRoute uses to calculate
+        your footprint.
+      </p>
+      <p>
+        Our emission factors come from two main sources:
+        <strong>Framtiden i våre hender</strong> (based on Klimatsmart semester,
+        Chalmers 2024) for car, train, plane, and indicative benchmarks, and the
+        <strong>European Environment Agency (EEA)</strong> for bus, ferry, and
+        motorbike. CH₄ (methane) values from the EEA are also included for
+        completeness but represent less than 0.2% of the total.
+      </p>
+    </div>
+
+    <!-- BUS -->
+    <div class="transport_card">
+      <div class="transport_header transport_header_bus">
+        <div class="transport_icon">🚌</div>
+        <h3>Bus</h3>
+      </div>
+      <div class="transport_body">
+        <p>
+          Because buses carry multiple passengers simultaneously, emission
+          factors already reflect average occupancy. Bus travel is one of the
+          more efficient motorized options per person.
+        </p>
+        <table class="emission_table">
+          <thead>
+            <tr>
+              <th>Fuel Type</th>
+              <th>Emission Factor (kg CO₂e / km per passenger)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diesel</td>
+              <td>0.10231</td>
+            </tr>
+            <tr>
+              <td>Electric / Hydrogen</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CAR -->
+    <div class="transport_card">
+      <div class="transport_header transport_header_car">
+        <div class="transport_icon">🚗</div>
+        <h3>Car</h3>
+      </div>
+      <div class="transport_body">
+        <p>
+          Car emissions depend on distance, vehicle type, and the number of
+          passengers. The per passenger footprint drops dramatically when you
+          carpool. GreenRoute applies the formula
+          <strong>CO₂e = d × ef / p</strong> for cars, where <em>p</em> is the
+          number of people in the vehicle.
+        </p>
+        <table class="emission_table">
+          <thead>
+            <tr>
+              <th>Vehicle Type</th>
+              <th>Emission Factor (kg CO₂e / km)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Petrol (Gasoline)</td>
+              <td>0.171</td>
+            </tr>
+            <tr>
+              <td>Diesel</td>
+              <td>0.171</td>
+            </tr>
+            <tr>
+              <td>Hybrid</td>
+              <td>0.110</td>
+            </tr>
+            <tr>
+              <td>Electric</td>
+              <td>0.050</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight_box">
+          <h4>Why isn't electric zero?</h4>
+          <p>
+            Electricity generation itself carries a carbon cost that varies by
+            country and energy mix. In Norway, where the grid is predominantly
+            hydroelectric, real electric vehicle emissions are lower than the
+            European average. For cross country consistency, GreenRoute applies
+            the DESNZ standard factor.
+          </p>
+        </div>
+
+        <div class="highlight_box highlight_positive">
+          <h4>The carpooling effect</h4>
+          <p>
+            A solo driver in a petrol car emits 0.171 kg CO₂e / km. Shared among
+            four passengers, that same trip drops to roughly
+            <strong>0.043 kg CO₂e / km per person</strong>, comparable to
+            driving an electric car solo.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLANE -->
+    <div class="transport_card">
+      <div class="transport_header transport_header_plane">
+        <div class="transport_icon">✈️</div>
+        <h3>Plane</h3>
+      </div>
+      <div class="transport_body">
+        <p>
+          Aviation is the most carbon intensive mode per kilometer in our model.
+          A single transatlantic flight can outweigh months of ground based
+          emissions.
+        </p>
+        <p>
+          GreenRoute distinguishes between two cabin classes using average
+          emission factors for scheduled flights. Business class travel emits
+          roughly <strong>2.2 times more per passenger</strong> than economy,
+          because premium cabins allocate more space and more fuel per seat.
+        </p>
+        <p>
+          The factor is already expressed on a per passenger basis (accounting
+          for average occupancy), so you do not enter the number of passengers
+          separately.
+        </p>
+
+        <table class="emission_table">
+          <thead>
+            <tr>
+              <th>Flight Class</th>
+              <th>Emission Factor (kg CO₂e / km per passenger)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Economy</td>
+              <td>0.127</td>
+            </tr>
+            <tr>
+              <td>Business Class</td>
+              <td>0.284</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TRAIN -->
+    <div class="transport_card">
+      <div class="transport_header transport_header_train">
+        <div class="transport_icon">🚆</div>
+        <h3>Train</h3>
+      </div>
+      <div class="transport_body">
+        <p>
+          Trains running on low carbon electricity are among the lowest emission
+          motorized options. A train powered by Nordic electricity emits roughly
+          <strong>7 g CO₂e per passenger km</strong>, which is almost 15 times
+          less than a bus and nearly 24 times less than a solo car trip.
+        </p>
+        <p>
+          Like other collective modes, the per passenger emission factor already
+          incorporates average occupancy.
+        </p>
+        <table class="emission_table">
+          <thead>
+            <tr>
+              <th>Energy Source</th>
+              <th>Emission Factor (kg CO₂e / km per passenger)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Electric (Nordic grid)</td>
+              <td>0.007</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FERRY -->
+    <div class="transport_card">
+      <div class="transport_header transport_header_ferry">
+        <div class="transport_icon">⛴️</div>
+        <h3>Ferry</h3>
+      </div>
+      <div class="transport_body">
+        <p>
+          Passenger ferries have relatively high per passenger emissions
+          compared to trains or buses. Norway is investing in electric ferries
+          across its fjord routes, which will significantly reduce this figure
+          over time.
+        </p>
+        <table class="emission_table">
+          <thead>
+            <tr>
+              <th>Fuel Type</th>
+              <th>Emission Factor (kg CO₂e / km per passenger)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Diesel</td>
+              <td>0.11131</td>
+            </tr>
+            <tr>
+              <td>Electric</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MOTORBIKE -->
+    <div class="transport_card">
+      <div class="transport_header transport_header_motorbike">
+        <div class="transport_icon">🏍️</div>
+        <h3>Motorbike</h3>
+      </div>
+      <div class="transport_body">
+        <p>
+          Motorbikes are more fuel efficient than cars due to their lighter
+          weight, but they still emit significantly more per kilometer than
+          public transport options. As a private vehicle, GreenRoute treats
+          motorbike emissions on a per rider basis.
+        </p>
+        <table class="emission_table">
+          <thead>
+            <tr>
+              <th>Fuel Type</th>
+              <th>Emission Factor (kg CO₂e / km)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Petrol</td>
+              <td>0.09816</td>
+            </tr>
+            <tr>
+              <td>Electric</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- HUMAN POWERED -->
+    <div class="transport_card">
+      <div class="transport_header transport_header_human">
+        <div class="transport_icon">🚴</div>
+        <h3>Bicycle & Walking</h3>
+      </div>
+      <div class="transport_body">
+        <p>
+          Walking and cycling are assigned an emission factor of
+          <strong>0 kg CO₂e / km</strong>. While any human activity technically
+          involves metabolic energy, GreenRoute follows the DESNZ convention of
+          treating these modes as zero emission for transport comparisons. They
+          are the greenest options by a wide margin.
+        </p>
+      </div>
+    </div>
+
+    <!-- Comparison Card -->
+    <div class="method_card">
+      <h2 class="card_title">Comparing Transport Modes at a Glance</h2>
+      <p>
+        Here is an indicative ranking of greenhouse gas emissions per passenger
+        kilometer across modes. Values are drawn from Framtiden i våre hender
+        (Klimatsmart semester, Chalmers 2024) and represent typical averages.
+        The further down the list, the higher the climate cost.
+      </p>
+
+      <div class="comparison_chart">
+        <div class="comparison_row">
+          <div class="comparison_label">🚴 Bicycle / Walk</div>
+          <div class="comparison_bar comparison_bar_0" style="width: 1%"></div>
+          <div class="comparison_value">0 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">🚆 Train (Nordic)</div>
+          <div class="comparison_bar comparison_bar_1" style="width: 3%"></div>
+          <div class="comparison_value">7 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">🚌 Bus (Diesel)</div>
+          <div class="comparison_bar comparison_bar_2" style="width: 11%"></div>
+          <div class="comparison_value">30 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">🚗 Car (shared, 4 pax)</div>
+          <div class="comparison_bar comparison_bar_3" style="width: 15%"></div>
+          <div class="comparison_value">43 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">🚗 Car (solo, petrol)</div>
+          <div class="comparison_bar comparison_bar_4" style="width: 23%"></div>
+          <div class="comparison_value">66 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">🏍️ Motorbike (petrol)</div>
+          <div class="comparison_bar comparison_bar_4" style="width: 35%"></div>
+          <div class="comparison_value">98 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">✈️ Flight (economy)</div>
+          <div class="comparison_bar comparison_bar_5" style="width: 45%"></div>
+          <div class="comparison_value">127 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">⛴️ Ferry</div>
+          <div class="comparison_bar comparison_bar_6" style="width: 65%"></div>
+          <div class="comparison_value">186 g</div>
+        </div>
+        <div class="comparison_row">
+          <div class="comparison_label">✈️ Flight (business)</div>
+          <div
+            class="comparison_bar comparison_bar_7"
+            style="width: 100%"
+          ></div>
+          <div class="comparison_value">284 g</div>
+        </div>
+      </div>
+      <p class="chart_caption">
+        Values in g CO₂e per passenger kilometer. Source: Framtiden i våre
+        hender / Klimatsmart semester Chalmers (2024). The app's per mode
+        factors may differ slightly from these indicative benchmarks as they
+        draw on additional EEA data for bus, ferry, and motorbike.
+      </p>
+    </div>
+
+    <!-- Behavioral Design Card -->
+    <div class="method_card method_card_accent">
+      <h2 class="card_title">Why GreenRoute Goes Beyond Numbers</h2>
+      <p>
+        Most carbon calculators stop at a result. GreenRoute integrates
+        <strong>behavioral design</strong> into the core of the application,
+        drawing on <em>nudge theory</em>. The idea is simple: people are more
+        likely to make sustainable choices when the sustainable option feels
+        like the natural one, rather than being imposed by rules.
+      </p>
+
+      <div class="principles_grid">
+        <div class="principle_block">
+          <div class="principle_number">01</div>
+          <h4>Timing at the point of decision</h4>
+          <p>
+            Behavioral research suggests interventions work best at the exact
+            moment of choice. GreenRoute delivers information precisely when you
+            are about to log a trip.
+          </p>
+        </div>
+        <div class="principle_block">
+          <div class="principle_number">02</div>
+          <h4>Emotionally resonant framing</h4>
+          <p>
+            Rather than "this trip emits 12 kg of CO₂e", GreenRoute translates
+            numbers into tangible comparisons: square meters of Arctic ice,
+            months of tree absorption, equivalent car trips.
+          </p>
+        </div>
+        <div class="principle_block">
+          <div class="principle_number">03</div>
+          <h4>Comparative information</h4>
+          <p>
+            You do not just see your own emissions. You see how your choice
+            compares to lower carbon alternatives, making the trade off
+            concrete.
+          </p>
+        </div>
+      </div>
+
+      <p class="closing_line">
+        The aim is not guilt, but gentle nudging: making the environmental
+        consequences of everyday transport decisions feel real, personal, and
+        worth acting on.
+      </p>
+    </div>
+
+    <!-- Limitations Card -->
+    <div class="method_card method_card_muted">
+      <h2 class="card_title">Honesty About Limitations</h2>
+      <p>
+        GreenRoute is transparent about the boundaries of its methodology.
+        Emissions estimation depends on activity data and average factors, which
+        means results are
+        <strong>comparative estimates, not exact measurements</strong>. Actual
+        emissions vary with:
+      </p>
+      <ul class="limitations_list">
+        <li>Road congestion and driving style</li>
+        <li>Vehicle efficiency and age</li>
+        <li>Route conditions like elevation and weather</li>
+        <li>Local electricity mix, especially for EVs</li>
+        <li>Real vehicle occupancy versus assumed averages</li>
+      </ul>
+      <p>
+        We present results as robust comparative estimates to support decision
+        making, not as precise life cycle measurements. That transparency is
+        central to the app's credibility.
+      </p>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
