@@ -1,0 +1,349 @@
+.header {
+  background-image: url("https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group5/icons/aboutUs.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-bottom: 2px solid black;
+  overflow: auto;
+  position: relative;
+  min-height: 100vh;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* mørkt lag */
+  z-index: 0;
+}
+
+.box-contantAbout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  position: relative;
+  z-index: 2;
+}
+
+.abouth1 {
+  text-align: center;
+  font-size: 100px;
+  color: white;
+  font-weight: bold;
+}
+
+.box-moreContentAbout {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.box-moreContentAbout p {
+  color: white;
+  font-size: 24px;
+  text-shadow: 5px 5px 5px lightgray;
+}
+
+/* Bakgrunnen for section header*/
+.cloud {
+  overflow: hidden;
+}
+.cloud img {
+  animation: cld calc(8s * var(--i)) linear infinite;
+  opacity: 0.6;
+  max-width: 100%;
+  position: absolute;
+  bottom: 0px;
+  z-index: 2;
+}
+@keyframes cld {
+  5% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ------------------ Why it matters -------------------*/
+.sectionWhy {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 100px 0;
+  background: white;
+}
+.containerWhy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 20px 20px;
+}
+.picWhy {
+  height: 550px;
+  width: 700px;
+}
+
+.infoWhy p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  line-height: 50px;
+}
+.whyHead {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+/* --------------------Introduction ---------------*/
+
+.developersContainer {
+  background: linear-gradient(
+    180deg,
+    #e3f5f4 0%,
+    #ffffff 75%,
+    #f0fbfb 85%,
+    #e8f8f7 93%,
+    #e3f5f4 100%
+  );
+  padding-bottom: 100px;
+}
+
+.devTitle {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  padding: 20px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.infoTeam {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.containerTeam {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px;
+}
+
+.containerTeam > * {
+  flex: 0 1 calc(30% - 20px); /* 3 per row, accounting for the gap */
+}
+
+.boxCard {
+  width: 300px;
+  min-height: 400px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: white;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+.boxCard:hover {
+  box-shadow: 5px 10px #888888;
+}
+
+.profil {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.profil img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.role {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.bio {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+.linkedinIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  font-size: 22px;
+  text-decoration: none;
+  margin-top: 15px;
+  padding: 8px 12px;
+  color: white;
+  background: #0a66c2;
+}
+
+.linkedinContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profilTitle {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.line {
+  border: 1px solid black;
+  margin: 40px auto;
+  width: 900px;
+  height: 1px;
+  background-color: #dcdcdc;
+}
+
+/*----------------- Wave -----------------------*/
+
+.dashboardHero {
+  position: relative;
+  height: 100px;
+}
+
+/*----------------- media -----------------------*/
+
+@media (max-width: 768px) {
+  .header {
+    min-height: 75vh;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .box-contantAbout {
+    display: flex;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .abouth1 {
+    font-size: 48px;
+    line-height: 1.1;
+    text-align: center;
+  }
+
+  .box-moreContentAbout {
+    padding: 0 20px;
+    margin-top: 15px;
+  }
+
+  .box-moreContentAbout p {
+    font-size: 18px;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px rgba(211, 211, 211, 0.6);
+  }
+
+  .cloud img {
+    max-width: 180px;
+    opacity: 0.5;
+  }
+
+  /* ------------------ Why it matters ------------------- */
+
+  .sectionWhy {
+    padding: 60px 20px;
+  }
+
+  .containerWhy {
+    flex-direction: column;
+    gap: 30px;
+    padding: 0;
+    text-align: center;
+  }
+
+  .picWhy {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .infoWhy p {
+    font-size: 18px;
+    line-height: 1.8;
+    padding: 0;
+  }
+
+  .whyHead {
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+
+  /* -------------------- Introduction ------------------- */
+
+  .developersContainer {
+    padding: 60px 20px 80px;
+  }
+
+  .devTitle {
+    font-size: 30px;
+    padding: 10px;
+  }
+
+  .infoTeam {
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0 10px;
+  }
+
+  .containerTeam {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px 0;
+  }
+
+  .containerTeam > * {
+    flex: 1 1 100%;
+  }
+
+  .boxCard {
+    width: 100%;
+    max-width: 320px;
+    min-height: auto;
+    padding: 20px 15px;
+  }
+
+  .profil img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .profilTitle {
+    font-size: 22px;
+  }
+
+  .role,
+  .bio {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .linkedinIcon {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .line {
+    width: 90%;
+    margin: 30px auto;
+  }
+
+  /* ----------------- Wave ----------------------- */
+
+  .dashboardHero {
+    height: 60px;
+  }
+}
