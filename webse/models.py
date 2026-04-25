@@ -36,7 +36,6 @@ class User(db.Model, UserMixin):
     questionnaires_es = db.relationship('QuestionnaireES', backref='author', lazy=True)    
     moduls_es = db.relationship('ModulsES', backref='author', lazy=True)
     sentence_es = db.relationship('SentenceES', backref='author', lazy=True)
-    transports_NHH_2026_g5 = db.relationship('Transport_NHH_2026_g5', backref='author', lazy=True)
 
 
     def __repr__(self):
@@ -340,35 +339,3 @@ class SentenceES(db.Model):
     year = db.Column(db.Integer)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
-# Database Transport NHH_2026_g5
-class Transport_NHH_2026_g5(db.Model):
-    __tablename__= 'transport_table_NHH_2026_g5'
-
-    id = db.Column(db.Integer, primary_key=True)
-
-    user_type = db.Column(db.String(20), nullable=False)
-    transport = db.Column(db.String(50), nullable=False)
-
-    kms = db.Column(db.Float, nullable=True)
-    fuel = db.Column(db.String(50), nullable=True)
-
-    flight_type = db.Column(db.String(50), nullable=True)
-    cabin_class = db.Column(db.String(50), nullable=True)
-    aircraft_type = db.Column(db.String(50), nullable=True)
-
-    ferry_type = db.Column(db.String(50), nullable=True)
-    train_type = db.Column(db.String(50), nullable=True)
-    bicycle_type = db.Column(db.String(50), nullable=True)
-
-    load = db.Column(db.Float, nullable=True)
-    cargo_weight = db.Column(db.Float, nullable=True)
-
-    volume = db.Column(db.Float, nullable=True)
-    distance = db.Column(db.Float, nullable=True)
-    energy_source = db.Column(db.String(50), nullable=True)
-
-    co2 = db.Column(db.Float, nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.utcnow)
-    
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)                        
-        
