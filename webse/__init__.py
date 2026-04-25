@@ -4,6 +4,7 @@ from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
 import os
+from flask_migrate import Migrate
 
 application = Flask(__name__)
 
@@ -32,6 +33,9 @@ bcrypt = Bcrypt(application)
 #login_manager= LoginManager(application)
 #login_manager.login_view = 'forward_users.forward_users_login'
 #login_manager.login_message_category = 'info'
+
+""" Migrations """
+migrate =Migrate (application,db)
 
 login_manager= LoginManager(application)
 login_manager.blueprint_login_views = {
