@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from webse import application, db, login_manager
 from flask_login import UserMixin
 
@@ -37,7 +37,8 @@ class User(db.Model, UserMixin):
     moduls_es = db.relationship('ModulsES', backref='author', lazy=True)
     sentence_es = db.relationship('SentenceES', backref='author', lazy=True)
     transports_NHH_2026_g5 = db.relationship('Transport_NHH_2026_g5', backref='author', lazy=True)
-
+    routes_NHH_2026_g1 = db.relationship("Route_NHH_2026_g1", backref="owner", lazy=True)
+    shipments_NHH_2026_g1 = db.relationship("Shipment_NHH_2026_g1", backref="owner", lazy=True)
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}')"
@@ -372,3 +373,40 @@ class Transport_NHH_2026_g5(db.Model):
     
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)                        
         
+#NHH 2026 group 1: RUTETABELL
+class Route_NHH_2026_g1(db.Model):
+    __tablename__ = "routes_NHH_2026_g1"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+
+    name = db.Column(db.String(120), nullable=False)
+    origin = db.Column(db.String(120), nullable=False)
+    destination = db.Column(db.String(120), nullable=False)
+    distance_km = db.Column(db.Float, nullable=False)
+
+    transport_type = db.Column(db.String(20), nullable=False)   
+    subcategory = db.Column(db.String(20), nullable=False)      
+
+    is_active = db.Column(db.Boolean, nullable=False, default=True)
+    created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=lambda: datetime.now(timezone.utc))
+
+    shipments = db.relationship("Shipment_NHH_2026_g1", backref="route", lazy=True)
+
+#NHH 2026 group 1: SHIPMENT-LOGGTABELL
+class Shipment_NHH_2026_g1(db.Model):
+    __tablename__ = "shipments_NHH_2026_g1"
+
+    id = db.Column(db.Integer, primary_key=True)
+    route_id = db.Column(db.Integer, db.ForeignKey("routes_NHH_2026_g1.id"), nullable=False)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
+
+    fuel_type = db.Column(db.String(30), nullable=False)
+    cargo_tonnes = db.Column(db.Float, nullable=False)
+    shipped_at = db.Column(db.Date, nullable=False)
+
+    co2_kg = db.Column(db.Float, nullable=False)
+    carbon_cost_nok = db.Column(db.Float, nullable=False)
+
+    created_at = db.Column(db.DateTime(timezone=True), nullable=False, default=lambda: datetime.now(timezone.utc))
+
