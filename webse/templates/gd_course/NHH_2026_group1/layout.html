@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Font Awesome: brukes til ikoner (LinkedIn, pil opp, blad-logo osv.) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap: brukes hovedsakelig til alerts, modals og generell layout -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap icons (ekstra ikonbibliotek) -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+
+    <!-- Hoved-CSS for layout (navbar, footer osv.) -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group1/layout.css"
+    />
+
+    <!-- MathJax: lar oss skrive matematiske formler på metodologi-siden -->
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"
+    ></script>
+
+    <!-- Chart.js v2.8.0 for dashboard charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+    <!-- Sørger for at siden fungerer bra på mobil -->
+    <meta
+      name="viewport"
+      content="user-scalable=yes, width=device-width, initial-scale=1"
+    />
+
+    <!-- DYNAMISK SIDETITTEL SOM LAR BROWSER TAB VARIERE -->
+    {% if title %}
+    <title>Ecoroute | {{ title }}</title>
+    {% else %}
+    <title>Ecoroute</title>
+    {% endif %}
+  </head>
+
+  <body class="layout-body">
+    {# Felles oversettelse av subcategory-nøkler til lesbare etiketter. Brukes
+    av child-templates (f.eks. your_routes.html og your_shipments.html). #} {%
+    set subcategory_labels = { 'small': 'Small truck (3.5–7.5 t)', 'medium':
+    'Medium truck (7.5–20 t)', 'large': 'Large truck (20–40 t)',
+    'general_cargo_small': 'General cargo, small (≤ 9 999 dwt)',
+    'general_cargo_large': 'General cargo, large (≥ 10 000 dwt)',
+    'bulk_carrier_small': 'Bulk carrier, small (≤ 34 999 dwt)',
+    'bulk_carrier_large': 'Bulk carrier, large (≥ 35 000 dwt)', 'short_haul':
+    'Short-haul flight (< 1 500 km)', 'long_haul': 'Long-haul flight (≥ 1 500
+    km)' } %}
+
+    <!-- Ankerpunkt slik at "scroll to top"-knappen vet hvor toppen er -->
+    <div id="top"></div>
+
+    <!-- NAVBAR -->
+    <!-- Navigasjonsmenyen som ligger på toppen av alle sider -->
+    <section class="section_navbar">
+      <div class="container">
+        <div class="navbar">
+          <!-- Logo -->
+          <h1 class="logo">
+            <span class="text-logo"
+              ><i class="fa-brands fa-pagelines"></i>Eco</span
+            >Route
+          </h1>
+
+          <!-- NAVBAR LENKER SOM VISES UANSETT -->
+          <nav>
+            <ul>
+              <!-- Hovedsider som alltid skal vises -->
+              <li>
+                <a href="{{ url_for('gd_course_NHH_2026_group1.home_home') }}"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{{ url_for('gd_course_NHH_2026_group1.methodology_home') }}"
+                  >Methodology</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{{ url_for('gd_course_NHH_2026_group1.developers_home') }}"
+                  >About us</a
+                >
+              </li>
+
+              {% if current_user.is_authenticated %}
+              <!-- NAVBAR LENKER SOM VISES HVIS BRUKER ER INNLOGGET -->
+              <li>
+                <a href="{{ url_for('gd_course_NHH_2026_group1.your_routes') }}"
+                  >My Routes</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{{ url_for('gd_course_NHH_2026_group1.your_shipments') }}"
+                  >My Shipments</a
+                >
+              </li>
+              <li>
+                <a
+                  href="{{ url_for('gd_course_NHH_2026_group1.new_shipment') }}"
+                  >Log Shipment</a
+                >
+              </li>
+
+              <!-- BRUKERMENY MED DROPDOWN FOR DASHBOARD OG LOGOUT -->
+              <li class="dropdown-user">
+                <button class="dropdown-user-btn" type="button">
+                  <i class="fa-solid fa-user"></i> {{ current_user.username }}
+                  <i class="fa-solid fa-caret-down"></i>
+                </button>
+
+                <div class="dropdown-user-menu">
+                  <a
+                    href="{{ url_for('gd_course_NHH_2026_group1.your_data_home') }}"
+                    >Dashboard</a
+                  >
+                  <a href="{{ url_for('gd_course_NHH_2026_group1.logout') }}"
+                    >Logout</a
+                  >
+                </div>
+              </li>
+
+              {% else %}
+              <!-- NAVBAR LENKER SOM VISES HVIS BRUKER IKKE ER INNLOGGET -->
+              <li>
+                <a href="{{ url_for('gd_course_NHH_2026_group1.register') }}"
+                  >Register</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('gd_course_NHH_2026_group1.login') }}"
+                  >Login</a
+                >
+              </li>
+              {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOVEDINNHOLD -->
+
+    <!-- Alle sider legger sitt innhold her via Jinja block -->
+    <main class="page-content">
+      <!--Flask funksjon som henter meldinger produsert med flash()-->
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <!-- Hvis det eksisterer Flash meldinger viser vi med dismiss knapp -->
+      {% for category, message in messages %}
+      <div
+        class="alert alert-{{ category }} alert-dismissible fade show"
+        role="alert"
+      >
+        {{ message }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+      {% endfor %} {% endif %} {% endwith %} {% block content %}
+
+      <!-- HER KOMMER ALT INNHOLD FRA ANDLE HTML FILER SOM BRUKER LAYOUT-->
+
+      {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <!-- Nederst på siden: Copyright og knapp til toppen -->
+    <section class="section_footer">
+      <div class="container">
+        <div class="footer">
+          <!-- Copyright -->
+          <p class="footer-text">© 2026 EcoRoute — All rights reserved.</p>
+
+          <!-- Scroll-to-top knapp som sender bruker til ankerpunktet id="top"-->
+          <a href="#top" class="to-top">
+            <i class="fa-solid fa-arrow-up"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS: TILLATER BRUKER Å KRYSSE UT FLASH MESSAGES -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

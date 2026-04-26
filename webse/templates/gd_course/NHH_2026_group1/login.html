@@ -1,0 +1,71 @@
+{% extends "gd_course/NHH_2026_group1/layout.html" %} {% block content %}
+
+<!-- Login-seksjon -->
+<section class="auth-section">
+  <div class="container">
+    <!-- Kortet som inneholder hele login-skjemaet -->
+    <div class="auth-card">
+      <!-- Tittel og liten tekst over skjemaet -->
+      <div class="auth-header">
+        <h1 class="auth-title" style="text-align: center">Login</h1>
+      </div>
+
+      <!-- Selve login-skjemaet -->
+      <form method="POST" action="" class="auth-form">
+        <!-- Flask security-token (beskytter mot CSRF) -->
+        {{ form.hidden_tag() }}
+
+        <!-- E-post -->
+        <div class="form-group mb-3">
+          {{ form.email.label(class="form-label auth-label") }}
+
+          <!-- Input-felt for e-post -->
+          {% if form.email.errors %} {{ form.email(class="form-control
+          auth-input is-invalid") }} {% for error in form.email.errors %}
+          <div class="invalid-feedback">{{ error }}</div>
+          {% endfor %} {% else %} {{ form.email(class="form-control auth-input")
+          }} {% endif %}
+        </div>
+
+        <!-- Passord -->
+        <div class="form-group mb-2">
+          {{ form.password.label(class="form-label auth-label") }} {% if
+          form.password.errors %} {{ form.password(class="form-control
+          auth-input is-invalid") }} {% else %} {{
+          form.password(class="form-control auth-input") }} {% endif %} {% for
+          error in form.password.errors %}
+          <div class="invalid-feedback d-block">{{ error }}</div>
+          {% endfor %}
+        </div>
+
+        <!-- Husk meg -->
+        <div class="form-check mt-3">
+          {{ form.remember(class="form-check-input", id="remember_me") }}
+          <label class="form-check-label auth-remember" for="remember_me"
+            >Remember me</label
+          >
+        </div>
+
+        <!-- Login-knapp -->
+        <div class="mt-4">{{ form.submit(class="btn auth-btn") }}</div>
+      </form>
+
+      <!-- Link til registreringsside -->
+      <div class="auth-footer">
+        <span
+          >New to
+          <span class="text-logo"
+            ><i class="fa-brands fa-pagelines"></i>Eco</span
+          >Route?</span
+        >
+        <a
+          class="auth-link"
+          href="{{ url_for('gd_course_NHH_2026_group1.register') }}"
+          >Create an account</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}
