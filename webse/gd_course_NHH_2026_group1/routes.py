@@ -16,8 +16,8 @@ gd_course_NHH_2026_group1=Blueprint('gd_course_NHH_2026_group1',__name__)
 
 @gd_course_NHH_2026_group1.route('/green_digitalization_course/NHH/2026/group1/home')
 def home_home():
-    return render_template('https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group1/templates/home.html', title='Home')
-
+    return render_template('gd_course/NHH_2026_group1/home.html', title='Home')
+    
 @gd_course_NHH_2026_group1.route('/green_digitalization_course/NHH/2026/group1/developers')
 def developers_home():
     return render_template('gd_course/NHH_2026_group1/developers.html', title='About Us')
