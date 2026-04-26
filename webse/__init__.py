@@ -75,7 +75,6 @@ login_manager.blueprint_login_views = {
     'gd_course_HVL_2025_group4': 'gd_course_HVL_2025_group4.login',
     'gd_course_HVL_2025_group5': 'gd_course_HVL_2025_group5.login',
     'gd_course_HVL_2025_group6': 'gd_course_HVL_2025_group6.login',
-    'gd_course_NHH_2026_group1': 'gd_course_NHH_2026_group1.login',
     'gd_course_NHH_2026_group2': 'gd_course_NHH_2026_group2.login',
     'gd_course_NHH_2026_group3': 'gd_course_NHH_2026_group3.login',
     'gd_course_NHH_2026_group4': 'gd_course_NHH_2026_group4.login',
@@ -149,7 +148,6 @@ from webse.gd_course_HVL_2025_group3.routes import gd_course_HVL_2025_group3
 from webse.gd_course_HVL_2025_group4.routes import gd_course_HVL_2025_group4
 from webse.gd_course_HVL_2025_group5.routes import gd_course_HVL_2025_group5
 from webse.gd_course_HVL_2025_group6.routes import gd_course_HVL_2025_group6
-from webse.gd_course_NHH_2026_group1.routes import gd_course_NHH_2026_group1
 from webse.gd_course_NHH_2026_group2.routes import gd_course_NHH_2026_group2
 from webse.gd_course_NHH_2026_group3.routes import gd_course_NHH_2026_group3
 from webse.gd_course_NHH_2026_group4.routes import gd_course_NHH_2026_group4
@@ -243,7 +241,6 @@ application.register_blueprint(gd_course_NHH_2025_group1)
 application.register_blueprint(gd_course_NHH_2025_group2)
 application.register_blueprint(gd_course_NHH_2025_group3)
 application.register_blueprint(gd_course_NHH_2025_group4)
-application.register_blueprint(gd_course_NHH_2026_group1)
 application.register_blueprint(gd_course_NHH_2026_group2)
 application.register_blueprint(gd_course_NHH_2026_group3)
 application.register_blueprint(gd_course_NHH_2026_group4)
