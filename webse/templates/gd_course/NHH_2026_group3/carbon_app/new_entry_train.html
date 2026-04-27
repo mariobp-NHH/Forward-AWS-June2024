@@ -1,0 +1,58 @@
+{% extends "gd_course/NHH_2026_group3/layout.html" %}{% block content %}
+
+<section class="new_entry">
+  <div class="container">
+    <div class="box"></div>
+
+    <div class="box">
+      <h3>Train</h3>
+
+      <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <p>{{ form.kms.label }}</p>
+        {{ form.kms }}
+
+        <p>{{ form.fuel_type.label }}</p>
+        {{ form.fuel_type }}
+
+        <br /><br />
+        {{ form.submit }}
+      </form>
+    </div>
+
+    <div class="box">
+      <h3>Our Methodology</h3>
+
+      <p>
+        Trains are an efficient way to travel longer distances on land. They can
+        transport many passengers at once and often have lower emissions per
+        kilometer than many other transport options.
+      </p>
+
+      <p><strong>Using the formula:</strong></p>
+      <p>
+        \(CO_{2} = \text{Distance travelled} \cdot \text{Emissions per
+        kilometers}\)
+      </p>
+
+      <p><strong>Emission factors:</strong></p>
+      <p>Diesel: 0.091 kg/km per passenger</p>
+      <p>Electric Europe: 0,024 kg/km per passenger</p>
+      <p>Electric Nordic: 0,007 kg/km per passenger</p>
+      <br />
+      <br />
+      <a
+        href="https://forward-static.s3.eu-north-1.amazonaws.com/gd_course/gd_course_NHH_2026_group3/pdfs/our_paper.pdf#page=8"
+        class="btn-ghost"
+        target="_blank"
+      >
+        Our Methodology Paper
+      </a>
+    </div>
+
+    <div class="box"></div>
+  </div>
+</section>
+
+{% endblock content %}
