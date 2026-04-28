@@ -159,7 +159,7 @@ def new_entry_train():
         
         co2, total = carbon_emissions(kms, transport, fuel)
 
-        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, author=current_user)
+        emissions = EmissionsGD(kms=kms, transport=transport, fuel=fuel, co2=co2, total=total, student='NHH_2026_group3', institution='NHH_2026_group3', year=2026, author=current_user)
         db.session.add(emissions)
         db.session.commit()
         return redirect(url_for('gd_course_NHH_2026_group3.your_data'))
